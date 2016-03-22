@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>昆仑决</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content" style="background-image:url(../images/p2_bg.jpg)">
+        <section class="video-sec" id="youkuplayer">
+            <!-- <video preload="true" webkit-playsinline="true" poster="http://shp.qpic.cn/qqvideo_ori/0/d0186p8nqby_496_280/0" id="video" src="../video/kunlunjue.mpeg" controls="true"></video> -->
+        </section>
+        <section class="contest-brief-sec">
+            <i class="icon-contest-breif"></i>
+            <div class="brief-content ellipsis" id="brief_content">
+                <p>团贷网独家协办 中国顶级搏击赛事——“2016年昆仑决世界极限格斗大赛”（东莞站），即将于2016年3月20日（周日）13:00-18：00亮相东莞体育馆，届时，将由江苏卫视、广东卫视等卫视、爱奇艺全网播出。</p>
+                <p>世界格斗冠军播求、国家一级运动员、省市散打冠军等群星云集，精彩赛事不容错过！</p>
+                <p>本次大赛的核心意义在于：希望团贷网品牌形象得到进一步的提升，希望拳击拼搏、忍耐、坚持的精神能够影响企业员工及行业从业人员，鼓舞大家以更好的状态迎接行业新的发展。</p>
+                <p class="rule">活动规则>></p>
+                <div class="arrow-up-sec">
+                    <i class="arrow"></i>
+                    <p>向上滑动</p>
+                </div>
+            </div>
+        </section>
+        <div class="bottom-part">
+            <a href="./game.html" class="btn2">马上参加游戏</a>
+        </div>
+        <div class="exonerate">
+            该活动与苹果公司无关，最终解释权归团贷网所有
+        </div>
+    </div>
+    <!-- masker  -->
+    <div class="masker" id="masker"></div>
+    <!-- 活动规则 -->
+    <div class="rule-sec popup">
+        <div class="close" id="close"></div>
+        <div class="rule-content">
+            <p>1.活动日期：2016年3月15-20日</p>
+            <p>2.根据滚动条上“左”、“右”提示点击左右拳套，出拳准确数达到10拳可获得奖励，出拳准确数越多，奖励越大；另外，用户可邀请好友参与PK赛，每场PK赛胜出一方可获得5元红包，和局算被邀请方胜出，最高可获得50元红包奖励，完成兑奖后方可计入分数和邀请PK赛，分数计入后不可改变。</p>
+            <p>3.本次活动不限时，每次游戏有3次出错机会，用完后本轮游戏结束；</p>
+            <p>4.兑奖方式：输入有效手机号码，奖品将发送至对应手机号码注册的团贷网个人账户“我的团宝箱”内，每个手机号码限兑奖1次；</p>
+            <p>5.投资红包领取有效期7天，使用有效期：自领取日起30天内有效，逾期视为放弃领取，本次奖品不可兑现，不设找零；</p>
+            <p>6.客服热线：400-6410-888，本次活动最终解释权归团贷网所有。</p>
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src='../js/fastclick-jquery.js' type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src='../js/index.js' type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="http://player.youku.com/jsapi">
+player = new YKU.Player('youkuplayer', {
+    styleid: '0',
+    client_id: '52b3fa57e9fe17cf',
+    vid: 'XMTQ5NDgwNDAyOA=='
+});
+</script>
+
+</html>

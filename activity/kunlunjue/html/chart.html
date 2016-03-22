@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>昆仑决</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+     <!-- endbuild -->
+     <!-- build:css(dist) ../js/lib/vendor/swiper/swiper.min.css -->
+    <link rel="stylesheet" href="../css/vendor/swiper/swiper.min.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    </script>
+    <script>
+    var isAndroid = "False";
+    </script>
+</head>
+
+<body>
+    <div class="content" style="background-image:url(../images/p4_bg.jpg)">
+        <i class="text-chart-title"></i>
+        <section class="chart-sec">
+            <div class="row-header">
+                <span>序号</span>
+                <span>对手</span>
+                <span>得分</span>
+                <span>PK赛果</span>
+                <span>奖励</span>
+            </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide table">
+                        <div class="row">
+                            <span>1</span>
+                            <span>左xx手</span>
+                            <span>56</span>
+                            <span>胜</span>
+                            <span>20元</span>
+                        </div>
+                        <div class="row win">
+                            <span>2</span>
+                            <span>左xx手</span>
+                            <span>56</span>
+                            <span>胜</span>
+                            <span><a href="#">20元</a></span>
+                        </div>
+                        <div class="row win">
+                            <span>3</span>
+                            <span>左xx手</span>
+                            <span>56</span>
+                            <span>胜</span>
+                            <span>--</span>
+                        </div>
+                        <div class="row">
+                            <span>4</span>
+                            <span>左xx手</span>
+                            <span>56</span>
+                            <span>胜</span>
+                            <span>20元</span>
+                        </div>
+                        <div class="row">
+                            <span>5</span>
+                            <span>左xx手</span>
+                            <span>56</span>
+                            <span>胜</span>
+                            <span>20元</span>
+                        </div>
+                        <div class="row">
+                            <span>6</span>
+                            <span>左xx手</span>
+                            <span>56</span>
+                            <span>胜</span>
+                            <span>20元</span>
+                        </div>
+                    </div>
+                    <!-- page2 -->
+                    <div class="swiper-slide table">
+                        <div class="row">
+                            <span>1</span>
+                            <span>左xx手</span>
+                            <span>56</span>
+                            <span>胜</span>
+                            <span>20元</span>
+                        </div>
+                        <div class="row">
+                            <span>2</span>
+                            <span>左xx手</span>
+                            <span>56</span>
+                            <span>胜</span>
+                            <span>20元</span>
+                        </div>
+                        <div class="row">
+                            <span>3</span>
+                            <span>左xx手</span>
+                            <span>56</span>
+                            <span>胜</span>
+                            <span>20元</span>
+                        </div>
+                        <div class="row">
+                            <span>4</span>
+                            <span>左xx手</span>
+                            <span>56</span>
+                            <span>胜</span>
+                            <span>20元</span>
+                        </div>
+                        <div class="row">
+                            <span>5</span>
+                            <span>左xx手</span>
+                            <span>56</span>
+                            <span>胜</span>
+                            <span>20元</span>
+                        </div>
+                        <div class="row">
+                            <span>6</span>
+                            <span>左xx手</span>
+                            <span>56</span>
+                            <span>胜</span>
+                            <span>20元</span>
+                        </div>
+                    </div>
+                    <!-- page3 -->
+                    <div class="swiper-slide table">
+                        <div class="row">
+                            <span>1</span>
+                            <span>左xx手</span>
+                            <span>56</span>
+                            <span>胜</span>
+                            <span>20元</span>
+                        </div>
+                        <div class="row">
+                            <span>2</span>
+                            <span>左xx手</span>
+                            <span>56</span>
+                            <span>胜</span>
+                            <span>20元</span>
+                        </div>
+                        <div class="row">
+                            <span>3</span>
+                            <span>左xx手</span>
+                            <span>56</span>
+                            <span>胜</span>
+                            <span>20元</span>
+                        </div>
+                        <div class="row">
+                            <span>4</span>
+                            <span>左xx手</span>
+                            <span>56</span>
+                            <span>胜</span>
+                            <span>20元</span>
+                        </div>
+                        <div class="row">
+                            <span>5</span>
+                            <span>左xx手</span>
+                            <span>56</span>
+                            <span>胜</span>
+                            <span>20元</span>
+                        </div>
+                        <div class="row">
+                            <span>6</span>
+                            <span>左xx手</span>
+                            <span>56</span>
+                            <span>胜</span>
+                            <span>20元</span>
+                        </div>
+                    </div>
+                    <!-- papge end -->
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <!-- <div class="pagination">
+                <i class="icon-pagination">1</i>
+                <i class="icon-pagination">2</i>
+                <i class="icon-pagination">3</i>
+            </div> -->
+        </section>
+        <p class="chart-desc">邀请好友参与PK，最高可获50元奖励</p>
+        <p class="chart-desc">必须兑奖后，方可计入榜单</p>
+        <div class="btn-group">
+            <a class="icon-blue-btn btn">返回</a>
+            <a class="icon-blue-btn btn invite-btn">约战好友</a>
+        </div>
+        <div class="exonerate">
+            该活动与苹果公司无关，最终解释权归团贷网所有
+        </div>
+    </div>
+    <!-- masker  -->
+    <div class="masker" id="masker"></div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src='../js/fastclick-jquery.js' type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<!-- build:js({dist}) ../js/lib/vendor/swiper/swiper.jquery.min.js -->
+<script src='../js/vendor/swiper/swiper.jquery.min.js' type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src='../js/index.js' type="text/javascript" charset="utf-8"></script>
+
+</html>

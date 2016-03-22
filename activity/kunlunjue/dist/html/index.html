@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>昆仑决</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+     <audio src="../music/glass.mp3" id="media" preload></audio>
+   
+    <div class="content" style="background-image:url(../images/p1_bg.jpg)">
+       <section class="people-sec">
+           <i class="icon-people1"></i>
+           <i class="icon-people2"></i>
+           <i class="icon-people3"></i>
+       </section>
+       <a class="btn enter-btn" id="enter_btn">
+           点击参赛
+       </a>
+        <div class="exonerate">
+           该活动与苹果公司无关，最终解释权归团贷网所有
+       </div>
+    </div>
+
+    <!-- masker  -->
+    <div class="glass-broke-sec" id="glass_broke_sec">
+        <img src="../images/glass.png" class="icon-glass">
+    </div>
+
+</body>
+<script src="../js/lib/fastclick-jquery.js"></script>
+<script src='../js/index.js' type="text/javascript" charset="utf-8"></script>
+
+</html>

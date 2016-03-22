@@ -1,0 +1,11 @@
+{{#sprites}}
+.sprite-icon-{{name}} {
+  display: block;
+  background-image: url({{{escaped_image}}});
+  background-position: pxToRem({{px.offset_x}}) pxToRem({{px.offset_y}});
+  background-repeat:no-repeat;
+  background-size:pxToRem(220px) pxToRem(96px);
+  width: pxToRem({{px.width}});
+  height: pxToRem({{px.height}});
+}
+{{/sprites}}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>昆仑决</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    </script>
+    <script>
+    var isAndroid = "False";
+    </script>
+</head>
+
+<body>
+    <audio src="../music/glass.mp3" id="media" preload></audio>
+    <div class="content" style="background-image:url(../images/p4_bg.jpg)">
+        <div class="exchange-part">
+            <i class="text-exchange"></i>
+            <section class="phone-sec">
+                <p>您的号码仅用作兑奖用途</p>
+                <div class="input-wrapper-long">
+                    <input type="tel" name="phone" id="phone" placeholder="输入手机号码即可领取奖励" maxlength="11" onpaste="return false" oncontextmenu="return false" oncopy="return false" oncut="return false">
+                    <i class="clear"></i>
+                </div>
+            </section>
+            <section class="password-sec" id="passwordContentArea" style="display: none;">
+                <div class="input-wrapper-long">
+                     <input type="password" name="password" id="password" class="codeIpt" maxlength="16" placeholder="请输入团贷网登录密码" onpaste="return false" oncontextmenu="return false" oncopy="return false" oncut="return false" onkeyup="this.value=this.value.replace(/^ +| +$/g,'')" />
+                    <i class="clear"></i>
+                </div>
+            </section>
+            <section class="other-sec" id="codeContentArea" >
+                <div class="row">
+                    <div class="input-wrapper-short"> 
+                         <input type="text" name="verify_code" id="verify_code"   placeholder="图片验证码" maxlength="4" onpaste="return false" oncontextmenu="return false" oncopy="return false" oncut="return false" />
+
+                    </div>
+                    <div class="verify-code">
+                        <img src="/weixin/register/ajax/ValidateCode.ashx" id="imgVcode"  onclick="reloadCode('/weixin/register/ajax/ValidateCode.ashx')" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-wrapper-short"> 
+                        <input type="text" name="verify_phone_code" id="verify_phone_code"   onpaste="return false" oncontextmenu="return false" oncopy="return false" oncut="return false" placeholder="手机验证码" maxlength="6" />
+                    </div>
+                    <div class="verify-btn">
+                        获取验证码
+                    </div>
+                </div>
+            </section>
+            <a href="#" id="getPrizeBtn" class="icon-blue-btn">马上兑奖</a>
+        </div>
+        <div class="exonerate">
+            该活动与苹果公司无关，最终解释权归团贷网所有
+        </div>
+        <div class="bottom-part">
+            <i class="bottom-close"></i>
+            <p class="text-sec big">用团贷APP理财
+                <br/>随手财就来！</p>
+            <!-- <p class="text-sec">随手财就来！</p> -->
+            <a  class="btn3">立即下载</a>
+        </div>
+        <div class="exonerate">
+            该活动与苹果公司无关，最终解释权归团贷网所有
+        </div>
+    </div>
+    <!-- masker  -->
+    <div class="masker" id="masker"></div>
+    <!-- 领取成功 -->
+    <div class="result-tip popup">
+        <i class="close"></i>
+        <i class="icon-tick"></i>
+        <p class="first-p">恭喜您！领取成功～</p>
+        <div class="icon-blue-btn invite-btn">
+            约战好友
+        </div>
+        <p>每成功击败一位赠送<span>5</span>元</p>
+        <p>最高可获<span>50</span>元奖励</p>
+    </div>
+    <!-- 爆灯提示 -->
+    <div class="baodeng-tip popup">
+        <i class="close"></i>
+        <p class="first-p">亲，恭喜你节能爆灯！！</p>
+        <p>你已经达到50元的最高领取</p>
+        <p>额度，感谢你的参与～</p>
+        <div class="icon-blue-btn invite-btn">
+            转发好友参与游戏
+        </div>
+    </div>
+
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src='../js/fastclick-jquery.js' type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src='../js/index.js' type="text/javascript" charset="utf-8"></script>
+
+</html>
