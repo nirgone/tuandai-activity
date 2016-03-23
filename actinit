@@ -3,7 +3,7 @@ var argv = require('yargs')
 			.option('n',{
 				alias:'name',
 				demand:true,
-				default:'activity',
+				// default:'activity',
 				describe:'your activity\'s name',
 				type:'string'
 			})
@@ -20,7 +20,7 @@ var act_name = argv.n;
 var mode = argv.m;
 var fs = require('fs');
 var Handlebars = require('Handlebars');
- 
+
 // 创建文件夹
 function mkdirSync(url,mode,cb){
     var path = require("path"), arr = url.split("/");
@@ -59,207 +59,231 @@ function createActivity(urls) {
 		});
 	}
 }
-/* 生成以下文件结构
-	-activity
-	 -html
-	 -js
-	 -sass
-	 -images
-	 -music
-*/
-var _fold_array = ['html','js','sass','images','music'];
-createActivity(_fold_array);
 
-//创建文件与写入内容
-//index.html
-fs.open('activity/' + act_name+"/index.html","w",0644,function(e,fd){
-    if(e) throw e;
-	var data = {};
-    var _content = "<!DOCTYPE html>\n<html>\n<head>\n	<meta charset=\"utf-8\">\n	<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n	<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n  	<meta name=\"viewport\" content=\"initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0\"/>\n	<title></title>\n</head>\n<body>\n	\n</body>\n<script>\n	window.location.href = 'html/index.html';\n</script>\n</html>";
-    fs.write(fd,_content,function(e){
-        if(e) throw e;
-        fs.closeSync(fd);
-    })
+function actInit() {
+	/* 生成以下文件结构
+		-activity
+		 -html
+		 -js
+		 -sass
+		 -images
+		 -music
+	*/
+	var _fold_array = ['html','js','sass','images','music'];
+	createActivity(_fold_array);
+
+	//创建文件与写入内容
+	//index.html
+	fs.open('activity/' + act_name+"/index.html","w",0644,function(e,fd){
+	    if(e) throw e;
+		var data = {};
+	    var _content = "<!DOCTYPE html>\n<html>\n<head>\n	<meta charset=\"utf-8\">\n	<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n	<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n  	<meta name=\"viewport\" content=\"initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0\"/>\n	<title></title>\n</head>\n<body>\n	\n</body>\n<script>\n	window.location.href = 'html/index.html';\n</script>\n</html>";
+	    fs.write(fd,_content,function(e){
+	        if(e) throw e;
+	        fs.closeSync(fd);
+	    })
+	});
+
+	//./html/index.html
+	fs.open('activity/' + act_name+"/html/index.html","w",0644,function(e,fd){
+	    if(e) throw e;
+		var source = '<!DOCTYPE html>\n<html>\n'+
+			'<head>\n'+
+		    '	<meta charset="utf-8">\n'+
+		    '	<meta http-equiv="X-UA-Compatible" content="IE=edge">\n'+
+		    '	<meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />\n'+
+		    '	<meta name="format-detection" content="telephone=no">\n'+
+		    '	<title>{{name}}</title>\n'+
+		    '	<!-- build:css(dist) ../css/main.css -->\n'+
+		    '	<link rel="stylesheet" href="../css/index.css">\n'+
+		    '	<link rel="stylesheet" href="../css/media.css">\n'+
+		    '	<link rel="stylesheet" href="../css/animation.css">\n'+
+		    '	<!-- endbuild -->\n'+
+		    ' {{{adaptjs}}}\n'+
+			'</head>\n'+
+			'<body>\n'+
+			'</body>\n'+
+			'<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->\n'+
+			'<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>\n'+
+			'<!-- endbuild -->\n'+
+			'<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>\n'+
+			'</html>';
+
+		var template = Handlebars.compile(source);
+		var _adaptjs = '	<script>\n'+
+		    '	//动态算rem\n'+
+		    '	(function(doc, win) {\n'+
+		    '		var docEl = doc.documentElement,\n'+
+		    '        	resizeEvt = \'orientationchange\' in window ? \'orientationchange\' : \'resize\',\n'+
+		    '        	recalc = function() {\n'+
+		    '            	// if (docEl.style.fontSize) return;\n'+
+		    '            	clientWidth = docEl.clientWidth;\n'+
+		    '            	if (!clientWidth) return;\n'+
+		    '            	docEl.style.fontSize = 20 * (clientWidth / 320) + "px";\n'+
+		    '            	if (document.body) {\n'+
+		    '                	document.body.style.fontSize = docEl.style.fontSize;\n'+
+		    '            	}\n'+
+		    '        	};\n'+
+		    '    	recalc();\n'+
+		    '    	if (!doc.addEventListener) return;\n'+
+		    '    	win.addEventListener(resizeEvt, recalc, false);\n'+
+		    '    	doc.addEventListener("DOMContentLoaded", recalc, false);\n'+
+		    '	})(document, window);\n'+
+		    '	</script>\n';
+		    if(mode === 'multi') {
+		    	_adaptjs = '<!-- build:js({dist}) ../js/adapt.js -->\n'+
+		    	'<script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>\n' +
+		    	'<!-- endbuild -->'
+		    }
+		var data = {"name":act_name,"adaptjs":_adaptjs};
+		var _content = template(data);
+
+	    fs.write(fd,_content,function(e){
+	        if(e) throw e;
+	        fs.closeSync(fd);
+	    })
+	});
+
+	//./js/index.js
+	fs.open('activity/' + act_name+"/js/index.js","w",0644,function(e,fd){
+	    if(e) throw e;
+	    var _content = '(function() {\n'+
+		'    FastClick.attach(document.body);\n'+
+		'	    //do your thing.\n'+
+		'})();';
+	    fs.write(fd,_content,function(e){
+	        if(e) throw e;
+	        fs.closeSync(fd);
+	    })
+	});
+
+	//./sass/index.scss
+	fs.open('activity/' + act_name+"/sass/index.scss","w",0644,function(e,fd){
+	    if(e) throw e;
+	    var _content = '@charset "UTF-8";\n'+
+			'@import "variables";\n'+
+			'@import "sprite";\n'+
+			'@import "../../../sass/reset";\n'+
+			'@import "../../../sass/func";\n'+
+			'html,\n'+
+			'body {\n'+
+			'    position: relative;\n'+
+			'    // height: 100%;\n'+
+			'    // width: 100%;\n'+
+			'    // overflow: hidden;\n'+
+			'    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;\n'+
+			'    margin: 0;\n'+
+			'    padding: 0;\n'+
+			'    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n'+
+			'}\n'+
+			'\n'+
+			'a {\n'+
+			'    text-decoration: none;\n'+
+			'}';
+	    fs.write(fd,_content,function(e){
+	        if(e) throw e;
+	        fs.closeSync(fd);
+	    })
+	});
+
+	//./sass/media.scss
+	fs.open('activity/' + act_name+"/sass/media.scss","w",0644,function(e,fd){
+	    if(e) throw e;
+	    var _content = '@charset "UTF-8";\n'+
+			'@import "variables";\n'+
+			'@import "../../sass/func";\n'+
+			'\n'+
+			'/*  for small width screen  */\n'+
+			'\n'+
+			'@media screen and (max-width:374px) {\n'+
+			' \n'+   
+			'}\n'+
+			'\n'+
+			'/* =========for short screen============== */\n'+
+			'\n'+
+			'@media screen and (max-height: 540px) and (min-width:321px) {\n'+
+			'    $ratio: 0.85;\n'+
+			'\n'+    
+			'}\n'+
+			'//* -----------meizu  mx3----------------- */\n'+
+			'@media screen and (min-height: 589px) and (min-width:430px) {\n'+
+			'    $ratio: 0.9;\n'+
+			'\n'+
+			'}\n'+
+			'\n'+
+			'/* ------------------------iphone 5------------------------ */\n'+
+			'@media screen and (max-width:320px) and (max-height:508px) {\n'+ 
+			'    $ratio:0.9;\n'+
+			'\n'+
+			'}\n'+
+			'\n'+
+			'/* -------------------------iphone4---------------------------- */\n'+
+			'\n'+
+			'@media screen and (max-width:320px) and (max-height:416px) {\n'+
+			'   $ratio: 0.85;\n'+
+			'\n'+
+			'}\n'+
+			'\n'+
+			'@media screen and (max-width: 320px) {\n'+
+			'\n'+    
+			'}';
+	    fs.write(fd,_content,function(e){
+	        if(e) throw e;
+	        fs.closeSync(fd);
+	    })
+	});
+
+	//./sass/animation.scss
+	fs.open('activity/' + act_name+"/sass/animation.scss","w",0644,function(e,fd){
+	    if(e) throw e;
+	    var _content = '@charset "UTF-8";\n'+
+			'@import "../../../sass/func";';
+	    fs.write(fd,_content,function(e){
+	        if(e) throw e;
+	        fs.closeSync(fd);
+	    })
+	});
+
+	//./sass/_variables.scss
+	fs.open('activity/' + act_name+"/sass/_variables.scss","w",0644,function(e,fd){
+	    if(e) throw e;
+	    var _content = '@charset "UTF-8";'
+	    fs.write(fd,_content,function(e){
+	        if(e) throw e;
+	        fs.closeSync(fd);
+	    })
+	});
+
+	//./sass/_sprite.scss
+	fs.open('activity/' + act_name+"/sass/_sprite.scss","w",0644,function(e,fd){
+	    if(e) throw e;
+	    var _content = '@charset "UTF-8";\n'+
+			'@import "../../../sass/func";';
+	    fs.write(fd,_content,function(e){
+	        if(e) throw e;
+	        fs.closeSync(fd);
+	    })
+	});
+}
+
+fs.stat('activity/' + act_name, function(err, stat) {
+    if(err == null) {
+        if(stat.isDirectory()) {
+            console.log('该活动名已经存在，请重新命名！');
+        } else if(stat.isFile()) {
+            console.log('文件存在');
+        } else {
+            console.log('路径存在，但既不是文件，也不是文件夹');
+            //输出路径对象信息
+            console.log(stat);
+        }
+        // is_exist = true;
+    } else if(err.code == 'ENOENT') {
+        // console.log(err.name);
+        console.log('该活动名合法，正在生成...');
+        // is_exist = false;
+        actInit();
+    } else {
+        console.log('错误：' + err);
+    }
 });
-
-//./html/index.html
-fs.open('activity/' + act_name+"/html/index.html","w",0644,function(e,fd){
-    if(e) throw e;
-	var source = '<!DOCTYPE html>\n<html>\n'+
-		'<head>\n'+
-	    '	<meta charset="utf-8">\n'+
-	    '	<meta http-equiv="X-UA-Compatible" content="IE=edge">\n'+
-	    '	<meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />\n'+
-	    '	<meta name="format-detection" content="telephone=no">\n'+
-	    '	<title>{{name}}</title>\n'+
-	    '	<!-- build:css(dist) ../css/main.css -->\n'+
-	    '	<link rel="stylesheet" href="../css/index.css">\n'+
-	    '	<link rel="stylesheet" href="../css/media.css">\n'+
-	    '	<link rel="stylesheet" href="../css/animation.css">\n'+
-	    '	<!-- endbuild -->\n'+
-	    ' {{{adaptjs}}}\n'+
-		'</head>\n'+
-		'<body>\n'+
-		'</body>\n'+
-		'<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->\n'+
-		'<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>\n'+
-		'<!-- endbuild -->\n'+
-		'<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>\n'+
-		'</html>';
-
-	var template = Handlebars.compile(source);
-	var _adaptjs = '	<script>\n'+
-	    '	//动态算rem\n'+
-	    '	(function(doc, win) {\n'+
-	    '		var docEl = doc.documentElement,\n'+
-	    '        	resizeEvt = \'orientationchange\' in window ? \'orientationchange\' : \'resize\',\n'+
-	    '        	recalc = function() {\n'+
-	    '            	// if (docEl.style.fontSize) return;\n'+
-	    '            	clientWidth = docEl.clientWidth;\n'+
-	    '            	if (!clientWidth) return;\n'+
-	    '            	docEl.style.fontSize = 20 * (clientWidth / 320) + "px";\n'+
-	    '            	if (document.body) {\n'+
-	    '                	document.body.style.fontSize = docEl.style.fontSize;\n'+
-	    '            	}\n'+
-	    '        	};\n'+
-	    '    	recalc();\n'+
-	    '    	if (!doc.addEventListener) return;\n'+
-	    '    	win.addEventListener(resizeEvt, recalc, false);\n'+
-	    '    	doc.addEventListener("DOMContentLoaded", recalc, false);\n'+
-	    '	})(document, window);\n'+
-	    '	</script>\n';
-	    if(mode === 'multi') {
-	    	_adaptjs = '<!-- build:js({dist}) ../js/adapt.js -->\n'+
-	    	'<script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>\n' +
-	    	'<!-- endbuild -->'
-	    }
-	var data = {"name":act_name,"adaptjs":_adaptjs};
-	var _content = template(data);
-
-    fs.write(fd,_content,function(e){
-        if(e) throw e;
-        fs.closeSync(fd);
-    })
-});
-
-//./js/index.js
-fs.open('activity/' + act_name+"/js/index.js","w",0644,function(e,fd){
-    if(e) throw e;
-    var _content = '(function() {\n'+
-	'    FastClick.attach(document.body);\n'+
-	'	    //do your thing.\n'+
-	'})();';
-    fs.write(fd,_content,function(e){
-        if(e) throw e;
-        fs.closeSync(fd);
-    })
-});
-
-//./sass/index.scss
-fs.open('activity/' + act_name+"/sass/index.scss","w",0644,function(e,fd){
-    if(e) throw e;
-    var _content = '@charset "UTF-8";\n'+
-		'@import "variables";\n'+
-		'@import "sprite";\n'+
-		'@import "../../../sass/reset";\n'+
-		'@import "../../../sass/func";\n'+
-		'html,\n'+
-		'body {\n'+
-		'    position: relative;\n'+
-		'    // height: 100%;\n'+
-		'    // width: 100%;\n'+
-		'    // overflow: hidden;\n'+
-		'    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;\n'+
-		'    margin: 0;\n'+
-		'    padding: 0;\n'+
-		'    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n'+
-		'}\n'+
-		'\n'+
-		'a {\n'+
-		'    text-decoration: none;\n'+
-		'}';
-    fs.write(fd,_content,function(e){
-        if(e) throw e;
-        fs.closeSync(fd);
-    })
-});
-
-//./sass/media.scss
-fs.open('activity/' + act_name+"/sass/media.scss","w",0644,function(e,fd){
-    if(e) throw e;
-    var _content = '@charset "UTF-8";\n'+
-		'@import "variables";\n'+
-		'@import "../../sass/func";\n'+
-		'\n'+
-		'/*  for small width screen  */\n'+
-		'\n'+
-		'@media screen and (max-width:374px) {\n'+
-		' \n'+   
-		'}\n'+
-		'\n'+
-		'/* =========for short screen============== */\n'+
-		'\n'+
-		'@media screen and (max-height: 540px) and (min-width:321px) {\n'+
-		'    $ratio: 0.85;\n'+
-		'\n'+    
-		'}\n'+
-		'//* -----------meizu  mx3----------------- */\n'+
-		'@media screen and (min-height: 589px) and (min-width:430px) {\n'+
-		'    $ratio: 0.9;\n'+
-		'\n'+
-		'}\n'+
-		'\n'+
-		'/* ------------------------iphone 5------------------------ */\n'+
-		'@media screen and (max-width:320px) and (max-height:508px) {\n'+ 
-		'    $ratio:0.9;\n'+
-		'\n'+
-		'}\n'+
-		'\n'+
-		'/* -------------------------iphone4---------------------------- */\n'+
-		'\n'+
-		'@media screen and (max-width:320px) and (max-height:416px) {\n'+
-		'   $ratio: 0.85;\n'+
-		'\n'+
-		'}\n'+
-		'\n'+
-		'@media screen and (max-width: 320px) {\n'+
-		'\n'+    
-		'}';
-    fs.write(fd,_content,function(e){
-        if(e) throw e;
-        fs.closeSync(fd);
-    })
-});
-
-//./sass/animation.scss
-fs.open('activity/' + act_name+"/sass/animation.scss","w",0644,function(e,fd){
-    if(e) throw e;
-    var _content = '@charset "UTF-8";\n'+
-		'@import "../../../sass/func";';
-    fs.write(fd,_content,function(e){
-        if(e) throw e;
-        fs.closeSync(fd);
-    })
-});
-
-//./sass/_variables.scss
-fs.open('activity/' + act_name+"/sass/_variables.scss","w",0644,function(e,fd){
-    if(e) throw e;
-    var _content = '@charset "UTF-8";'
-    fs.write(fd,_content,function(e){
-        if(e) throw e;
-        fs.closeSync(fd);
-    })
-});
-
-//./sass/_sprite.scss
-fs.open('activity/' + act_name+"/sass/_sprite.scss","w",0644,function(e,fd){
-    if(e) throw e;
-    var _content = '@charset "UTF-8";\n'+
-		'@import "../../../sass/func";';
-    fs.write(fd,_content,function(e){
-        if(e) throw e;
-        fs.closeSync(fd);
-    })
-});
-
