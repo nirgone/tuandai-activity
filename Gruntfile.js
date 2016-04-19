@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 	// Configurable paths
 	var config = {
 		activity: 'activity',
-		actName: 'kunlunjue',
+		actName: 'wuyi',
 		dist: 'dist'
 	};
 
@@ -86,6 +86,9 @@ module.exports = function(grunt) {
 			},
 			js: {
 				files: ['<%= config.activity %>/<%= config.actName %>/js/{,*/}*.js'],
+			},
+			html: {
+				files: ['<%= config.activity %>/<%= config.actName %>/html/{,*/}*.html'],
 			}
 		},
 
@@ -100,7 +103,7 @@ module.exports = function(grunt) {
 			livereload: {
 				options: {
 					files: [
-						'<%= config.activity %>/<%= config.actName %>/{,*/}*.html',
+						'<%= config.activity %>/<%= config.actName %>/html/{,*/}*.html',
 						'<%= config.activity %>/<%= config.actName %>/.tmp/css/{,*/}*.css',
 						'<%= config.activity %>/<%= config.actName %>/images/{,*/}*',
 						'<%= config.activity %>/<%= config.actName %>/.tmp/js/{,*/}*.js',
@@ -286,7 +289,7 @@ module.exports = function(grunt) {
 					src: [
 						'{,*/,*/*/}*.js',
 					]
-				},{
+				}, {
 					expand: true,
 					dot: true,
 					cwd: './lib',
@@ -314,7 +317,7 @@ module.exports = function(grunt) {
 					cwd: '<%= config.activity %>/<%= config.actName %>',
 					dest: '<%= config.activity %>/<%= config.actName %>/<%= config.dist %>',
 					src: '{,*/}*.html',
-				},{
+				}, {
 					expand: true,
 					dot: true,
 					cwd: './lib/vendor',
