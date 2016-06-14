@@ -108,8 +108,8 @@ $base-font-size: 23.4375px; //design 750px / 32 = 20px;
     overflow: hidden;
     -o-text-overflow: ellipsis; /* Opera 9-10.6 */
     text-overflow: ellipsis;
-    display: inline-block;
-    *display: inline;
+    // display: inline-block;
+    // *display: inline;
     *zoom: 1;
     vertical-align: top;
     max-width: 100%;

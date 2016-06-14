@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 	// Configurable paths
 	var config = {
 		activity: 'activity',
-		actName: 'wuyi',
+		actName: 'fatherDay2016',
 		dist: 'dist'
 	};
 

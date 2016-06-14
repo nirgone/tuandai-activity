@@ -48,26 +48,48 @@
             <i class="icon-subtitle fadeIn"></i>
         </div>
         <div class="bodycont">
-            <div class="xrcont">
+            <div class="xrcont" id="nrlottery" name="nrlottery">
                 <i class="icon-title1"></i>
                 <i class="icon-xrtitle"></i>
-                <ul class="lotcont">
+                <ul class="lotcont" id="lottery">
                     <li>
-                        <div class="lotitem icon-yellow"><i class="icon-redpacket8"></i></div>
-                        <div class="lotitem icon-green"><i class="icon-lamb"></i></div>
-                        <div class="lotitem icon-blue"><i class="icon-globe"></i></div>
-                        <div class="lotitem icon-yellow"><i class="icon-clock"></i></div>
+                        <div class="lotitem lottery-unit lottery-unit-0 icon-yellow">
+                            <i class="icon-redpacket8"></i><span>8元红包</span>
+                        </div>
+                        <div class="lotitem lottery-unit lottery-unit-1 icon-green">
+                            <i class="icon-lamb"></i><span>人体感应灯</span>
+                        </div>
+                        <div class="lotitem lottery-unit lottery-unit-2 icon-blue">
+                            <i class="icon-globe"></i><span>悬浮地球仪套装</span>
+                        </div>
+                        <div class="lotitem lottery-unit lottery-unit-3 icon-yellow">
+                            <i class="icon-clock"></i><span>艺术挂钟</span>
+                        </div>
                     </li>
                     <li>
-                        <div class="lotitem icon-green"><i class="icon-iphone2"></i></div>
-                        <div class="lotbtn"><i class="icon-lotterybtn"></i></div>
-                        <div class="lotitem icon-green"><i class="icon-machine"></i></div>
+                        <div class="lotitem lottery-unit lottery-unit-9 icon-green">
+                            <i class="icon-iphone2"></i><span>苹果6S</span>
+                        </div>
+                        <div class="lotbtn">
+                            <i class="icon-lotterybtn"></i>
+                        </div>
+                        <div class="lotitem lottery-unit lottery-unit-4 icon-green">
+                            <i class="icon-machine"></i><span>多功能更面包机</span>
+                        </div>
                     </li>
                     <li>
-                        <div class="lotitem icon-blue"><i class="icon-robot2"></i></div>
-                        <div class="lotitem icon-green"><i class="icon-cleaner"></i></div>
-                        <div class="lotitem icon-yellow"><i class="icon-printer"></i></div>
-                        <div class="lotitem icon-blue"><i class="icon-heater"></i></div>
+                        <div class="lotitem lottery-unit lottery-unit-8 icon-blue">
+                            <i class="icon-robot2"></i><span>智能机器人</span>
+                        </div>
+                        <div class="lotitem lottery-unit lottery-unit-7 icon-green">
+                            <i class="icon-cleaner"></i><span>美的净水器</span>
+                        </div>
+                        <div class="lotitem lottery-unit lottery-unit-6 icon-yellow">
+                            <i class="icon-printer"></i><span>佳能无线打印机</span>
+                        </div>
+                        <div class="lotitem lottery-unit lottery-unit-5 icon-blue">
+                            <i class="icon-heater"></i><span>即热式电热水器</span>
+                        </div>
                     </li>
                 </ul>
                 <div class="billboardcont">
@@ -77,8 +99,9 @@
                         <div>昵称</div>
                         <div>奖品</div>
                     </div>
-                    <ul class="listbody">
-                        <li class="bitem">
+                    <div class="xslistcont listcont">
+                        <ul class="listbody xslist ">
+                            <!-- <li class="bitem">
                             <div>4月19号</div>
                             <div>团贷网团贷网</div>
                             <div>苹果6s</div>
@@ -102,28 +125,29 @@
                             <div>4月19号</div>
                             <div>团贷网团贷网</div>
                             <div>苹果6s</div>
-                        </li>
-                    </ul>
+                        </li> -->
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="rulecont">
                 <span>活动规则：</span>
                 <div class="ritem">
                     <div>1、</div>
-                    <div>活动期间新注册用户单笔投资≥2000元，即可参与抽奖，每人最多1次抽奖机会；</div>
+                    <div>活动期间新注册用户单笔投资≥2000元（投资期限≥1个月），即可参与抽奖，每人最多1次抽奖机会；</div>
                 </div>
                 <div class="ritem">
                     <div>2、</div>
-                    <div>红包规则：本次投资红包领取期限为自获得红包起的30天内，使用期限为自领取红包后的 30天内；具体红包使用规则详见团宝箱说明；
+                    <div>红包规则：本次投资红包领取期限为自获得红包起的30天内，使用期限为自领取红包后的30天内；具体红包使用规则详见团宝箱说明；
                     </div>
                 </div>
                 <div class="ritem">
                     <div>3、</div>
-                    <div>实物奖品规则：本次实物奖品将于活动结束后的15个工作日内统一发放；用户需于中奖后 的3个工作日内登录团贷网领取，并填写相关的收件信息，过期领取则无效。
+                    <div>实物奖品规则：本次实物奖品将于活动结束后的15个工作日内统一发放；用户需于中奖后的10个自然日内登录团宝箱领取，并填写相关的收件信息，过期领取则无效。
                     </div>
                 </div>
             </div>
-            <div class="qmcont">
+            <div class="qmcont" id="qmlottery" name="qmlottery">
                 <i class="icon-title2"></i>
                 <div class="turntablecont">
                     <div class="turntable"></div>
@@ -138,8 +162,9 @@
                         <div>昵称</div>
                         <div>奖品</div>
                     </div>
-                    <ul class="listbody">
-                        <li class="bitem">
+                    <div class="qmlistcont listcont">
+                        <ul class="listbody qmlist ">
+                            <!-- <li class="bitem">
                             <div>4月19号</div>
                             <div>团贷网团贷网</div>
                             <div>苹果6s</div>
@@ -163,15 +188,16 @@
                             <div>4月19号</div>
                             <div>团贷网团贷网</div>
                             <div>苹果6s</div>
-                        </li>
-                    </ul>
+                        </li> -->
+                        </ul>
+                    </div>
                 </div>
                 <div class="rulecont">
                     <span>活动规则：</span>
                     <div class="ritem">
                         <div>1、</div>
                         <div>
-                            <div>活动期间不分新老用户，只要达到以下条件，即可参与抽奖（注：累计投资金额不包含供 应链及资产标）：
+                            <div>活动期间不分新老用户，只要达到以下条件，即可参与抽奖（注：累计投资金额不包含供应链及资产标）：
                             </div>
                             <ul class="tcont">
                                 <li>
@@ -195,25 +221,145 @@
                     </div>
                     <div class="ritem">
                         <div>2、</div>
-                        <div>红包规则：本次投资红包领取期限为自获得红包起的30天 内，使用期限为自领取红包后 的30天内；具体红包使用规 则详见团宝箱说明；</div>
+                        <div>红包规则：本次投资红包领取期限为自获得红包起的30天内，使用期限为自领取红包后的30天内：具体红包使用规则详见团宝箱说明；</div>
                     </div>
                     <div class="ritem">
                         <div>3、</div>
-                        <div>实物奖品规则：本次实物奖品将于活动结束后的15个工作日内统一发放；用户需于中奖后 的3个工作日内登录团贷网领取，并填写相关的收件信息，过期领取则无效。
+                        <div>实物奖品规则：本次实物奖品将于活动结束后的15个工作日内统一发放；用户需于中奖后的10个自然日内登录团宝箱领取，并填写相关的收件信息，过期领取则无效。
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <i class="icon-bg2"></i>
-        <div class="bottomcont">
-        	
+        <div class="bottomcont" id="invitefriend" name="invitefriend">
+            <i class="icon-title3" ></i>
+            <div class="detcont">
+                <div><i class="icon-redpag-tuandai"></i></div>
+                <div>
+                    <div class="txt1">用户最光荣</div>
+                    <div class="txt1">团贷用户专享</div>
+                    <div class="btncont"><i class="sharebtn"></i></div>
+                    <div class="txt2">您目前共享有
+                        <font class="num">X</font>个红包</div>
+                    <div class="txt2">赶紧分享给您的好友吧</div>
+                </div>
+            </div>
+            <div class="rulecont sharerule">
+                <span>活动规则：</span>
+                <div class="ritem">
+                    <div>1、</div>
+                    <div>
+                        <div>您只要在活动期间累计投资金额（注：累计投资金额不包含供应链及资产标）达到以下门槛，即可获得相应数量的红包：
+                        </div>
+                        <ul class="stcont">
+                            <li>
+                                <div>累计投资金额</div>
+                                <div>红包数量</div>
+                            </li>
+                            <li>
+                                <div>1万≤累计投资额＜5万</div>
+                                <div>10元*3</div>
+                            </li>
+                            <li>
+                                <div>5万≤累计投资额＜10万</div>
+                                <div>10元*3+40元*1</div>
+                            </li>
+                            <li>
+                                <div>10万≤累计投资额</div>
+                                <div>10元*3+40元*1+100元*1</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ritem">
+                    <div>2、</div>
+                    <div>本次投资红包仅限您的好友使用，您可以复制红包链接，发送给您的任意好友（同1个ID仅能领取1次），他点击链接即可成功领取；
+                    </div>
+                </div>
+                <div class="ritem">
+                    <div>3、</div>
+                    <div>本次投资红包使用有效期为好友成功领取红包后的30天内，具体红包使用规则详见团宝箱说明。
+                    </div>
+                </div>
+            </div>
+            <div class="rcommonts">本活动与苹果公司无关，最终解释权归团贷网所有</div>
         </div>
+        <div class="float-bottom">
+            <div><a class="maodian" data-id="nrlottery">新人专享</a></div>
+            <div><a class="maodian" data-id="qmlottery">全民狂欢</a></div>
+            <div><a class="maodian" data-id="invitefriend">呼朋唤友</a></div>
+        </div>
+    </div>
+    <div class="mask">
+        <div class="closecont"><i class="icon-close"></i></div>
+        <div class="xslimit-popup tips-popup popup">
+            <div>
+                不好意思，本活动环节仅限活动期间新注册用户参与！您可以试试“全民狂欢”活动哦！
+            </div>
+        </div>
+        <div class="popup xspresent-popup btn-popup">
+            <div class="present">
+                <!-- 恭喜您获得<font id="xspresent">XX</font>，您可以继续投资享受“全民福利”大礼哦！ -->
+            </div>
+            <div class="popbtn btn-yellow btn-left" id="continueBtn">继续抽奖</div>
+            <div class="popbtn btn-yellow btn-left" id="continueInvest">继续投资</div>
+            <div class="popbtn btn-orange btn-right" id="checkPrize">查看奖品</div>
+        </div>
+        <div class="popup disable-popup btn-popup">
+            <div id="disbleTip">
+                <span id="txt4"></span>
+                <span id="txt5"></span>
+            </div>
+            <div class="popbtn btn-yellow btn-center" id="goInvest">马上投资</div>
+        </div>
+        <div class="popup disable-popup2 btn-popup">
+            <div>
+                <!-- 不好意思，本环节每人只有1次机会，您可以继续投资参与“全民狂欢”活动哦！ -->
+                <span id="txt1"></span>
+                <span id="txt2"></span>
+                <span id="txt3"></span>
+            </div>
+            <div class="popbtn btn-yellow btn-center" id="investBtn">马上投资</div>
+        </div>
+        <div class="popup redpag-popup">
+            <span>您可以选择不同面值的红包发送给好友！</span>
+            <div class="pag-bg cont-left selected" data-num="10">
+            	<i class="icon-redpackage" >10元</i>
+            	<i class="dot">0</i>
+            </div>
+            <div class="pag-bg cont-center" data-num="40">
+            	<i class="icon-redpackage" >40元</i>
+            	<i class="dot">0</i>
+            </div>
+            <div class="pag-bg cont-right" data-num="100">
+            	<i class="icon-redpackage" >100元</i>
+            	<i class="dot">0</i>
+            </div>
+            <div class="popbtn btn-grey btn-center" id="copyBtn" >确定分享</div>
+        </div>
+        <div class="share-popup">
+            
+        </div>
+         <div class="popup btn-popup pick-popup spopup">
+            <div class="pick-tips">
+                <!-- 恭喜您获得<font id="xspresent">XX</font>，您可以继续投资享受“全民福利”大礼哦！ -->
+                <span class="prow1"></span>
+                <span class="prow2"></span>
+            </div>
+            <div class="popbtn btn-yellow btn-left pick-btn" id="goInvest2">马上投资</div>
+            <div class="popbtn btn-yellow btn-center pick-btn" id="loginBtn">登 录</div>
+             <div class="popbtn btn-yellow btn-center pick-btn go-lot" id="check">马上看看</div>
+            <div class="popbtn btn-yellow btn-right pick-btn go-lot" id="goLot" >马上抽奖</div>
+        </div>
+        <div class="masker"></div>
     </div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
+<script src="../js/vendor/awardRotate.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/vendor/jsbridge.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
 
 </html>

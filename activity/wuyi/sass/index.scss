@@ -33,7 +33,7 @@ i {
     background-size: 100% 100%;
 }
 
-@mixin mborder($pos,$color) {
+@mixin mborder($pos, $color) {
     position: relative;
     @if $pos=='top' {
         &:before {
@@ -59,41 +59,43 @@ i {
             transform-origin: 0 0;
         }
     }
-    @else if $pos == 'left' {
-    	&:before {
-    	    content: "";
-    	    position: absolute;
-    	    top: 0px;
-    	    bottom: 0px;
-    	    #{$pos}: 0px;
-    	    border-#{$pos}: 1px solid $color;
-    	    transform: scaleX(.5);
-    	    transform-origin: 0 0;
-    	}
+    @else if $pos=='left' {
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            #{$pos}: 0px;
+            border-#{$pos}: 1px solid $color;
+            transform: scaleX(.5);
+            transform-origin: 0 0;
+        }
     }
     @else {
         &:after {
-        content: "";
-        position: absolute;
-        top: 0px;
-        bottom: 0px;
-        #{$pos}: 0px;
-        border-#{$pos}: 1px solid #d5d5d5;
-        transform: scaleX(.5);
-        transform-origin: 0 0;
-    }
+            content: "";
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            #{$pos}: 0px;
+            border-#{$pos}: 1px solid $color;
+            transform: scaleX(.5);
+            transform-origin: 0 0;
+        }
     }
 }
 
 .content {
     background-color: $background-color-red;
+    width: 100%;
+    overflow: hidden;
 }
 
 .headcont {
     // @include background('../images/bg1.png',750px,696px);
     background-image: url('../images/bg1.png');
     width: 100%;
-    height: pxToRem(696px);
+    height: pxToRem(699px);
     background-size: cover;
     background-color: $background-color-red;
 }
@@ -213,10 +215,19 @@ i {
         // background-image: url('../images/block_blue.png');
         background-size: cover;
         position: relative;
+        font-size: pxToRem(20px);
         i {
             position: absolute;
             left: 50%;
             top: 50%;
+        }
+        span {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: pxToRem(10px);
         }
     }
     .lotbtn {
@@ -227,84 +238,91 @@ i {
         border-radius: 5px;
         position: relative;
     }
+    .active {
+        background-image: url('../images/hover.png') !important;
+        color: #ffde50 !important;
+    }
     .icon-yellow {
         background-image: url('../images/block_yellow.png');
+        color: #ad710a;
     }
     .icon-green {
         background-image: url('../images/block_green.png');
+        color: #156f36;
     }
     .icon-blue {
         background-image: url('../images/block_blue.png');
+        color: #1273b1;
     }
     .icon-redpacket8 {
         @include background('../images/redpacket8.png',
-        69px,
-        94px);
-        margin-left: pxToRem(-35px);
-        margin-top: pxToRem(-47px);
+        48px,
+        61px);
+        margin-left: pxToRem(-24px);
+        margin-top: pxToRem(-40px);
     }
     .icon-lamb {
         @include background('../images/lamb.png',
-        98px,
-        89px);
-        margin-left: pxToRem(-49px);
-        margin-top: pxToRem(-45px);
+        96px,
+        49px);
+        margin-left: pxToRem(-48px);
+        margin-top: pxToRem(-35px);
     }
     .icon-globe {
         @include background('../images/globe.png',
-        137px,
-        105px);
-        margin-left: pxToRem(-68px);
-        margin-top: pxToRem(-53px);
+        63px,
+        76px);
+        margin-left: pxToRem(-32px);
+        margin-top: pxToRem(-48px);
     }
     .icon-clock {
         @include background('../images/clock.png',
         141px,
-        84px);
+        45px);
         margin-left: pxToRem(-70px);
-        margin-top: pxToRem(-42px);
+        margin-top: pxToRem(-33px);
     }
     .icon-iphone2 {
         @include background('../images/iphone2.png',
-        61px,
-        100px);
-        margin-left: pxToRem(-30px);
-        margin-top: pxToRem(-50px);
+        56px,
+        73px);
+        margin-left: pxToRem(-28px);
+        margin-top: pxToRem(-47px);
     }
     .icon-machine {
         @include background('../images/bread_machine.png',
-        117px,
-        98px);
-        margin-left: pxToRem(-59px);
-        margin-top: pxToRem(-50px);
+        76px,
+        69px);
+        margin-left: pxToRem(-38px);
+        margin-top: pxToRem(-45px);
     }
     .icon-robot2 {
         @include background('../images/robot2.png',
-        97px,
-        104px);
-        margin-left: pxToRem(-48px);
-        margin-top: pxToRem(-52px);
+        52px,
+        79px);
+        margin-left: pxToRem(-26px);
+        margin-top: pxToRem(-50px);
     }
     .icon-cleaner {
         @include background('../images/water_cleaner.png',
-        97px,
-        103px);
-        margin-left: pxToRem(-48px);
-        margin-top: pxToRem(-52px);
+        40px,
+        80px);
+        margin-left: pxToRem(-20px);
+        margin-top: pxToRem(-50px);
     }
     .icon-printer {
         @include background('../images/printer.png',
-        137px,
-        92px);
-        margin-left: pxToRem(-68px);
-        margin-top: pxToRem(-46px);
+        91px,
+        56px);
+        margin-left: pxToRem(-45px);
+        margin-top: pxToRem(-38px);
     }
     .icon-heater {
         @include background('../images/water_heater.png',
-        136px,
-        104px);
-        margin-left: pxToRem(-68px);
-        margin-top: pxToRem(-52px);
+        44px,
+        79px);
+        margin-left: pxToRem(-22px);
+        margin-top: pxToRem(-50px);
     }
     .icon-lotterybtn {
         @include background('../images/lottery_btn.png',
@@ -360,27 +378,42 @@ i {
         line-height: pxToRem(60px);
         &>div:not(:nth-child(2)) {
             width: pxToRem(148px);
+            
         }
         &>div:nth-child(2) {
             width: pxToRem(299px);
         }
+        
+    }
+    .citem {
+        &>div {
+             @include ellipsis();
+             text-align: center !important;
+        }
+    }
+    .listcont {
+        width: 100%;
+        height: pxToRem(300px);
+        overflow: hidden;
     }
     .listbody {
         width: 100%;
-        height: pxToRem(300px);
+        // height: pxToRem(300px);
+        // overflow: hidden;
         &>li {
             // @extend .border-top;
-            @include mborder('top', #b92b26);
+            @include mborder('top',
+            #b92b26);
         }
     }
 }
 
 .rulecont {
-    font-size: pxToRem(16px);
+    font-size: pxToRem(20px);
     color: #fff2d7;
     padding: 0 pxToRem(36px);
     margin-top: pxToRem(30px);
-    line-height: pxToRem(24px);
+    line-height: pxToRem(30px);
     span {
         font-weight: bold;
     }
@@ -388,6 +421,7 @@ i {
         width: 100%;
         display: flex;
         display: -webkit-box;
+        text-align: justify;
         &>div:first-child {
             width: 5%;
         }
@@ -439,7 +473,7 @@ i {
 }
 
 .qmtips {
-    width: pxToRem(260px);
+    width: pxToRem(360px);
     height: pxToRem(60px);
     line-height: pxToRem(60px);
     font-size: pxToRem(20px);
@@ -452,7 +486,6 @@ i {
 }
 
 $table-border-color: #fff2d7;
-
 .tcont {
     width: pxToRem(510px);
     height: pxToRem(120px);
@@ -461,35 +494,333 @@ $table-border-color: #fff2d7;
     text-align: center;
     line-height: pxToRem(30px);
     margin: pxToRem(20px) auto;
-    @include mborder('top', $table-border-color);
-    @include mborder('bottom', $table-border-color);
+    @include mborder('top',
+    $table-border-color);
+    @include mborder('bottom',
+    $table-border-color);
     li {
-    	width: 100%;
-    	height: pxToRem(30px);
-    	display: flex;
-    	display: -webkit-box;
-    	&>div:first-child {
-    		width: pxToRem(270px);
-    		@include mborder('right', $table-border-color);
-    		@include mborder('left', $table-border-color);
-    	}
-    	&>div:last-child {
-    		width: pxToRem(240px);
-    		@include mborder('right', $table-border-color);
-    	}
+        width: 100%;
+        height: pxToRem(30px);
+        display: flex;
+        display: -webkit-box;
+        &>div:first-child {
+            width: pxToRem(270px);
+            @include mborder('right',
+            $table-border-color);
+            @include mborder('left',
+            $table-border-color);
+        }
+        &>div:last-child {
+            width: pxToRem(240px);
+            @include mborder('right',
+            $table-border-color);
+        }
     }
     &>li:not(:last-child) {
-    	@include mborder('bottom', $table-border-color);
+        @include mborder('bottom',
+        $table-border-color);
     }
 }
 
 .icon-bg2 {
-	@include background('../images/bg2.png', 750px, 46px);
+    @include background('../images/bg2.png',
+    750px,
+    47px);
 }
+
 .bottomcont {
-	width: 100%;
-	min-height: pxToRem(100px);
-	background-color: #feeddo;
+    width: 100%;
+    min-height: pxToRem(100px);
+    background-color: #feedd0;
+    padding: pxToRem(30px) 0 pxToRem(150px) 0;
+    .icon-title3 {
+        @include background('../images/title2.png',
+        608px,
+        116px);
+        margin: auto;
+    }
+}
+
+.detcont {
+    display: flex;
+    display: -webkit-box;
+    padding: pxToRem(30px);
+    text-align: center;
+    .icon-redpag-tuandai {
+        @include background('../images/redpacket2.png',
+        387px,
+        280px);
+    }
+    &>div:first-child {
+        width: pxToRem(400px);
+    }
+    &>div:last-child {
+        width: pxToRem(290px);
+    }
+    // span {
+    // 	width: 100%;
+    // 	text-align: center;
+    // }
+    .txt1 {
+        font-size: pxToRem(36px);
+        color: #f4423c;
+        font-weight: bold;
+        height: pxToRem(40px);
+        line-height: pxToRem(60px);
+    }
+    .txt2 {
+        font-size: pxToRem(18px);
+        color: #e36b00;
+        height: pxToRem(26px);
+        .num {
+            color: #ff0b16;
+        }
+    }
+    .sharebtn {
+        @include background('../images/btn.png',
+        270px,
+        61px);
+        margin: pxToRem(20px) auto;
+    }
+}
+
+$share-color: #ba1f1a;
+.sharerule {
+    color: $share-color !important;
+    .stcont {
+        width: pxToRem(510px);
+        height: pxToRem(120px);
+        font-size: pxToRem(16px);
+        color: $share-color;
+        text-align: center;
+        line-height: pxToRem(30px);
+        margin: pxToRem(20px) auto;
+        @include mborder('top',
+        $share-color);
+        @include mborder('bottom',
+        $share-color);
+        li {
+            width: 100%;
+            height: pxToRem(30px);
+            display: flex;
+            display: -webkit-box;
+            &>div:first-child {
+                width: pxToRem(270px);
+                @include mborder('right',
+                $share-color);
+                @include mborder('left',
+                $share-color);
+            }
+            &>div:last-child {
+                width: pxToRem(240px);
+                @include mborder('right',
+                $share-color);
+            }
+        }
+        &>li:not(:last-child) {
+            @include mborder('bottom',
+            $share-color);
+        }
+    }
+}
+
+.float-bottom {
+    width: pxToRem(750px);
+    height: pxToRem(100px);
+    background-color: #ffde00;
+    color: #f4322b;
+    font-size: pxToRem(34px);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    display: -webkit-box;
+    text-align: center;
+    // line-height: pxToRem(60px);
+    font-weight: bold;
+    padding: pxToRem(30px) 0;
+    z-index: 10;
+    &>div {
+        width: pxToRem(250px);
+        height: 100%;
+    }
+    &>div:not(:last-child) {
+        @include mborder('right',
+        #f4322b);
+    }
+    a {
+        color: #f4322b !important;
+    }
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    transform: translateZ(0);
+    display: none;
+}
+
+.masker {
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.popup {
+	position: absolute;
+	left: 50%;
+	top: 20%;
+	margin-left: pxToRem(-301px);
+	font-size: pxToRem(34px);
+	color: #f5e4c8;
+	text-align: center;
+	line-height: pxToRem(46px);
+	padding: 0 pxToRem(55px);
+	z-index: 1000;
+}
+.redpag-popup {
+	@include background('../images/popup3.png', 602px, 490px);
+	padding: 0 !important;
+	color: #fff15a;
+	span {
+		font-size: pxToRem(28px);
+		color: #f5e4c8;
+		width: 100%;
+		height: pxToRem(90px);
+		line-height: pxToRem(100px);
+		font-weight: bold;
+	}
+	.pag-bg {
+		width: pxToRem(160px);
+		height: pxToRem(181px);
+		position: absolute;
+		bottom: pxToRem(130px);
+		border-radius: 5px;
+	}
+	.selected {
+		background-color: #ffc435;
+	}
+	.cont-left {
+		left: pxToRem(30px);
+	}
+	.cont-right {
+		right: pxToRem(30px);
+	}
+	.cont-center {
+		left: 50%;
+		margin-left: pxToRem(-80px);
+	}
+	.icon-redpackage {
+		@include background('../images/redpacket_bg.png', 140px, 161px);
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: pxToRem(-70px);
+		margin-top: pxToRem(-80px);
+		font-size: pxToRem(38px);
+		line-height: pxToRem(200px);
+	}
+	.dot {
+		width: pxToRem(50px);
+		height: pxToRem(50px);
+		border-radius: pxToRem(50px);
+		background-color: #ff0800;
+		line-height: pxToRem(50px);
+		color: #fff15a;
+		font-size: pxToRem(36px);
+		position: absolute;
+		top: pxToRem(-14px);
+		right: pxToRem(-8px);
+	}
+
+}
+.spopup {
+    padding-top: pxToRem(60px) !important;
+}
+
+.tips-popup {
+    @include background('../images/popup1.png',
+    602px,
+    426px);
+    padding-top: pxToRem(130px);
+}
+.btn-popup {
+	@include background('../images/popup2.png', 602px, 426px);
+	padding-top: pxToRem(110px);
+}
+.disable-popup,.disable-popup2,.xspresent-popup,.xslimit-popup, .redpag-popup, .pick-popup {
+	display: none;
+}
+.popbtn {
+	position: absolute;
+	bottom: pxToRem(30px);
+	color: #fff;
+	text-align: center;
+	font-size: pxToRem(28px);
+	line-height: pxToRem(67px);
+}
+.btn-left {
+	left: pxToRem(60px);
+}
+.btn-right {
+	right: pxToRem(60px);
+}
+.btn-center {
+	left: 50%;
+	margin-left: pxToRem(-107px);
+}
+.btn-yellow {
+	@include background('../images/btn2.png', 214px, 67px);
+	// line-height: pxToRem(67px);
+}
+.btn-orange {
+	@include background('../images/btn3.png', 214px, 67px);
+	// line-height: pxToRem(67px);
+}
+.btn-grey {
+	@include background('../images/disbtn.png', 214px, 67px);
 }
 
 
+.closecont {
+    position: absolute;
+    right: pxToRem(50px);
+    top: 12%;
+    width: pxToRem(100px);
+    height: pxToRem(100px);
+    .icon-close {
+        @include background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAgBAMAAABulgz5AAAAJ1BMVEUAAAD///7///7///7///7///7///7///7///7///7///7///7///4VXAU4AAAADHRSTlMAVbvu3SKIZswRmXccrFFiAAAAiklEQVQoz13RwQnCUBAG4YkQ0FvABuR14NmbBytIAa8EwQ6swBLsJm0lh/wMmz0u32GHZZjAGTsMd3DmDlwnJC+oaP5DRQ0qOt0gSBIkCQoRSUQhohBRiChE9OUw5+W4aZ/9cIus24l1FlXUrJMESURGi8andf4oyB+JQoIeIaIu8c2FbODNr24urKHcECTRawI6AAAAAElFTkSuQmCC',
+        33px,
+        32px);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+    }
+}
+.share-popup {
+    @include background('../images/share.png', 628px, 488px);
+    position: absolute;
+    top: pxToRem(30px);
+    right: pxToRem(30px);
+    display: none;
+}
+.rcommonts {
+    width: 100%;
+    text-align: center;
+    font-size: pxToRem(20px);
+    color: #B6B6B6;
+    margin-top: pxToRem(40px);
+}

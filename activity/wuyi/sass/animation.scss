@@ -80,3 +80,36 @@
 .fadeIn {
 	animation: fadeIn .9s ease-in-out 1.8s backwards;
 }
+
+@keyframes move-list {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+        display: block !important;
+    }
+    100% {
+        // opacity: 0;
+        transform: translateY(-50%);
+         display: block !important;
+    }
+}
+
+@-webkit-keyframes move-list {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+         display: block !important;
+    }
+    100% {
+        // opacity: 0;
+        -webkit-transform: translateY(-50%);
+         display: block !important;
+    }
+}
+.scroll {
+	 // animation: move-list 5s linear infinite;
+	animation-name: move-list;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
