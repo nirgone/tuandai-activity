@@ -10,16 +10,16 @@
             background-color: #f9f1c0;
             border: none;
             width: 100%;
-            height: pxToRem(152px);
+            height: pxToRem(222px);
             // max-height: 76px;
             padding: pxToRem(26px) pxToRem(20px);
             border-radius: 3px;
             box-sizing: border-box;
-            font-size: pxToRem(26px);
+            font-size: 13px;
             line-height: pxToRem(38px);
             color: #f7672a;
             &::-webkit-input-placeholder {
-                font-size: pxToRem(24px);
+                font-size: 12px;
                 line-height: pxToRem(36px);
                 color: #cfaa75;
             }
@@ -47,7 +47,7 @@
     		// display: none;
     		z-index:100;
     		overflow:hidden;
-    		background-size:cover;
+    		background-size:contain;
     		background-position:center;
     		background-repeat: no-repeat;
     		.del {
@@ -104,9 +104,10 @@
     	color:#ae7524;
     	text-align: center;
     	padding-top:pxToRem(44px);
+    	padding-bottom:pxToRem(12px);
     }
     .btn-red {
-    	margin-top:pxToRem(160px);
+    	margin-top:pxToRem(64px);
     }
 }
 
