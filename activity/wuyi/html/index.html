@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>wuyi</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="headcont">
+            <i class="icon-title-big zoomIn"></i>
+        </div>
+        <div class="iconscont slideInRight">
+            <i class="icon-tuandai"></i>
+            <i class="icon-redpag1"></i>
+            <i class="icon-phone1"></i>
+            <i class="icon-computer1"></i>
+            <i class="icon-robot1"></i>
+            <i class="icon-subtitle fadeIn"></i>
+        </div>
+        <div class="bodycont">
+            <div class="xrcont">
+                <i class="icon-title1"></i>
+                <i class="icon-xrtitle"></i>
+                <ul class="lotcont">
+                    <li>
+                        <div class="lotitem icon-yellow"><i class="icon-redpacket8"></i></div>
+                        <div class="lotitem icon-green"><i class="icon-lamb"></i></div>
+                        <div class="lotitem icon-blue"><i class="icon-globe"></i></div>
+                        <div class="lotitem icon-yellow"><i class="icon-clock"></i></div>
+                    </li>
+                    <li>
+                        <div class="lotitem icon-green"><i class="icon-iphone2"></i></div>
+                        <div class="lotbtn"><i class="icon-lotterybtn"></i></div>
+                        <div class="lotitem icon-green"><i class="icon-machine"></i></div>
+                    </li>
+                    <li>
+                        <div class="lotitem icon-blue"><i class="icon-robot2"></i></div>
+                        <div class="lotitem icon-green"><i class="icon-cleaner"></i></div>
+                        <div class="lotitem icon-yellow"><i class="icon-printer"></i></div>
+                        <div class="lotitem icon-blue"><i class="icon-heater"></i></div>
+                    </li>
+                </ul>
+                <div class="billboardcont">
+                    <i class="icon-bname1 bname"></i>
+                    <div class="btitle bitem">
+                        <div>时间</div>
+                        <div>昵称</div>
+                        <div>奖品</div>
+                    </div>
+                    <ul class="listbody">
+                        <li class="bitem">
+                            <div>4月19号</div>
+                            <div>团贷网团贷网</div>
+                            <div>苹果6s</div>
+                        </li>
+                        <li class="bitem">
+                            <div>4月19号</div>
+                            <div>团贷网团贷网</div>
+                            <div>苹果6s</div>
+                        </li>
+                        <li class="bitem">
+                            <div>4月19号</div>
+                            <div>团贷网团贷网</div>
+                            <div>苹果6s</div>
+                        </li>
+                        <li class="bitem">
+                            <div>4月19号</div>
+                            <div>团贷网团贷网</div>
+                            <div>苹果6s</div>
+                        </li>
+                        <li class="bitem">
+                            <div>4月19号</div>
+                            <div>团贷网团贷网</div>
+                            <div>苹果6s</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rulecont">
+                <span>活动规则：</span>
+                <div class="ritem">
+                    <div>1、</div>
+                    <div>活动期间新注册用户单笔投资≥2000元，即可参与抽奖，每人最多1次抽奖机会；</div>
+                </div>
+                <div class="ritem">
+                    <div>2、</div>
+                    <div>红包规则：本次投资红包领取期限为自获得红包起的30天内，使用期限为自领取红包后的 30天内；具体红包使用规则详见团宝箱说明；
+                    </div>
+                </div>
+                <div class="ritem">
+                    <div>3、</div>
+                    <div>实物奖品规则：本次实物奖品将于活动结束后的15个工作日内统一发放；用户需于中奖后 的3个工作日内登录团贷网领取，并填写相关的收件信息，过期领取则无效。
+                    </div>
+                </div>
+            </div>
+            <div class="qmcont">
+                <i class="icon-title2"></i>
+                <div class="turntablecont">
+                    <div class="turntable"></div>
+                    <div class="startbtn"></div>
+                </div>
+                <div class="qmtips">您目前还有
+                    <font>X</font>次抽奖机会</div>
+                <div class="billboardcont">
+                    <i class="icon-bname2 bname"></i>
+                    <div class="btitle bitem">
+                        <div>时间</div>
+                        <div>昵称</div>
+                        <div>奖品</div>
+                    </div>
+                    <ul class="listbody">
+                        <li class="bitem">
+                            <div>4月19号</div>
+                            <div>团贷网团贷网</div>
+                            <div>苹果6s</div>
+                        </li>
+                        <li class="bitem">
+                            <div>4月19号</div>
+                            <div>团贷网团贷网</div>
+                            <div>苹果6s</div>
+                        </li>
+                        <li class="bitem">
+                            <div>4月19号</div>
+                            <div>团贷网团贷网</div>
+                            <div>苹果6s</div>
+                        </li>
+                        <li class="bitem">
+                            <div>4月19号</div>
+                            <div>团贷网团贷网</div>
+                            <div>苹果6s</div>
+                        </li>
+                        <li class="bitem">
+                            <div>4月19号</div>
+                            <div>团贷网团贷网</div>
+                            <div>苹果6s</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="rulecont">
+                    <span>活动规则：</span>
+                    <div class="ritem">
+                        <div>1、</div>
+                        <div>
+                            <div>活动期间不分新老用户，只要达到以下条件，即可参与抽奖（注：累计投资金额不包含供 应链及资产标）：
+                            </div>
+                            <ul class="tcont">
+                                <li>
+                                    <div>累计投资金额</div>
+                                    <div>抽奖次数</div>
+                                </li>
+                                <li>
+                                    <div>1万≤累计投资额＜5万</div>
+                                    <div>1</div>
+                                </li>
+                                <li>
+                                    <div>5万≤累计投资额＜10万</div>
+                                    <div>1+1</div>
+                                </li>
+                                <li>
+                                    <div>10万≤累计投资额</div>
+                                    <div>1+1+1</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ritem">
+                        <div>2、</div>
+                        <div>红包规则：本次投资红包领取期限为自获得红包起的30天 内，使用期限为自领取红包后 的30天内；具体红包使用规 则详见团宝箱说明；</div>
+                    </div>
+                    <div class="ritem">
+                        <div>3、</div>
+                        <div>实物奖品规则：本次实物奖品将于活动结束后的15个工作日内统一发放；用户需于中奖后 的3个工作日内登录团贷网领取，并填写相关的收件信息，过期领取则无效。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <i class="icon-bg2"></i>
+        <div class="bottomcont">
+        	
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

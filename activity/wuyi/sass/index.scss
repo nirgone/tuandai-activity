@@ -1,0 +1,495 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+@import "./animation.scss";
+html,
+body {
+    position: relative;
+    // height: 100%;
+    // width: 100%;
+    // overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+    text-decoration: none;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+i,
+span {
+    display: inline-block;
+}
+
+i {
+    background-size: 100% 100%;
+}
+
+@mixin mborder($pos,$color) {
+    position: relative;
+    @if $pos=='top' {
+        &:before {
+            content: "";
+            position: absolute;
+            #{$pos}: 0px;
+            left: 0px;
+            right: 0px;
+            border-#{$pos}: 1px solid $color;
+            transform: scaleY(.5);
+            transform-origin: 0 0;
+        }
+    }
+    @else if $pos=='bottom' {
+        &:after {
+            content: "";
+            position: absolute;
+            #{$pos}: 0px;
+            left: 0px;
+            right: 0px;
+            border-#{$pos}: 1px solid $color;
+            transform: scaleY(.5);
+            transform-origin: 0 0;
+        }
+    }
+    @else if $pos == 'left' {
+    	&:before {
+    	    content: "";
+    	    position: absolute;
+    	    top: 0px;
+    	    bottom: 0px;
+    	    #{$pos}: 0px;
+    	    border-#{$pos}: 1px solid $color;
+    	    transform: scaleX(.5);
+    	    transform-origin: 0 0;
+    	}
+    }
+    @else {
+        &:after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        #{$pos}: 0px;
+        border-#{$pos}: 1px solid #d5d5d5;
+        transform: scaleX(.5);
+        transform-origin: 0 0;
+    }
+    }
+}
+
+.content {
+    background-color: $background-color-red;
+}
+
+.headcont {
+    // @include background('../images/bg1.png',750px,696px);
+    background-image: url('../images/bg1.png');
+    width: 100%;
+    height: pxToRem(696px);
+    background-size: cover;
+    background-color: $background-color-red;
+}
+
+.icon-title-big {
+    position: absolute;
+    left: 50%;
+    top: pxToRem(84px);
+    margin-left: pxToRem(-290px);
+    @include background('../images/big_title.png',
+    581px,
+    310px);
+}
+
+.iconscont {
+    width: 100%;
+    min-height: pxToRem(400px);
+    position: absolute;
+    top: pxToRem(386px);
+    // left: pxToRem(36px); 
+    i {
+        position: absolute;
+    }
+}
+
+.icon-tuandai {
+    @include background('../images/soldier.png',
+    313px,
+    350px);
+    left: pxToRem(36px);
+    top: 0;
+}
+
+.icon-redpag1 {
+    @include background('../images/redpacker1.png',
+    63px,
+    107px);
+    left: pxToRem(282px);
+    top: pxToRem(210px);
+}
+
+.icon-computer1 {
+    @include background('../images/computer1.png',
+    115px,
+    88px);
+    right: pxToRem(144px);
+    top: pxToRem(228px);
+}
+
+.icon-phone1 {
+    @include background('../images/iphone1.png',
+    80px,
+    96px);
+    left: pxToRem(368px);
+    top: pxToRem(210px);
+}
+
+.icon-robot1 {
+    @include background('../images/robot1.png',
+    53px,
+    135px);
+    right: pxToRem(54px);
+    top: pxToRem(200px);
+}
+
+.icon-subtitle {
+    @include background('../images/sub_title.png',
+    351px,
+    91px);
+    right: pxToRem(54px);
+    top: pxToRem(12px);
+}
+
+.bodycont {
+    width: 100%;
+    background-color: $background-color-red;
+    min-height: pxToRem(200px);
+    padding: pxToRem(100px) 0 pxToRem(50px) 0;
+}
+
+.xrcont {
+    width: 100%;
+    .icon-title1 {
+        @include background('../images/title1.png',
+        608px,
+        116px);
+        margin: auto;
+    }
+    .icon-xrtitle {
+        @include background('../images/sub_title2.png',
+        696px,
+        38px);
+        margin: auto;
+        margin-top: pxToRem(50px);
+    }
+}
+
+.lotcont {
+    width: pxToRem(711px);
+    height: pxToRem(448px);
+    background-color: #af1611;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: pxToRem(70px);
+    position: relative;
+    padding: pxToRem(12px) 0;
+    &>li {
+        width: 100%;
+        display: flex;
+        display: -webkit-box;
+        margin-top: pxToRem(16px);
+    }
+    .lotitem {
+        width: pxToRem(161px);
+        height: pxToRem(131px);
+        margin-left: pxToRem(13px);
+        // background-image: url('../images/block_blue.png');
+        background-size: cover;
+        position: relative;
+        i {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+    }
+    .lotbtn {
+        width: pxToRem(335px);
+        height: pxToRem(131px);
+        margin-left: pxToRem(13px);
+        background-color: #d1403b;
+        border-radius: 5px;
+        position: relative;
+    }
+    .icon-yellow {
+        background-image: url('../images/block_yellow.png');
+    }
+    .icon-green {
+        background-image: url('../images/block_green.png');
+    }
+    .icon-blue {
+        background-image: url('../images/block_blue.png');
+    }
+    .icon-redpacket8 {
+        @include background('../images/redpacket8.png',
+        69px,
+        94px);
+        margin-left: pxToRem(-35px);
+        margin-top: pxToRem(-47px);
+    }
+    .icon-lamb {
+        @include background('../images/lamb.png',
+        98px,
+        89px);
+        margin-left: pxToRem(-49px);
+        margin-top: pxToRem(-45px);
+    }
+    .icon-globe {
+        @include background('../images/globe.png',
+        137px,
+        105px);
+        margin-left: pxToRem(-68px);
+        margin-top: pxToRem(-53px);
+    }
+    .icon-clock {
+        @include background('../images/clock.png',
+        141px,
+        84px);
+        margin-left: pxToRem(-70px);
+        margin-top: pxToRem(-42px);
+    }
+    .icon-iphone2 {
+        @include background('../images/iphone2.png',
+        61px,
+        100px);
+        margin-left: pxToRem(-30px);
+        margin-top: pxToRem(-50px);
+    }
+    .icon-machine {
+        @include background('../images/bread_machine.png',
+        117px,
+        98px);
+        margin-left: pxToRem(-59px);
+        margin-top: pxToRem(-50px);
+    }
+    .icon-robot2 {
+        @include background('../images/robot2.png',
+        97px,
+        104px);
+        margin-left: pxToRem(-48px);
+        margin-top: pxToRem(-52px);
+    }
+    .icon-cleaner {
+        @include background('../images/water_cleaner.png',
+        97px,
+        103px);
+        margin-left: pxToRem(-48px);
+        margin-top: pxToRem(-52px);
+    }
+    .icon-printer {
+        @include background('../images/printer.png',
+        137px,
+        92px);
+        margin-left: pxToRem(-68px);
+        margin-top: pxToRem(-46px);
+    }
+    .icon-heater {
+        @include background('../images/water_heater.png',
+        136px,
+        104px);
+        margin-left: pxToRem(-68px);
+        margin-top: pxToRem(-52px);
+    }
+    .icon-lotterybtn {
+        @include background('../images/lottery_btn.png',
+        241px,
+        74px);
+        margin-left: pxToRem(-120px);
+        margin-top: pxToRem(-37px);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+    }
+}
+
+.billboardcont {
+    @include background('../images/list.png',
+    695px,
+    514px);
+    margin: auto;
+    margin-top: pxToRem(34px);
+    padding: 0 pxToRem(50px);
+    padding-top: pxToRem(140px);
+    text-align: center;
+    position: relative;
+    .icon-bname1 {
+        @include background('../images/list_title.png',
+        186px,
+        43px);
+    }
+    .bname {
+        position: absolute;
+        left: 50%;
+        top: pxToRem(36px);
+        margin-left: pxToRem(-105px);
+    }
+    .icon-bname2 {
+        @include background('../images/list_title2.png',
+        186px,
+        42px);
+        // position: absolute;
+        // left: 50%;
+        // top: pxToRem(36px);
+        // margin-left: pxToRem(-105px);
+    }
+    .btitle {
+        font-weight: bold;
+    }
+    .bitem {
+        font-size: pxToRem(24px);
+        color: #b92b26;
+        display: flex;
+        display: -webkit-box;
+        height: pxToRem(60px);
+        line-height: pxToRem(60px);
+        &>div:not(:nth-child(2)) {
+            width: pxToRem(148px);
+        }
+        &>div:nth-child(2) {
+            width: pxToRem(299px);
+        }
+    }
+    .listbody {
+        width: 100%;
+        height: pxToRem(300px);
+        &>li {
+            // @extend .border-top;
+            @include mborder('top', #b92b26);
+        }
+    }
+}
+
+.rulecont {
+    font-size: pxToRem(16px);
+    color: #fff2d7;
+    padding: 0 pxToRem(36px);
+    margin-top: pxToRem(30px);
+    line-height: pxToRem(24px);
+    span {
+        font-weight: bold;
+    }
+    .ritem {
+        width: 100%;
+        display: flex;
+        display: -webkit-box;
+        &>div:first-child {
+            width: 5%;
+        }
+        &>div:last-child {
+            width: 95%;
+        }
+    }
+}
+
+.qmcont {
+    margin-top: pxToRem(70px);
+    width: 100%;
+    .icon-title2 {
+        @include background('../images/sub_title3.png',
+        696px,
+        38px);
+        margin: auto;
+    }
+}
+
+.turntablecont {
+    @include background('../images/dial_bottom.png',
+    659px,
+    720px);
+    margin: auto;
+    margin-top: pxToRem(60px);
+    position: relative;
+    z-index: 1;
+    .turntable {
+        @include background('../images/dial.png',
+        613px,
+        608px);
+        position: absolute;
+        left: 50%;
+        top: pxToRem(24px);
+        margin-left: pxToRem(-306px);
+        z-index: 2;
+    }
+    .startbtn {
+        @include background('../images/dial_center.png',
+        257px,
+        173px);
+        position: absolute;
+        left: 37%;
+        top: 33.6%;
+        // margin-left: pxToRem(-128px);
+        z-index: 3;
+    }
+}
+
+.qmtips {
+    width: pxToRem(260px);
+    height: pxToRem(60px);
+    line-height: pxToRem(60px);
+    font-size: pxToRem(20px);
+    text-align: center;
+    border: 1px solid #ffe6b1;
+    border-radius: pxToRem(30px);
+    color: #ffe6b1;
+    margin: auto;
+    margin-top: pxToRem(30px);
+}
+
+$table-border-color: #fff2d7;
+
+.tcont {
+    width: pxToRem(510px);
+    height: pxToRem(120px);
+    font-size: pxToRem(16px);
+    color: $table-border-color;
+    text-align: center;
+    line-height: pxToRem(30px);
+    margin: pxToRem(20px) auto;
+    @include mborder('top', $table-border-color);
+    @include mborder('bottom', $table-border-color);
+    li {
+    	width: 100%;
+    	height: pxToRem(30px);
+    	display: flex;
+    	display: -webkit-box;
+    	&>div:first-child {
+    		width: pxToRem(270px);
+    		@include mborder('right', $table-border-color);
+    		@include mborder('left', $table-border-color);
+    	}
+    	&>div:last-child {
+    		width: pxToRem(240px);
+    		@include mborder('right', $table-border-color);
+    	}
+    }
+    &>li:not(:last-child) {
+    	@include mborder('bottom', $table-border-color);
+    }
+}
+
+.icon-bg2 {
+	@include background('../images/bg2.png', 750px, 46px);
+}
+.bottomcont {
+	width: 100%;
+	min-height: pxToRem(100px);
+	background-color: #feeddo;
+}
+
+

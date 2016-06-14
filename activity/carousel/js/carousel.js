@@ -58,6 +58,7 @@ var Carousel = (function($) {
         // console.log(_cantransition);
         // if (_dxrad >= Math.PI) _dxrad = _dxrad - Math.PI;
         if (_cantransition) {
+            setTimeout(_transition, 1000 / 60 / 10);
             // setTimeout(this.uid + ".transition(" + n + ", " + deg + "," + diff + ")", 1000 / 60 / 10);
             // _transition_timeout = null;
             _transition_timeout = setTimeout(function() {
