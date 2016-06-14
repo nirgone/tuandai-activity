@@ -22,10 +22,14 @@ a {
 }
 
 .btn {
-
+    height: pxToRem(88px);
+    line-height: pxToRem(88px);
+    text-align: center;
+    font-size: pxToRem(30px);
 }
 
 .btn-red {
+    color: #ffeb71;
 	@extend .btn;
 }
 
