@@ -16,9 +16,27 @@
 <!-- endbuild -->
 </head>
 <body>
+	<div class="content upload-content">
+		<section class="text-sec">
+			<textarea name="text" id="text_area" placeholder="一直以来想对老爸说的话～今天，全都告诉他！（不超过70字）" maxLength="70"></textarea>
+		</section>
+		<section class="upload-sec" id="upload_sec">
+			<div class="upload-part">
+				<input type="file" accept="image/*" id="upload_input">
+			</div>
+			<!-- <div class="img-container">
+				<i class="del"></i>
+			</div> -->
+		</section>
+		<p class="declare">严禁上传违规图片，违者取消活动参与资格并追究相关责任</p>
+		<div class="btn-red">
+			马上提交
+		</div>
+	</div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
-<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/vendor/lrz/lrz.bundle.js"></script>
+<script src="../js/upload.js" type="text/javascript" charset="utf-8"></script>
 </html>
