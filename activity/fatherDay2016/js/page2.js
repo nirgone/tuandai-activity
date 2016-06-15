@@ -1,7 +1,7 @@
 (function() {
     FastClick.attach(document.body);
     var mySwiper;
-    var isLogin = false;
+    var isLogin = true;
     //初始化数据
     function init() {
         var temp = "";
@@ -69,7 +69,7 @@
             Jsbridge.toAppLogin();
             return;
         }
-        var type = 2;
+        var type = 0;
         if (type == 0) {
             //重复点赞
             $(".ptitle").html('抱歉');

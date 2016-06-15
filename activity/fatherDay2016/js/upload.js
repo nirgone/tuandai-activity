@@ -51,23 +51,5 @@
     	console.log("上传图片和文字");
     });
 
-    //冒泡提示
-    function toast(msg, duration) {
-        duration = isNaN(duration) ? 2000 : duration;
-        var m = document.createElement('div');
-        $(m).addClass("toast-content");
-        m.innerHTML = msg;
-        m.style.cssText = "width:70%; min-width:150px; background:#000; opacity:0.5;  color:#fff; padding:10px 10px; text-align:center; border-radius:5px; position:fixed; bottom:18%; left:15%; margin-left:-10px; z-index:999999; font-weight:bold;font-size:16px;";
-        document.body.appendChild(m);
-        setTimeout(function() {
-            var d = 0.5;
-            m.style.webkitTransition = '-webkit-transform ' + d + 's ease-in, opacity ' + d + 's ease-in';
-            m.style.opacity = '0';
-            setTimeout(function() {
-                if ($(".toast-content").size() > 0) {
-                    document.body.removeChild(m);
-                }
-            }, d * 1000);
-        }, duration);
-    };
+    
 })();
