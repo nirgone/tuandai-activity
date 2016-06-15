@@ -22,14 +22,20 @@ a {
 }
 
 .btn {
-
+    height: pxToRem(88px);
+    line-height: pxToRem(80px);
+    text-align: center;
+    font-size: pxToRem(30px);
+    margin:auto;
 }
 
 .btn-red {
+    color: #ffeb71;
 	@extend .btn;
+    @include background("../images/btn.png", 710px, 88px);
 }
 
 .btn-line {
 	@extend .btn;
-	
+	@include background("../images/btn2.png", 710px, 88px);
 }
