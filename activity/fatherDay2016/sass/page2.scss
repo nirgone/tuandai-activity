@@ -1,0 +1,64 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+.act-content {
+    width: 100%;
+    overflow: hidden;
+    padding-top: pxToRem(60px);
+    div {
+        box-sizing: border-box;
+    }
+    .slidecont {
+        width: pxToRem(330px);
+        height: pxToRem(500px);
+        // background-color: #fff;
+        border-radius: 5px;
+        position: relative;
+        .icon-picture {
+            width: pxToRem(280px);
+            height: pxToRem(400px);
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: pxToRem(-140px);
+            margin-top: pxToRem(-200px);
+        }
+        .icon-tag {
+            width: pxToRem(120px);
+            height: pxToRem(175px);
+            @include background('../images/tag.png', 120px, 175px);
+            background-size: cover;
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            right: pxToRem(-10px);
+            font-size: pxToRem(26px);
+            color: #fff;
+            opacity: 0;
+            span {
+                transform: rotate(55deg);
+                width: pxToRem(160px);
+                height: pxToRem(50px);
+                position: absolute;
+                top: pxToRem(72px);
+            }
+        }
+    }
+    i,
+    span {
+        display: inline-block;
+    }
+    .swiper-container {
+        width: 140%;
+        position: absolute;
+        left: -20%;
+    }
+}
+
+.sbody {
+    overflow: hidden;
+}

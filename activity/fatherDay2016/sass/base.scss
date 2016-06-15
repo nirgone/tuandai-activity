@@ -39,3 +39,17 @@ a {
 	@extend .btn;
 	@include background("../images/btn2.png", 710px, 88px);
 }
+
+//icons--------
+.icon {
+    display:inline-block;
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position: center;
+}
+.icon-heart {
+    @extend .icon;
+    background-image:url("data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAaCAMAAAAKchUOAAAARVBMVEUAAAD/63H/63H/63H/63H/63H/63H/63H/63H/63H/63H/63H/63H/63H/63H/63H/63H/63H/63H/63H/63H/63H/63ExpjCcAAAAF3RSTlMA/vM/eB9bCOe7hc/flhClTLBoxTMr11hnMD4AAAFOSURBVCjPfZHpcsMgEIOl5b5swMf7P2qL7dRJ0/T7A6PRCO0CwMTFSw56xY3RwZOLwokm01zaszQVMofh6hhUhg0DVYTxvHmWQ7NymkIzVpnzgXCYlCzDcQZwNJDqagw5TEObqbDJ7PAgMAHgWeJMcim5veFGUzogGnVp+kpXTHl69mSdgTA0FZs5xX3k3rR5kgrFAHRtLzE2PLEym7mNJ5tT8dHTOdxYH2vqAqBwmbBW/MZpeocoHocpG3sF3djMWGZY2mtCb35l2J1+BcrMckmdLxNP2jPYJcImljuYi/txRCHt9yme2b4sND6aihSz5mo9k30tGXhU2hJT2sbCubyNajgffx4M1N61eIt3Cg1WkaaAyXOe8Acbo9tn1NRMYMffpNSPDUSKwgc0fVy0QZEVn1hJ46JoVnzEkX01yhf8Q+JAJvyDyr2E9L6XLwRHDIfPUwnqAAAAAElFTkSuQmCC");
+    width:pxToRem(35px);
+    height:pxToRem(26px);
+}
