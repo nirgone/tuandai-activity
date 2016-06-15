@@ -65,7 +65,7 @@
         .underline {
             text-decoration: underline;
         }
-        .btn-small {
+        .btn-like {
             display: block;
             width: 100%;
             height: pxToRem(48px);
@@ -81,6 +81,12 @@
                 vertical-align: pxToRem(-4px);
             }
         }
+    }
+    .loading {
+        padding-bottom:pxToRem(32px);
+        text-align: center;
+        color:#b5b5b5;
+        font-size: pxToRem(30px);
     }
 }
 
