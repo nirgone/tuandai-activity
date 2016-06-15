@@ -17,11 +17,11 @@
             });
         } else if (type == 1) {
             //赞已送完
-            Util.popup('抱歉', '您今天的爱心赞已送完</br>明天再继续支持吧！', false, '确定', function(){});
+            Util.popup('抱歉', '您今天的爱心赞已送完</br>明天再继续支持吧！', false, '确定', function() {});
         } else {
             //点赞成功
             $(".icon-zan").removeClass('zan-hollow').addClass('zan-solid');
-            Util.popup('恭喜您', '成功送出爱心赞1枚，并获得<font class="fbold">50</font>团币嘉奖</br>详情请登录会员体系查看！', false, '确定', function(){});
+            Util.popup('恭喜您', '成功送出爱心赞1枚，并获得<font class="fbold">50</font>团币嘉奖</br>详情请登录会员体系查看！', false, '确定', function() {});
 
         }
     });
@@ -33,6 +33,24 @@
     //活动首页
     $("#goMain").on('click', function() {
         window.location.href = "./index.html";
+    });
+    //分享 
+    $(".icon-share").on('click', function() {
+        if (Util.isWeiXin()) {
+            //微信分享
+            $(".mask").show();
+            $(".weixin-share").show();
+        } else if (Jsbridge.isNewVersion()) {
+            //新版分app分享
+            Jsbridge.toActivityAppInviteFriend();
+        } else {
+            //旧版本app分享
+
+        }
+    });
+    $(".mask").on('click', function() {
+        $(".mask").hide();
+        $(".weixin-share").hide();
     });
     //登录验证
     var t = Util.getParam('t'); //loginToken
