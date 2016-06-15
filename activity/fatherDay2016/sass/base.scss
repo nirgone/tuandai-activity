@@ -64,3 +64,14 @@ a {
     width:pxToRem(44px);
     height:pxToRem(44px);
 }
+.mask {
+        position: absolute;
+        z-index: 99;
+        left: 0;
+        top: 0;
+        width: 100%;
+        // height: 100%;
+        background-color: #000;
+        opacity: .8;
+        bottom: 0;
+    }
