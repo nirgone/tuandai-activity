@@ -113,6 +113,7 @@ a {
         text-align: center;
         font-size: pxToRem(48px);
         color: #f7672a;
+        display: inline-block;
         &:after {
             @include border('bottom',
             #ecdba5);

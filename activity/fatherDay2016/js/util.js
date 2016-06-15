@@ -67,13 +67,34 @@
                 closeTemp = '<i class="icon-close-white"></i>';
             }
             if ($(".popup").length > 0) {
-                
+                $(".ptitle").html(title);
+                $(".popdetcont").html(msg);
+                $(".pop-btn").html(btnTxt);
+                if (hasClose) {
+                    $(".icon-close-white").show();
+                } else {
+                    $(".icon-close-white").hide();
+                }
             } else {
                 var temp = '<div class="mask masker"></div>' +
                     '<div class="popup">' + closeTemp + '<span class="ptitle">' + title +
                     '</span><section class="popdetcont">' + msg + '</section><div class="pop-btn">' + btnTxt + '</div></div>';
-                // document.body.append('temp');
+                $("body").append(temp);
+                $("body").on('click', ".mask, .icon-close-white", function() {
+                    $(".mask").hide();
+                    $(".popup").hide();
+                });
             }
+            $(".mask").show();
+            $(".popup").show();
+            $("body").off('click', '.pop-btn').on('click', '.pop-btn', function() {
+                $(".mask").hide();
+                $(".popup").hide();
+                if (btnCallback && typeof btnCallback == "function") {
+                    btnCallback.apply(this, arguments);
+                }
+            });
+
 
         }
 
@@ -82,4 +103,4 @@
     win.Util = Util;
     // return Util;
 
-})($, window);
+})(jQuery, window);
