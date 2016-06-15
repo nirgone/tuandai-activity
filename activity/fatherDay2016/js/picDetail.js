@@ -28,11 +28,11 @@
 
     //我也要炫父
     $("#xf").on('click', function() {
-        window.location.href = "./upload.html";
+        window.location.href = "./upload.html?t=" + t + "&s=" + s;
     });
     //活动首页
     $("#goMain").on('click', function() {
-        window.location.href = "./index.html";
+        window.location.href = "./index.html?t=" + t + "&s=" + s;
     });
     //分享 
     $(".icon-share").on('click', function() {
