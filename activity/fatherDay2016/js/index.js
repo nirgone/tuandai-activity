@@ -22,10 +22,42 @@
     })
     // 隐藏规则
     function onHideRuleContent() {
+        enableScrolling();
     	ruleContentEl.hide();
     }
     // 显示规则
     function onShowRuleContent() {
+        disableScrolling();
     	ruleContentEl.show();
+    }
+
+    function scrolling(e) {
+        preventDefault(e);
+    }
+
+    function preventDefault(e) {
+        e = e || window.event;
+        if (e.preventDefault) {
+            e.preventDefault();
+        }
+        e.returnValue = false;
+    }
+
+    function disableScrolling() {
+        if (window.addEventListener) {
+            window.addEventListener('DOMMouseScroll', scrolling, false);
+            window.addEventListener('touchmove', scrolling, false);
+            window.onmousewheel = document.onmousewheel = scrolling;
+            // document.onkeydown = keydown;
+        }
+    }
+
+    function enableScrolling() {
+        if (window.removeEventListener) {
+            window.removeEventListener('DOMMouseScroll', scrolling, false);
+            window.removeEventListener('touchmove', scrolling, false);
+        }
+        // window.onmousewheel = document.onmousewheel = document.onkeydown = null;
+        window.onmousewheel = document.onmousewheel = null;
     }
 })();
