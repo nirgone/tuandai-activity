@@ -131,7 +131,7 @@ function actInit() {
 		    '	})(document, window);\n'+
 		    '	</script>\n';
 		    if(mode === 'multi') {
-		    	_adaptjs = '<!-- build:js({dist}) ../js/adapt.js -->\n'+
+		    	_adaptjs = '<!-- build:js({dist}) ../js/lib/adapt.js -->\n'+
 		    	'<script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>\n' +
 		    	'<!-- endbuild -->'
 		    }

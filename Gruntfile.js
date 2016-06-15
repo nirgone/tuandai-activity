@@ -217,7 +217,7 @@ module.exports = function(grunt) {
 			options: {
 				dest: '<%= config.activity %>/<%= config.actName %>/<%= config.dist %>'
 			},
-			html: ['<%= config.activity %>/<%= config.actName %>/html/*.html']
+			html: ['<%= config.activity %>/<%= config.actName %>/html/index.html']
 		},
 
 		// Performs rewrites based on rev and the useminPrepare configuration
@@ -409,8 +409,8 @@ module.exports = function(grunt) {
 	grunt.registerTask('build', [
 		'clean:dist',
 		// 'wiredep',
-		'useminPrepare',
 		'concurrent:dist',
+		'useminPrepare',
 		'postcss',
 		'cssmin:dist',
 		// 'concat',
