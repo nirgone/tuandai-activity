@@ -125,6 +125,7 @@
 			font-size: pxToRem(28px);
 			color: #ae7524;
 			text-align: center;
+			box-sizing:content-box;
 			&:last-child {
 				margin-right: 0;
 			}

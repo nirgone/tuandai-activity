@@ -23,15 +23,21 @@
                 loop: true,
                 centeredSlides: true,
                 // loopAdditionalSlides: 1,
+                onInit: function(swiper) {
+                    $(".swiper-slide-active").find(".piccont").addClass("to-scale");
+                    $(".swiper-slide-active").find('.icon-tag').addClass('showIcon');
+                },
                 onSlideChangeStart: function(swiper) {
+                    $(".swiper-slide").find(".piccont").removeClass("to-scale");
                     // $(".icon-picture").removeClass('enlage');
-                    $(".piccont").removeClass('enlage');
-                    $(".icon-tag").removeClass('showIcon');
-                    setTimeout(function() {
-                        // $(".swiper-slide-active").find('.icon-picture').addClass('enlage');
-                        $(".swiper-slide-active").find('.piccont').addClass('enlage');
-                        $(".swiper-slide-active").find('.icon-tag').addClass('showIcon');
-                    }, 100);
+                    // $(".piccont").removeClass('enlage');
+                    // $(".icon-tag").removeClass('showIcon');
+                    // $(".swiper-slide-active").find('.piccont').addClass('to-scale')
+                    // setTimeout(function() {
+                    //     // $(".swiper-slide-active").find('.icon-picture').addClass('enlage');
+                    //     $(".swiper-slide-active").find('.piccont').addClass('enlage');
+                    //     $(".swiper-slide-active").find('.icon-tag').addClass('showIcon');
+                    // }, 100);
 
                 },
                 onSlideChangeEnd: function(swiper) {
@@ -39,6 +45,10 @@
                     if (!pid) {
                         pid = "pic1";
                     }
+                    $(".swiper-slide-active").find(".piccont").addClass("to-scale");
+                    $(".icon-tag").removeClass('showIcon');
+                    $(".swiper-slide-active").find('.icon-tag').addClass('showIcon');
+                    
                     var picData = pictureJson[pid];
                     $(".pnum").html(picData.picNo);
                     $(".assists").html(picData.assists);

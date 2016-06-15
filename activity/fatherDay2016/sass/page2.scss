@@ -23,6 +23,9 @@ div {
             background-color: #fff;
             position: relative;
             box-shadow: pxToRem(10px) pxToRem(20px) pxToRem(10px) #eae1af;
+            transition-property: transform;
+            transition-duration:  .6s;
+            transform:scale(1.0);
             // top: 0;
             // left: 0;
         }
@@ -67,6 +70,9 @@ div {
     }
 }
 
+.to-scale {
+    transform:scale(1.2) !important;
+}
 .sbody {
     overflow: hidden;
 }
