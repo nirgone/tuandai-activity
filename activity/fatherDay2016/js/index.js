@@ -8,8 +8,8 @@
 
     // TODO:我要参加活动
     $('.page').on('click', '.btn-join', function() {
-        var t = Uitl.getParam('t');
-        var s = Uitl.getParam('s');
+        var t = Util.getParam('t');
+        var s = Util.getParam('s');
     	window.location.href = "./page2.html?t=" + t + "&s=" + s;
     })
 
