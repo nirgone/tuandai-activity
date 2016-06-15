@@ -25,11 +25,11 @@
                 centeredSlides: true,
                 // loopAdditionalSlides: 1,
                 onInit: function(swiper) {
-                    $(".swiper-slide-active").find(".piccont").addClass("to-scale");
+                    $(".swiper-slide-active").addClass("to-scale");
                     $(".swiper-slide-active").find('.icon-tag').addClass('showIcon');
                 },
                 onSlideChangeStart: function(swiper) {
-                    $(".swiper-slide").find(".piccont").removeClass("to-scale");
+                    $(".swiper-slide").removeClass("to-scale");
                     // $(".icon-picture").removeClass('enlage');
                     // $(".piccont").removeClass('enlage');
                     // $(".icon-tag").removeClass('showIcon');
@@ -46,10 +46,10 @@
                     if (!pid) {
                         pid = "pic1";
                     }
-                    $(".swiper-slide-active").find(".piccont").addClass("to-scale");
+                    $(".swiper-slide-active").addClass("to-scale");
                     $(".icon-tag").removeClass('showIcon');
                     $(".swiper-slide-active").find('.icon-tag').addClass('showIcon');
-                    
+
                     var picData = pictureJson[pid];
                     $(".pnum").html(picData.picNo);
                     $(".assists").html(picData.assists);

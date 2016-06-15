@@ -28,9 +28,9 @@ div {
             background-color: #fff;
             position: relative;
             box-shadow: pxToRem(10px) pxToRem(20px) pxToRem(10px) #eae1af;
-            transition-property: transform;
-            transition-duration:  .6s;
-            transform:scale(1.0);
+            // transition-property: transform;
+            // transition-duration:  .6s;
+            // transform:scale(1.0);
             // top: 0;
             // left: 0;
         }
@@ -47,15 +47,15 @@ div {
             background-position: center;
         }
         .icon-tag {
-            width: pxToRem(120px);
-            height: pxToRem(175px);
-            @include background('../images/tag.png', 120px, 175px);
+            width: pxToRem(100px);
+            height: pxToRem(146px);
+            @include background('../images/tag.png', 100px, 146px);
             background-size: cover;
             z-index: 2;
             position: absolute;
-            top: pxToRem(-40px);
-            right: pxToRem(-10px);
-            font-size: pxToRem(26px);
+            top: pxToRem(-4px);
+            right: pxToRem(16px);
+            font-size: pxToRem(22px);
             color: #fff;
             opacity: 0;
             span {
@@ -63,7 +63,8 @@ div {
                 width: pxToRem(160px);
                 height: pxToRem(50px);
                 position: absolute;
-                top: pxToRem(72px);
+                top: pxToRem(68px);
+                right: pxToRem(-50px);
             }
         }
     }
@@ -76,8 +77,15 @@ div {
 }
 
 .to-scale {
-    transform:scale(1.2) !important;
+    transform: scale(1.2) !important;
 }
+
+.swiper-slide {
+    transition-property: transform;
+    transition-duration: .6s;
+    transform: scale(1.0);
+}
+
 .sbody {
     overflow: hidden;
 }
@@ -164,8 +172,10 @@ div {
             width: 100%;
         }
     }
-    i, span, section {
-    	display: block;
+    i,
+    span,
+    section {
+        display: block;
     }
 }
 
