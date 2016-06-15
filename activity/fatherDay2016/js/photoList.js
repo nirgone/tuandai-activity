@@ -1,6 +1,8 @@
 (function() {
     FastClick.attach(document.body);
-    var _loading = false, _has_more = true, _cur_page = 1;
+    var _loading = false,
+        _has_more = true,
+        _cur_page = 1;
     //跳转详情
     $("#photo_list").on("click", ".img-container", function(e) {
         //todo 
@@ -22,7 +24,7 @@
         $("#search_part").hide();
     });
 
-   
+
 
     function loadData() {
         //todo
@@ -44,20 +46,20 @@
     }
 
     $(".content").on("scroll", function(e) {
-        if(_has_more && !_loading) {
+        if (_has_more && !_loading) {
             var target = e.currentTarget,
-                    height = $(target).height(),
-                    scrollHeight = target.scrollHeight,
-                    scrollTop = target.scrollTop;
-        console.log(height + scrollTop- scrollHeight);
-            if(height + scrollTop - scrollHeight  > -3) {
+                height = $(target).height(),
+                scrollHeight = target.scrollHeight,
+                scrollTop = target.scrollTop;
+            // console.log(height + scrollTop- scrollHeight);
+            if (height + scrollTop - scrollHeight > -3) {
                 loadData();
             }
         }
-        
+
     });
 
-     // function searchShow() {
+    // function searchShow() {
     //     var $searchpart = $("#search_part");
     //     $searchpart.removeClass("slideOutDown").addClass("slideInUp");
     //     $searchpart.show();
