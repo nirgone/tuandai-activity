@@ -11,6 +11,11 @@ div {
     width: 100%;
     overflow: hidden;
     padding-top: pxToRem(90px);
+    i,
+    span,
+    section {
+        display: inline-block;
+    }
     .slidecont {
         width: pxToRem(330px);
         height: pxToRem(500px);
@@ -153,12 +158,9 @@ div {
             width: 100%;
         }
     }
-}
-
-i,
-span,
-section {
-    display: inline-block;
+    i, span, section {
+    	display: block;
+    }
 }
 
 .pd-cont {
@@ -223,7 +225,7 @@ section {
     display: flex;
     display: -webkit-box;
     &>i {
-    	display: block;
+        display: block;
         width: 50%;
         height: pxToRem(40px);
         line-height: pxToRem(40px);
@@ -237,11 +239,11 @@ section {
         padding-left: pxToRem(26px);
     }
     .icon-share {
-    	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAMAAABhTZc9AAAAYFBMVEUAAACudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSRJJrlvAAAAH3RSTlMA2Q8G0MNS9Qzhx2768GIbkUovy6d/b1sWybCIgz8iU2mWVAAAAMRJREFUKM+90kmuwjAQRdHnuE9HCO1v4O1/lxhFUHIJT7mzypEjWS58yPNVGezQx9fYa905Sj/YshdPV9Q6mtChbs5k/Cs60Gi7e9LMCUV7BoWXiXm2wFNHqqMn8lg+bUrWuHCcgYb+M+7f9/ZKA8eCUqXXiQOaeuQvmnrjtJMppVo9T5ByrnTl1FV/rXThgrZmrm290qCt2K8Nlb6k8vq6xAjZHF1gD9k6VWc4YNvYpC0FQ2ch265z22Pa8yFqiofz8+QDEbYY+vOlxroAAAAASUVORK5CYII=');
-    	background-repeat: no-repeat;
-    	background-size: pxToRem(29px) pxToRem(29px);
-    	background-position: pxToRem(240px);
-    	text-align: right;
-    	padding-right: pxToRem(20px);
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAMAAABhTZc9AAAAYFBMVEUAAACudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSSudSRJJrlvAAAAH3RSTlMA2Q8G0MNS9Qzhx2768GIbkUovy6d/b1sWybCIgz8iU2mWVAAAAMRJREFUKM+90kmuwjAQRdHnuE9HCO1v4O1/lxhFUHIJT7mzypEjWS58yPNVGezQx9fYa905Sj/YshdPV9Q6mtChbs5k/Cs60Gi7e9LMCUV7BoWXiXm2wFNHqqMn8lg+bUrWuHCcgYb+M+7f9/ZKA8eCUqXXiQOaeuQvmnrjtJMppVo9T5ByrnTl1FV/rXThgrZmrm290qCt2K8Nlb6k8vq6xAjZHF1gD9k6VWc4YNvYpC0FQ2ch265z22Pa8yFqiofz8+QDEbYY+vOlxroAAAAASUVORK5CYII=');
+        background-repeat: no-repeat;
+        background-size: pxToRem(29px) pxToRem(29px);
+        background-position: pxToRem(240px);
+        text-align: right;
+        padding-right: pxToRem(20px);
     }
 }

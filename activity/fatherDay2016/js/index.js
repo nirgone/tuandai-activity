@@ -8,7 +8,9 @@
 
     // TODO:我要参加活动
     $('.page').on('click', '.btn-join', function() {
-    	window.location.href = "./page2.html";
+        var t = Uitl.getParam('t');
+        var s = Uitl.getParam('s');
+    	window.location.href = "./page2.html?t=" + t + "&s=" + s;
     })
 
     var ruleContentEl = $('.rule-content'); 
