@@ -1,6 +1,6 @@
 (function() {
     FastClick.attach(document.body);
-    var isLogin = false;
+    var isLogin = true;
 
     //点赞赚团币
     $(".zancont").on('click', function() {
@@ -8,7 +8,7 @@
             Jsbridge.toAppLogin();
             return;
         }
-        var type = 0;
+        var type = 2;
         if (type == 0) {
             //重复点赞
             Util.popup('抱歉', '爱心赞数量有限</br>每天只能为同一作品送出1次哦！', true, '给其他作品点赞', function() {
@@ -20,6 +20,7 @@
             Util.popup('抱歉', '您今天的爱心赞已送完</br>明天再继续支持吧！', false, '确定', function(){});
         } else {
             //点赞成功
+            $(".icon-zan").removeClass('zan-hollow').addClass('zan-solid');
             Util.popup('恭喜您', '成功送出爱心赞1枚，并获得<font class="fbold">50</font>团币嘉奖</br>详情请登录会员体系查看！', false, '确定', function(){});
 
         }
