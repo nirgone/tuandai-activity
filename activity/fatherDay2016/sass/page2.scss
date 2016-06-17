@@ -9,8 +9,9 @@ div {
 
 .act-content {
     width: 100%;
-    overflow: hidden;
+    // overflow: hidden;
     padding-top: pxToRem(90px);
+    overflow-x: hidden;
     i,
     span,
     section {
@@ -53,24 +54,28 @@ div {
             background-size: cover;
             z-index: 2;
             position: absolute;
-            top: pxToRem(-4px);
-            right: pxToRem(16px);
+            top: 0;
+            right: pxToRem(32px);
             font-size: pxToRem(22px);
             color: #fff;
             opacity: 0;
             span {
-                transform: rotate(55deg);
+                transform: rotate(56deg);
                 width: pxToRem(160px);
-                height: pxToRem(50px);
+                height: pxToRem(40px);
+                line-height: pxToRem(40px);
+                // text-align: center;
                 position: absolute;
-                top: pxToRem(68px);
+                top: pxToRem(52px);
                 right: pxToRem(-50px);
+                padding-left: pxToRem(20px);
+                box-sizing: border-box;
             }
         }
     }
     .swiper-container {
         width: 140%;
-        position: absolute;
+        position: relative;
         left: -20%;
         overflow: visible !important;
     }
@@ -87,7 +92,7 @@ div {
 }
 
 .sbody {
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 .masker {
@@ -95,7 +100,8 @@ div {
 }
 
 .ptcont {
-    margin-top: pxToRem(500px);
+    // margin-top: pxToRem(500px);
+    // margin-top: pxToRem(20px);
     font-size: pxToRem(30px);
     color: #ae7524;
     width: 100%;
@@ -162,6 +168,7 @@ div {
 
 .btn-xf {
     color: #f7672a;
+    margin-bottom: pxToRem(30px);
 }
 
 .pdet-content {
@@ -183,6 +190,7 @@ div {
     margin-top: pxToRem(40px) !important;
     text-align: left !important;
     padding: 0 pxToRem(20px);
+    box-sizing: border-box;
 }
 
 .zancont {

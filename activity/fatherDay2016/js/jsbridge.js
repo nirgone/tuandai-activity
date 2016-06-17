@@ -107,14 +107,16 @@
 				console.info("不支持jsbridge");
 			}
 		},
-		actLogin: function(url, loginToken, callback, errorCallback) {
-			/*//'http://121.13.249.210:9006//weixin/Yuanxiao20160218/ajax/ajax.ashx?Action=AjaxLogin'
-			var url = "http://121.13.249.210:9006/ajaxCross/Login.ashx?Action=UserLogin"; //106测试地址
-			// var url = "http://hd.tuandai.com/ajaxCross/Login.ashx?Action=UserLogin"; //正式地址*/
+		actLogin: function(url, params, callback, errorCallback) {
+			
+			/*var params = {
+				loginToken: loginToken
+			};*/
+
 			$.ajax({
 				url: url,
 				data: {
-					appActivityToken: loginToken
+					appActivityTokenJson: params
 				},
 				dataType: 'json',
 				type: 'post',
@@ -135,108 +137,108 @@
 			});
 		},
 		appLifeHook: function(initCallback, loginTokenCallback, webonResumeCallback, webonPauseCallback, webonDestroyCallback) {
-				if (isIOS()) {
-					window.ToAppIosPostLoginToken = function(data) {
-							//兼容ios某一版本返回错误数据格式
-							if (loginTokenCallback && typeof loginTokenCallback == "function") {
-								if (JSON.parse(data) && JSON.parse(data).ReturnCode) {
-									arguments[0] = data;
-								} else {
-									var returnData = {
-										"Token": getParams(data, "Token"),
-										"ReturnCode": getParams(data, 'ReturnCode'),
-										"ReturnMessage": getParams(data, 'ReturnMessage'),
-										"Data": {
-											"LoginToken": getParams(data, 'LoginToken')
-										}
-									};
-									arguments[0] = JSON.stringify(returnData);
-								}
+			if (isIOS()) {
+				window.ToAppIosPostLoginToken = function(data) {
+						//兼容ios某一版本返回错误数据格式
+						if (loginTokenCallback && typeof loginTokenCallback == "function") {
+							if (JSON.parse(data) && JSON.parse(data).ReturnCode) {
+								arguments[0] = data;
+							} else {
+								var returnData = {
+									"Token": getParams(data, "Token"),
+									"ReturnCode": getParams(data, 'ReturnCode'),
+									"ReturnMessage": getParams(data, 'ReturnMessage'),
+									"Data": {
+										"LoginToken": getParams(data, 'LoginToken')
+									}
+								};
+								arguments[0] = JSON.stringify(returnData);
+							}
 
-								// arguments[0] = data;
-								loginTokenCallback.apply(this, arguments);
-							}
-						}
-						//step:1表示打开页面；2表示离开页面
-					win.ToAppLifeCycle = function(step) {
-						if (step == 1) {
-							if (webonResumeCallback && typeof webonResumeCallback == "function") {
-								// document.getElementById("show2").innerHTML = ("data from ios: = ");
-								webonResumeCallback.apply(this, arguments);
-							}
-						} else if (step == 2) {
-							if (webonPauseCallback && typeof webonPauseCallback == "function") {
-
-								webonPauseCallback.apply(this, arguments);
-							}
+							// arguments[0] = data;
+							loginTokenCallback.apply(this, arguments);
 						}
 					}
-				} else {
-					connectWebViewJavascriptBridge(function(bridge) {
-						try {
-							if (!window.WebViewJavascriptBridge._messageHandler) {
-
-								bridge.init(function(message, responseCallback) {
-									console.log('JS got a message', message);
-									var data = {
-										'Javascript Responds': '测试中文!'
-									};
-									console.log('JS responding with', data);
-									if (initCallback) {
-										arguments[0] = message;
-										initCallback.apply(this, arguments);
-									}
-									responseCallback(data);
-								});
-							}
-						} catch (e) {
-							console.error("jsbridge-----error--", e);
+					//step:1表示打开页面；2表示离开页面
+				win.ToAppLifeCycle = function(step) {
+					if (step == 1) {
+						if (webonResumeCallback && typeof webonResumeCallback == "function") {
+							// document.getElementById("show2").innerHTML = ("data from ios: = ");
+							webonResumeCallback.apply(this, arguments);
 						}
+					} else if (step == 2) {
+						if (webonPauseCallback && typeof webonPauseCallback == "function") {
 
-						bridge.registerHandler("LoginToken", function(data, responseCallback) {
-							// document.getElementById("show2").innerHTML = ("data from Java: = " + data);
-							var responseData = "Javascript Says Right back aka!";
-							if (loginTokenCallback && typeof loginTokenCallback == "function") {
-								// loginTokenCallback(data);
-								arguments[0] = data;
-								loginTokenCallback.apply(this, arguments);
-							}
-							responseCallback(responseData);
-						});
-
-						bridge.registerHandler("WebonResume", function(data, responseCallback) {
-							// document.getElementById("show").innerHTML = ("data from Java: = " + data);
-							var responseData = "Javascript Says Right back aka!";
-							if (webonResumeCallback && typeof webonResumeCallback == "function") {
-								arguments[0] = data;
-								webonResumeCallback.apply(this, arguments);
-							}
-							responseCallback(responseData);
-						});
-
-						bridge.registerHandler("WebonPause", function(data, responseCallback) {
-							// document.getElementById("show").innerHTML = "time-----" + new Date().getTime();
-							var responseData = "Javascript Says Right back aka!";
-							if (webonPauseCallback && typeof webonPauseCallback == "function") {
-								arguments[0] = data;
-								webonPauseCallback.apply(this, arguments);
-							}
-							responseCallback(responseData);
-						});
-						bridge.registerHandler("WebonDestroy", function(data, responseCallback) {
-							// document.getElementById("show").innerHTML = ("data from Java: = " + data);
-							var responseData = "Javascript Says Right back aka!";
-							if (webonDestroyCallback && typeof webonDestroyCallback == "function") {
-								arguments[0] = data;
-								webonDestroyCallback.apply(this, arguments);
-							}
-							responseCallback(responseData);
-						});
-					});
+							webonPauseCallback.apply(this, arguments);
+						}
+					}
 				}
+			} else {
+				connectWebViewJavascriptBridge(function(bridge) {
+					try {
+						if (!window.WebViewJavascriptBridge._messageHandler) {
 
+							bridge.init(function(message, responseCallback) {
+								console.log('JS got a message', message);
+								var data = {
+									'Javascript Responds': '测试中文!'
+								};
+								console.log('JS responding with', data);
+								if (initCallback) {
+									arguments[0] = message;
+									initCallback.apply(this, arguments);
+								}
+								responseCallback(data);
+							});
+						}
+					} catch (e) {
+						console.error("jsbridge-----error--", e);
+					}
+
+					bridge.registerHandler("LoginToken", function(data, responseCallback) {
+						// document.getElementById("show2").innerHTML = ("data from Java: = " + data);
+						var responseData = "Javascript Says Right back aka!";
+						if (loginTokenCallback && typeof loginTokenCallback == "function") {
+							// loginTokenCallback(data);
+							arguments[0] = data;
+							loginTokenCallback.apply(this, arguments);
+						}
+						responseCallback(responseData);
+					});
+
+					bridge.registerHandler("WebonResume", function(data, responseCallback) {
+						// document.getElementById("show").innerHTML = ("data from Java: = " + data);
+						var responseData = "Javascript Says Right back aka!";
+						if (webonResumeCallback && typeof webonResumeCallback == "function") {
+							arguments[0] = data;
+							webonResumeCallback.apply(this, arguments);
+						}
+						responseCallback(responseData);
+					});
+
+					bridge.registerHandler("WebonPause", function(data, responseCallback) {
+						// document.getElementById("show").innerHTML = "time-----" + new Date().getTime();
+						var responseData = "Javascript Says Right back aka!";
+						if (webonPauseCallback && typeof webonPauseCallback == "function") {
+							arguments[0] = data;
+							webonPauseCallback.apply(this, arguments);
+						}
+						responseCallback(responseData);
+					});
+					bridge.registerHandler("WebonDestroy", function(data, responseCallback) {
+						// document.getElementById("show").innerHTML = ("data from Java: = " + data);
+						var responseData = "Javascript Says Right back aka!";
+						if (webonDestroyCallback && typeof webonDestroyCallback == "function") {
+							arguments[0] = data;
+							webonDestroyCallback.apply(this, arguments);
+						}
+						responseCallback(responseData);
+					});
+				});
 			}
-			
+
+		}
+
 	}
 
 	var jsbridge = new Jsbridge();
