@@ -77,10 +77,15 @@ div {
         width: 140%;
         position: relative;
         left: -20%;
-        overflow: visible !important;
+        top: pxToRem(50px);
+        overflow: visible;
     }
 }
-
+.msc {
+    width: 100%;
+    height: pxToRem(550px);
+    overflow: hidden;
+}
 .to-scale {
     transform: scale(1.2) !important;
 }
