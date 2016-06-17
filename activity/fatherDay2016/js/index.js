@@ -3,34 +3,35 @@
 
     //查看活动规则
     $('.page').on('click', '.rule-btn', function() {
-    	onShowRuleContent();
+        onShowRuleContent();
     })
 
     // TODO:我要参加活动
     $('.page').on('click', '.btn-join', function() {
         var t = Util.getParam('t');
         var s = Util.getParam('s');
-    	window.location.href = "./page2.html?t=" + t + "&s=" + s;
+        var type = Util.getParam('type');
+        window.location.href = "./page2.html?t=" + t + "&s=" + s + "&type=" + type;
     })
 
-    var ruleContentEl = $('.rule-content'); 
+    var ruleContentEl = $('.rule-content');
     //点击关闭规则按钮
     ruleContentEl.on('click', '.mask', function() {
-    	onHideRuleContent();
-    })
+        onHideRuleContent();
+    });
     //点击遮罩层关闭规则
     ruleContentEl.on('click', '.icon-close', function() {
-    	onHideRuleContent();
-    })
+        onHideRuleContent();
+    });
     // 隐藏规则
     function onHideRuleContent() {
         enableScrolling();
-    	ruleContentEl.hide();
+        ruleContentEl.hide();
     }
     // 显示规则
     function onShowRuleContent() {
         disableScrolling();
-    	ruleContentEl.show();
+        ruleContentEl.show();
     }
 
     function scrolling(e) {

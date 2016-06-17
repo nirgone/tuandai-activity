@@ -12,9 +12,17 @@
 
     //点赞
     $("#photo_list").on("click", ".btn-like", function(e) {
-        //todo 
         if (!isLogin) {
-            Jsbridge.toAppLogin();
+            if (Jsbridge.isNewVersion()) {
+
+                Jsbridge.toAppLogin();
+            } else if (type == "mobileapp") {
+                //旧版本app登录
+
+            } else {
+                //非app端登录
+
+            }
             return;
         }
         var type = 2;
@@ -95,67 +103,15 @@
     //登录验证
     var t = Util.getParam('t'); //loginToken
     var s = Util.getParam('s'); //根据s判断是否获取到loginToken， s为0表示未登录
-    if (!isLogin) {
-        if (Jsbridge.isNewVersion()) {
-            // var t = Util.getParam('t');
-            // var s = Util.getParam('s');
-            //'http://121.13.249.210:9006//weixin/Yuanxiao20160218/ajax/ajax.ashx?Action=AjaxLogin'
-            var url = "http://121.13.249.210:9006/ajaxCross/Login.ashx?Action=UserLogin"; //106测试地址
-            // var url = "http://hd.tuandai.com/ajaxCross/Login.ashx?Action=UserLogin"; //正式地址
-            if (s) {
-                //最新4.3.6app登录
-                if (s == 1) {
-                    //app已登录并获取到loginToken
-                    Jsbridge.actLogin(url, t, function(data) {
-                        console.info("login-------data--", data);
-                        if (data && data.ReturnCode == "200") {
-                            //登录成功
-                            isLogin = true;
-                        }
-                    }, function(e) {
-                        console.info("login---error--", e);
-                    });
+    var type = Util.getParam('type'); //判断是否为app端
+    //'http://121.13.249.210:9006//weixin/Yuanxiao20160218/ajax/ajax.ashx?Action=AjaxLogin'
+    var url = "http://121.13.249.210:9006/ajaxCross/Login.ashx?Action=UserLogin"; //106测试地址
+    // var url = "http://hd.tuandai.com/ajaxCross/Login.ashx?Action=UserLogin"; //正式地址
+    if (type == "mobileapp") {
+        //app端
+        isLogin = Util.checkLogin(url, t, s);
+    } else {
+        //非app端
 
-                } else if (s == 2) {
-                    //app已登录，但是未获取到loginToken
-
-                } else {
-                    //4.4.4及4.4.5app通过获取app返回的loginToken登录
-                    Bbsbridge.appBbsLifeHook(function(data) {
-                        console.info("lifehook----data-----", data);
-                        if (data) {
-                            data = JSON.parse(data);
-                            var returncode = data.ReturnCode;
-                            data = data.Data
-                            var v_token = data.LoginToken;
-
-                            //returncode == 1调用登陆接口
-                            if (returncode == '1') {
-                                Jsbridge.actLogin(url, t, function(data) {
-                                    console.info("login-------data--", data);
-                                    if (data && data.ReturnCode == "200") {
-                                        //登录成功
-                                        isLogin = true;
-                                    }
-                                }, function(e) {
-                                    console.info("login---error--", e);
-                                });
-                            } else {
-                                var message = data.ReturnMessage;
-                                // returncode为4表示用户未登录
-                                if (returncode != 4) {
-                                    alert(message);
-                                }
-
-
-                            }
-                        } else {
-                            console.info('原生没有返回任何数据');
-                        }
-
-                    });
-                }
-            }
-        }
     }
 })();

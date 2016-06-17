@@ -1,7 +1,15 @@
 (function() {
     FastClick.attach(document.body);
     var mySwiper;
-    var isLogin = true;
+    var isLogin = false;
+    var isAppOpen = false;
+    var mobileUrl = "https://m.tuandai.com";
+    //登录验证
+    var t = Util.getParam('t'); //loginToken
+    var s = Util.getParam('s'); //根据s判断是否获取到loginToken， s为0表示未登录
+    if (isAppOpen && !isLogin) {
+        isLogin = Util.checkLogin(t, s);
+    }
     //初始化数据
     function init() {
         var temp = "";
@@ -66,7 +74,7 @@
     //点赞赚团币
     $(".btn-zan").on('click', function() {
         if (!isLogin) {
-            Jsbridge.toAppLogin();
+            Util.openLogin(isAppOpen, mobileUrl);
             return;
         }
         var type = 2;
@@ -77,10 +85,10 @@
             });
         } else if (type == 1) {
             //赞已送完
-            Util.popup('抱歉', '您今天的爱心赞已送完</br>明天再继续支持吧！', false, '确定', function(){});
+            Util.popup('抱歉', '您今天的爱心赞已送完</br>明天再继续支持吧！', false, '确定', function() {});
         } else {
             //点赞成功
-            Util.popup('恭喜您', '成功送出爱心赞1枚，并获得<font class="fbold">50</font>团币嘉奖</br>详情请登录会员体系查看！', false, '确定', function(){});
+            Util.popup('恭喜您', '成功送出爱心赞1枚，并获得<font class="fbold">50</font>团币嘉奖</br>详情请登录会员体系查看！', false, '确定', function() {});
 
         }
 
@@ -95,71 +103,6 @@
         window.location.href = "./upload.html?t=" + t + "&s=" + s;
     });
 
-    //登录验证
-    var t = Util.getParam('t'); //loginToken
-    var s = Util.getParam('s'); //根据s判断是否获取到loginToken， s为0表示未登录
-    if (!isLogin) {
-        if (Jsbridge.isNewVersion()) {
-            // var t = Util.getParam('t');
-            // var s = Util.getParam('s');
-            //'http://121.13.249.210:9006//weixin/Yuanxiao20160218/ajax/ajax.ashx?Action=AjaxLogin'
-            var url = "http://121.13.249.210:9006/ajaxCross/Login.ashx?Action=UserLogin"; //106测试地址
-            // var url = "http://hd.tuandai.com/ajaxCross/Login.ashx?Action=UserLogin"; //正式地址
-            if (s) {
-                //最新4.3.6app登录
-                if (s == 1) {
-                    //app已登录并获取到loginToken
-                    Jsbridge.actLogin(url, t, function(data) {
-                        console.info("login-------data--", data);
-                        if (data && data.ReturnCode == "200") {
-                            //登录成功
-                            isLogin = true;
-                        }
-                    }, function(e) {
-                        console.info("login---error--", e);
-                    });
 
-                } else if (s == 2) {
-                    //app已登录，但是未获取到loginToken
-
-                } else {
-                    //4.4.4及4.4.5app通过获取app返回的loginToken登录
-                    Bbsbridge.appBbsLifeHook(function(data) {
-                        console.info("lifehook----data-----", data);
-                        if (data) {
-                            data = JSON.parse(data);
-                            var returncode = data.ReturnCode;
-                            data = data.Data
-                            var v_token = data.LoginToken;
-
-                            //returncode == 1调用登陆接口
-                            if (returncode == '1') {
-                                Jsbridge.actLogin(url, t, function(data) {
-                                    console.info("login-------data--", data);
-                                    if (data && data.ReturnCode == "200") {
-                                        //登录成功
-                                        isLogin = true;
-                                    }
-                                }, function(e) {
-                                    console.info("login---error--", e);
-                                });
-                            } else {
-                                var message = data.ReturnMessage;
-                                // returncode为4表示用户未登录
-                                if (returncode != 4) {
-                                    alert(message);
-                                }
-
-
-                            }
-                        } else {
-                            console.info('原生没有返回任何数据');
-                        }
-
-                    });
-                }
-            }
-        }
-    }
 
 })();

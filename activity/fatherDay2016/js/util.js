@@ -101,6 +101,100 @@
             });
 
 
+        },
+        checkLogin: function(t, s) {
+            var url = "http://hd.tuandai.com/ajaxCross/Login.ashx?Action=UserLogin51"; //正式地址
+            if (Jsbridge.isNewVersion()) {
+                if (s) {
+                    //最新4.3.6app登录
+                    if (s == 1) {
+                        //app已登录并获取到loginToken
+                        var params = {
+                            "Data": {
+                                "LoginToken": t
+                            }
+                        };
+                        Jsbridge.actLogin(url, params, function(data) {
+                            if (result.Status == 1) {
+                                return true;
+                                window.location.reload();
+                            } else if (result.Status == 0) {
+                                return false;
+                                if (confirm("登陆失效，需要重新登陆吗？")) {
+                                    Jsbridge.toAppLogin();
+                                }
+                            } else {
+                                return false;
+                            }
+                        }, function(e) {
+                            console.info("login---error--", e);
+                        });
+
+                    } else if (s == 2) {
+                        //app已登录，但是未获取到loginToken
+                        this.toast("无法获取登录凭证！");
+                        return false;
+                    } else {
+                        //app未登录
+                        return false;
+                    }
+                } else {
+                    //4.4.4及4.4.5app通过获取app返回的loginToken登录
+                    Bbsbridge.appBbsLifeHook(function(data) {
+                        console.info("lifehook----data-----", data);
+                        if (data) {
+                            /*data = JSON.parse(data);
+                            var returncode = data.ReturnCode;
+                            data = data.Data
+                            var v_token = data.LoginToken;*/
+
+                            //returncode == 1调用登陆接口
+                            if (returncode == '1') {
+                                Jsbridge.actLogin(url, data, function(data) {
+                                    if (result.Status == 1) {
+                                        return true;
+                                        window.location.reload();
+                                    } else if (result.Status == 0) {
+                                        return false;
+                                        if (confirm("登陆失效，需要重新登陆吗？")) {
+                                            Jsbridge.toAppLogin();
+                                        }
+                                    } else {
+                                        return false;
+                                    }
+                                }, function(e) {
+                                    console.info("login---error--", e);
+                                });
+                            } else {
+                                var message = data.ReturnMessage;
+                                // returncode为4表示用户未登录
+                                if (returncode != 4) {
+                                    this.toast(message);
+                                }
+                                return false;
+
+
+                            }
+                        } else {
+                            console.info('原生没有返回任何数据');
+                            return false;
+                        }
+
+                    });
+                }
+            }
+        },
+        openLogin: function(isAppOpen, mobileUrl) {
+            if (Jsbridge.isNewVersion()) {
+                Jsbridge.toAppLogin();
+            } else if (isAppOpen) {
+                //旧版本app登录
+                window.location.href = "ToAppLogin";
+            } else {
+                //非app端登录
+                window.location.href = mobileUrl + "/user/Login.aspx?ReturnUrl=" + window.location.href;
+
+            }
         }
 
 

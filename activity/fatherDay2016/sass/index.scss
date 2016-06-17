@@ -254,3 +254,11 @@
 		}
 	}
 }
+.comment-txt {
+	display: inline-block;
+	width: 100%;
+	font-size: pxToRem(20px);
+	color: #ccc7ad;
+	text-align: center;
+	margin-bottom: pxToRem(20px);
+}
