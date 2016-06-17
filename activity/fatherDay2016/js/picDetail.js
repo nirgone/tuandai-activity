@@ -57,24 +57,12 @@
 
         }
     });
-    $(".mask").on('click', function() {
+    $(".mask, .weixin-share").on('click', function() {
         $(".mask").hide();
         $(".weixin-share").hide();
+        Util.enableScrolling();
     });
-    //登录验证
-    var t = Util.getParam('t'); //loginToken
-    var s = Util.getParam('s'); //根据s判断是否获取到loginToken， s为0表示未登录
-    var type = Util.getParam('type'); //判断是否为app端
-    //'http://121.13.249.210:9006//weixin/Yuanxiao20160218/ajax/ajax.ashx?Action=AjaxLogin'
-    var url = "http://121.13.249.210:9006/ajaxCross/Login.ashx?Action=UserLogin"; //106测试地址
-    // var url = "http://hd.tuandai.com/ajaxCross/Login.ashx?Action=UserLogin"; //正式地址
-    if (type == "mobileapp") {
-        //app端
-        isLogin = Util.checkLogin(url, t, s);
-    } else {
-        //非app端
-
-    }
     
+
 
 })();
