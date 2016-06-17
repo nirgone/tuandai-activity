@@ -104,7 +104,7 @@
     });
 
     $(".sbody").on('click', '.piccont', function() {
-        window.location.href = "./picDetail.html";
+        window.location.href = "./picDetail.html?t=" + t + "&s=" + s;
     })
 
 })();
