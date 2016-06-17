@@ -79,6 +79,7 @@
             }
         },
         popup: function(title, msg, hasClose, btnTxt, btnCallback, cancelCallback) {
+            var me = this;
             var closeTemp = "";
             var maskTemp = "";
             if (hasClose) {
@@ -118,8 +119,9 @@
                     $(".mask").hide();
                     $(".popup").hide();
                     $(".weixin-share").hide();
-                    if (btnCallback && typeof btnCallback == "function") {
-                        btnCallback.apply(this, arguments);
+                    me.enableScrolling();
+                    if (cancelCallback && typeof cancelCallback == "function") {
+                        cancelCallback.apply(this, arguments);
                     }
                 });
 
@@ -128,8 +130,9 @@
                     $(".mask").hide();
                     $(".popup").hide();
                     $(".weixin-share").hide();
-                    if (btnCallback && typeof btnCallback == "function") {
-                        btnCallback.apply(this, arguments);
+                    me.enableScrolling();
+                    if (cancelCallback && typeof cancelCallback == "function") {
+                        cancelCallback.apply(this, arguments);
                     }
                 });
             }
@@ -151,7 +154,7 @@
                         Jsbridge.actLogin(url, params, function(data) {
                             if (result.Status == 1) {
                                 return true;
-                                window.location.reload();
+                                // window.location.reload();
                             } else if (result.Status == 0) {
                                 return false;
                                 if (confirm("登陆失效，需要重新登陆吗？")) {
@@ -187,7 +190,7 @@
                                 Jsbridge.actLogin(url, data, function(data) {
                                     if (result.Status == 1) {
                                         return true;
-                                        window.location.reload();
+                                        // window.location.reload();
                                     } else if (result.Status == 0) {
                                         return false;
                                         if (confirm("登陆失效，需要重新登陆吗？")) {
@@ -229,6 +232,37 @@
                 window.location.href = mobileUrl + "/user/Login.aspx?ReturnUrl=" + window.location.href;
 
             }
+        },
+        // ===============禁止滑动================
+        preventDefault: function(e) {
+            e = e || window.event;
+            if (e.preventDefault)
+                e.preventDefault();
+            e.returnValue = false;
+        },
+        scrolling: function(e) {
+            // var that = this;
+            // that.preventDefault(e);
+            e = e || window.event;
+            if (e.preventDefault)
+                e.preventDefault();
+            e.returnValue = false;
+        },
+        disableScrolling: function() {
+            var that = this;
+            if (window.addEventListener) {
+                window.addEventListener('DOMMouseScroll', that.scrolling, false);
+                window.addEventListener('touchmove', that.scrolling, false);
+                // window.onmousewheel = document.onmousewheel = scrolling;
+            }
+        },
+        enableScrolling: function() {
+            var that = this;
+            if (window.removeEventListener) {
+                window.removeEventListener('DOMMouseScroll', that.scrolling, false);
+                window.removeEventListener('touchmove', that.scrolling, false);
+            }
+            // window.onmousewheel = document.onmousewheel = null;
         }
 
 
