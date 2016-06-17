@@ -16,7 +16,7 @@
 .banner {
 	width: 100%;
 	position: relative;
-	height: pxToRem(604px);
+	height: pxToRem(476px);
 	background-image: url("../images/icon-banner-bg.png");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -30,7 +30,7 @@
 		background-repeat: no-repeat;
 		background-position: 50% 50%;
 		left: pxToRem(90px);
-		top: pxToRem(205px);
+		top: pxToRem(77px);
 		z-index: 999;
 	}
 	.icon-text {
@@ -42,7 +42,7 @@
 		background-repeat: no-repeat;
 		background-position: 50% 50%;
 		left: pxToRem(225px);
-		top: pxToRem(205px);
+		top: pxToRem(77px);
 		z-index: 9999;
 	}
 	.icon-text2 {
@@ -54,7 +54,7 @@
 		background-repeat: no-repeat;
 		background-position: 50% 50%;
 		left: pxToRem(90px);
-		top: pxToRem(205px);
+		top: pxToRem(77px);
 		z-index: 99
 	}
 	.icon-person {
@@ -66,12 +66,12 @@
 		background-repeat: no-repeat;
 		background-position: 50% 50%;
 		right: 0;
-		top: pxToRem(205px);
+		top: pxToRem(77px);
 		z-index: 99999;
 	}
 }
 .rule-desc {
-	margin-top: pxToRem(18px);
+	margin-top: pxToRem(40px);
 	margin-bottom: pxToRem(40px);
 	.text {
 		color: #ae7524;

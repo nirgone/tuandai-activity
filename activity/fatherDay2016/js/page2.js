@@ -103,6 +103,8 @@
         window.location.href = "./upload.html?t=" + t + "&s=" + s;
     });
 
-
+    $(".sbody").on('click', '.piccont', function() {
+        window.location.href = "./picDetail.html";
+    })
 
 })();
