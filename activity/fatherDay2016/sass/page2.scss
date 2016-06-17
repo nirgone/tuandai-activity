@@ -54,8 +54,8 @@ div {
             background-size: cover;
             z-index: 2;
             position: absolute;
-            top: pxToRem(-4px);
-            right: pxToRem(16px);
+            top: 0;
+            right: pxToRem(32px);
             font-size: pxToRem(22px);
             color: #fff;
             opacity: 0;
@@ -190,6 +190,7 @@ div {
     margin-top: pxToRem(40px) !important;
     text-align: left !important;
     padding: 0 pxToRem(20px);
+    box-sizing: border-box;
 }
 
 .zancont {

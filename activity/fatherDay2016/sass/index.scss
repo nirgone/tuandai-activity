@@ -260,5 +260,10 @@
 	font-size: pxToRem(20px);
 	color: #ccc7ad;
 	text-align: center;
-	margin-bottom: pxToRem(20px);
+	margin-bottom: pxToRem(100px);
+}
+.btn-float {
+	position: fixed;
+	bottom: 0;
+	margin-bottom: 0 !important;
 }

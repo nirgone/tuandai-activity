@@ -1,9 +1,9 @@
 (function() {
     FastClick.attach(document.body);
     var mySwiper;
-    var isLogin = false;
-    var isAppOpen = false;
-    var mobileUrl = "https://m.tuandai.com";
+    // var isLogin = false;
+    // var isAppOpen = false;
+    // var mobileUrl = "https://m.tuandai.com";
     //登录验证
     var t = Util.getParam('t'); //loginToken
     var s = Util.getParam('s'); //根据s判断是否获取到loginToken， s为0表示未登录
