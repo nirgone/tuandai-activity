@@ -44,6 +44,7 @@
     //弹出查询 模态窗
     $("#search_home").bind("click", function(e) {
         $("#search_part").show();
+         Util.popup('抱歉', '没有您查找的编号', false, '确定', function() {});
     });
 
     //收起查询 模态窗

@@ -84,7 +84,7 @@ a {
 
 .mask {
     position: absolute;
-    z-index: 99;
+    z-index: 999;
     left: 0;
     top: 0;
     width: 100%;
@@ -103,7 +103,7 @@ a {
     margin-left: pxToRem(-340px);
     background-color: #fff;
     border-radius: pxToRem(20px);
-    z-index: 100;
+    z-index: 1000;
     display: none;
     .ptitle {
         position: relative;
