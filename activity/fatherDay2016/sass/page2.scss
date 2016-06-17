@@ -286,3 +286,11 @@ div {
     z-index: 999;
     display: none;
 }
+.icon-img {
+    width: 100%;
+    height: pxToRem(580px);
+    display: inline-block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
