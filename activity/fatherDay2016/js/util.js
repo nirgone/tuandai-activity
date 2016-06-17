@@ -63,9 +63,14 @@
         },
         popup: function(title, msg, hasClose, btnTxt, btnCallback) {
             var closeTemp = "";
+            var maskTemp = "";
             if (hasClose) {
                 closeTemp = '<i class="icon-close-white"></i>';
             }
+            if ($(".mask").length < 1) {
+                maskTemp = '<div class="mask masker"></div>';
+            }
+
             if ($(".popup").length > 0) {
                 $(".ptitle").html(title);
                 $(".popdetcont").html(msg);
@@ -76,13 +81,13 @@
                     $(".icon-close-white").hide();
                 }
             } else {
-                var temp = '<div class="mask masker"></div>' +
-                    '<div class="popup">' + closeTemp + '<span class="ptitle">' + title +
+                var temp = maskTemp + '<div class="popup">' + closeTemp + '<span class="ptitle">' + title +
                     '</span><section class="popdetcont">' + msg + '</section><div class="pop-btn">' + btnTxt + '</div></div>';
                 $("body").append(temp);
                 $("body").on('click', ".mask, .icon-close-white", function() {
                     $(".mask").hide();
                     $(".popup").hide();
+                    $(".weixin-share").hide();
                 });
             }
             $(".mask").show();
