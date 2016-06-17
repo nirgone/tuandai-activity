@@ -6,7 +6,7 @@
 
     $("#upload_input").on("change", function(e) {
         var that = this;
-
+        Util.showLoading();
         lrz(that.files[0], {
 
             })
@@ -18,11 +18,15 @@
                 $("#upload_sec").append(_img);
                 _img_data = rst;
                 console.log(_img_data);
+                console.log('then')
             })
             .catch(function(error) {
                 console.log(error);
             })
             .always(function() {
+                console.log('always')
+                Util.hideLoading();
+
                 // e.target.value = '';
             });
     });

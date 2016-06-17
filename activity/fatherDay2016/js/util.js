@@ -61,7 +61,24 @@
                 }, d * 1000);
             }, duration);
         },
-        popup: function(title, msg, hasClose, btnTxt, btnCallback,cancelCallback) {
+        showLoading: function() {
+            if ($(".loader").length <= 0) {
+                var loader = document.createElement('div');
+                $(loader).addClass("loader");
+                document.body.appendChild(loader);
+            } else {
+                $(".loader").show();
+            }
+
+        },
+        hideLoading: function() {
+            if ($(".loader").length == 1) {
+                $(".loader").hide();
+            } else {
+                $(".loader").remove();
+            }
+        },
+        popup: function(title, msg, hasClose, btnTxt, btnCallback, cancelCallback) {
             var closeTemp = "";
             var maskTemp = "";
             if (hasClose) {
@@ -102,8 +119,8 @@
                     $(".popup").hide();
                     $(".weixin-share").hide();
                     if (btnCallback && typeof btnCallback == "function") {
-                    btnCallback.apply(this, arguments);
-                }
+                        btnCallback.apply(this, arguments);
+                    }
                 });
 
             } else {
@@ -112,8 +129,8 @@
                     $(".popup").hide();
                     $(".weixin-share").hide();
                     if (btnCallback && typeof btnCallback == "function") {
-                    btnCallback.apply(this, arguments);
-                }
+                        btnCallback.apply(this, arguments);
+                    }
                 });
             }
 
