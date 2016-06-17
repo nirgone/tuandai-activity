@@ -61,7 +61,7 @@
                 }, d * 1000);
             }, duration);
         },
-        popup: function(title, msg, hasClose, btnTxt, btnCallback) {
+        popup: function(title, msg, hasClose, btnTxt, btnCallback,cancelCallback) {
             var closeTemp = "";
             var maskTemp = "";
             if (hasClose) {
@@ -84,11 +84,7 @@
                 var temp = maskTemp + '<div class="popup">' + closeTemp + '<span class="ptitle">' + title +
                     '</span><section class="popdetcont">' + msg + '</section><div class="pop-btn">' + btnTxt + '</div></div>';
                 $("body").append(temp);
-                $("body").on('click', ".mask, .icon-close-white", function() {
-                    $(".mask").hide();
-                    $(".popup").hide();
-                    $(".weixin-share").hide();
-                });
+
             }
             $(".mask").show();
             $(".popup").show();
@@ -99,6 +95,27 @@
                     btnCallback.apply(this, arguments);
                 }
             });
+            $("body").off('click', ".mask, .icon-close-white");
+            if (hasClose) {
+                $("body").on('click', ".icon-close-white", function() {
+                    $(".mask").hide();
+                    $(".popup").hide();
+                    $(".weixin-share").hide();
+                    if (btnCallback && typeof btnCallback == "function") {
+                    btnCallback.apply(this, arguments);
+                }
+                });
+
+            } else {
+                $("body").on('click', ".mask", function() {
+                    $(".mask").hide();
+                    $(".popup").hide();
+                    $(".weixin-share").hide();
+                    if (btnCallback && typeof btnCallback == "function") {
+                    btnCallback.apply(this, arguments);
+                }
+                });
+            }
 
 
         }

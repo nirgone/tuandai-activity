@@ -44,12 +44,12 @@
         var _text = $("#text_area").val().trim();
         if (!_text) {
             // toast("请输入文字！");
-            Util.popup('抱歉', '您心里的话爸爸其实很想知道</br>所以，千万不要忘记填写哦！', true, '用心“说”话', function() {});
+            Util.popup('抱歉', '您心里的话爸爸其实很想知道</br>所以，千万不要忘记填写哦！', false, '用心“说”话', function() {});
             return;
         }
         if (!_img_data) {
             // toast("请选择图片");
-            Util.popup('抱歉', '想为老爸赢礼物，</br>怎能忘记上传他的帅气照！', true, '上传图片', function() {});
+            Util.popup('抱歉', '想为老爸赢礼物，</br>怎能忘记上传他的帅气照！', false, '上传图片', function() {});
             return;
         }
 
