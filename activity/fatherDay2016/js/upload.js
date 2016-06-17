@@ -15,6 +15,7 @@
                     '</div>';
                 $("#upload_sec").append(_img);
                 _img_data = rst;
+                console.log(_img_data);
             })
             .catch(function(error) {
                 console.log(error);
@@ -47,7 +48,7 @@
     	}
     	if(!_img_data) {
 			// toast("请选择图片");
-            Util.popup('抱歉', '想为老爸赢礼物，</br>怎能忘记上传他的帅气照！', true, '上传图片', function() {
+            Util.popup('抱歉', '想为老爸赢礼物，</br>怎能忘记上传他的帅气照！', true, '上传帅照', function() {
                 window.location.href = "./photoList.html?t=" + t + "&s=" + s;
             });
 			return;
