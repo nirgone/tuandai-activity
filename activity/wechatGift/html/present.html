@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>微信端专属礼包</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <audio src="../music/award.mp3" preload id="award_music"></audio>
+    <div class="scroll active">
+        <div class="content present-content">
+            <div class="present-open-part transparent">
+                <div class="icon-light2 zoomIn"></div>
+                <div class="icon-present-open"></div>
+            </div>
+            <div class="present-descri">
+                <p>恭喜你获得</p>
+                <p>
+                    <font class="font-yellow font-big">58</font>团币已发放至</p>
+                <p>个人中心－团宝箱</p>
+            </div>
+            <a class="btn-check"></a>
+            <a class="btn-share" id="btn_share"></a>
+        </div>
+    </div>
+    <!-- 分享 -->
+    <div class="popup share-part" id="share_part">
+        <div class="masker"></div>
+        <div class="popup-content share">
+            <div class="share-content">
+                <p>点击右上角发送给朋友</p>
+                <p>分享到朋友圈</p>
+                <p>和你的盆友们一起</p>
+                <p>领专属礼包吧～</p>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import "variables";
-@import "../../sass/func";
+@import "../../../sass/func";
 
 /*  for small width screen  */
 
@@ -30,6 +30,11 @@
 
 @media screen and (max-width:320px) and (max-height:416px) {
    $ratio: 0.85;
+   .icon-present-open {
+   	margin-top: -32px;
+   	margin-left: 18px;
+   	@include background("../images/present_open.png", 683px, 534px,$ratio);
+   }
 
 }
 
