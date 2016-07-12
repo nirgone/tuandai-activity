@@ -123,7 +123,9 @@
 
         },
         checkLogin: function(t, s) {
-            var url = "http://hd.tuandai.com/ajaxCross/Login.ashx?Action=UserLogin51"; //正式地址
+            // var url = "http://hd.tuandai.com/ajaxCross/Login.ashx?Action=UserLogin51"; //正式地址
+            var url = "http://10.100.11.110:9006/ajaxCross/Login.ashx?Action=UserLogin"; //110地址
+            console.info("t--", t, "s=" + s);
             if (Jsbridge.isNewVersion()) {
                 if (s) {
                     //最新4.3.6app登录
@@ -160,17 +162,19 @@
                     }
                 } else {
                     //4.4.4及4.4.5app通过获取app返回的loginToken登录
-                    Bbsbridge.appBbsLifeHook(function(data) {
+                    Jsbridge.appLifeHook(null, function(data) {
                         console.info("lifehook----data-----", data);
                         if (data) {
+                            data = JSON.parse(data);
                             /*data = JSON.parse(data);
                             var returncode = data.ReturnCode;
                             data = data.Data
                             var v_token = data.LoginToken;*/
 
                             //returncode == 1调用登陆接口
-                            if (returncode == '1') {
+                            if (data.ReturnCode == '1') {
                                 Jsbridge.actLogin(url, data, function(data) {
+                                    console.info("login----", data);
                                     if (result.Status == 1) {
                                         return true;
                                         // window.location.reload();
@@ -200,7 +204,7 @@
                             return false;
                         }
 
-                    });
+                    },  null, null, null);
                 }
             }
         },

@@ -1,5 +1,15 @@
 (function() {
     FastClick.attach(document.body);
+    //登录验证
+    var t = Util.getParam('t'); //loginToken
+    var s = Util.getParam('s'); //根据s判断是否获取到loginToken， s为0表示未登录
+    var mobileUrl = "https://m.tuandai.com";
+    var isLogin = false;
+    isAppOpen = true;
+    if (isAppOpen && !isLogin) {
+        isLogin = Util.checkLogin(t, s);
+    }
+    console.info("isLogin----", isLogin);
 
     //查看活动规则
     $('.page').on('click', '.rule-btn', function() {
@@ -8,10 +18,20 @@
 
     // TODO:我要参加活动
     $('.page').on('click', '.btn-join', function() {
-        var t = Util.getParam('t');
-        var s = Util.getParam('s');
-        var type = Util.getParam('type');
-        window.location.href = "./page2.html?t=" + t + "&s=" + s + "&type=" + type;
+        if (Jsbridge.isNewVersion() && !s) {
+            if (!s) {
+                if (!isLogin) {
+                    Util.openLogin(isAppOpen, mobileUrl);
+                    return;
+                } else {
+                     window.location.href = "./page2.html?t=" + t + "&s=" + s ;
+                }
+            }
+        } else {
+            window.location.href = "./page2.html?t=" + t + "&s=" + s;
+        }
+
+       
     })
 
     var ruleContentEl = $('.rule-content');

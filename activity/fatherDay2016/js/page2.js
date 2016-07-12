@@ -10,6 +10,7 @@
     if (isAppOpen && !isLogin) {
         isLogin = Util.checkLogin(t, s);
     }
+    console.info("aaaa---",isLogin);
     //初始化数据
     function init() {
         var temp = "";
@@ -17,7 +18,7 @@
         for (var i = 1; i <= 10; i++) {
             var pid = "pic" + i;
             var imgSrc = "../images/pic.png";
-            temp += '<div class="swiper-slide" data-id="' + pid + '"><div class="slidecont"><div class="piccont"><i class="icon-picture" style="background-image:url(\'' + imgSrc + '\');"></i></div><i class="icon-tag"><span>排名第' + i + '</span></i></div></div>';
+            temp += '<div class="swiper-slide" data-id="' + pid + '" picid="aa"><div class="slidecont"><div class="piccont"><i class="icon-picture" style="background-image:url(\'' + imgSrc + '\');"></i></div><i class="icon-tag"><span>排名第' + i + '</span></i></div></div>';
             pictureJson[pid] = {
                 picNo: '205' + i,
                 assists: i * 100,
@@ -104,7 +105,8 @@
     });
 
     $(".sbody").on('click', '.piccont', function() {
-        window.location.href = "./picDetail.html";
-    })
+        var pid = $(".swiper-slide-active").attr('picid');
+        window.location.href = "./picDetail.html?pid=" + pid;
+    });
 
 })();
