@@ -1,0 +1,1252 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    // height: 100%;
+    // width: 100%;
+    // overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+$bg-color: #fffbf0;
+$color-yellow: #ffc600;
+$duration: .8s;
+$delay: .3s;
+// .swiper-slide {
+// 	width: 100%;
+// 	height: pxToRem(500px) !important;
+// 	background-color: #ddd;
+// 	text-align: center;
+// }
+body {
+    background-color: $bg-color;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    background-color: $bg-color;
+}
+
+.icon-cover {
+    @include background('../images/cover.png', 635px, 642px);
+    margin: auto;
+}
+
+.icon-logo {
+    @include background('../images/logo.png', 202px, 66px);
+    position: absolute;
+    bottom: 6%;
+    left: 50%;
+    margin-left: pxToRem(-101px);
+}
+
+.fmcont {
+    width: 100%;
+    height: 100%;
+    padding-top: pxToRem(110px);
+    background-image: url('../images/stripe1.png');
+    background-size: pxToRem(750px) pxToRem(275px);
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.swiper-container,
+.swiper-wrapper,
+.swiper-slide {
+    width: 100%;
+    height: 100%;
+}
+
+.menucont {
+    // width: 100%;
+    transition-property: width;
+    width: 0;
+    transition-duration: .5s;
+    height: 100%;
+    position: absolute;
+    // left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255, 209, 8, .9);
+    z-index: 999;
+    overflow: hidden;
+    .closecont {
+        width: pxToRem(120px);
+        height: pxToRem(120px);
+        border-radius: pxToRem(120px);
+        background-color: #ffae00;
+        position: absolute;
+        right: pxToRem(-60px);
+        top: pxToRem(-60px);
+    }
+    .icon-close {
+        @include background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVBAMAAABbObilAAAAD1BMVEUAAAD///////////////+PQt5oAAAABHRSTlMAnVfboqON9gAAAFlJREFUCNdjYFJggAAlBgYVRwiT0UWBQcVFAMwWcVEA8kESIAosIAAhISJQAiIExlClYGGohAlIGCoBFIYBExcDBgxxhHqEOWjmI+xFcQ+yO5Hdj+wvZP8CAJ70EYH1UEUbAAAAAElFTkSuQmCC',
+        21px,
+        21px);
+        position: absolute;
+        bottom: pxToRem(30px);
+        left: pxToRem(30px);
+    }
+}
+
+i,
+span {
+    display: inline-block;
+}
+
+.to-show {
+    width: 100%;
+}
+
+.menu {
+    width: 100%;
+    height: 100%;
+    padding: pxToRem(100px) pxToRem(40px);
+    .ml {
+        display: flex;
+        display: -webkit-box;
+        height: 25%;
+        padding-top: 15px;
+        &>div {
+            width: pxToRem(335px);
+            text-align: center;
+            font-size: pxToRem(30px);
+            color: #804f2b;
+            span {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+        .unselected {
+            background-image: url('../images/circle.png');
+            background-size: cover;
+        }
+        .selected {
+            background-color: #fff;
+        }
+        .mc {
+            width: pxToRem(116px);
+            height: pxToRem(116px);
+            border-radius: pxToRem(116px);
+            margin: auto;
+            position: relative;
+        }
+        .icon-module {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+        .icon-m1 {
+            @include background('../images/icon1.png',
+            60px,
+            60px);
+            margin-left: pxToRem(-30px);
+            margin-top: pxToRem(-30px);
+        }
+        .icon-m2 {
+            @include background('../images/icon2.png',
+            57px,
+            60px);
+            margin-left: pxToRem(-29px);
+            margin-top: pxToRem(-30px);
+        }
+        .icon-m3 {
+            @include background('../images/icon3.png',
+            59px,
+            60px);
+            margin-left: pxToRem(-28px);
+            margin-top: pxToRem(-30px);
+        }
+        .icon-m4 {
+            @include background('../images/icon4.png',
+            60px,
+            67px);
+            margin-left: pxToRem(-30px);
+            margin-top: pxToRem(-34px);
+        }
+        .icon-m5 {
+            @include background('../images/icon5.png',
+            54px,
+            62px);
+            margin-left: pxToRem(-27px);
+            margin-top: pxToRem(-31px);
+        }
+        .icon-m6 {
+            @include background('../images/icon6.png',
+            69px,
+            62px);
+            margin-left: pxToRem(-35px);
+            margin-top: pxToRem(-31px);
+        }
+        .icon-m7 {
+            @include background('../images/icon7.png',
+            58px,
+            53px);
+            margin-left: pxToRem(-29px);
+            margin-top: pxToRem(-26px);
+        }
+        .icon-m8 {
+            @include background('../images/icon8.png',
+            62px,
+            58px);
+            margin-left: pxToRem(-31px);
+            margin-top: pxToRem(-29px);
+        }
+    }
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/bottom.png');
+    background-size: pxToRem(750px) pxToRem(70px);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding-top: pxToRem(40px);
+    display: none;
+}
+
+.icon-menu {
+    @include background('../images/menu.png',
+    83px,
+    83px);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.m-title {
+    font-size: pxToRem(48px);
+    color: #804f2b;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    display: block !important;
+    // position: relative;
+}
+
+.icon-mi {
+    @include inline-background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAQlBMVEUAAAD5xQD5wgD5ywD5xwD5xgD5xQD5xwD5xgD4vQD5vQD5vQD5xgD5yQD5zQD5zwD5zAD4wAD5vQD5xgD5vQD5zwAXqAbCAAAAE3RSTlMAEK6XiHhXNxzsl/rt07Hs4+PTW5kfrwAAAPJJREFUOMuN1duuhCAMQNHCiOiM10P7/796eGBSagvMfjJxSUOiCLIY/L6ltO0+RGi2TBcl7p4Wk7kX5ZLo7bSbT9IQ1/np8nIaYu4txx7Ugujr8ew0RK/n2pCnz2RD/FZ25M4RXF0ZzGnHwxeqs+FnyXBqQKybMrx+gTdAJBuiLEKwIT4KcJDMduhhtyCq/uAkLVG3AmmIRh8D4hDyguPRvBO1mYdqSQ9JZcrAsC8jw668gWFXTgxRU/niStT5FMStJy14dQxbnD/XNO4FNcSmK0eKMGg8dbgCx3MbEOuLjQ/S/nIOJERrN5c87JPO/H38A9V2Zg7uZvKQAAAAAElFTkSuQmCC',
+    40px,
+    40px);
+    position: relative;
+    bottom: pxToRem(30px);
+    left: pxToRem(10px);
+    font-size: pxToRem(20px);
+    color: #fff;
+    text-align: center;
+    line-height: pxToRem(40px);
+}
+
+.m-subtitle {
+    // width: pxToRem(256px);
+    margin-top: pxToRem(10px);
+    text-align: center;
+    span {
+        height: pxToRem(54px);
+        line-height: pxToRem(54px);
+        padding: 0 pxToRem(20px);
+        color: #fff;
+        font-size: pxToRem(30px);
+        background-color: $color-yellow;
+        margin: auto;
+        border-bottom-left-radius: pxToRem(20px);
+        border-bottom-right-radius: pxToRem(20px);
+    }
+}
+
+.icon-page1 {
+    width: pxToRem(302px);
+    height: pxToRem(290px);
+    position: absolute;
+    background-size: cover;
+}
+
+.ip1-pic1 {
+    background-image: url('../images/pic1_1_1.png');
+    left: pxToRem(60px);
+    top: 20%;
+    animation: zoomIn $duration both;
+}
+
+.ip1-pic2 {
+    background-image: url('../images/pic1_1_2.png');
+    right: pxToRem(60px);
+    top: 25%;
+    animation: zoomIn $duration both $delay;
+}
+
+.ip1-pic3 {
+    background-image: url('../images/pic1_1_3.png');
+    left: pxToRem(60px);
+    bottom: 25%;
+    animation: zoomIn $duration both $delay*2;
+}
+
+.ip1-pic4 {
+    background-image: url('../images/pic1_1_4.png');
+    right: pxToRem(60px);
+    bottom: 20%;
+    animation: zoomIn $duration both $delay*3;
+}
+
+.pno {
+    @include background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAMAAABG8BK2AAAAPFBMVEX/0gAAAAD/tQD/0gD/0gD/0gD/wAD/zQD/0gD/0gD/0gD/0gD/xgD/0gD/0gD/0gD/0gD/0gD/0gD/0gDIZoMjAAAAFHRSTlPMAP20mjXy2hGKQ8DpenBWKBxnpC747hYAAAHnSURBVFjDtdYLcsMgDEXRJ4MwBv+z/712UreDTTDCmvYu4Azi4wT0pDBbExGNnYKncw8YHnDOsoZZLfJe/JiZUWp6xniLcmZ7wHiDu8yaGI2S1tPKWNQyjcyOelMTs0GKW5hBZF41xq8cAnOAHN8wPNuII9d1buzrzFBiwmWM7qgu+Q9mMTjXd7+5ChQyJhhcG7uUuz/zC7NZ5Lnu3Ihy9syEiI8SUVuQgfAt6PKKOxQhXLOuzUFSKozkRCSlwkiOgfCKXcm5OylGqnRvpPOaIXze+q7UWLzFE+7riuEavZkVlVyRcYUXbpEqTSWeFhPS/qqXY4mQrox6Oeub8RAahcOa6c0sADRjpZG+GQux2lTGHwzk+pup0n8BMFpyN2dlPR3MjqbG4ubs9BMGtNW7D2bY6De8AB3kAqVg8KB+/KaO39H1zOjjv2HCP6wm/g1jlEi2xVbN+DMzaZVIZ2bRMvbCrFpmvjAUlQxfmUHJ0JUJOmXIGOVUnDOzRjGUM17DLB8MTbrF5IyPj5lQYGjR3eCcIftMiVuZ8UY1Us4QP1EmumMo6O5vztCiU3KGgk7JGWIDuZ0khryVEMN0z6SWWD8iT00M+cr7skwkMQmaYwWRmVQYYm4snqiZSa3LZE0EonkNO5PYF1oWEb+Tb77lAAAAAElFTkSuQmCC',
+    70px,
+    70px);
+    position: absolute;
+    right: pxToRem(38px);
+    bottom: pxToRem(38px);
+    color: #804f2b;
+    font-size: pxToRem(26px);
+    .pn-txt {
+        position: absolute;
+        bottom: pxToRem(16px);
+        left: pxToRem(16px);
+    }
+}
+
+.icon-page2 {
+    width: pxToRem(259px);
+    height: pxToRem(291px);
+    position: absolute;
+    background-size: cover;
+}
+
+.ip2-pic1 {
+    background-image: url('../images/pic1_2_1.png');
+    left: pxToRem(60px);
+    top: 20%;
+    animation: zoomIn $duration both;
+}
+
+.ip2-pic2 {
+    background-image: url('../images/pic1_2_2.png');
+    right: pxToRem(60px);
+    top: 25%;
+    animation: zoomIn $duration both $delay;
+}
+
+.ip2-pic3 {
+    background-image: url('../images/pic1_2_3.png');
+    left: pxToRem(60px);
+    bottom: 25%;
+    animation: zoomIn $duration both $delay*2;
+}
+
+.ip2-pic4 {
+    background-image: url('../images/pic1_2_4.png');
+    right: pxToRem(60px);
+    bottom: 20%;
+    animation: zoomIn $duration both $delay*3;
+}
+
+.icon-page3 {
+   
+    background-size: cover;
+    position: absolute;
+    left: 50%;
+    margin-left: pxToRem(-133px);
+}
+
+.ip3-pic1 {
+	 width: pxToRem(266px);
+    height: pxToRem(372px);
+    background-image: url('../images/pic1_3_1.png');
+    top: 18%;
+    animation: slideInLeft $duration both;
+}
+
+.ip3-pic2 {
+	 width: pxToRem(285px);
+    height: pxToRem(372px);
+    background-image: url('../images/pic1_3_2.png');
+    // bottom: 16%;
+    top: 56%;
+    animation: slideInRight $duration both;
+}
+
+.icon-page4 {
+   
+    position: absolute;
+    background-size: cover;
+}
+
+.ip4-pic1 {
+	 width: pxToRem(585px);
+    height: pxToRem(244px);
+    background-image: url('../images/pic1_4_1.png');
+    left: pxToRem(60px);
+    top: 15%;
+    animation: slideInLeft $duration both;
+}
+
+.ip4-pic2 {
+	 width: pxToRem(596px);
+    height: pxToRem(244px);
+    background-image: url('../images/pic1_4_2.png');
+    right: pxToRem(60px);
+    width: pxToRem(596px) !important;
+    top: 38%;
+    animation: slideInRight $duration both $delay;
+}
+
+.ip4-pic3 {
+	 width: pxToRem(565px);
+    height: pxToRem(244px);
+    background-image: url('../images/pic1_4_3.png');
+    left: pxToRem(60px);
+    bottom: 18%;
+    animation: slideInLeft $duration both $delay*2;
+}
+
+.icon-page5 {
+    position: absolute;
+    background-size: cover;
+}
+
+.ip5-pic1 {
+    background-image: url('../images/pic2_1_1.png');
+    left: 50%;
+    top: 18%;
+    margin-left: pxToRem(-294px);
+    animation: zoomIn $duration both;
+    width: pxToRem(588px);
+    height: pxToRem(316px);
+}
+
+.ip5-pic2 {
+    background-image: url('../images/pic2_1_2.png');
+    left: 50%;
+    // bottom: 0;
+    top: 54%;
+    margin-left: pxToRem(-358px);
+    animation: slideInLeft $duration both $delay*2;
+    width: pxToRem(716px);
+    height: pxToRem(547px);
+}
+
+.line {
+    width: pxToRem(600px);
+    border: 1px dashed $color-yellow;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: pxToRem(-300px);
+    transform: scaleY(.5);
+}
+
+.icon-page6 {
+    position: absolute;
+    background-size: cover;
+}
+
+.ip6-pic1 {
+    background-image: url('../images/pic2_2_1.png');
+    left: 50%;
+    top: 18%;
+    margin-left: pxToRem(-300px);
+    animation: zoomIn $duration both;
+    width: pxToRem(599px);
+    height: pxToRem(300px);
+}
+
+.ip6-pic2 {
+    background-image: url('../images/pic2_2_2.png');
+    left: 50%;
+    top: 55%;
+    // bottom: 8%;
+    margin-left: pxToRem(-358px);
+    animation: slideInLeft $duration both $delay*2;
+    width: pxToRem(716px);
+    height: pxToRem(512px);
+}
+
+.p7-txt {
+    // width: 100%;
+    font-size: pxToRem(26px);
+    line-height: pxToRem(40px);
+    text-align: justify;
+    margin: pxToRem(30px) pxToRem(110px);
+    position: relative;
+    &:before {
+        content: "";
+        width: pxToRem(10px);
+        height: pxToRem(10px);
+        background-color: #ffc436;
+        border-radius: 10px;
+        position: absolute;
+        top: pxToRem(12px);
+        left: pxToRem(-30px);
+    }
+}
+
+.slideInLeft {
+    animation: slideInLeft $duration both;
+}
+
+.ip7-pic1 {
+    @include background('../images/pic2_3_1.png',
+    604px,
+    300px);
+    margin: auto;
+}
+
+.ip7-pic2 {
+    @include background('../images/pic2_3_2.png',
+    610px,
+    363px);
+    position: absolute;
+    left: 50%;
+    top: 58%;
+    // bottom: 13%;
+    margin-left: pxToRem(-305px);
+    animation: zoomInUp $duration*2 both $delay;
+}
+
+.ip8-pic1 {
+    @include background('../images/pic2_4_1.png',
+    588px,
+    300px);
+    margin: auto;
+}
+
+.ip8-pic2 {
+    @include background('../images/pic2_4_2.png',
+    610px,
+    439px);
+    position: absolute;
+    left: 50%;
+    top: 56%;
+    // bottom: 8%;
+    margin-left: pxToRem(-305px);
+    animation: zoomInUp $duration*2 both $delay;
+}
+
+.lightSpeedIn {
+    animation: slideInRight $duration ease-out both;
+}
+
+.ip9-pic1 {
+    @include background('../images/pic2_5_1.png',
+    610px,
+    767px);
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    // bottom: 10%;
+    margin-left: pxToRem(-305px);
+    // animation: zoomInUp $duration*2 both $delay;
+    @extend .slideInLeft;
+}
+
+.ip10-pic1 {
+    @include background('../images/pic2_6_1.png',
+    620px,
+    346px);
+    position: absolute;
+    left: 50%;
+    top: 18%;
+    margin-left: pxToRem(-310px);
+    animation: slideInLeft $duration both;
+}
+
+.ip10-pic2 {
+    @include background('../images/pic2_6_2.png',
+    635px,
+    465px);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: pxToRem(-317px);
+    animation: slideInRight $duration both $delay;
+}
+
+.ip11-pic1 {
+    @include background('../images/pic2_7_1.png',
+    629px,
+    240px);
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    margin-left: pxToRem(-315px);
+    animation: slideInLeft $duration both;
+}
+
+.ip11-pic2 {
+    @include background('../images/pic2_7_2.png',
+    642px,
+    489px);
+    position: absolute;
+    left: 50%;
+    // bottom: 15%;
+    top: 45%;
+    margin-left: pxToRem(-321px);
+    animation: slideInRight $duration both $delay;
+}
+
+.ip12-pic1 {
+    @include background('../images/pic2_8_1.png',
+    630px,
+    730px);
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    margin-left: pxToRem(-315px);
+    animation: slideInLeft $duration both;
+}
+
+.ip13-pic1 {
+    @include background('../images/pic2_9_1.png',
+    630px,
+    278px);
+    position: absolute;
+    left: 50%;
+    top: 16%;
+    margin-left: pxToRem(-315px);
+    animation: slideInLeft $duration both;
+}
+
+.ip13-pic2 {
+    @include background('../images/pic2_9_2.png',
+    716px,
+    575px);
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    // bottom: 10%;
+    margin-left: pxToRem(-358px);
+    animation: slideInRight $duration both $delay;
+}
+
+
+.ip14-pic1 {
+    @include background('../images/pic2_10_1.png',
+    512px,
+    191px);
+    position: absolute;
+    left: 50%;
+    top: 16%;
+    margin-left: pxToRem(-256px);
+    animation: slideInLeft $duration both;
+}
+
+.ip14-pic2 {
+    @include background('../images/pic2_10_2.png',
+    628px,
+    488px);
+    position: absolute;
+    left: 50%;
+    top: 43%;
+    // bottom: 20%;
+    margin-left: pxToRem(-314px);
+    animation: slideInRight $duration both $delay;
+}
+
+.ip15-pic1 {
+    @include background('../images/pic2_11_1.png',
+    515px,
+    221px);
+    position: absolute;
+    left: 50%;
+    top: 16%;
+    margin-left: pxToRem(-258px);
+    animation: zoomIn $duration both;
+}
+
+.ip15-pic2 {
+    @include background('../images/pic2_11_2.png',
+    689px,
+    464px);
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    margin-left: pxToRem(-345px);
+    animation: slideInRight $duration both $delay;
+}
+
+.ip16-pic1 {
+    @include background('../images/pic2_12_1.png',
+    531px,
+    151px);
+    position: absolute;
+    left: 50%;
+    top: 16%;
+    margin-left: pxToRem(-265px);
+    animation: slideInLeft $duration both;
+}
+
+.ip16-pic2 {
+    @include background('../images/pic2_12_2.png',
+    750px,
+    605px);
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    margin-left: pxToRem(-375px);
+    animation: slideInLeft $duration both $delay;
+}
+
+.ip17-pic1 {
+    @include background('../images/pic2_13_0.png',
+    750px,
+    906px);
+    position: absolute;
+    left: 50%;
+    top: 16%;
+    margin-left: pxToRem(-375px);
+    animation: zoomIn $duration both;
+}
+
+.ip18-pic1 {
+    @include background('../images/pic2_14_0.png',
+    637px,
+    812px);
+    position: absolute;
+    left: 50%;
+    top: 16%;
+    margin-left: pxToRem(-318px);
+    animation: zoomInUp $duration*2 both;
+}
+
+.ip19-pic1 {
+    @include background('../images/pic2_15_1.png',
+    411px,
+    151px);
+    position: absolute;
+    left: 50%;
+    top: 16%;
+    margin-left: pxToRem(-206px);
+    animation: slideInLeft $duration both;
+}
+
+.ip19-pic2 {
+    @include background('../images/pic2_15_2.png',
+    650px,
+    545px);
+    position: absolute;
+    left: 50%;
+    top: 42%;
+    margin-left: pxToRem(-325px);
+    animation: slideInRight $duration both $delay*2;
+}
+
+.ip20-pic1 {
+    @include background('../images/pic3_1_0.png',
+    659px,
+    817px);
+    position: absolute;
+    left: 50%;
+    top: 16%;
+    margin-left: pxToRem(-330px);
+    animation: slideInLeft $duration both;
+}
+
+.ip21-pic1 {
+    @include background('../images/pic3_2_0.png',
+    655px,
+    844px);
+    position: absolute;
+    left: 50%;
+    top: 16%;
+    margin-left: pxToRem(-326px);
+    animation: slideInLeft $duration both;
+}
+
+.ip22-pic1 {
+    @include background('../images/pic3_3_0.png',
+    634px,
+    304px);
+    position: absolute;
+    left: 50%;
+    top: 16%;
+    margin-left: pxToRem(-317px);
+    animation: slideInLeft $duration both;
+}
+
+.ip23-pic1 {
+    @include background('../images/pic4_1_0.png',
+    637px,
+    844px);
+    position: absolute;
+    left: 50%;
+    top: 16%;
+    margin-left: pxToRem(-319px);
+    animation: slideInLeft $duration both;
+}
+
+.ip24-pic1 {
+    @include background('../images/pic_4_2_0.png',
+    637px,
+    844px);
+    position: absolute;
+    left: 50%;
+    top: 16%;
+    margin-left: pxToRem(-319px);
+    animation: slideInRight $duration both;
+}
+
+.ip25-pic1 {
+    @include background('../images/pic4_3_0.png',
+    643px,
+    845px);
+    position: absolute;
+    left: 50%;
+    top: 16%;
+    margin-left: pxToRem(-322px);
+    animation: zoomIn $duration both;
+}
+
+.ip26-pic1 {
+    @include background('../images/pic4_4_1.png',
+    616px,
+    239px);
+    position: absolute;
+    left: 50%;
+    top: 16%;
+    margin-left: pxToRem(-308px);
+    animation: slideInLeft $duration both;
+}
+
+.ip26-pic2 {
+    @include background('../images/pic4_4_2.png',
+    653px,
+    239px);
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    margin-left: pxToRem(-327px);
+    animation: slideInRight $duration both $delay;
+}
+
+.ip26-pic3 {
+    @include background('../images/pic4_4_3.png',
+    638px,
+    239px);
+    position: absolute;
+    left: 50%;
+    bottom: 16%;
+    margin-left: pxToRem(-319px);
+    animation: slideInLeft $duration both $delay*2;
+}
+
+.ip27-pic1 {
+    @include background('../images/pic4_5_1.png',
+    610px,
+    239px);
+    position: absolute;
+    left: 50%;
+    top: 16%;
+    margin-left: pxToRem(-305px);
+    animation: slideInLeft $duration both;
+}
+
+.ip27-pic2 {
+    @include background('../images/pic4_5_2.png',
+    660px,
+    239px);
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    margin-left: pxToRem(-330px);
+    animation: slideInRight $duration both $delay;
+}
+
+.ip27-pic3 {
+    @include background('../images/pic4_5_3.png',
+    622px,
+    239px);
+    position: absolute;
+    left: 50%;
+    bottom: 16%;
+    margin-left: pxToRem(-311px);
+    animation: slideInLeft $duration both $delay*2;
+}
+
+.am-l {
+    width: pxToRem(310px);
+    position: absolute;
+    left: pxToRem(60px);
+}
+
+.am-r {
+    width: pxToRem(310px);
+    position: absolute;
+    right: pxToRem(60px);
+}
+
+.am-txt {
+    width: 100%;
+    font-size: pxToRem(24px);
+    color: #844e2f;
+    text-align: center;
+    display: block;
+    height: pxToRem(30px);
+}
+
+.am-lt {
+    top: 15%;
+    animation: slideInLeft $duration both;
+}
+
+.am-lb {
+    top: 52%;
+    animation: slideInLeft $duration both $delay*2;
+}
+
+.am-rm {
+    top: 32%;
+    animation: slideInRight $duration both $delay;
+}
+
+.ip28-pic1 {
+    @include background('../images/pic4_6_1.png',
+    310px,
+    388px);
+    margin: auto;
+}
+
+.ip28-pic2 {
+    @include background('../images/pic4_6_2.png',
+    310px,
+    388px);
+    margin: auto;
+}
+
+.ip28-pic3 {
+    @include background('../images/pic4_6_3.png',
+    310px,
+    388px);
+    margin: auto;
+}
+
+.yt-btn {
+    width: pxToRem(150px);
+    height: pxToRem(50px);
+    line-height: pxToRem(50px);
+    text-align: center;
+    color: #fff;
+    background-color: $color-yellow;
+    font-size: pxToRem(30px);
+    border-radius: pxToRem(50px);
+    margin: auto;
+}
+
+.yp-list {
+    width: 100%;
+    margin-top: pxToRem(20px);
+    .yp-row {
+        width: 100%;
+        display: flex;
+        display: -webkit-box;
+        &>div {
+            width: pxToRem(375px);
+        }
+        i {
+            margin: auto;
+        }
+    }
+    &>.yp-row:last-child {
+        padding-top: pxToRem(10px);
+    }
+}
+
+.yp-rl {
+    position: relative;
+    &:before {
+        @include border('right',
+        $color-yellow);
+    }
+}
+
+.ip29-pic1 {
+    @include background('../images/pic5_1_1.png',
+    243px,
+    911px);
+    animation: slideInLeft $duration both;
+}
+
+.ip29-pic2 {
+    @include background('../images/pic5_1_2.png',
+    243px,
+    910px);
+    animation: slideInRight $duration both;
+}
+.ip30-pic1 {
+    @include background('../images/pic5_2_1.png',
+    241px,
+    876px);
+    animation: slideInLeft $duration both;
+}
+
+.ip30-pic2 {
+    @include background('../images/pic5_2_2.png',
+    245px,
+    876px);
+    animation: slideInRight $duration both;
+}
+.ip31-pic1 {
+    @include background('../images/pic5_3_1.png',
+    242px,
+    875px);
+    animation: slideInLeft $duration both;
+}
+
+.ip31-pic2 {
+    @include background('../images/pic5_3_2.png',
+    243px,
+    876px);
+    animation: slideInRight $duration both;
+}
+.ip32-pic {
+    margin: auto;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ip32-pic1 {
+    margin-top: pxToRem(28px);
+    background-image: url('../images/pic6_1_0.png');
+    width: pxToRem(654px);
+    height: pxToRem(948px);
+    animation: slideInRight $duration both;
+}
+.ip33-pic {
+    margin: auto;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ip33-pic1 {
+    margin-top: pxToRem(28px);
+    background-image: url('../images/pic6_2_0.png');
+    width: pxToRem(654px);
+    height: pxToRem(948px);
+    animation: slideInLeft $duration both;
+}
+.ip34-pic {
+    margin: auto;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ip34-pic1 {
+    margin-top: pxToRem(28px);
+    background-image: url('../images/pic6_3_0.png');
+    width: pxToRem(654px);
+    height: pxToRem(488px);
+    animation: slideInRight $duration both;
+}
+.ip35-pic {
+    margin: auto;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ip35-pic1 {
+    margin-top: pxToRem(20px);
+    background-image: url('../images/pic7_1_1.png');
+    width: pxToRem(670px);
+    height: pxToRem(306px);
+    animation: slideInLeft $duration both;
+    margin-bottom: pxToRem(20px);
+}
+
+.ip35-pic2 {
+    background-image: url('../images/pic7_1_2.png');
+    width: pxToRem(670px);
+    height: pxToRem(300px);
+    animation: slideInRight $duration both $delay;
+    margin-bottom: pxToRem(20px);
+}
+
+.ip35-pic3 {
+    background-image: url('../images/pic7_1_3.png');
+    width: pxToRem(670px);
+    height: pxToRem(330px);
+    animation: slideInLeft $duration both $delay*2;
+}
+.ip36-pic {
+    margin: auto;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ip36-pic1 {
+    margin-top: pxToRem(30px);
+    background-image: url('../images/pic7_2_1.png');
+    width: pxToRem(670px);
+    height: pxToRem(286px);
+    animation: slideInRight $duration both;
+    margin-bottom: pxToRem(30px);
+}
+
+.ip36-pic2 {
+    background-image: url('../images/pic7_2_2.png');
+    width: pxToRem(670px);
+    height: pxToRem(286px);
+    animation: slideInLeft $duration both $delay;
+    margin-bottom: pxToRem(30px);
+}
+
+.ip36-pic3 {
+    background-image: url('../images/pic7_2_3.png');
+    width: pxToRem(670px);
+    height: pxToRem(330px);
+    animation: slideInRight $duration both $delay*2;
+}
+.ip37-pic {
+    margin: auto;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ip37-pic1 {
+    margin-top: pxToRem(30px);
+    background-image: url('../images/pic7_3_1.png');
+    width: pxToRem(670px);
+    height: pxToRem(250px);
+    animation: zoomIn $duration both;
+    margin-bottom: pxToRem(30px);
+}
+
+.ip37-pic2 {
+    background-image: url('../images/pic7_3_2.png');
+    width: pxToRem(676px);
+    height: pxToRem(306px);
+    animation: zoomIn $duration both $delay;
+    margin-bottom: pxToRem(30px);
+}
+
+.ip37-pic3 {
+    background-image: url('../images/pic7_3_3.png');
+    width: pxToRem(670px);
+    height: pxToRem(306px);
+    animation: zoomIn $duration both $delay*2;
+}
+.ip38-pic {
+    margin: auto;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ip38-pic1 {
+    margin-top: pxToRem(52px);
+    background-image: url('../images/pic8_1_1.png');
+    width: pxToRem(632px);
+    height: pxToRem(400px);
+    animation: slideInRight $duration both;
+    margin-bottom: pxToRem(30px);
+}
+
+.ip38-pic2 {
+    background-image: url('../images/pic8_1_2.png');
+    width: pxToRem(632px);
+    height: pxToRem(436px);
+    animation: slideInRight $duration both $delay;
+}
+.ip39-pic {
+    margin: auto;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ip39-pic1 {
+    margin-top: pxToRem(20px);
+    background-image: url('../images/pic8_2_1.png');
+    width: pxToRem(632px);
+    height: pxToRem(476px);
+    animation: slideInLeft $duration both;
+    margin-bottom: pxToRem(20px);
+}
+
+.ip39-pic2 {
+    background-image: url('../images/pic8_2_2.png');
+    width: pxToRem(632px);
+    height: pxToRem(478px);
+    animation: slideInRight $duration both $delay;
+}
+.ip40-pic {
+    margin: auto;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ip40-pic1 {
+    margin-top: pxToRem(20px);
+    background-image: url('../images/pic8_3_1.png');
+    width: pxToRem(632px);
+    height: pxToRem(446px);
+    animation: slideInRight $duration both;
+    margin-bottom: pxToRem(20px);
+}
+
+.ip40-pic2 {
+    background-image: url('../images/pic8_3_2.png');
+    width: pxToRem(632px);
+    height: pxToRem(478px);
+    animation: slideInLeft $duration both $delay;
+}
+.lc {
+	width: 100%;
+	height: 100%;
+	padding-top: pxToRem(60px);
+	font-size: pxToRem(26px);
+	color: #442d13;
+}
+.icon-lb {
+	@include background('../images/back_cover.png', 560px, 514px);
+	margin: auto;
+}
+.l-txt {
+	text-align: center;
+	line-height: pxToRem(46px);
+	width: 100%;
+	padding: pxToRem(60px) pxToRem(110px);
+}
+.ewcont {
+	width: 100%;
+	display: flex;
+	display: -webkit-box;
+	text-align: center;
+	img {
+		width: pxToRem(160px);
+		height: pxToRem(160px);
+		margin-bottom: pxToRem(50px);
+	}
+	span {
+		width: 100%;
+		margin-bottom: pxToRem(10px);
+	}
+	.il {
+		width: pxToRem(270px);
+	}
+	.is {
+		width: pxToRem(210px);
+	}
+	// &>div {
+	// 	width: pxToRem(250px);
+	// }
+}
+.ltxt-s {
+	font-size: pxToRem(22px);
+}
