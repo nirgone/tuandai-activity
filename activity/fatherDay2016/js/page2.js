@@ -105,8 +105,13 @@
     });
 
     $(".sbody").on('click', '.piccont', function() {
+<<<<<<< HEAD
         var pid = $(".swiper-slide-active").attr('picid');
         window.location.href = "./picDetail.html?pid=" + pid;
     });
+=======
+        window.location.href = "./picDetail.html?t=" + t + "&s=" + s;
+    })
+>>>>>>> e7f49ba244d8d8741d48f16da7da1f462675f6d4
 
 })();

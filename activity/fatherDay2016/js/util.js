@@ -61,6 +61,23 @@
                 }, d * 1000);
             }, duration);
         },
+        showLoading: function() {
+            if ($(".loader").length <= 0) {
+                var loader = document.createElement('div');
+                $(loader).addClass("loader");
+                document.body.appendChild(loader);
+            } else {
+                $(".loader").show();
+            }
+
+        },
+        hideLoading: function() {
+            if ($(".loader").length == 1) {
+                $(".loader").hide();
+            } else {
+                $(".loader").remove();
+            }
+        },
         popup: function(title, msg, hasClose, btnTxt, btnCallback, cancelCallback) {
             var me = this;
             var closeTemp = "";

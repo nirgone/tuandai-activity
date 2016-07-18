@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>微信端专属礼包</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+	<audio src="../music/win.mp3"  preload id="win_music"></audio>
+	<audio src="../music/lose.mp3"  preload id="lose_music"></audio>
+    <div class="scroll active">
+        <div class="content">
+            <div class="item">
+                <i class="title icon-month-title"></i>
+                <div class="gift-part">
+                    <span class="gift-text icon-month-gift-text"></span>
+                </div>
+                <div class="right-part">
+                    <p>每月底最后一天晚上</p>
+                    <p>19:00～19:30限量发放，</p>
+                    <p>数量有限，先到先得</p>
+                    <a class="btn btn-active"></a>
+                </div>
+            </div>
+            <div class="item">
+                <i class="title icon-quarter-title"></i>
+                <div class="gift-part unactive">
+                    <span class="gift-text icon-quarter-gift-text"></span>
+                </div>
+                <div class="right-part">
+                    <p>每季度最后一月15号</p>
+                    <p>19:00～19:30限量发放，</p>
+                    <p>数量有限，先到先得</p>
+                    <a class="btn btn-unactive"></a>
+                </div>
+            </div>
+            <div class="item">
+                <i class="title icon-year-title"></i>
+                <div class="gift-part">
+                    <span class="gift-text icon-year-gift-text"></span>
+                </div>
+                <div class="right-part">
+                    <p>每年年底12月31日晚上</p>
+                    <p>19:00～19:30限量发放，</p>
+                    <p>数量有限，先到先得</p>
+                    <a class="btn btn-finished"></a>
+                </div>
+            </div>
+
+            <a class="btn-rule" id="show_rule">活动规则</a>
+        </div>
+    </div>
+    <!--rule -->
+    <section class="popup rule-part" id="rule_part">
+        <div class="masker"></div>
+        <div class="popup-content rule">
+            <div class="close"><i class="icon-close1"></i></div>
+            <div class="rule-title icon-rule-title"></div>
+            <div class="rule-content">
+                <p>每月、季度、年末在固定时间内发放微信专属礼包，开启礼包后可获得团币、投资红包、团贷纪念品等，活动将在7月31日起开启：</p>
+                <p>1、月度包：每月最后1天晚上19:00~19:30发放专属礼包，礼包内含数值不等的团币，数量有限，先到先得；</p>
+                <p>2、季度包：每个季度最后1个月15号晚上19:00~19:30发放专属礼包，礼包内含金额不等的投资红包，数量有限，先到先得；</p>
+                <p>3、年度包：每年年底12月31日晚上19:00~19:30发放专属礼包，礼包内含最高价值100元的团贷纪念品，数量有限，先到先得；</p>
+                <p>4、本活动最终解释权归团贷网所有。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 奖品弹窗 -->
+    <div class="popup alert-part" id="alert">
+    	<div class="masker"></div>
+    	<div class="light-part zoomIn">
+    		<i class="icon-star1"></i>
+    		<i class="icon-star2"></i>
+    		<i class="icon-star3"></i>
+    		<i class="icon-star4"></i>
+    		<i class="icon-star5"></i>
+    	</div>
+    	<div class="popup-content">
+    		<div class="close"><i class="icon-close"></i></div>
+    		<div class="alert-content">
+    			<!-- <p>成功开启</p>
+    			<p class="font-green">微信专属月度包</p>
+    			<p>并获得<span class="font-yellow">58团币</span></p> -->
+    			<!-- <p>奖品们都粗去玩惹</p>
+    			<p>下次要早点来找他们哦～</p> -->
+    		</div>
+    		<a class="btn-transparent"></a>
+    	</div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

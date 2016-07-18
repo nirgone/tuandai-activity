@@ -1,6 +1,8 @@
 (function() {
     FastClick.attach(document.body);
     var isLogin = true;
+    var t = Util.getParam('t'); //loginToken
+    var s = Util.getParam('s'); //根据s判断是否获取到loginToken， s为0表示未登录
 
     //点赞赚团币
     $(".zancont").on('click', function() {
