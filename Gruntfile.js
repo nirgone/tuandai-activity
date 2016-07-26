@@ -1,3 +1,4 @@
+
 //Creating on 2016/2/20 by simona
 'use strict';
 
@@ -386,6 +387,9 @@ module.exports = function(grunt) {
 	});
 
 	grunt.registerTask('serve', 'start the server and preview your app', function(target) {
+		// if(projectname) {
+		// 	config.actName = projectname;
+		// }
 
 		if (target === 'dist') {
 			return grunt.task.run(['build', 'browserSync:dist']);
