@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 	// Configurable paths
 	var config = {
 		activity: 'activity',
-		actName: 'weixinShake',
+		actName: 'semiannualReport',
 		dist: 'dist'
 	};
 
