@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 	// Configurable paths
 	var config = {
 		activity: 'activity',
-		actName: 'semiannualReport',
+		actName: 'cardGame',
 		dist: 'dist'
 	};
 
