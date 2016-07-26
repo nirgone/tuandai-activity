@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>semiannualReport</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/vendor/swiper/swiper.min.css">
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- <div class="swiper-slide">
+                    <div class="fmcont">
+                        <i class="icon-cover"></i>
+                        <i class="icon-logo"></i>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="menucont">
+        <div class="closecont"><i class="icon-close"></i></div>
+        <ul class="menu">
+            <li class="ml">
+                <div>
+                    <div class="mc unselected" data-module="1"><i class="icon-module icon-m1"></i></div>
+                    <span>01. 数据概览</span>
+                </div>
+                <div>
+                    <div class="mc unselected" data-module="2"><i class="icon-module icon-m2"></i></div>
+                    <span>02. 数读团贷</span>
+                </div>
+            </li>
+            <li class="ml">
+                <div>
+                    <div class="mc unselected" data-module="3"><i class="icon-module icon-m3"></i></div>
+                    <span>03. 运营实录</span>
+                </div>
+                <div>
+                    <div class="mc unselected" data-module="4"><i class="icon-module icon-m4"></i></div>
+                    <span>04. 精彩活动 </span>
+                </div>
+            </li>
+            <li class="ml">
+                <div>
+                    <div class="mc unselected" data-module="5"><i class="icon-module icon-m5"></i></div>
+                    <span>05. 要事盘点</span>
+                </div>
+                <div>
+                    <div class="mc unselected" data-module="6"><i class="icon-module icon-m6"></i></div>
+                    <span>06. 荣誉认证</span>
+                </div>
+            </li>
+            <li class="ml">
+                <div>
+                    <div class="mc unselected" data-module="7"><i class="icon-module icon-m7"></i></div>
+                    <span>07. 媒体报道</span>
+                </div>
+                <div>
+                    <div class="mc unselected" data-module="8"><i class="icon-module icon-m8"></i></div>
+                    <span>08. 团粉寄语</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/vendor/swiper/swiper.jquery.min.js"></script>
+<script src="../js/data.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

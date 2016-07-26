@@ -1,0 +1,1250 @@
+    @charset "UTF-8";
+    @import "variables";
+    @import "../../sass/func";
+    /*  for small width screen  */
+    
+    @media screen and (max-width:374px) {}
+    /* for moto*/
+    @media screen and (min-width:360px) and (min-height: 450px) and (max-height: 475px) {
+    	$ratio: .85;
+        $sratio: .65;
+        .pic {
+            transform: scale($ratio);
+            -webkit-transform: scale($ratio);
+        }
+        .menu {
+        	padding: pxToRem(20px) pxToRem(40px);
+        }
+        .ip1-pic1 {
+            top: 17%;
+        }
+        .ip1-pic2 {
+            top: 25%;
+        }
+        .ip1-pic3 {
+           top: 50%;
+        }
+        .ip1-pic4 {
+        	top: 58%;
+        }
+        .ip2-pic3 {
+           top: 52%;
+        }
+        .ip2-pic4 {
+            top: 58%;
+        }
+        .ip3-pic1 {
+            left: 8% !important;
+            top: 25% !important;
+            margin-left: 0 !important;
+        }
+        .ip3-pic2 {
+            right: 6%!important;
+            top: 25% !important;
+            margin-left: 0 !important;
+        }
+        
+        .fmcont {
+            padding-top: 0;
+        }
+        .ip4-pic3 {
+            bottom: 5%;
+        }
+        .ip5-pic1 {
+            top: 15%;
+            transform: scale($sratio);
+            -webkit-transform: scale($sratio);
+        }
+        .ip5-pic2 {
+            margin-left: pxToRem(-358px)*$sratio;
+            width: pxToRem(716px)*$sratio;
+            height: pxToRem(547px)*$sratio;
+            margin-bottom: -5px;
+        }
+        .ip6-pic1 {
+            top: 18%;
+            transform: scale($sratio);
+            -webkit-transform: scale($sratio);
+        }
+        .ip6-pic2 {
+            margin-left: pxToRem(-358px) * $sratio;
+            width: pxToRem(716px) * $sratio;
+            height: pxToRem(512px) * $sratio;
+            bottom: 0;
+        }
+        .p7-txt {
+            margin: pxToRem(20px) pxToRem(50px) 0 pxToRem(50px);
+            transform: scale($ratio);
+            -webkit-transform: scale($ratio);
+        }
+        .ip7-pic1 {
+            width: pxToRem(604px) * $sratio;
+            height: pxToRem(300px) * $sratio
+        }
+        .ip7-pic2 {
+           top: 48%;
+        }
+        .ip8-pic1 {
+            width: pxToRem(588px) * $sratio;
+            height: pxToRem(300px) * $sratio;
+            margin-top: -5px;
+        }
+        .ip8-pic2 {
+            top: 48%;
+            transform: scale($ratio);
+            -webkit-transform: scale($ratio);
+        }
+        .ip9-pic1 {
+            width: pxToRem(610px) * $sratio;
+            height: pxToRem(767px) * $sratio;
+            margin-left: pxToRem(-305px) * $sratio;
+            // bottom: 0;
+            top: 32%;
+        }
+        .ip10-pic1 {
+            width: pxToRem(620px) * $sratio;
+            height: pxToRem(346px) * $sratio;
+            top: 24%;
+            margin-left: pxToRem(-310px) * $sratio;
+        }
+        .ip10-pic2 {
+            width: pxToRem(635px) * $ratio;
+            height: pxToRem(465px) * $ratio;
+            margin-left: pxToRem(-317px) * $ratio;
+            top: 54%;
+        }
+        .ip11-pic1 {
+            width: pxToRem(629px) * $ratio;
+            height: pxToRem(240px) * $ratio;
+            top: 25%;
+            margin-left: pxToRem(-315px) * $ratio;
+        }
+        .ip11-pic2 {
+            width: pxToRem(642px) * $ratio;
+            height: pxToRem(489px) * $ratio;
+            margin-left: pxToRem(-321px) * $ratio;
+            top: 50%;
+        }
+        .ip12-pic1 {
+            width: pxToRem(630px) * $ratio;
+            height: pxToRem(730px) * $ratio;
+            margin-left: pxToRem(-315px) * $ratio;
+            top: 25%;
+        }
+        .ip13-pic1 {
+            width: pxToRem(630px) * $ratio;
+            height: pxToRem(278px) * $ratio;
+            margin-left: pxToRem(-315px) * $ratio;
+            top: 24%;
+        }
+        .ip13-pic2 {
+            width: pxToRem(716px) * $ratio;
+            height: pxToRem(575px) * $ratio;
+            margin-left: pxToRem(-358px) * $ratio;
+            // bottom: pxToRem(-50px);
+            top: 56%;
+        }
+        .ip14-pic1 {
+            width: pxToRem(512px) * $ratio;
+            height: pxToRem(191px) * $ratio;
+            margin-left: pxToRem(-256px) * $ratio;
+            top: 24%;
+        }
+        .ip14-pic2 {
+            width: pxToRem(628px) * $ratio;
+            height: pxToRem(488px) * $ratio;
+            margin-left: pxToRem(-314px) * $ratio;
+            top: 50%;
+        }
+        .ip15-pic1 {
+            top: 18%;
+            transform: scale($ratio);
+            -webkit-transform: scale($ratio);
+        }
+        .ip15-pic2 {
+            width: pxToRem(689px) * $ratio;
+            height: pxToRem(464px) * $ratio;
+            margin-left: pxToRem(-345px) * $ratio;
+            top: 48%;
+        }
+        .ip16-pic1 {
+            width: pxToRem(531px) * $ratio;
+            height: pxToRem(151px) * $ratio;
+            margin-left: pxToRem(-265px) * $ratio;
+            top: 24%;
+        }
+        .ip16-pic2 {
+            width: pxToRem(750px) * $ratio;
+            height: pxToRem(605px) * $ratio;
+            margin-left: pxToRem(-375px) * $ratio;
+            top: 46%;
+        }
+        .ip17-pic1 {
+            top: 14%;
+            transform: scale($ratio);
+            -webkit-transform: scale($ratio);
+        }
+        .ip18-pic1 {
+        	transform: scale($ratio);
+        	-webkit-transform: scale($ratio);
+        	top: 14%;
+        }
+        .ip19-pic1 {
+            width: pxToRem(411px) * $ratio;
+            height: pxToRem(151px) * $ratio;
+            margin-left: pxToRem(-206px) * $ratio;
+            top: 24%;
+        }
+        .ip19-pic2 {
+            width: pxToRem(650px) * $ratio;
+            height: pxToRem(545px) * $ratio;
+            margin-left: pxToRem(-325px) * $ratio;
+            top: 45%;
+        }
+        .ip20-pic1 {
+            width: pxToRem(659px) * $ratio;
+            height: pxToRem(817px) * $ratio;
+            margin-left: pxToRem(-330px) * $ratio;
+            top: 16%;
+        }
+        .ip21-pic1 {
+            width: pxToRem(655px) * $ratio;
+            height: pxToRem(844px) * $ratio;
+            margin-left: pxToRem(-326px) * $ratio;
+            top: 14%;
+        }
+        .ip22-pic1 {
+            width: pxToRem(634px) * $ratio;
+            height: pxToRem(304px) * $ratio;
+            margin-left: pxToRem(-317px) * $ratio;
+            top: 16%;
+        }
+        .ip23-pic1 {
+            width: pxToRem(637px) * $ratio;
+            height: pxToRem(844px) * $ratio;
+            margin-left: pxToRem(-319px) * $ratio;
+            top: 20%;
+        }
+        .ip24-pic1 {
+            width: pxToRem(637px) * $ratio;
+            height: pxToRem(844px) * $ratio;
+            margin-left: pxToRem(-319px) * $ratio;
+            top: 20%;
+        }
+        .ip25-pic1 {
+            width: pxToRem(643px) * $ratio;
+            height: pxToRem(845px) * $ratio;
+            margin-left: pxToRem(-322px) * $ratio;
+            top: 20%;
+        }
+        .ip26-pic1 {
+            width: pxToRem(616px) * $ratio;
+            height: pxToRem(239px) * $ratio;
+            margin-left: pxToRem(-308px) * $ratio;
+            top: 20%;
+        }
+        .ip26-pic2 {
+            width: pxToRem(653px) * $ratio;
+            height: pxToRem(239px) * $ratio;
+            margin-left: pxToRem(-327px) * $ratio;
+            top: 40%;
+        }
+        .ip26-pic3 {
+            width: pxToRem(638px) * $ratio;
+            height: pxToRem(239px) * $ratio;
+            margin-left: pxToRem(-319px) * $ratio;
+            bottom: 10%;
+        }
+        .ip27-pic1 {
+            width: pxToRem(610px) * $ratio;
+            height: pxToRem(239px) * $ratio;
+            margin-left: pxToRem(-305px) * $ratio;
+            top: 16%;
+        }
+        .ip27-pic2 {
+            width: pxToRem(660px) * $ratio;
+            height: pxToRem(239px) * $ratio;
+            margin-left: pxToRem(-330px) * $ratio;
+            top: 40%;
+        }
+        .ip27-pic3 {
+            width: pxToRem(622px) * $ratio;
+            height: pxToRem(239px) * $ratio;
+            margin-left: pxToRem(-311px) * $ratio;
+            bottom: 10%;
+        }
+        .ip28-pic1 {
+            width: pxToRem(310px) * $sratio;
+            height: pxToRem(388px) * $sratio;
+        }
+        .ip28-pic2 {
+            width: pxToRem(310px) * $sratio;
+            height: pxToRem(388px) * $sratio;
+        }
+        .ip28-pic3 {
+            width: pxToRem(310px) * $sratio;
+            height: pxToRem(388px) * $sratio;
+        }
+        .am-lt {
+        	top: 20%;
+        }
+        .am-lb {
+            top: 56%;
+        }
+        .yp-list {
+            margin-top: 0;
+        }
+        .ip29-pic1 {
+            width: pxToRem(243px) * $ratio;
+            height: pxToRem(911px) * $ratio;
+        }
+        .ip29-pic2 {
+            width: pxToRem(243px) * $ratio;
+            height: pxToRem(910px) * $ratio;
+        }
+        .ip30-pic1 {
+            width: pxToRem(241px) * $ratio;
+            height: pxToRem(876px) * $ratio;
+        }
+        .ip30-pic2 {
+            width: pxToRem(245px) * $ratio;
+            height: pxToRem(876px) * $ratio;
+        }
+        .ip31-pic1 {
+            width: pxToRem(242px) * $ratio;
+            height: pxToRem(875px) * $ratio;
+        }
+        .ip31-pic2 {
+            width: pxToRem(243px) * $ratio;
+            height: pxToRem(876px) * $ratio;
+        }
+        .ip32-pic1 {
+            margin-top: 0;
+            width: pxToRem(654px) * $ratio;
+            height: pxToRem(948px) * $ratio;
+        }
+        .ip33-pic1 {
+            margin-top: 0;
+            width: pxToRem(654px) * $ratio;
+            height: pxToRem(948px) * $ratio;
+        }
+        .ip34-pic1 {
+            margin-top: 0;
+            width: pxToRem(654px) * $ratio;
+            height: pxToRem(488px) * $ratio;
+        }
+        .ip35-pic1 {
+            margin-top: 0;
+            width: pxToRem(670px) * $ratio;
+            height: pxToRem(306px) * $ratio;
+            margin-bottom: pxToRem(30px) * $ratio;
+        }
+        .ip35-pic2 {
+            width: pxToRem(670px) * $ratio;
+            height: pxToRem(300px) * $ratio;
+            margin-bottom: pxToRem(30px * $ratio);
+        }
+        .ip35-pic3 {
+            width: pxToRem(670px) * $ratio;
+            height: pxToRem(330px) * $ratio;
+        }
+        .ip36-pic1 {
+            margin-top: pxToRem(30px) * $ratio;
+            width: pxToRem(670px) * $ratio;
+            height: pxToRem(286px) * $ratio;
+            margin-bottom: pxToRem(30px) * $ratio;
+        }
+        .ip36-pic2 {
+            width: pxToRem(670px) * $ratio;
+            height: pxToRem(286px) * $ratio;
+            margin-bottom: pxToRem(30px) * $ratio;
+        }
+        .ip36-pic3 {
+            width: pxToRem(670px) * $ratio;
+            height: pxToRem(330px) * $ratio;
+        }
+        .ip37-pic1,
+        .ip37-pic2,
+        .ip37-pic3 {
+            margin: 0 auto;
+            transform: scale($ratio);
+            -webkit-transform: scale($ratio);
+
+        }
+        // .ip37-pic2,
+        // .ip37-pic3 {
+        //     margin-top: pxToRem(-90px);
+        // }
+        .ip38-pic1 {
+            margin-top: pxToRem(30px) * $ratio;
+            width: pxToRem(632px) * $ratio;
+            height: pxToRem(400px) * $ratio;
+            margin-bottom: pxToRem(30px) * $ratio;
+        }
+        .ip38-pic2 {
+            width: pxToRem(632px) * $ratio;
+            height: pxToRem(436px) * $ratio;
+        }
+        .ip39-pic1 {
+            margin-top: pxToRem(20px) * $ratio;
+            width: pxToRem(632px) * $ratio;
+            height: pxToRem(476px) * $ratio;
+            margin-bottom: pxToRem(20px) * $ratio;
+        }
+        .ip39-pic2 {
+            width: pxToRem(632px) * $ratio;
+            height: pxToRem(478px) * $ratio;
+        }
+        .ip40-pic1 {
+            margin-top: pxToRem(20px);
+            width: pxToRem(632px) * $ratio;
+            height: pxToRem(446px) * $ratio;
+            margin-bottom: pxToRem(20px);
+        }
+        .ip40-pic2 {
+            width: pxToRem(632px) * $ratio;
+            height: pxToRem(478px) * $ratio;
+        }
+        .l-txt {
+            padding: 0 pxToRem(30px);
+        }
+        // .lc {
+        //     padding-top: 0;
+        //     transform: scale($ratio);
+        //     -webkit-transform: scale($ratio);
+        // }
+        .icon-lb {
+        	margin-top: -30px;
+        }
+        .ewcont img {
+            margin-bottom: 0;
+        }
+    }
+    /* =========for short screen============== */
+    @media screen and (max-height: 540px) and (min-width:321px) {
+        /* $ratio: 0.85;
+        .pic {
+            transform: scale($ratio);
+            -webkit-transform: scale($ratio);
+        }
+        .ip1-pic1 {
+            top: 16%;
+        }
+        .ip1-pic2 {
+            top: 25%;
+        }
+        .ip1-pic3 {
+            bottom: 18%;
+        }
+        .ip1-pic4 {
+            bottom: 12%;
+        }
+        .ip2-pic3 {
+            bottom: 14%;
+        }
+        .ip2-pic4 {
+            bottom: 9%;
+        }
+        .ip3-pic2 {
+            bottom: 0;
+        } */
+    }
+    
+    //* -----------meizu  mx3----------------- */
+    @media screen and (min-height: 540px) and (min-width:430px) {
+        $ratio: 0.9;
+        $sratio: .85;
+        .pic {
+            transform: scale($ratio);
+            -webkit-transform: scale($ratio);
+        }
+        .ip1-pic1 {
+            top: 16%;
+        }
+        .ip1-pic2 {
+            top: 25%;
+        }
+        .ip1-pic3 {
+            bottom: 18%;
+        }
+        .ip1-pic4 {
+            bottom: 12%;
+        }
+        .ip2-pic3 {
+            bottom: 14%;
+        }
+        .ip2-pic4 {
+            bottom: 9%;
+        }
+        .ip3-pic1 {
+            width: pxToRem(266px) * $ratio;
+            height: pxToRem(372px) * $ratio;
+        }
+        .ip3-pic2 {
+            width: pxToRem(285px) * $ratio;
+            height: pxToRem(372px) * $ratio;
+            bottom: 30px;
+        }
+        
+        .fmcont {
+            padding-top: 0;
+        }
+        .ip4-pic3 {
+            bottom: 5%;
+        }
+        .ip5-pic1 {
+            top: 16%;
+            transform: scale($sratio);
+            -webkit-transform: scale($sratio);
+        }
+        .ip5-pic2 {
+            margin-left: pxToRem(-358px)*$sratio;
+            width: pxToRem(716px)*$sratio;
+            height: pxToRem(547px)*$sratio;
+        }
+        .ip6-pic1 {
+            top: 18%;
+            transform: scale($sratio);
+            -webkit-transform: scale($sratio);
+        }
+        .ip6-pic2 {
+            margin-left: pxToRem(-358px) * $sratio;
+            width: pxToRem(716px) * $sratio;
+            height: pxToRem(512px) * $sratio;
+            bottom: 0;
+        }
+        .p7-txt {
+            margin: pxToRem(20px) pxToRem(60px) 0 pxToRem(60px);
+        }
+        .ip7-pic1 {
+            width: pxToRem(604px) * $ratio;
+            height: pxToRem(300px) * $ratio
+        }
+        .ip7-pic2 {
+            bottom: 4%;
+        }
+        .ip8-pic1 {
+            width: pxToRem(588px) * $sratio;
+            height: pxToRem(300px) * $sratio;
+            margin-top: -5px;
+        }
+        .ip8-pic2 {
+        	top: 50%;
+        }
+        .ip9-pic1 {
+            width: pxToRem(610px) * $sratio;
+            height: pxToRem(767px) * $sratio;
+            margin-left: pxToRem(-305px) * $sratio;
+            top: 28%;
+        }
+        .ip10-pic1 {
+            width: pxToRem(620px) * $ratio;
+            height: pxToRem(346px) * $ratio;
+            top: 20%;
+            margin-left: pxToRem(-310px) * $ratio;
+        }
+        .ip10-pic2 {
+            width: pxToRem(635px) * $sratio;
+            height: pxToRem(465px) * $sratio;
+            bottom: 50px;
+            margin-left: pxToRem(-317px) * $sratio;
+        }
+        .ip11-pic1 {
+            width: pxToRem(629px) * $ratio;
+            height: pxToRem(240px) * $ratio;
+            top: 20%;
+            margin-left: pxToRem(-315px) * $ratio;
+        }
+        .ip11-pic2 {
+            width: pxToRem(642px) * $ratio;
+            height: pxToRem(489px) * $ratio;
+            bottom: 8%;
+            margin-left: pxToRem(-321px) * $ratio;
+        }
+        .ip12-pic1 {
+            width: pxToRem(630px) * $ratio;
+            height: pxToRem(730px) * $ratio;
+            margin-left: pxToRem(-315px) * $ratio;
+            top: 20%;
+        }
+        .ip13-pic1 {
+            width: pxToRem(630px) * $ratio;
+            height: pxToRem(278px) * $ratio;
+            margin-left: pxToRem(-315px) * $ratio;
+            top: 20%;
+        }
+        .ip13-pic2 {
+            width: pxToRem(716px) * $ratio;
+            height: pxToRem(575px) * $ratio;
+            margin-left: pxToRem(-358px) * $ratio;
+            top: 50%;
+            // bottom: pxToRem(-50px);
+        }
+        .ip14-pic1 {
+            width: pxToRem(512px) * $ratio;
+            height: pxToRem(191px) * $ratio;
+            margin-left: pxToRem(-256px) * $ratio;
+            top: 20%;
+        }
+        .ip14-pic2 {
+            width: pxToRem(628px) * $ratio;
+            height: pxToRem(488px) * $ratio;
+            margin-left: pxToRem(-314px) * $ratio;
+            bottom: 5%;
+        }
+        .ip15-pic1 {
+            top: 18%;
+        }
+        .ip15-pic2 {
+            width: pxToRem(689px) * $ratio;
+            height: pxToRem(464px) * $ratio;
+            margin-left: pxToRem(-345px) * $ratio;
+            bottom: 10%;
+        }
+        .ip16-pic1 {
+            width: pxToRem(531px) * $ratio;
+            height: pxToRem(151px) * $ratio;
+            margin-left: pxToRem(-265px) * $ratio;
+            top: 20%;
+        }
+        .ip16-pic2 {
+            width: pxToRem(750px) * $ratio;
+            height: pxToRem(605px) * $ratio;
+            margin-left: pxToRem(-375px) * $ratio;
+            bottom: 0;
+        }
+        .ip17-pic1 {
+            top: 14%;
+        }
+        .ip19-pic1 {
+            width: pxToRem(411px) * $ratio;
+            height: pxToRem(151px) * $ratio;
+            margin-left: pxToRem(-206px) * $ratio;
+            top: 20%;
+        }
+        .ip19-pic2 {
+            width: pxToRem(650px) * $ratio;
+            height: pxToRem(545px) * $ratio;
+            margin-left: pxToRem(-325px) * $ratio;
+            bottom: 5%;
+        }
+        .ip20-pic1 {
+            width: pxToRem(659px) * $ratio;
+            height: pxToRem(817px) * $ratio;
+            margin-left: pxToRem(-330px) * $ratio;
+            top: 16%;
+        }
+        .ip21-pic1 {
+            width: pxToRem(655px) * $ratio;
+            height: pxToRem(844px) * $ratio;
+            margin-left: pxToRem(-326px) * $ratio;
+            top: 14%;
+        }
+        .ip22-pic1 {
+            width: pxToRem(634px) * $ratio;
+            height: pxToRem(304px) * $ratio;
+            margin-left: pxToRem(-317px) * $ratio;
+            top: 16%;
+        }
+        .ip23-pic1 {
+            width: pxToRem(637px) * $ratio;
+            height: pxToRem(844px) * $ratio;
+            margin-left: pxToRem(-319px) * $ratio;
+            top: 16%;
+        }
+        .ip24-pic1 {
+            width: pxToRem(637px) * $ratio;
+            height: pxToRem(844px) * $ratio;
+            margin-left: pxToRem(-319px) * $ratio;
+            top: 16%;
+        }
+        .ip25-pic1 {
+            width: pxToRem(643px) * $ratio;
+            height: pxToRem(845px) * $ratio;
+            margin-left: pxToRem(-322px) * $ratio;
+            top: 16%;
+        }
+        .ip26-pic1 {
+            width: pxToRem(616px) * $ratio;
+            height: pxToRem(239px) * $ratio;
+            margin-left: pxToRem(-308px) * $ratio;
+            top: 16%;
+        }
+        .ip26-pic2 {
+            width: pxToRem(653px) * $ratio;
+            height: pxToRem(239px) * $ratio;
+            margin-left: pxToRem(-327px) * $ratio;
+            top: 40%;
+        }
+        .ip26-pic3 {
+            width: pxToRem(638px) * $ratio;
+            height: pxToRem(239px) * $ratio;
+            margin-left: pxToRem(-319px) * $ratio;
+            bottom: 16%;
+        }
+        .ip27-pic1 {
+            width: pxToRem(610px) * $ratio;
+            height: pxToRem(239px) * $ratio;
+            margin-left: pxToRem(-305px) * $ratio;
+            top: 16%;
+        }
+        .ip27-pic2 {
+            width: pxToRem(660px) * $ratio;
+            height: pxToRem(239px) * $ratio;
+            margin-left: pxToRem(-330px) * $ratio;
+            top: 40%;
+        }
+        .ip27-pic3 {
+            width: pxToRem(622px) * $ratio;
+            height: pxToRem(239px) * $ratio;
+            margin-left: pxToRem(-311px) * $ratio;
+            bottom: 16%;
+        }
+        .ip28-pic1 {
+            width: pxToRem(310px) * $ratio;
+            height: pxToRem(388px) * $ratio;
+        }
+        .ip28-pic2 {
+            width: pxToRem(310px) * $ratio;
+            height: pxToRem(388px) * $ratio;
+        }
+        .ip28-pic3 {
+            width: pxToRem(310px) * $ratio;
+            height: pxToRem(388px) * $ratio;
+        }
+        .am-lb {
+            top: 54%;
+        }
+        .yp-list {
+            margin-top: 0;
+        }
+        .ip29-pic1 {
+            width: pxToRem(243px) * $sratio;
+            height: pxToRem(911px) * $sratio;
+        }
+        .ip29-pic2 {
+            width: pxToRem(243px) * $sratio;
+            height: pxToRem(910px) * $sratio;
+        }
+        .ip30-pic1 {
+            width: pxToRem(241px) * $sratio;
+            height: pxToRem(876px) * $sratio;
+        }
+        .ip30-pic2 {
+            width: pxToRem(245px) * $sratio;
+            height: pxToRem(876px) * $sratio;
+        }
+        .ip31-pic1 {
+            width: pxToRem(242px) * $sratio;
+            height: pxToRem(875px) * $sratio;
+        }
+        .ip31-pic2 {
+            width: pxToRem(243px) * $sratio;
+            height: pxToRem(876px) * $sratio;
+        }
+        .ip32-pic1 {
+            margin-top: 0;
+            width: pxToRem(654px) * $ratio;
+            height: pxToRem(948px) * $ratio;
+        }
+        .ip33-pic1 {
+            margin-top: 0;
+            width: pxToRem(654px) * $ratio;
+            height: pxToRem(948px) * $ratio;
+        }
+        .ip34-pic1 {
+            margin-top: 0;
+            width: pxToRem(654px) * $ratio;
+            height: pxToRem(488px) * $ratio;
+        }
+        .ip35-pic1 {
+            margin-top: pxToRem(30px) * $sratio;
+            width: pxToRem(670px) * $sratio;
+            height: pxToRem(306px) * $sratio;
+            margin-bottom: pxToRem(30px) * $sratio;
+        }
+        .ip35-pic2 {
+            width: pxToRem(670px) * $sratio;
+            height: pxToRem(300px) * $sratio;
+            margin-bottom: pxToRem(30px * $sratio);
+        }
+        .ip35-pic3 {
+            width: pxToRem(670px) * $sratio;
+            height: pxToRem(330px) * $sratio;
+        }
+        .ip36-pic1 {
+            margin-top: pxToRem(30px) * $sratio;
+            width: pxToRem(670px) * $sratio;
+            height: pxToRem(286px) * $sratio;
+            margin-bottom: pxToRem(30px) * $sratio;
+        }
+        .ip36-pic2 {
+            width: pxToRem(670px) * $sratio;
+            height: pxToRem(286px) * $sratio;
+            margin-bottom: pxToRem(30px) * $sratio;
+        }
+        .ip36-pic3 {
+            width: pxToRem(670px) * $sratio;
+            height: pxToRem(330px) * $sratio;
+        }
+        .ip37-pic1,
+        .ip37-pic2,
+        .ip37-pic3 {
+            margin: 0 auto;
+            transform: scale($sratio);
+            -webkit-transform: scale($sratio);
+        }
+        .ip37-pic2,
+        .ip37-pic3 {
+            margin: auto;
+            margin-top: pxToRem(-30px);
+        }
+        .ip38-pic1 {
+            margin-top: pxToRem(30px) * $ratio;
+            width: pxToRem(632px) * $ratio;
+            height: pxToRem(400px) * $ratio;
+            margin-bottom: pxToRem(30px) * $ratio;
+        }
+        .ip38-pic2 {
+            width: pxToRem(632px) * $ratio;
+            height: pxToRem(436px) * $ratio;
+        }
+        .ip39-pic1 {
+            margin-top: pxToRem(20px) * $sratio;
+            width: pxToRem(632px) * $sratio;
+            height: pxToRem(476px) * $sratio;
+            margin-bottom: pxToRem(20px) * $sratio;
+        }
+        .ip39-pic2 {
+            width: pxToRem(632px) * $sratio;
+            height: pxToRem(478px) * $sratio;
+        }
+        .ip40-pic1 {
+            margin-top: pxToRem(20px);
+            width: pxToRem(632px) * $sratio;
+            height: pxToRem(446px) * $sratio;
+            margin-bottom: pxToRem(20px);
+        }
+        .ip40-pic2 {
+            width: pxToRem(632px) * $sratio;
+            height: pxToRem(478px) * $sratio;
+        }
+        .l-txt {
+            padding: 0 pxToRem(30px);
+        }
+        .lc {
+            padding-top: 0;
+        }
+        .ewcont img {
+            margin-bottom: 0;
+        }
+    }
+    /* ------------------------iphone 5------------------------ */
+    
+    @media screen and (max-width:320px) and (max-height:508px) {
+        $ratio: 0.9;
+        .pic {
+            transform: scale($ratio);
+            -webkit-transform: scale($ratio);
+        }
+        .l-txt {
+        	padding: pxToRem(30px) pxToRem(60px);
+        }
+    }
+    /* -------------------------iphone4---------------------------- */
+    
+    @media screen and (max-width:320px) and (max-height:416px) {
+        $ratio: 0.85;
+        .pic {
+            transform: scale($ratio);
+            -webkit-transform: scale($ratio);
+        }
+        .ip1-pic1 {
+            top: 16%;
+        }
+        .ip1-pic2 {
+            top: 25%;
+        }
+        .ip1-pic3 {
+            bottom: 18%;
+        }
+        .ip1-pic4 {
+            bottom: 12%;
+        }
+        .ip2-pic3 {
+            bottom: 14%;
+        }
+        .ip2-pic4 {
+            bottom: 9%;
+        }
+        .ip3-pic2 {
+            bottom: 0;
+        }
+        .fmcont {
+            padding-top: 0;
+        }
+        .ip3-pic1 {
+            left: 8% !important;
+            top: 25% !important;
+            margin-left: 0 !important;
+        }
+        .ip3-pic2 {
+            right: 6%!important;
+            top: 25% !important;
+            margin-left: 0 !important;
+        }
+        .ip4-pic3 {
+            bottom: 5%;
+        }
+        $sratio: .75;
+        .ip5-pic1 {
+            top: 16%;
+            transform: scale($sratio);
+            -webkit-transform: scale($sratio);
+        }
+        .ip5-pic2 {
+            margin-left: pxToRem(-358px)*$sratio;
+            width: pxToRem(716px)*$sratio;
+            height: pxToRem(547px)*$sratio;
+        }
+        .ip6-pic1 {
+            top: 18%;
+            transform: scale($sratio);
+            -webkit-transform: scale($sratio);
+        }
+        .ip6-pic2 {
+            margin-left: pxToRem(-358px) * $sratio;
+            width: pxToRem(716px) * $sratio;
+            height: pxToRem(512px) * $sratio;
+            bottom: 0;
+        }
+        .p7-txt {
+            margin: pxToRem(20px) pxToRem(60px) 0 pxToRem(60px);
+        }
+        .ip7-pic1 {
+            width: pxToRem(604px) * $ratio;
+            height: pxToRem(300px) * $ratio
+        }
+        .ip7-pic2 {
+            bottom: 2%;
+        }
+        .ip8-pic1 {
+            width: pxToRem(588px) * $sratio;
+            height: pxToRem(300px) * $sratio;
+            margin-top: -5px;
+        }
+        .ip8-pic2 {
+            bottom: 0;
+        }
+        .ip9-pic1 {
+            width: pxToRem(610px) * $sratio;
+            height: pxToRem(767px) * $sratio;
+            margin-left: pxToRem(-305px) * $sratio;
+            top: 30%;
+        }
+        .ip10-pic1 {
+            width: pxToRem(620px) * $ratio;
+            height: pxToRem(346px) * $ratio;
+            top: 20%;
+            margin-left: pxToRem(-310px) * $ratio;
+        }
+        .ip10-pic2 {
+            width: pxToRem(635px) * $sratio;
+            height: pxToRem(465px) * $sratio;
+            bottom: 5%;
+            margin-left: pxToRem(-317px) * $sratio;
+        }
+        .ip11-pic1 {
+            width: pxToRem(629px) * $ratio;
+            height: pxToRem(240px) * $ratio;
+            top: 20%;
+            margin-left: pxToRem(-315px) * $ratio;
+        }
+        .ip11-pic2 {
+            width: pxToRem(642px) * $ratio;
+            height: pxToRem(489px) * $ratio;
+            bottom: 8%;
+            margin-left: pxToRem(-321px) * $ratio;
+        }
+        .ip12-pic1 {
+            width: pxToRem(630px) * $ratio;
+            height: pxToRem(730px) * $ratio;
+            margin-left: pxToRem(-315px) * $ratio;
+            top: 20%;
+        }
+        .ip13-pic1 {
+            width: pxToRem(630px) * $ratio;
+            height: pxToRem(278px) * $ratio;
+            margin-left: pxToRem(-315px) * $ratio;
+            top: 20%;
+        }
+        .ip13-pic2 {
+            width: pxToRem(716px) * $ratio;
+            height: pxToRem(575px) * $ratio;
+            margin-left: pxToRem(-358px) * $ratio;
+            top: 50%;
+        }
+        .ip14-pic1 {
+            width: pxToRem(512px) * $ratio;
+            height: pxToRem(191px) * $ratio;
+            margin-left: pxToRem(-256px) * $ratio;
+            top: 20%;
+        }
+        .ip14-pic2 {
+            width: pxToRem(628px) * $ratio;
+            height: pxToRem(488px) * $ratio;
+            margin-left: pxToRem(-314px) * $ratio;
+            bottom: 5%;
+        }
+        .ip15-pic1 {
+            top: 18%;
+        }
+        .ip15-pic2 {
+            width: pxToRem(689px) * $ratio;
+            height: pxToRem(464px) * $ratio;
+            margin-left: pxToRem(-345px) * $ratio;
+            bottom: 10%;
+        }
+        .ip16-pic1 {
+            width: pxToRem(531px) * $ratio;
+            height: pxToRem(151px) * $ratio;
+            margin-left: pxToRem(-265px) * $ratio;
+            top: 20%;
+        }
+        .ip16-pic2 {
+            width: pxToRem(750px) * $ratio;
+            height: pxToRem(605px) * $ratio;
+            margin-left: pxToRem(-375px) * $ratio;
+            bottom: -10%;
+        }
+        .ip17-pic1 {
+            top: 14%;
+        }
+        .ip18-pic1 {
+        	top: 13%;
+        }
+        .ip19-pic1 {
+            width: pxToRem(411px) * $ratio;
+            height: pxToRem(151px) * $ratio;
+            margin-left: pxToRem(-206px) * $ratio;
+            top: 20%;
+        }
+        .ip19-pic2 {
+            width: pxToRem(650px) * $ratio;
+            height: pxToRem(545px) * $ratio;
+            margin-left: pxToRem(-325px) * $ratio;
+            bottom: 5%;
+        }
+        .ip20-pic1 {
+            width: pxToRem(659px) * $ratio;
+            height: pxToRem(817px) * $ratio;
+            margin-left: pxToRem(-330px) * $ratio;
+            top: 16%;
+        }
+        .ip21-pic1 {
+            width: pxToRem(655px) * $ratio;
+            height: pxToRem(844px) * $ratio;
+            margin-left: pxToRem(-326px) * $ratio;
+            top: 14%;
+        }
+        .ip22-pic1 {
+            width: pxToRem(634px) * $ratio;
+            height: pxToRem(304px) * $ratio;
+            margin-left: pxToRem(-317px) * $ratio;
+            top: 16%;
+        }
+        .ip23-pic1 {
+            width: pxToRem(637px) * $ratio;
+            height: pxToRem(844px) * $ratio;
+            margin-left: pxToRem(-319px) * $ratio;
+            top: 16%;
+        }
+        .ip24-pic1 {
+            width: pxToRem(637px) * $ratio;
+            height: pxToRem(844px) * $ratio;
+            margin-left: pxToRem(-319px) * $ratio;
+            top: 16%;
+        }
+        .ip25-pic1 {
+            width: pxToRem(643px) * $ratio;
+            height: pxToRem(845px) * $ratio;
+            margin-left: pxToRem(-322px) * $ratio;
+            top: 16%;
+        }
+        .ip26-pic1 {
+            width: pxToRem(616px) * $ratio;
+            height: pxToRem(239px) * $ratio;
+            margin-left: pxToRem(-308px) * $ratio;
+            top: 16%;
+        }
+        .ip26-pic2 {
+            width: pxToRem(653px) * $ratio;
+            height: pxToRem(239px) * $ratio;
+            margin-left: pxToRem(-327px) * $ratio;
+            top: 40%;
+        }
+        .ip26-pic3 {
+            width: pxToRem(638px) * $ratio;
+            height: pxToRem(239px) * $ratio;
+            margin-left: pxToRem(-319px) * $ratio;
+            bottom: 16%;
+        }
+        .ip27-pic1 {
+            width: pxToRem(610px) * $ratio;
+            height: pxToRem(239px) * $ratio;
+            margin-left: pxToRem(-305px) * $ratio;
+            top: 16%;
+        }
+        .ip27-pic2 {
+            width: pxToRem(660px) * $ratio;
+            height: pxToRem(239px) * $ratio;
+            margin-left: pxToRem(-330px) * $ratio;
+            top: 40%;
+        }
+        .ip27-pic3 {
+            width: pxToRem(622px) * $ratio;
+            height: pxToRem(239px) * $ratio;
+            margin-left: pxToRem(-311px) * $ratio;
+            bottom: 16%;
+        }
+        .ip28-pic1 {
+            width: pxToRem(310px) * $ratio;
+            height: pxToRem(388px) * $ratio;
+        }
+        .ip28-pic2 {
+            width: pxToRem(310px) * $ratio;
+            height: pxToRem(388px) * $ratio;
+        }
+        .ip28-pic3 {
+            width: pxToRem(310px) * $ratio;
+            height: pxToRem(388px) * $ratio;
+        }
+        .am-lb {
+            top: 54%;
+        }
+        .yp-list {
+            margin-top: 0;
+        }
+        .ip29-pic1 {
+            width: pxToRem(243px) * $sratio;
+            height: pxToRem(911px) * $sratio;
+        }
+        .ip29-pic2 {
+            width: pxToRem(243px) * $sratio;
+            height: pxToRem(910px) * $sratio;
+        }
+        .ip30-pic1 {
+            width: pxToRem(241px) * $sratio;
+            height: pxToRem(876px) * $sratio;
+        }
+        .ip30-pic2 {
+            width: pxToRem(245px) * $sratio;
+            height: pxToRem(876px) * $sratio;
+        }
+        .ip31-pic1 {
+            width: pxToRem(242px) * $sratio;
+            height: pxToRem(875px) * $sratio;
+        }
+        .ip31-pic2 {
+            width: pxToRem(243px) * $sratio;
+            height: pxToRem(876px) * $sratio;
+        }
+        .ip32-pic1 {
+            margin-top: 0;
+            width: pxToRem(654px) * $ratio;
+            height: pxToRem(948px) * $ratio;
+        }
+        .ip33-pic1 {
+            margin-top: 0;
+            width: pxToRem(654px) * $ratio;
+            height: pxToRem(948px) * $ratio;
+        }
+        .ip34-pic1 {
+            margin-top: 0;
+            width: pxToRem(654px) * $ratio;
+            height: pxToRem(488px) * $ratio;
+        }
+        .ip35-pic1 {
+            margin-top: pxToRem(30px) * $sratio;
+            width: pxToRem(670px) * $sratio;
+            height: pxToRem(306px) * $sratio;
+            margin-bottom: pxToRem(30px) * $sratio;
+        }
+        .ip35-pic2 {
+            width: pxToRem(670px) * $sratio;
+            height: pxToRem(300px) * $sratio;
+            margin-bottom: pxToRem(30px * $sratio);
+        }
+        .ip35-pic3 {
+            width: pxToRem(670px) * $sratio;
+            height: pxToRem(330px) * $sratio;
+        }
+        .ip36-pic1 {
+            margin-top: pxToRem(30px) * $sratio;
+            width: pxToRem(670px) * $sratio;
+            height: pxToRem(286px) * $sratio;
+            margin-bottom: pxToRem(30px) * $sratio;
+        }
+        .ip36-pic2 {
+            width: pxToRem(670px) * $sratio;
+            height: pxToRem(286px) * $sratio;
+            margin-bottom: pxToRem(30px) * $sratio;
+        }
+        .ip36-pic3 {
+            width: pxToRem(670px) * $sratio;
+            height: pxToRem(330px) * $sratio;
+        }
+        .ip37-pic1,
+        .ip37-pic2,
+        .ip37-pic3 {
+            margin: 0 auto;
+            transform: scale($sratio);
+            -webkit-transform: scale($sratio);
+        }
+        .ip37-pic2,
+        .ip37-pic3 {
+            margin: auto;
+            margin-top: pxToRem(-30px);
+        }
+        .ip38-pic1 {
+            margin-top: pxToRem(30px) * $ratio;
+            width: pxToRem(632px) * $ratio;
+            height: pxToRem(400px) * $ratio;
+            margin-bottom: pxToRem(30px) * $ratio;
+        }
+        .ip38-pic2 {
+            width: pxToRem(632px) * $ratio;
+            height: pxToRem(436px) * $ratio;
+        }
+        .ip39-pic1 {
+            margin-top: pxToRem(20px) * $sratio;
+            width: pxToRem(632px) * $sratio;
+            height: pxToRem(476px) * $sratio;
+            margin-bottom: pxToRem(20px) * $sratio;
+        }
+        .ip39-pic2 {
+            width: pxToRem(632px) * $sratio;
+            height: pxToRem(478px) * $sratio;
+        }
+        .ip40-pic1 {
+            margin-top: pxToRem(20px);
+            width: pxToRem(632px) * $sratio;
+            height: pxToRem(446px) * $sratio;
+            margin-bottom: pxToRem(20px);
+        }
+        .ip40-pic2 {
+            width: pxToRem(632px) * $sratio;
+            height: pxToRem(478px) * $sratio;
+        }
+        .l-txt {
+            padding: 0 pxToRem(30px);
+        }
+        .lc {
+            padding-top: 0;
+        }
+        .ewcont img {
+            margin-bottom: 0;
+        }
+    }
+    
+    @media screen and (max-width: 320px) {}

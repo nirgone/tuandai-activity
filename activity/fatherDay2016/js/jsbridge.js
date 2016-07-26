@@ -108,7 +108,7 @@
 			}
 		},
 		actLogin: function(url, params, callback, errorCallback) {
-			
+
 			/*var params = {
 				loginToken: loginToken
 			};*/
@@ -174,29 +174,23 @@
 					}
 				}
 			} else {
-				connectWebViewJavascriptBridge(function(bridge) {
-					try {
-						if (!window.WebViewJavascriptBridge._messageHandler) {
-
-							bridge.init(function(message, responseCallback) {
-								console.log('JS got a message', message);
-								var data = {
-									'Javascript Responds': '测试中文!'
-								};
-								console.log('JS responding with', data);
-								if (initCallback) {
-									arguments[0] = message;
-									initCallback.apply(this, arguments);
-								}
-								responseCallback(data);
-							});
+				console.info("jsbridge---");
+				connectWebVdiewJavascriptBridge(function(bridge) {
+					bridge.init(function(message, responseCallback) {
+						console.log('JS got a message', message);
+						var data = {
+							'Javascript Responds': '测试中文!'
+						};
+						console.log('JS responding with', data);
+						if (initCallback) {
+							arguments[0] = message;
+							initCallback.apply(this, arguments);
 						}
-					} catch (e) {
-						console.error("jsbridge-----error--", e);
-					}
+						responseCallback(data);
+					});
 
 					bridge.registerHandler("LoginToken", function(data, responseCallback) {
-						// document.getElementById("show2").innerHTML = ("data from Java: = " + data);
+						console.info("kkkkkkk", data);
 						var responseData = "Javascript Says Right back aka!";
 						if (loginTokenCallback && typeof loginTokenCallback == "function") {
 							// loginTokenCallback(data);

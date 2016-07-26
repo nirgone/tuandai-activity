@@ -85,7 +85,9 @@ $base-font-size: 23.4375px; //design 750px / 32 = 20px;
 	zoom: 1;
 }
 @mixin inline-background($image,$width,$height) {
-	background:inline-image($image) no-repeat center;
+	// background:inline-image($image) no-repeat center;
+	display: inline-block;
+	background:url($image) no-repeat center;
     width:pxToRem($width);
     height:pxToRem($height);
     background-size:pxToRem($width) pxToRem($height);

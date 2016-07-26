@@ -175,6 +175,7 @@ function actInit() {
 			'    margin: 0;\n'+
 			'    padding: 0;\n'+
 			'    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n'+
+			'    -webkit-overflow-scrolling: touch !important;\n'+
 			'}\n'+
 			'\n'+
 			'a {\n'+
