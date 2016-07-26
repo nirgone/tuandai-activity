@@ -1250,3 +1250,12 @@ span {
 .ltxt-s {
 	font-size: pxToRem(22px);
 }
+.jg-txt {
+    font-size: pxToRem(24px);
+    width: 100%;
+    text-align: right;
+    color: #804f2b;
+    padding: 0 pxToRem(50px);
+    position: absolute;
+    top: 88%;
+}

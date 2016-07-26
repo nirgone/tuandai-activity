@@ -10,7 +10,7 @@
 	}, {
 		"module": 1,
 		"index": 2,
-		"temp": '<div class="page"><i class="icon-menu"></i><span class="m-title">数据概览<i class="icon-mi">01</i></span><div class="m-subtitle"><span>发展概况</span></div><i class="icon-page2 ip2-pic1 pic"></i><i class="icon-page2 ip2-pic2 pic"></i><i class="icon-page2 ip2-pic3 pic"></i><i class="icon-page2 ip2-pic4 pic"></i><i class="pno"><i class="pn-txt">02</i></i></div>'
+		"temp": '<div class="page"><i class="icon-menu"></i><span class="m-title">数据概览<i class="icon-mi">01</i></span><div class="m-subtitle"><span>发展概况</span></div><i class="icon-page2 ip2-pic1 pic"></i><i class="icon-page2 ip2-pic2 pic"></i><i class="icon-page2 ip2-pic3 pic"></i><i class="icon-page2 ip2-pic4 pic"></i><i class="pno"><i class="pn-txt">02</i></i><span class="jg-txt">注：机构数量包括正合普惠分公司</span></div>'
 	}, {
 		"module": 1,
 		"index": 3,
