@@ -1,0 +1,590 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  // overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+  text-decoration: none;
+}
+
+.page {
+  background-image: url("../images/bg.png");
+  min-height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-bottom: pxToRem(60px);
+  &.active {
+    -webkit-overflow-scrolling: touch;
+  }
+  .logo {
+    background-image: url("../images/logo.png");
+    width: pxToRem(198px);
+    height: pxToRem(110px);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    margin-left: pxToRem(44px);
+    z-index: 99;
+    // top: 0;
+  }
+  .banner {
+    background-image: url("../images/banner.png");
+    width: pxToRem(576px);
+    height: pxToRem(434px);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    // margin-top: pxToRem(106px);
+    margin: auto;
+    margin-top: pxToRem(-28px);
+    animation: bounceInDown .8s;
+  }
+  .people {
+    background-image: url("../images/people.png");
+    width: pxToRem(216px);
+    height: pxToRem(184px);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    margin: auto;
+    margin-top: pxToRem(-130px);
+  }
+  .lotcont {
+    position: relative;
+    background-image: url("../images/lotbg.png");
+    width: pxToRem(732px);
+    height: pxToRem(732px);
+    margin: auto;
+    background-size: contain;
+    // padding-top: pxToRem(32px);
+    margin-top: pxToRem(-88px);
+    background-repeat: no-repeat;
+    .turntable {
+      background-image: url("../images/turntable.png");
+      width: pxToRem(668px);
+      height: pxToRem(668px);
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      margin: auto;
+      // background-position: 50%;
+      transform-origin: center;
+      z-index: 9;
+      left: 50%;
+      top: 50%;
+      margin-top: pxToRem(-334px);
+      margin-left: pxToRem(-334px);
+    }
+    .icon-start {
+      background-image: url("../images/start.png");
+      width: pxToRem(188px);
+      height: pxToRem(216px);
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: pxToRem(252px);
+      left: 50%;
+      margin-left: pxToRem(-94px);
+      z-index: 99;
+      // opacity: 0.2;
+    }
+  }
+  .rule-btn {
+    background-image: url("../images/rule-btn.png");
+    width: pxToRem(218px);
+    height: pxToRem(70px);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: auto;
+    color: #ff5b00;
+    text-align: center;
+    font-size: pxToRem(28px);
+    font-family: '微软雅黑';
+    font-weight: bold;
+    line-height: pxToRem(62px);
+    // margin-top: pxToRem(-20px);
+  }
+  .winners-list {
+    width: pxToRem(566px);
+    height: pxToRem(360px);
+    border-radius: pxToRem(20px);
+    background-color: #ffe850;
+    margin: auto;
+    margin-top: pxToRem(26px);
+    padding: pxToRem(16px) pxToRem(10px);
+    padding-bottom: 0;
+    text-align: center;
+    font-family: '微软雅黑';
+    .title {
+      font-size: pxToRem(50px);
+      color: #cf431d;
+      line-height: 100%;
+      margin-bottom: pxToRem(12px);
+      font-family: '微软雅黑';
+    }
+    .scroll-title {
+      background-color: #fedb39;
+      color: #fff;
+      height: pxToRem(54px);
+      padding: 0 pxToRem(18px);
+      white-space: nowrap;
+      font-size: 0;
+      position: relative;
+      div {
+        position: absolute;
+        top: 50%;
+        margin-top: pxToRem(-20px);
+        font-size: pxToRem(30px);
+        text-align: center;
+        background-color: #fdbe01;
+        height: pxToRem(40px);
+        line-height: pxToRem(40px);
+        left: pxToRem(18px);
+        right: 50%;
+        &:last-child {
+          left: 50%;
+          right: pxToRem(18px);
+        }
+      }
+    }
+    .scroll-content {
+      background-image: url("../images/content-bg.png");
+      width: pxToRem(516px);
+      height: pxToRem(226px);
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: relative;
+      margin: auto;
+      padding-top: pxToRem(26px);
+      padding-bottom: pxToRem(30px);
+      font-size: 0;
+      overflow: hidden;
+      box-sizing: border-box;
+      .anit {
+        animation: move-list 5s linear infinite;
+      }
+      .winner-item {
+        font-weight: '微软雅黑';
+        position: relative;
+        margin-bottom: pxToRem(18px);
+        white-space: nowrap;
+        .winner-name {
+          font-size: pxToRem(30px);
+          color: #6d2307;
+          line-height: 100%;
+          display: inline-block;
+          width: 50%;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        .prize-name {
+          font-size: pxToRem(30px);
+          color: #ef3c3c;
+          line-height: 100%;
+          display: inline-block;
+          width: 50%;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+
+.dialog {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  .show {
+    display: block !important;
+  }
+  &.show {
+    display: block;
+    .mask {
+      display: block;
+    }
+  }
+  .rule-area {
+    width: pxToRem(564px);
+    // height: pxToRem(400px);
+    border-radius: pxToRem(20px);
+    background-color: #ffdf50;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: pxToRem(-282px);
+    transform: translateY(-50%);
+    z-index: 999;
+    padding-top: pxToRem(46px);
+    display: none;
+    padding-bottom: pxToRem(20px);
+    .rule-title {
+      font-size: pxToRem(50px);
+      text-align: center;
+      line-height: 100%;
+      color: #6d2306;
+      margin-bottom: pxToRem(20px);
+    }
+    .rule-list {
+      // background-image: url("../images/content-bg02.png");
+      width: pxToRem(516px);
+      // height: pxToRem(278px);
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      margin: auto;
+      font-size: pxToRem(26px);
+      padding: 0 pxToRem(30px);
+      box-sizing: border-box;
+      padding-top: pxToRem(32px);
+      background-color: #fffbe5;
+      padding-bottom: pxToRem(28px);
+      .rule-item {
+        line-height: pxToRem(34px);
+        color: #6d2306;
+        margin-bottom: pxToRem(28px);
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .close-btn {
+      position: absolute;
+      top: pxToRem(18px);
+      right: pxToRem(18px);
+      background-image: url("../images/icon-close.png");
+      width: pxToRem(40px);
+      height: pxToRem(40px);
+      background-repeat: no-repeat;
+      background-size: pxToRem(28px) pxToRem(28px);
+      z-index: 999;
+      background-position: 50%;
+    }
+  }
+  .get-prize {
+    width: pxToRem(564px);
+    border-radius: pxToRem(20px);
+    position: absolute;
+    // top: 10%;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    margin-left: pxToRem(-282px);
+    z-index: 999;
+    display: none;
+    .tuandai {
+      background-image: url("../images/icon-tuandai.png");
+      width: pxToRem(564px);
+      height: pxToRem(122px);
+      background-repeat: no-repeat;
+      background-size: contain;
+      // margin-bottom: pxToRem(30px);
+    }
+    .get-prize-wrapper {
+      width: pxToRem(564px);
+      position: relative;
+      margin-bottom: pxToRem(10px);
+      .ellipse {
+        width: pxToRem(220px);
+        height: pxToRem(210px);
+        background-color: #fff;
+        border-radius: pxToRem(210px);
+        margin: auto;
+      }
+      .yoho {
+        background-image: url("../images/Yoho.png");
+        width: pxToRem(152px);
+        height: pxToRem(44px);
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: pxToRem(-10px);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 99;
+      }
+      .close-btn {
+        position: absolute;
+        top: pxToRem(18px);
+        right: pxToRem(18px);
+        background-image: url("../images/icon-close.png");
+        width: pxToRem(40px);
+        height: pxToRem(40px);
+        background-repeat: no-repeat;
+        background-size: pxToRem(28px) pxToRem(28px);
+        z-index: 999;
+        background-position: 50%;
+      }
+      .ribbon {
+        background-image: url("../images/ribbon.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: pxToRem(512px);
+        height: pxToRem(270px);
+        left: 50%;
+        margin-left: pxToRem(-256px);
+        top: pxToRem(-42px);
+        position: absolute;
+        z-index: 9;
+      }
+      .get-prize-content {
+        background-color: #fff;
+        width: 100%;
+        // height: pxToRem(512px);
+        margin-top: pxToRem(-160px);
+        border-radius: pxToRem(20px);
+        position: relative;
+        padding-top: pxToRem(66px);
+        padding-bottom: pxToRem(30px);
+        text-align: center;
+        .content-wrapper {
+          z-index: 999;
+          .label {
+            font-size: pxToRem(28px);
+            color: #742306;
+            &.label01 {
+              margin-bottom: pxToRem(20px);
+            }
+            .get-prize-name {
+              color: #fb362e;
+              margin-left: pxToRem(8px);
+              margin-right: pxToRem(8px);
+              &.prize01::before {
+                content: '户外旅行双肩包'
+              }
+              &.prize02:before {
+                content: '518元红包'
+              }
+              &.prize03:before {
+                content: '乐扣运动水杯'
+              }
+              &.prize04:before {
+                content: '运动隐形腰包'
+              }
+            }
+          }
+          .prize-icon {
+            // background-size: contain;
+            background-repeat: no-repeat;
+            margin: auto;
+            margin-top: pxToRem(36px);
+            width: pxToRem(180px);
+            height: pxToRem(142px);
+            background-position: 50%;
+            margin-bottom: pxToRem(20px);
+            &.prize01 {
+              background-image: url("../images/prize01.png");
+              background-size: pxToRem(82px) pxToRem(124px);
+            }
+            &.prize02 {
+              background-image: url("../images/prize02.png");
+              background-size: pxToRem(168px) pxToRem(118px);
+            }
+            &.prize03 {
+              background-image: url("../images/prize03.png");
+              background-size: pxToRem(72px) pxToRem(142px);
+            }
+            &.prize04 {
+              background-image: url("../images/prize04.png");
+              background-size: pxToRem(180px) pxToRem(76px);
+            }
+          }
+          .registe-erea {
+            display: none;
+          }
+          .input-wrapper {
+            width: pxToRem(504px);
+            margin: auto;
+            margin-bottom: pxToRem(30px);
+            position: relative;
+            .error-tip {
+              text-align: left;
+              font-size: pxToRem(26px);
+              color: #f00;
+              line-height: pxToRem(30px);
+              height: pxToRem(30px);
+              width: 100%;
+              position: absolute;
+              left: 0;
+              top: pxToRem(80px);
+              display: none;
+            }
+          }
+          input {
+            // position: absolute;
+            font-size: pxToRem(34px);
+            left: 50%;
+            border: 1px solid #ccc;
+            color: #ccc;
+            border-radius: pxToRem(6px);
+            height: pxToRem(80px);
+            width: 100%;
+            padding-left: pxToRem(30px);
+            box-sizing: border-box;
+          }
+          .img-code {
+            .img-code-img {
+              position: absolute;
+              right: pxToRem(30px);
+              width: pxToRem(140px);
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+          .verification-code {
+            .get-code-btn {
+              font-size: pxToRem(28px);
+              color: #ffa102;
+              position: absolute;
+              right: pxToRem(30px);
+              top: 50%;
+              transform: translateY(-50%);
+              height: pxToRem(44px);
+              line-height: pxToRem(44px);
+              border-left: 1px solid #ccc;
+              padding-left: pxToRem(30px);
+            }
+          }
+          input.error {
+            border: 1px solid #fe3636 !important;
+          }
+          .get-prize-btn {
+            background-image: url("../images/get-prize-btn.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: pxToRem(504px);
+            height: pxToRem(66px);
+            line-height: pxToRem(60px);
+            font-size: pxToRem(34px);
+            color: #d46e00;
+            margin: auto;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 99;
+  display: none;
+}
+
+@keyframes move-list {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+    display: block !important;
+  }
+  100% {
+    // opacity: 0;
+    transform: translateY(-50%);
+    display: block !important;
+  }
+}
+
+@-webkit-keyframes move-list {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    display: block !important;
+  }
+  100% {
+    // opacity: 0;
+    -webkit-transform: translateY(-50%);
+    display: block !important;
+  }
+}
+
+@-webkit-keyframes bounceInDown {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+    transform: translate3d(0, -3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0);
+  }
+  to {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes bounceInDown {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+    transform: translate3d(0, -3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0);
+  }
+  to {
+    -webkit-transform: none;
+    transform: none;
+  }
+}

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+	<meta name="format-detection" content="telephone=no">
+	<title>现场活动</title>
+	<!-- build:css(dist) ../css/main.css -->
+	<link rel="stylesheet" href="../css/index.css">
+	<!-- endbuild -->
+ 	<script>
+	//动态算rem
+	(function(doc, win) {
+		var docEl = doc.documentElement,
+        	resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        	recalc = function() {
+            	// if (docEl.style.fontSize) return;
+            	clientWidth = docEl.clientWidth;
+            	if (!clientWidth) return;
+            	docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+            	if (document.body) {
+                	document.body.style.fontSize = docEl.style.fontSize;
+            	}
+        	};
+    	recalc();
+    	if (!doc.addEventListener) return;
+    	win.addEventListener(resizeEvt, recalc, false);
+    	doc.addEventListener("DOMContentLoaded", recalc, false);
+	})(document, window);
+	</script>
+</head>
+<body>
+	<div class="page">
+		<div class="logo"></div>
+		<div class="banner"></div>
+		<div class="people"></div>
+		<div class="lotcont">
+			<div class="turntable"></div>
+			<span class="icon-start">
+				<!-- <label class="icon-start-text">立即抽奖</label> -->
+			</span>
+		</div>
+		<div class="rule-btn">活动规则</div>
+		<div class="winners-list">
+			<div class="title">中奖名单</div>
+			<div class="scroll-title">
+                <div>用户名</div>
+                <div>奖品</div>
+            </div>
+            <div class="scroll-content">
+            	<div class="wrap anit"></div>
+            </div>
+		</div>
+	</div>
+	<div class="dialog">
+		<div class="rule-area">
+			<div class="close-btn"></div>
+			<div class="rule-title">活动规则</div>
+			<div class="rule-list">
+				<div class="rule-item">
+					1.	本活动仅限团贷网的新用户参与，且同一用户限参与1次；
+				</div>
+				<div class="rule-item">
+					2.	活动期间，用户通过本页面进行抽奖后，需要完成指定的任务方可兑换奖励,获奖后必须在7个工作日内完成兑换，逾期无效，不作补送；
+				</div>
+				<div class="rule-item">
+					3.	所有奖励可登录团贷网APP，我的账户——“我的团宝箱”进行查看，其中，实物奖励需填写线上收货信息，7个工作日内安排发货，不兑现、不提供发票、不退换货等。
+				</div>
+				<div class="rule-item">
+					4.	本活动的最终解释权归团贷网所有，客服热线400-6410-888（9:00-22:00）
+				</div>
+			</div>
+		</div>
+		<div class="get-prize">
+			<div class="get-prize-wrapper">
+				<div class="ellipse"></div>
+				<div class="get-prize-content">
+					<div class="yoho"></div>
+					<div class="close-btn"></div>
+					<div class="content-wrapper">
+						<div class="ribbon"></div>
+						<div class="label label01">恭喜您！</div>
+						<div class="label label02">
+							获得<label class="get-prize-name prize01"></label>1份 
+						</div>
+						<div class="prize-icon prize01"></div>
+						<div class="input-wrapper">
+							<input type="tel" class="phone" placeholder="请输入手机号码领奖" maxlength="11" />
+							<div class="error-tip">手机号码不能为空</div>
+						</div>
+						<div class="registe-erea">
+							<div class="input-wrapper">
+								<input type="password" class="password" placeholder="密码由6-16位（数字+字母）" maxlength="16" />
+								<div class="error-tip">密码格式错误</div>
+							</div>
+							<div class="img-code input-wrapper" >
+								<input type="text" name="imgCode" id="imgCode" class="img-code-input"  placeholder="图形验证码" maxlength="4"  />
+								<img src="../images/imgcode.png" id="imgVcode" alt="验证码"  class="img-code-img"/>
+								<div class="error-tip">图形验证码不能为空</div>
+							</div>
+							 <div class="verification-code input-wrapper">
+							    <input type="text" maxlength="8" placeholder="手机验证码"  id="txtValidNumber"/>
+							    <div class="get-code-btn">获取验证码</div>
+							    <div class="error-tip">手机验证码不能为空</div>
+							</div>
+
+						</div>
+						<div class="get-prize-btn">马上兑奖</div>
+					</div>
+				</div>
+			</div>
+			<div class="tuandai"></div>
+		</div>
+		<div class="mask"></div>
+	</div>
+</body>
+<script src="../js/fastclick-zepto.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/awardRotate.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+	$(function() {
+		FastClick.attach(document.body);
+		var pageEl = $(".page");
+		var dialogEl = $(".dialog");
+		function initWinnerListData() {
+			var list = "";
+			var temp = "<div class='winner-item'><div class='winner-name'>毛驴**3</div><div class='prize-name'>518元红包</div></div>";
+			for(var i = 1; i <= 10; i++) {
+				
+				list = temp + list;
+			}
+			pageEl.find(".winners-list").find(".wrap").append(list);
+		};
+		// 拼接中奖名单数据
+		initWinnerListData();
+		var rotating = false;
+		var hasChange = true; //是否可以抽奖
+			
+		var uiShowPrize = function(type) {
+			dialogEl.find(".rule-area").removeClass("show");
+			dialogEl.find(".get-prize-name, .prize-icon").removeClass("prize01 prize02 prize03 prize04").addClass(type);
+			dialogEl.find(".get-prize").addClass("show");
+			dialogEl.addClass("show");
+		}
+		//开始抽奖
+		$(".icon-start").on('click', function(e) {
+			if(!hasChange) {
+				disableScrolling();
+				/*$(".pop-txt2").html("对不起，您已参与过抽奖");
+				$(".pop-btn").html("继续投资");
+				$(".pop-btn").data("type", 0);
+				$(".popup").hide();
+				$(".popup-none").show();
+				$(".mask").show();*/
+				return;
+			}
+			if(!rotating) {
+				var type = 5;	//0、腰包 1、水杯 2、书包 3、水杯 4、518红包 5、书包
+				var angle = (type + 1) * 60;
+				rotating = true;
+				rotateFn(type, angle);
+			}
+			disableScrolling();
+		});
+		var rotateFn = function(type, angles) {
+			// flag = !flag;
+			$('.turntable').stopRotate();
+			$('.turntable').rotate({
+				angle: 0,
+				animateTo: angles + 1800,
+				duration: 8000,
+				callback: function() {
+					switch (type) {
+						case 0:
+							uiShowPrize('prize04')
+							break;
+						case 3:
+						case 1:
+						uiShowPrize('prize03')
+							break;
+						case 4:
+						uiShowPrize('prize02')
+							break;
+						case 2:
+						case 5:
+						uiShowPrize('prize01')
+							break;
+					}
+					rotating = false;
+				}
+			});
+		};
+
+			// 活动规则
+		pageEl.find(".rule-btn").click(function() {
+			dialogEl.find(".rule-area").addClass("show");
+			dialogEl.find(".get-prize").removeClass("show");
+			dialogEl.addClass("show");
+			disableScrolling();
+		});
+		// 点击关闭按钮
+		dialogEl.find(".close-btn").on("click", function() {
+			$(".show").removeClass("show");
+			enableScrolling();
+		});
+		// 显示错误提示
+		var uiShowErrorTips = function(el, text) {
+			$(el).addClass('error');
+			var target = $(el).parent().find(".error-tip");
+			target.text(text);
+			target.addClass('show');
+		}
+
+		// 隐藏错误提示
+		var uiHideErrorTips = function(el, text) {
+			$(el).removeClass('error');
+			var target = $(el).parent().find(".error-tip");
+			target.removeClass('show');
+		}
+
+		// 检查手机号码是否有效
+        var checkPhoneNum = function (phoneNum) {
+            var patTel = new RegExp("^(13|14|15|17|18)[0-9]{9}$", "i");
+            if (!phoneNum.match(patTel)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        // // 检查图形验证码是否正确
+        // var checkImgCode = function(imgcode){
+        // 	// TODO: 检查图形验证码是否正确
+        // }
+
+        // // 检查手机验证码是否正确
+        // var checkMsgCode = function(imgcode){
+        // 	// TODO: 检查图形验证码是否正确
+        // }
+
+        // 输入手机号码
+		var phoneEl = dialogEl.find(".phone");
+		phoneEl.on("input", function(e) {
+			var phoneNum = phoneEl.val();
+			if(phoneNum.length == 11) {
+				if(checkPhoneNum(phoneNum)) {
+					uiHideErrorTips(phoneEl)
+					// 显示注册区域
+					$(".registe-erea").addClass("show");
+				} else {
+					uiShowErrorTips(phoneEl, '手机号码格式不正确');
+				}
+			}
+		});
+
+		// 获取手机验证码
+		dialogEl.on("click", ".get-code-btn", function(){
+			console.log("获得手机验证码")
+		});
+
+		// 点击马上兑奖
+		dialogEl.on("click", ".get-prize-btn", function(){
+			var canSubmit = true;	//是否能提交
+			// 手机号码
+			var phoneNum = phoneEl.val();
+			if(!phoneNum || phoneNum == "") {
+				uiShowErrorTips(phoneEl, '手机号码不能为空');
+				canSubmit = false;
+			} else if(!checkPhoneNum(phoneNum)) {
+				uiShowErrorTips(phoneEl, '手机号码格式不正确');
+				canSubmit = false;
+			} else {
+				uiHideErrorTips(phoneEl);
+			}
+			// 密码
+			var passwordEl = dialogEl.find(".password");
+			var password = passwordEl.val();
+			if(!password || password == "") {
+				uiShowErrorTips(passwordEl, '密码不能为空');
+				canSubmit = false;
+			} else {
+				uiHideErrorTips(passwordEl);
+			}
+			// 图形验证码
+			var imgCodeEl = dialogEl.find(".img-code").find("input");
+			var imgCode = imgCodeEl.val();
+			if(!imgCode || imgCode == "") {
+				uiShowErrorTips(imgCodeEl, '图形验证码不能为空');
+				canSubmit = false;
+			} else {
+				uiHideErrorTips(imgCodeEl)
+			}
+			// 手机验证码
+			var msgCodeEl = dialogEl.find(".verification-code").find("input");
+			var msgCode = msgCodeEl.val();
+			if(!msgCode || msgCode == "") {
+				uiShowErrorTips(msgCodeEl, '手机验证码不能为空');
+				canSubmit = false;
+			} else {
+				uiHideErrorTips(msgCodeEl)
+			}
+			if(canSubmit) {
+				// TODO:马上兑奖
+				console.log("马上兑奖")
+			}
+		});
+
+		function scrolling(e) {
+			preventDefault(e);
+		}
+
+		function preventDefault(e) {
+			e = e || window.event;
+			if (e.preventDefault) {
+				e.preventDefault();
+			}
+			e.returnValue = false;
+		}
+
+		function disableScrolling() {
+			if (window.addEventListener) {
+				window.addEventListener('DOMMouseScroll', scrolling, false);
+				window.addEventListener('touchmove', scrolling, false);
+				window.onmousewheel = document.onmousewheel = scrolling;
+				// document.onkeydown = keydown;
+			}
+		}
+
+		function enableScrolling() {
+			if (window.removeEventListener) {
+				window.removeEventListener('DOMMouseScroll', scrolling, false);
+				window.removeEventListener('touchmove', scrolling, false);
+			}
+			// window.onmousewheel = document.onmousewheel = document.onkeydown = null;
+			window.onmousewheel = document.onmousewheel = null;
+		}
+	})
+</script>
+</html>
