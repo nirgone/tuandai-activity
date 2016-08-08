@@ -31,7 +31,8 @@
 	</script>
 </head>
 <body>
-	<div class="page">
+	<div class="page active">
+		<div class="page-wrapper"> 
 		<div class="logo"></div>
 		<div class="banner"></div>
 		<div class="people"></div>
@@ -49,34 +50,39 @@
                 <div>奖品</div>
             </div>
             <div class="scroll-content">
-            	<div class="wrap anit"></div>
+            	<div class="wrap"></div>
             </div>
+		</div>
 		</div>
 	</div>
 	<div class="dialog">
 		<div class="rule-area">
-			<div class="close-btn"></div>
-			<div class="rule-title">活动规则</div>
-			<div class="rule-list">
-				<div class="rule-item">
-					1.	本活动仅限团贷网的新用户参与，且同一用户限参与1次；
-				</div>
-				<div class="rule-item">
-					2.	活动期间，用户通过本页面进行抽奖后，需要完成指定的任务方可兑换奖励,获奖后必须在7个工作日内完成兑换，逾期无效，不作补送；
-				</div>
-				<div class="rule-item">
-					3.	所有奖励可登录团贷网APP，我的账户——“我的团宝箱”进行查看，其中，实物奖励需填写线上收货信息，7个工作日内安排发货，不兑现、不提供发票、不退换货等。
-				</div>
-				<div class="rule-item">
-					4.	本活动的最终解释权归团贷网所有，客服热线400-6410-888（9:00-22:00）
+			<div class="inline-mask"></div>
+			<div class="rule-wrapper">
+				<div class="close-btn"></div>
+				<div class="rule-title">活动规则</div>
+				<div class="rule-list">
+					<div class="rule-item">
+						1.	本活动仅限团贷网的新用户参与，且同一用户限参与1次；
+					</div>
+					<div class="rule-item">
+						2.	活动期间，用户通过本页面进行抽奖后，需要完成指定的任务方可兑换奖励,获奖后必须在7个工作日内完成兑换，逾期无效，不作补送；
+					</div>
+					<div class="rule-item">
+						3.	所有奖励可登录团贷网APP，我的账户——“我的团宝箱”进行查看，其中，实物奖励需填写线上收货信息，7个工作日内安排发货，不兑现、不提供发票、不退换货等。
+					</div>
+					<div class="rule-item">
+						4.	本活动的最终解释权归团贷网所有，客服热线400-6410-888（9:00-22:00）
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class="get-prize">
+			<div class="inline-mask"></div>
 			<div class="get-prize-wrapper">
-				<div class="ellipse"></div>
+				<!-- <div class="ellipse"></div> -->
 				<div class="get-prize-content">
-					<div class="yoho"></div>
+					<!-- <div class="yoho"></div> -->
 					<div class="close-btn"></div>
 					<div class="content-wrapper">
 						<div class="ribbon"></div>
@@ -85,6 +91,7 @@
 							获得<label class="get-prize-name prize01"></label>1份 
 						</div>
 						<div class="prize-icon prize01"></div>
+						<div class="form-area">
 						<div class="input-wrapper">
 							<input type="tel" class="phone" placeholder="请输入手机号码领奖" maxlength="11" />
 							<div class="error-tip">手机号码不能为空</div>
@@ -104,15 +111,15 @@
 							    <div class="get-code-btn">获取验证码</div>
 							    <div class="error-tip">手机验证码不能为空</div>
 							</div>
-
+						</div>
 						</div>
 						<div class="get-prize-btn">马上兑奖</div>
 					</div>
 				</div>
+				<div class="tuandai"></div>
 			</div>
-			<div class="tuandai"></div>
+			
 		</div>
-		<div class="mask"></div>
 	</div>
 </body>
 <script src="../js/fastclick-zepto.js" type="text/javascript" charset="utf-8"></script>
@@ -125,11 +132,21 @@
 		function initWinnerListData() {
 			var list = "";
 			var temp = "<div class='winner-item'><div class='winner-name'>毛驴**3</div><div class='prize-name'>518元红包</div></div>";
-			for(var i = 1; i <= 10; i++) {
-				
+			var length = 4;	//根据此长度来计算滑动时间
+			for(var i = 1; i <= length; i++) {
 				list = temp + list;
 			}
+
+			var speed = 0.5 * length;
+			if(length >= 5) {
+				pageEl.find(".wrap").addClass('anit');
+				pageEl.find(".anit").css({
+					"-webkit-animation-duration": speed + "s",
+					"animation-duration": speed + "s",
+				});
+			}
 			pageEl.find(".winners-list").find(".wrap").append(list);
+		
 		};
 		// 拼接中奖名单数据
 		initWinnerListData();
@@ -137,15 +154,17 @@
 		var hasChange = true; //是否可以抽奖
 			
 		var uiShowPrize = function(type) {
+
+			disableScrolling();
 			dialogEl.find(".rule-area").removeClass("show");
 			dialogEl.find(".get-prize-name, .prize-icon").removeClass("prize01 prize02 prize03 prize04").addClass(type);
 			dialogEl.find(".get-prize").addClass("show");
+			dialogEl.find(".mask").hide();
 			dialogEl.addClass("show");
 		}
 		//开始抽奖
 		$(".icon-start").on('click', function(e) {
 			if(!hasChange) {
-				disableScrolling();
 				/*$(".pop-txt2").html("对不起，您已参与过抽奖");
 				$(".pop-btn").html("继续投资");
 				$(".pop-btn").data("type", 0);
@@ -160,7 +179,6 @@
 				rotating = true;
 				rotateFn(type, angle);
 			}
-			disableScrolling();
 		});
 		var rotateFn = function(type, angles) {
 			// flag = !flag;
@@ -195,6 +213,7 @@
 		pageEl.find(".rule-btn").click(function() {
 			dialogEl.find(".rule-area").addClass("show");
 			dialogEl.find(".get-prize").removeClass("show");
+			dialogEl.find(".mask").show();
 			dialogEl.addClass("show");
 			disableScrolling();
 		});
@@ -203,6 +222,13 @@
 			$(".show").removeClass("show");
 			enableScrolling();
 		});
+
+		// 点击关闭按钮
+		dialogEl.find(".inline-mask").on("click", function() {
+			$(".show").removeClass("show");
+			enableScrolling();
+		});
+
 		// 显示错误提示
 		var uiShowErrorTips = function(el, text) {
 			$(el).addClass('error');
@@ -318,21 +344,23 @@
 		}
 
 		function disableScrolling() {
-			if (window.addEventListener) {
-				window.addEventListener('DOMMouseScroll', scrolling, false);
-				window.addEventListener('touchmove', scrolling, false);
-				window.onmousewheel = document.onmousewheel = scrolling;
-				// document.onkeydown = keydown;
-			}
+			$(".page").removeClass("active");
+			// if (window.addEventListener) {
+			// 	window.addEventListener('DOMMouseScroll', scrolling, false);
+			// 	window.addEventListener('touchmove', scrolling, false);
+			// 	window.onmousewheel = document.onmousewheel = scrolling;
+			// 	document.onkeydown = keydown;
+			// }
 		}
 
 		function enableScrolling() {
-			if (window.removeEventListener) {
-				window.removeEventListener('DOMMouseScroll', scrolling, false);
-				window.removeEventListener('touchmove', scrolling, false);
-			}
-			// window.onmousewheel = document.onmousewheel = document.onkeydown = null;
-			window.onmousewheel = document.onmousewheel = null;
+			$(".page").addClass("active");
+			// if (window.removeEventListener) {
+			// 	window.removeEventListener('DOMMouseScroll', scrolling, false);
+			// 	window.removeEventListener('touchmove', scrolling, false);
+			// }
+			// // window.onmousewheel = document.onmousewheel = document.onkeydown = null;
+			// window.onmousewheel = document.onmousewheel = null;
 		}
 	})
 </script>

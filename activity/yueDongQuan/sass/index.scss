@@ -8,7 +8,7 @@ body {
   position: relative;
   height: 100%;
   width: 100%;
-  // overflow: hidden;
+  overflow: hidden;
   font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
   margin: 0;
   padding: 0;
@@ -20,13 +20,22 @@ a {
 }
 
 .page {
-  background-image: url("../images/bg.png");
-  min-height: 100%;
+  // background-image: url("../images/bg.png");
+  height: 100%;
   width: 100%;
+  overflow: auto;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   padding-bottom: pxToRem(60px);
+  .page-wrapper {
+    background-image: url("../images/bg.png");
+    min-height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: pxToRem(40px);
+  }
   &.active {
     -webkit-overflow-scrolling: touch;
   }
@@ -73,6 +82,7 @@ a {
     // padding-top: pxToRem(32px);
     margin-top: pxToRem(-88px);
     background-repeat: no-repeat;
+    overflow: hidden;
     .turntable {
       background-image: url("../images/turntable.png");
       width: pxToRem(668px);
@@ -88,6 +98,7 @@ a {
       top: 50%;
       margin-top: pxToRem(-334px);
       margin-left: pxToRem(-334px);
+      overflow: hidden;
     }
     .icon-start {
       background-image: url("../images/start.png");
@@ -215,8 +226,12 @@ a {
   top: 0;
   left: 0;
   z-index: 999;
+  overflow: auto;
   .show {
-    display: block !important;
+    display: flex !important;
+    &.registe-erea {
+      display: block !important;
+    }
   }
   &.show {
     display: block;
@@ -225,19 +240,35 @@ a {
     }
   }
   .rule-area {
-    width: pxToRem(564px);
-    // height: pxToRem(400px);
-    border-radius: pxToRem(20px);
-    background-color: #ffdf50;
     position: absolute;
+    left: 0;
+    top: 0;
     top: 50%;
     left: 50%;
-    margin-left: pxToRem(-282px);
-    transform: translateY(-50%);
-    z-index: 999;
-    padding-top: pxToRem(46px);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    min-height: 100%;
     display: none;
-    padding-bottom: pxToRem(20px);
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    .rule-wrapper {
+      width: pxToRem(564px);
+      // height: pxToRem(400px);
+      border-radius: pxToRem(20px);
+      background-color: #ffdf50;
+      position: relative;
+      padding-top: pxToRem(46px);
+      padding-bottom: pxToRem(20px);
+      position: relative;
+      z-index: 999;
+      margin: auto;
+    }
     .rule-title {
       font-size: pxToRem(50px);
       text-align: center;
@@ -282,47 +313,44 @@ a {
     }
   }
   .get-prize {
-    width: pxToRem(564px);
+    // width: pxToRem(648px);
     border-radius: pxToRem(20px);
     position: absolute;
-    // top: 10%;
     top: 50%;
     left: 50%;
-    transform: translateY(-50%);
-    margin-left: pxToRem(-282px);
+    transform: translate(-50%, -50%);
     z-index: 999;
     display: none;
+    width: 100%;
+    min-height: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
     .tuandai {
       background-image: url("../images/icon-tuandai.png");
-      width: pxToRem(564px);
-      height: pxToRem(122px);
+      width: pxToRem(648px);
+      height: pxToRem(110px);
       background-repeat: no-repeat;
       background-size: contain;
-      // margin-bottom: pxToRem(30px);
+      transform: scale(.95);
+      transform-origin: center;
+      z-index: 999;
+      position: relative;
+      margin: auto;
     }
     .get-prize-wrapper {
-      width: pxToRem(564px);
+      // width: 100%;
+      width: pxToRem(648px);
       position: relative;
-      margin-bottom: pxToRem(10px);
-      .ellipse {
-        width: pxToRem(220px);
-        height: pxToRem(210px);
-        background-color: #fff;
-        border-radius: pxToRem(210px);
-        margin: auto;
-      }
-      .yoho {
-        background-image: url("../images/Yoho.png");
-        width: pxToRem(152px);
-        height: pxToRem(44px);
-        background-repeat: no-repeat;
-        background-size: contain;
-        top: pxToRem(-10px);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 99;
-      }
+      transform: scale(.95);
+      transform-origin: center;
+      z-index: 999;
+      margin: auto;
       .close-btn {
         position: absolute;
         top: pxToRem(18px);
@@ -339,36 +367,43 @@ a {
         background-image: url("../images/ribbon.png");
         background-size: contain;
         background-repeat: no-repeat;
-        width: pxToRem(512px);
-        height: pxToRem(270px);
+        width: pxToRem(546px);
+        height: pxToRem(240px);
         left: 50%;
-        margin-left: pxToRem(-256px);
-        top: pxToRem(-42px);
+        margin-left: pxToRem(-272px);
+        top: pxToRem(58px);
         position: absolute;
         z-index: 9;
       }
       .get-prize-content {
-        background-color: #fff;
         width: 100%;
         // height: pxToRem(512px);
-        margin-top: pxToRem(-160px);
         border-radius: pxToRem(20px);
         position: relative;
-        padding-top: pxToRem(66px);
+        padding-top: pxToRem(20px);
         padding-bottom: pxToRem(30px);
         text-align: center;
+        background-image: url("../images/dialog-bg.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-bottom: pxToRem(22px);
         .content-wrapper {
           z-index: 999;
           .label {
-            font-size: pxToRem(28px);
-            color: #742306;
+            font-size: pxToRem(36px);
+            color: #651e02;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, .6);
             &.label01 {
-              margin-bottom: pxToRem(20px);
+              margin-bottom: pxToRem(12px);
+              font-size: pxToRem(48px);
+              color: #fb0200;
+              font-weight: bold;
             }
             .get-prize-name {
-              color: #fb362e;
+              color: #fb0200;
               margin-left: pxToRem(8px);
               margin-right: pxToRem(8px);
+              font-weight: bold;
               &.prize01::before {
                 content: '户外旅行双肩包'
               }
@@ -387,27 +422,36 @@ a {
             // background-size: contain;
             background-repeat: no-repeat;
             margin: auto;
-            margin-top: pxToRem(36px);
-            width: pxToRem(180px);
-            height: pxToRem(142px);
+            margin-top: pxToRem(20px);
+            width: pxToRem(590px);
+            height: pxToRem(170px);
             background-position: 50%;
-            margin-bottom: pxToRem(20px);
+            margin-bottom: pxToRem(16px);
+            background-color: rgba(255, 174, 0, .45);
             &.prize01 {
               background-image: url("../images/prize01.png");
-              background-size: pxToRem(82px) pxToRem(124px);
+              background-size: pxToRem(94px) pxToRem(142px);
             }
             &.prize02 {
               background-image: url("../images/prize02.png");
-              background-size: pxToRem(168px) pxToRem(118px);
+              background-size: pxToRem(192px) pxToRem(138px);
             }
             &.prize03 {
               background-image: url("../images/prize03.png");
-              background-size: pxToRem(72px) pxToRem(142px);
+              background-size: pxToRem(84px) pxToRem(164px);
             }
             &.prize04 {
               background-image: url("../images/prize04.png");
-              background-size: pxToRem(180px) pxToRem(76px);
+              background-size: pxToRem(208px) pxToRem(86px);
             }
+          }
+          .form-area {
+            background-color: #fffbe5;
+            width: pxToRem(590px);
+            padding: pxToRem(24px) pxToRem(30px);
+            padding-bottom: 1px;
+            box-sizing: border-box;
+            margin: auto;
           }
           .registe-erea {
             display: none;
@@ -415,29 +459,29 @@ a {
           .input-wrapper {
             width: pxToRem(504px);
             margin: auto;
-            margin-bottom: pxToRem(30px);
+            margin-bottom: pxToRem(50px);
             position: relative;
             .error-tip {
               text-align: left;
               font-size: pxToRem(26px);
               color: #f00;
-              line-height: pxToRem(30px);
-              height: pxToRem(30px);
+              line-height: pxToRem(50px);
+              height: pxToRem(50px);
               width: 100%;
               position: absolute;
               left: 0;
-              top: pxToRem(80px);
+              top: pxToRem(82px);
               display: none;
             }
           }
           input {
             // position: absolute;
-            font-size: pxToRem(34px);
+            font-size: pxToRem(30px);
             left: 50%;
             border: 1px solid #ccc;
             color: #ccc;
             border-radius: pxToRem(6px);
-            height: pxToRem(80px);
+            height: pxToRem(82px);
             width: 100%;
             padding-left: pxToRem(30px);
             box-sizing: border-box;
@@ -472,15 +516,25 @@ a {
             background-image: url("../images/get-prize-btn.png");
             background-repeat: no-repeat;
             background-size: contain;
-            width: pxToRem(504px);
-            height: pxToRem(66px);
-            line-height: pxToRem(60px);
-            font-size: pxToRem(34px);
-            color: #d46e00;
+            width: pxToRem(580px);
+            height: pxToRem(96px);
+            line-height: pxToRem(88px);
+            font-size: pxToRem(40px);
+            color: #fff;
             margin: auto;
             font-weight: bold;
+            margin-top: pxToRem(26px);
           }
         }
+      }
+    }
+  }
+  @media screen and (max-width: 320px) and (max-height: 480px) {
+    .get-prize {
+      .tuandai,
+      .get-prize-wrapper {
+        transform: scale(.88);
+        transform-origin: center;
       }
     }
   }
@@ -495,6 +549,16 @@ a {
   background-color: rgba(0, 0, 0, .5);
   z-index: 99;
   display: none;
+}
+
+.inline-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 99;
 }
 
 @keyframes move-list {
