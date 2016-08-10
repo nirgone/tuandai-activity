@@ -1,0 +1,186 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+  position: relative;
+  // height: 100%;
+  // width: 100%;
+  // overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+  text-decoration: none;
+}
+
+.page {
+  .banner {
+    padding-top: pxToRem(48px);
+    box-sizing: border-box;
+    position: relative;
+    .banner-bg {
+      width: 100%;
+      height: pxToRem(242px);
+      background-color: #08cc9c;
+      background-image: url("../images/download-banner.png");
+      background-repeat: no-repeat;
+      background-size: pxToRem(730px) pxToRem(258px);
+      background-position: 100%;
+      position: absolute;
+      z-index: 9;
+      top: 0;
+    }
+    .banner-wrapper {
+      position: relative;
+      z-index: 999;
+    }
+    .name-wrapper {
+      font-size: pxToRem(30px);
+      font-family: 微软雅黑;
+      color: #fff;
+      text-align: center;
+      margin-bottom: pxToRem(30px);
+    }
+    .prize-wrapper {
+      position: relative;
+      &.prize01 {
+        .prize {
+          background-image: url("../images/download-prize01.png");
+        }
+        .prize-text::before {
+          content: "获得户外双肩包"
+        }
+        .prize-desc::before {
+          content: "已放入团贷网APP“我的团宝箱”—“精美礼品”内"
+        }
+      }
+      &.prize02 {
+        .prize {
+          background-image: url("../images/download-prize02.png");
+        }
+        .prize-text::before {
+          content: "获得518元红包"
+        }
+        .prize-desc::before {
+          content: "已放入团贷网APP“我的团宝箱”内"
+        }
+      }
+      &.prize03 {
+        .prize {
+          background-image: url("../images/download-prize03.png");
+        }
+        .prize-text::before {
+          content: "获得乐扣运动水杯"
+        }
+        .prize-desc::before {
+          content: "已放入团贷网APP“我的团宝箱”—“精美礼品”内"
+        }
+      }
+      &.prize04 {
+        .prize {
+          background-image: url("../images/download-prize04.png");
+        }
+        .prize-text::before {
+          content: "获得运动腰包"
+        }
+        .prize-desc::before {
+          content: "已放入团贷网APP“我的团宝箱”—“精美礼品”内"
+        }
+      }
+      .prize-content {
+        position: relative;
+        z-index: 9;
+        .outer-circle {
+          width: pxToRem(280px);
+          height: pxToRem(280px);
+          border-radius: 50%;
+          background-color: rgba(255, 255, 255, .11);
+          margin: auto;
+          padding-top: pxToRem(16px);
+          box-sizing: border-box;
+          .inner-circle {
+            width: pxToRem(248px);
+            height: pxToRem(248px);
+            border-radius: 50%;
+            background-color: #e6e6e6;
+            margin: auto;
+          }
+          .prize {
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 50%;
+            width: pxToRem(228px);
+            height: pxToRem(204px);
+            position: absolute;
+            top: 50%;
+            margin-top: pxToRem(-102px);
+            left: 50%;
+            margin-left: pxToRem(-114px);
+          }
+        }
+      }
+      .prize-bg {
+        background-image: url("../images/download-prize-bg.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: pxToRem(500px);
+        height: pxToRem(310px);
+        margin: auto;
+        z-index: 99;
+        position: absolute;
+        top: pxToRem(48px);
+        margin-left: pxToRem(-250px);
+        left: 50%;
+      }
+      .prize-text-wrapper {
+        margin-top: pxToRem(112px);
+        text-align: center;
+        .prize-text {
+          font-size: pxToRem(40px);
+          font-weight: bold;
+          font-family: 微软雅黑;
+          color: #fc5e5f;
+          line-height: 100%;
+          margin-bottom: pxToRem(20px);
+        }
+        .prize-desc {
+          font-size: pxToRem(28px);
+          line-height: 100%;
+          font-family: 微软雅黑;
+          color: #656565;
+        }
+      }
+    }
+  }
+  .wangbaoqiang-banner {
+    background-image: url("../images/download-wangbaoqiang.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: pxToRem(616px);
+    height: pxToRem(316px);
+    background-position: 100%;
+    margin: auto;
+    margin-top: pxToRem(48px);
+  }
+  .download-btn {
+    background-color: #ff5237;
+    width: pxToRem(616px);
+    height: pxToRem(80px);
+    line-height: pxToRem(80px);
+    color: #fff;
+    font-size: pxToRem(36px);
+    font-family: 微软雅黑;
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-top: pxToRem(46px);
+    margin-bottom: pxToRem(30px);
+    border-radius: pxToRem(36px);
+  }
+}

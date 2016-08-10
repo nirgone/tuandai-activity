@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+	<meta name="format-detection" content="telephone=no">
+	<title>进入APP兑奖</title>
+	<link rel="stylesheet" href="../css/download.css">
+ 	<script>
+	//动态算rem
+	(function(doc, win) {
+		var docEl = doc.documentElement,
+        	resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        	recalc = function() {
+            	// if (docEl.style.fontSize) return;
+            	clientWidth = docEl.clientWidth;
+            	if (!clientWidth) return;
+            	docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+            	if (document.body) {
+                	document.body.style.fontSize = docEl.style.fontSize;
+            	}
+        	};
+    	recalc();
+    	if (!doc.addEventListener) return;
+    	win.addEventListener(resizeEvt, recalc, false);
+    	doc.addEventListener("DOMContentLoaded", recalc, false);
+	})(document, window);
+	</script>
+</head>
+<body>
+	<div class="page">
+		<div class="banner">
+			<div class="banner-bg"></div>
+			<div class="banner-wrapper">
+				<div class="name-wrapper">你的用户名：<label class="name">ying2010</label></div>
+				<div class="prize-wrapper prize01">
+					<div class="prize-content">
+						<div class="outer-circle">
+							<div class="inner-circle"></div>
+							<div class="prize"></div>
+						</div>
+					</div>
+					<div class="prize-bg"></div>
+					<div class="prize-text-wrapper">
+						<div class="prize-text"></div>
+						<div class="prize-desc"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="wangbaoqiang-banner"></div>
+		<a class="download-btn" href="">进入APP兑奖</a>
+	</div>
+</body>
+<script src="../js/fastclick-zepto.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+	$(function() {
+		FastClick.attach(document.body);
+	})
+</script>
+</html>
