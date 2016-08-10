@@ -471,7 +471,7 @@ a {
               position: absolute;
               left: 0;
               top: pxToRem(82px);
-              display: none;
+              // display: none;
             }
           }
           input {
@@ -479,7 +479,7 @@ a {
             font-size: pxToRem(30px);
             left: 50%;
             border: 1px solid #ccc;
-            color: #ccc;
+            color: #000;
             border-radius: pxToRem(6px);
             height: pxToRem(82px);
             width: 100%;

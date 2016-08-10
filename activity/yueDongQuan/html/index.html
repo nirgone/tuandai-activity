@@ -266,7 +266,7 @@
 
         // 输入手机号码
 		var phoneEl = dialogEl.find(".phone");
-		phoneEl.on("input", function(e) {
+		/*phoneEl.on("input", function(e) {
 			var phoneNum = phoneEl.val();
 			if(phoneNum.length == 11) {
 				if(checkPhoneNum(phoneNum)) {
@@ -277,7 +277,7 @@
 					uiShowErrorTips(phoneEl, '手机号码格式不正确');
 				}
 			}
-		});
+		});*/
 
 		// 获取手机验证码
 		dialogEl.on("click", ".get-code-btn", function(){
@@ -286,9 +286,20 @@
 
 		// 点击马上兑奖
 		dialogEl.on("click", ".get-prize-btn", function(){
+			var phoneNum = phoneEl.val();
+			if(!$(".registe-erea").hasClass("show")) {
+				if(checkPhoneNum(phoneNum)) {
+					uiHideErrorTips(phoneEl);
+					// 显示注册区域
+					$(".registe-erea").addClass("show");
+				} else {
+					uiShowErrorTips(phoneEl, '手机号码格式不正确');
+				}
+				return;
+			}
 			var canSubmit = true;	//是否能提交
 			// 手机号码
-			var phoneNum = phoneEl.val();
+			// var phoneNum = phoneEl.val();
 			if(!phoneNum || phoneNum == "") {
 				uiShowErrorTips(phoneEl, '手机号码不能为空');
 				canSubmit = false;
