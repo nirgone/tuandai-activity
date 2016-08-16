@@ -1,0 +1,18 @@
+.icon-text2 {
+  display: block;
+  background-image: url(../images/sprites/sprite2.png);
+  background-size:pxToRem(472px) pxToRem(136px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-68px);
+  width: pxToRem(363px);
+  height: pxToRem(68px);
+}
+.icon-text3 {
+  display: block;
+  background-image: url(../images/sprites/sprite2.png);
+  background-size:pxToRem(472px) pxToRem(136px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(472px);
+  height: pxToRem(58px);
+}

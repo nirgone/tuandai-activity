@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>奥运H5小游戏</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="content">
+        <div class="audio-btn" id="audio_btn">
+            <div id="music" class="play"></div>
+            <audio loop="" src="../music/bg_music.mp3" id="bg_music" autoplay="" preload=""></audio>
+        </div>
+        <div class="page1-content" id="page1_content">
+            <div class="title-part zoomIn">
+                <i class="icon-ribbon"></i>
+                <i class="icon-text1"></i>
+            </div>
+            <div class="sub-title-part">
+                <i class="icon-text2 bounceInLeft"></i>
+                <i class="icon-text3 zoomInBig"></i>
+            </div>
+            <div class="icon-btn" id="to_game">
+                向里约出发
+            </div>
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<!-- <script src="../js/index.js" type="text/javascript" charset="utf-8"></script> -->
+<script>
+(function() {
+    FastClick.attach(document.body);
+    var bg_music = $("#bg_music"),
+        music_img = $("#music");
+    if (bg_music.length > 0) {
+        bg_music[0].load();
+    }
+    document.addEventListener('touchstart', function() {
+        if (bg_music.hasClass("pause")) {
+            return;
+        }
+        bg_music[0].play();
+    });
+
+    $(".audio-btn").on('click', function(e) {
+        console.log(1234);
+        if (!bg_music) {
+            bg_music = $("#bg_music");
+        }
+        if (music_img.hasClass("play")) {
+            music_img.removeClass("play").addClass("pause");
+            bg_music[0].pause();
+        } else {
+            music_img.removeClass("pause").addClass("play");
+            bg_music[0].play();
+        }
+    });
+    //do your thing.
+    window.onload = function(e) {
+        $("#page1_content").show();
+        $("#to_game").bind("click", function(e) {
+            window.location.href = "./game.html";
+        });
+    }
+
+})();
+</script>
+
+</html>

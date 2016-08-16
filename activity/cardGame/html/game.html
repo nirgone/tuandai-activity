@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>奥运H5小游戏</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <audio src="../music/flip.mp3" preload id="flip"></audio>
+    <audio src="../music/clear.mp3" preload id="clear"></audio>
+    <audio src="../music/gameover.mp3" preload id="gameover"></audio>
+    <audio src="../music/pass.mp3" preload id="pass"></audio>
+    <div class="audio-btn" id="audio_btn">
+        <div id="music" class="play"></div>
+        <audio loop="" src="../music/bg_music.mp3" id="bg_music" autoplay="" preload=""></audio>
+    </div>
+    <div class="content">
+        <div class="countdown" id="countdown">
+            2
+        </div>
+        <div class="table">
+            <div class="energy-part">
+                <div class="left-part">
+                    <i class="icon-text4"></i>
+                    <span>（3次机会）</span>
+                </div>
+                <div class="right-part" id="energy" data-energy="3">
+                    <i class="energy1"></i>
+                    <i class="energy2"></i>
+                    <i class="energy3"></i>
+                </div>
+            </div>
+            <ul class="cells round1" id="cell_list">
+                <!-- <li class="cell">
+                    <div class="cell-face"><i class="icon-card0"></i></div>
+                    <div class="cell-back"></div>
+                </li>
+                <li class="cell">
+                    <div class="cell-face"><i class="icon-card0"></i></div>
+                    <div class="cell-back"></div>
+                </li>
+                <li class="cell">
+                    <div class="cell-face"><i class="icon-card0"></i></div>
+                    <div class="cell-back"></div>
+                </li>
+                <li class="cell">
+                    <div class="cell-face"><i class="icon-card0"></i></div>
+                    <div class="cell-back"></div>
+                </li>
+               <li class="cell">
+                    <div class="cell-face"><i class="icon-card0"></i></div>
+                    <div class="cell-back"></div>
+                </li>
+                <li class="cell">
+                    <div class="cell-face"><i class="icon-card0"></i></div>
+                    <div class="cell-back"></div>
+                </li> -->
+                <!-- <li class="cell cleared"></li> -->
+            </ul>
+            <div class="table-bottom">
+                <div>
+                    第<span id="round_no">0</span>关
+                </div>
+                <i class="shadow"></i>
+            </div>
+            <div class="cover" data-cover="0">
+                <div class="cover0">
+                    <i class="icon-cover0"></i>
+                    <i class="icon-cover0"></i>
+                    <i class="icon-cover0"></i>
+                    <i class="icon-cover0"></i>
+                    <i class="icon-cover0"></i>
+                </div>
+                <div class="cover1">
+                    <i class="icon-cover1"></i>
+                </div>
+                <div class="cover2">
+                    <i class="icon-cover2"></i>
+                </div>
+                <div class="cover3">
+                    <i class="icon-cover3"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="before-start" id="before_start"></div>
+    <div class="before-round-masker" id="before_round"></div>
+    <!-- 分享弹窗 -->
+    <div class="share-popup" id="share"></div>
+    <!-- 弹窗 -->
+    <!-- <div class="popup-sec">
+        <div class="popup-wrapper negative">
+            <div class="popup-icons">
+                    <i class="medal icon-iron"></i>
+                    <i class="icon-star1"></i>
+                    <i class="icon-star2"></i>
+                    <i class="icon-star3"></i>
+            </div>
+            <div class="popup-text">
+                <p>喂？妖妖灵吗？</p>
+                <p>这里有人脑回路打结了</p>
+                <p>你的记忆力落后宇宙30年</p>
+            </div>
+            <div class="btn">不服再战</div>
+            <div class="btn">求安慰</div>
+            <div class="btn-long">呼叫好友帮忙</div>
+        </div>
+    </div> -->
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/game.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

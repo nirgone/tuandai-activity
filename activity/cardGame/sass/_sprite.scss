@@ -1,0 +1,232 @@
+@charset "UTF-8";
+@import "../../../sass/func";
+//-----icons
+[class^="icon-"] {
+    display: block;
+}
+
+
+.icon-ribbon {
+    background: url(../images/ribbon.png) no-repeat center;
+    background-size: contain;
+    width: pxToRem(660px);
+    // height: 56.31%;
+}
+
+.icon-btn {
+    @include background("../images/btn.png", 410px, 94px);
+}
+
+.icon-ray {
+    background: url(../images/ray.png) no-repeat top;
+    background-size: contain;
+    width: pxToRem(739px);
+    margin: 0 auto;
+}
+
+.icon-clock {
+    @include background("../images/clock.png", 333px, 376px);
+}
+
+.icon-text1 {
+    background: url(../images/text1.png) no-repeat center;
+    background-size: contain;
+    width: pxToRem(625px);
+    // height: 29.21%;
+}
+
+
+
+.sprite {
+    display: block;
+    background-image: url(../images/sprites/sprite.png);
+    background-size: pxToRem(542px) pxToRem(137px);
+    background-repeat: no-repeat;
+}
+.sprite2 {
+display: block;
+  background-image: url(../images/sprites/sprite2.png);
+  background-size:pxToRem(472px) pxToRem(136px);
+  background-repeat:no-repeat;
+}
+.icon-text2 {
+  @extend .sprite2;
+  background-position: pxToRem(0px) pxToRem(-68px);
+  width: pxToRem(363px);
+  height: pxToRem(66px);
+}
+.icon-text3 {
+  @extend .sprite2;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(472px);
+  height: pxToRem(58px);
+}
+.icon-text4 {
+    @extend .sprite;
+    background-position: pxToRem(-400px) pxToRem(-74px);
+    width: pxToRem(110px);
+    height: pxToRem(42px);
+}
+
+.icon-text5 {
+    @extend .sprite;
+    background-position: pxToRem(-246px) pxToRem(0px);
+    width: pxToRem(296px);
+    height: pxToRem(49px);
+}
+
+.icon-text6 {
+    @extend .sprite;
+    background-position: pxToRem(0px) pxToRem(0px);
+    width: pxToRem(236px);
+    height: pxToRem(64px);
+}
+
+.icon-text7 {
+    @extend .sprite;
+    background-position: pxToRem(-243px) pxToRem(-74px);
+    width: pxToRem(147px);
+    height: pxToRem(52px);
+}
+
+.icon-text8 {
+    @extend .sprite;
+    background-position: pxToRem(0px) pxToRem(-74px);
+    width: pxToRem(233px);
+    height: pxToRem(63px);
+}
+
+// .icon-text4 {
+// 	@include background("../images/text4.png", 110px, 42px);
+// }
+// .icon-text5 {
+// 	@include background("../images/text5.png", 296px, 49px);
+// }
+// .icon-text6 {
+// 	@include background("../images/text6.png", 236px, 64px);
+// }
+// .icon-text7 {
+// 	@include background("../images/text7.png", 147px, 52px);
+// }
+// .icon-text8 {
+// 	@include background("../images/text8.png", 233px, 63px);
+// }
+.icon-tip-text {
+    @include background("../images/tip_text.png", 560px, 46px);
+    position: absolute;
+    top: pxToRem(8px);
+    right: 0;
+}
+
+//-------cards-------
+.icon-card0 {
+    background-image: url(../images/cards/card0.png?v=20160810);
+}
+
+.icon-card1 {
+    background-image: url(../images/cards/card1.png?v=20160810);
+}
+
+.icon-card2 {
+    background-image: url(../images/cards/card2.png?v=20160810);
+}
+
+.icon-card3 {
+    background-image: url(../images/cards/card3.png);
+}
+
+.icon-card4 {
+    background-image: url(../images/cards/card4.png);
+}
+
+.icon-card5 {
+    background-image: url(../images/cards/card5.png);
+}
+
+.icon-card6 {
+    background-image: url(../images/cards/card6.png);
+}
+
+.icon-card7 {
+    background-image: url(../images/cards/card7.png);
+}
+
+.icon-card8 {
+    background-image: url(../images/cards/card8.png);
+}
+
+.icon-card9 {
+    background-image: url(../images/cards/card9.png);
+}
+
+.icon-card10 {
+    background-image: url(../images/cards/card10.png);
+}
+
+.icon-card11 {
+    background-image: url(../images/cards/card11.png);
+}
+
+.icon-card12 {
+    background-image: url(../images/cards/card12.png);
+}
+
+.icon-card13 {
+    background-image: url(../images/cards/card13.png);
+}
+.icon-card14 {
+    background-image: url(../images/cards/card14.png);
+}
+
+.icon-card15 {
+    background-image: url(../images/cards/card15.png);
+}
+
+.icon-card16 {
+    background-image: url(../images/cards/card16.png);
+}
+
+.icon-card17 {
+    background-image: url(../images/cards/card17.png);
+}
+
+
+
+//---covers
+.icon-cover0 {
+    @include background("../images/cover0.png", 163px, 151px);
+}
+
+.icon-cover1 {
+    @include background("../images/cover1.png", 575px, 477px);
+}
+
+.icon-cover2 {
+    @include background("../images/cover2.png", 616px, 551px);
+}
+
+.icon-cover3 {
+    @include background("../images/cover3.png", 539px, 513px);
+}
+
+.icon-gold {
+    @include background("../images/gold.png", 168px, 214px);
+}
+.icon-silver {
+    @include background("../images/silver.png", 168px, 214px);
+}
+.icon-copper {
+    @include background("../images/copper.png", 168px, 214px);
+}
+.icon-iron {
+    @include background("../images/iron.png", 168px, 214px);
+}
+.icon-star1 {
+    @include background("data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAMAAABFjsb+AAAAUVBMVEUAAABuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQD2/wDw9QDi4QDFtQCDUQB7RgC2nQB1PADq7QC8qACukgCeeQCQYwCL1fkYAAAADXRSTlMA7GLCna+EKxXWU0Q49HLw2AAAAJZJREFUGNNlj9sSgyAMBQngpdUFFe///6HVAh2t+5adk8mJymj1oKZ8uBIeSQGau3ozrEh1c4bFbSAvU1gdU4bJO7/zpT0ulgLT6E7mbsAevYBh8S7SI3VssbqED6mRhi3lRoyKNMKeVwuVqCC6Drl8MTs/9p0L/Hq/6PoAhAmdnWEAUwhgsytAzkClrcnOYmv1h26v0wdJngjVcf9FNgAAAABJRU5ErkJggg==", 19px, 19px);
+}
+.icon-star2 {
+    @include background("data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAPCAMAAADjyg5GAAAASFBMVEUAAABuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQD2/wC8pwDs7wCukQCgfACHVwB4QADb1gDCsQCSaADbF7XTAAAADXRSTlMAgU7kMyIWxapB2rma+SUcyAAAAGpJREFUCNdljksWwiAQBAl/1OKXqPe/qQFmEV9qNbXo7lGCduqCZbuYMxg5vbPpAehpG4O9EVbacHx7rUBMo5Oj5pzfHXid/qTlkwJxpds02QqUT8ldzK/qXZY0mDiG7dSk/Zr3f18HdecHLbsE6Ekw1g8AAAAASUVORK5CYII=", 14px, 15px);
+}
+.icon-star3 {
+    @include background("data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAASCAMAAABo+94fAAAAYFBMVEUAAABuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQBuMQD2/wB6QwDt8QCqiwCbdgCOXwDX0ACDTwDy+QDm5wDKvADDsgC7pgCzmgChfgCOpIosAAAAEHRSTlMAzypLpRt/c+zhlDvAXLKJWPbUagAAALxJREFUGNNtkEkSwjAMBB0c4mxAy1nZ//9LLDsmB9BppkslTY35ncMuXZXZpeFLSzgqqwqAw7ahpjXGAn6csZHamvUedwqmq4w4pRVMg7wpjengJg9VpoVRRG5xvWSShSLgY4FfAh85BwPLQIpyhrtIcJ1enMVrqnTnKfKiD7rhkaMYp/cHr/aEf+MiVROiPeOv8IrWbNPVzMPKKYak3/tpWF80qYg60xQUXBDosX160p7Nze49XsyfqWxWH/HiC6cGnmYDAAAAAElFTkSuQmCC", 22px, 18px);
+}

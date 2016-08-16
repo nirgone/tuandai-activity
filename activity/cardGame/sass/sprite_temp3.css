@@ -1,0 +1,27 @@
+.icon-btn1 {
+  display: block;
+  background-image: url(../images/sprites/sprite3.png);
+  background-size:pxToRem(350px) pxToRem(266px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-95px);
+  width: pxToRem(228px);
+  height: pxToRem(85px);
+}
+.icon-btn2 {
+  display: block;
+  background-image: url(../images/sprites/sprite3.png);
+  background-size:pxToRem(350px) pxToRem(266px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(350px);
+  height: pxToRem(85px);
+}
+.icon-btn3 {
+  display: block;
+  background-image: url(../images/sprites/sprite3.png);
+  background-size:pxToRem(350px) pxToRem(266px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-190px);
+  width: pxToRem(192px);
+  height: pxToRem(76px);
+}
