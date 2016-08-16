@@ -17,7 +17,83 @@ body {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-overflow-scrolling: touch !important;
 }
+.content {
+    // background-color:$color-bg-grey;
+    max-width: 414px;
+    margin: 0 auto;
+}
 
 a {
     text-decoration: none;
+}
+
+.face-content {
+    .banner {
+        @include background("../images/banner.png", 750px, 380px);
+    }
+    .entries-sec {
+        .group {
+            padding: 0 pxToRem(66px);
+            font-size: 0;
+            margin-bottom: pxToRem(42px);
+            &>div:nth-of-type(1) {
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: pxToRem(26px);
+                    bottom: pxToRem(16px);
+                    right: pxToRem(-44px);
+                    border-right: 1px dashed $color-line-grey-light;
+                }
+            }
+        }
+        &>p {
+            font-size: pxToRem(24px);
+            color: $color-text-grey;
+            text-align: center;
+            margin-bottom: pxToRem(70px);
+        }
+        .entry {
+            position: relative;
+            @include background("../images/circle1.png", 220px, 170px);
+            display: inline-block;
+            margin: 0 pxToRem(44px);
+            i {
+                position: absolute;
+                left: 50%;
+            }
+            span {
+                display: block;
+                position: absolute;
+                bottom: pxToRem(10px);
+                left: pxToRem(30px);
+                right: pxToRem(30px);
+                height: pxToRem(50px);
+                line-height: pxToRem(50px);
+                font-size: pxToRem(26px);
+                color:#fff;
+                text-align: center;
+            }
+            .icon-icon1 {
+                margin-left: pxToRem(-29px);
+                top: pxToRem(26px);
+            }
+            .icon-icon2 {
+                margin-left: pxToRem(-49px);
+                top: pxToRem(36px);
+            }
+            .icon-icon3 {
+                margin-left: pxToRem(-36px);
+                top: pxToRem(26px);
+                font-size: pxToRem(34px);
+                color: #fff;
+                text-align: center;
+                line-height: pxToRem(96px);
+                &:after {
+                    content: '%';
+                    font-size: pxToRem(22px);
+                }
+            }
+        }
+    }
 }
