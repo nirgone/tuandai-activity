@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+	<meta name="format-detection" content="telephone=no">
+	<title>发现金红包</title>
+	<!-- build:css(dist) ../css/main.css -->
+	<link rel="stylesheet" href="../css/index.css">
+	<link rel="stylesheet" href="../css/media.css">
+	<link rel="stylesheet" href="../css/animation.css">
+	<!-- endbuild -->
+ <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                // clientWidth = docEl.clientWidth;
+                clientWidth = docEl.clientWidth > 414 ? 414 : docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                	// if(!document.body.style.height) {
+                	// 	 console.log(document.body.style.minHeight,docEl.clientHeight);
+                	// 	document.body.style.height = docEl.clientHeight + "px";
+                	// }
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        // if(document.body) {
+        // 	document.body.style.height = docEl.clientHeight;
+        // 	console.log(docEl.clientHeight);
+        // }
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+<body>
+	<div class="content find-content">
+		<div class="up">
+			<i class="icon-flower1"></i>
+			<i class="icon-flower2"></i>
+			<i class="icon-flower3"></i>
+			<p>莫晓梦</p>
+			<p>给你发了一个现金红包</p>
+		</div>
+		<div class="down">
+			<div class="redpack-top">
+				<div class="front-face">
+					<div class="open-btn" id="open_btn">
+						<i class="icon-open"></i>
+					</div>
+				</div>
+				<div class="back-face">
+					<i class="back-circle"></i>
+					<div class="bg"></div>
+				</div>
+			</div>
+
+			<!-- <div class="redpack-inside slideInUp negative" id="negative_result">
+			</div> -->
+			<div class="" id="redpack_result">
+				
+			</div>
+			<div class="redpack-face">
+			</div>
+			<!-- <p class="descri positive">登录团贷app，领取更多豪礼</p> -->
+			<!-- <p class="descri positive">另外，团小贷为您精心准备一下礼品</p> -->
+			<section class="positive-down-part" id="positive_down_part">
+				<p class="descri positive">另外，团小贷为您精心准备一下礼品</p>
+				<ul class="presents">
+					<li class="present"><div><i class="icon-member"></i></div><span>6个月超级会员</span></li>
+					<li class="present"><div><i class="icon-red"></i></div><span>518元红包</span></li>
+					<li class="present"><div><i class="icon-investment"></i></div><span>18000元投资体验金</span></li>
+					<li class="present"><div><i class="icon-voucher"></i></div><span>新人专享加息加标</span></li>
+				</ul>
+				<div class="input-wrapper" id="to_input">
+					<!-- <input type="tel" name="" value="" placeholder="请输入手机号码"> -->
+					<div>请输入手机号码</div>
+					<span >马上领取</span>
+				</div>
+				<a href="#">下载app</a>
+			</section>
+			<section class="icons-sec negative">
+				<p class="descri negative">登录团贷app，领取更多豪礼</p>
+				<!-- <div class="icon-rectangle"></div> -->
+				<div class="icon-logo"></div>
+				<div class="btn-down" id="down_btn">
+					去下载APP
+				</div>
+			</section>
+			
+			
+		</div>
+	</div>
+
+	<!-- 输入碳层 -->
+	<div class="input-popup slideInUp" id="input_popup">
+		<div class="close-part"><i class="icon-close"></i></div>
+		<div class="input-wrapper">
+			<input type="tel" name="" value="" placeholder="请输入手机号码" id="telNo">
+		</div>
+		<div class="btn" id="get_btn">
+			马上领取
+		</div>
+		<a href="#" class="btn-down">下载APP</a>
+	</div>
+	<!-- <div class="component-alert">
+		<div class="masker"></div>
+		<div class="alert-wrapper">
+			<div class="alert-content">
+				哎哟喂，您是老团粉呀！<br/>放开这个红包，让新手来领取吧！
+			</div>
+			<div class="btn">
+				我知道了
+			</div>
+		</div>
+	</div> -->
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>活动规则</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                // clientWidth = docEl.clientWidth;
+                clientWidth = docEl.clientWidth > 414 ? 414 : docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content confirm-content">
+        <div class="up">
+            <div class="back-circle"></div>
+            <div class="redpack-top">
+            </div>
+        </div>
+        <div class="down">
+            <div class="redpack-inside negative ">
+                <!-- <p class="title">成功领取</p>
+                <p class="num">13.88</p> -->
+                <p class="title">成功失败</p>
+                <p class="tip">对不起！</p>
+                <p class="tip">超时了乐乐乐乐</p>
+            </div>
+            <div class="redpack-face">
+            </div>
+            <section class="icons-sec negative">
+                <p class="descri negative">登录团贷app，领取更多豪礼</p>
+                <!-- <div class="icon-rectangle"></div> -->
+                <div class="icon-logo"></div>
+                <div class="btn-down" id="down_btn">
+                    去下载APP
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+<script>
+(function() {
+    FastClick.attach(document.body);
+    //todo your thind;
+    
+})();
+</script>
+
+</html>
