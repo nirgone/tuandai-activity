@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>aoyun</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content ">
+        <div class="content tc-cont" style="background-image: url(../images/bg2.jpg)">
+            <div class="tc-desc">
+                <div class="ls-t" id="toShare">
+                    <span class="ls-tb">集够四个奥运徽章有机会</span>
+                    <span class="ls-tlb">赢奥运纪念品大奖</span>
+                    <span class="ls-tg">8月8日—18日，邀请好友一起玩</span>
+                    <div class="ts">
+                        <span class="ls-ts">给你送了一枚徽章，剩余的3枚</span>
+                        <span class="ls-ts">可以邀请好友帮你集哦</span>
+                    </div>
+                </div>
+                <div class="ls-t" id="toFriend">
+                    <div class="tf-txt">
+                        <i class="icon-avator" style="background-image: url(../images/avator@2x.png)"></i>
+                        <font class="gtxt">WTF2021</font>邀请你帮他集一枚奥运徽章
+                    </div>
+                    <span class="ls-tlb tfb">集满就可以获得奥运纪念品</span>
+                    <span class="ls-tg">你也可以搜集兑奖哦</span>
+                </div>
+            </div>
+            <ul class="tc-hzcont ">
+                <!-- <li class="hz-row">
+                    <div><i class="icon-hz" style="background-image: url(../images/hz@2x.png)">
+            			<i class="icon-avator" style="background-image: url(../images/avator@2x.png)"></i>
+                        <span class="hz-name">WTF2010</span>
+                        </i>
+                    </div>
+                    <div><i class="icon-hz" style="background-image: url(../images/hz@2x.png)">
+            			<i class="icon-avator" style="background-image: url(../images/avator@2x.png)"></i>
+                        <span class="hz-name">WTF2010</span>
+                        </i>
+                    </div>
+                </li>
+                <li class="hz-row">
+                    <div><i class="icon-hz" style="background-image: url(../images/hz@2x.png)">
+            			<i class="icon-avator" style="background-image: url(../images/avator@2x.png)"></i>
+                        <span class="hz-name">WTF2010</span>
+                        </i>
+                    </div>
+                    <div><i class="icon-hz" style="background-image: url(../images/hz-default@2x.png)">
+            			<i class="icon-avator d-avator" style="background-image: url(../images/default@2x.png)"></i>
+                        <span class="hz-name">虚位以待</span>
+                        </i>
+                    </div>
+                </li> -->
+            </ul>
+            <div class="tc-bm flexcontainer hz-bm">
+                <div class="b-t">
+                    <!--  <span>已有<font class="otxt">X</font>位好友为你集徽章，邀请未注</span>
+                    <span>册好友助力中大奖概率越高哦</span> -->
+                </div>
+                <div class="btn-green" id="gainHZ" data-type="gain">我要集徽章</div>
+                <div class="btn-yellow" id="ybtn">兑换奖品</div>
+                <div class="b-rule">活动规则</div>
+            </div>
+        </div>
+    </div>
+    <div class="mask">
+    </div>
+    <div class="popbg" id="ruleDiag">
+        <div class="popup">
+            <div class="closecont"><i class="icon-close"></i></div>
+            <div class="p-title">活动规则</div>
+            <ul class="p-content">
+                <li>
+                    <span><i class="pno">1</i>本活动需登录后才可参与；</span>
+                </li>
+                <li>
+                    <span><i class="pno">2</i>老用户登录可获赠徽章一枚，集满4枚徽章才可兑奖，可通过求助好友的形式搜集剩余3枚徽章；</span>
+                </li>
+                <li>
+                    <span><i class="pno">3</i>助力好友中新注册用户越多中大奖概率越大，奖品有限抽完即止；</span>
+                </li>
+                <li>
+                    <span><i class="pno">4</i>活动奖品：</span>
+                    <span class="sub-row">（1）团贷网纪念银币（价值500元）</span>
+                    <span class="sub-row">（2）里约奥运火炬珍藏版（价值680元）</span>
+                    <span class="sub-row">（3）里约奥运吉祥物公仔（价值198元）</span>
+                    <span class="sub-row">（4）里约奥运火炬迷你版（价值98元）</span>
+                    <span class="sub-row">（5）团币50个</span>
+                </li>
+                <li>
+                    <span><i class="pno">5</i>每人只有一次兑换奖品的机会；</span>
+                </li>
+                <li>
+                    <span><i class="pno">6</i>团贷网纪念银币正在制作当中，获奖领取后将会在8月中旬发出；</span>
+                </li>
+                <li>
+                    <span><i class="pno">7</i>活动最终解释权归团贷网所有。</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="popbg" id="loginPup">
+        <div class="popup">
+            <div class="pl-msg">
+                <span>登录团贷网账户后</span>
+                <span>才可以为好友集徽章哦</span>
+            </div>
+            <div class="btn-yellow btn-login btn-pop">点击登录</div>
+            <span>未有账号，<front class="otxt s-register">点击这里</front></span>
+        </div>
+    </div>
+    <div class="popbg" id="msgPop">
+        <div class="popup">
+        <div class="pm-msg">
+        	<span class="p-title">谢谢你，帮我集到徽章</span>
+        </div>
+            <!-- <span>你也来玩一下，有奥运纪念品拿哦</span> -->
+            <div class="btn-yellow btn-pop">确定</div>
+        </div>
+    </div>
+    <div class="wx-cont">
+    	<i class="wx-share"></i>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/vendor/jsbridge-2.0.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/lottery.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>aoyun</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content tn-cont">
+        <div class="tn-i">
+            <i class="icon-tuandai pic"></i>
+            <i class="icon-logo pic"></i>
+        </div>
+        <i class="icon-txt pic"></i>
+        <i class="icon-champ pic"></i>
+        <span class="itxt t1">奥运将至 群雄争霸</span>
+        <span class="itxt">你会是奥运场上的哪一个人物</span>
+        <input type="text" class="tn-input" placeholder="输入你的名字"></input>
+        <div class="tn-btn btn-green">测一下</div>
+        <div class="tn-btn btn-yellow">集徽章赢奖品</div>
+        <div class="tn-mark">本游戏由团贷网出品，您的信息将会被严格保密</div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script type="text/javascript">
+(function() {
+    //测一下
+    $(".btn-green").on('click', function() {
+        var name = $(".tn-input").val().trim();
+        $(".tn-input").val("");
+        if (name.length == 0) {
+            $(".tn-input").addClass('error');
+            $(".tn-input").attr('placeholder', '请输入姓名');
+            return;
+        }
+        window.location.href = "./champ.html";
+    });
+    //集徽章赢奖品
+    $(".btn-yellow").on('click', function() {
+        $(".tn-input").val("");
+        window.location.href = "./lottery.html";
+    });
+})();
+</script>
+
+</html>

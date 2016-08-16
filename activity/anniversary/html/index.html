@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>团贷网4周年</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/vendor/swiper/swiper.min-3.3.1.css">
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="swiper-container" id="anniv">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="page" style="background-image: url(../images/background.png);" id="guidPage">
+                        <i class="icon-txt"></i>
+                        <div class="h-t">
+                            <i class="icon-txt2"></i>
+                            <i class="icon-txt3"></i>
+                        </div>
+                        <i class="icon-yellow"></i>
+                        <i class="icon-plane"></i>
+                        <i class="icon-yellow-small"></i>
+                        <div class="t-cont"></div>
+                        <div class="arrow ab"><i class="icon-arrow"></i></div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="page">
+                        <i class="icon-title" style="background-image:url('../images/title1.png')"></i>
+                        <div class="nav">
+                            <div class="t-year t-active" id="16" data-index="0">2016</div>
+                            <div class="t-year" id="15" data-index="1">2015</div>
+                            <div class="t-year " id="14" data-index="2">2014</div>
+                            <div class="t-year" id="13" data-index="3">2013</div>
+                            <div class="t-year" id="12" data-index="4">2012</div>
+                        </div>
+                        <div class="tabcont">
+                            <div class="swiper-container" id="tabs">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" data-id="16">
+                                        <div class="anniv-tab">
+                                            <i class="icon-tab16"></i>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide" data-id="15">
+                                        <div class="anniv-tab">
+                                            <i class="icon-tab15"></i>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide" data-id="14">
+                                        <div class="anniv-tab">
+                                            <i class="icon-tab14"></i>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide" data-id="13">
+                                        <div class="anniv-tab">
+                                            <i class="icon-tab13"></i>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide" data-id="12">
+                                        <div class="anniv-tab">
+                                            <i class="icon-tab12"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="page">
+                        <i class="icon-title" style="background-image:url('../images/title2.png')"></i>
+                        <div class="swiper-container" id="peoSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <ul class="p-page">
+                                        <li>
+                                            <div class="p-tip zoom">
+                                                <i class="icon-peo" style="background-image: url('../images/tangjun.png');"></i>
+                                                <span class="p-name">唐军</span>
+                                                <span class="p-content">团贷网未来的路还有很长，在公司战略上面，我们始终坚持继续地活下去而不是快速前进然后快速跌倒。</span>
+                                                <span class="p-detail" data-id="0">查看详情</span>
+                                            </div>
+                                            <div class="p-tip zoom">
+                                                <i class="icon-peo" style="background-image: url('../images/zhanglin.png');"></i>
+                                                <span class="p-name">张林</span>
+                                                <span class="p-content">这篇文字，与其说是为四周年写的感悟，倒不如说是对自己这7年创业和团贷网四年经营的一个总结缩影。</span>
+                                                <span class="p-detail" data-id="1">查看详情</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="p-tip zoom">
+                                                <i class="icon-peo" style="background-image: url('../images/yeyanwei.png');"></i>
+                                                <span class="p-name">叶衍伟</span>
+                                                <span class="p-content">因为你们的陪伴一路走来，才会有正合今天的辉煌，所以这次会议的主题是：成长共享·感恩前行。</span>
+                                                <span class="p-detail" data-id="2">查看详情</span>
+                                            </div>
+                                            <div class="p-tip zoom">
+                                                <i class="icon-peo" style="background-image: url('../images/yujun.png');"></i>
+                                                <span class="p-name">余军</span>
+                                                <span class="p-content">现在我们看到一个正蓄势待发的团贷网，那么未来，如何迎接一个更具实力更令人瞩目的团贷网。</span>
+                                                <span class="p-detail" data-id="3">查看详情</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide">
+                                    <ul class="p-page">
+                                        <li>
+                                            <div class="p-tip zoom">
+                                                <i class="icon-peo" style="background-image: url('../images/guoxiaofei.png');"></i>
+                                                <span class="p-name">郭小飞</span>
+                                                <span class="p-content">对工作来说，2012年可能是我人生事业最重要的时刻。</span>
+                                                <span class="p-detail" data-id="4">查看详情</span>
+                                            </div>
+                                            <div class="p-tip zoom">
+                                                <i class="icon-peo" style="background-image: url('../images/liudaming.png');"></i>
+                                                <span class="p-name">刘大明</span>
+                                                <span class="p-content">2013年底确定了的财务架构，集团公司财务集中管理，我们开始了组建财务团队。</span>
+                                                <span class="p-detail" data-id="5">查看详情</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="p-tip zoom">
+                                                <i class="icon-peo" style="background-image: url('../images/huanghaoran.png');"></i>
+                                                <span class="p-name">黄浩然</span>
+                                                <span class="p-content">数据时代悄然来临，我准备好了，团贷网也准备好了。</span>
+                                                <span class="p-detail" data-id="6">查看详情</span>
+                                            </div>
+                                            <div class="p-tip zoom">
+                                                <i class="icon-peo" style="background-image: url('../images/liaohongmei.png');"></i>
+                                                <span class="p-name">廖红梅</span>
+                                                <span class="p-content">在我加入的这3年里，见证了资本市场对团贷网的认可。</span>
+                                                <span class="p-detail" data-id="7">查看详情</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide">
+                                    <ul class="p-page">
+                                        <li>
+                                            <div class="p-tip zoom">
+                                                <i class="icon-peo" style="background-image: url('../images/lixianquan.png');"></i>
+                                                <span class="p-name">李先全</span>
+                                                <span class="p-content">作为团贷网对外的窗口、团贷网的小记者，能够反映和展现团贷网发展中五彩纷呈的新闻事件是我们的使命。</span>
+                                                <span class="p-detail" data-id="8">查看详情</span>
+                                            </div>
+                                            <div class="p-tip zoom">
+                                                <i class="icon-peo" style="background-image: url('../images/zhaoyunlong.png');"></i>
+                                                <span class="p-name">赵云龙</span>
+                                                <span class="p-content">我一直认为，公司创始人的格局决定了这家企业的发展高度和格局。</span>
+                                                <span class="p-detail" data-id="9">查看详情</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="p-tip zoom">
+                                                <i class="icon-peo" style="background-image: url('../images/zhuyouming.png');"></i>
+                                                <span class="p-name">朱有明</span>
+                                                <span class="p-content">2016年，不说是P2P行业血雨腥风的一年，但绝对是市场对行业冲击最大的一年。</span>
+                                                <span class="p-detail" data-id="10">查看详情</span>
+                                            </div>
+                                            <div class="p-tip zoom">
+                                                <i class="icon-peo" style="background-image: url('../images/jinhaiman.png');"></i>
+                                                <span class="p-name">晋海曼</span>
+                                                <span class="p-content">信息披露是连接公司和外部投资者的一个重要桥梁，也是促进公司合法合规、稳定持续发展的一个重要手段</span>
+                                                <span class="p-detail" data-id="11">查看详情</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide">
+                                    <ul class="p-page">
+                                        <li>
+                                            <div class="p-tip zoom">
+                                                <i class="icon-peo" style="background-image: url('../images/lixing.png');"></i>
+                                                <span class="p-name">李星</span>
+                                                <span class="p-content">今天的团结一心像十指握成拳，众志成城；望明天的宏图如鲲鹏展翅，一飞冲天。</span>
+                                                <span class="p-detail" data-id="12">查看详情</span>
+                                            </div>
+                                            <div class="p-tip zoom">
+                                                <i class="icon-peo" style="background-image: url('../images/liminrui.png');"></i>
+                                                <span class="p-name">李明睿</span>
+                                                <span class="p-content">如何让法务中心在公司经营中从可有可无到必不可少，是我的必修课。</span>
+                                                <span class="p-detail" data-id="13">查看详情</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="p-tip zoom">
+                                                <i class="icon-peo" style="background-image: url('../images/lipengshu.png');"></i>
+                                                <span class="p-name">李朋书</span>
+                                                <span class="p-content">作为团贷网人，需要与时俱进，逐步具备这样的思维意识与职业素养——用文化升华自己，用行动共勉他人。</span>
+                                                <span class="p-detail" data-id="14">查看详情</span>
+                                            </div>
+                                            <div class="p-tip zoom">
+                                                <i class="icon-peo" style="background-image: url('../images/tanruxian.png');"></i>
+                                                <span class="p-name">谈汝贤</span>
+                                                <span class="p-content">为了让行政后勤工作更好的服务于公司的发展。</span>
+                                                <span class="p-detail" data-id="15">查看详情</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide">
+                                    <ul class="p-page">
+                                        <li>
+                                            <div class="p-tip zoom">
+                                                <i class="icon-peo" style="background-image: url('../images/shuxiaoying.png');"></i>
+                                                <span class="p-name">舒侨英</span>
+                                                <span class="p-content">团贷网给我的第一印象就是朝气，活力，阳光。</span>
+                                                <span class="p-detail" data-id="16">查看详情</span>
+                                            </div>
+                                            <div class="p-tip zoom">
+                                                <i class="icon-peo" style="background-image: url('../images/ouyangdandan.png');"></i>
+                                                <span class="p-name">欧阳丹丹</span>
+                                                <span class="p-content">有人曾说过：“企业家精神一定是坚持梦想、敢于担当。”我想这正是唐总、张总身上所体现的真实写照。</span>
+                                                <span class="p-detail" data-id="17">查看详情</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="p-tip zoom">
+                                                <i class="icon-peo" style="background-image: url('../images/wangjing.png');"></i>
+                                                <span class="p-name">王景</span>
+                                                <span class="p-content">遇见团贷网，让自己变得更美好！</span>
+                                                <span class="p-detail" data-id="18">查看详情</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="page">
+                        <i class="icon-title" style="background-image:url('../images/title3.png')"></i>
+                        <ul class="tw-p4">
+                            <li>
+                                <div class="r-icon">
+                                    <i class="icon-tf" style="background-image:url('../images/v1.png')" data-type="0"></i>
+                                </div>
+                                <div class="r-txt">
+                                    <div class="btn-red">团粉祝福</div>
+                                    <span>四年，团贷网从上线至今，用户从零到如今的290多万，一路走来，离不开默默陪伴的团粉，如今团贷网4周岁之际，团粉用镜头记录下对团贷网真挚的祝福！</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="r-txt">
+                                    <div class="btn-red">团贷人祝福</div>
+                                    <span>2016年7月15日，团贷网4周岁生日之际，团贷小伙伴纷纷表示要献上自己的“第一次”以表达自己对TA深深的爱，虽然没有华丽的辞藻，却让我们看到满满的，真诚的心底话与祝愿。</span>
+                                </div>
+                                <div class="r-icon">
+                                    <i class="icon-tf" style="background-image:url('../images/v2.png')" data-type="1" ></i>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- <div class="v-mask">
+                            <div id="tfVideo" class="p-video"></div>
+                            <div id="tdVideo" class="p-video"></div>
+                            <div class="v-masker"></div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page d-page">
+        <div class="detcont">
+            <i class="icon-peo" id="avator"></i>
+            <div class="dp-title">
+                <font class="dp-name">唐军</font>
+                <font class="dp-posi">（CEO）</font>
+            </div>
+            <ul class="dp-txt">
+            </ul>
+            <div class="d-btns">
+                <div><div class="btn-blue back-btn">返回</div></div>
+                <div><div class="btn-blue check-btn">更多</div></div>
+            </div>
+            <!-- <div class="btn-blue back-btn">返回</div> -->
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/vendor/swiper/swiper.jquery.min-3.3.1.js"></script>
+<script src="../js/data.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

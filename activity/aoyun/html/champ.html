@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>aoyun</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content tc-cont" >
+        <div class="tc-desc">
+            <div class="desc-cont">
+                <img  class="icon-name">
+                <div class="tc-introduce">
+                    <font class="gtxt" id="tc-name"></font>
+                    <font id="tc-champ"></font>
+                </div>
+            </div>
+        </div>
+        <i class="icon-people"></i>
+        <div class="tc-bm flexcontainer">
+            <div class="btn-green" id="goTest">再测一次</div>
+            <div class="btn-yellow" id="share">炫耀一下</div>
+            <div class="btn-yellow" id="goLot">集徽章赢奖品</div>
+        </div>
+    </div>
+    <div class="mask">
+    	<i class="wx-share"></i>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/data.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/vendor/jsbridge-2.0.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/champ.js" type="text/javascript" charset="utf-8"></script>
+</html>

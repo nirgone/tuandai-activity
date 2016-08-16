@@ -26,10 +26,10 @@ $color-yellow: #ffc600;
 $duration: .8s;
 $delay: .3s;
 // .swiper-slide {
-// 	width: 100%;
-// 	height: pxToRem(500px) !important;
-// 	background-color: #ddd;
-// 	text-align: center;
+//  width: 100%;
+//  height: pxToRem(500px) !important;
+//  background-color: #ddd;
+//  text-align: center;
 // }
 body {
     background-color: $bg-color;
@@ -46,12 +46,12 @@ body {
 }
 
 .icon-cover {
-    @include background('../images/cover.png', 635px, 642px);
+    @include background('../images/cover.png?v=20160803006', 635px, 642px);
     margin: auto;
 }
 
 .icon-logo {
-    @include background('../images/logo.png', 202px, 66px);
+    @include background('../images/logo.png?v=20160803006', 202px, 66px);
     position: absolute;
     bottom: 6%;
     left: 50%;
@@ -62,7 +62,7 @@ body {
     width: 100%;
     height: 100%;
     padding-top: pxToRem(110px);
-    background-image: url('../images/stripe1.png');
+    background-image: url('../images/stripe1.png?v=20160803006');
     background-size: pxToRem(750px) pxToRem(275px);
     background-repeat: no-repeat;
     background-position: bottom;
@@ -73,6 +73,69 @@ body {
 .swiper-slide {
     width: 100%;
     height: 100%;
+}
+
+.ewmask {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 999;
+    // height: 50%;
+    background-color: rgba(0, 0, 0, .8);
+    font-size: pxToRem(24px);
+    display: none;
+    span {
+        width: 100%;
+        text-align: center;
+
+    }
+    .ew-pop {
+        width: 100%;
+        height: 70%;
+        background-color: #fffbf0;
+        position: absolute;
+        bottom: 0;
+        padding-top: pxToRem(80px);
+    }
+    .pimg {
+        width: pxToRem(430px);
+        height: pxToRem(430px);
+        margin-left: pxToRem(160px);
+       display: block;
+       margin: 0 auto;
+    }
+    .p-cancle {
+        width: 100%;
+        height: pxToRem(88px);
+        line-height: pxToRem(88px);
+        text-align: center;
+        font-size: pxToRem(34px);
+        // color: #844e2f;
+        position: absolute;
+        bottom: 0;
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            border-top: 1px solid #ddd;
+            transform: scaleY(.5);
+        }
+    }
+    .ew-name {
+        font-size: pxToRem(26px);
+        height: pxToRem(60px);
+        line-height: pxToRem(60px);
+    }
+    .ewtxt {
+        margin-top: pxToRem(30px);
+        span {
+            line-height: pxToRem(40px);
+        }
+    }
 }
 
 .menucont {
@@ -122,23 +185,28 @@ span {
     height: 100%;
     padding: pxToRem(100px) pxToRem(40px);
     .ml {
-        display: flex;
-        display: -webkit-box;
+        // display: flex;
+        // display: -webkit-box;
         height: 25%;
+        width: 100%;
         padding-top: 15px;
+        font-size: 0;
         &>div {
-            width: pxToRem(335px);
+            // width: pxToRem(200px);
             text-align: center;
             font-size: pxToRem(30px);
             color: #804f2b;
+            display: inline-block !important;
+            width: 49.99%;
             span {
                 width: 100%;
                 margin-top: 10px;
             }
         }
         .unselected {
-            background-image: url('../images/circle.png');
+            background-image: url('../images/circle.png?v=20160803006');
             background-size: cover;
+            background-repeat: no-repeat;
         }
         .selected {
             background-color: #fff;
@@ -156,56 +224,56 @@ span {
             top: 50%;
         }
         .icon-m1 {
-            @include background('../images/icon1.png',
+            @include background('../images/icon1.png?v=20160803006',
             60px,
             60px);
             margin-left: pxToRem(-30px);
             margin-top: pxToRem(-30px);
         }
         .icon-m2 {
-            @include background('../images/icon2.png',
+            @include background('../images/icon2.png?v=20160803006',
             57px,
             60px);
             margin-left: pxToRem(-29px);
             margin-top: pxToRem(-30px);
         }
         .icon-m3 {
-            @include background('../images/icon3.png',
+            @include background('../images/icon3.png?v=20160803006',
             59px,
             60px);
             margin-left: pxToRem(-28px);
             margin-top: pxToRem(-30px);
         }
         .icon-m4 {
-            @include background('../images/icon4.png',
+            @include background('../images/icon4.png?v=20160803006',
             60px,
             67px);
             margin-left: pxToRem(-30px);
             margin-top: pxToRem(-34px);
         }
         .icon-m5 {
-            @include background('../images/icon5.png',
+            @include background('../images/icon5.png?v=20160803006',
             54px,
             62px);
             margin-left: pxToRem(-27px);
             margin-top: pxToRem(-31px);
         }
         .icon-m6 {
-            @include background('../images/icon6.png',
+            @include background('../images/icon6.png?v=20160803006',
             69px,
             62px);
             margin-left: pxToRem(-35px);
             margin-top: pxToRem(-31px);
         }
         .icon-m7 {
-            @include background('../images/icon7.png',
+            @include background('../images/icon7.png?v=20160803006',
             58px,
             53px);
             margin-left: pxToRem(-29px);
             margin-top: pxToRem(-26px);
         }
         .icon-m8 {
-            @include background('../images/icon8.png',
+            @include background('../images/icon8.png?v=20160803006',
             62px,
             58px);
             margin-left: pxToRem(-31px);
@@ -217,7 +285,7 @@ span {
 .page {
     width: 100%;
     height: 100%;
-    background-image: url('../images/bottom.png');
+    background-image: url('../images/bottom.png?v=20160803006');
     background-size: pxToRem(750px) pxToRem(70px);
     background-repeat: no-repeat;
     background-position: bottom;
@@ -226,7 +294,7 @@ span {
 }
 
 .icon-menu {
-    @include background('../images/menu.png',
+    @include background('../images/menu.png?v=20160803006',
     83px,
     83px);
     position: absolute;
@@ -282,28 +350,28 @@ span {
 }
 
 .ip1-pic1 {
-    background-image: url('../images/pic1_1_1.png');
+    background-image: url('../images/pic1_1_1.png?v=20160803006');
     left: pxToRem(60px);
     top: 20%;
     animation: zoomIn $duration both;
 }
 
 .ip1-pic2 {
-    background-image: url('../images/pic1_1_2.png');
+    background-image: url('../images/pic1_1_2.png?v=20160803006');
     right: pxToRem(60px);
     top: 25%;
     animation: zoomIn $duration both $delay;
 }
 
 .ip1-pic3 {
-    background-image: url('../images/pic1_1_3.png');
+    background-image: url('../images/pic1_1_3.png?v=20160803006');
     left: pxToRem(60px);
     bottom: 25%;
     animation: zoomIn $duration both $delay*2;
 }
 
 .ip1-pic4 {
-    background-image: url('../images/pic1_1_4.png');
+    background-image: url('../images/pic1_1_4.png?v=20160803006');
     right: pxToRem(60px);
     bottom: 20%;
     animation: zoomIn $duration both $delay*3;
@@ -333,35 +401,34 @@ span {
 }
 
 .ip2-pic1 {
-    background-image: url('../images/pic1_2_1.png');
+    background-image: url('../images/pic1_2_1.png?v=20160803006');
     left: pxToRem(60px);
     top: 20%;
     animation: zoomIn $duration both;
 }
 
 .ip2-pic2 {
-    background-image: url('../images/pic1_2_2.png');
+    background-image: url('../images/pic1_2_2.png?v=20160803006');
     right: pxToRem(60px);
     top: 25%;
     animation: zoomIn $duration both $delay;
 }
 
 .ip2-pic3 {
-    background-image: url('../images/pic1_2_3.png');
+    background-image: url('../images/pic1_2_3.png?v=20160803006');
     left: pxToRem(60px);
     bottom: 25%;
     animation: zoomIn $duration both $delay*2;
 }
 
 .ip2-pic4 {
-    background-image: url('../images/pic1_2_4.png');
+    background-image: url('../images/pic1_2_4.png?v=20160803006');
     right: pxToRem(60px);
     bottom: 20%;
     animation: zoomIn $duration both $delay*3;
 }
 
 .icon-page3 {
-   
     background-size: cover;
     position: absolute;
     left: 50%;
@@ -369,41 +436,40 @@ span {
 }
 
 .ip3-pic1 {
-	 width: pxToRem(266px);
+    width: pxToRem(266px);
     height: pxToRem(372px);
-    background-image: url('../images/pic1_3_1.png');
+    background-image: url('../images/pic1_3_1.png?v=20160803006');
     top: 18%;
     animation: slideInLeft $duration both;
 }
 
 .ip3-pic2 {
-	 width: pxToRem(285px);
+    width: pxToRem(285px);
     height: pxToRem(372px);
-    background-image: url('../images/pic1_3_2.png');
+    background-image: url('../images/pic1_3_2.png?v=20160803006');
     // bottom: 16%;
     top: 56%;
     animation: slideInRight $duration both;
 }
 
 .icon-page4 {
-   
     position: absolute;
     background-size: cover;
 }
 
 .ip4-pic1 {
-	 width: pxToRem(585px);
+    width: pxToRem(585px);
     height: pxToRem(244px);
-    background-image: url('../images/pic1_4_1.png');
+    background-image: url('../images/pic1_4_1.png?v=20160803006');
     left: pxToRem(60px);
     top: 15%;
     animation: slideInLeft $duration both;
 }
 
 .ip4-pic2 {
-	 width: pxToRem(596px);
+    width: pxToRem(596px);
     height: pxToRem(244px);
-    background-image: url('../images/pic1_4_2.png');
+    background-image: url('../images/pic1_4_2.png?v=20160803006');
     right: pxToRem(60px);
     width: pxToRem(596px) !important;
     top: 38%;
@@ -411,9 +477,9 @@ span {
 }
 
 .ip4-pic3 {
-	 width: pxToRem(565px);
+    width: pxToRem(565px);
     height: pxToRem(244px);
-    background-image: url('../images/pic1_4_3.png');
+    background-image: url('../images/pic1_4_3.png?v=20160803006');
     left: pxToRem(60px);
     bottom: 18%;
     animation: slideInLeft $duration both $delay*2;
@@ -425,7 +491,7 @@ span {
 }
 
 .ip5-pic1 {
-    background-image: url('../images/pic2_1_1.png');
+    background-image: url('../images/pic2_1_1.png?v=20160803006');
     left: 50%;
     top: 18%;
     margin-left: pxToRem(-294px);
@@ -435,7 +501,7 @@ span {
 }
 
 .ip5-pic2 {
-    background-image: url('../images/pic2_1_2.png');
+    background-image: url('../images/pic2_1_2.png?v=20160803006');
     left: 50%;
     // bottom: 0;
     top: 54%;
@@ -461,7 +527,7 @@ span {
 }
 
 .ip6-pic1 {
-    background-image: url('../images/pic2_2_1.png');
+    background-image: url('../images/pic2_2_1.png?v=20160803006');
     left: 50%;
     top: 18%;
     margin-left: pxToRem(-300px);
@@ -471,7 +537,7 @@ span {
 }
 
 .ip6-pic2 {
-    background-image: url('../images/pic2_2_2.png');
+    background-image: url('../images/pic2_2_2.png?v=20160803006');
     left: 50%;
     top: 55%;
     // bottom: 8%;
@@ -505,14 +571,14 @@ span {
 }
 
 .ip7-pic1 {
-    @include background('../images/pic2_3_1.png',
+    @include background('../images/pic2_3_1.png?v=20160803006',
     604px,
     300px);
     margin: auto;
 }
 
 .ip7-pic2 {
-    @include background('../images/pic2_3_2.png',
+    @include background('../images/pic2_3_2.png?v=20160803006',
     610px,
     363px);
     position: absolute;
@@ -524,14 +590,14 @@ span {
 }
 
 .ip8-pic1 {
-    @include background('../images/pic2_4_1.png',
+    @include background('../images/pic2_4_1.png?v=20160803006',
     588px,
     300px);
     margin: auto;
 }
 
 .ip8-pic2 {
-    @include background('../images/pic2_4_2.png',
+    @include background('../images/pic2_4_2.png?v=20160803006',
     610px,
     439px);
     position: absolute;
@@ -547,7 +613,7 @@ span {
 }
 
 .ip9-pic1 {
-    @include background('../images/pic2_5_1.png',
+    @include background('../images/pic2_5_1.png?v=20160803006',
     610px,
     767px);
     position: absolute;
@@ -560,7 +626,7 @@ span {
 }
 
 .ip10-pic1 {
-    @include background('../images/pic2_6_1.png',
+    @include background('../images/pic2_6_1.png?v=20160803006',
     620px,
     346px);
     position: absolute;
@@ -571,7 +637,7 @@ span {
 }
 
 .ip10-pic2 {
-    @include background('../images/pic2_6_2.png',
+    @include background('../images/pic2_6_2.png?v=20160803006',
     635px,
     465px);
     position: absolute;
@@ -582,7 +648,7 @@ span {
 }
 
 .ip11-pic1 {
-    @include background('../images/pic2_7_1.png',
+    @include background('../images/pic2_7_1.png?v=20160803006',
     629px,
     240px);
     position: absolute;
@@ -593,7 +659,7 @@ span {
 }
 
 .ip11-pic2 {
-    @include background('../images/pic2_7_2.png',
+    @include background('../images/pic2_7_2.png?v=20160803006',
     642px,
     489px);
     position: absolute;
@@ -605,7 +671,7 @@ span {
 }
 
 .ip12-pic1 {
-    @include background('../images/pic2_8_1.png',
+    @include background('../images/pic2_8_1.png?v=20160803006',
     630px,
     730px);
     position: absolute;
@@ -616,7 +682,7 @@ span {
 }
 
 .ip13-pic1 {
-    @include background('../images/pic2_9_1.png',
+    @include background('../images/pic2_9_1.png?v=20160803006',
     630px,
     278px);
     position: absolute;
@@ -627,7 +693,7 @@ span {
 }
 
 .ip13-pic2 {
-    @include background('../images/pic2_9_2.png',
+    @include background('../images/pic2_9_2.png?v=20160803006',
     716px,
     575px);
     position: absolute;
@@ -638,9 +704,8 @@ span {
     animation: slideInRight $duration both $delay;
 }
 
-
 .ip14-pic1 {
-    @include background('../images/pic2_10_1.png',
+    @include background('../images/pic2_10_1.png?v=20160803006',
     512px,
     191px);
     position: absolute;
@@ -651,7 +716,7 @@ span {
 }
 
 .ip14-pic2 {
-    @include background('../images/pic2_10_2.png',
+    @include background('../images/pic2_10_2.png?v=20160803006',
     628px,
     488px);
     position: absolute;
@@ -663,7 +728,7 @@ span {
 }
 
 .ip15-pic1 {
-    @include background('../images/pic2_11_1.png',
+    @include background('../images/pic2_11_1.png?v=20160803006',
     515px,
     221px);
     position: absolute;
@@ -674,7 +739,7 @@ span {
 }
 
 .ip15-pic2 {
-    @include background('../images/pic2_11_2.png',
+    @include background('../images/pic2_11_2.png?v=20160803006',
     689px,
     464px);
     position: absolute;
@@ -685,7 +750,7 @@ span {
 }
 
 .ip16-pic1 {
-    @include background('../images/pic2_12_1.png',
+    @include background('../images/pic2_12_1.png?v=20160803006',
     531px,
     151px);
     position: absolute;
@@ -696,7 +761,7 @@ span {
 }
 
 .ip16-pic2 {
-    @include background('../images/pic2_12_2.png',
+    @include background('../images/pic2_12_2.png?v=20160803006',
     750px,
     605px);
     position: absolute;
@@ -707,7 +772,7 @@ span {
 }
 
 .ip17-pic1 {
-    @include background('../images/pic2_13_0.png',
+    @include background('../images/pic2_13_0.png?v=20160803006',
     750px,
     906px);
     position: absolute;
@@ -718,7 +783,7 @@ span {
 }
 
 .ip18-pic1 {
-    @include background('../images/pic2_14_0.png',
+    @include background('../images/pic2_14_0.png?v=20160803006',
     637px,
     812px);
     position: absolute;
@@ -729,7 +794,7 @@ span {
 }
 
 .ip19-pic1 {
-    @include background('../images/pic2_15_1.png',
+    @include background('../images/pic2_15_1.png?v=20160803006',
     411px,
     151px);
     position: absolute;
@@ -740,7 +805,7 @@ span {
 }
 
 .ip19-pic2 {
-    @include background('../images/pic2_15_2.png',
+    @include background('../images/pic2_15_2.png?v=20160803006',
     650px,
     545px);
     position: absolute;
@@ -751,7 +816,7 @@ span {
 }
 
 .ip20-pic1 {
-    @include background('../images/pic3_1_0.png',
+    @include background('../images/pic3_1_0.png?v=20160803006',
     659px,
     817px);
     position: absolute;
@@ -762,7 +827,7 @@ span {
 }
 
 .ip21-pic1 {
-    @include background('../images/pic3_2_0.png',
+    @include background('../images/pic3_2_0.png?v=20160803006',
     655px,
     844px);
     position: absolute;
@@ -773,7 +838,7 @@ span {
 }
 
 .ip22-pic1 {
-    @include background('../images/pic3_3_0.png',
+    @include background('../images/pic3_3_0.png?v=20160803006',
     634px,
     304px);
     position: absolute;
@@ -784,7 +849,7 @@ span {
 }
 
 .ip23-pic1 {
-    @include background('../images/pic4_1_0.png',
+    @include background('../images/pic4_1_0.png?v=20160803006',
     637px,
     844px);
     position: absolute;
@@ -795,7 +860,7 @@ span {
 }
 
 .ip24-pic1 {
-    @include background('../images/pic_4_2_0.png',
+    @include background('../images/pic_4_2_0.png?v=20160803006',
     637px,
     844px);
     position: absolute;
@@ -806,7 +871,7 @@ span {
 }
 
 .ip25-pic1 {
-    @include background('../images/pic4_3_0.png',
+    @include background('../images/pic4_3_0.png?v=20160803006',
     643px,
     845px);
     position: absolute;
@@ -817,7 +882,7 @@ span {
 }
 
 .ip26-pic1 {
-    @include background('../images/pic4_4_1.png',
+    @include background('../images/pic4_4_1.png?v=20160803006',
     616px,
     239px);
     position: absolute;
@@ -828,7 +893,7 @@ span {
 }
 
 .ip26-pic2 {
-    @include background('../images/pic4_4_2.png',
+    @include background('../images/pic4_4_2.png?v=20160803006',
     653px,
     239px);
     position: absolute;
@@ -839,7 +904,7 @@ span {
 }
 
 .ip26-pic3 {
-    @include background('../images/pic4_4_3.png',
+    @include background('../images/pic4_4_3.png?v=20160803006',
     638px,
     239px);
     position: absolute;
@@ -850,7 +915,7 @@ span {
 }
 
 .ip27-pic1 {
-    @include background('../images/pic4_5_1.png',
+    @include background('../images/pic4_5_1.png?v=20160803006',
     610px,
     239px);
     position: absolute;
@@ -861,7 +926,7 @@ span {
 }
 
 .ip27-pic2 {
-    @include background('../images/pic4_5_2.png',
+    @include background('../images/pic4_5_2.png?v=20160803006',
     660px,
     239px);
     position: absolute;
@@ -872,7 +937,7 @@ span {
 }
 
 .ip27-pic3 {
-    @include background('../images/pic4_5_3.png',
+    @include background('../images/pic4_5_3.png?v=20160803006',
     622px,
     239px);
     position: absolute;
@@ -919,21 +984,21 @@ span {
 }
 
 .ip28-pic1 {
-    @include background('../images/pic4_6_1.png',
+    @include background('../images/pic4_6_1.png?v=20160803006',
     310px,
     388px);
     margin: auto;
 }
 
 .ip28-pic2 {
-    @include background('../images/pic4_6_2.png',
+    @include background('../images/pic4_6_2.png?v=20160803006',
     310px,
     388px);
     margin: auto;
 }
 
 .ip28-pic3 {
-    @include background('../images/pic4_6_3.png',
+    @include background('../images/pic4_6_3.png?v=20160803006',
     310px,
     388px);
     margin: auto;
@@ -956,11 +1021,15 @@ span {
     margin-top: pxToRem(20px);
     .yp-row {
         width: 100%;
-        display: flex;
-        display: -webkit-box;
+        // display: flex;
+        // display: -webkit-box;
+        font-size: 0;
         &>div {
-            width: pxToRem(375px);
+            width: 50%;
+            display: inline-block;
+            // width: pxToRem(375px);
         }
+       
         i {
             margin: auto;
         }
@@ -979,92 +1048,102 @@ span {
 }
 
 .ip29-pic1 {
-    @include background('../images/pic5_1_1.png',
+    @include background('../images/pic5_1_1.png?v=20160803006',
     243px,
     911px);
     animation: slideInLeft $duration both;
 }
 
 .ip29-pic2 {
-    @include background('../images/pic5_1_2.png',
+    @include background('../images/pic5_1_2.png?v=20160803006',
     243px,
     910px);
     animation: slideInRight $duration both;
 }
+
 .ip30-pic1 {
-    @include background('../images/pic5_2_1.png',
+    @include background('../images/pic5_2_1.png?v=20160803006',
     241px,
     876px);
     animation: slideInLeft $duration both;
 }
 
 .ip30-pic2 {
-    @include background('../images/pic5_2_2.png',
+    @include background('../images/pic5_2_2.png?v=20160803006',
     245px,
     876px);
     animation: slideInRight $duration both;
 }
+
 .ip31-pic1 {
-    @include background('../images/pic5_3_1.png',
+    @include background('../images/pic5_3_1.png?v=20160803006',
     242px,
     875px);
     animation: slideInLeft $duration both;
 }
 
 .ip31-pic2 {
-    @include background('../images/pic5_3_2.png',
+    @include background('../images/pic5_3_2.png?v=20160803006',
     243px,
     876px);
     animation: slideInRight $duration both;
 }
+
 .ip32-pic {
     margin: auto;
     display: block;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .ip32-pic1 {
     margin-top: pxToRem(28px);
-    background-image: url('../images/pic6_1_0.png');
+    background-image: url('../images/pic6_1_0.png?v=20160803006');
     width: pxToRem(654px);
     height: pxToRem(948px);
     animation: slideInRight $duration both;
 }
+
 .ip33-pic {
     margin: auto;
     display: block;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .ip33-pic1 {
     margin-top: pxToRem(28px);
-    background-image: url('../images/pic6_2_0.png');
+    background-image: url('../images/pic6_2_0.png?v=20160803006');
     width: pxToRem(654px);
     height: pxToRem(948px);
     animation: slideInLeft $duration both;
 }
+
 .ip34-pic {
     margin: auto;
     display: block;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .ip34-pic1 {
     margin-top: pxToRem(28px);
-    background-image: url('../images/pic6_3_0.png');
+    background-image: url('../images/pic6_3_0.png?v=20160803006');
     width: pxToRem(654px);
     height: pxToRem(488px);
     animation: slideInRight $duration both;
 }
+
 .ip35-pic {
     margin: auto;
     display: block;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .ip35-pic1 {
     margin-top: pxToRem(20px);
-    background-image: url('../images/pic7_1_1.png');
+    background-image: url('../images/pic7_1_1.png?v=20160803006');
     width: pxToRem(670px);
     height: pxToRem(306px);
     animation: slideInLeft $duration both;
@@ -1072,7 +1151,7 @@ span {
 }
 
 .ip35-pic2 {
-    background-image: url('../images/pic7_1_2.png');
+    background-image: url('../images/pic7_1_2.png?v=20160803006');
     width: pxToRem(670px);
     height: pxToRem(300px);
     animation: slideInRight $duration both $delay;
@@ -1080,20 +1159,22 @@ span {
 }
 
 .ip35-pic3 {
-    background-image: url('../images/pic7_1_3.png');
+    background-image: url('../images/pic7_1_3.png?v=20160803006');
     width: pxToRem(670px);
     height: pxToRem(330px);
     animation: slideInLeft $duration both $delay*2;
 }
+
 .ip36-pic {
     margin: auto;
     display: block;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .ip36-pic1 {
     margin-top: pxToRem(30px);
-    background-image: url('../images/pic7_2_1.png');
+    background-image: url('../images/pic7_2_1.png?v=20160803006');
     width: pxToRem(670px);
     height: pxToRem(286px);
     animation: slideInRight $duration both;
@@ -1101,7 +1182,7 @@ span {
 }
 
 .ip36-pic2 {
-    background-image: url('../images/pic7_2_2.png');
+    background-image: url('../images/pic7_2_2.png?v=20160803006');
     width: pxToRem(670px);
     height: pxToRem(286px);
     animation: slideInLeft $duration both $delay;
@@ -1109,20 +1190,22 @@ span {
 }
 
 .ip36-pic3 {
-    background-image: url('../images/pic7_2_3.png');
+    background-image: url('../images/pic7_2_3.png?v=20160803006');
     width: pxToRem(670px);
     height: pxToRem(330px);
     animation: slideInRight $duration both $delay*2;
 }
+
 .ip37-pic {
     margin: auto;
     display: block;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .ip37-pic1 {
     margin-top: pxToRem(30px);
-    background-image: url('../images/pic7_3_1.png');
+    background-image: url('../images/pic7_3_1.png?v=20160803006');
     width: pxToRem(670px);
     height: pxToRem(250px);
     animation: zoomIn $duration both;
@@ -1130,7 +1213,7 @@ span {
 }
 
 .ip37-pic2 {
-    background-image: url('../images/pic7_3_2.png');
+    background-image: url('../images/pic7_3_2.png?v=20160803006');
     width: pxToRem(676px);
     height: pxToRem(306px);
     animation: zoomIn $duration both $delay;
@@ -1138,20 +1221,22 @@ span {
 }
 
 .ip37-pic3 {
-    background-image: url('../images/pic7_3_3.png');
+    background-image: url('../images/pic7_3_3.png?v=20160803006');
     width: pxToRem(670px);
     height: pxToRem(306px);
     animation: zoomIn $duration both $delay*2;
 }
+
 .ip38-pic {
     margin: auto;
     display: block;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .ip38-pic1 {
     margin-top: pxToRem(52px);
-    background-image: url('../images/pic8_1_1.png');
+    background-image: url('../images/pic8_1_1.png?v=20160803006');
     width: pxToRem(632px);
     height: pxToRem(400px);
     animation: slideInRight $duration both;
@@ -1159,20 +1244,22 @@ span {
 }
 
 .ip38-pic2 {
-    background-image: url('../images/pic8_1_2.png');
+    background-image: url('../images/pic8_1_2.png?v=20160803006');
     width: pxToRem(632px);
     height: pxToRem(436px);
     animation: slideInRight $duration both $delay;
 }
+
 .ip39-pic {
     margin: auto;
     display: block;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .ip39-pic1 {
     margin-top: pxToRem(20px);
-    background-image: url('../images/pic8_2_1.png');
+    background-image: url('../images/pic8_2_1.png?v=20160803006');
     width: pxToRem(632px);
     height: pxToRem(476px);
     animation: slideInLeft $duration both;
@@ -1180,20 +1267,22 @@ span {
 }
 
 .ip39-pic2 {
-    background-image: url('../images/pic8_2_2.png');
+    background-image: url('../images/pic8_2_2.png?v=20160803006');
     width: pxToRem(632px);
     height: pxToRem(478px);
     animation: slideInRight $duration both $delay;
 }
+
 .ip40-pic {
     margin: auto;
     display: block;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .ip40-pic1 {
     margin-top: pxToRem(20px);
-    background-image: url('../images/pic8_3_1.png');
+    background-image: url('../images/pic8_3_1.png?v=20160803006');
     width: pxToRem(632px);
     height: pxToRem(446px);
     animation: slideInRight $duration both;
@@ -1201,55 +1290,67 @@ span {
 }
 
 .ip40-pic2 {
-    background-image: url('../images/pic8_3_2.png');
+    background-image: url('../images/pic8_3_2.png?v=20160803006');
     width: pxToRem(632px);
     height: pxToRem(478px);
     animation: slideInLeft $duration both $delay;
 }
+
 .lc {
-	width: 100%;
-	height: 100%;
-	padding-top: pxToRem(60px);
-	font-size: pxToRem(26px);
-	color: #442d13;
+    width: 100%;
+    height: 100%;
+    padding-top: pxToRem(60px);
+    font-size: pxToRem(26px);
+    color: #442d13;
 }
+
 .icon-lb {
-	@include background('../images/back_cover.png', 560px, 514px);
-	margin: auto;
+    @include background('../images/back_cover.png?v=20160803006',
+    560px,
+    514px);
+    margin: auto;
 }
+
 .l-txt {
-	text-align: center;
-	line-height: pxToRem(46px);
-	width: 100%;
-	padding: pxToRem(60px) pxToRem(110px);
+    text-align: center;
+    line-height: pxToRem(46px);
+    width: 100%;
+    padding: pxToRem(60px) pxToRem(110px);
 }
+
 .ewcont {
-	width: 100%;
-	display: flex;
-	display: -webkit-box;
-	text-align: center;
-	img {
-		width: pxToRem(160px);
-		height: pxToRem(160px);
-		margin-bottom: pxToRem(50px);
-	}
-	span {
-		width: 100%;
-		margin-bottom: pxToRem(10px);
-	}
-	.il {
-		width: pxToRem(270px);
-	}
-	.is {
-		width: pxToRem(210px);
-	}
-	// &>div {
-	// 	width: pxToRem(250px);
-	// }
+    width: 100%;
+    // display: flex;
+    // display: -webkit-box;
+    text-align: center;
+    font-size: 0;
+    img {
+        width: pxToRem(160px);
+        height: pxToRem(160px);
+        margin-bottom: pxToRem(50px);
+    }
+    span {
+        width: 100%;
+        margin-bottom: pxToRem(10px);
+        font-size: pxToRem(26px);
+    }
+    .il {
+        // width: pxToRem(270px);
+        width: 33.33%;
+        display: inline-block;
+    }
+    .is {
+        width: pxToRem(210px);
+    }
+    // &>div {
+    //  width: pxToRem(250px);
+    // }
 }
+
 .ltxt-s {
-	font-size: pxToRem(22px);
+    font-size: pxToRem(22px);
 }
+
 .jg-txt {
     font-size: pxToRem(24px);
     width: 100%;
@@ -1258,4 +1359,37 @@ span {
     padding: 0 pxToRem(50px);
     position: absolute;
     top: 88%;
+}
+.btn-share {
+    width: pxToRem(160px);
+    height: pxToRem(56px);
+    line-height: pxToRem(60px);
+    text-align: center;
+    border-radius: pxToRem(56px);
+    color: #844e2f;
+    font-size: pxToRem(30px);
+    background-color: rgba(255,208, 57, .4);
+    position: absolute;
+    right: pxToRem(130px);
+    bottom: pxToRem(30px);
+    display: none;
+    z-index: 100;
+    .icon-share {
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAhBAMAAAAv5UYdAAAAJFBMVEUAAACETi+ETi+ETi+ETi+ETi+ETi+ETi+ETi+ETi+ETi+ETi/i2DKpAAAAC3RSTlMA875N1IQWFVrR0ptCBYEAAABxSURBVBjTY4ACI0FlGJN19+7dAVC2NZC9GcrWBrI3QdnSQPZGFDammm6EXvbZCDMrtzQJKsOE3YAkTDgB5hINoDDcJUBhuEt2kOcShF6EmXC7ViOcwFAFloC6bbUbIkyqNiLcz+5NfpggwhMRzojwBwCltVSVplSoAwAAAABJRU5ErkJggg==');
+        width: pxToRem(22px);
+        height: pxToRem(33px);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+        top: pxToRem(4px);
+        margin-right: pxToRem(10px);
+    }
+}
+.wx-share {
+    @include background('../images/weixin-share.png',
+    628px,
+    488px);
+    position: absolute;
+    top: 20px;
+    right: 10px;
 }

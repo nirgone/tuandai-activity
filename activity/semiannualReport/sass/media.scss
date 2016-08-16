@@ -5,15 +5,26 @@
     
     @media screen and (max-width:374px) {}
     /* for moto*/
-    @media screen and (min-width:360px) and (min-height: 450px) and (max-height: 475px) {
-    	$ratio: .85;
+    
+    @media screen and (min-width:360px) and (min-height: 450px) and (max-height: 522px) {
+        $ratio: .85;
         $sratio: .65;
+        .ew-pop {
+            height: 80% !important;
+        }
+        .ewmask .ew-pop {
+            padding-top: 0 !important;
+        }
+        .ewmask .ew-name {
+            height: 0 !important;
+            line-height: 0 !important;
+        }
         .pic {
             transform: scale($ratio);
             -webkit-transform: scale($ratio);
         }
         .menu {
-        	padding: pxToRem(20px) pxToRem(40px);
+            padding: pxToRem(20px) pxToRem(40px);
         }
         .ip1-pic1 {
             top: 17%;
@@ -22,13 +33,13 @@
             top: 25%;
         }
         .ip1-pic3 {
-           top: 50%;
+            top: 50%;
         }
         .ip1-pic4 {
-        	top: 58%;
+            top: 58%;
         }
         .ip2-pic3 {
-           top: 52%;
+            top: 52%;
         }
         .ip2-pic4 {
             top: 58%;
@@ -43,7 +54,6 @@
             top: 25% !important;
             margin-left: 0 !important;
         }
-        
         .fmcont {
             padding-top: 0;
         }
@@ -82,7 +92,7 @@
             height: pxToRem(300px) * $sratio
         }
         .ip7-pic2 {
-           top: 48%;
+            top: 48%;
         }
         .ip8-pic1 {
             width: pxToRem(588px) * $sratio;
@@ -185,9 +195,9 @@
             -webkit-transform: scale($ratio);
         }
         .ip18-pic1 {
-        	transform: scale($ratio);
-        	-webkit-transform: scale($ratio);
-        	top: 14%;
+            transform: scale($ratio);
+            -webkit-transform: scale($ratio);
+            top: 14%;
         }
         .ip19-pic1 {
             width: pxToRem(411px) * $ratio;
@@ -286,7 +296,7 @@
             height: pxToRem(388px) * $sratio;
         }
         .am-lt {
-        	top: 20%;
+            top: 20%;
         }
         .am-lb {
             top: 56%;
@@ -369,7 +379,6 @@
             margin: 0 auto;
             transform: scale($ratio);
             -webkit-transform: scale($ratio);
-
         }
         // .ip37-pic2,
         // .ip37-pic3 {
@@ -413,14 +422,20 @@
         //     transform: scale($ratio);
         //     -webkit-transform: scale($ratio);
         // }
-        .icon-lb {
-        	margin-top: -30px;
+       .icon-lb {
+            width: pxToRem(560px)*$ratio;
+            height: pxToRem(514px)*$ratio;
+            margin: 10px auto;
+        }
+        .lc {
+            padding-top: 0;
         }
         .ewcont img {
             margin-bottom: 0;
         }
     }
     /* =========for short screen============== */
+    
     @media screen and (max-height: 540px) and (min-width:321px) {
         /* $ratio: 0.85;
         .pic {
@@ -454,6 +469,13 @@
     @media screen and (min-height: 540px) and (min-width:430px) {
         $ratio: 0.9;
         $sratio: .85;
+        .ew-pop {
+            height: 80% !important;
+        }
+        .ewmask .ew-name {
+            height: 0 !important;
+            line-height: 0 !important;
+        }
         .pic {
             transform: scale($ratio);
             -webkit-transform: scale($ratio);
@@ -485,7 +507,6 @@
             height: pxToRem(372px) * $ratio;
             bottom: 30px;
         }
-        
         .fmcont {
             padding-top: 0;
         }
@@ -529,7 +550,7 @@
             margin-top: -5px;
         }
         .ip8-pic2 {
-        	top: 50%;
+            top: 50%;
         }
         .ip9-pic1 {
             width: pxToRem(610px) * $sratio;
@@ -832,6 +853,11 @@
         .l-txt {
             padding: 0 pxToRem(30px);
         }
+         .icon-lb {
+            width: pxToRem(560px)*.85;
+            height: pxToRem(514px)*.85;
+            margin: 10px auto;
+        }
         .lc {
             padding-top: 0;
         }
@@ -848,13 +874,36 @@
             -webkit-transform: scale($ratio);
         }
         .l-txt {
-        	padding: pxToRem(30px) pxToRem(60px);
+            padding: pxToRem(30px) pxToRem(60px);
+        }
+        .ew-pop {
+            padding-top: 0 !important;
+        }
+        .icon-lb {
+            width: pxToRem(560px)*.65;
+            height: pxToRem(514px)*.65;
+            margin: 10px auto;
         }
     }
     /* -------------------------iphone4---------------------------- */
     
     @media screen and (max-width:320px) and (max-height:416px) {
         $ratio: 0.85;
+        .ew-pop {
+            height: 80% !important;
+        }
+        .ew-pop {
+            padding-top: 0 !important;
+        }
+        .ewmask .ew-name {
+            height: 0 !important;
+            line-height: 0 !important;
+        }
+        .icon-lb {
+            width: pxToRem(560px)*.65;
+            height: pxToRem(514px)*.65;
+            margin: 10px auto;
+        }
         .pic {
             transform: scale($ratio);
             -webkit-transform: scale($ratio);
@@ -1021,7 +1070,7 @@
             top: 14%;
         }
         .ip18-pic1 {
-        	top: 13%;
+            top: 13%;
         }
         .ip19-pic1 {
             width: pxToRem(411px) * $ratio;

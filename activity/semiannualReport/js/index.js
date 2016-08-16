@@ -58,6 +58,11 @@
 					curIndex = $(".swiper-slide-active").attr('data-index');
 					curModule = $(".swiper-slide-active").attr('data-module');
 					// console.info("change end-----", swiper.activeIndex, curIndex);
+					if (swiper.activeIndex > 0) {
+						$(".btn-share").show();
+					} else {
+						$(".btn-share").hide();
+					}
 					$(".swiper-slide").find('.page').hide();
 					$(".swiper-slide-active").find('.page').show();
 					var length = swiper.slides.length;
@@ -120,6 +125,7 @@
 		var moduleId = $(this).attr('data-module');
 		initPage(moduleId);
 		$(".closecont").trigger('click');
+		$(".btn-share").show();
 	});
 	//打开目录
 
@@ -130,4 +136,53 @@
 	$(".closecont").on('click', function() {
 		$(".menucont").removeClass('to-show');
 	});
+	$("body").on('touchstart', '.ewcont img', function() {
+		var type = $(this).attr('data-type');
+		if (type == "fwh") {
+			$(".pimg")[0].src = "../images/wxfwh-big.png";
+			$(".ew-name").html('团贷网微信服务号（tuandaiservice）');
+			$('.ewtxt').html('<span>长按并复制微信号查找添加</span><span>或截屏后在微信端打开识别二维码</span>');
+		} else if (type == "dyh") {
+			$(".pimg")[0].src = "../images/wxdyh-big.png";
+			$(".ew-name").html('团贷网微信订阅号（ tuandaiwang）');
+			$('.ewtxt').html('<span>长按并复制微信号查找添加</span><span>或截屏后在微信端打开识别二维码</span>');
+		} else {
+			$(".pimg")[0].src = "../images/weibo-big.png";
+			$(".ew-name").html('新浪微博@团贷网');
+			$('.ewtxt').html('<span>在新浪微博搜索“团贷网”添加关注</span><span>或截屏后在微信端打开识别二维码</span>');
+		}
+		$(".ew").show();
+	});
+	$(".p-cancle").on('click', function() {
+		$(".ew").hide();
+	});
+	//分享
+	$("body").on('click', '.btn-share', function() {
+		if (isWeiXin()) {
+			$(".wx-mask").show();
+		} else {
+			if (Jsbridge.isNewVersion()) {
+				if (Jsbridge.isCorrectVersion('4.5.0', 1)) {
+					Jsbridge.ToAppActivity(1);
+				}else{
+					Jsbridge.toActivityAppInviteFriend();
+				}
+			} else {
+				alert('版本过低，请升级团贷网app');
+			}
+		}
+	});
+
+	$(".wx-mask").on('click', function() {
+		$(".wx-mask").hide();
+	});
+
+	function isWeiXin() {
+		var ua = navigator.userAgent.toLowerCase();
+		if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+			return true;
+		} else {
+			return false;
+		}
+	}
 })();

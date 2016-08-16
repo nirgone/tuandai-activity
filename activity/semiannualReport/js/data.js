@@ -10,7 +10,7 @@
 	}, {
 		"module": 1,
 		"index": 2,
-		"temp": '<div class="page"><i class="icon-menu"></i><span class="m-title">数据概览<i class="icon-mi">01</i></span><div class="m-subtitle"><span>发展概况</span></div><i class="icon-page2 ip2-pic1 pic"></i><i class="icon-page2 ip2-pic2 pic"></i><i class="icon-page2 ip2-pic3 pic"></i><i class="icon-page2 ip2-pic4 pic"></i><i class="pno"><i class="pn-txt">02</i></i><span class="jg-txt">注：机构数量包括正合普惠分公司</span></div>'
+		"temp": '<div class="page"><i class="icon-menu"></i><span class="m-title">数据概览<i class="icon-mi">01</i></span><div class="m-subtitle"><span>发展概况</span></div><i class="icon-page2 ip2-pic1 pic"></i><i class="icon-page2 ip2-pic2 pic"></i><i class="icon-page2 ip2-pic3 pic"></i><i class="icon-page2 ip2-pic4 pic"></i><i class="pno"><i class="pn-txt">02</i></i><span class="jg-txt">注：该数据包含正合普惠员工人数和分公司数量。</span></div>'
 	}, {
 		"module": 1,
 		"index": 3,
@@ -110,7 +110,7 @@
 	}, {
 		"module": 4,
 		"index": 27,
-		"temp": '<div class="page"><i class="icon-menu"></i><span class="m-title">精彩活动<i class="icon-mi">04</i></span><div class="m-subtitle"><span>线下活动</span></div><i class="ip27-pic1 pic"></i><i class="ip27-pic2 pic"></i><i class="ip27-pic3 pic"></i><i class="pno"><i class="pn-txt">27</i></i></div>'
+		"temp": '<div class="page"><i class="icon-menu"></i><span class="m-title">精彩活动<i class="icon-mi">04</i></span><div class="m-subtitle"><span>公益活动</span></div><i class="ip27-pic1 pic"></i><i class="ip27-pic2 pic"></i><i class="pno"><i class="pn-txt">27</i></i></div>'
 	}, {
 		"module": 4,
 		"index": 28,
@@ -166,7 +166,7 @@
 	}, {
 		"module": 9,
 		"index": 41,
-		"temp": '<div class="lc"><i class="icon-lb pic"></i><span class="l-txt">如果您还想了解团贷网更多的动态信息，请关注我们的微信订阅号、服务号或新浪微博。</span><div class="ewcont"><div class="il pic"><img src="../images/wxdyh.png"><span>微信订阅号</span><span class="ltxt-s">tuandaiwang</span> </div><div class="is pic"><img src="../images/wxdyh.png"><span>微信服务号</span><span class="ltxt-s">tuandaiservice</span></div> <div class="il pic"><img src="../images/wxdyh.png"><span>新浪微博</span><span class="ltxt-s">@团贷网</span></div></div></div>',
+		"temp": '<div class="lc"><i class="icon-lb"></i><span class="l-txt">如果您还想了解团贷网更多的动态信息，请关注我们的微信订阅号、服务号或新浪微博。</span><div class="ewcont"><div class="il pic"><img src="../images/wxdyh.png" data-type="dyh"><span>微信订阅号</span><span class="ltxt-s">tuandaiwang</span> </div><div class="il pic"><img src="../images/wxfwh.png" data-type="fwh"><span>微信服务号</span><span class="ltxt-s">tuandaiservice</span></div> <div class="il pic"><img src="../images/weibo.png" data-type="weibo"><span>新浪微博</span><span class="ltxt-s">@团贷网</span></div></div></div>',
 	}];
 	window.tempArr = tempArr;
 })();

@@ -1,0 +1,139 @@
+    @charset "UTF-8";
+    @import "variables";
+    @import "../../sass/func";
+    /*  for small width screen  */
+    
+    @media screen and (max-width:374px) {}
+    /* for moto*/
+    
+    @media screen and (min-width:360px) and (min-height: 450px) and (max-height: 475px) {
+        $ratio: .85;
+        $sratio: .65;
+         .p-page li {
+        	margin-top: pxToRem(40px);
+        }
+        // .zoom {
+        // 	transform: scale( $ratio);
+        // }
+        #peoSwiper {
+        	height: 93% !important;
+        }
+        .tw-p4 li {
+        	margin-top: pxToRem(60px);
+        }
+
+    }
+    /* =========for short screen============== */
+    
+    @media screen and (max-height: 540px) and (min-width:321px) {
+        $ratio: 0.85;
+        .p-page li {
+        	margin-top: pxToRem(40px);
+        }
+        .zoom {
+        	transform: scale( $ratio);
+        }
+        #peoSwiper {
+        	height: 93% !important;
+        }
+        .tw-p4 li {
+        	margin-top: pxToRem(60px);
+        }
+    }
+    
+    //* -----------meizu  mx3----------------- */
+    @media screen and (min-height: 540px) and (min-width:430px) {
+        $ratio: 0.9;
+        $sratio: .85;
+        .p-page li {
+        	margin-top: pxToRem(60px);
+        }
+        .zoom {
+        	transform: scale( $ratio);
+        }
+        #peoSwiper {
+        	height: 92% !important;
+        }
+
+    }
+    /* ------------------------iphone 5------------------------ */
+    
+    @media screen and (max-width:320px) and (max-height:508px) {
+        $ratio: 0.9;
+        .p-page li {
+        	margin-top: pxToRem(60px);
+        }
+        .zoom {
+        	transform: scale( $ratio);
+        }
+        #peoSwiper {
+        	height: 92% !important;
+        }
+    }
+    /* -------------------------iphone4---------------------------- */
+    
+    @media screen and (max-width:320px) and (max-height:416px) {
+        $ratio: 0.85;
+        .icon-txt {
+        	width: pxToRem(547px) * $ratio;
+        	height: pxToRem(636px) * $ratio;
+        	margin-left: pxToRem(-274px) * $ratio;
+        }
+        .icon-txt2 {
+        	width: pxToRem(77px) * $ratio;
+        	height: pxToRem(267px) * $ratio;
+            top: pxToRem(40px) * $ratio;
+        }
+        .icon-txt3 {
+        	width: pxToRem(28px) * $ratio;
+        	height: pxToRem(259px) * $ratio;
+            top: pxToRem(50px) * $ratio;
+        }
+        .icon-yellow {
+        	width: pxToRem(172px) * $ratio;
+        	height: pxToRem(116px) * $ratio;
+            left: pxToRem(60px);
+        }
+        .icon-plane {
+        	width: pxToRem(83px) * $ratio;
+        	height: pxToRem(59px) * $ratio;
+        }
+        .icon-yellow-small {
+        	width: pxToRem(64px) * $ratio;
+        	height: pxToRem(43px) * $ratio;
+        }
+        .t-cont {
+        	transform: scale($ratio);
+        }
+        .nav {
+        	margin-top: pxToRem(30px);
+        }
+        .p-page li {
+        	margin-top:0;
+        }
+        .zoom {
+        	transform: scale(.75);
+        }
+        .detcont {
+        	height: 100%;
+        }
+        #peoSwiper {
+        	height: 90% !important;
+        }
+        .tw-p4 li {
+        	margin-top: pxToRem(60px);
+        	height: pxToRem(340px) * $ratio;
+        	font-size: pxToRem(24px) * $ratio;
+        }
+        .tw-p4 .r-txt span {
+        	margin-top: pxToRem(10px);
+        }
+        .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+        	bottom: 0;
+        }
+        .btn-blue {
+        	bottom: pxToRem(30px);
+        }
+    }
+    
+    @media screen and (max-width: 320px) {}
