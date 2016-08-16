@@ -1,8 +1,19 @@
 @charset "UTF-8";
+//background color
+$color-bg-white: #ffffff;                                    //［背景1］纯白－内容板块背景用色
+$color-bg-white-light: #fbfbfb;                              //［背景2］浅白－内页导航栏背景用色
+$color-bg-grey: #f2f2f0;                                     //［背景3］浅灰色－页面底层背景用色
+$color-bg-yellow: #ffcc00;                                   //［背景4］黄色－一级页面导航栏（按钮背景）
+$color-linear:linear-gradient(to right bottom, #ffcc00 , #f7b02d); //[背景5］渐变色－收益类板块背景（135度线性渐变）
+//line color
+$color-line-grey: #c2c2c2;                                   //[线1] 导航栏底边的颜色
+$color-line-grey-light: #e6e6e6;                             //[线2] 内容分割线颜色
+//text color
+$color-text-dark: #333333;                                   //[文字1]黑色－标题、金额等重要文字
+$color-text-grey: #999999;                                   //[文字2]深灰－次级文本、备注说明文字
+$color-text-grey-light: #cccccc;                             //[文字3]浅灰－输入框的提示文字
+$color-text-brown: #694514;                                  //[文字4]褐色－黄色背景上的褐色文字（如一级页面导航栏标题等，黄色按钮文字）
+$color-text-yellow: #fab600;                                 //[文字5]黄色－页面上的黄色文字（如按钮文字等）
+$color-text-orange: #fa7d00;                                 //[文字6]橙色－强调突出文字、可点击状态文字
 
-$color-pink: #dc3360;
-$color-grey: #999999;
-$color-white: #ffffff;
-$color-yellow-text: #fab600;
-$color-yellow: #ffcc00;
-$color-orange: #ff7822;
+$color-pink: #dc3360;  //粉红色
