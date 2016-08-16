@@ -192,7 +192,7 @@ function actInit() {
 	    if(e) throw e;
 	    var _content = '@charset "UTF-8";\n'+
 			'@import "variables";\n'+
-			'@import "../../sass/func";\n'+
+			'@import "../../../sass/func";\n'+
 			'\n'+
 			'/*  for small width screen  */\n'+
 			'\n'+
