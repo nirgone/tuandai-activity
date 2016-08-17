@@ -17,6 +17,7 @@ body {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-overflow-scrolling: touch !important;
 }
+
 .content {
     // background-color:$color-bg-grey;
     max-width: 414px;
@@ -72,7 +73,7 @@ a {
                 height: pxToRem(50px);
                 line-height: pxToRem(50px);
                 font-size: pxToRem(26px);
-                color:#fff;
+                color: #fff;
                 text-align: center;
             }
             .icon-icon1 {
@@ -123,4 +124,15 @@ a {
             margin-left: pxToRem(12px);
         }
     }
+}
+
+.yellow-big-btn {
+    width: pxToRem(690px);
+    height: pxToRem(80px);
+    line-height: pxToRem(80px);
+    border-radius: pxToRem(80px);
+    background-color: $color-bg-yellow;
+    font-size: pxToRem(34px);
+    color: $color-text-brown;
+    margin: auto;
 }
