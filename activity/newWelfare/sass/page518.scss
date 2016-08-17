@@ -35,9 +35,9 @@
     }
     .pf-ulc {
         margin-top: pxToRem(100px);
-        display: none;
+        // display: none;
     }
-    .glogin-btn {
+   /*  .glogin-btn {
         width: pxToRem(690px);
         height: pxToRem(80px);
         line-height: pxToRem(80px);
@@ -46,9 +46,10 @@
         font-size: pxToRem(34px);
         color: $color-text-brown;
         margin: auto;
-    }
+    } */
     .pf-lc {
         width: 100%;
+        display: none;
         .icon-gou {
             margin: pxToRem(40px) auto;
             display: block;
@@ -81,7 +82,154 @@
         color: $color-text-yellow;
     }
     .btn-yellow {
-    	background-color: $color-bg-yellow;
-    	color: $color-text-brown;
+        background-color: $color-bg-yellow;
+        color: $color-text-brown;
     }
+}
+
+.pf-rc {
+    width: 100%;
+    margin-top: pxToRem(90px);
+    font-size: pxToRem(30px);
+    padding: 0 pxToRem(30px);
+    .pf-rtitle {
+        width: 100%;
+        color: $color-pink-dark;
+        position: relative;
+        &:before {
+            content: '';
+            border-top: 1px solid $color-pink-dark;
+            position: absolute;
+            top: 50%;
+            left: pxToRem(150px);
+            width: pxToRem(120px);
+            height: 0;
+        }
+        &:after {
+            content: '';
+            border-top: 1px solid $color-pink-dark;
+            position: absolute;
+            top: 50%;
+            right: pxToRem(150px);
+            width: pxToRem(120px);
+            height: 0;
+        }
+    }
+    .pf-rule {
+    	width: 100%;
+    	text-align: justify;
+    	line-height: pxToRem(46px);
+    	margin: pxToRem(60px) 0 pxToRem(40px) 0;
+    }
+}
+.lorange-txt {
+	color: $color-text-orange-light;
+}
+.pf-rtable {
+	width: 100%;
+	border: 1px solid $color-pink-dark;
+	border-radius: pxToRem(10px);
+	&>li:nth-child(2) {
+		margin-top: pxToRem(30px);
+	}
+	&>li:last-child {
+		margin-bottom: pxToRem(30px);
+	}
+	li {
+		display: block;
+		font-size: 0;
+		height: pxToRem(80px);
+		line-height: pxToRem(80px);
+		&>div {
+			display: inline-block;
+			font-size: pxToRem(24px);
+		}
+		.pf-ri1 {
+			width: 20%;
+			position: relative;
+			// padding-left: pxToRem(60px);
+			span {
+				margin-left: pxToRem(60px);
+			}
+		}
+		.pf-ri2 {
+			width: 26%;
+		}
+		.pf-ri3 {
+			width: 29%;
+		}
+		.pf-ri4 {
+			width: 25%;
+		}
+	}
+	.pf-tr {
+		background-color: $color-pink-dark;
+		color: #fff;
+	}
+	.pf-ipackage {
+		display: inline-block;
+		// vertical-align: text-bottom;
+		font-size: pxToRem(22px);
+		line-height: pxToRem(36px);
+		color: #fff;
+		position: absolute;
+		top: pxToRem(22px);
+		left: pxToRem(20px);
+	}
+	.pf-tr2 {
+		.pf-item {
+			font-size: pxToRem(30px);
+		}
+	}
+}
+.pf-remark {
+	width: 100%;
+	text-align: left;
+	padding: pxToRem(40px) 0;
+	margin-top: pxToRem(20px);
+	position: relative;
+	&:before {
+		/* content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		border-bottom: 1px dashed $color-line-grey;
+		transform: scaleY(.5); */
+		@include border('bottom', $color-line-grey);
+		border: 1px dashed $color-line-grey;
+	}
+	.pf-mtitle {
+		margin-bottom: pxToRem(40px);
+	}
+	li {
+		display: block;
+		font-size: 0;
+		position: relative;
+		.r-ic {
+			// display: inline-block;
+			font-size: pxToRem(24px);
+			color: $color-pink-dark;
+			line-height: pxToRem(32px);
+			text-align: center;
+			// vertical-align: top;
+			position: absolute;
+			top: pxToRem(6px);
+			left: 0;
+		}
+		span {
+			font-size: pxToRem(30px);
+			width: pxToRem(628px);
+			line-height: pxToRem(50px);
+			margin-left: pxToRem(60px);
+			text-align: justify;
+		}
+	}
+}
+.td-remark {
+	width: 100%;
+	height: pxToRem(100px);
+	line-height: pxToRem(100px);
+	color: $color-text-grey;
+	font-size: pxToRem(26px);
 }
