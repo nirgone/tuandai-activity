@@ -25,7 +25,8 @@
         padding-bottom: pxToRem(36px);
         &>p:nth-of-type(1) {
             padding-bottom: pxToRem(20px);
-            font-size: pxToRem(26px);
+            // font-size: pxToRem(26px);
+            font-size: 13px;
             &:before {
                 content: '';
                 @extend .icon-line;
@@ -39,10 +40,12 @@
             }
         }
         &>p:nth-of-type(2) {
-            font-size: pxToRem(56px);
+            // font-size: pxToRem(56px);
+            font-size: 28px;
             &:after {
                 content: '%';
-                font-size: pxToRem(36px);
+                // font-size: pxToRem(36px);
+                font-size: 18px;
             }
         }
     }
@@ -55,13 +58,17 @@
             text-align: center;
         }
         span {
-            font-size: pxToRem(26px);
-            line-height: pxToRem(44px);
+            // font-size: pxToRem(26px);
+            font-size: 13px;
+            // line-height: pxToRem(44px);
+            line-height: 22px;
             color: $color-text-grey;
         }
         p {
-            font-size: pxToRem(30px);
-            line-height: pxToRem(44px);
+            // font-size: pxToRem(30px);
+            font-size: 15px;
+            // line-height: pxToRem(44px);
+            line-height: 22px;
             color: $color-text-dark;
         }
     }
@@ -70,8 +77,10 @@
         padding: pxToRem(28px) pxToRem(30px);
         margin-bottom: pxToRem(20px);
         &>div {
-            font-size: pxToRem(26px);
-            line-height: pxToRem(60px);
+            // font-size: pxToRem(26px);
+            // line-height: pxToRem(60px);
+            font-size: 13px;
+            line-height: 30px;
             color: $color-text-dark;
         }
         .left {
@@ -84,7 +93,8 @@
         padding: pxToRem(60px) 0;
         .descri {
         	text-align: center;
-        	font-size: pxToRem(24px);
+        	// font-size: pxToRem(24px);
+        	font-size: 12px;
         	color: $color-text-grey;
         	// padding-bottom: pxToRem(120px);
         }
@@ -136,7 +146,8 @@
         		display: inline-block;
         		width: pxToRem(150px);
         		text-align: center;
-        		font-size: pxToRem(24px);
+        		// font-size: pxToRem(24px);
+        		font-size: 12px;
 
         	}
         }
@@ -145,12 +156,16 @@
         color: $color-text-orange;
         text-align: center;
         &>p:nth-of-type(1) {
-            font-size: pxToRem(26px);
-            padding-bottom: pxToRem(18px);
+            // font-size: pxToRem(26px);
+            font-size: 13px;
+            // padding-bottom: pxToRem(18px);
+            padding-bottom: 9px;
         }
         &>p:nth-of-type(2) {
-            font-size: pxToRem(56px);
-            padding-bottom: pxToRem(18px);
+            // font-size: pxToRem(56px);
+            font-size: 28px;
+            // padding-bottom: pxToRem(18px);
+            padding-bottom: 9px;
         }
     }
 
@@ -158,20 +173,27 @@
     	padding: pxToRem(20px) pxToRem(30px);
     	background-color: $color-bg-white;
     	.descri-title {
-    		font-size: pxToRem(26px);
+    		// font-size: pxToRem(26px);
+    		// line-height: pxToRem(76px);
+    		font-size:13px;
+    		line-height: 38px;
     		color: $color-text-yellow;
-    		line-height: pxToRem(76px);
     		&:before {
     			content: '';
-    			@include background('data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAcBAMAAABbmGiFAAAAHlBMVEX6tgD6tgAAAAD6tgD6tgD6tgD6tgD6tgD6tgD6tgChlM8xAAAACXRSTlPwDwC0qSoi+OPR/uOwAAAAI0lEQVQI12NQCm5gUOVkYFCeycCgDsSSNMEODJITEhgE3BQAOBgTq0aCdkAAAAAASUVORK5CYII=', 5px, 28px);
+    			background:url('data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAcBAMAAABbmGiFAAAAHlBMVEX6tgD6tgAAAAD6tgD6tgD6tgD6tgD6tgD6tgD6tgChlM8xAAAACXRSTlPwDwC0qSoi+OPR/uOwAAAAI0lEQVQI12NQCm5gUOVkYFCeycCgDsSSNMEODJITEhgE3BQAOBgTq0aCdkAAAAAASUVORK5CYII=') no-repeat center;
+    			width: 3px;
+    			height: 14px;
+    			background-size: contain;
     			display: inline-block;
     			vertical-align: text-bottom;
     		}
     	}
     	p {
     		text-align: justify;
-    		font-size: pxToRem(26px);
-    		line-height: pxToRem(50px);
+    		// font-size: pxToRem(26px);
+    		// line-height: pxToRem(50px);
+    		font-size: 13px;
+    		line-height: 25px;
     		color: $color-text-dark;
     	}
     }
