@@ -23,14 +23,14 @@
     .pf-txt1 {
         width: 100%;
         text-align: center;
-        font-size: pxToRem(44px);
+        font-size: 22px;
         color: $color-pink-dark;
         font-weight: bold;
         margin-top: pxToRem(66px);
     }
     .pf-txt2 {
         width: 100%;
-        font-size: pxToRem(24px);
+        font-size: 12px;
         color: $color-text-grey;
     }
     .pf-ulc {
@@ -65,12 +65,12 @@
                 line-height: pxToRem(80px);
                 border-radius: pxToRem(80px);
                 margin: 0 pxToRem(22px);
-                font-size: pxToRem(34px);
+                font-size: 17px;
             }
         }
     }
     .pf-txt3 {
-        font-size: pxToRem(30px);
+        font-size: 15px;
         color: $color-text-dark;
         font-weight: bold;
     }
@@ -90,7 +90,7 @@
 .pf-rc {
     width: 100%;
     margin-top: pxToRem(90px);
-    font-size: pxToRem(30px);
+    font-size: 15px;
     padding: 0 pxToRem(30px);
     .pf-rtitle {
         width: 100%;
@@ -143,7 +143,7 @@
 		line-height: pxToRem(80px);
 		&>div {
 			display: inline-block;
-			font-size: pxToRem(24px);
+			font-size: 12px;
 		}
 		.pf-ri1 {
 			width: 20%;
@@ -170,7 +170,7 @@
 	.pf-ipackage {
 		display: inline-block;
 		// vertical-align: text-bottom;
-		font-size: pxToRem(22px);
+		font-size: 11px;
 		line-height: pxToRem(36px);
 		color: #fff;
 		position: absolute;
@@ -179,7 +179,7 @@
 	}
 	.pf-tr2 {
 		.pf-item {
-			font-size: pxToRem(30px);
+			font-size: 15px;
 		}
 	}
 }
@@ -209,7 +209,7 @@
 		position: relative;
 		.r-ic {
 			// display: inline-block;
-			font-size: pxToRem(24px);
+			font-size: 12px;
 			color: $color-pink-dark;
 			line-height: pxToRem(32px);
 			text-align: center;
@@ -219,7 +219,7 @@
 			left: 0;
 		}
 		span {
-			font-size: pxToRem(30px);
+			font-size: 15px;
 			width: pxToRem(628px);
 			line-height: pxToRem(50px);
 			margin-left: pxToRem(60px);
@@ -232,6 +232,6 @@
 	height: pxToRem(100px);
 	line-height: pxToRem(100px);
 	color: $color-text-grey;
-	font-size: pxToRem(26px);
+	font-size: 13px;
 	text-align: center;
 }

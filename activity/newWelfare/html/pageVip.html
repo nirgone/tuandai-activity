@@ -47,11 +47,13 @@
             </li>
         </ul>
         <div class="td-remark rm-border">本活动最终解释权归团贷网所有</div>
-        <div class="yellow-big-btn pv-btn" id="vipInvest">
+        <div class="pv-btn">
+            <div class="yellow-big-btn" id="vipInvest">
             <span class="bv-invest">马上投资</span>
             <span class="bv-comment">完成充值即可获得奖励</span>
         </div>
-        <div class="yellow-big-btn pv-btn" id="hasGotten">您已获得过该奖励</div>
+        <div class="yellow-big-btn" id="hasGotten">您已获得过该奖励</div>
+        </div>
     </div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
@@ -67,7 +69,7 @@
     };
     var isLogin = Util.checkLogin(option); //是否已登录
     console.info("isLogin------", isLogin);
-    var hasRecharged = true; //是否已充值
+    var hasRecharged = false; //是否已充值
     if (hasRecharged) {
         $("#hasGotten").show();
         $("#vipInvest").hide();

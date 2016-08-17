@@ -10,7 +10,7 @@
 	padding: pxToRem(10px) 0;
 	&>div {
 		display: inline-block;
-		font-size: pxToRem(26px);
+		font-size: 13px;
 		width: 50%;
 	}
 	.icon-cont {
@@ -41,12 +41,21 @@
 }
 .rm-border {
 	position: relative;
+	margin-bottom: pxToRem(120px);
 	&:before {
 		@include border('bottom', $color-line-grey-light);
 	}
 }
 .pv-btn {
-	margin: pxToRem(20px) auto !important;
+	
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	height: pxToRem(120px);
+	background-color: #fff;
+	.yellow-big-btn {
+		margin: pxToRem(20px) auto;
+	}
 }
 #hasGotten {
 	display: none;
@@ -56,7 +65,7 @@
 }
 .bv-invest {
 	width: 100%;
-	font-size: pxToRem(30px);
+	font-size: 15px;
 	color: $color-text-brown;
 	height: pxToRem(50px);
 	line-height: pxToRem(50px);
@@ -64,7 +73,7 @@
 .bv-comment {
 	width: 100%;
 	color: $color-text-brown-light;
-	font-size: pxToRem(24px);
+	font-size: 12px;
 	height: pxToRem(30px);
 	line-height: pxToRem(24px);
 }
