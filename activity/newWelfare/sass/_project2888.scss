@@ -81,12 +81,12 @@
     }
     .bottom-sec {
         background-color: $color-bg-white;
-        padding-top: pxToRem(60px);
+        padding: pxToRem(60px) 0;
         .descri {
         	text-align: center;
         	font-size: pxToRem(24px);
         	color: $color-text-grey;
-        	padding-bottom: pxToRem(120px);
+        	// padding-bottom: pxToRem(120px);
         }
     }
     .ruler-part {
@@ -173,17 +173,6 @@
     		font-size: pxToRem(26px);
     		line-height: pxToRem(50px);
     		color: $color-text-dark;
-    	}
-    }
-    .btn-bottom {
-    	position: fixed;
-    	bottom:0;
-    	left:0;
-    	right:0;
-    	background-color: $color-bg-white;
-    	height: pxToRem(116px);
-    	.btn {
-    		margin: pxToRem(18px) auto;
     	}
     }
 }

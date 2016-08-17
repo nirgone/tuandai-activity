@@ -16,13 +16,16 @@
 		}
 	}
 	.font30 {
-		font-size: pxToRem(30px);
+		// font-size: pxToRem(30px);
+		font-size: 15px;
 	}
 	.font36 {
-		font-size: pxToRem(36px);
+		// font-size: pxToRem(36px);
+		font-size: 18px;
 	}
 	.font50 {
-		font-size: pxToRem(50px);
+		// font-size: pxToRem(50px);
+		font-size: 25px;
 	}
 	.info-sec {
 		@include background("../images/frame.png", 690px, 283px);
@@ -37,7 +40,8 @@
 			position: relative;
 			height: pxToRem(128px);
 			line-height: pxToRem(128px);
-			font-size: pxToRem(48px);
+			// font-size: pxToRem(48px);
+			font-size: 24px;
 			&:after {
 				@include border(bottom, $color-line-grey-light);
 				border: 1px dashed $color-line-grey-light;
@@ -55,7 +59,8 @@
 			span {
 				display: block;
 				color: $color-text-dark;
-				font-size: pxToRem(24px);
+				// font-size: pxToRem(24px);
+				font-size: 12px;
 				padding-top: pxToRem(24px);
 			}
 		}
