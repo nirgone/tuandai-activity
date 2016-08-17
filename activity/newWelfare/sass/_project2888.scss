@@ -1,0 +1,212 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../../sass/func";
+.project2888-content {
+    background-color: $color-bg-grey;
+    box-sizing: border-box;
+    min-height: 100%;
+    padding-bottom: pxToRem(134px) !important;
+    .icon-line {
+        display: inline-block;
+        background: url('data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAMAAACbgxyhAAAARVBMVEX6fQD6gAX6hhH6gQj/9On+7t37nT77kCb7ixv+6NL+48n+3b392LL90qf9zJv9xY39voD8uHP8s2n8rV/8qFX7o0v7ljEtXdcBAAAALElEQVQI12NgYWFl5eTi5uHl4xcQFBIWEWVjE2Nn5+BgYmJiZmZmBAIGMAAAHu0BKVKH7vsAAAAASUVORK5CYII=') no-repeat right;
+        background-size: contain;
+        width: pxToRem(40px);
+        height: 1px;
+        margin-bottom: pxToRem(8px);
+    }
+    .top-sec {
+        background-color: $color-bg-white;
+        margin-bottom: pxToRem(20px);
+    }
+    .top-title {
+        color: $color-text-orange;
+        text-align: center;
+        padding-top: pxToRem(38px);
+        padding-bottom: pxToRem(36px);
+        &>p:nth-of-type(1) {
+            padding-bottom: pxToRem(20px);
+            font-size: pxToRem(26px);
+            &:before {
+                content: '';
+                @extend .icon-line;
+                margin-right: pxToRem(10px);
+            }
+            &:after {
+                content: '';
+                @extend .icon-line;
+                margin-left: pxToRem(10px);
+                transform: scale(-1, 1);
+            }
+        }
+        &>p:nth-of-type(2) {
+            font-size: pxToRem(56px);
+            &:after {
+                content: '%';
+                font-size: pxToRem(36px);
+            }
+        }
+    }
+    .top-content {
+        font-size: 0;
+        padding-bottom: pxToRem(42px);
+        &>div {
+            display: inline-block;
+            width: 33.33%;
+            text-align: center;
+        }
+        span {
+            font-size: pxToRem(26px);
+            line-height: pxToRem(44px);
+            color: $color-text-grey;
+        }
+        p {
+            font-size: pxToRem(30px);
+            line-height: pxToRem(44px);
+            color: $color-text-dark;
+        }
+    }
+    .middle-sec {
+        background-color: $color-bg-white;
+        padding: pxToRem(28px) pxToRem(30px);
+        margin-bottom: pxToRem(20px);
+        &>div {
+            font-size: pxToRem(26px);
+            line-height: pxToRem(60px);
+            color: $color-text-dark;
+        }
+        .left {
+            color: $color-text-grey;
+            padding-right: pxToRem(30px);
+        }
+    }
+    .bottom-sec {
+        background-color: $color-bg-white;
+        padding-top: pxToRem(60px);
+        .descri {
+        	text-align: center;
+        	font-size: pxToRem(24px);
+        	color: $color-text-grey;
+        	padding-bottom: pxToRem(120px);
+        }
+    }
+    .ruler-part {
+        position: relative;
+        width: 100%;
+        height: pxToRem(86px);
+        margin-bottom: pxToRem(46px);
+        overflow: hidden;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: pxToRem(240px);
+            margin-left: pxToRem(-120px);
+            border-top: 1px dashed $color-line-grey-light;
+            // transform: scaleY(.5);
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            height: pxToRem(70px);
+            width: 1px;
+            margin-left: -0.5px;
+            background-color: $color-text-orange;
+        }
+    }
+    .ruler {
+    	position: relative;
+        width: pxToRem(1200px);
+        height: pxToRem(86px);
+        background: url('data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAAAdAQMAAAByuAe6AAAABlBMVEUAAADR0dFA2/DUAAAAAXRSTlMAQObYZgAAACZJREFUKM9jaGDAAKNipIgxMjAxsDBwMAgwKDA4ALnDXOw/BvgDAAYHLOuvDafFAAAAAElFTkSuQmCC');
+        background-repeat: repeat-x;
+        background-position: 0 100%;
+        background-size: pxToRem(150px) pxToRem(30px);
+        
+        .num {
+        	position: absolute;
+        	left: pxToRem(-75px);
+        	bottom: pxToRem(36px);
+        	font-size: 0;
+        	color: #d1d1d1;
+        	width: pxToRem(1350px);
+        	span {
+        		display: inline-block;
+        		width: pxToRem(150px);
+        		text-align: center;
+        		font-size: pxToRem(24px);
+
+        	}
+        }
+    }
+    .emphasis-font {
+        color: $color-text-orange;
+        text-align: center;
+        &>p:nth-of-type(1) {
+            font-size: pxToRem(26px);
+            padding-bottom: pxToRem(18px);
+        }
+        &>p:nth-of-type(2) {
+            font-size: pxToRem(56px);
+            padding-bottom: pxToRem(18px);
+        }
+    }
+
+    .descri-sec {
+    	padding: pxToRem(20px) pxToRem(30px);
+    	background-color: $color-bg-white;
+    	.descri-title {
+    		font-size: pxToRem(26px);
+    		color: $color-text-yellow;
+    		line-height: pxToRem(76px);
+    		&:before {
+    			content: '';
+    			@include background('data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAcBAMAAABbmGiFAAAAHlBMVEX6tgD6tgAAAAD6tgD6tgD6tgD6tgD6tgD6tgD6tgChlM8xAAAACXRSTlPwDwC0qSoi+OPR/uOwAAAAI0lEQVQI12NQCm5gUOVkYFCeycCgDsSSNMEODJITEhgE3BQAOBgTq0aCdkAAAAAASUVORK5CYII=', 5px, 28px);
+    			display: inline-block;
+    			vertical-align: text-bottom;
+    		}
+    	}
+    	p {
+    		text-align: justify;
+    		font-size: pxToRem(26px);
+    		line-height: pxToRem(50px);
+    		color: $color-text-dark;
+    	}
+    }
+    .btn-bottom {
+    	position: fixed;
+    	bottom:0;
+    	left:0;
+    	right:0;
+    	background-color: $color-bg-white;
+    	height: pxToRem(116px);
+    	.btn {
+    		margin: pxToRem(18px) auto;
+    	}
+    }
+}
+
+@-webkit-keyframes rulerSlide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(pxToRem(-226px));
+    }
+}
+
+@keyframes rulerSlide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(pxToRem(-226px));
+    }
+}
+
+.rulerSlide {
+	animation: rulerSlide 0.8s linear 0s 1 both;
+}
+

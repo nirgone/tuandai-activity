@@ -1,0 +1,124 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../../sass/func";
+.ps-page {
+    width: 100%;
+    height: 100%;
+    background-color: $color-bg-grey;
+    * {
+        box-sizing: border-box;
+    }
+    i,
+    span {
+        display: inline-block;
+    }
+}
+
+.ps-t {
+    width: 100%;
+    background-color: #fff;
+    padding-bottom: pxToRem(40px);
+}
+
+.ps-idc {
+    width: 100%;
+    padding: pxToRem(60px) pxToRem(80px);
+    display: flex;
+    display: -webkit-box;
+}
+
+.ps-detail {
+    height: pxToRem(306px);
+    display: inline-block;
+    font-size: pxToRem(30px);
+    width: pxToRem(560px);
+    margin-left: pxToRem(20px);
+    &>div:not(:first-child) {
+        margin-top: pxToRem(74px);
+    }
+}
+
+.icon-process {
+    display: inline-block !important;
+}
+
+.yellow-text {
+    color: $color-text-yellow;
+}
+
+.ps-st {
+    font-size: pxToRem(24px);
+    color: $color-text-grey;
+    margin-top: pxToRem(10px);
+}
+
+.p-list {
+    width: 100%;
+    background-color: #fff;
+    margin-top: pxToRem(20px);
+    padding: 0 pxToRem(30px);
+    &>li {
+        font-size: pxToRem(24px);
+        padding: pxToRem(40px) 0;
+    }
+    &>li:first-child {
+    	position: relative;
+    	&:before {
+    		@include border('bottom', $color-line-grey);
+    	}
+    }
+    .p-lr {
+        font-size: 0;
+        &>div {
+            display: inline-block;
+            width: 33.3%;
+            // font-size: pxToRem(24px);
+        }
+        &>div:nth-child(2) {
+            text-align: center;
+        }
+        &>div:nth-child(3) {
+            text-align: right;
+        }
+    }
+    .p-lrt {
+        height: pxToRem(110px);
+        line-height: pxToRem(110px);
+        &>div {
+        	font-size: pxToRem(24px);
+        }
+    }
+}
+
+.gray-txt {
+    color: $color-text-grey;
+}
+
+.black-txt {
+    color: $color-text-dark;
+}
+
+.p-lx {
+    color: $color-text-orange;
+    font-size: pxToRem(42px);
+    &>font {
+    	font-size: pxToRem(66px);
+    }
+}
+
+.p-ld {
+	font-size: pxToRem(42px);
+}
+
+.yellow-small-btn {
+	font-size: pxToRem(42px);
+	color: #fff;
+	background-color: $color-bg-yellow;
+	width: pxToRem(180px);
+	height: pxToRem(60px);
+	border-radius: pxToRem(10px);
+	line-height: pxToRem(60px);
+	text-align: center;
+	font-size: pxToRem(30px);
+	margin-left: pxToRem(50px);
+}

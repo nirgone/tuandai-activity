@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>新手福利</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="content pv-page">
+        <div class="tbg tbg-rc">
+            <i class="icon-crown pf-rgb"></i>
+        </div>
+        <span class="pf-txt1">一个月超级会员</span>
+        <span class="pf-txt2">新注册用户首次充值即可获赠1个月的超级会员</span>
+        <ul class="pv-vd">
+            <li class="pv-dr">
+                <div>
+                    <div class="icon-circle-big icon-cont"><i class="icon-pvi icon-safe"></i></div>
+                    <div>逾期当天垫付本息</div>
+                </div>
+                <div>
+                    <div class="icon-circle-big icon-cont"><i class="icon-pvi icon-mian"></i></div>
+                    <div>提现费用减至0.1%</div>
+                </div>
+            </li>
+            <li class="pv-dr">
+                <div>
+                    <div class="icon-circle-big icon-cont"><i class="icon-pvi icon-speed"></i></div>
+                    <div>投资速度更快</div>
+                </div>
+                <div>
+                    <div class="icon-circle-big icon-cont"><i class="icon-pvi icon-gift"></i></div>
+                    <div>团粉福利活动</div>
+                </div>
+            </li>
+        </ul>
+        <div class="td-remark rm-border">本活动最终解释权归团贷网所有</div>
+        <div class="yellow-big-btn pv-btn" id="vipInvest">
+            <span class="bv-invest">马上投资</span>
+            <span class="bv-comment">完成充值即可获得奖励</span>
+        </div>
+        <div class="yellow-big-btn pv-btn" id="hasGotten">您已获得过该奖励</div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/vendor/jsbridge-2.0.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+(function() {
+    FastClick.attach(document.body);
+    var option = {
+        url: 'http://10.100.11.110:9006/ajaxCross/Login.ashx?Action=UserLogin' //登录接口
+    };
+    var isLogin = Util.checkLogin(option); //是否已登录
+    console.info("isLogin------", isLogin);
+    var hasRecharged = true; //是否已充值
+    if (hasRecharged) {
+        $("#hasGotten").show();
+        $("#vipInvest").hide();
+    } else {
+        $("#hasGotten").hide();
+        $("#vipInvest").show();
+    }
+    $("#vipInvest").on('click', function() {
+        if (isLogin) {
+            if (Jsbridge.isNewVersion()) {
+                Jsbridge.toAppWePlan();
+            } else {
+
+            }
+        } else {
+            Util.openLogin(); //打开登录页
+        }
+    });
+})();
+</script>
+
+</html>

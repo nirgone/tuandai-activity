@@ -11,7 +11,7 @@
     }
 }
 
-.pf-page {
+.pf-page, .pv-page {
     text-align: center;
     span,
     i {
@@ -233,5 +233,5 @@
 	line-height: pxToRem(100px);
 	color: $color-text-grey;
 	font-size: pxToRem(26px);
-    text-align: center;
+	text-align: center;
 }
