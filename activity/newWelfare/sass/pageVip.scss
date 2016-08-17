@@ -1,3 +1,70 @@
 @charset "UTF-8";
 @import "variables";
 @import "../../../sass/func";
+.pv-vd {
+	width: 100%;
+	padding: 0 pxToRem(60px);
+}
+.pv-dr {
+	font-size: 0;
+	padding: pxToRem(10px) 0;
+	&>div {
+		display: inline-block;
+		font-size: pxToRem(26px);
+		width: 50%;
+	}
+	.icon-cont {
+		margin: pxToRem(40px) auto;
+		position: relative;
+		.icon-safe {
+			margin-top: pxToRem(-26px);
+			margin-left: pxToRem(-26px);
+		}
+		.icon-mian {
+			margin-top: pxToRem(-25px);
+			margin-left: pxToRem(-22px);
+		}
+		.icon-speed {
+			margin-top: pxToRem(-29px);
+			margin-left: pxToRem(-22px);
+		}
+		.icon-gift {
+			margin-top: pxToRem(-25px);
+			margin-left: pxToRem(-22px);
+		}
+	}
+	.icon-pvi {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+	}
+}
+.rm-border {
+	position: relative;
+	&:before {
+		@include border('bottom', $color-line-grey-light);
+	}
+}
+.pv-btn {
+	margin: pxToRem(20px) auto !important;
+}
+#hasGotten {
+	display: none;
+}
+#vipInvest {
+	line-height: pxToRem(0px) !important;
+}
+.bv-invest {
+	width: 100%;
+	font-size: pxToRem(30px);
+	color: $color-text-brown;
+	height: pxToRem(50px);
+	line-height: pxToRem(50px);
+}
+.bv-comment {
+	width: 100%;
+	color: $color-text-brown-light;
+	font-size: pxToRem(24px);
+	height: pxToRem(30px);
+	line-height: pxToRem(24px);
+}
