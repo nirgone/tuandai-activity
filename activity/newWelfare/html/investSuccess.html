@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>新手福利</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="content ps-page">
+        <div class="ps-t">
+            <div class="ps-idc">
+                <div><i class="icon-process icon-unfinised"></i></div>
+                <div class="ps-detail">
+                    <div>
+                        <span class="yellow-text">成功投资体验标2888元</span>
+                        <span class="ps-st">2016年8月17日投资，立即开始计算利息</span>
+                    </div>
+                    <div>
+                        <span>正常回款</span>
+                        <span class="ps-st">收益将在投资次日通过现金红包发放至团宝箱</span>
+                    </div>
+                    <div>
+                        <span>收益到账</span>
+                    </div>
+                </div>
+            </div>
+            <div class="grey-big-btn" id="check">查看收益</div>
+        </div>
+        <ul class="p-list">
+            <li class="pitem">
+                <div>新手标</div>
+                <div class="p-lr gray-txt p-lrt">
+                    <div>预期年利率</div>
+                    <div>到期本息</div>
+                    <div>剩余
+                        <font class="black-txt">229</font>万元</div>
+                </div>
+                <div class="p-lr">
+                    <div class="p-lx">
+                        <font>15</font>%</div>
+                    <div class="p-ld">1个月</div>
+                    <div class="p-bc">
+                        <div class="yellow-small-btn">抢购</div>
+                    </div>
+                </div>
+            </li>
+            <li class="pitem">
+                <div>新手标</div>
+                <div class="p-lr gray-txt p-lrt">
+                    <div>预期年利率</div>
+                    <div>到期本息</div>
+                    <div>剩余
+                        <font class="black-txt">229</font>万元</div>
+                </div>
+                <div class="p-lr">
+                    <div class="p-lx">
+                        <font>13</font>%</div>
+                    <div class="p-ld">1个月</div>
+                    <div class="p-bc">
+                        <div class="yellow-small-btn">抢购</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/vendor/jsbridge-2.0.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+(function() {
+    FastClick.attach(document.body);
+    var flag = false; //收益是否到账
+    if (flag) {
+        $(".icon-process").removeClass('icon-unfinised').addClass('icon-finised');
+        $("#check").removeClass('grey-big-btn').addClass('yellow-big-btn');
+    } else {
+        $(".icon-process").removeClass('icon-finised').addClass('icon-unfinised');
+        $("#check").removeClass('yellow-big-btn').addClass('grey-big-btn');
+    }
+
+})();
+</script>
+
+</html>
