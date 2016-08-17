@@ -29,6 +29,7 @@ a {
 }
 
 .face-content {
+    padding-bottom: pxToRem(14px);
     .banner {
         @include background("../images/banner.png", 750px, 380px);
     }
@@ -95,6 +96,32 @@ a {
                     font-size: pxToRem(22px);
                 }
             }
+        }
+    }
+    .bottom-part {
+        &>p {
+            margin-bottom: pxToRem(44px);
+            padding-left: pxToRem(110px);
+            text-align: left;
+            font-size: 0;
+        }
+        a {
+            color: $color-pink;
+            font-size: pxToRem(28px);
+        }
+        i {
+            display: inline-block;
+        }
+        .icon-diamond {
+            vertical-align: text-bottom;
+            margin-right: pxToRem(18px);
+        }
+        .icon-auto-invest {
+            vertical-align: sub;
+            margin-right: pxToRem(18px);
+        }
+        .icon-arrow {
+            margin-left: pxToRem(12px);
         }
     }
 }
