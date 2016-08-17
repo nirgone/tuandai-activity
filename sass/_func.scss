@@ -163,23 +163,23 @@ $base-font-size: 23.4375px; //design 750px / 32 = 20px;
     transform-origin: 0 0;
     -webkit-transform-origin: 0 0;
     @if $pos=='top'{
-        #{$pos}: 0px;
-        left: 0px;
-        right: 0px;
+        #{$pos}: 0;
+        left: 0;
+        right: 0;
         border-#{$pos}: 1px solid $color;
         transform: scaleY(.5);
         -webkit-transform: scaleY(.5);
     } @else if $pos=='bottom' {
-    	 #{$pos}: 0px;
-        left: 0px;
-        right: 0px;
+    	 #{$pos}: 0;
+        left: 0;
+        right: 0;
         border-#{$pos}: 1px solid $color;
         transform: scaleY(.5);
         -webkit-transform: scaleY(.5);
     } @else {
-    	top: 0px;
-        bottom: 0px;
-        #{$pos}: 0px;
+    	top: 0;
+        bottom: 0;
+        #{$pos}: 0;
         border-#{$pos}: 1px solid $color;
         transform: scaleX(.5);
         -webkit-transform: scaleX(.5);
