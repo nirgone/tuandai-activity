@@ -128,6 +128,7 @@ a {
 }
 
 .yellow-big-btn {
+    display: block;
     width: pxToRem(690px);
     height: pxToRem(80px);
     line-height: pxToRem(80px);
@@ -137,4 +138,9 @@ a {
     color: $color-text-brown;
     margin: 0 auto;
     text-align:center;
+}
+.grey-big-btn {
+    @extend .yellow-big-btn;
+    background-color: #e6e6e6;
+    color: #666;
 }

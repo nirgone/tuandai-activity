@@ -41,9 +41,10 @@
         </section>
         <!-- section[class='btn-sec'] class含有active时， p显示，否则不显示-->
         <section class="btn-sec" >
-            <div class="yellow-big-btn">
-                注册领取（¥2888）
-            </div>
+        	<!-- class为yellow-big-btn:能点击 grey-big-btn：失效样式  -->
+            <a href="./project2888.html" class="btn yellow-big-btn">
+                马上投资（¥2888）
+            </a>
             <p>有效期：2016.08.16 ~ 2016.08.22</p>
         </section>
         <div class="pf-rc">
@@ -80,6 +81,11 @@
 <!-- build:js({dist}) ../js/lib/vendor/jsbridge-2.0.0.js -->
 <script src="../js/vendor/jsbridge-2.0.0.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
-<script src="../js/page2888.js" type="text/javascript" charset="utf-8"></script>
+<script> 
+(function() {
+    FastClick.attach(document.body);
+    //do your thing.
+})();
+</script>
 
 </html>
