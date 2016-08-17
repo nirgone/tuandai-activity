@@ -22,7 +22,7 @@
 
 .ps-idc {
     width: 100%;
-    padding: pxToRem(60px) pxToRem(80px);
+    padding: pxToRem(60px) 0 pxToRem(60px) pxToRem(80px);
     display: flex;
     display: -webkit-box;
 }
@@ -30,8 +30,9 @@
 .ps-detail {
     height: pxToRem(306px);
     display: inline-block;
-    font-size: 15px;
-    width: pxToRem(560px);
+    // font-size: 15px;
+    font-size: pxToRem(30px);
+    width: pxToRem(580px);
     margin-left: pxToRem(20px);
     &>div:not(:first-child) {
         margin-top: pxToRem(74px);
@@ -47,7 +48,8 @@
 }
 
 .ps-st {
-    font-size: 12px;
+    // font-size: 12px;
+    font-size: pxToRem(24px);
     color: $color-text-grey;
     margin-top: pxToRem(10px);
 }
@@ -58,7 +60,8 @@
     margin-top: pxToRem(20px);
     padding: 0 pxToRem(30px);
     &>li {
-        font-size: 12px;
+        // font-size: 12px;
+        font-size: pxToRem(24px);
         padding: pxToRem(40px) 0;
     }
     &>li:first-child {
@@ -85,7 +88,8 @@
         height: pxToRem(110px);
         line-height: pxToRem(110px);
         &>div {
-        	font-size: 12px;
+        	// font-size: 12px;
+            font-size: pxToRem(24px);
         }
     }
 }
@@ -100,14 +104,17 @@
 
 .p-lx {
     color: $color-text-orange;
-    font-size: 21px;
+    // font-size: 21px;
+    font-size: pxToRem(42px);
     &>font {
-    	font-size: 33px;
+    	// font-size: 33px;
+        font-size: pxToRem(66px);
     }
 }
 
 .p-ld {
-	font-size: 21px;
+	// font-size: 21px;
+    font-size: pxToRem(42px);
 }
 
 .yellow-small-btn {
@@ -118,6 +125,7 @@
 	border-radius: pxToRem(10px);
 	line-height: pxToRem(60px);
 	text-align: center;
-	font-size: 15px;
+	// font-size: 15px;
+    font-size: pxToRem(30px);
 	margin-left: pxToRem(50px);
 }
