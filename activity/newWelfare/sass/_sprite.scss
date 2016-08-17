@@ -7,3 +7,9 @@
 .tbg {
 	@include background('../images/tbg.png', 750px, 407px);
 }
+.icon-redpackage {
+	@include background('../images/rbg.png', 317px, 274px);
+}
+.icon-gou {
+	@include background('../images/duigou.png', 120px, 120px);
+}

@@ -1,5 +1,87 @@
 @charset "UTF-8";
 @import "variables";
-@import "sprite";
-@import "../../../sass/reset";
 @import "../../../sass/func";
+.tbg-rc {
+    position: relative;
+    .pf-rgb {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        margin-left: pxToRem(-158px);
+    }
+}
+
+.pf-page {
+    text-align: center;
+    span,
+    i {
+        display: inline-block;
+    }
+    * {
+        box-sizing: border-box;
+    }
+    .pf-txt1 {
+        width: 100%;
+        text-align: center;
+        font-size: pxToRem(44px);
+        color: $color-pink-dark;
+        font-weight: bold;
+        margin-top: pxToRem(66px);
+    }
+    .pf-txt2 {
+        width: 100%;
+        font-size: pxToRem(24px);
+        color: $color-text-grey;
+    }
+    .pf-ulc {
+        margin-top: pxToRem(100px);
+        display: none;
+    }
+    .glogin-btn {
+        width: pxToRem(690px);
+        height: pxToRem(80px);
+        line-height: pxToRem(80px);
+        border-radius: pxToRem(80px);
+        background-color: $color-bg-yellow;
+        font-size: pxToRem(34px);
+        color: $color-text-brown;
+        margin: auto;
+    }
+    .pf-lc {
+        width: 100%;
+        .icon-gou {
+            margin: pxToRem(40px) auto;
+            display: block;
+        }
+        .btns {
+            width: 100%;
+            display: flex;
+            display: -webkit-box;
+            margin-top: pxToRem(60px);
+            &>div {
+                width: pxToRem(330px);
+                height: pxToRem(80px);
+                line-height: pxToRem(80px);
+                border-radius: pxToRem(80px);
+                margin: 0 pxToRem(22px);
+                font-size: pxToRem(34px);
+            }
+        }
+    }
+    .pf-txt3 {
+        font-size: pxToRem(30px);
+        color: $color-text-dark;
+        font-weight: bold;
+    }
+    .red-txt {
+        color: $color-text-red;
+    }
+    .btn-yborder {
+        border: 1px solid $color-bg-yellow;
+        color: $color-text-yellow;
+    }
+    .btn-yellow {
+    	background-color: $color-bg-yellow;
+    	color: $color-text-brown;
+    }
+}
