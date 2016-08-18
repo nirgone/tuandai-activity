@@ -34,7 +34,7 @@ a {
 .face-content {
     padding-bottom: pxToRem(14px);
     .banner {
-        @include background("../images/banner.png", 750px, 380px);
+        @include background("../images/banner.png", 750px, 400px);
     }
     .entries-sec {
         .group {
