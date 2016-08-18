@@ -1,0 +1,27 @@
+.icon-icon1 {
+  display: block;
+  background-image: url(../images/images_index/sprite.png);
+  background-size:pxToRem(166px) pxToRem(141px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-108px) pxToRem(0px);
+  width: pxToRem(58px);
+  height: pxToRem(72px);
+}
+.icon-icon2 {
+  display: block;
+  background-image: url(../images/images_index/sprite.png);
+  background-size:pxToRem(166px) pxToRem(141px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(98px);
+  height: pxToRem(56px);
+}
+.icon-icon3 {
+  display: block;
+  background-image: url(../images/images_index/sprite.png);
+  background-size:pxToRem(166px) pxToRem(141px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-66px);
+  width: pxToRem(72px);
+  height: pxToRem(75px);
+}

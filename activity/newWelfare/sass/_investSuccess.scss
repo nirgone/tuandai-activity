@@ -60,14 +60,14 @@
     margin-top: pxToRem(20px);
     padding: 0 pxToRem(30px);
     &>li {
-        // font-size: 12px;
-        font-size: pxToRem(24px);
+        font-size: 12px;
+        // font-size: pxToRem(24px);
         padding: pxToRem(40px) 0;
     }
     &>li:first-child {
     	position: relative;
     	&:before {
-    		@include border('bottom', $color-line-grey);
+    		@include border('bottom', $color-line-grey-light);
     	}
     }
     .p-lr {
@@ -88,8 +88,8 @@
         height: pxToRem(110px);
         line-height: pxToRem(110px);
         &>div {
-        	// font-size: 12px;
-            font-size: pxToRem(24px);
+        	font-size: 12px;
+            // font-size: pxToRem(24px);
         }
     }
 }
@@ -115,17 +115,30 @@
 .p-ld {
 	// font-size: 21px;
     font-size: pxToRem(42px);
+    font {
+        font-size: pxToRem(36px);
+        // padding-bottom: 2px;
+        vertical-align: 1px;
+    }
 }
 
 .yellow-small-btn {
+    display: inline-block;
+    vertical-align: 3px;
 	color: #fff;
 	background-color: $color-bg-yellow;
 	width: pxToRem(180px);
-	height: pxToRem(60px);
-	border-radius: pxToRem(10px);
-	line-height: pxToRem(60px);
+	// height: pxToRem(60px);
+	// line-height: pxToRem(60px);
+    height: 30px;
+    line-height: 30px;
+    border-radius: pxToRem(10px);
 	text-align: center;
-	// font-size: 15px;
-    font-size: pxToRem(30px);
+	font-size: 15px;
+    // font-size: pxToRem(30px);
 	margin-left: pxToRem(50px);
+}
+
+.custome-btn {
+    width: pxToRem(590px) !important;
 }

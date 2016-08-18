@@ -5,7 +5,7 @@
     background-color: $color-bg-grey;
     box-sizing: border-box;
     min-height: 100%;
-    padding-bottom: pxToRem(134px) !important;
+    padding-bottom: 70px !important;
     .icon-line {
         display: inline-block;
         background: url('data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAMAAACbgxyhAAAARVBMVEX6fQD6gAX6hhH6gQj/9On+7t37nT77kCb7ixv+6NL+48n+3b392LL90qf9zJv9xY39voD8uHP8s2n8rV/8qFX7o0v7ljEtXdcBAAAALElEQVQI12NgYWFl5eTi5uHl4xcQFBIWEWVjE2Nn5+BgYmJiZmZmBAIGMAAAHu0BKVKH7vsAAAAASUVORK5CYII=') no-repeat right;
@@ -165,7 +165,7 @@
             // font-size: pxToRem(56px);
             font-size: 28px;
             // padding-bottom: pxToRem(18px);
-            padding-bottom: 9px;
+            padding-bottom: 18px;
         }
     }
 

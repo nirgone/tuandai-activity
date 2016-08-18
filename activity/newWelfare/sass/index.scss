@@ -135,29 +135,37 @@ a {
 .yellow-big-btn {
     display: block;
     width: pxToRem(690px);
-    height: pxToRem(80px);
-    line-height: pxToRem(80px);
-    border-radius: pxToRem(80px);
+    // height: pxToRem(80px);
+    // line-height: pxToRem(80px);
+    height: 40px;
+    line-height: 40px;
+    border-radius: 40px;
     background-color: $color-bg-yellow;
     // font-size: pxToRem(34px);
     font-size: 17px;
     color: $color-text-brown;
     margin: 0 auto;
-    text-align:center;
+    text-align: center;
 }
+
 .grey-big-btn {
     @extend .yellow-big-btn;
     background-color: #e6e6e6;
     color: #666;
 }
+
 .btn-bottom {
-        position: fixed;
-        bottom:0;
-        left:0;
-        right:0;
-        background-color: $color-bg-white;
-        height: pxToRem(116px);
-        .btn {
-            margin: pxToRem(18px) auto;
-        }
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $color-bg-white;
+    // height: pxToRem(116px);
+    height: 60px;
+    .btn {
+        margin: 10px auto;
     }
+    &:before {
+        @include border('top', $color-line-grey-light);
+    }
+}

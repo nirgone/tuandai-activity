@@ -1,9 +1,18 @@
 @charset "UTF-8";
 @import "variables";
 @import "../../../sass/func";
+.pv-page {
+	padding-bottom: 60px;
+}
 .pv-vd {
 	width: 100%;
 	padding: 0 pxToRem(60px);
+}
+.icon-crown {
+	position: absolute;
+	bottom:0;
+	left: 50%;
+	margin-left: -86px;
 }
 .pv-dr {
 	font-size: 0;
@@ -39,22 +48,19 @@
 		top: 50%;
 	}
 }
-.rm-border {
-	position: relative;
-	margin-bottom: pxToRem(120px);
-	&:before {
-		@include border('bottom', $color-line-grey-light);
-	}
-}
 .pv-btn {
 	
 	position: fixed;
 	width: 100%;
 	bottom: 0;
-	height: pxToRem(120px);
+	// height: pxToRem(120px);
+	height: 60px;
 	background-color: #fff;
 	.yellow-big-btn {
-		margin: pxToRem(20px) auto;
+		margin: 10px auto;
+	}
+	&:before {
+		@include border('top', $color-line-grey-light);
 	}
 }
 #hasGotten {
@@ -67,13 +73,17 @@
 	width: 100%;
 	font-size: 15px;
 	color: $color-text-brown;
-	height: pxToRem(50px);
-	line-height: pxToRem(50px);
+	// height: pxToRem(50px);
+	// line-height: pxToRem(50px);
+	height: 25px;
+	line-height: 25px;
 }
 .bv-comment {
 	width: 100%;
 	color: $color-text-brown-light;
 	font-size: 12px;
-	height: pxToRem(30px);
-	line-height: pxToRem(24px);
+	// height: pxToRem(30px);
+	// line-height: pxToRem(24px);
+	height: 15px;
+	line-height: 8px;
 }

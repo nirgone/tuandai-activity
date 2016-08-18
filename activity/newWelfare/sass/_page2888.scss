@@ -10,7 +10,8 @@
 		position: relative;
 		.icon-bag2888 {
 			position: absolute;
-			left: pxToRem(218px);
+			left: 50%;
+			margin-left: -75px;
 			bottom: pxToRem(-28px);
 			
 		}
@@ -22,6 +23,9 @@
 	.font36 {
 		// font-size: pxToRem(36px);
 		font-size: 18px;
+	}
+	.cus-align {
+		vertical-align: 1px;
 	}
 	.font50 {
 		// font-size: pxToRem(50px);
@@ -38,8 +42,8 @@
 		box-sizing: border-box;
 		.top {
 			position: relative;
-			height: pxToRem(128px);
-			line-height: pxToRem(128px);
+			height: pxToRem(132px);
+			line-height: pxToRem(132px);
 			// font-size: pxToRem(48px);
 			font-size: 24px;
 			&:after {
