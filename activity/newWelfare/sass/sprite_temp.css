@@ -1,27 +1,36 @@
-.icon-icon1 {
+.icon-gift {
   display: block;
-  background-image: url(../images/images_index/sprite.png);
-  background-size:pxToRem(166px) pxToRem(141px);
+  background-image: url(../images/images_vip/sprite.png);
+  background-size:pxToRem(106px) pxToRem(119px);
   background-repeat:no-repeat;
-  background-position: pxToRem(-108px) pxToRem(0px);
-  width: pxToRem(58px);
-  height: pxToRem(72px);
+  background-position: pxToRem(-62px) pxToRem(0px);
+  width: pxToRem(44px);
+  height: pxToRem(50px);
 }
-.icon-icon2 {
+.icon-mian {
   display: block;
-  background-image: url(../images/images_index/sprite.png);
-  background-size:pxToRem(166px) pxToRem(141px);
+  background-image: url(../images/images_vip/sprite.png);
+  background-size:pxToRem(106px) pxToRem(119px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-62px) pxToRem(-60px);
+  width: pxToRem(44px);
+  height: pxToRem(50px);
+}
+.icon-safe {
+  display: block;
+  background-image: url(../images/images_vip/sprite.png);
+  background-size:pxToRem(106px) pxToRem(119px);
   background-repeat:no-repeat;
   background-position: pxToRem(0px) pxToRem(0px);
-  width: pxToRem(98px);
-  height: pxToRem(56px);
+  width: pxToRem(52px);
+  height: pxToRem(51px);
 }
-.icon-icon3 {
+.icon-speed {
   display: block;
-  background-image: url(../images/images_index/sprite.png);
-  background-size:pxToRem(166px) pxToRem(141px);
+  background-image: url(../images/images_vip/sprite.png);
+  background-size:pxToRem(106px) pxToRem(119px);
   background-repeat:no-repeat;
-  background-position: pxToRem(0px) pxToRem(-66px);
-  width: pxToRem(72px);
-  height: pxToRem(75px);
+  background-position: pxToRem(0px) pxToRem(-61px);
+  width: pxToRem(43px);
+  height: pxToRem(58px);
 }
