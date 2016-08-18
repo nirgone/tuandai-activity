@@ -43,7 +43,7 @@
         <section class="btn-sec" >
         	<!-- class为yellow-big-btn:能点击 grey-big-btn：失效样式  -->
             <a href="./project2888detail.html" class="btn yellow-big-btn">
-                马上投资（¥2888）
+                注册领取（¥2888）
             </a>
             <p>有效期：2016.08.16 ~ 2016.08.22</p>
         </section>
@@ -86,6 +86,12 @@
 (function() {
     FastClick.attach(document.body);
     //do your thing.
+    var option = {
+        url: 'http://10.100.11.110:9006/ajaxCross/Login.ashx?Action=UserLogin' //登录接口
+    };
+    var isLogin = Util.checkLogin(option); //是否已登录
+    console.info("isLogin------", isLogin);
+    
 })();
 </script>
 
