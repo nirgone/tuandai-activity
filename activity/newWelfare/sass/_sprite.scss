@@ -3,6 +3,8 @@
 
 .icon-circle-small {
     @include background('data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAALVBMVEUAAAD1UEr1UUr1UUr1UUr1UEr1UUr1UUr1UUr1UEr1UUr1UEr1UUr1UUr1UUpxRg6dAAAAD3RSTlMA6xUIzZpsJFY2+bSpiYAniIn/AAAAoElEQVQoz2MAA4sQqYWuzQxwUCqdqWw0bWM4jG8rpwCimB5ehvDZfYB8sMiRAjA9MQGmlE0SrEACYVgjSIlJAkKAzRlI3GFAAmeBOoSQBRQLGFgfIAvwBTAYKiALMAkzdDOggB0MYagCqQyeqAJTGIRQBRQZFqMKWGEIYGjBMBTDWgyHYTgdw3MY3kcPIIwgxAhk9GjAiCjMqMSMbIzkAADZjidzzoustgAAAABJRU5ErkJggg==', 32px, 32px);
+    width: 16px;
+    height: 16px;
 }
 .tbg {
 	@include background('../images/tbg.png', 750px, 407px);
