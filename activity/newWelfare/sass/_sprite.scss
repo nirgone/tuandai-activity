@@ -10,11 +10,12 @@
 	@include background('../images/tbg.png', 750px, 407px);
 	background-position: 50% 0;
 	height: 204px;
+  background-size: 100% 100%;
 }
 .icon-redpackage {
 	@include background('../images/rbg.png', 317px, 274px);
-	height: 159px;
-	width: 137px;
+	width: 159px;
+	height: 137px;
 }
 .icon-gou {
 	@include background('../images/duigou.png', 120px, 120px);

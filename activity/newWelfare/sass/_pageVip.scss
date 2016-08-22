@@ -20,7 +20,7 @@
 	&>div {
 		display: inline-block;
 		font-size: 13px;
-		width: 50%;
+		width: 49.8%;
 	}
 	.icon-cont {
 		margin: pxToRem(40px) auto;
@@ -53,6 +53,8 @@
 	position: fixed;
 	width: 100%;
 	bottom: 0;
+	left: 0;
+	right: 0;
 	// height: pxToRem(120px);
 	height: 60px;
 	background-color: #fff;
