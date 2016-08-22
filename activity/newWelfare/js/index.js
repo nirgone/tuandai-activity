@@ -1,6 +1,9 @@
 (function() {
     FastClick.attach(document.body);
     //do your thing.
+    window.onload = function(e) {
+    	$(".entries-sec .entry i").addClass("swing");
+    };
     $(".entries-sec").on("click", ".entry", function(e) {
         var $target = $(e.currentTarget),
             _type = $target.attr("data-type"); //0--518红包, 1--2888体验金, 2--新手标 ：15%， 3-- 新手标：13%

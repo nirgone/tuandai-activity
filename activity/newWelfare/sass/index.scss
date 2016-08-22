@@ -81,17 +81,34 @@ a {
                 color: #fff;
                 text-align: center;
             }
+            &[data-type='1'] {
+                i {
+                    animation-delay: 4s;
+                }
+            }
+            &[data-type='2'] {
+                i {
+                    animation-delay: 2s;
+                }
+            }
+            &[data-type='3'] {
+                i {
+                    animation-delay: 6s;
+                }
+            }
             .icon-icon1 {
                 margin-left: pxToRem(-29px);
                 top: pxToRem(26px);
+                // animation: swing 0.5s linear 0s 1 both;
             }
             .icon-icon2 {
                 margin-left: pxToRem(-49px);
                 top: pxToRem(36px);
+                animation-delay: 2s;
             }
             .icon-icon3 {
                 margin-left: pxToRem(-36px);
-                top: pxToRem(26px);
+                top: pxToRem(28px);
                 font-size: pxToRem(34px);
                 color: #fff;
                 text-align: center;
