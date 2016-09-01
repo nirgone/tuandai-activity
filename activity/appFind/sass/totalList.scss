@@ -1,0 +1,231 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+.tl-page {
+	background-color: $color-bg-grey;
+	.pl-tab {
+		width: 49.9%;
+	}
+}
+.ta-cont {
+	width: 100%;
+	margin-top: 10px;
+	background-color: #fff;
+	padding: 15px 0;
+}
+.chart {
+	width: pxToRem(700px);
+	margin: auto;
+}
+.tl-txt1 {
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	font-size: 15px;
+	color: #212121;
+	text-align: center;
+	
+}
+.g-title {
+	display: block;
+	width: 100%;
+	position: relative;
+	&:before{
+		content: '';
+		position: absolute;
+		top: 50%;
+		width: pxToRem(122px);
+		left: pxToRem(100px);
+		border-bottom: 1px solid $color-line-grey-light;
+		transform: scaleY(.5);
+	}
+	&:after{
+		content: '';
+		position: absolute;
+		top: 50%;
+		width: pxToRem(122px);
+		right: pxToRem(100px);
+		border-bottom: 1px solid $color-line-grey-light;
+		transform: scaleY(.5);
+	}
+}
+.tc-num {
+	font-size: 30px;
+	color: #fa7d00;
+	text-align: center;
+	width: 100%;
+	display: inline-block;
+	margin-top: 18px;
+}
+.tc-btn {
+	width: pxToRem(690px);
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	border-radius: 5px;
+	margin: auto;
+	background-color: $color-bg-yellow;
+	text-align: center;
+	font-size: 17px;
+}
+.tl-txt2 {
+	width: 100%;
+	display: block;
+	font-size: 12px;
+	text-align: center;
+	color: #fa7d00;
+	margin-top: 10px;
+}
+.tlcont {
+	width: 100%;
+	background-color: #fff;
+	margin-top: 10px;
+	padding: 15px 0;
+}
+.tl-t {
+	span {
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		color: $color-text-dark;
+	}
+}
+.cl-th {
+	width: 100%;
+	padding: 0 pxToRem(30px);
+	font-size: 0;
+	margin-top: 30px;
+	height: 40px;
+	line-height: 40px;
+	&>span {
+		display: inline-block;
+		width: 49.9%;
+		font-size: 13px;
+		color: $color-text-dark;
+	}
+	&>span:last-child {
+		text-align: right;
+	}
+}
+.tc-list {
+	width: 100%;
+	.tc-tr {
+		width: 100%;
+		height: 50px;
+		line-height: 50px;
+		padding: 0 pxToRem(30px);
+		font-size: 0;
+		color: $color-text-grey;
+		&>div {
+			display: inline-block;
+		}
+		&>div:first-child {
+			width: 9.9%;
+			font-size: 15px;
+		}
+		&>div:nth-child(2) {
+			width: 45%;
+			font-size: 13px;
+		}
+		&>div:nth-child(3) {
+			width: 45%;
+			text-align: right;
+			font-size: 15px;
+		}
+	}
+	&>li{
+		position: relative;
+		&:before {
+			@include border('bottom', $color-line-grey-light);
+		}
+	}
+	.seq {
+		&>div:nth-child(2n-1) {
+			color:  #fa7d00 !important;
+		}
+		&>div:nth-child(2) {
+			color: $color-text-dark;
+		}
+	}
+}
+.slide-page {
+	overflow: scroll;
+}
+.rpg-list {
+	width: 100%;
+	.rpg-tr {
+		width: pxToRem(690px);
+		height: 125px;
+		background-color: #fff;
+		margin: 15px auto;
+		border-radius: pxToRem(10px);
+		position: relative;
+		padding: 15px pxToRem(40px) 0 pxToRem(60px);
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			width: pxToRem(10px);
+			height: 100%;
+			background-color: #f76040;
+			border-top-left-radius: pxToRem(10px);
+			border-bottom-left-radius: pxToRem(10px);
+		}
+	}
+	.rpg-type {
+		font-size: 12px;
+		color: #212121;
+	}
+	.rpg-det {
+		width: 100%;
+		font-size: 0;
+		height: 73px;
+		line-height: 73px;
+		position: relative;
+		&>div {
+			display: inline-block;
+		}
+
+		.rn {
+			color: #f76040;
+			width: 50%;
+			height: 72px;
+		}
+		.rpg-num {
+			font-size: 45px;
+		}
+		.btn-cont {
+			width: 72px;
+			height: 72px;
+			border-radius: 72px;
+			background-color: #fcf1bb;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		.btn-use {
+			width: 66px;
+			height: 66px;
+			border-radius: 66px;
+			background-color: #f9cf1f;
+			text-align: center;
+			line-height: 66px;
+			color: #fff;
+			font-size: 17px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -33px;
+			margin-top: -33px;
+		}
+	}
+	.rpg-time {
+		width: 100%;
+		font-size: 10px;
+		color: #ababab;
+	}
+}

@@ -1,0 +1,30 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+.c-date {
+	font-size: 15px;
+	display: inline-block;
+	width: 70%;
+	text-align: left;
+	color: $color-text-dark;
+}
+.c-num {
+	font-size: 15px;
+	color: $color-text-orange;
+	text-align: right;
+	display: inline-block;
+	width: 29.8%;
+}
+.cl-month {
+	width: pxToRem(750px);
+	height: 25px;
+	line-height: 25px;
+	color: $color-text-dark;
+	background-color: $color-bg-grey;
+	font-size: 13px;
+	position: relative;
+	left: pxToRem(-30px);
+	padding-left: pxToRem(30px);
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>邀请好友列表</title>
+    <link rel="stylesheet" href="../css/totalList.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/vendor/swiper/swiper.min.css">
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content tl-page">
+        <nav class="pl-tabs">
+            <a href="#" class="pl-tab pl-active" data-index="0">累计佣金收益</a>
+            <a href="#" class="pl-tab" data-index="1">累计红包收益</a>
+        </nav>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slide-page">
+                        <div class="ta-cont">
+                            <span class="tl-txt1 g-title">累计赚取佣金</span>
+                            <span class="tc-num" id="totalCharges"></span>
+                            <div id="myChart" class="chart" style="height:300px; width: 100%"></div>
+                            <div class="tc-btn">赚取更多</div>
+                            <span class="tl-txt2" id="goAct">如何赚取更多佣金</span>
+                        </div>
+                        <div class="tlcont">
+                            <div class="g-title tl-t">
+                                <span class="font-24">TOP100累计佣金排行榜</span>
+                                <span class="font-30">我的排名</span>
+                            </div>
+                            <span class="tc-num" id="myRank"></span>
+                            <div class="list-scroller" id="rankList">
+                                <ul class="tc-list">
+                                <li class="cl-th">
+                                    <span>名次</span>
+                                    <span>赚取佣金</span>
+                                </li>
+                                <!-- <li class="tc-tr seq">
+                                    <div>1</div>
+                                    <div>134****9999</div>
+                                    <div>2781.99</div>
+                                </li>
+                                <li class="tc-tr seq">
+                                    <div>2</div>
+                                    <div>134****9999</div>
+                                    <div>2781.99</div>
+                                </li>
+                                <li class="tc-tr seq">
+                                    <div>3</div>
+                                    <div>134****9999</div>
+                                    <div>2781.99</div>
+                                </li>
+                                <li class="tc-tr">
+                                    <div>4</div>
+                                    <div>134****9999</div>
+                                    <div>2781.99</div>
+                                </li> -->
+                            </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-page">
+                    <ul class="rpg-list">
+                        <!-- <li class="rpg-tr">
+                            <div class="rpg-type">投资红包</div>
+                            <div class="rpg-det">
+                                <div class="rn"><font class="font-34">¥</font><font class="rpg-num">10</font></div>
+                                <div class="btn-cont">
+                                    <div class="btn-use">使用</div>
+                                </div>
+                            </div>
+                            <div class="rpg-time">
+                                <span>2016.08.07</span>
+                                <span>邀请136****7777获得</span>
+                                <span>有效期至2016.08.23</span>
+                            </div>
+                        </li>
+                        <li class="rpg-tr">
+                            <div class="rpg-type">投资红包</div>
+                            <div class="rpg-det">
+                                <div class="rn"><font class="font-34">¥</font><font class="rpg-num">10</font></div>
+                                <div class="btn-cont">
+                                    <div class="btn-use">使用</div>
+                                </div>
+                            </div>
+                            <div class="rpg-time">
+                                <span>2016.08.07</span>
+                                <span>邀请136****7777获得</span>
+                                <span>有效期至2016.08.23</span>
+                            </div>
+                        </li> -->
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<!-- build:js({dist}) ../js/lib/vendor/jsbridge-3.0.0.js -->
+<script src="../js/vendor/jsbridge-3.0.0.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<!-- build:js({dist}) ../js/lib/vendor/echarts.simple.min.js -->
+<script src="../js/vendor/echarts.simple.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/vendor/swiper/swiper.jquery.min.js"></script>
+<script src="../js/list.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/totalList.js" type="text/javascript" charset="utf-8"></script>
+
+</html>
