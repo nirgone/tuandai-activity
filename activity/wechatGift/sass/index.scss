@@ -31,6 +31,7 @@ img {
     -webkit-touch-callout: none;
     /* 禁止长按链接与图片弹出菜单 */
 }
+
 .scroll {
     width: 100%;
     // min-height: 100%;
@@ -217,7 +218,7 @@ img {
 .alert-positive {
     .light-part {
         position: absolute;
-        @include background("../images/light1.png", 720px, 486px); 
+        @include background("../images/light1.png", 720px, 486px);
         top: 10%;
         left: pxToRem(32px);
         [class^="icon-star"] {
@@ -333,9 +334,11 @@ img {
         }
     }
 }
+
 .transparent {
     opacity: 0;
 }
+
 // 第二页
 .present-content {
     padding-top: pxToRem(68px);
@@ -400,4 +403,55 @@ img {
         padding-top: pxToRem(38px);
         box-sizing: border-box;
     }
+}
+
+.show-progress {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    display: none;
+    &>div {
+        position: absolute;
+        top: 30%;
+        left: 0;
+        right: 0;
+    }
+    .icon-loading {
+        @include background('../images/icon_loading.png', 391px, 42px);
+        background-size: cover;
+        margin: auto;
+    }
+    .progress-container {
+        @include background('../images/icon_process_container.png', 656px, 27px);
+        background-size: cover;
+        margin: auto;
+        position: relative;
+        margin-top: pxToRem(20px);
+    }
+    .icon-progress {
+        background-image: url('../images/icon_progerss.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 0;
+        height: pxToRem(17px);
+        position: absolute;
+        left: pxToRem(6px);
+        top: 50%;
+        margin-top: pxToRem(-8px);
+
+    }
+    .progress {
+        width: pxToRem(645px);
+        transition-property: width;
+        -webkit-transition-property: width;
+        transition-duration: 8s;
+        -webkit-transition-duration: 8s;
+    }
+}
+.pop-det {
+    display: none;
 }

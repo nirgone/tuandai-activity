@@ -43,21 +43,43 @@
         });
 
         //显示popup
-        function showPopup(selector) {
+        function showPopup(selector, showProgress, type) {
             $(selector).show();
+            if (showProgress) {
+                $(".show-progress").show();
+                setTimeout(function() {
+                    $(".icon-progress").addClass('progress');
+                }, 500);
+                setTimeout(function() {
+                    if (type == 1) {
+                        win_music[0].play();
+
+                    } else {
+                        lose_music[0].play()
+                    }
+                    $(".pop-det").show();
+                    $(".show-progress").hide();
+                    $(".icon-progress").removeClass('progress');
+                }, 8500);
+            } else {
+                $(".pop-det").show();
+                $(".show-progress").hide();
+            }
             $(".scroll").removeClass("active");
         }
         //隐藏popup
         function hidePopup() {
             $(".popup").hide();
+            $(".pop-det").hide();
             $(".scroll").addClass("active");
         }
 
         // 弹窗提示 type: 0-－ negative; 1 -- positive; content : 内容
         function showAlert(type, content, callback) {
             var _type = "";
+            var showProgress = false;
             if (type == 1) {
-                win_music[0].play();
+                // win_music[0].play();
                 _type = "alert-positive";
                 //绑定negative btn事件
                 $("#alert").off("click", ".btn-transparent").on("click", ".btn-transparent", function(e) {
@@ -66,9 +88,10 @@
                     }
                     // hidePopup("#alert");
                 });
+                showProgress = true; //显示进度条
 
             } else {
-                lose_music[0].play();
+                // lose_music[0].play();
                 _type = "alert-negative";
                 content = '<p>奖品们都粗去玩惹</p>' +
                     '<p>下次要早点来找他们哦～</p>';
@@ -76,22 +99,22 @@
                 $("#alert").off("click", ".btn-transparent").on("click", ".btn-transparent", function(e) {
                     hidePopup("#alert");
                 });
+                showProgress = true;
             }
             $("#alert").removeClass("alert-positive").removeClass("alert-negative").addClass(_type);
             $("#alert").find(".alert-content").html(content);
 
-            showPopup("#alert");
+            showPopup("#alert", showProgress, type);
         }
-         //领取奖品页面
-            var present_open_part = $(".present-open-part");
-            if(present_open_part.length > 0) {
-                award_music[0].play();
-                present_open_part.addClass("bounceInDown").removeClass("transparent");
-                // present_open_part.show();
-            }
+        //领取奖品页面
+        var present_open_part = $(".present-open-part");
+        if (present_open_part.length > 0) {
+            award_music[0].play();
+            present_open_part.addClass("bounceInDown").removeClass("transparent");
+            // present_open_part.show();
+        }
 
     }
-
 
 
 

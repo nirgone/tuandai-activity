@@ -35,8 +35,8 @@
 </head>
 
 <body>
-	<audio src="../music/win.mp3"  preload id="win_music"></audio>
-	<audio src="../music/lose.mp3"  preload id="lose_music"></audio>
+    <audio src="../music/win.mp3" preload id="win_music"></audio>
+    <audio src="../music/lose.mp3" preload id="lose_music"></audio>
     <div class="scroll active">
         <div class="content">
             <div class="item">
@@ -75,7 +75,6 @@
                     <a class="btn btn-finished"></a>
                 </div>
             </div>
-
             <a class="btn-rule" id="show_rule">活动规则</a>
         </div>
     </div>
@@ -94,28 +93,37 @@
             </div>
         </div>
     </section>
-
     <!-- 奖品弹窗 -->
     <div class="popup alert-part" id="alert">
-    	<div class="masker"></div>
-    	<div class="light-part zoomIn">
-    		<i class="icon-star1"></i>
-    		<i class="icon-star2"></i>
-    		<i class="icon-star3"></i>
-    		<i class="icon-star4"></i>
-    		<i class="icon-star5"></i>
-    	</div>
-    	<div class="popup-content">
-    		<div class="close"><i class="icon-close"></i></div>
-    		<div class="alert-content">
-    			<!-- <p>成功开启</p>
-    			<p class="font-green">微信专属月度包</p>
-    			<p>并获得<span class="font-yellow">58团币</span></p> -->
-    			<!-- <p>奖品们都粗去玩惹</p>
-    			<p>下次要早点来找他们哦～</p> -->
-    		</div>
-    		<a class="btn-transparent"></a>
-    	</div>
+        <div class="masker"></div>
+        <div class="show-progress">
+            <div>
+                <i class="icon-loading"></i>
+                <div class="progress-container">
+                    <i class="icon-progress"></i>
+                </div>
+            </div>
+        </div>
+        <div class="pop-det">
+            <div class="light-part zoomIn">
+                <i class="icon-star1"></i>
+                <i class="icon-star2"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star4"></i>
+                <i class="icon-star5"></i>
+            </div>
+            <div class="popup-content">
+                <div class="close"><i class="icon-close"></i></div>
+                <div class="alert-content">
+                    <!-- <p>成功开启</p>
+                <p class="font-green">微信专属月度包</p>
+                <p>并获得<span class="font-yellow">58团币</span></p> -->
+                    <!-- <p>奖品们都粗去玩惹</p>
+                <p>下次要早点来找他们哦～</p> -->
+                </div>
+                <a class="btn-transparent"></a>
+            </div>
+        </div>
     </div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
