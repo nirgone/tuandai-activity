@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>万人晒步</title>
+    <link rel="stylesheet" href="../css/join.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <div class="page">
+        <!-- <div class="bg"></div> -->
+        <div class="logo"></div>
+        <div class="content">
+            <div class="phone">
+                <input type="tel" maxlength="11" placeholder="输入手机号，报名晒步" />
+            </div>
+            <div class="img-code">
+                <input class="img-code-input" placeholder="请输入图形验证码" type="text" name="imgCode" maxlength="4" />
+                <img src="../images/code.jpg" class="img-code-img" />
+            </div>
+            <div class="verification-code">
+                <input type="text" maxlength="8" placeholder="输入验证码" />
+                <div class="get-code-btn">获取验证码</div>
+            </div>
+            <div class="join-btn">提交报名</div>
+            <div class="award">
+                <img src="../images/award.png" />
+            </div>
+        </div>
+        <div class="err-tip">
+            <div class="err-title">输入有误</div>
+            <div class="err-text">请输入正确手机号！</div>
+            <div class="close-icon"></div>
+        </div>
+        <div class="mask"></div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+(function() {
+    FastClick.attach(document.body);
+    // 显示错误提示
+    var uiShowErrTip = function(text) {
+            $(".err-tip").find(".err-text").text(text);
+            $(".err-tip").show();
+            $(".mask").show();
+            disableScrolling();
+        }
+        // 隐藏提示
+    var uiHideErrTip = function(text) {
+            $(".err-tip").hide();
+            $(".mask").hide();
+            enableScrolling();
+        }
+        // 检查手机号码是否有效
+    var checkPhoneNum = function(phoneNum) {
+        var patTel = new RegExp("^(13|14|15|17|18)[0-9]{9}$", "i");
+        if (!phoneNum.match(patTel)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    //检验验证码
+    var checkverificateCode = function(code) {
+        // TODO: 检验验证码
+        return true;
+    }
+
+    // 获取验证码
+    $(".get-code-btn").on("click", function() {
+        // TODO: 获取验证码
+        console.log("获取验证码");
+    });
+
+    // 提交报名
+    $(".join-btn").on("click", function() {
+        var phone = $(".phone").find("input").val();
+        if (!checkPhoneNum(phone)) { //验证手机号码
+            uiShowErrTip("号码有误，请重新输入！");
+            return;
+        }
+
+        var verificationCode = $(".verification-code").find("input").val(); //验证码
+        if (!checkverificateCode(verificationCode)) {
+            uiShowErrTip("验证码有误，请重新输入！");
+            return;
+        }
+
+        console.log("提交报名")
+
+        // TODO: 提交报名之后
+        window.location.href = "./options.html";
+    });
+
+    $(".mask").on("click", function() {
+        uiHideErrTip();
+    });
+
+    $(".close-icon").on("click", function() {
+        uiHideErrTip();
+    });
+
+    /* ==================禁止滚动======================== */
+    function scrolling(e) {
+        preventDefault(e);
+    }
+
+    function preventDefault(e) {
+        e = e || window.event;
+        if (e.preventDefault) {
+            e.preventDefault();
+        }
+        e.returnValue = false;
+    }
+
+    function disableScrolling() {
+        if (window.addEventListener) {
+            window.addEventListener('DOMMouseScroll', scrolling, false);
+            window.addEventListener('touchmove', scrolling, false);
+            window.onmousewheel = document.onmousewheel = scrolling;
+        }
+    }
+
+    function enableScrolling() {
+        if (window.removeEventListener) {
+            window.removeEventListener('DOMMouseScroll', scrolling, false);
+            window.removeEventListener('touchmove', scrolling, false);
+        }
+        window.onmousewheel = document.onmousewheel = null;
+    }
+
+    /* ==================禁止滚动=====end=================== */
+
+})();
+</script>
+
+</html>
