@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>中秋</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="content index-content">
+        <i class="icon-moon"></i>
+        <div class="title-part">
+            <div class="icon-title bounceInDown" id="title"></div>
+            <p class="rule"><span id="rule">活动规则</span></p>
+        </div>
+        <div class="bottom-part">
+        	<div class="rabbit-box">
+        		<i class="icon-dialog"></i>
+        		<i class="icon-rabbit0"></i>
+        		<div class="icon-box"><i class="icon-spring"></i></div>
+        	</div>
+        	<a class="btn-green-s" id="start_btn" href="../html/game.html">
+        		开始
+        	</a>
+        </div>
+    </div>
+    <div class="rule-sec" id="rule_sec">
+    	<div class="masker"></div>
+    	<div class="rule">
+    		<div class="close"></div>
+    		<div class="title">
+    			游戏规则
+    		</div>
+    		<p><i>1</i><span>活动时间：月14日-18日；</span></p>
+    		<p><i>2</i><span>点击“弹”帮兔子登天，飞越高奖品越丰厚，最高可获100元哈根达斯消费券；</span></p>
+    		<p><i>3</i><span>通过左右按键可避开天狗，一旦碰触即该局活动结束；</span></p>
+    		<p><i>4</i><span>每位用户均有3次机会，但仅可兑奖1次；</span></p>
+    		<p><i>5</i><span>分享指定页面邀好友“加油”，满10个加油点即可获得1次额外游戏机会并兑奖</span></p>
+    		<p><i>6</i><span>本活动规则解释权归团贷网所有。</span></p>
+
+    	</div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<!-- <script src="../js/index.js" type="text/javascript" charset="utf-8"></script> -->
+<script>
+	(function() {
+    FastClick.attach(document.body);
+	    //do your thing.
+	 $("#rule").click(function(e) {
+	 	$("#rule_sec").show();
+	 });
+	 $("#rule_sec").on("click", ".masker, .close", function(e) {
+	 	$("#rule_sec").hide();
+	 });
+
+	 // $("#start_btn").click(function())
+
+	 window.onload = function(e) {
+	 	$("#title").show();
+	 	$(".icon-rabbit0,.icon-spring").addClass("active");
+	 	$(".icon-dialog").addClass("zoomIn");
+	 };
+})();
+</script>
+
+</html>
