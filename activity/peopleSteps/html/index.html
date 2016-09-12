@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>万人晒步</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <div class="page">
+        <!-- <div class="bg"></div> -->
+        <div class="logo"></div>
+        <div class="content">
+            <div class="header"></div>
+            <div class="desc">马上报名加入“晒步”军团即可嘉奖500团币。
+                <br/> 8月7日，挑战“万人晒步”
+                <br/> 还有机会夺得Apple Watch等超值大奖！
+                <div class="rule-btn">活动规则</div>
+            </div>
+            <div class="dialog">
+                <div class="name">xxxxx</div>我们约跑吧！</div>
+            <div class="people"></div>
+            <div class="join-btn">我要报名</div>
+        </div>
+        <div class="mask"></div>
+        <div class="rule">
+            <div class="rule-title">详细规则</div>
+            <div class="rule-list">
+                <div class="rule-item">
+                    <div class="rule-icon">1</div>
+                    <div class="rule-text">活动时间：截至2016年8月6日18:00；</div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-icon">2</div>
+                    <div class="rule-text">活动期间，提交线上报名即可获500团币（活动结束后发放）；同时，添加活动微信号tuandaiwang888为好友，方可参与8月7日#万人晒步#赢大奖；</div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-icon">3</div>
+                    <div class="rule-text">活动期间，已报名用户通过专属页面每成功邀请1位好友报名则可获得100团币嘉奖，最多可获1000团币；</div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-icon">4</div>
+                    <div class="rule-text">#万人晒步#将根据活动号的【微信运动】8月7日官方排名结果，公布获奖名单。</div>
+                </div>
+            </div>
+            <div class="close-icon"></div>
+        </div>
+    </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+(function() {
+    FastClick.attach(document.body);
+    var showRules = function() {
+        $(".rule").show();
+        $(".mask").show();
+        disableScrolling();
+    }
+    var hideRules = function() {
+        $(".rule").hide();
+        $(".mask").hide();
+        enableScrolling();
+    }
+    $(".rule-btn").on("click", function() {
+        showRules();
+    });
+
+    $(".mask").on("click", function() {
+        hideRules();
+    });
+
+    // 我要报名
+    $(".join-btn").on("click", function() {
+        window.location.href = "./join.html";
+    });
+
+    $(".close-icon").on("click", function() {
+        hideRules();
+    });
+
+    /* ==================禁止滚动======================== */
+    function scrolling(e) {
+        preventDefault(e);
+    }
+
+    function preventDefault(e) {
+        e = e || window.event;
+        if (e.preventDefault) {
+            e.preventDefault();
+        }
+        e.returnValue = false;
+    }
+
+    function disableScrolling() {
+        if (window.addEventListener) {
+            window.addEventListener('DOMMouseScroll', scrolling, false);
+            window.addEventListener('touchmove', scrolling, false);
+            window.onmousewheel = document.onmousewheel = scrolling;
+        }
+    }
+
+    function enableScrolling() {
+        if (window.removeEventListener) {
+            window.removeEventListener('DOMMouseScroll', scrolling, false);
+            window.removeEventListener('touchmove', scrolling, false);
+        }
+        window.onmousewheel = document.onmousewheel = null;
+    }
+
+    /* ==================禁止滚动=====end=================== */
+})();
+</script>
+
+</html>

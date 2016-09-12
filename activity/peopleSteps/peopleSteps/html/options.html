@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+	<meta name="format-detection" content="telephone=no">
+	<title>万人晒步</title>
+	<link rel="stylesheet" href="../css/options.css">
+	<link rel="stylesheet" href="../css/media.css">
+	<link rel="stylesheet" href="../css/animation.css">
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <div class="page">
+        <div class="bg"></div>
+        <div class="logo"></div>
+        <div class="content">
+            <div class="header"></div>
+            <div class="content-wrapper">
+                <div class="label1">请根据您的个人情况选择下一步操作</div>
+                <div class="not-added">未添加“团贷网<label style="color:#f6522f">·</label>万人赛步”为好友</div>
+                <div class="added">已添加“团贷网·万人赛步”为好友</div>
+                <div class="award">
+                    <img src="../images/award.png" />
+                </div>
+            </div>
+        </div>
+        <div class="mask"></div>
+        <div class="share-tip">
+            <div class="share-text">
+                #万人晒步#<br/>一起跑，会更嗨！
+                <div>每成功邀请1位“跑友”即可获100团币！</div>
+            </div>
+            <div class="close-icon"></div>
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+    (function() {
+        FastClick.attach(document.body);
+         var showTip = function() {
+            $(".share-tip").show();
+            $(".mask").show();
+        }
+
+         var hideTip = function() {
+            $(".share-tip").hide();
+            $(".mask").hide();
+        }
+        // 未添加微信
+        $(".not-added").on("click", function() {
+            window.location.href = "./QRCode.html";
+        })
+
+        // 添加微信
+        $(".added").on("click", function() {
+            showTip();
+        })
+
+        $(".mask").on("click", function() {
+            hideTip();
+        });
+
+         $(".close-icon").on("click", function() {
+            hideTip();
+        });
+    })();
+   
+</script>
+</html>

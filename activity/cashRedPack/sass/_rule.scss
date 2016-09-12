@@ -10,7 +10,7 @@ $color-text: #41454d;
     left: pxToRem(40px);
     right: pxToRem(48px);
     bottom: pxToRem(50px);
-    border-radius: 5px;
+    // border-radius: 5px;
     color: #41454d;
     font-size: pxToRem(30px);
     line-height: pxToRem(48px);
@@ -210,14 +210,14 @@ $color-text: #41454d;
 
 .th>span:first-child,
 .tr>span:first-child {
-    width: 31.40%;
-    // width: 22.64%;
+    // width: 31.40%;
+    width: 39.49%;
 }
 
 .th>span:nth-of-type(2),
 .tr>span:nth-of-type(2) {
-    width: 68.60%;
-    // width: 77.36%;
+    // width: 68.60%;
+    width: 60.51%;
 }
 .tr>span:nth-of-type(2) {
     color: #41454d;
@@ -248,8 +248,9 @@ $color-text: #41454d;
     // font-size: 12px;
     // line-height: 18px;
     font-size: pxToRem(30px);
-    line-height: pxToRem(36px);
+    line-height: pxToRem(40px);
     color: #999;
+    box-sizing: border-box;
 }
 
 .tr>span.center {
@@ -267,7 +268,11 @@ $color-text: #41454d;
     -webkit-align-items: center;
     align-items: center;
 }
-
+.tr>span.left {
+    text-align: left;
+    padding-left: pxToRem(12px); 
+    padding-right: pxToRem(12px); 
+}
 .remark {
     // font-size: 12px;
     // line-height: 18px;
