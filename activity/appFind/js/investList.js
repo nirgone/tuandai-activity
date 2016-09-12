@@ -25,11 +25,36 @@
 				loadData('#allList');
 			},
 		});
+		Jsbridge.appLifeHook(null, null, function() {
+			Jsbridge.setTitleComponent({
+				titleContent: '邀请好友列表',
+				rightbuttonVisible: true,
+				rightbuttonContent: 'aaa',
+				rightbuttonTyppe: 1
+			});
+		}, null, null);
+		/*if (Util.isIOS()) {
+			Jsbridge.setTitleComponent({
+				titleContent: '邀请好友列表 ',
+				rightbuttonVisible: true,
+				rightbuttonContent: 'aaa',
+				rightbuttonTyppe: 2
+			});
+		} else {
+			Jsbridge.appLifeHook(null, null, function() {
+				Jsbridge.setTitleComponent({
+					titleContent: '邀请好友列表',
+					rightbuttonVisible: true,
+					rightbuttonContent: 'aaa',
+					rightbuttonTyppe: 1
+				});
+			}, null, null);
+		}*/
 	}
 	init();
 	//list数据加载
 	function loadData(el) {
-		if(requesting) {
+		if (requesting) {
 			return;
 		}
 		var wrapper = $(el);
@@ -91,14 +116,14 @@
 							//最近一月
 							curPage.monthCurPage++;
 						}
-					}else{
+					} else {
 						if (type == 0 && curPage.allCurPage == 1) {
 							//全部
 							$("#noAll").show();
 						} else if (type == 1 && curPage.weekCurPage == 1) {
 							//最近一周
 							$("#noWeek").show();
-						} else if(type == 2 && curPage.monthCurPage == 1) {
+						} else if (type == 2 && curPage.monthCurPage == 1) {
 							//最近一月
 							$("#noMonth").show();
 						}
@@ -151,12 +176,12 @@
 						loadData('#monthList');
 					}
 				});
-			}else if(len < 1) {
+			} else if (len < 1) {
 				loadData('#monthList');
 			}
 		} else {
 			len = $("#allList").find("li").length;
-			if(len < 1) {
+			if (len < 1) {
 				loadData('#allList');
 			}
 		}

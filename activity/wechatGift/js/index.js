@@ -28,28 +28,55 @@
 
         //点击按钮弹窗
         $(".item").on("click", ".btn-active", function(e) {
-            var _content = '<p>成功开启</p>' +
-                '<p class="font-green">微信专属月度包</p>' +
-                '<p>并获得<span class="font-yellow">59团币</span></p>';
-            showAlert(1, _content, function(e) {
-                window.location.href = "./present.html";
-                hidePopup("#alert");
-            });
+            showProgress("#alert");
+            setTimeout(function() {
+                var _content = '<p>成功开启</p>' +
+                    '<p class="font-green">微信专属月度包</p>' +
+                    '<p>并获得<span class="font-yellow">59团币</span></p>';
+                showAlert(1, _content, function(e) {
+                    window.location.href = "./present.html";
+                    hidePopup("#alert");
+                });
+            }, 5000);
+            /* var _content = '<p>成功开启</p>' +
+                 '<p class="font-green">微信专属月度包</p>' +
+                 '<p>并获得<span class="font-yellow">59团币</span></p>';
+             showAlert(1, _content, function(e) {
+                 window.location.href = "./present.html";
+                 hidePopup("#alert");
+             });*/
         });
 
         //第二页分享按钮
         $(".present-content").on("click", "#btn_share", function(e) {
             showPopup("#share_part");
         });
+        //打开进度条
+        function showProgress(selector) {
+            $(selector).show();
+            $(".show-progress").show();
+            setTimeout(function() {
+                $(".icon-progress").addClass('progress');
+            }, 100);
+        }
 
         //显示popup
-        function showPopup(selector, showProgress, type) {
+        function showPopup(selector, type) {
             $(selector).show();
-            if (showProgress) {
+            if (type == 1) {
+                win_music[0].play();
+
+            } else {
+                lose_music[0].play()
+            }
+            $(".pop-det").show();
+            $(".show-progress").hide();
+            $(".icon-progress").removeClass('progress');
+            /*if (showProgress) {
                 $(".show-progress").show();
                 setTimeout(function() {
                     $(".icon-progress").addClass('progress');
-                }, 500);
+                }, 100);
                 setTimeout(function() {
                     if (type == 1) {
                         win_music[0].play();
@@ -60,11 +87,11 @@
                     $(".pop-det").show();
                     $(".show-progress").hide();
                     $(".icon-progress").removeClass('progress');
-                }, 8500);
+                }, 1500);
             } else {
                 $(".pop-det").show();
                 $(".show-progress").hide();
-            }
+            }*/
             $(".scroll").removeClass("active");
         }
         //隐藏popup
@@ -104,7 +131,7 @@
             $("#alert").removeClass("alert-positive").removeClass("alert-negative").addClass(_type);
             $("#alert").find(".alert-content").html(content);
 
-            showPopup("#alert", showProgress, type);
+            showPopup("#alert", type);
         }
         //领取奖品页面
         var present_open_part = $(".present-open-part");

@@ -44,7 +44,7 @@
                     <div class="slide-page">
                         <div class="ta-cont">
                             <span class="tl-txt1 g-title">累计赚取佣金</span>
-                            <span class="tc-num" id="totalCharges"></span>
+                            <span class="tc-num" id="totalCharges">01258</span>
                             <div id="myChart" class="chart" style="height:300px; width: 100%"></div>
                             <div class="tc-btn">赚取更多</div>
                             <span class="tl-txt2" id="goAct">如何赚取更多佣金</span>
@@ -55,13 +55,13 @@
                                 <span class="font-30">我的排名</span>
                             </div>
                             <span class="tc-num" id="myRank"></span>
+                            <li class="cl-th">
+                                <span>名次</span>
+                                <span>赚取佣金</span>
+                            </li>
                             <div class="list-scroller" id="rankList">
                                 <ul class="tc-list">
-                                <li class="cl-th">
-                                    <span>名次</span>
-                                    <span>赚取佣金</span>
-                                </li>
-                                <!-- <li class="tc-tr seq">
+                                    <!-- <li class="tc-tr seq">
                                     <div>1</div>
                                     <div>134****9999</div>
                                     <div>2781.99</div>
@@ -81,16 +81,19 @@
                                     <div>134****9999</div>
                                     <div>2781.99</div>
                                 </li> -->
-                            </ul>
+                                </ul>
+                                <div class="no-data" id="noCharges">
+                                    <i class="icon-norecord"></i>
+                                    <span class="nt">暂无数据</span>
+                                </div>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="slide-page">
-                    <ul class="rpg-list">
-                        <!-- <li class="rpg-tr">
+                        <ul class="rpg-list">
+                            <!-- <li class="rpg-tr">
                             <div class="rpg-type">投资红包</div>
                             <div class="rpg-det">
                                 <div class="rn"><font class="font-34">¥</font><font class="rpg-num">10</font></div>
@@ -118,7 +121,11 @@
                                 <span>有效期至2016.08.23</span>
                             </div>
                         </li> -->
-                    </ul>
+                        </ul>
+                        <div class="no-data" id="noRedPack">
+                            <i class="icon-nodata"></i>
+                            <span>暂无数据</span>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,80 @@
+@charset "UTF-8";
+@import "../../../sass/func";
+.masker {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .2);
+    z-index: 999;
+}
+
+.component-alert {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    [class$='-wrapper'] {
+        position: absolute;
+        width: pxToRem(600px);
+        top: 30%;
+        left: 50%;
+        margin-left: pxToRem(-300px);
+        background-color: #fff;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 17px;
+        z-index: 1000;
+        padding: 25px pxToRem(20px) 0 pxToRem(20px);
+        [class$='title'] {
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        [class$='-content'] {
+            position: relative;
+            font-size: 14px;
+            width: 100%;
+            text-align: center;
+            color: #333;
+            line-height: 20px;
+            padding: 15px 0;
+            &:after {
+                @include border(bottom, #e6e6e6);
+            }
+        }
+        .btn {
+            height: 45px;
+            line-height: 45px;
+            font-size: 17px;
+            color: #0B80FF;
+        }
+    }
+}
+
+.component-dialog {
+    @extend .component-alert;
+    position: fixed;
+    .dialog-content {
+        // padding: pxToRem(50px) pxToRem(68px) !important;
+    }
+    .btns {
+        font-size: 0;
+        .btn {
+            display: inline-block;
+            width: 50%;
+            &.negative-btn {
+                position: relative;
+                // color: #999;
+                font-weight: bolder;
+                &:after {
+                    @include border(right, #e6e6e6);
+                }
+            }
+        }
+    }
+}

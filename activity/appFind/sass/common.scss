@@ -6,10 +6,12 @@
 html,
 body {
     -webkit-overflow-scrolling: touch !important;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif !important;
 }
 
 * {
     box-sizing: border-box;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif !important;
 }
 
 .c-detail {
@@ -35,6 +37,7 @@ body {
 .font-34 {
     font-size: 17px;
 }
+
 .font-30 {
     font-size: 15px;
 }
@@ -107,9 +110,9 @@ body {
     font-size: 0;
     position: relative;
     background-color: #fff;
-    &:before {
-        @include border('bottom', $color-line-grey-light);
-    }
+    // &:before {
+    //     @include border('bottom', $color-line-grey-light);
+    // }
     .pl-tab {
         // width: 33.3%;
         line-height: 45px;
@@ -129,6 +132,7 @@ body {
         }
     }
 }
+
 .pl-active {
     color: $color-text-yellow !important;
 }
@@ -161,12 +165,28 @@ body {
     margin-left: pxToRem(-28px);
     z-index: 20;
 }
+
 .no-data {
     text-align: center;
-    font-size: 20px;
+    font-size: 17px;
     width: 100%;
-    height: 50px;
-    line-height: 50px;
+    display: none;
+    color: #333333;
+    .icon-nodata {
+        @include background('../images/icon-nodata.png', 514px, 429px);
+        margin: auto;
+        margin-top: 55px;
+        margin-bottom: 45px;
+    }
+    .icon-norecord {
+        @include background('../images/icon-norecord.png', 214px, 175px);
+        margin: auto;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    .nt {
+        color: #ababab;
+    }
 }
 
 .icon-loading {
@@ -184,6 +204,7 @@ body {
     display: inline-block;
     animation: loading-logo 0.8s linear infinite;
 }
+
 .list-scroller {
     overflow: scroll;
 }

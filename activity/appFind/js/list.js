@@ -27,8 +27,10 @@
 			// 		probeType: 2
 			// 	});
 			// }
+			if (!this.options.disableNext) {
+				this.bindEvent();
+			}
 
-			this.bindEvent();
 		},
 		bindEvent: function() {
 			var me = this;

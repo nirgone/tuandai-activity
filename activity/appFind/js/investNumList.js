@@ -27,8 +27,8 @@
 
 
 	//页面初始化
+	var h = $(window).height() - 45 - 100 - 53;
 	function init() {
-		var h = $(window).height() - 45 - 100;
 		$(".slide-page").height(h);
 		mySwiper = new Swiper('.swiper-container', {
 			onTransitionEnd: function(swiper) {
@@ -40,6 +40,8 @@
 			}
 		});
 		weekList = new List('#weekList', {
+			height: h,
+			disableNext: true,
 			loadList: function() {
 				loadData('#weekList');
 			},
@@ -57,9 +59,9 @@
 		var reqData = {
 			Cmd: "GetInvestNumList",
 			pageSize: pageSize,
-			// extendkey: "725A5B680DE776CF12E394486B565C14"
+			extendkey: "725A5B680DE776CF12E394486B565C14"
 		};
-		reqData.extendkey = Util.getParam('extendkey');
+		// reqData.extendkey = Util.getParam('extendkey');
 		if (type == 'all') {
 			reqData.type = 0;
 			reqData.pageIndex = curPage.allCurPage;
@@ -155,6 +157,8 @@
 			len = $("#weekList").find("li").length;
 			if (!weekList) {
 				weekList = new List('#weekList', {
+					height: h,
+					disableNext: true,
 					loadList: function() {
 						loadData('#weekList');
 					},
@@ -166,6 +170,8 @@
 			len = $("#monthList").find("li").length;
 			if (!monthList) {
 				monthList = new List('#monthList', {
+					height: h,
+					disableNext: true,
 					loadList: function() {
 						loadData('#monthList');
 					}
@@ -177,6 +183,8 @@
 			len = $("#allList").find("li").length;
 			if (!allList) {
 				allList = new List('#allList', {
+					height: h,
+					disableNext: true,
 					loadList: function() {
 						loadData('#allList');
 					},
@@ -195,14 +203,17 @@
 			str = "我上周已邀请";
 			_myInvest = _inviteDate.week.myInvest;
 			_diff = _inviteDate.week.diff;
+			$(".tmark").hide();
 		} else if (index == 1) {
 			str = "我上月已邀请";
 			_myInvest = _inviteDate.month.myInvest;
 			_diff = _inviteDate.month.diff;
+			$(".tmark").hide();
 		} else {
 			str = "我总共已邀请";
 			_myInvest = _inviteDate.all.myInvest;
 			_diff = _inviteDate.all.diff;
+			$(".tmark").show();
 		}
 		$("#txt").html(str);
 		$("#investCount").html(_myInvest);

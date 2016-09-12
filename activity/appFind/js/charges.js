@@ -25,12 +25,29 @@
 				rightbuttonTyppe: 2
 			});
 		}, null, null);
+		/*if (Util.isIOS()) {
+			Jsbridge.setTitleComponent({
+				titleContent: '每日佣金详情',
+				rightbuttonVisible: true,
+				rightbuttonContent: '排行榜',
+				rightbuttonTyppe: 2
+			});
+		} else {
+			Jsbridge.appLifeHook(null, null, function() {
+				Jsbridge.setTitleComponent({
+					titleContent: '每日佣金详情',
+					rightbuttonVisible: true,
+					rightbuttonContent: '已邀请好友',
+					rightbuttonTyppe: 2
+				});
+			}, null, null);
+		}*/
 		//title右侧按钮点击事件 rightbuttonTyppe为1时有效
 		Jsbridge.rightButtonClick(function() {
 			console.info("rightButtonClick----");
 			window.location.href = "./investList.html";
 		});
-		
+
 	}
 
 
@@ -87,13 +104,15 @@
 						curPage++;
 					} else {
 						if (curPage == 1) {
-							Util.toast('暂无数据');
+							$(".no-data").show();
 						}
 					}
 				} else if (data.result && data.result == 0) {
 					Util.toast('获取数据失败');
+					// $(".no-data").show();
 				} else {
 					Util.toast('服务器异常');
+					// $(".no-data").show();
 				}
 
 			},
@@ -134,7 +153,7 @@
 	}*/
 	//如何赚取更多
 	$(".btn-charges").on('click', function() {
-
+		window.location.href = "./investList.html";
 	});
 
 

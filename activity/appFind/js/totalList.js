@@ -194,6 +194,7 @@
 				if (data && data.result == 1) {
 					var rankList = data.list;
 					if (rankList && rankList.length > 0) {
+						$("#noCharges").hide();
 						var temp = "";
 						rankList.forEach(function(item) {
 							var classStr = "tc-tr";
@@ -204,10 +205,17 @@
 								'<div>' + item.TelNo + '</div><div>' + item.TotalEranMoney + '</div></li>';
 						});
 						$("#rankList").find('.tc-list').append(temp);
+						curPage.charges++;
+					} else {
+						if (curPage.charges == 1) {
+							$("#noCharges").show();
+						}
 					}
-					curPage.charges++;
 				} else if (data && data.result == 0) {
 					Util.toast('暂无佣金排名数据');
+					if (curPage.charges == 1) {
+						$("#noCharges").show();
+					}
 				} else {
 					Util.toast('服务器异常');
 				}
@@ -248,6 +256,7 @@
 				if (data && data.result == 1) {
 					var packetList = data.list;
 					if (packetList && packetList.length > 0) {
+						$("#noRedPack").hide();
 						var temp = "";
 						packetList.forEach(function(item) {
 							temp += '<li class="rpg-tr"><div class="rpg-type">' + item.PrizeName + '</div>' +
@@ -258,9 +267,16 @@
 								'<span>邀请' + item.FromTelNo + '获得</span><span>有效期至' + item.ExpirationDate + '</span></div></li>';
 						});
 						$(".rpg-list").append(temp);
+					} else {
+						if (curPage.redpacket == 1) {
+							$("#noRedPack").show();
+						}
 					}
 				} else if (data && data.result == 0) {
 					Util.toast('暂无红包数据');
+					if (curPage.redpacket == 1) {
+						$("#noRedPack").show();
+					}
 				} else {
 					Util.toast('服务器异常');
 				}
@@ -282,14 +298,85 @@
 	$("#goAct").on('click', function() {
 
 	});
+
 	//使用红包
-	$(".btn-use").on('click', function() {
-		if (Jsbridge.isNewVersion()) {
+	$("body").on('click', '.btn-use', function() {
+		/*if (Jsbridge.isNewVersion()) {
 			//4.3.4以上版本跳转
 			//跳转到投资列表-理财计划
 			Jsbridge.toAppWePlan();
 		} else {
 			//旧版本app跳转
-		}
+		}*/
+		dialog({
+			title: '使用说明',
+			content: "单笔投资≥1000元，标的期限≥1个月",
+			negativeBtnTxt: "取消",
+			positiveBtnTxt: "去投资",
+			positiveCallback: function() {
+				console.log("positiveCallback");
+				if (Jsbridge.isNewVersion()) {
+					//4.3.4以上版本跳转
+					//跳转到投资列表-理财计划
+					Jsbridge.toAppWePlan();
+				} else {
+					//旧版本app跳转
+				}
+			}
+		});
 	});
+
+	function dialog(options) {
+		var that = this;
+		var _options = {
+			"title": "",
+			"content": "",
+			"positiveBtnTxt": "",
+			positiveCallback: null,
+			"negativeBtnTxt": "",
+			negativeCallback: null
+		};
+		_options = $.extend(_options, options || {});
+		var dialog_component = $("<div/>").addClass("component-dialog"),
+			masker = $("<div/>").addClass("masker"),
+			dialog_wrapper = $("<div/>").addClass("dialog-wrapper"),
+			dialog_title = $("<div/>").addClass("dialog-title").html(_options.title),
+			dialog_content = $("<div/>").addClass("dialog-content").html(_options.content),
+			btns = $("<div/>").addClass("btns"),
+			positive_btn = $("<div/>").addClass("btn").addClass("positive-btn").html(_options.positiveBtnTxt);
+		negative_btn = $("<div/>").addClass("btn").addClass("negative-btn").html(_options.negativeBtnTxt);
+
+		btns.append(negative_btn).append(positive_btn);
+
+		dialog_wrapper.append(dialog_title).append(dialog_content).append(btns);
+
+		dialog_component.append(masker).append(dialog_wrapper);
+
+		$("body").append(dialog_component);
+		Util.disableScrolling();
+		//事件绑定
+		masker.bind("click", function(e) {
+			hide(dialog_component);
+		});
+
+		negative_btn.bind("click", function(e) {
+			if (_options.negativeCallback) {
+				_options.negativeCallback();
+			}
+			hide(dialog_component);
+		});
+
+		positive_btn.bind("click", function(e) {
+			if (_options.positiveCallback) {
+				_options.positiveCallback();
+			}
+			hide(dialog_component);
+		});
+
+		function hide(target) {
+			target.remove();
+			Util.enableScrolling();
+		}
+	}
+
 })();
