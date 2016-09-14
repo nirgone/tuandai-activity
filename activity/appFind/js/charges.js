@@ -56,6 +56,7 @@
 		if (requesting) {
 			return;
 		}
+		
 		Util.ajax({
 			async: false,
 			type: "post",

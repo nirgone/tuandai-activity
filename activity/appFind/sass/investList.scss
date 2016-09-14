@@ -11,9 +11,9 @@
     background-color: #fff;
     font-size: 0;
     position: relative;
-    &:before {
-        @include border('bottom', $color-line-grey-light);
-    }
+    // &:before {
+    //     @include border('bottom', $color-line-grey-light);
+    // }
     &>a {
         font-size: 17px;
         display: inline-block;
@@ -91,5 +91,33 @@
         &:before {
             left: pxToRem(30px);
         }
+    }
+}
+.tip-cont {
+    width: 100%;
+    height: 43px;
+    line-height: 43px;
+    text-align: center;
+    font-size: 13px;
+    color: $color-text-grey;
+    background-color: $color-bg-grey;
+    position: relative;
+    &:before {
+        content: "";
+        position: absolute;
+        width: pxToRem(70px);
+        height: 0;
+        top: 50%;
+        left: pxToRem(40px);
+        border-top: 1px solid #ccc;
+    }
+     &:after {
+        content: "";
+        position: absolute;
+        width: pxToRem(70px);
+        height: 0;
+        top: 50%;
+        right: pxToRem(40px);
+        border-top: 1px solid #ccc;
     }
 }

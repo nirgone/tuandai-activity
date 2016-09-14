@@ -9,6 +9,8 @@
 	var allList, weekList, monthList;
 	var mySwiper;
 	var requesting = false;
+	var height = $(window).height() - $(".list-container").offset().top - 43;
+	console.info("height-----", height);
 	//页面初始化
 	function init() {
 
@@ -21,6 +23,7 @@
 			}
 		});
 		allList = new List('#allList', {
+			height: height,
 			loadList: function() {
 				loadData('#allList');
 			},
@@ -161,6 +164,7 @@
 			len = $("#weekList").find("li").length;
 			if (!weekList) {
 				weekList = new List('#weekList', {
+					height: height,
 					loadList: function() {
 						loadData('#weekList');
 					},
@@ -172,6 +176,7 @@
 			len = $("#monthList").find("li").length;
 			if (!monthList) {
 				monthList = new List('#monthList', {
+					height: height,
 					loadList: function() {
 						loadData('#monthList');
 					}

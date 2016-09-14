@@ -14,6 +14,10 @@ body {
     font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif !important;
 }
 
+::-webkit-scrollbar  {
+    width: 0;
+}
+
 .c-detail {
     width: 100%;
     height: 114px;
