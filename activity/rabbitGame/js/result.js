@@ -40,19 +40,19 @@
         "ps":"红包人气高，领了就知道！",
     },{
         "icon": "icon-present-redpack10",
-        "info": "成功穿越大气层！<br/>能飞这么高，值得领个大红包",
+        "info": "成功穿越大气层！<br/>能飞这么高～<br>值得领个大红包！",
         "ps":"红包人气高，领了就知道！",
     },{
         "icon": "icon-present-youku",
-        "info": "躲过无数天狗，抵达外太空！<br>很棒，这真的很棒！",
+        "info": "躲过无数天狗，<br>抵达外太空！<br>很棒，这真的很棒！",
         "ps":"送你优酷会员，让你畅游影视圈！",
     },{
         "icon": "icon-present-hagendaz",
-        "info": "天狗算shěn mó?全是战五渣！<br>多亏你，兔子成功登月啦！",
+        "info": "天狗算shěn mó?<br>全是战五渣！<br>多亏你，兔子成功登月啦！",
         "ps":"你的哈根达斯，记得领走哇！",
     }];
 
-    var _prizes_get = [0,2,4],
+    var _prizes_get = [0,1,2,3,4],
         _prizes_current_index = 0;
 
     //换一个礼物
@@ -63,6 +63,7 @@
         //兑奖按钮
     $("#to_exchange").bind("click", function(e) {
         exchangeResult(0);
+        
     });
     //返回顶部
     $("#go_top").bind("click", function(e) {
@@ -94,7 +95,7 @@
     // 兑奖结果弹窗 0－－兑奖成功 1-－兑奖机会用完
     function exchangeResult(type) {
         var _option = _dialog_info[type];
-        dialog({
+        popup.dialog({
             "icon": _option.icon,
             "content": _option.content,
             "txt": ["马上邀请胖友们一起“弹”", "还能额外获得游戏机会哦！"],
@@ -110,7 +111,10 @@
                 "callback": function() {
                     console.log("查看奖品");
                 }
-            }]
+            }],
+            "hideCallback": function() {
+                // console.log("hide");
+            }
         });
     }
     //换礼物方法
@@ -120,75 +124,5 @@
         $("#info").html(_prize.info);
         $("#ps").html("P.S:" + _prize.ps);
     }
-    /* ==================弹出框==dialog================= */
-    /*
-            options : {
-                icon: 兔子icon
-                content: 提示内容,
-                txt: 下面的小内容
-                btns: [
-                    color: 按钮颜色
-                    txt: 按钮文字
-                    callback: function() {} 按钮事件
-                ]
-            }
-        */
-    function dialog(options) {
-        var that = this;
-        var _options = {
-            "icon": "icon-rabbit-pop0",
-            "content": "",
-            "txt": [""],
-            "btns": [{
-                "color": "red",
-                "txt": "马上去弹",
-                "callback": null
-            }]
-
-        };
-        _options = $.extend(_options, options || {});
-        var dialog_component = $("<div/>").addClass("popup").addClass("popup-dialog"),
-            masker = $("<div/>").addClass("masker"),
-            dialog_content = $("<div/>").addClass("popup-content").addClass("dialog-content"),
-            close = $("<i/>").addClass("icon-close"),
-            icon = $("<i/>").addClass(_options.icon),
-            info = $("<div/>").addClass("info").html(_options.content),
-            txt = $("<div/>").addClass("txt"),
-            txt_content = "";
-
-        for (var i = 0; i < _options.txt.length; i++) {
-            txt_content += "<p>" + _options.txt[i] + "</p>";
-        }
-
-        txt.append(txt_content);
-
-        dialog_content.append(close).append(icon).append(info).append(txt);
-
-        for (var j = 0; j < _options.btns.length; j++) {
-            (function(index) {
-                var _option = _options.btns[index];
-                var _btn = $("<div/>").addClass("btn-pop").addClass("btn-" + _option.color).html(_option.txt);
-                _btn.bind("click", function(e) {
-                    if (_option.callback) {
-                        _option.callback();
-                    }
-                    hide(dialog_component);
-                });
-                dialog_content.append(_btn);
-            })(j);
-        }
-
-        dialog_component.append(masker).append(dialog_content);
-
-        $("body").append(dialog_component);
-        //事件绑定
-        masker.bind("click", function(e) {
-            hide(dialog_component);
-        });
-
-        function hide(target) {
-            target.remove();
-        }
-    }
-    /* ==================弹出框=======end============ */
+    
 })();

@@ -1,0 +1,27 @@
+.icon-air {
+  display: block;
+  background-image: url(../images/images_game/sprite_game.png);
+  background-size:pxToRem(206px) pxToRem(161px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-89px);
+  width: pxToRem(52px);
+  height: pxToRem(72px);
+}
+.icon-arrow_left {
+  display: block;
+  background-image: url(../images/images_game/sprite_game.png);
+  background-size:pxToRem(206px) pxToRem(161px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(98px);
+  height: pxToRem(79px);
+}
+.icon-arrow_right {
+  display: block;
+  background-image: url(../images/images_game/sprite_game.png);
+  background-size:pxToRem(206px) pxToRem(161px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-108px) pxToRem(0px);
+  width: pxToRem(98px);
+  height: pxToRem(79px);
+}

@@ -18,6 +18,13 @@
 </head>
 
 <body>
+    <!-- <audio src="../music/bg_music.mp3" preload id="bg_music" autoplay></audio> -->
+    <audio src="../music/gameover.mp3" preload id="gameover"></audio>
+    <audio src="../music/upgrade.mp3" preload id="upgrade"></audio>
+    <div class="audio-btn" id="audio_btn">
+        <div id="music" class="play"></div>
+        <audio loop="" src="../music/bg_music.mp3" id="bg_music" autoplay="" preload=""></audio>
+    </div>
     <div class="content game-content">
         <!-- <div class="sky">
             <div class="stars">
@@ -41,14 +48,18 @@
                 </div>
             </section>
             <section class="descri fadeIn">
-                <p><span>目前飞行状态：</span><font id="current_stage">低空飞行</font></p>
-                <p><span>即将进入：</span><font id="next_stage">穿越大气层</font></p>
+                <p><span>目前飞行状态：</span>
+                    <font id="current_stage" data-stage="0">离地300米</font>
+                </p>
+                <p><span>即将进入：</span>
+                    <font id="next_stage">低空飞行</font>
+                </p>
             </section>
             <section class="dogs-sec" id="dog_sec">
                 <!-- <i class="dog"></i> -->
             </section>
             <div class="rabbit-game-part" id="rabbit_fly">
-                <div class="rabbit-fly" id="rabbit_alive" >
+                <div class="rabbit-fly" id="rabbit_alive">
                     <div class="left-hand">
                         <i class="icon-left-hand"></i>
                     </div>
@@ -59,10 +70,6 @@
                 </div>
                 <div class="rabbit-dead" id="rabbit_dead"></div>
             </div>
-            <section class="control fadeIn" id="ctrl">
-                <i class="ctrl-left" data-value="0"></i>
-                <i class="ctrl-right" data-value="1"></i>
-            </section>
         </div>
         <div class="sky0">
             <div class="icon-star">
@@ -75,11 +82,16 @@
                 <a class="btn-play" id="btn_play"></a>
             </div>
         </div>
+        <section class="control fadeIn" id="ctrl">
+            <i class="ctrl-left" data-value="0"></i>
+            <i class="ctrl-right" data-value="1"></i>
+        </section>
     </div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
 <script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
+<script src="../js/popup.js" type="text/javascript" charset="utf-8"></script>
 <script src="../js/game.js" type="text/javascript" charset="utf-8"></script>
 
 </html>

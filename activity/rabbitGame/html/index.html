@@ -11,6 +11,17 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/media.css">
     <link rel="stylesheet" href="../css/animation.css">
+    <style type="text/css" media="screen">
+        .warn {
+            position: absolute;
+            bottom: 6px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 11px;
+            color: #d5d5d5;
+        }
+    </style>
     <!-- endbuild -->
     <!-- build:js({dist}) ../js/lib/adapt.js -->
     <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
@@ -34,6 +45,9 @@
         		开始
         	</a>
         </div>
+        <div class="warn">
+            本活动与苹果公司无关
+        </div>
     </div>
     <div class="rule-sec" id="rule_sec">
     	<div class="masker"></div>
@@ -42,12 +56,13 @@
     		<div class="title">
     			游戏规则
     		</div>
-    		<p><i>1</i><span>活动时间：月14日-18日；</span></p>
+    		<p><i>1</i><span>活动时间：9月14日-18日；</span></p>
     		<p><i>2</i><span>点击“弹”帮兔子登天，飞越高奖品越丰厚，最高可获100元哈根达斯消费券；</span></p>
     		<p><i>3</i><span>通过左右按键可避开天狗，一旦碰触即该局活动结束；</span></p>
     		<p><i>4</i><span>每位用户均有3次机会，但仅可兑奖1次；</span></p>
-    		<p><i>5</i><span>分享指定页面邀好友“加油”，满10个加油点即可获得1次额外游戏机会并兑奖</span></p>
-    		<p><i>6</i><span>本活动规则解释权归团贷网所有。</span></p>
+            <p><i>5</i><span class="red">分享指定页面邀好友“加油”，集满10个加油点可获得1次额外游戏机会并兑奖（仅限1次）；</span></p>
+    		<p><i>6</i><span>活动奖品：红包发至团宝箱；团币、优酷会员卡及哈根达斯券发至团贷会员；</span></p>
+    		<p><i>7</i><span>本活动规则解释权归团贷网所有。</span></p>
 
     	</div>
     </div>
@@ -69,11 +84,11 @@
 
 	 // $("#start_btn").click(function())
 
-	 window.onload = function(e) {
+	 // window.onload = function(e) {
 	 	$("#title").show();
 	 	$(".icon-rabbit0,.icon-spring").addClass("active");
 	 	$(".icon-dialog").addClass("zoomIn");
-	 };
+	 // };
 })();
 </script>
 

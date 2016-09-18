@@ -24,9 +24,67 @@
     $("body").bind("touchstart", function(e) {
         e.preventDefault();
     });
-    window.onload = function() {
+    //音乐
+    var bg_music = $("#bg_music"),
+        upgrade_music = $("#upgrade"),
+        gameover_music = $("#gameover"),
+        _canplaymusic = 1;
+    var music_img = $("#music");
+    loadMusic(bg_music);
+    loadMusic(upgrade_music);
+    loadMusic(gameover_music);
+
+
+    // $("#gameover,#pass").bind("ended", function() {
+    //     playMusic(bg_music);
+    // });
+
+    function loadMusic(music) {
+        if (music.length > 0) {
+            music[0].load();
+        }
+    }
+
+    function playMusic(music) {
+        if (_canplaymusic) {
+            music[0].currentTime = 0;
+            music[0].play();
+        }
+    }
+
+    document.addEventListener('touchstart', function(e) {
+        if (music_img.hasClass("pause")) {
+            return;
+        }
+        // if(_can)
+        bg_music[0].play();
+        // playMusic(bg_music);
+    });
+    $(".audio-btn").bind('touchstart', function(e) {
+        if (!bg_music) {
+            bg_music = $("#bg_music");
+        }
+        if (music_img.hasClass("play")) {
+            _canplaymusic = 0;
+            music_img.removeClass("play").addClass("pause");
+
+            //关闭所有音乐
+            console.log(bg_music);
+            bg_music[0].pause();
+            // upgrade_music[0].pause();
+            // gameover_music[0].pause();
+
+        } else {
+            _canplaymusic = 1;
+            music_img.removeClass("pause").addClass("play");
+            bg_music[0].play();
+        }
+    });
+    // window.onload = function() {
         var _window_width = $(window).width(),
-            _fontsize = $("body")[0].style.fontSize.replace("px", ""),
+            // _fontsize = $("body")[0].style.fontSize.replace("px", ""),
+            _clientWidth = document.documentElement.clientWidth > 414 ? 414 : document.documentElement.clientWidth,
+            _fontsize = 20 * (_clientWidth / 320),
             _translate_distance = 32 * _fontsize, //天狗共滑行距离
             // _dog_width = 130 / 23.4375 / 2 * _fontsize,
             // _dog_height = 117 / 23.4375 / 2 * _fontsize,
@@ -36,11 +94,13 @@
             _rabbit_step = 30, //兔子左右的步幅
             _rabbit_width = pxToPx(169);
 
+            console.log(_fontsize);
+
         //生成参数
         var _interval = null,
             _canplay = true,
             _times = 0,
-            _speed_fall = 5000; //天狗滑行时间
+            _speed_fall = 5000, //天狗滑行时间
         _speed_generate = 800,
             _atime = 0, //加速度增加
 
@@ -54,15 +114,19 @@
         // 天空飞行阶段
         var _stage = 0,
             _stages = ["离地300米", "低空飞行", "穿越大气层", "遨游外太空", "月亮之上"],
-            _group_steps = [10, 20, 60, 90, 130],
-            // _speed_falls = [3000, 2000, 1800, 1400, 1000];
-            _speed_falls = [2800, 2000, 1400, 1000, 800];
+        //     _speed_falls = [4000, 3600, 2800, 2200, 1600],
+        // _group_steps = [10, 20, 30, 40, 50];
+        _group_steps = [10, 30, 90, 110, 150],
+        _speed_falls = [2800, 1750, 1250, 1000, 800];
+
+        var _stay_stage3 = false; //停留在第四关
 
         $("#btn_play").bind("touchstart", function(e) {
             $(".icon-rabbit1,.icon-spring, #btn_play").addClass("active");
             $(".game-content").addClass("start-game");
             setTimeout(function() {
                 startGame();
+                $(".sky0").remove();
             }, 3000);
         });
         $("#btn_play").bind("touchend", function(e) {
@@ -79,6 +143,7 @@
         function ctrlCreateDog() {
             var _time_random = 0;
             var _rabbit_survie_time = _speed_fall * 180 / _translate_distance; // 兔子生存时间
+            console.log(_translate_distance, _rabbit_survie_time);
 
             _generate_offset = 10;
             setTimeout(function(e) {
@@ -103,21 +168,26 @@
                     _stage = 3;
                     _speed_fall = _speed_fall <= _speed_falls[_stage] ? _speed_falls[_stage] : _speed_fall - 120;
                     _generate_offset = 130;
-                } else if(_times < _group_steps[4]){
-                    _stage = 4;
-                    _speed_fall = _speed_fall <= _speed_falls[_stage] ? _speed_falls[_stage] : _speed_fall - 80;
+                } else if (_times < _group_steps[4]) {
+                    if (_stay_stage3) {
+                        _speed_fall = _speed_fall <= 600 ? 600 : _speed_fall - 80;
+                    } else {
+                        _stage = 4;
+                        _speed_fall = _speed_fall <= _speed_falls[_stage] ? _speed_falls[_stage] : _speed_fall - 80;
+                    }
                     _generate_offset = 90;
-                } 
+                }
                 // _time_random = Math.floor(Math.random() * _generate_offset);
                 _speed_generate = _speed_generate <= _rabbit_survie_time ? _rabbit_survie_time : _speed_generate - _generate_offset;
 
                 //修改文案
-                changeText();
+                upgrade();
                 _times++;
                 if (_canplay) {
                     // console.log(12345);
                     ctrlCreateDog();
                 }
+                // console.log(_speed_generate, _time_random);
             }, _speed_generate + _time_random);
         }
 
@@ -139,6 +209,9 @@
             _kill_rab_time2 = (_distance + _rabbit_width / 2) * speed / _translate_distance;
 
             function ifKillRab() {
+                if (!_canplay) {
+                    return;
+                }
                 var _rabbit_left = $("#rabbit_fly")[0].offsetLeft;
                 var _offset_x = _rabbit_width * 0.3;
                 // console.log(_offset_left, _rabbit_left + _rabbit_width + _offset_x);
@@ -171,7 +244,8 @@
             _direct = $target.attr("data-value"); //0--left; 1--right
             $target.addClass("active");
             _cancel_animated = false;
-            window.requestAnimationFrame(moveRabbit);
+            // window.requestAnimationFrame(moveRabbit);
+            moveRabbit();
         });
 
 
@@ -245,12 +319,13 @@
                 $dogs[i].style.webkitAnimationPlayState = "paused";
             }
 
+            playMusic(gameover_music);
 
 
             setTimeout(function(e) {
                 // 过了第几关
                 alert(_stage);
-                window.location.href = "../html/result.html";
+                // window.location.href = "../html/result.html";
             }, 600);
         }
 
@@ -260,10 +335,11 @@
 
         }
 
-        function changeText() {
+        function upgrade() {
             var $current_stage = $("#current_stage");
             if (_stage != $current_stage.attr("data-stage")) {
-                // console.log("changeText");
+                playMusic(upgrade_music);
+                // console.log("upgrade");
                 $current_stage.attr("data-stage", _stage);
                 $current_stage.html(_stages[_stage]);
                 $("#next_stage").html(_stages[_stage + 1]);
@@ -277,5 +353,10 @@
             return px / 23.4375 / 2 * _fontsize;
         }
 
-    }
+   
+
+    // popup.alertPopup("网络闹情绪了，稍后再试试！");
+     
+
+    // }
 })();

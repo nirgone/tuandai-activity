@@ -1,0 +1,54 @@
+.icon-arrow_share {
+  display: block;
+  background-image: url(../images/images_result/sprite_result.png);
+  background-size:pxToRem(224px) pxToRem(225px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(130px);
+  height: pxToRem(225px);
+}
+.icon-arrow_to_top {
+  display: block;
+  background-image: url(../images/images_result/sprite_result.png);
+  background-size:pxToRem(224px) pxToRem(225px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-140px) pxToRem(0px);
+  width: pxToRem(84px);
+  height: pxToRem(35px);
+}
+.icon-ball_green {
+  display: block;
+  background-image: url(../images/images_result/sprite_result.png);
+  background-size:pxToRem(224px) pxToRem(225px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-194px) pxToRem(-45px);
+  width: pxToRem(20px);
+  height: pxToRem(20px);
+}
+.icon-ball_red {
+  display: block;
+  background-image: url(../images/images_result/sprite_result.png);
+  background-size:pxToRem(224px) pxToRem(225px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-194px) pxToRem(-75px);
+  width: pxToRem(15px);
+  height: pxToRem(15px);
+}
+.icon-close {
+  display: block;
+  background-image: url(../images/images_result/sprite_result.png);
+  background-size:pxToRem(224px) pxToRem(225px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-140px) pxToRem(-45px);
+  width: pxToRem(44px);
+  height: pxToRem(45px);
+}
+.icon-star {
+  display: block;
+  background-image: url(../images/images_result/sprite_result.png);
+  background-size:pxToRem(224px) pxToRem(225px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-140px) pxToRem(-100px);
+  width: pxToRem(41px);
+  height: pxToRem(26px);
+}
