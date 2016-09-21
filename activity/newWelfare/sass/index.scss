@@ -40,7 +40,7 @@ a {
         .group {
             padding: 0 pxToRem(66px);
             font-size: 0;
-            margin-bottom: pxToRem(42px);
+            margin-bottom: pxToRem(18px);
             &>div:nth-of-type(1) {
                 &:after {
                     content: '';
@@ -61,9 +61,13 @@ a {
         }
         .entry {
             position: relative;
-            @include background("../images/circle1.png", 220px, 170px);
+            // @include background("../images/circle1.png", 150px, 150px);
+            background: url(../images/circle1.png?v=20160919) no-repeat top;
+            background-size: pxToRem(150px) pxToRem(150px);
+            width: pxToRem(180px);
+            height: pxToRem(220px);
             display: inline-block;
-            margin: 0 pxToRem(44px);
+            margin: 0 pxToRem(64px);
             i {
                 position: absolute;
                 left: 50%;
@@ -71,15 +75,17 @@ a {
             span {
                 display: block;
                 position: absolute;
-                bottom: pxToRem(10px);
-                left: pxToRem(30px);
-                right: pxToRem(30px);
+                bottom: 0;
+                left: 0;
+                right: 0;
                 height: pxToRem(50px);
                 line-height: pxToRem(50px);
                 // font-size: pxToRem(26px);
+                background: linear-gradient(to bottom, #f64826 , #d12a79);;
                 font-size: 13px;
                 color: #fff;
                 text-align: center;
+                border-radius: 3px;
             }
             &[data-type='1'] {
                 i {
@@ -97,18 +103,18 @@ a {
                 }
             }
             .icon-icon1 {
-                margin-left: pxToRem(-29px);
-                top: pxToRem(26px);
+                margin-left: pxToRem(-28px);
+                top: pxToRem(38px);
                 // animation: swing 0.5s linear 0s 1 both;
             }
             .icon-icon2 {
                 margin-left: pxToRem(-49px);
-                top: pxToRem(36px);
+                top: pxToRem(46px);
                 animation-delay: 2s;
             }
             .icon-icon3 {
-                margin-left: pxToRem(-36px);
-                top: pxToRem(28px);
+                margin-left: pxToRem(-34px);
+                top: pxToRem(36px);
                 font-size: pxToRem(34px);
                 color: #fff;
                 text-align: center;
