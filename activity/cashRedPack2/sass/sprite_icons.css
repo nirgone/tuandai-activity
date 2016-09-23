@@ -1,0 +1,36 @@
+.icon-circle {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size:pxToRem(308px) pxToRem(226px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(140px);
+  height: pxToRem(140px);
+}
+.icon-icon0 {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size:pxToRem(308px) pxToRem(226px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-150px) pxToRem(0px);
+  width: pxToRem(84px);
+  height: pxToRem(84px);
+}
+.icon-icon1 {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size:pxToRem(308px) pxToRem(226px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-244px) pxToRem(0px);
+  width: pxToRem(64px);
+  height: pxToRem(84px);
+}
+.icon-icon2 {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size:pxToRem(308px) pxToRem(226px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-150px);
+  width: pxToRem(81px);
+  height: pxToRem(76px);
+}

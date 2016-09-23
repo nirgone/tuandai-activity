@@ -1,0 +1,18 @@
+.icon-bubble {
+  display: block;
+  background-image: url(../images/sprite_icons2.png);
+  background-size:pxToRem(1050px) pxToRem(102px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(510px);
+  height: pxToRem(102px);
+}
+.icon-line {
+  display: block;
+  background-image: url(../images/sprite_icons2.png);
+  background-size:pxToRem(1050px) pxToRem(102px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-520px) pxToRem(0px);
+  width: pxToRem(530px);
+  height: pxToRem(56px);
+}

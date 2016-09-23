@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>现金红包</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="content">
+        <i class="icon-title"></i>
+        <section class="dialog-sec">
+            <div class="avator" style="background-image:url(../images/avator.png)"></div>
+            <div class="bubble icon-bubble">
+                Hi,我是<span class="name">马晓宇马晓宇马晓宇</span>，团贷网狂派百万现金，我刚领取，你也千万不要错过！
+            </div>
+        </section>
+        <section class="redpack-sec">
+            <div class="icon-btn-circle" id="open_btn"></div>
+            <div class="texts">
+                <p>戳我领现金</p>
+                <p>258941人已经领取红包</p>
+            </div>
+        </section>
+        <div class="title-cut">
+            看看朋友们收入如何
+        </div>
+        <section class="scroll-sec">
+            <ul class="scroll-list">
+                <li class="scroll-item"><div>131****1337</div><div>0秒钟前</div><div>领取<font class="font-red">17.78元现金红包</font></div></li>
+                <li class="scroll-item"><div>135****2563</div><div>1秒钟前</div><div>领取<font class="font-red">17.78元现金红包</font></div></li>
+                <li class="scroll-item"><div>135****1537</div><div>2秒钟前</div><div>领取<font class="font-red">11.78元现金红包</font></div></li>
+                <li class="scroll-item"><div>131****2341</div><div>3秒钟前</div><div>领取<font class="font-red">12.78元现金红包</font></div></li>
+                <li class="scroll-item"><div>131****4144</div><div>4秒钟前</div><div>领取<font class="font-red">17.48元现金红包</font></div></li>
+                <li class="scroll-item"><div>135****6024</div><div>5秒钟前</div><div>领取<font class="font-red">11.02元现金红包</font></div></li>
+                <li class="scroll-item"><div>135****8183</div><div>6秒钟前</div><div>领取<font class="font-red">12.68元现金红包</font></div></li>
+                <li class="scroll-item"><div>131****1230</div><div>7秒钟前</div><div>领取<font class="font-red">17.78元现金红包</font></div></li>
+                <li class="scroll-item"><div>159****7882</div><div>8秒钟前</div><div>领取<font class="font-red">15.78元现金红包</font></div></li>
+                <li class="scroll-item"><div>138****1135</div><div>9秒钟前</div><div>领取<font class="font-red">12.78元现金红包</font></div></li>
+            </ul>
+             <ul class="scroll-list">
+                <li class="scroll-item"><div>131****1337</div><div>0秒钟前</div><div>领取<font class="font-red">17.78元现金红包</font></div></li>
+                <li class="scroll-item"><div>135****2563</div><div>1秒钟前</div><div>领取<font class="font-red">17.78元现金红包</font></div></li>
+                <li class="scroll-item"><div>135****1537</div><div>2秒钟前</div><div>领取<font class="font-red">11.78元现金红包</font></div></li>
+                <li class="scroll-item"><div>131****2341</div><div>3秒钟前</div><div>领取<font class="font-red">12.78元现金红包</font></div></li>
+                <li class="scroll-item"><div>131****4144</div><div>4秒钟前</div><div>领取<font class="font-red">17.48元现金红包</font></div></li>
+                <li class="scroll-item"><div>135****6024</div><div>5秒钟前</div><div>领取<font class="font-red">11.02元现金红包</font></div></li>
+                <li class="scroll-item"><div>135****8183</div><div>6秒钟前</div><div>领取<font class="font-red">12.68元现金红包</font></div></li>
+                <li class="scroll-item"><div>131****1230</div><div>7秒钟前</div><div>领取<font class="font-red">17.78元现金红包</font></div></li>
+                <li class="scroll-item"><div>159****7882</div><div>8秒钟前</div><div>领取<font class="font-red">15.78元现金红包</font></div></li>
+                <li class="scroll-item"><div>138****1135</div><div>9秒钟前</div><div>领取<font class="font-red">12.78元现金红包</font></div></li>
+            </ul>
+        </section>
+	   <footer class="footer">
+		    活动解释权归团贷网所有
+		</footer>
+
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script>
+	(function() {
+    	FastClick.attach(document.body);
+
+    	$("#open_btn").bind("click", function(e) {
+    		window.location.href = "./opened.html";
+    	});
+	})();
+</script>
+</html>
