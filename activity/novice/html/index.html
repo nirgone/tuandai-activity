@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>新手攻略</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/vendor/swiper/swiper.min.css">
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="banner">
+            <i class="icon-title"></i>
+        </div>
+        <div class="cont-part1 cont-part">
+            <div class="serial">01</div>
+            <span class="txt-black">免费注册 领新手福利</span>
+            <span class="txt-gray">花30秒免费注册团贷网，领取新手福利！</span>
+            <div class="btn-blue btn" id="goRegister">点击注册</div>
+            <div class="welfare">
+                <div class="half-circle">
+                </div>
+                <div class="item1 circle-item">
+                    <div class="blue-circle">
+                        <i class="icon-tyj"></i>
+                    </div>
+                    <div class="itxt">
+                        2888元</br>新手体验金
+                    </div>
+                </div>
+                <div class="item2 circle-item">
+                    <div class="blue-circle">
+                        <i class="icon-redpacket"></i>
+                    </div>
+                    <div class="itxt">
+                        518元</br>新手红包
+                    </div>
+                </div>
+                <div class="item3 circle-item">
+                    <div class="blue-circle">
+                        <i class="icon-gxb"></i>
+                    </div>
+                    <div class="itxt">
+                        新手专享</br>高息标
+                    </div>
+                </div>
+                <div class="item4 circle-item">
+                    <div class="blue-circle">
+                        <i class="icon-vip"></i>
+                    </div>
+                    <div class="itxt">
+                        1个月</br>超级会员
+                    </div>
+                </div>
+                <i class="icon-wbq1"></i>
+            </div>
+        </div>
+        <div class="cont-part2 cont-part">
+            <div class="serial">02</div>
+            <span class="txt-black">使用体验金 拿现金收益</span>
+            <span class="txt-gray">我出本金，你拿收益！使用2888元体验金，零成本体验<br>投标流程。成功使用体验金后，产生的收益将在第二天<br>以现金红包的形式发放到团宝箱。</span>
+            <div class="btn-blue btn" id="goTry">使用2888元体验金</div>
+            <div class="wbq-container1">
+                <i class="icon-wbq2"></i>
+                <i class="icon-light"></i>
+            </div>
+        </div>
+        <div class="cont-part1 cont-part">
+            <div class="serial">03</div>
+            <span class="txt-black">投资年化13%新手标</span>
+            <span class="txt-gray">新手可以投资团贷网新手专享标，如投资1万元1个月年化13%<br>的新手专享标，可净赚126元（1个月投资收益108元+18元投<br>资红包）。</span>
+            <div class="scont">
+                <span class="sw-title">新手专享标</span>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper" id="nhProject">
+                        <!-- <div class="swiper-slide">
+                            <div class="sw-page">
+                                <span class="txt-gray trow1">预期年化收益</span>
+                                <span class="txt-orange trow2">12%</span>
+                                <span class="txt-gray trow3">项目期限：15天</span>
+                                <span class="txt-gray trow4">剩余可投：13.70万</span>
+                                <div class="btn-yellow btn">我要投资</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="sw-page">
+                                <span class="txt-gray trow1">预期年化收益</span>
+                                <span class="txt-orange trow2">13%</span>
+                                <span class="txt-gray trow3">项目期限：30天</span>
+                                <span class="txt-gray trow4">剩余可投：13.70万</span>
+                                <div class="btn-yellow btn">我要投资</div>
+                            </div>
+                        </div> -->
+                        
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <i class="icon-wbq5"></i>
+            </div>
+            <span class="txt-gray">(每日限量，先到先得)</span>
+        </div>
+        <div class="cont-part2 cont-part">
+            <div class="serial">04</div>
+            <span class="txt-black">合理使用新手红包</span>
+            <span class="txt-gray">合理使用518元新手红包，最大可获得相当于加息1.49%(年化)<br>的超高收益。五种使用方法，满足不同投资需求。</span>
+            <div class="btn btn-blue" id="checkRedPacket">查看我的红包</div>
+            <div class="circle-content">
+                <div class="circle">
+                    <i class="icon-redpack-round"></i>
+                    <div class="circle-item-cont circle-item1">
+                        <i class="circle-outer circle-yellow" data-index="1">
+                    		<i class="circle-inner">土豪<br>玩法</i>
+                        </i>
+                        <span>投106200元<br>到期净赚5037元</span>
+                    </div>
+                    <div class="circle-item-cont circle-item2">
+                        <i class="circle-outer circle-blue" data-index="2">
+                    		<i class="circle-inner">学生<br>玩法</i>
+                        </i>
+                        <span>投200元<br>到期净赚10.2元</span>
+                    </div>
+                    <div class="circle-item-cont circle-item3">
+                        <i class="circle-outer circle-blue" data-index="3">
+                    		<i class="circle-inner">金领<br>玩法</i>
+                        </i>
+                        <span>投58000元<br>到期净赚3701元</span>
+                    </div>
+                    <div class="circle-item-cont circle-item4">
+                        <i class="circle-outer circle-blue" data-index="4">
+                    		<i class="circle-inner">工薪<br>玩法</i>
+                        </i>
+                        <span>投10000元<br>一个月净赚126.2元</span>
+                    </div>
+                    <div class="circle-item-cont circle-item5">
+                        <i class="circle-outer circle-yellow" data-index="5">
+                    		<i class="circle-inner">白领<br>玩法</i>
+                        </i>
+                        <span>投32200元<br>到期净赚1537元</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="cont-part1 cont-part">
+            <div class="serial">05</div>
+            <span class="txt-black">设置自动投标  在家坐享收益</span>
+            <span class="txt-gray">用户可根据自身资金配置情况，设置自动投标。新标上线后会<br>自动启用自动投标功能，让你比别人快一步抢到高息标，资金不<br>站岗。还能最大限度地使用闲置资金，实现收益最大化。</span>
+            <div class="btn btn-blue">设置自动投标</div>
+            <div class="sky">
+                <i class="icon-wbq3"></i>
+                <i class="icon-moon"></i>
+                <i class="icon-star star1"></i>
+                <i class="icon-star star2"></i>
+                <i class="icon-star star3"></i>
+            </div>
+        </div> -->
+        <div class="cont-part1 cont-part earth-part">
+            <div class="serial">05</div>
+            <span class="txt-black">下载团贷APP 签到领现金红包</span>
+            <span class="txt-gray">下载团贷网APP，随时随地投资理财，还可以上APP签到，获得现<br>金红包、超级会员、提现券等随机好礼。</span>
+            <div class="earth-cont">
+                <i class="icon-wbq4">
+                	<img src="../images/qrcode.png" class="qrcode">
+                </i>
+                <i class="icon-qiqiu1"></i>
+                <i class="icon-qiqiu2"></i>
+                <i class="icon-txt"></i>
+            </div>
+        </div>
+        <div class="cont-part1 cont-part">
+            <div class="serial">06</div>
+            <span class="txt-black">关注订阅号 领5000元理财金</span>
+            <span class="txt-gray">关注团贷网订阅号，可点击菜单栏-最新动态参与<br>摇钱树活动，领取5000元理财金，还能随时了解团贷网<br>最新资讯，前排围观唐大大</span>
+            <div class="btn btn-blue" id="goActivity">马上领取</div>
+            <div class="icon-wbq6">
+                <i class="icon-shake"></i>
+            </div>
+        </div>
+        <div class="mask">
+            <div class="masker"></div>
+            <div class="pop-tips popup">
+                <div class="tips-title">提示</div>
+                <div class="tips-content"></div>
+                <div class="btn btn-blue btn-yes">确定</div>
+            </div>
+            <div class="pop-det popup">
+                <i class="circle-outer" id="circleClass">
+                    <i class="circle-inner" id="detName"></i>
+                </i>
+                <i class="icon-piece-yellow icon-piece1"></i>
+                <i class="icon-piece-blue icon-piece2"></i>
+                <i class="icon-piece-yellow icon-piece3"></i>
+                <ul class="i-list" id="detList">
+                	<li class="i-th">
+                		<div class="i-item">投资金额(元)</div>
+                		<div class="i-item">期限(月)</div>
+                	</li>
+                	<!-- <li class="i-tr">
+                		<div class="i-item">200</div>
+                		<div class="i-item">≧1</div>
+                	</li>
+                	<li class="i-tr">
+                		<div class="i-item">5000</div>
+                		<div class="i-item">≧1</div>
+                	</li>
+                	<li class="i-tr">
+                		<div class="i-item">10000</div>
+                		<div class="i-item">≧3</div>
+                	</li>
+                	<li class="i-tr">
+                		<div class="i-item">13000</div>
+                		<div class="i-item">≧3</div>
+                	</li>
+                	<li class="i-tr">
+                		<div class="i-item">20000</div>
+                		<div class="i-item">≧3</div>
+                	</li>
+                	<li class="i-tr">
+                		<div class="i-item">22000</div>
+                		<div class="i-item">≧6</div>
+                	</li>
+                	<li class="i-tr">
+                		<div class="i-item">36000</div>
+                		<div class="i-item">≧6</div>
+                	</li> -->
+                </ul>
+                <span class="ptxt-gray ptxt">总共投资金额：<font class="ptxt-black" id="investCount"></font></span>
+                <span class="ptxt-gray ptxt">可获额外收益：<font class="ptxt-orange" id="benefits"></font></span>
+                <span class="ptxt-black ptxt">相当于最高加息<font id="hike"></font></span>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/vendor/swiper/swiper.jquery.min.js"></script>
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+
+</html>
