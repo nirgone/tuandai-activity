@@ -1,0 +1,60 @@
+@charset "UTF-8";
+@import "../../../sass/func";
+
+.icon-title {
+	@include background("../images/img_title.png", 750px, 308px);
+}
+.icon-bubble {
+	@include background("../images/bubble.png", 510px, 102px);
+}
+.icon-line {
+	@include background("../images/line.png", 530px, 56px);
+}
+.icon-btn-circle {
+	@include background("../images/btn_circle.png", 164px, 164px);
+}
+.icon-pan {
+	@include background("../images/pan.png", 409px, 409px);
+}
+.icon-packface {
+	@include background("../images/packface.png", 548px, 296px);
+}
+.icon-btn {
+	@include background("../images/btn.png", 530px, 80px);
+}
+.icon-rob {
+	@include background("../images/rob.png", 440px, 223px);
+}
+.icon-disabled {
+	@include background("../images/disabled.png", 440px, 225px);
+}
+.sprite-icons {
+	display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size:pxToRem(308px) pxToRem(226px);
+  background-repeat:no-repeat;
+}
+.icon-circle {
+  @extend .sprite-icons;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(140px);
+  height: pxToRem(140px);
+}
+.icon-icon0 {
+  @extend .sprite-icons;
+  background-position: pxToRem(-150px) pxToRem(0px);
+  width: pxToRem(84px);
+  height: pxToRem(84px);
+}
+.icon-icon1 {
+  @extend .sprite-icons;
+  background-position: pxToRem(-244px) pxToRem(0px);
+  width: pxToRem(64px);
+  height: pxToRem(84px);
+}
+.icon-icon2 {
+  @extend .sprite-icons;
+  background-position: pxToRem(0px) pxToRem(-150px);
+  width: pxToRem(81px);
+  height: pxToRem(76px);
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>现金红包</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="content">
+        <i class="icon-title"></i>
+        <div class="open-redpack">
+            <div class="redpack-inner">
+                <!-- 获得红包状态  -->
+                <div class="pan">
+                    <p>您获得现金红包</p>
+                    <p>4.27</p>
+                </div>
+                <!-- 被抢劫状态 -->
+                <!-- <div class="icon-rob"></div> -->
+                <!-- 失效状态 -->
+                <!-- <div class="icon-disabled"></div> -->
+            </div>
+            <div class="redpack-face">
+                <!-- 获得红包状态 -->
+                <div class="input-div" id="to_input">
+                    请输入手机号码
+                </div>
+                <!-- 被抢劫状态 -->
+                <!-- <div class="rob-info">
+                    <p>红包被人半路打劫；</p>
+                    <p>来团贷网投资，拿超级大礼包</p>
+                </div> -->
+                <!-- 失效状态 -->
+                <!--  <div class="disabled-info">
+                    <p>由于八小时内未进行领取，红包已失效</p>
+                    <p>可以让朋友重新给你发红包</p>
+                </div> -->
+                <!-- 按钮状态 data-value 0:立即领取 1:下载团贷网App领好礼 -->
+                <div class="btn-common" id="pack_btn" data-value="0">
+                    立即领取
+                </div>
+                
+            </div>
+        </div>
+        <div class="title-cut">
+            团贷网新用户礼物
+        </div>
+        <ul class="present-list">
+            <li>
+                <div class="icon-contain">
+                    <i class="icon-icon0"></i>
+                </div>
+                <p>2888</p>
+                <p>新手体验金</p>
+            </li>
+            <li>
+                <div class="icon-contain">
+                    <i class="icon-icon1"></i>
+                </div>
+                <p>518元</p>
+                <p>新手红包</p>
+            </li>
+            <li>
+                <div class="icon-contain">
+                    <i class="icon-icon2"></i>
+                </div>
+                <p>13%</p>
+                <p>新手特权标</p>
+            </li>
+        </ul>
+        <footer class="footer">
+            活动解释权归团贷网所有
+        </footer>
+    </div>
+    <!-- 输入弹出层 -->
+    <div class="input-popup slideInUp" id="input_popup">
+        <div class="close-part"><i class="icon-close"></i></div>
+        <div class="input-wrapper">
+            <input type="tel" name="" value="" placeholder="请输入手机号码" id="telNo">
+        </div>
+        <div class="btn" id="get_btn">
+            马上领取
+        </div>
+        <a href="#" class="btn-down">下载APP</a>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script>
+(function() {
+    FastClick.attach(document.body);
+    window.onload = function(e) {
+        $(".redpack-inner>div").show();
+    }
+
+    $("#pack_btn").bind("click", function(e) {
+        var $target = $(e.currentTarget),
+            _type = $target.attr("data-value");
+            switch(_type) {
+                case "0" :
+                console.log("马上领取");
+                break;
+                case "1" :
+                console.log("下载团贷网App领好礼");
+            }
+    });
+
+
+
+    //拉起输入碳层
+    $("#to_input").click(function(e) {
+        $("#input_popup").removeClass("slideOutDown").addClass("slideInUp");
+        $("#input_popup").show();
+        // setTimeout(function() {
+        //     $("#telNo").focus();
+        // }, 500);
+    });
+    $("#input_popup").on("click", ".icon-close", function(e) {
+        $("#input_popup").removeClass("slideInUp").addClass("slideOutDown");
+    });
+})();
+</script>
+
+</html>
