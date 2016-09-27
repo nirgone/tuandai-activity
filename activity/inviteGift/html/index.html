@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>邀请有礼</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth > 414 ? 414 : docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+
+                // 未拆开middle的高度
+
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+	<div class="scroll">
+		<div class="content">
+        <section class="top-sec">
+            <div class="icon-circle not-open" id="open_btn">
+                <!-- <div class="money">10</div> -->
+            </div>
+            <div class="chippings" id="chippings">
+                <i class="cross0"></i>
+                <i class="round0"></i>
+                <i class="trigon0"></i>
+                <i class="round1"></i>
+                <i class="trigon1"></i>
+                <i class="round2"></i>
+                <i class="cross1"></i>
+                <i class="cross2"></i>
+            </div>
+        </section>
+        <section class="middle-sec" id="middle_sec">
+            <div class="middle-content">
+                <div class="dialog" id="dialog">
+                    <div class="avator" style="background-image:url(../images/avator.png)"></div>
+                    <div class="info">
+                        Hi，我是<font class="name">马晓宇</font>，在团贷网已经安全投资
+                        <font class="font-yellow">785天</font>，分享个红包给你，快快领取，一起赚钱～
+                    </div>
+                </div>
+                <div class="get-sec" id="get_sec">
+                    <div class="get-info">
+                        <p>恭喜你获得好友<font class="font-yellow">999元</font>红包，输入手机号领取吧</p>
+                        <p>现在领取还可获得团贷网送出的更多福利</p>
+                    </div>
+                    <div class="input-div" id="to_input">
+                    	<i class="icon-phone"></i>
+                    </div>
+                    <div class="btn" data-text="立即领取好友红包"></div>
+                </div>
+            </div>
+        </section>
+        <section class="gift-sec">
+            <div class="title">
+                更多好礼
+            </div>
+            <ul class="gift-list">
+                <li>
+                    <div class="icon-contain">
+                        <i class="icon-icon0"></i>
+                    </div>
+                    <div class="gift-info">
+                        <p data-suffix="元">2888</p>
+                        <p>体验金</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon-contain">
+                        <i class="icon-icon1"></i>
+                    </div>
+                    <div class="gift-info">
+                        <p data-suffix="元">518</p>
+                        <p>投资红包</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon-contain">
+                        <i class="icon-icon2"></i>
+                    </div>
+                    <div class="gift-info">
+                        <p data-suffix="％">13</p>
+                        <p>新手专享标</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon-contain">
+                        <i class="icon-icon3"></i>
+                    </div>
+                    <div class="gift-info">
+                        <p data-suffix="">VIP</p>
+                        <p>超级会员</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+	</div>
+    
+    <!-- 输入弹出层 -->
+    <div class="input-popup slideInUp" id="input_popup">
+        <div class="close-part"><i class="icon-close"></i></div>
+        <div class="input-wrapper">
+            <input type="tel" name="" value="" placeholder="请输入手机号码" id="telNo">
+        </div>
+        <div class="btn" id="get_btn">
+            立即领取好友红包
+        </div>
+        <a href="#" class="btn-down">下载APP</a>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

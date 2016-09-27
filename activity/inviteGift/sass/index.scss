@@ -1,0 +1,428 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    min-height: 100%;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-overflow-scrolling: touch !important;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.scroll {
+    width: 100%;
+    height: 100%;
+    max-width: 414px;
+    overflow: scroll;
+    margin: 0 auto;
+    background-color: #ff4f54;
+}
+.content {
+    position: relative;
+    width: 100%;
+    background: url(../images/bg.jpg) no-repeat top;
+    background-size: pxToRem(750px) pxToRem(613px);
+}
+
+.top-sec {
+    .icon-circle {
+        position: absolute;
+        left: 50%;
+        top: pxToRem(144px);
+        margin-left: pxToRem(-130px);
+        transition-property: transform;
+        transition-duration: 0.8s;
+        transition-timing-function: linear;
+        transition-perspective: 500px;
+        // transition-origin: 50% 0;
+        &.not-open {
+            &:after {
+                content: '';
+                position: absolute;
+                @extend .icon-open;
+                top: 50%;
+                left: 50%;
+                margin-top: pxToRem(-48px);
+                margin-left: pxToRem(-48px);
+            }
+        }
+        &.open {
+            animation: openAni .8s linear 0s 1 both;
+        }
+        .money {
+            font-size: pxToRem(100px);
+            color: #747c99;
+            line-height: pxToRem(260px);
+            text-align: center;
+            &:before {
+                content: '¥';
+                font-size: pxToRem(44px);
+            }
+        }
+    }
+    .chippings {
+        $time:1.5s;
+        $fun: cubic-bezier(0, 0, 0.52, 1.17);
+        display: none;
+        position: absolute;
+        width: pxToRem(356px);
+        height: pxToRem(376px);
+        top: pxToRem(108px);
+        left: pxToRem(198px);
+        animation: zoomInOut $time $fun 0s 1 both;
+        i {
+            position: absolute;
+            // top: 50%;
+            // left: 50%;
+            //  margin-left: pxToRem(-12px);
+            // margin-top: pxToRem(-12px);
+        }
+        
+        .cross0 {
+            @extend .icon-cross0;
+            left: pxToRem(152px);
+            top: 0;
+            // transform: rotate(32deg) translate3d(pxToRem(-106px),pxToRem(-142px), 0);
+            animation: chippingA $time $fun 0s 1 both;
+        }
+        .round0 {
+            @extend .icon-round;
+            right: 0;
+            top: pxToRem(12px);
+            // transform: translate3d(pxToRem(162px),pxToRem(-166px), 0);
+            animation: chippingB $time $fun 0s 1 both;
+        }
+        .trigon0 {
+            @extend .icon-trigon;
+            left: pxToRem(38px);
+            top: pxToRem(118px);
+            // transform: translate3d(pxToRem(-130px), pxToRem(-60px), 0);
+            animation: chippingC $time $fun 0s 1 both;
+        }
+        .round1 {
+            @extend .icon-round;
+            // transform: scale(.7) translate3d(pxToRem(-54px), pxToRem(-68px), 0);
+            transform: scale(.7);
+            left: pxToRem(138px);
+            top: pxToRem(126px);
+            animation: chippingD $time $fun 0s 1 both;
+        }
+        .trigon1 {
+            @extend .icon-trigon;
+            // transform: scale(.8) rotate(60deg) translate3d(pxToRem(34px), pxToRem(-78px), 0);;
+            transform: scale(.8);
+            right: pxToRem(110px);
+            top: pxToRem(180px);
+            animation: chippingE $time $fun 0s 1 both;
+        }
+        .round2 {
+            @extend .icon-round;
+            // transform: translate3d(pxToRem(-48px), pxToRem(96px) , 0);
+            left: pxToRem(136px);
+            bottom: pxToRem(72px);
+            animation: chippingF $time $fun 0s 1 both;
+        }
+        .cross1 {
+            @extend .icon-cross0;
+            // transform: translate3d(pxToRem(92px), pxToRem(92px), 0);
+            left: pxToRem(256px);
+            bottom: pxToRem(80px);
+            animation: chippingG $time $fun 0s 1 both;
+        }
+        .cross2 {
+            @extend .icon-cross1;
+            // transform: translate3d(pxToRem(-166px), pxToRem(162px), 0);
+            left: 0;
+            bottom: 0;
+            animation: chippingH $time $fun 0s 1 both;
+        }
+    }
+}
+
+.middle-sec {
+    padding-top: pxToRem(472px);
+    width: pxToRem(750px);
+    height: pxToRem(120px);
+    overflow: hidden;
+    transition-property: height;
+    transition-timing-function: linear;
+    transition-duration: .6s;
+    .middle-content {
+        width: pxToRem(1500px);
+        font-size: 0;
+        transition-property: transform;
+        transition-timing-function: linear;
+        transition-duration: .5s;
+        &>div {
+            display: inline-block;
+        }
+        &.opened {
+            transform: translateX(-50%);
+        }
+    }
+}
+
+.dialog {
+    padding: 0 pxToRem(44px) 0 pxToRem(40px);
+    width: pxToRem(750px);
+    box-sizing: border-box;
+    font-size: 0;
+    &>div {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .avator {
+        width: pxToRem(90px);
+        height: pxToRem(90px);
+        border-radius: pxToRem(90px);
+        background-color: #fff;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: pxToRem(10px) solid #ff676b;
+    }
+    .info {
+        font-size: pxToRem(26px);
+        line-height: pxToRem(40px);
+        width: pxToRem(530px);
+        padding-left: pxToRem(20px);
+        color: #fff;
+    }
+    @at-root .font-yellow {
+        color: #ffea80;
+    }
+    @at-root .name {
+            display: inline-block;
+            @include ellipsis();
+            padding-left: pxToRem(6px);
+            max-width: pxToRem(154px);
+        }
+}
+
+.get-sec {
+    width: pxToRem(750px);
+    // height: pxToRem(202px);
+    height: pxToRem(20px);
+    .get-info {
+        font-size: pxToRem(26px);
+        line-height: pxToRem(40px);
+        text-align: center;
+        color: #fff;
+        margin-bottom: pxToRem(46px);
+    }
+    @at-root .input-div {
+        position: relative;
+        width: pxToRem(652px);
+        height: pxToRem(80px);
+        // line-height: pxToRem(80px);
+        color: #ccc;
+        font-size: pxToRem(30px);
+        margin: 0 auto;
+        // margin-bottom: pxToRem(30px);
+        border-radius: pxToRem(10px);
+        background-color: #e1e1e2;
+        // box-shadow: 0px 3px 0 3px #e1e1e2 inset;
+        &:before {
+            content: '请输入手机号码';
+            position: absolute;
+            bottom: 0;
+            width: pxToRem(652px);
+            display: block;
+            height: pxToRem(74px);
+            line-height: pxToRem(70px);
+            background-color: #fafbfc;
+            border-radius: pxToRem(10px);
+            box-sizing: border-box;
+            padding-left: pxToRem(72px);
+        }
+        .icon-phone {
+            position: absolute;
+            left: pxToRem(22px);
+            top: 50%;
+            margin-top: pxToRem(-20px);
+        }
+    }
+
+}
+
+.gift-sec {
+    padding-top: pxToRem(66px);
+    .title {
+        position: relative;
+        color: #fff;
+        font-size: pxToRem(30px);
+        line-height: pxToRem(36px);
+        text-align: center;
+        &:before {
+            content: '';
+            display: inline-block;
+            @extend .icon-line;
+            vertical-align: pxToRem(8px);
+            margin-right: pxToRem(8px);
+        }
+        &:after {
+            content: '';
+            display: inline-block;
+            @extend .icon-line;
+            vertical-align: pxToRem(8px);
+            transform: scale(-1, 1);
+            margin-left: pxToRem(8px);
+        }
+    }
+    @at-root .gift-list {
+        padding: pxToRem(46px) pxToRem(15px);
+        font-size: 0;
+        &>li {
+            position: relative;
+            display: inline-block;
+            margin: 0 pxToRem(15px);
+            margin-bottom: pxToRem(30px);
+            width: pxToRem(330px);
+            height: pxToRem(140px);
+            background-color: #ff676b;
+            border-radius: pxToRem(10px);
+            @at-root .icon-contain {
+                position: relative;
+                width: pxToRem(100px);
+                height: pxToRem(100px);
+                background-color: #daddec;
+                border-radius: pxToRem(10px);
+                margin: pxToRem(20px);
+                &:before {
+                    content: '';
+                    display: block;
+                    background-color: #f5f6fa;
+                    width: 100%;
+                    height: pxToRem(76px);
+                    border-top-left-radius: pxToRem(10px);
+                    border-top-right-radius: pxToRem(10px);
+                }
+                i[class^="icon-icon"] {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                }
+                .icon-icon0 {
+                    margin-left: pxToRem(-38px);
+                    margin-top: pxToRem(-39px);
+                }
+                .icon-icon1 {
+                    margin-left: pxToRem(-40px);
+                    margin-top: pxToRem(-38px);
+                }
+                .icon-icon2 {
+                    margin-left: pxToRem(-37px);
+                    margin-top: pxToRem(-37px);
+                }
+                .icon-icon3 {
+                    margin-left: pxToRem(-37px);
+                    margin-top: pxToRem(-37px);
+                }
+                @at-root .gift-info {
+                    position: absolute;
+                    left: pxToRem(140px);
+                    top: pxToRem(32px);
+                    color: #fff;
+                    font-size: pxToRem(26px);
+                    &>p {
+                        &:first-child {
+                            font-size: pxToRem(44px);
+                            margin-bottom: pxToRem(14px);
+                            &:after {
+                                content: attr(data-suffix);
+                                font-size: pxToRem(22px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.input-popup {
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: #fff;
+    animation-duration: 0.4s !important;
+    display: none;
+    .close-part {
+        position: relative;
+        // width: pxToRem(100px);
+        height: pxToRem(84px);
+        .icon-close {
+            position: absolute;
+            background: url('data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAD1BMVEUAAACAgICAgICAgICAgIB2VMkOAAAABHRSTlMA1BWwxceu7gAAAGtJREFUKM9l0osJwCAMRdHQbiAdIG7QFdx/qUJ5cAO3UBU9/hKrusZ3Vd1rduy39ukBnvX/gNMpACkBqQCpJ0gjAxBAmoCQAEgAJAASAAHQoSleVNv6YDq6L6frO0AKoYOsNChRSqWSrefwAS23Ev+l3xpmAAAAAElFTkSuQmCC') no-repeat center;
+            background-size: pxToRem(32px) pxToRem(32px);
+            width: pxToRem(92px);
+            height: pxToRem(84px);
+            right: 0;
+        }
+    }
+    .input-wrapper {
+        position: relative;
+        margin: 0 pxToRem(30px);
+        height: pxToRem(92px);
+        box-sizing: border-box;
+        &:after {
+            @include border(bottom, #fd6040);
+        }
+        &>input {
+            border: none;
+            width: 100%;
+            padding: pxToRem(26px);
+            padding-left: pxToRem(30px);
+            height: pxToRem(90px);
+            // line-height: pxToRem(90px);
+            font-size: pxToRem(34px);
+            color: #41464c;
+            box-sizing: border-box;
+        }
+    }
+    .btn {
+        margin: 0 pxToRem(30px);
+        margin-top: pxToRem(38px);
+        border-radius: 5px;
+        height: pxToRem(92px);
+        line-height: pxToRem(92px);
+        text-align: center;
+        background-color: #fd6040;
+        // color: #f9f8df;
+        color: #fff;
+        font-size: pxToRem(34px);
+    }
+    .btn-down {
+        display: block;
+        font-size: pxToRem(26px);
+        text-align: center;
+        height: pxToRem(50px);
+        line-height: pxToRem(50px);
+        width: pxToRem(200px);
+        margin: 0 auto;
+        margin-top: pxToRem(20px);
+        &:after {
+            content: '';
+            @include background('data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOBAMAAADgeEClAAAAGFBMVEUAAABBRU1BRU1BRU1BRU1BRU1BRU1BRU3tYg8BAAAACHRSTlMA/AGRSHPtbw3JiLoAAAAlSURBVAjXYyhVYGBgSDQCEo7CQCaLIDpTFEyAuWAJOAOiDWwAANEeBenZjvpRAAAAAElFTkSuQmCC', 8px, 14px);
+            display: inline-block;
+            margin-left: pxToRem(8px);
+            vertical-align: pxToRem(2px);
+        }
+    }
+    
+}
