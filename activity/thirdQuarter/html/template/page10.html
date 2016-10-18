@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>thirdQuarter</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/media.css">
+    <link rel="stylesheet" href="../../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="page-bg page-content">
+            <div class="page">
+                <div class="page-title">
+                    02 数读团贷
+                </div>
+                <span class="white-title-36 fb-title slide-left">第三季度各标的交易额分布</span>
+                <i class="icon-p11-0 slide-left"></i>
+                <span class="white-title-36 fb-title slide-right">第三季度不同期标的交易额分布</span>
+                <i class="icon-p11-1 slide-right"></i>
+                
+        </div>
+    </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../../js/countNum.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+(function() {
+	$(".page").show();
+	var opt = {
+		startValue: 776300,
+		endValue: 776689,
+		mode: 1,
+		duration: 500
+	}
+	var _count = new CountNum('#num-zj1', opt);
+	_count.count();
+})();
+</script>
+
+</html>

@@ -1,0 +1,72 @@
+.icon-icon0 {
+  display: block;
+  background-image: url(../images/sprites/sprite.png);
+  background-size:pxToRem(281px) pxToRem(217px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-87px);
+  width: pxToRem(60px);
+  height: pxToRem(60px);
+}
+.icon-icon1 {
+  display: block;
+  background-image: url(../images/sprites/sprite.png);
+  background-size:pxToRem(281px) pxToRem(217px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-69px) pxToRem(-157px);
+  width: pxToRem(57px);
+  height: pxToRem(60px);
+}
+.icon-icon2 {
+  display: block;
+  background-image: url(../images/sprites/sprite.png);
+  background-size:pxToRem(281px) pxToRem(217px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-157px);
+  width: pxToRem(59px);
+  height: pxToRem(60px);
+}
+.icon-icon3 {
+  display: block;
+  background-image: url(../images/sprites/sprite.png);
+  background-size:pxToRem(281px) pxToRem(217px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-157px) pxToRem(0px);
+  width: pxToRem(60px);
+  height: pxToRem(67px);
+}
+.icon-icon4 {
+  display: block;
+  background-image: url(../images/sprites/sprite.png);
+  background-size:pxToRem(281px) pxToRem(217px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-227px) pxToRem(0px);
+  width: pxToRem(54px);
+  height: pxToRem(62px);
+}
+.icon-icon5 {
+  display: block;
+  background-image: url(../images/sprites/sprite.png);
+  background-size:pxToRem(281px) pxToRem(217px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-80px) pxToRem(0px);
+  width: pxToRem(67px);
+  height: pxToRem(63px);
+}
+.icon-icon6 {
+  display: block;
+  background-image: url(../images/sprites/sprite.png);
+  background-size:pxToRem(281px) pxToRem(217px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-70px) pxToRem(-87px);
+  width: pxToRem(62px);
+  height: pxToRem(58px);
+}
+.icon-menu {
+  display: block;
+  background-image: url(../images/sprites/sprite.png);
+  background-size:pxToRem(281px) pxToRem(217px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(70px);
+  height: pxToRem(77px);
+}

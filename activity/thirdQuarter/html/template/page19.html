@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>thirdQuarter</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/media.css">
+    <link rel="stylesheet" href="../../css/animation.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../../css/vendor/swiper/swiper.min.css">
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="page-bg page-content">
+            <div class="page">
+                <div class="page-title">
+                    05 要事盘点
+                </div>
+                <span class="white-title-36 fb-title ">要事盘点-媒体报道</span>
+                <div class="n-cont">
+                    <div class="swiper-container" id="newsSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                            	<div class="n-slide">
+                            		<div class="n-no">01</div>
+                            		<i class="icon-news1"></i>
+                            		<span class="n-title">团贷网创始人兼CEO唐军受邀出席LendIt中国峰会并发表主题演讲</span>
+                            		<span class="n-time">2016.07.18</span>
+                            	</div>
+                            </div>
+                            <div class="swiper-slide">
+                            	<div class="n-slide">
+                            		<div class="n-no">02</div>
+                            		<i class="icon-news2"></i>
+                            		<span class="n-title">团贷网参加中国互联网金融协会第二、三期从业机构高管培训</span>
+                            		<span class="n-time">2016.08.04</span>
+                            	</div>
+                            </div>
+                            <div class="swiper-slide">
+                            	<div class="n-slide">
+                            		<div class="n-no">03</div>
+                            		<i class="icon-news3"></i>
+                            		<span class="n-title">团贷网成2016年新三板市场首家宣布盈利网贷平台</span>
+                            		<span class="n-time">2016.08.18</span>
+                            	</div>
+                            </div>
+                            <div class="swiper-slide">
+                            	<div class="n-slide">
+                            		<div class="n-no">04</div>
+                            		<i class="icon-news4"></i>
+                            		<span class="n-title">团贷网交易额突破300亿：不忘初心 感恩有你！</span>
+                            		<span class="n-time">2016.09.04</span>
+                            	</div>
+                            </div>
+                            <div class="swiper-slide">
+                            	<div class="n-slide">
+                            		<div class="n-no">05</div>
+                            		<i class="icon-news5"></i>
+                            		<span class="n-title">团贷网C轮融资公告 宏商光影领投1亿元</span>
+                            		<span class="n-time">2016.09.08</span>
+                            	</div>
+                            </div>
+                            <div class="swiper-slide">
+                            	<div class="n-slide">
+                            		<div class="n-no">06</div>
+                            		<i class="icon-news6"></i>
+                            		<span class="n-title">团贷网参加2016第三届互联网金融企业社会责任峰会</span>
+                            		<span class="n-time">2016.09.19</span>
+                            	</div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination" id="newsPagination"></div>
+                    </div>
+                </div>
+            </div></div></div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../../js/vendor/swiper/swiper.jquery.min.js"></script>
+<script src="../../js/countNum.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+(function() {
+    $(".page").show();
+    var mySwiper = new Swiper('#newsSwiper', {
+        direction: 'horizontal',
+        slidesPerView : 3,
+        spaceBetween: 10,
+        loop: true,
+        pagination: '#newsPagination',
+        onInit: function(swiper) {
+        	$("#newsSwiper").find('.swiper-slide-active').find('.n-slide').addClass('to-scale');
+        },
+        onSlideChangeStart: function(swiper) {
+        	$("#newsSwiper").find('.n-slide').removeClass('to-scale');
+        },
+        onSlideChangeEnd: function(swiper) {
+        	$("#newsSwiper").find('.swiper-slide-active').find('.n-slide').addClass('to-scale');
+        }
+    });
+
+})();
+</script>
+
+</html>

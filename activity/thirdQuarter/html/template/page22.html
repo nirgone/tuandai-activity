@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>thirdQuarter</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/media.css">
+    <link rel="stylesheet" href="../../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="page-bg page-content">
+            <div class="page l-page">
+               <i class="icon-logo"></i>
+               <span class="white-txt-24 l-txt">
+                   如果您还想了解团贷网更多的动态信息，请关注我们的<br>微信订阅号、服务号或新浪微博。
+               </span>
+               <ul class="ew-cont">
+                   <li>
+                       <i class="icon-wx icon-qrcode" data-type="dyh"></i>
+                       <span class="ew-txt">微信订阅号</span>
+                       <span>tuandaiwang</span>
+                   </li>
+                   <li>
+                       <i class="icon-service icon-qrcode" data-type="fwh"></i>
+                       <span class="ew-txt">微信服务号</span>
+                       <span>tuandaiservice</span>
+                   </li>
+                   <li>
+                       <i class="icon-weibo icon-qrcode" data-type="wb"></i>
+                       <span class="ew-txt">新浪微博</span>
+                       <span>@团贷网</span>
+                   </li>
+               </ul>
+               
+            </div>
+        </div>
+        </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../../js/countNum.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+(function() {
+    $(".page").show();
+
+})();
+</script>
+
+</html>

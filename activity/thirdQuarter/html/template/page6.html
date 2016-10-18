@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>thirdQuarter</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/media.css">
+    <link rel="stylesheet" href="../../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="page-bg page-content">
+            <div class="page">
+                <div class="page-title">
+                    02 数读团贷
+                </div>
+                <div class="jye-cont">
+                	<span class="white-title-36">第三季度为用户赚取收益</span>
+                	<span class="yellow-txt-64 jye-num"><p id="syNum1">5</p>亿<p  id="syNum2">4307</p>万元</span>
+                	<div class="jye-incr">
+                		<span class="white-txt-24">同比2015年第三季度增长</span>
+                		<span class="yellow-txt-48 jye-incr-num"><p id="syNum3">255.6</p>%</span>
+                	</div>
+                	<div class="jye-incr">
+                		<span class="white-txt-24">环比2016年第三季度增长</span>
+                		<span class="yellow-txt-48 jye-incr-num"><p id="syNum4">61.46</p>%</span>
+                	</div>
+                </div>
+                <i class="icon-p6-1"></i>
+                
+        </div>
+    </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../../js/countNum.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+(function() {
+	$(".page").show();
+	var opt = {
+		startValue: 776300,
+		endValue: 776689,
+		mode: 1,
+		duration: 500
+	}
+	var _count = new CountNum('#num-zj1', opt);
+	_count.count();
+})();
+</script>
+
+</html>

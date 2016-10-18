@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>thirdQuarter</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/media.css">
+    <link rel="stylesheet" href="../../css/animation.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../../css/vendor/swiper/swiper.min.css">
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="page-bg page-content">
+            <div class="page">
+                <div class="page-title">
+                    05 要事盘点
+                </div>
+                <span class="white-title-36 fb-title ">要事盘点-团贷大事记</span>
+                <div class="n-cont">
+                    <div class="swiper-container" id="tdNewsSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                            	<div class="n-slide">
+                            		<div class="n-no">01</div>
+                            		<i class="td-news1"></i>
+                            		<span class="n-title">数十所高校的专家学者到访团贷网</span>
+                            		<span class="n-time">2016.07.03</span>
+                            	</div>
+                            </div>
+                            <div class="swiper-slide">
+                            	<div class="n-slide">
+                            		<div class="n-no">02</div>
+                            		<i class="td-news2"></i>
+                            		<span class="n-title">正好分期成功试运营 团贷网消费金融正式启航</span>
+                            		<span class="n-time">2016.07.21</span>
+                            	</div>
+                            </div>
+                            <div class="swiper-slide">
+                            	<div class="n-slide">
+                            		<div class="n-no">03</div>
+                            		<i class="td-news3"></i>
+                            		<span class="n-title">P2P观察SVIP投资人走访团贷网</span>
+                            		<span class="n-time">2016.07.24</span>
+                            	</div>
+                            </div>
+                            <div class="swiper-slide">
+                            	<div class="n-slide">
+                            		<div class="n-no">04</div>
+                            		<i class="td-news4"></i>
+                            		<span class="n-title">团贷网杯•2016东莞第八届观音山万人登山大赛圆满举行</span>
+                            		<span class="n-time">2016.08.07</span>
+                            	</div>
+                            </div>
+                            <div class="swiper-slide">
+                            	<div class="n-slide">
+                            		<div class="n-no">05</div>
+                            		<i class="td-news5"></i>
+                            		<span class="n-title">团贷网特约第四届东莞金牌理财师大赛十佳理财师新鲜出炉</span>
+                            		<span class="n-time">2016.08.27</span>
+                            	</div>
+                            </div>
+                            <div class="swiper-slide">
+                            	<div class="n-slide">
+                            		<div class="n-no">06</div>
+                            		<i class="td-news6"></i>
+                            		<span class="n-title">广东狮子会一行来访团贷网：感谢大爱付出、扶贫帮困、支持公益</span>
+                            		<span class="n-time">2016.09.07</span>
+                            	</div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination" id="tdNewsPagination"></div>
+                    </div>
+                </div>
+            </div></div></div>
+            
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../../js/vendor/swiper/swiper.jquery.min.js"></script>
+<script src="../../js/countNum.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+(function() {
+    $(".page").show();
+    var mySwiper = new Swiper('#tdNewsSwiper', {
+        direction: 'horizontal',
+        slidesPerView : 3,
+        spaceBetween: 10,
+        loop: true,
+        pagination: '#tdNewsPagination',
+        onInit: function(swiper) {
+        	$("#tdNewsSwiper").find('.swiper-slide-active').find('.n-slide').addClass('to-scale');
+        },
+        onSlideChangeStart: function(swiper) {
+        	$("#tdNewsSwiper").find('.n-slide').removeClass('to-scale');
+        },
+        onSlideChangeEnd: function(swiper) {
+        	$("#tdNewsSwiper").find('.swiper-slide-active').find('.n-slide').addClass('to-scale');
+        }
+    });
+
+})();
+</script>
+
+</html>

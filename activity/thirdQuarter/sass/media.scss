@@ -1,0 +1,118 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../sass/func";
+
+/*  for small width screen  */
+
+@media screen and (max-width:374px) {}
+
+
+/* =========for short screen============== */
+
+@media screen and (max-height: 540px) and (min-width:321px) {
+    $ratio: 0.85;
+    .jye-num {
+        margin-top: pxToRem(40px) !important;
+    }
+    .jye-incr {
+        margin-top: pxToRem(50px) !important;
+    }
+    .jye-incr-num {
+        margin-top: pxToRem(20px) !important;
+    }
+    .icon-p6-0 {
+        margin-top: pxToRem(100px);
+    }
+    .icon-p6-1 {
+        margin-top: pxToRem(100px);
+    }
+    .icon-p7-0 {
+        margin-top: pxToRem(100px);
+    }
+    .icon-p8-0 {
+        margin-top: pxToRem(100px);
+    }
+    .fb-title {
+        margin: pxToRem(90px) 0 pxToRem(50px) 0;
+    }
+    .l-txt {
+        margin-top: pxToRem(90px) !important;
+    }
+    .pop-qrcode {
+        padding-top: pxToRem(100px) !important;
+    }
+     #xbRemoak {
+        bottom: 5%;
+    }
+}
+
+//* -----------meizu  mx3----------------- */
+@media screen and (min-height: 589px) and (min-width:430px) {
+    $ratio: 0.9;
+}
+
+
+/* ------------------------iphone 5------------------------ */
+
+@media screen and (max-width:320px) and (max-height:508px) {
+    $ratio: 0.9;
+}
+
+
+/* -------------------------iphone4---------------------------- */
+
+@media screen and (max-width:320px) and (max-height:416px) {
+    $ratio: 0.85;
+    .jye-num {
+        margin-top: pxToRem(40px) !important;
+    }
+    .jye-incr {
+        margin-top: pxToRem(50px) !important;
+    }
+    .jye-incr-num {
+        margin-top: pxToRem(20px) !important;
+    }
+    .icon-p6-0 {
+        margin-top: pxToRem(100px);
+    }
+    .icon-p6-1 {
+        margin-top: pxToRem(100px);
+    }
+    .icon-p7-0 {
+        margin-top: pxToRem(100px);
+    }
+    .icon-p8-0 {
+        margin-top: pxToRem(100px);
+    }
+    .fb-title {
+        margin: pxToRem(90px) 0 pxToRem(50px) 0;
+    }
+    .l-txt {
+        margin-top: pxToRem(90px) !important;
+    }
+    .pop-qrcode {
+        padding-top: pxToRem(100px) !important;
+    }
+    .n-cont {
+        .n-slide  {
+        	padding-top: pxToRem(20px);
+            &>i {
+            	margin-top: pxToRem(20px);
+            }
+            .n-title {
+            	margin-top: pxToRem(10px);
+            }
+            .n-time {
+            	bottom: pxToRem(20px);
+            }
+        }
+    }
+    #xbRemoak {
+        bottom: 5%;
+    }
+    .txt-page11{
+        bottom: pxToRem(70px) !important;
+    }
+}
+
+@media screen and (max-width: 320px) {}

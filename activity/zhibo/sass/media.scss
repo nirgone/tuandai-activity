@@ -1,0 +1,98 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../sass/func";
+
+/*  for small width screen  */
+
+@media screen and (max-width:374px) {}
+
+
+/* =========for short screen============== */
+
+@media screen and (max-height: 540px) and (min-width:321px) {
+    $ratio: 0.85;
+    .scroll-page {
+        padding-top: pxToRem(20px);
+    }
+    .ball-bg {
+        background-size: 100% 100%;
+        height: pxToRem(340px);
+    }
+    .popup-online {
+        padding-top: pxToRem(30px);
+    }
+    .method-row {
+        margin-top: pxToRem(30px);
+    }
+    .item-left {
+        line-height: pxToRem(36px);
+    }
+    .to-show {
+        height: pxToRem(200px) !important;
+    }
+    .popup-msg {
+        .msg-list {
+            height: 80%;
+        }
+    }
+    .prism-pop{
+    	top: 10%;
+    	.icon-close-prism {
+    		bottom: pxToRem(-76px);
+    	}
+    }
+}
+
+//* -----------meizu  mx3----------------- */
+@media screen and (min-height: 589px) and (min-width:430px) {
+    $ratio: 0.9;
+}
+
+
+/* ------------------------iphone 5------------------------ */
+
+@media screen and (max-width:320px) and (max-height:508px) {
+    $ratio: 0.9;
+    .item-left {
+        line-height: pxToRem(36px);
+    }
+}
+
+
+/* -------------------------iphone4---------------------------- */
+
+@media screen and (max-width:320px) and (max-height:416px) {
+    $ratio: 0.85;
+    .scroll-page {
+        padding-top: pxToRem(20px);
+    }
+    .ball-bg {
+        background-size: 100% 100%;
+        height: pxToRem(340px);
+    }
+    .popup-online {
+        padding-top: pxToRem(30px);
+    }
+    .method-row {
+        margin-top: pxToRem(30px);
+    }
+    .item-left {
+        line-height: pxToRem(36px);
+    }
+    .to-show {
+        height: pxToRem(200px) !important;
+    }
+    .popup-msg {
+        .msg-list {
+            height: 80%;
+        }
+    }
+    .prism-pop{
+    	top: 10%;
+    	.icon-close-prism {
+    		bottom: pxToRem(-76px);
+    	}
+    }
+}
+
+@media screen and (max-width: 320px) {}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>thirdQuarter</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/media.css">
+    <link rel="stylesheet" href="../../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="page-bg page-content">
+            <div class="page">
+                <div class="page-title">
+                    01 数据总览
+                </div>
+                <ul class="zj-cont">
+                	<li class="zj-row">
+                		<div>
+                			<i class="icon-item"><i class="icon-peo"></i></i>
+                			<span class="zj-count"><p id="num-zj1">776689</p>人</span>
+                			<span class="zj-comment">累计注册人数</span>
+                		</div>
+                		<div>
+                			<i class="icon-item"><i class="icon-comp"></i></i>
+                			<span class="zj-count"><p id="num-zj2">907766</p>笔</span>
+                			<span class="zj-comment">累计成交笔数</span>
+                		</div>
+                	</li>
+                	<li class="zj-row">
+                		<div>
+                			<i class="icon-item"><i class="icon-safe"></i></i>
+                			<span class="zj-count"><p id="num-zj3">9032</p>万<p>7766</p>元</span>
+                			<span class="zj-comment">风险备付总金额</span>
+                		</div>
+                		<div>
+                			<i class="icon-item"><i class="icon-welffare"></i></i>
+                			<span class="zj-count"><p id="num-zj4">11.6</p>%</span>
+                			<span class="zj-comment">平均年化收益率</span>
+                		</div>
+                	</li>
+                </ul>
+                 <div class="jy-remark">注：以上数据截止至2016年9月30日</div>
+        </div>
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../../js/countNum.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+(function() {
+	$(".page").show();
+	var opt = {
+		startValue: 776300,
+		endValue: 776689,
+		mode: 1,
+		duration: 500
+	}
+	var _count = new CountNum('#num-zj1', opt);
+	_count.count();
+})();
+</script>
+
+</html>

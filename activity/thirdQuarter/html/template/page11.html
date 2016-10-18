@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>thirdQuarter</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/media.css">
+    <link rel="stylesheet" href="../../css/animation.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../../css/vendor/swiper/swiper.min.css">
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="page-bg page-content">
+            <div class="page">
+                <div class="page-title">
+                    02 数读团贷
+                </div>
+                <div class="swiper-container" id="regionSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                        	<i class="icon-region-rs"></i>
+                            <!-- <img src="../..//images/page11_0.png" class="region-rs"> -->
+                        </div>
+                        <div class="swiper-slide">
+                        	<!-- <i class="icon-regin-tz"></i> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="r-title-cont">
+                	<span class="white-title-36">第三季度投资人数据地域分析</span>
+                	<div class="region-tabs">
+                		<span class="active" data-type="0">投资人数</span>
+                		<span data-type="1">投资金额</span>
+                	</div>
+                </div>
+            </div>
+            <span class="txt-page11">(2016年第三季度投资金额地区TOP10)</span>
+        </div>
+        </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../../js/vendor/swiper/swiper.jquery.min.js"></script>
+<script src="../../js/countNum.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+(function() {
+    $(".page").show();
+	var mySwiper = new Swiper('#regionSwiper', {
+		direction: 'horizontal'
+	});
+
+})();
+</script>
+
+</html>

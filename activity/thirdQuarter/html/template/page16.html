@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>thirdQuarter</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/media.css">
+    <link rel="stylesheet" href="../../css/animation.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../../css/vendor/swiper/swiper.min.css">
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="page-bg page-content">
+            <div class="page">
+                <div class="page-title">
+                    04 精彩活动
+                </div>
+                <span class="white-title-36 fb-title ">第三季度精彩活动</span>
+                <div class="act-cont">
+                    <div class="swiper-container" id="actSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <ul class="slide-p16">
+                                    <li class="act-row">
+                                        <div>
+                                            <i class="icon-act1"></i>
+                                            <span>4周年庆典</span>
+                                        </div>
+                                        <div>
+                                            <i class="icon-act2"></i>
+                                            <span>APP投资加息0.1%活动</span>
+                                        </div>
+                                    </li>
+                                    <li class="act-row">
+                                        <div>
+                                            <i class="icon-act3"></i>
+                                            <span>团贷网杯-万人登山大赛</span>
+                                        </div>
+                                        <div>
+                                            <i class="icon-act4"></i>
+                                            <span>新手注册专享好礼全新升级</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="swiper-slide">
+                                <ul class="slide-p16">
+                                    <li class="act-row">
+                                        <div>
+                                            <i class="icon-act5"></i>
+                                            <span>迎奥活动</span>
+                                        </div>
+                                        <div>
+                                            <i class="icon-act6"></i>
+                                            <span>城市行走计划-亲子月饼DIY活动</span>
+                                        </div>
+                                    </li>
+                                    <li class="act-row">
+                                        <div>
+                                            <i class="icon-act7"></i>
+                                            <span>邀请有礼重大升级</span>
+                                        </div>
+                                        <div>
+                                            <i class="icon-act8"></i>
+                                            <span>中秋节返现活动</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination" id="actPagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../../js/vendor/swiper/swiper.jquery.min.js"></script>
+<script src="../../js/countNum.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+(function() {
+    $(".page").show();
+    var mySwiper = new Swiper('#actSwiper', {
+        direction: 'horizontal',
+        pagination: '#actPagination',
+    });
+
+})();
+</script>
+
+</html>

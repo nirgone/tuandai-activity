@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>zhibo</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/vendor/swiper/swiper.min.css">
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="scroll-page">
+            <div class="logos">
+                <div><i class="icon-logo-tuandai"></i></div>
+                <div><i class="icon-logon-gyx"></i></div>
+            </div>
+            <div class="module-1 module-bg">
+                <i class="icon-txt1"></i>
+                <i class="icon-txt2"></i>
+                <span id="timeAndPlace"></span>
+                <div class="ball-bg">
+                    <div class="btn btn-pink-small" id="online"><span>在线看直播</span></div>
+                    <i class="icon-arrow-down"></i>
+                </div>
+            </div>
+            <ul class="plist">
+                <li>
+                    <i class="icon-txt3 icon-title"></i>
+                    <span class="ptitle">集团品牌战略升级</span>
+                    <span class="pdetail ellipsis">
+				品牌战略升级，是从集团公司的战略思路与格局、产品运营、技术和内部控制的一个全方位升级，在保持平台原有的特点和优势之外，奖继续在遵守国家现行法律法规的前提下，将重点打造科技金融及一站式综合财富管理，建立更全面安全的金融服务体系。
+			</span>
+                </li>
+                <li>
+                    <i class="icon-txt4 icon-title"></i>
+                    <span class="ptitle">人工智能双核系统发布</span>
+                    <span class="pdetail ellipsis">
+				天秤大数据风控系统+企业大数据风控系统正式发布，利用征信及大数据建立智能模型，人工+智能双管齐下，加强对个人及企业贷款的风险审核、风险评估，有科技金融助力，最大限度上让用户投资更安全。
+			</span>
+                </li>
+                <li>
+                    <i class="icon-txt5 icon-title"></i>
+                    <span class="ptitle">C轮融资启动+战略联手连交所</span>
+                    <span class="pdetail ellipsis">
+				会上宣布获得C轮3.75亿融资（ABC轮累计融资6.75亿，涵括了风投系、国资系、创业系、上市系机构）。同时宣布和连交所战略合作，未来，团贷网将依托各大投资方雄厚的资金支持、优质金融资源、立体的业务及风控体系，打造更强的互联网金融品牌。
+			</span>
+                </li>
+                <li>
+                    <i class="icon-txt6 icon-title"></i>
+                    <span class="ptitle">团贷网高层现场分享</span>
+                    <span class="pdetail ellipsis">
+				布会上团贷网高层悉数到场，从集团发展战略、业务层、技术层、风控层及组织架构层的未来发展及各大板块之间的相互协作，还有对于集团未来一站式综合财富管理新规划进行讲解分享，团贷网的未来规划都将逐一为大家揭开面纱。
+			</span>
+                </li>
+            </ul>
+            <div class="module-cont prism-bg-left">
+                <div class="module-title">
+                    <span>精彩瞬间</span>
+                </div>
+                <div class="mcont">
+                    <div class="swiper-container" id="mainPic">
+                        <div class="swiper-wrapper">
+                            <<!-- div class="swiper-slide">
+                                <div class="actcont">
+                                    <img src="../images/pic1.png" class="actpic">
+                                    <i class="icon-shadow"></i>
+                                </div>
+                        </div> -->
+                    </div>
+                </div>
+                <i class="icon-line"></i>
+                <div class="swiper-container" id="thumbnailSwiper">
+                    <div class="swiper-wrapper">
+                        <!--  <div class="swiper-slide">
+                        	<img src="../images/pic2.png" class="thumbnail">
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="module-cont prism-bg-right">
+            <div class="module-title">
+                <span>图文直播</span>
+            </div>
+            <span class="title-online">新形势下团贷网综合财富管理创新规划</span>
+            <span class="desc-online">国家对互联网金融的重视，监管越来越正规，良币驱逐劣币局面逐步铺开，互联网金融正迎来新的发展契机，科技金融及更全面的金融服务将为团贷网开创新未来，集团品牌战略升级规划将为团贷网开启新的篇章</span>
+            <ul class="msg-list">
+                <li>
+                    <span class="msg-time">10:00:00</span>
+                    <span>
+        			出借人代表恋恋风尘：我作为出借人跟宜贷网沟通比较多，和宜贷网沟通的气氛也非常好，很开心参加这次宜贷网品牌升级发布会。
+        		</span>
+                </li>
+                <li>
+                    <span class="msg-time">10:00:00</span>
+                    <span>
+        			<img src="../images/pic1.png">
+        		</span>
+                </li>
+                <li>
+                    <span class="msg-time">10:00:00</span>
+                    <span>
+        			出借人代表恋恋风尘：我作为出借人跟宜贷网沟通比较多，和宜贷网沟通的气氛也非常好，很开心参加这次宜贷网品牌升级发布会。
+        		</span>
+                </li>
+            </ul>
+            <div class="btn btn-brown" id="moreMsg"><span>更多对话</span></div>
+            <div class="guest-cont">
+                <div class="swiper-container" id="guestSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- <div class="swiper-slide">
+                    	<div class="guest">
+                    		<i class="icon-guest" style="background-image:url(../images/avator1.png);"></i>
+                    		<span>郭翰祥</span>
+                    		<span>宏商资本执行合伙人</span>
+                    	</div>
+                    </div>
+                    <div class="swiper-slide">
+                    	<div class="guest">
+                    		<i class="icon-guest" style="background-image:url(../images/avator1.png);"></i>
+                    		<span>郭翰祥</span>
+                    		<span>宏商资本执行合伙人</span>
+                    	</div>
+                    </div>
+                    <div class="swiper-slide">
+                    	<div class="guest">
+                    		<i class="icon-guest" style="background-image:url(../images/avator1.png);"></i>
+                    		<span>郭翰祥</span>
+                    		<span>宏商资本执行合伙人</span>
+                    	</div>
+                    </div> -->
+                    </div>
+                </div>
+                <div class="arrow-cont prev-cont" data-type="prev">
+                    <i class="icon-arrow"></i>
+                </div>
+                <div class="arrow-cont next-cont" data-type="next">
+                    <i class="icon-arrow"></i>
+                </div>
+            </div>
+        </div>
+        <div class="module-cont prism-bg-left">
+            <div class="module-title">
+                <span>我们都是团贷人</span>
+            </div>
+            <ul class="comment-list">
+                <li>
+                    <span>#我们都是团贷人#团贷网真是厉害，都C轮融资了，相信唐军相信团贷网！加油相信团贷网！加油！加油！加油！加油！加油！加油！加油！</span>
+                </li>
+                <li>
+                    <span>
+        			#我们都是团贷人#团贷网真是厉害，都C轮融资了，相信唐军相信团贷网！
+        		</span>
+                </li>
+                <li>
+                    <span>
+        			#我们都是团贷人#团贷网真是厉害，都C轮融资了，相信唐军相信团贷网！
+        		</span>
+                </li>
+            </ul>
+            <div class="comment-input">
+                <div>
+                    <textarea maxlength="49" placeholder="#我们都是团贷人#"></textarea>
+                </div>
+            </div>
+            <span class="input-tips">还可以输入<font id="num">40</font>个字</span>
+        </div>
+        <div class="btn btn-disable" id="post"><span>发表</span></div>
+        <div class="btn btn-brown" id="share"><span>分享给你的小伙伴</span></div>
+    </div>
+    </div>
+    <!-- 查看直播弹窗 -->
+    <div class="popup popup-online">
+        <span class="method-cont">
+        	<i class="icon-clock"></i><font class="ptxt1">10月20日</font><font class="ptxt2">13:00-17:00</font>
+        	</span>
+        <span class="ptxt3">通过以下方式观看直播</span>
+        <ul class="method-list">
+            <li class="method-row">
+                <div class="item-left">
+                    <span class="m-name">方式一</span>
+                    <span>8月27日发布会当天，下载对应直播app并搜索直播号：</span>
+                </div>
+                <div class="item-right">
+                    <i class="icon-ink"></i>
+                    <span>映客直播</span>
+                    <span class="ptxt4">831138</span>
+                </div>
+            </li>
+            <li class="method-row">
+                <div class="item-left">
+                    <span class="m-name">方式二</span>
+                    <span>10月20日发布会当天，微信扫一扫，关注团贷网订阅号，并文字回复“C轮直播”，即可观看直播。</span>
+                </div>
+                <div class="item-right">
+                    <i class="icon-wx"></i>
+                    <span>团贷网微信</span>
+                    <span>订阅号</span>
+                </div>
+            </li>
+        </ul>
+        <div class="btn btn-brown pop-close" id="clodeMehods" data-type="method"><span>关闭</span></div>
+    </div>
+    <!-- 查看全部留言弹窗 -->
+    <div class="popup popup-msg">
+        <ul class="msg-list" id="allMsg">
+            <li>
+                <span class="msg-time">10:00:00</span>
+                <span>
+        			出借人代表恋恋风尘：我作为出借人跟宜贷网沟通比较多，和宜贷网沟通的气氛也非常好，很开心参加这次宜贷网品牌升级发布会。
+        		</span>
+            </li>
+            <li>
+                <span class="msg-time">10:00:00</span>
+                <span>
+        			<img src="../images/pic1.png">
+        		</span>
+            </li>
+            <li>
+                <span class="msg-time">10:00:00</span>
+                <span>
+        			出借人代表恋恋风尘：我作为出借人跟宜贷网沟通比较多，和宜贷网沟通的气氛也非常好，很开心参加这次宜贷网品牌升级发布会。
+        		</span>
+            </li>
+        </ul>
+        <div class="btn btn-brown pop-close" id="closeMsg" data-type="msg"><span>关闭</span></div>
+    </div>
+    <!-- 嘉宾介绍 -->
+    <div class="masker" id="guestDetail">
+        <div class="prism-pop">
+            <img src="" class="icon-avator-pop" id="iAvator">
+            <span class="ptxt5" id="pTitle"></span>
+            <span class="ptxt6" id="pDesc">
+    		</span>
+            <i class="icon-close-prism"></i>
+        </div>
+    </div>
+    <div class="masker" id="wxShare">
+    	<i class="icon-share"></i>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/vendor/jsbridge-3.0.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/vendor/swiper/swiper.jquery.min.js"></script>
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

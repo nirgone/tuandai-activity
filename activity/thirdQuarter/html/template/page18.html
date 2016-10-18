@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>thirdQuarter</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/media.css">
+    <link rel="stylesheet" href="../../css/animation.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../../css/vendor/swiper/swiper.min.css">
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="page-bg page-content">
+            <div class="page">
+                <div class="page-title">
+                    05 要事盘点
+                </div>
+                <span class="white-title-36 fb-title ">要事盘点-团贷公益</span>
+                <div class="n-cont">
+                    <div class="swiper-container" id="gyNewsSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                            	<div class="n-slide">
+                            		<div class="n-no">01</div>
+                            		<i class="gy-news1"></i>
+                            		<span class="n-title">风雨兼程 团贷网爱心助学四川大凉山之行</span>
+                            		<span class="n-time">2016.07.01</span>
+                            	</div>
+                            </div>
+                            <div class="swiper-slide">
+                            	<div class="n-slide">
+                            		<div class="n-no">02</div>
+                            		<i class="gy-news2"></i>
+                            		<span class="n-title">广东互联网金融协会公益助学系列活动之走进乐昌</span>
+                            		<span class="n-time">2016.07.10</span>
+                            	</div>
+                            </div>
+                            <div class="swiper-slide">
+                            	<div class="n-slide">
+                            		<div class="n-no">03</div>
+                            		<i class="gy-news3"></i>
+                            		<span class="n-title">抗战胜利71周年 团贷网赴广西慰问百余名近100岁老兵</span>
+                            		<span class="n-time">2016.08.14</span>
+                            	</div>
+                            </div>
+                            <div class="swiper-slide">
+                            	<div class="n-slide">
+                            		<div class="n-no">04</div>
+                            		<i class="gy-news4"></i>
+                            		<span class="n-title">团贷网爱心服务队走近环卫工人 关爱“城市美容师”</span>
+                            		<span class="n-time">2016.08.28</span>
+                            	</div>
+                            </div>
+                            <div class="swiper-slide">
+                            	<div class="n-slide">
+                            		<div class="n-no">05</div>
+                            		<i class="gy-news5"></i>
+                            		<span class="n-title">昔日留守儿童外出创业 如今回乡给大凉山孩子建学校</span>
+                            		<span class="n-time">2016.09.01</span>
+                            	</div>
+                            </div>
+                            
+                        </div>
+                        <div class="swiper-pagination" id="gyNewsPagination"></div>
+                    </div>
+                </div>
+            </div></div></div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../../js/vendor/swiper/swiper.jquery.min.js"></script>
+<script src="../../js/countNum.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+(function() {
+    $(".page").show();
+    var mySwiper = new Swiper('#gyNewsSwiper', {
+        direction: 'horizontal',
+        slidesPerView : 3,
+        spaceBetween: 10,
+        loop: true,
+        pagination: '#gyNewsPagination',
+        onInit: function(swiper) {
+        	$("#gyNewsSwiper").find('.swiper-slide-active').find('.n-slide').addClass('to-scale');
+        },
+        onSlideChangeStart: function(swiper) {
+        	$("#gyNewsSwiper").find('.n-slide').removeClass('to-scale');
+        },
+        onSlideChangeEnd: function(swiper) {
+        	$("#gyNewsSwiper").find('.swiper-slide-active').find('.n-slide').addClass('to-scale');
+        }
+    });
+
+})();
+</script>
+
+</html>

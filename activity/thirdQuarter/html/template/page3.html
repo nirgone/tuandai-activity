@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>thirdQuarter</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/media.css">
+    <link rel="stylesheet" href="../../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="page-bg page-content">
+            <div class="page">
+                <i class="icon-arc-lt"></i>
+                <i class="icon-arc-rt"></i>
+                <i class="icon-arc-lb"></i>
+                <i class="icon-arc-rb"></i>
+                <div class="page-title">
+                    01 数据总览
+                </div>
+                <div class="circle-cont">
+                    <i class="icon-coin">
+                    </i>
+                    <i class="icon-coin1"></i>
+                </div>
+                <div class="data-cont s-space">
+                    <span>
+            		<p id="num6"><i class="icon-rect c-num" >1</i><i class="icon-rect c-num" >8</i></p>亿<p id="num7"><i class="icon-rect c-num rect-left" >6</i><i class="icon-rect c-num" >9</i><i class="icon-rect c-num" >0</i><i class="icon-rect c-num" >8</i></p>万元</span>
+                    <span class="data-sub-title">
+            		自上线以来为投资者赚取的收益
+            	</span>
+                </div>
+                <div class="jy-remark">注：以上数据截止至2016年9月30日</div>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../../js/countNum.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+(function() {
+    $(".page").show();
+
+})();
+</script>
+
+</html>
