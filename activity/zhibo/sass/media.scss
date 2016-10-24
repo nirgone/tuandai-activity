@@ -93,6 +93,13 @@
     		bottom: pxToRem(-76px);
     	}
     }
+    .prism-pop {
+        .ptxt6 {
+            font-size: pxToRem(22px);
+            line-height: pxToRem(34px);
+            margin-top: pxToRem(20px);
+        }
+    }
 }
 
 @media screen and (max-width: 320px) {}

@@ -116,7 +116,7 @@
 							}
 							// console.info("length---prev-", swiper.slides.length);
 						}
-
+						clearSwiper();
 					}
 
 					//初始化页面具体内容

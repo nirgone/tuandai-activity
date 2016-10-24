@@ -2,7 +2,7 @@
 	FastClick.attach(document.body);
 	var mianPicSwiper, thumbnailSwiper, guestSwiper;
 	//do your thing.
-	var s = '2016.9.23东莞·康帝酒店';
+	var s = '2016.10.20东莞·康帝酒店';
 	var con = $('#timeAndPlace');
 	var index = 0;
 	var length = s.length;
@@ -21,7 +21,7 @@
 		name: '王宇杰',
 		avator: '../images/wangyujie.png',
 		position: '唯一网络董事长兼CEO',
-		desc: '85后”福建青年王宇杰，2006年创办唯一网络，现已经成为国内领先的互联网增值业务提供商，年产值过亿，2016年4月，唯一网络获得了东莞证券和宏商创投5000万元的战略融资，估值已达5亿。2012年，王宇杰在厦门成立帝恩思网络科技有限公司，2016年3月，帝恩思在新三板挂牌。'
+		desc: '“85后”福建青年王宇杰，2006年创办唯一网络，现已经成为国内领先的互联网增值业务提供商，年产值过亿，2016年4月，唯一网络获得了东莞证券和宏商创投5000万元的战略融资，估值已达5亿。2012年，王宇杰在厦门成立帝恩思网络科技有限公司，2016年3月，帝恩思在新三板挂牌。'
 	}, {
 		name: '王晓明',
 		avator: '../images/wangxiaoming.png',
@@ -30,13 +30,13 @@
 	}, {
 		name: '朱明春',
 		avator: '../images/zhumingchun.png',
-		position: ' 广东互联网金融协会秘书长',
+		position: '广东互联网金融协会秘书长',
 		desc: '广东互联网金融协会秘书长，2011年联合创办网贷之家网站，现任盈灿集团执行副总裁，清华大学经济管理学院金融硕士行业导师，广东互联网金融协会副会长兼秘书长，民间金融互联网化、阳光化倡导者。多次接受中央二套、凤凰卫视等电视节目关于互联网金融报道的采访。'
 	}, {
 		name: '罗明雄',
 		avator: '../images/luomingxiong.png',
 		position: '连交所总裁',
-		desc: '本科毕业于山东大学、硕士毕业于清华大学，现任连交所总裁、北京京北投资管理有限公司总裁 、搜狐互联网金融顾问、上海交通大学互联网金融研究所所长，《互联网金融》作者，为互联网金融领域代表性人物之一，被评为"2013中国互联网金融十大领军人物"。'
+		desc: '本科毕业于山东大学、硕士毕业于清华大学，现任连交所总裁、北京京北投资管理有限公司总裁 、搜狐互联网金融顾问、上海交通大学互联网金融研究所所长，《互联网金融》作者，为互联网金融领域代表性人物之一，被评为"2013中国互联网金融十大领军人物"'
 	}];
 
 	function start() {
@@ -49,8 +49,8 @@
 				clearInterval(tId);
 				index = 0;
 			}
-			if (con.html() == "2016.9.23") {
-				con.html("2016.9.23&nbsp;&nbsp;");
+			if (con.html() == "2016.10.20") {
+				con.html("2016.10.20&nbsp;&nbsp;");
 			}
 
 
@@ -62,40 +62,63 @@
 			start();
 		}, 1500);
 		initSwiper();
+		initComment();
 
 	}
 
 	init();
-
+	//我们都是团贷人数据加载
+	function initComment() {
+		var imgs = ['../images/ptuandai_yellow.png', '../images/ptuandai_white.png'];
+		var n = imgs.length;
+		var comments = ['#我们都是团贷人#团贷aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa网真是厉害，都C轮融资了，相信唐军相信团贷网！加油相信团贷网！加油！加油！加油！加油！加油！加油！加油！', '#我们都是团贷人#团贷网真是厉害，都C轮融资了，相信唐军相信团贷网！', '#我们都是团贷人#团贷网真是厉害，都C轮融资了，相信唐军相信团贷网！','#我们都是团贷人#团贷aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa网真是厉害，都C轮融资了，相信唐军相信团贷网！加油相信团贷网！加油！加油！加油！加油！加油！加油！加油！', '#我们都是团贷人#团贷网真是厉害，都C轮融资了，相信唐军相信团贷网！2222', '#我们都是团贷人#团贷网真是厉害，都C轮融资了，相信唐军相信团贷网11111！'];
+		var commentTemp = "";
+		comments.forEach(function(item) {
+			var index = parseInt(Math.random() * n, 10);
+			console.info(index);
+			commentTemp += '<li><div class="cl-cont"><i class="icon-img" style="background-image:url(' + imgs[index] + ');"></i>' +
+				'</div><span>' + item + '</span></li>';
+		});
+		$(".comment-list").html(commentTemp);
+	}
 
 	function initSwiper() {
 		var picData = [{
 			img: "../images/pic1.png",
-			thumbnail: '../images/pic2.png'
+			thumbnail: '../images/pic2.png',
+			txt: '图片说明1'
 		}, {
 			img: "../images/pic1.png",
-			thumbnail: '../images/pic2.png'
+			thumbnail: '../images/pic2.png',
+			txt: '图片说明2'
 		}, {
 			img: "../images/pic1.png",
-			thumbnail: '../images/pic2.png'
+			thumbnail: '../images/pic2.png',
+			txt: '图片说明3'
 		}, {
 			img: "../images/pic1.png",
-			thumbnail: '../images/pic2.png'
+			thumbnail: '../images/pic2.png',
+			txt: '图片说明4'
 		}, {
 			img: "../images/pic1.png",
-			thumbnail: '../images/pic2.png'
+			thumbnail: '../images/pic2.png',
+			txt: '图片说明5'
 		}, {
 			img: "../images/pic1.png",
-			thumbnail: '../images/pic2.png'
+			thumbnail: '../images/pic2.png',
+			txt: '图片说明6'
 		}, {
 			img: "../images/pic1.png",
-			thumbnail: '../images/pic2.png'
+			thumbnail: '../images/pic2.png',
+			txt: '图片说明7'
 		}, {
 			img: "../images/pic1.png",
-			thumbnail: '../images/pic2.png'
+			thumbnail: '../images/pic2.png',
+			txt: '图片说明8'
 		}, {
 			img: "../images/pic1.png",
-			thumbnail: '../images/pic2.png'
+			thumbnail: '../images/pic2.png',
+			txt: '图片说明9'
 		}];
 		var mainTemp = "";
 		var thumTemp = "";
@@ -103,28 +126,44 @@
 		//初始化大图及缩略图
 		picData.forEach(function(item, index) {
 			mainTemp += '<div class="swiper-slide"><div class="actcont">' +
-				'<img src="' + item.img + '" class="actpic" data-index="' + index + '"><i class="icon-shadow"></i></div></div>';
-			thumTemp += '<div class="swiper-slide"><img src="' + item.thumbnail + '" class="thumbnail" data-index="' + index + '"></div>'
+				'<img src="' + item.img + '" class="actpic" data-index="' + index + '"><i class="icon-shadow"></i></div>' +
+				'<span class="pic-txt">' + item.txt + '</span></div>';
+			// thumTemp += '<div class="swiper-slide"><img src="' + item.thumbnail + '" class="thumbnail" data-index="' + index + '"></div>'
 		});
 
 		$("#mainPic").find('.swiper-wrapper').html(mainTemp);
-		$("#thumbnailSwiper").find('.swiper-wrapper').html(thumTemp);
+		// $("#thumbnailSwiper").find('.swiper-wrapper').html(thumTemp);
 		//大图swiper
 		mianPicSwiper = new Swiper('#mainPic', {
-			onTransitionEnd: function(swiper) {}
+			autoplay: 1500,
+			loop: true,
+			autoplayDisableOnInteraction: false,
+			onTouchEnd: function(swiper) {
+				// console.info(swiper.touches.currentX - swiper.touches.startX);
+				/*if ((swiper.touches.currentX - swiper.touches.startX) !== 0) {
+					$("#thumbnailSwiper").find('.swiper-slide').removeClass('thumb-active');
+				}*/
+			}
 		});
-		//缩略图swiper
+		/*//缩略图swiper
 		thumbnailSwiper = new Swiper("#thumbnailSwiper", {
 			// spaceBetween: 10,
-			centeredSlides: true,
+			// centeredSlides: true,
 			// slidesPerView: 'auto',
 			touchRatio: 0.2,
 			slideToClickedSlide: true,
 			slidesPerView: 6,
 			loop: true,
-		});
-		thumbnailSwiper.lockSwipes();
-		mianPicSwiper.lockSwipes();
+			onTransitionEnd: function(swiper) {
+				$("#thumbnailSwiper").find('.swiper-slide').removeClass('thumb-active');
+				$("#thumbnailSwiper").find('.swiper-slide-active').addClass('thumb-active');
+				var index = $("#thumbnailSwiper").find('.swiper-slide-active').find('.thumbnail').attr('data-index');
+				// console.info("index------", index);
+				mianPicSwiper.slideTo(+index);
+			}
+		});*/
+		// thumbnailSwiper.lockSwipes();
+		// mianPicSwiper.lockSwipes();
 		// mianPicSwiper.params.control = thumbnailSwiper;
 		// thumbnailSwiper.params.control = mianPicSwiper;
 
@@ -139,6 +178,55 @@
 			slidesPerView: 3,
 			loop: true
 		});
+	}
+	
+
+	function updatePic() {
+		picData = [{
+			img: "http://10.100.11.110:9003/FinancingLive_C/201610/20161015165530_5287.jpg",
+			thumbnail: '../images/pic2.png',
+			txt: '图片说明1'
+		}, {
+			img: "http://10.100.11.110:9003/FinancingLive_C/201610/20161015165530_5287.jpg",
+			thumbnail: '../images/pic2.png',
+			txt: '图片说明2'
+		}, {
+			img: "http://10.100.11.110:9003/FinancingLive_C/201610/20161015165530_5287.jpg",
+			thumbnail: '../images/pic2.png',
+			txt: '图片说明3'
+		}, {
+			img: "http://10.100.11.110:9003/FinancingLive_C/201610/20161015165530_5287.jpg",
+			thumbnail: '../images/pic2.png',
+			txt: '图片说明4'
+		}, {
+			img: "http://10.100.11.110:9003/FinancingLive_C/201610/20161015165530_5287.jpg",
+			thumbnail: '../images/pic2.png',
+			txt: '图片说明5'
+		}, {
+			img: "http://10.100.11.110:9003/FinancingLive_C/201610/20161015165530_5287.jpg",
+			thumbnail: '../images/pic2.png',
+			txt: '图片说明6'
+		}, {
+			img: "http://10.100.11.110:9003/FinancingLive_C/201610/20161015165530_5287.jpg",
+			thumbnail: '../images/pic2.png',
+			txt: '图片说明7'
+		}, {
+			img: "http://10.100.11.110:9003/FinancingLive_C/201610/20161015165530_5287.jpg",
+			thumbnail: '../images/pic2.png',
+			txt: '图片说明8'
+		}, {
+			img: "http://10.100.11.110:9003/FinancingLive_C/201610/20161015165530_5287.jpg",
+			thumbnail: '../images/pic2.png',
+			txt: '图片说明9'
+		}];
+		mianPicSwiper.removeAllSlides();
+		picData.forEach(function(item) {
+			var str = '<div class="swiper-slide"><div class="actcont">' +
+				'<img src="' + item.img + '" class="actpic" data-index="' + index + '"><i class="icon-shadow"></i></div>' +
+				'<span class="pic-txt">' + item.txt + '</span></div>';
+			mianPicSwiper.appendSlide(str);
+		});
+		console.info("juan----", mianPicSwiper.params);
 	}
 	//点击缩略图
 	$("body").on('click', '.thumbnail', function() {
@@ -169,17 +257,42 @@
 	});
 	$('textarea').on('input', function() {
 		var value = $(this).val();
-		if (value.length > 0) {
+		var num = 40 - value.length;
+		if (value.length > 0 && num >= 0) {
 			$("#post").removeClass('btn-disable').addClass('btn-pink-big');
 		} else {
 			$("#post").removeClass('btn-pink-big').addClass('btn-disable');
 		}
-		var num = 40 - value.length;
 		// console.info("textarea----", $(this).val().length, num);
 		if (num >= 0) {
-			$("#num").html(num);
+			// $("#num").html(num);
+			$(".input-tips").html('还可以输入' + num + '个字');
+			$(".input-tips").removeClass('error');
+			$("#post").find('span').html('发表');
+		} else {
+			$(".input-tips").html('已超过40个字');
+			$(".input-tips").addClass('error');
+			$("#post").find('span').html('请减少字数再来发表');
+			// $("#post").removeClass('btn-pink-big').addClass('btn-disable');
 		}
 	});
+	$("textarea").on('click', function() {
+		$(this).focus();
+	});
+	//输入框获取焦点判断是否登录
+	$("textarea").on('focus', function() {
+		var isLogin = true;
+		if (!isLogin) {
+			$("#loginTips").show();
+			$(this).blur();
+		}
+	});
+	//弹出更多对话时，防止微信浏览器滑动回弹
+	// $("body").on('touchstart', function(e) {
+	// 	if ($(".popup-msg")[0].style.display === 'block') {
+	// 		e.preventDefault();
+	// 	}
+	// });
 	//在线观看直播
 	$("#online").on('click', function() {
 		$(".popup-online").show();
@@ -214,12 +327,13 @@
 		var index = $(this).attr('data-index');
 		var guestObj = guestData[index];
 		$("#iAvator")[0].src = guestObj.avator;
-		$("#pTitle").html(guestObj.name + " " + guestObj.position);
+		$("#pName").html(guestObj.name);
+		$("#pTitle").html(guestObj.position);
 		$("#pDesc").html(guestObj.desc);
 		$("#guestDetail").show();
 
 	});
-	$(".icon-close-prism, #wxShare").on('click', function() {
+	$(".icon-close-prism, #wxShare, .p-mask, .btn-close").on('click', function() {
 		$(".masker").hide();
 	});
 	//分享
@@ -229,7 +343,7 @@
 		} else if (GetQueryString('type') == 'mobileapp') {
 			if (Jsbridge.isNewVersion()) {
 				if (Jsbridge.isCorrectVersion('4.5.0', 1)) {
-					Jsbridge.ToAppActivity(7);
+					Jsbridge.ToAppActivity(1);
 				} else {
 					Jsbridge.toActivityAppInviteFriend();
 				}
@@ -249,7 +363,22 @@
 		if ($(this).hasClass('btn-disable')) {
 			return;
 		}
+		if($('textarea').val().trim().length === 0) {
+			$(".input-tips").html('请输入评论');
+			$(".input-tips").addClass('error');
+			return;
+		}
+		$("#popTips").show();
+
 		//发表
+	});
+	//跳转到登录
+	$("#goLogin").on('click', function() {
+		if (Jsbridge.isNewVersion()) {
+			Jsbridge.toAppLogin();
+		} else {
+
+		}
 	});
 
 	function isWeiXin() {
@@ -267,5 +396,35 @@
 		if (r != null) return unescape(r[2]);
 		return null;
 	}
+	/* ==================禁止滚动======================== */
+	// function scrolling(e) {
+	//     preventDefault(e);
+	// }
+
+	// function preventDefault(e) {
+	//     e = e || window.event;
+	//     if (e.preventDefault) {
+	//         e.preventDefault();
+	//     }
+	//     e.returnValue = false;
+	// }
+
+	// function disableScrolling() {
+	//     if (window.addEventListener) {
+	//         window.addEventListener('DOMMouseScroll', scrolling, false);
+	//         window.addEventListener('touchmove', scrolling, false);
+	//         window.onmousewheel = document.onmousewheel = scrolling;
+	//     }
+	// }
+
+	// function enableScrolling() {
+	//     if (window.removeEventListener) {
+	//         window.removeEventListener('DOMMouseScroll', scrolling, false);
+	//         window.removeEventListener('touchmove', scrolling, false);
+	//     }
+	//     window.onmousewheel = document.onmousewheel = null;
+	// }
+
+	/* ==================禁止滚动=====end=================== */
 
 })();
