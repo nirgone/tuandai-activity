@@ -1,0 +1,59 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../sass/func";
+
+/*  for small width screen  */
+
+@media screen and (max-width:374px) {
+ 
+}
+
+/* =========for short screen============== */
+
+@media screen and (max-height: 540px) and (min-width:321px) {
+    $ratio: 0.85;
+    .main-content {
+   		padding-top: pxToRem(20px);
+   }
+   .act-txt {
+   	margin-top: pxToRem(20px);
+   }
+   .slice-move {
+   	bottom: pxToRem(150px);
+   }
+
+}
+//* -----------meizu  mx3----------------- */
+@media screen and (min-height: 589px) and (min-width:430px) {
+    $ratio: 0.9;
+    .main-content {
+   		padding-top: pxToRem(20px);
+   }
+
+}
+
+/* ------------------------iphone 5------------------------ */
+@media screen and (max-width:320px) and (max-height:508px) {
+    $ratio:0.9;
+
+}
+
+/* -------------------------iphone4---------------------------- */
+
+@media screen and (max-width:320px) and (max-height:416px) {
+   $ratio: 0.85;
+   .main-content {
+   		padding-top: pxToRem(20px);
+   }
+   .act-txt {
+   	margin-top: pxToRem(20px);
+   }
+   .slice-move {
+   	bottom: pxToRem(150px);
+   }
+
+}
+
+@media screen and (max-width: 320px) {
+
+}

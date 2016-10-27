@@ -1,0 +1,112 @@
+@charset "UTF-8";
+@import "../../../sass/func";
+.icon-arrow-down-single {
+  display: block;
+  background-image: url(../images/sprites/sprite.png);
+  background-size:pxToRem(143px) pxToRem(97px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-110px) pxToRem(-38px);
+  width: pxToRem(31px);
+  height: pxToRem(18px);
+}
+.icon-arrow-down {
+  display: block;
+  background-image: url(../images/sprites/sprite.png);
+  background-size:pxToRem(143px) pxToRem(97px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-58px) pxToRem(0px);
+  width: pxToRem(42px);
+  height: pxToRem(31px);
+}
+.icon-arrow-left {
+  display: block;
+  background-image: url(../images/sprites/sprite.png);
+  background-size:pxToRem(143px) pxToRem(97px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-110px) pxToRem(0px);
+  width: pxToRem(33px);
+  height: pxToRem(28px);
+}
+.icon-icon-checked {
+  display: block;
+  background-image: url(../images/sprites/sprite.png);
+  background-size:pxToRem(143px) pxToRem(97px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-38px) pxToRem(-58px);
+  width: pxToRem(31px);
+  height: pxToRem(31px);
+}
+.icon-icon-close {
+  display: block;
+  background-image: url(../images/sprites/sprite.png);
+  background-size:pxToRem(143px) pxToRem(97px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(48px);
+  height: pxToRem(48px);
+}
+.icon-icon-error {
+  display: block;
+  background-image: url(../images/sprites/sprite.png);
+  background-size:pxToRem(143px) pxToRem(97px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-110px) pxToRem(-66px);
+  width: pxToRem(22px);
+  height: pxToRem(22px);
+}
+.icon-icon-position {
+  display: block;
+  background-image: url(../images/sprites/sprite.png);
+  background-size:pxToRem(143px) pxToRem(97px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-58px);
+  width: pxToRem(28px);
+  height: pxToRem(39px);
+}
+
+/*txt---**/
+.icon-d-title1 {
+  display: block;
+  background-image: url(../images/txt/txt.png);
+  background-size:pxToRem(295px) pxToRem(124px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-90px);
+  width: pxToRem(141px);
+  height: pxToRem(34px);
+}
+.icon-d-title2 {
+  display: block;
+  background-image: url(../images/txt/txt.png);
+  background-size:pxToRem(295px) pxToRem(124px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-152px) pxToRem(0px);
+  width: pxToRem(143px);
+  height: pxToRem(34px);
+}
+.icon-d-title3 {
+  display: block;
+  background-image: url(../images/txt/txt.png);
+  background-size:pxToRem(295px) pxToRem(124px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-152px) pxToRem(-44px);
+  width: pxToRem(142px);
+  height: pxToRem(34px);
+}
+.icon-d-title4 {
+  display: block;
+  background-image: url(../images/txt/txt.png);
+  background-size:pxToRem(295px) pxToRem(124px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(142px);
+  height: pxToRem(35px);
+}
+.icon-d-title5 {
+  display: block;
+  background-image: url(../images/txt/txt.png);
+  background-size:pxToRem(295px) pxToRem(124px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-45px);
+  width: pxToRem(141px);
+  height: pxToRem(35px);
+}

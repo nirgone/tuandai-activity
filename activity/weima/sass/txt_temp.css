@@ -1,0 +1,45 @@
+.icon-d-title1 {
+  display: block;
+  background-image: url(../images/txt/txt.png);
+  background-size:pxToRem(295px) pxToRem(124px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-90px);
+  width: pxToRem(141px);
+  height: pxToRem(34px);
+}
+.icon-d-title2 {
+  display: block;
+  background-image: url(../images/txt/txt.png);
+  background-size:pxToRem(295px) pxToRem(124px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-152px) pxToRem(0px);
+  width: pxToRem(143px);
+  height: pxToRem(34px);
+}
+.icon-d-title3 {
+  display: block;
+  background-image: url(../images/txt/txt.png);
+  background-size:pxToRem(295px) pxToRem(124px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-152px) pxToRem(-44px);
+  width: pxToRem(142px);
+  height: pxToRem(34px);
+}
+.icon-d-title4 {
+  display: block;
+  background-image: url(../images/txt/txt.png);
+  background-size:pxToRem(295px) pxToRem(124px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(142px);
+  height: pxToRem(35px);
+}
+.icon-d-title5 {
+  display: block;
+  background-image: url(../images/txt/txt.png);
+  background-size:pxToRem(295px) pxToRem(124px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-45px);
+  width: pxToRem(141px);
+  height: pxToRem(35px);
+}

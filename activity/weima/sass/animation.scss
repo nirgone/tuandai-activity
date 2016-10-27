@@ -1,0 +1,55 @@
+@charset "UTF-8";
+@import "../../../sass/func";
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate(0, -100% );
+    transform: translate(0, -100%);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate(0, -100%);
+    transform: translate(0, -100%);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes slideLeft {
+	from {
+    opacity: 0;
+    -webkit-transform: translate(100%, 0 );
+    transform: translate(100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@-webkit-keyframes slideLeft {
+	from {
+    opacity: 0;
+    -webkit-transform: translate(100%, 0 );
+    transform: translate(100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}

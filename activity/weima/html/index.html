@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>weima</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body class="main-body">
+    <div class="content main-content">
+        <i class="icon-title"></i>
+        <div class="act-txt">
+            <span class="act-time"><i class="icon-border">11</i>月<i class="icon-border">20</i>日</span>
+            <span><i class="icon-position"></i>东莞万江龙湾湿地公园</span>
+        </div>
+        <div class="slice-move">
+            <i class="icon-arrow-left"></i>滑动跑起来
+        </div>
+        <i class="icon-logo"></i>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<!-- <script src="../js/index.js" type="text/javascript" charset="utf-8"></script> -->
+<script type="text/javascript">
+(function() {
+   
+    var startPosi, distance;
+    var obj = $(".slice-move")[0];
+    obj.addEventListener("touchstart", function(e) {
+        // console.info("e---", e.targetTouches[0].screenX);
+        if (e.targetTouches.length > 0) {
+            startPosi = e.targetTouches[0].screenX;
+            // self.point_y = e.targetTouches[0].screenY;
+        }
+    }, false);
+    obj.addEventListener('touchmove', function(e) {
+        if (e.targetTouches.length > 0) {
+            distance = e.targetTouches[0].screenX - startPosi;
+            // console.info("distance-------", distance);
+            if (distance < 0) {
+                $(".slice-move")[0].style.webkitTransitionDuration = "0ms";
+                $(".slice-move")[0].style.webkitTransform = "translate(" + distance + "px,0)";
+            }
+            if(distance < -30) {
+            	window.location.href = './detail.html';
+            }
+        }
+    }, false);
+    obj.addEventListener('touchend', function(e) {
+        $(".slice-move")[0].style.webkitTransform = "translate(0,0)";
+        $(".slice-move")[0].style.webkitTransitionDuration = "100ms";
+        // window.location.href = './detail.html';
+    }, false);
+    
+})();
+</script>
+
+</html>
