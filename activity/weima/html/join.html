@@ -35,6 +35,7 @@
 </head>
 
 <body>
+
     <div class="content ">
         <div class="background-bottom">
             <ul class="signup">
@@ -54,6 +55,20 @@
                     <div>手机号码</div>
                     <div>
                         <input type="tel" name="phone" id="myPhone" placeholder="请输入您在团贷网的注册手机号">
+                    </div>
+                </li>
+                <li class="s-row">
+                    <div>衣服尺码</div>
+                    <div>
+                        <select name="size" id="mySize" class="needsClick">
+                            <option value="XS码">XS码</option>
+                            <option value="S码">S码</option>
+                            <option value="M码">M码</option>
+                            <option value="L码">L码</option>
+                            <option value="XL码">XL码</option>
+                            <option value="XXL码">XXL码</option>
+                            <option value="XXXL码" selected="">XXXL码</option>
+                        </select>
                     </div>
                 </li>
             </ul>
@@ -106,29 +121,29 @@
             <div class="module-cont ">
                 <div class="title"><span>报名须知</span></div>
                 <div class="txt-green">
-                    <span>1、手机号须为您在团贷网绑定的手机号码；</span>
-                    <span>2、每位团粉最多可报名3个名额，报名时请填写完整、准确信息；</span>
-                    <span>4、报名信息一经提交则无法更改，请确认无误后再提交；</span>
-                    <span>5、报名规则解释权归团贷网所有。</span>
+                    <span>1、活动名额有限，先到先得；请填写完整、准确信息；</span>
+                    <span>2、报名信息一经提交则无法更改，请确认无误后再提交；</span>
+                    <span>3、报名规则解释权归团贷网所有。</span>
+                    <!-- <span>5、报名规则解释权归团贷网所有。</span> -->
                 </div>
             </div>
         </div>
-        </div>
-        <div class="mask">
-            <div class="popup">
-                <div class="pop-title">
-                    <span>提交成功</span>
-                </div>
-                <div class="pop-msg">
-                    报名信息提交成功后，请保持手机信息畅通，确保工作人员能够第一时间联系您领取装备包！
-                </div>
-                <div class="pop-btn">我知道了</div>
-                <i class="icon-close"></i>
+    </div>
+    <div class="mask">
+        <div class="popup">
+            <div class="pop-title">
+                <span>提交成功</span>
             </div>
+            <div class="pop-msg">
+                报名信息提交成功后，请保持手机信息畅通，确保工作人员能够第一时间联系您领取装备包！
+            </div>
+            <div class="pop-btn">我知道了</div>
+            <i class="icon-close"></i>
         </div>
+    </div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
-<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
 <script src="../js/join.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">

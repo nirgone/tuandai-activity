@@ -1,0 +1,303 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    // overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-overflow-scrolling: touch !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page {
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+    background-color: #fff;
+    font-family: 冬青黑体简体中文 W3;
+    padding-top: 15%;
+    padding-bottom: 10%;
+    box-sizing: border-box;
+    .content {
+        position: relative;
+        /*  top: 15%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ */
+        z-index: 999;
+        box-sizing: border-box;
+        .md {
+            background: url(../images/bg01.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            width: pxToRem(572px);
+            height: pxToRem(468px);
+            margin: auto;
+            margin-bottom: pxToRem(36px);
+            .title {
+                font-size: pxToRem(36px);
+                color: #fff;
+                line-height: pxToRem(90px);
+                text-align: center;
+            }
+            .sign-days {
+                font-size: pxToRem(146px);
+                color: #424242;
+                margin-top: pxToRem(92px);
+                text-align: center;
+                &:after {
+                    content: "天";
+                    margin-left: pxToRem(10px);
+                    font-size: pxToRem(30px);
+                }
+            }
+        }
+        .label {
+            text-align: center;
+            color: #ababab;
+            font-size: pxToRem(26px);
+        }
+    }
+}
+
+.loading {
+    background: url(../images/loading.gif);
+    background-size: pxToRem(144px) pxToRem(144px);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: #fbfbf9;
+    display: none;
+}
+
+.dialog {
+    display: none;
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    background-color: #e7f5fe;
+    font-family: 冬青黑体简体中文 W3;
+    padding-top: 15%;
+    padding-bottom: 10%;
+    box-sizing: border-box;
+    &.getRedPackage {
+        display: block;
+        .tip-redPackage {
+            display: block;
+        }
+    }
+    &.getError {
+        display: block;
+        .tip-error {
+            display: block;
+        }
+    }
+    .tip-redPackage {
+        position: relative;
+        /*   top: 50%;
+        left: 50%;
+        transform: translate(-50%, -65%); */
+        z-index: 999;
+        box-sizing: border-box;
+        display: none;
+        margin: auto;
+        .md {
+            background: url(../images/bg02.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            width: pxToRem(628px);
+            height: pxToRem(488px);
+            margin: auto;
+            margin-bottom: pxToRem(40px);
+            position: relative;
+            .icon-close {
+                background: url(../images/icon-close.png);
+                background-size: pxToRem(32px) pxToRem(32px);
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                width: pxToRem(52px);
+                height: pxToRem(52px);
+                position: absolute;
+                top: pxToRem(-64px);
+                right: pxToRem(-18px);
+            }
+            .title {
+                font-size: pxToRem(48px);
+                color: #fff;
+                line-height: pxToRem(90px);
+                text-align: center;
+            }
+            .icon-figure {
+                background: url(../images/icon-figure.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                width: pxToRem(212px);
+                height: pxToRem(174px);
+                margin: auto;
+                margin-top: pxToRem(46px);
+                margin-bottom: pxToRem(44px);
+            }
+            .redPackage {
+                font-size: pxToRem(44px);
+                color: #21a4fc;
+                text-align: center;
+                font {
+                    font-size: pxToRem(58px);
+                }
+            }
+        }
+        .btn-check {
+            display: block;
+            margin: auto;
+            width: pxToRem(570px);
+            height: pxToRem(88px);
+            line-height: pxToRem(88px);
+            background-color: #2ba9fd;
+            color: #fff;
+            text-align: center;
+            border-radius: pxToRem(44px);
+            box-shadow: 0px pxToRem(6px) 0 #0092f5;
+        }
+    }
+    .tip-error {
+        position: relative;
+        /*  top: 50%;
+        left: 50%;
+        transform: translate(-50%, -65%); */
+        z-index: 999;
+        box-sizing: border-box;
+        display: none;
+        width: pxToRem(570px);
+        height: pxToRem(470px);
+        border-radius: pxToRem(40px);
+        background-color: #fff;
+        padding-top: pxToRem(48px);
+        box-sizing: border-box;
+        box-shadow: pxToRem(4px) pxToRem(4px) pxToRem(4px) rgba(0, 0, 0, .11), pxToRem(-4px) 0 pxToRem(4px) rgba(0, 0, 0, .11), ;
+        margin: auto;
+        .icon-close {
+            background: url(../images/icon-close.png);
+            background-size: pxToRem(32px) pxToRem(32px);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            width: pxToRem(52px);
+            height: pxToRem(52px);
+            position: absolute;
+            top: pxToRem(-64px);
+            right: pxToRem(-18px);
+        }
+        .icon-error {
+            background: url(../images/icon-error.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            width: pxToRem(212px);
+            height: pxToRem(284px);
+            margin: auto;
+            margin-bottom: pxToRem(36px);
+        }
+        .label {
+            font-size: pxToRem(34px);
+            color: #21a4fc;
+            text-align: center;
+        }
+    }
+}
+
+.btn-blue {
+    // width: pxToRem(570px);
+    // height: pxToRem(80px);
+    // border-radius: pxToRem(10px);
+    @include background('../images/btn-blue.png', 568px, 88px);
+    line-height: pxToRem(88px);
+    font-size: pxToRem(38px);
+    color: #fff;
+    text-align: center;
+    margin: auto;
+    margin-top: pxToRem(30px);
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, .8);
+    display: none;
+}
+
+.masker {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.icon-share {
+    @include background('../images/weixin-share.png', 564px, 417px);
+    position: absolute;
+    top: pxToRem(30px);
+    right: pxToRem(30px);
+}
+
+.qrcode {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    // left: 50%;
+    // margin-left: pxToRem(-204px);
+    z-index: 9999;
+    img {
+        width: pxToRem(408px);
+        height: pxT oRem(408px);
+        display: block;
+        margin: auto;
+    }
+    span {
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+    }
+}
+
+.ori,
+.sub {
+    display: none;
+}
+.p-txt {
+    // width: 100%;
+    // font-size: pxToRem(38px);
+    // text-align: center;
+    // color: #fff;
+    // margin-top: pxToRem(40px);
+    @include background('../images/qr-txt.png', 530px, 51px);
+    margin: auto;
+    margin-top: pxToRem(56px);
+}

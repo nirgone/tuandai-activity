@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>签到</title>
+    <!-- <link rel="stylesheet" href="../css/index.css"> -->
+     <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="page">
+        <div class="content">
+            <div class="md">
+                <div class="title">您在团粉圈连续签到</div>
+                <div class="sign-days"></div>
+            </div>
+            <div class="label">连续签到有惊喜哦！</div>
+            <div class="ori">
+                <div class="btn-share btn-blue">分 享</div>
+            </div>
+            <div class="sub">
+                <div class="btn-sign btn-blue">我也要签到</div>
+            </div>
+        </div>
+    </div>
+    <div class="loading"></div>
+    <div class="dialog">
+        <div class="tip-redPackage">
+            <div class="md">
+                <div class="icon-close"></div>
+                <div class="title">恭喜亲签到获得！</div>
+                <div class="icon-figure"></div>
+                <div class="redPackage">投资红包
+                    <font>5</font>元</div>
+            </div>
+            <a class="btn-check" href="//m.tuandai.com/Member/UserPrize/Index.aspx">马上查看</a>
+        </div>
+        <div class="tip-error">
+            <div class="icon-close"></div>
+            <div class="icon-error"></div>
+            <div class="label error-label">签到出错啦~请稍后再试！</div>
+        </div>
+    </div>
+    <div class="mask" id="sharePop">
+        <i class="icon-share"></i>
+    </div>
+    <div class="mask" id="qrCodePop">
+        <div class="qrcode">
+            <img src="../images/qrcode.jpg" >
+            <span class="p-txt"></span>
+        </div>
+        <div class="masker"></div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

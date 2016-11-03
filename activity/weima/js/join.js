@@ -44,7 +44,11 @@
 			'<ul class="signup"><li class="s-row"><div>姓名</div>' +
 			'<div><input type="text" name="name" placeholder="请输入您的真实姓名"></div></li>' +
 			'<li class="s-row"><div>身份证号</div><div>' +
-			'<input type="text" name="idNo" placeholder="请输入您的身份证号码"></div></li></ul></div>';
+			'<input type="text" name="idNo" placeholder="请输入您的身份证号码"></div></li>' +
+			'<li class="s-row"><div>衣服尺码</div><div><select name="size" class="needsClick"><option value="XS码">XS码</option>' +
+			'<option value="S码">S码</option><option value="M码">M码</option><option value="L码">L码</option>' +
+			'<option value="XL码">XL码</option><option value="XXL码">XXL码</option>' +
+			'<option value="XXXL码" selected="">XXXL码</option></select></div></li></ul></div>';
 		$(".add-cont").append(temp);
 		if (num == 1) {
 			$(this).hide();
@@ -66,7 +70,8 @@
 		var mySignup = {
 			name: $("#myName").val(),
 			phone: $("#myPhone").val(),
-			id: $("#myId").val()
+			id: $("#myId").val(),
+			size: $("#mySize").val()
 		};
 		if (mySignup.name.trim().length == 0 || mySignup.phone.trim().length == 0 || mySignup.id.trim().length == 0) {
 			isCorrect = false;
@@ -78,14 +83,15 @@
 			var item = arr.eq(i);
 			var friend = {
 				name: item.find("input[name='name']").val(),
-				id: item.find("input[name='idNo']").val()
+				id: item.find("input[name='idNo']").val(),
+				size: item.find("select").val()
 			};
 			if (friend.name.trim().length == 0 || friend.id.trim().length == 0) {
 				isCorrect = false;
 			}
 			friends.push(friend);
 		}
-		// console.info(friends);
+		console.info(friends);
 		if ($(".correct").length > 0) {
 			isCorrect = false;
 		}
@@ -113,6 +119,7 @@
 		$(".pop-msg").html(msg.content);
 		$(".mask").show();
 	}
+
 	function hidePopup() {
 		$(".mask").hide();
 	}

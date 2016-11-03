@@ -76,7 +76,6 @@
                         </div>
                     </li>
                 </ul>
-                <i class="icon-arrow-down"></i>
             </div>
             <div class="module-table">
                 <div class="title"><span><i class="d-title3"></i></span></div>
@@ -124,16 +123,17 @@
                 </div>
                 <div class="d-btn btn-join btn">我要参加</div>
             </div>
-            <i class="icon-join btn-join"></i>
         </div>
     </div>
+    <div class="a-cont"><i class="icon-arrow-down"></i></div>
+    <i class="icon-join btn-join"></i>
     <div class="mask">
         <div class="popup">
             <div class="pop-title">
                 <span>报名失败</span>
             </div>
             <div class="pop-msg">
-            <span class="e-tips">免费报名名额已满<br>感谢您的关注！</span>
+                <span class="e-tips">免费报名名额已满<br>感谢您的关注！</span>
             </div>
             <div class="pop-btn">我知道了</div>
             <i class="icon-close"></i>
@@ -158,15 +158,15 @@
         // $(".mask").show();
     });
     $(".pop-btn, .icon-close").on('click', function() {
-		$(".mask").hide();
-	});
+        $(".mask").hide();
+    });
 
     $(".content").on('scroll', function() {
         var obj = $(".content")[0];
         if ((obj.scrollTop + $(window).height()) == obj.scrollHeight) {
-            $(".icon-arrow-down").hide();
+            $(".a-cont").hide();
         } else {
-            $(".icon-arrow-down").show();
+            $(".a-cont").show();
         }
     });
 })();
