@@ -1,0 +1,43 @@
+{
+  "name": "actinit",
+  "bin": {
+    "actinit": "actinit"
+  },
+
+  "private": true,
+  "devDependencies": {
+    
+  },
+  "dependencies": {
+   
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "serve": "live-server dist/ --port=9091",
+    "test": "grunt test"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended"
+    ],
+    "env": {
+      "node": true,
+      "browser": true,
+      "es6": true,
+      "jquery": true,
+      "mocha": true
+    },
+    "rules": {
+      "quotes": [
+        2,
+        "single"
+      ],
+      "indent": [
+        2,
+        2
+      ]
+    }
+  }
+}
