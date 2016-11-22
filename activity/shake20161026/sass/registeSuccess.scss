@@ -1,0 +1,462 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    // height: 100%;
+    // width: 100%;
+    // overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-overflow-scrolling: touch !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page {
+    .header {
+        .top-box {
+            width: 100%;
+            height: pxToRem(90px);
+            background: #fff;
+            position: relative;
+        }
+        .logo {
+            width: pxToRem(328px);
+            height: pxToRem(56px);
+            position: absolute;
+            left: pxToRem(18px);
+            top: 50%;
+            margin-top: pxToRem(-28px);
+            img {
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+    .footer {
+        background: #d5d5d5;
+        overflow: hidden;
+        padding: pxToRem(20px) 0;
+        .f-con {
+            width: pxToRem(690px);
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .icon {
+            width: pxToRem(50px);
+            height: pxToRem(50px);
+            background: url(../images/icon-f.png) no-repeat;
+            background-size: 100% 100%;
+        }
+        p {
+            color: #7a7a7a;
+            font-size: pxToRem(16px);
+        }
+        .add {
+            width: pxToRem(200px);
+            line-height: pxToRem(32px);
+            border-right: 1px solid #bbb;
+            padding-right: pxToRem(10px);
+            margin-right: pxToRem(10px);
+        }
+        .num {
+            margin: pxToRem(16px) 0 0 pxToRem(16px);
+            width: pxToRem(240px);
+            font-size: pxToRem(16px);
+            line-height: pxToRem(30px);
+            color: #7a7a7a;
+            border-right: 1px solid #bbb;
+        }
+        .num span {
+            font-size: pxToRem(18px);
+            color: #7a7a7a;
+        }
+        .toIndex {
+            color: #666;
+            border: 1px solid #666;
+            position: relative;
+            background: none;
+            width: pxToRem(120px);
+            right: 0;
+            font-size: pxToRem(20px);
+            height: pxToRem(40px);
+            line-height: pxToRem(40px);
+            top: pxToRem(16px);
+            margin-top: 0;
+        }
+    }
+    .content {
+        .banner {
+            background-image: url("../images/bg.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            position: relative;
+            z-index: 999;
+            padding-top: pxToRem(70px);
+            .coupon {
+                background-image: url("../images/icon-coupon.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                width: pxToRem(694px);
+                height: pxToRem(326px);
+                position: absolute;
+                z-index: 999;
+                top: pxToRem(64px);
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .banner-icon {
+                background-image: url("../images/bg-redPackage.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                width: 100%;
+                height: pxToRem(564px);
+            }
+            .banner-md {
+                padding-top: pxToRem(40px);
+                background-color: #ff5639;
+                margin-top: pxToRem(-4px);
+                .md1 {
+                    font-size: pxToRem(48px);
+                    font-family: 微软雅黑;
+                    color: #fff;
+                    text-align: center;
+                    margin-bottom: pxToRem(26px);
+                    &:before {
+                        content: "";
+                        background-image: url("../images/icon-tick.png");
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: 50% 50%;
+                        width: pxToRem(50px);
+                        height: pxToRem(50px);
+                        margin-right: pxToRem(12px);
+                        display: inline-block;
+                        vertical-align: middle;
+                        font-weight: bold;
+                    }
+                }
+                .md2 {
+                    color: #fff;
+                    font-size: pxToRem(30px);
+                    font-family: 微软雅黑;
+                    text-align: center;
+                    margin-bottom: pxToRem(48px);
+                }
+                .md3 {
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: 50% 50%;
+                    width: pxToRem(640px);
+                    height: pxToRem(92px);
+                    background-image: url("../images/icon-toTuanbaoxiang.png");
+                    margin: auto;
+                    display: block;
+                    animation: myBreath 1.8s infinite both;
+                    &.tuanbaoxiang {
+                        background-image: url("../images/icon-toTuanbaoxiang.png");
+                    }
+                    &.download {
+                        background-image: url("../images/icon-toDownload.png");
+                    }
+                }
+            }
+        }
+        .content-md {
+            background-color: #ff5639;
+            padding-top: pxToRem(180px);
+            padding-bottom: pxToRem(68px);
+            .projects {
+                width: pxToRem(690px);
+                margin: auto;
+                position: relative;
+                margin-bottom: pxToRem(74px);
+                .title {
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: 50% 50%;
+                    background-image: url("../images/project-title.png");
+                    width: pxToRem(490px);
+                    height: pxToRem(108px);
+                    position: absolute;
+                    top: pxToRem(-100px);
+                    left: 50%;
+                    transform: translateX(-50%);
+                    z-index: 99;
+                }
+                .project {
+                    background-color: #fff;
+                    border-radius: pxToRem(12px);
+                    width: 100%;
+                    // height: pxToRem(200px);
+                    margin-bottom: pxToRem(20px);
+                    position: relative;
+                    padding-top: pxToRem(26px);
+                    padding-bottom: pxToRem(36px);
+                    padding-left: pxToRem(16px);
+                    box-sizing: border-box;
+                    .icon-hot {
+                        background: url(../images/icon-hot.png);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: 0% 0%;
+                        width: pxToRem(90px);
+                        height: pxToRem(91px);
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        border-top-right-radius: pxToRem(12px);
+                    }
+                    .left-wrapper {
+                        display: inline-block;
+                        width: pxToRem(500px);
+                        overflow: hidden;
+                        vertical-align: middle;
+                        .project-name {
+                            color: #5a5a5a;
+                            font-size: pxToRem(24px);
+                            font-family: 微软雅黑;
+                            margin-bottom: pxToRem(26px);
+                        }
+                        .inline-row {
+                            font-size: 0;
+                            position: relative;
+                            &.first-row {
+                                margin-bottom: pxToRem(32px);
+                            }
+                            .label01 {
+                                font-size: pxToRem(24px);
+                                color: #fd6040;
+                                font-family: 微软雅黑;
+                                display: inline-block;
+                                vertical-align: bottom;
+                                label {
+                                    font-size: pxToRem(50px);
+                                    font-weight: bold;
+                                    color: #fd6040;
+                                    margin-right: pxToRem(6px);
+                                    &:after {
+                                        content: "%";
+                                        font-size: pxToRem(28px);
+                                    }
+                                }
+                                margin-right: pxToRem(14px);
+                            }
+                            .line {
+                                &:before {
+                                    @include border(left,
+                                    #bfbfbf);
+                                }
+                                display: inline-block;
+                                vertical-align: bottom;
+                                height: pxToRem(38px);
+                                width: 1px;
+                                position: relative;
+                            }
+                            .label02 {
+                                display: inline-block;
+                                vertical-align: bottom;
+                                margin-left: pxToRem(14px);
+                                font-size: pxToRem(24px);
+                                color: #999;
+                            }
+                            .label03 {
+                                width: pxToRem(380px);
+                                height: pxToRem(8px);
+                                background-color: #ebebeb;
+                                position: relative;
+                                border-radius: pxToRem(8px);
+                                display: inline-block;
+                                margin-right: pxToRem(10px);
+                                vertical-align: middle;
+                                .progress {
+                                    height: pxToRem(8px);
+                                    position: absolute;
+                                    left: 0;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    border-radius: pxToRem(8px);
+                                    background-color: #ff544a;
+                                }
+                            }
+                            .label04 {
+                                font-size: pxToRem(16px);
+                                color: #ffe400;
+                                display: inline-block;
+                                color: #ff5449;
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+                    .btn-buy {
+                        background: url(../images/btn-buy.png);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: 50% 50%;
+                        width: pxToRem(120px);
+                        height: pxToRem(126px);
+                        position: absolute;
+                        bottom: pxToRem(14px);
+                        right: pxToRem(38px);
+                    }
+                }
+            }
+            .clun {
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-image: url("../images/icon-clun.png");
+                width: pxToRem(690px);
+                height: pxToRem(308px);
+                margin: auto;
+                margin-bottom: pxToRem(24px);
+            }
+            .gifts {
+                width: pxToRem(690px);
+                height: pxToRem(670px);
+                border-radius: pxToRem(8px);
+                background-color: #fff;
+                padding: pxToRem(54px) pxToRem(66px);
+                box-sizing: border-box;
+                margin: auto;
+                margin-bottom: pxToRem(60px);
+                ul {
+                    width: 100%;
+                    margin: auto;
+                    overflow: hidden;
+                }
+                li {
+                    width: pxToRem(250px);
+                    margin-bottom: pxToRem(40px);
+                    &.gift01 {
+                        float: left;
+                        .icon {
+                            background-image: url("../images/icon-gift01.png");
+                        }
+                    }
+                    &.gift02 {
+                        float: right;
+                        .icon {
+                            background-image: url("../images/icon-gift02.png");
+                        }
+                    }
+                    &.gift03 {
+                        float: left;
+                        .icon {
+                            background-image: url("../images/icon-gift03.png");
+                        }
+                    }
+                    &.gift04 {
+                        float: right;
+                        .icon {
+                            background-image: url("../images/icon-gift04.png");
+                        }
+                    }
+                    .icon {
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: 50% 50%;
+                        width: pxToRem(176px);
+                        height: pxToRem(176px);
+                        margin: auto;
+                        margin-bottom: pxToRem(12px);
+                    }
+                    .text {
+                        font-size: pxToRem(24px);
+                        line-height: pxToRem(36px);
+                        text-align: center;
+                        color: #5a5a5a;
+                        label {
+                            color: #ff5637;
+                        }
+                    }
+                }
+            }
+            .btn-toInvestment {
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-image: url("../images/btn-toInvestment.png");
+                width: pxToRem(640px);
+                height: pxToRem(92px);
+                display: block;
+                margin: auto;
+                margin-bottom: pxToRem(28px);
+                animation: myBreath 1.8s infinite both;
+            }
+            .footer-label {
+                color: #ffda0b;
+                font-size: pxToRem(24px);
+                font-weight: 微软雅黑;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.toIndex {
+    display: block;
+    border-radius: pxToRem(8px);
+    border: 1px solid #b5b5b5;
+    height: pxToRem(56px);
+    line-height: pxToRem(56px);
+    width: pxToRem(174px);
+    text-align: center;
+    font-size: pxToRem(30px);
+    color: #666;
+    position: absolute;
+    top: 50%;
+    margin-top: pxToRem(-28px);
+    right: pxToRem(36px);
+    background: #fff;
+}
+
+.rf {
+    float: right;
+}
+
+.lf {
+    float: left;
+}
+
+@keyframes myBreath {
+    0% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+    50% {
+        transform: scale(.95);
+        -webkit-transform: scale(.95);
+    }
+    100% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+}
+
+@-webkit-keyframes myBreath {
+    /*Safari and Chrome*/
+    0% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+    50% {
+        transform: scale(.95);
+        -webkit-transform: scale(.95);
+    }
+    100% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+}
