@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+	<meta name="format-detection" content="telephone=no">
+	<title>国庆大放价</title>
+	<!-- build:css(dist) ../css/main.css -->
+	<link rel="stylesheet" href="../css/index.css">
+	<link rel="stylesheet" href="../css/media.css">
+	<link rel="stylesheet" href="../css/animation.css">
+	<!-- endbuild -->
+ 	<script>
+	//动态算rem
+	(function(doc, win) {
+		var docEl = doc.documentElement,
+        	resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        	recalc = function() {
+            	// if (docEl.style.fontSize) return;
+            	clientWidth = docEl.clientWidth;
+            	if (!clientWidth) return;
+            	docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+            	if (document.body) {
+                	document.body.style.fontSize = docEl.style.fontSize;
+            	}
+        	};
+    	recalc();
+    	if (!doc.addEventListener) return;
+    	win.addEventListener(resizeEvt, recalc, false);
+    	doc.addEventListener("DOMContentLoaded", recalc, false);
+	})(document, window);
+	</script>
+
+</head>
+<body>
+	<div class="rule-btn"></div>
+	<div class="page active">
+		<div class="banner">
+			<div class="banner-bg"></div>
+			<div class="banner-radial"></div>
+			<div class="banner-content"></div>
+		</div>
+		
+		<div class="date">活动时间：9月30日-10月8日</div>
+		<div class="red-packet"></div>
+		<div class="lottery-area">
+			<div class="lottery-content">
+				<div class="machine-content">
+					<div class="tips-text machine-text"></div>
+					<div class="lottery-text machine-text"></div>
+					<div class="operation-wrapper">
+						<div class="rocker-wrapper">
+							<div class="rocker"></div>
+							<div class="rocker-base"></div>
+						</div>
+						<div class="arrow-left"></div>	
+						<div class="arrow-right"></div>
+						<div class="tip-label">点上面按钮抢红包</div>	
+					</div>
+				</div>
+			</div>
+			<div class="lottery-list-wrapper">
+				<div class="line"></div>
+				<div class="shadow"></div>
+				<div class="winners-list">
+					<div class="list-title">
+		                <div>昵称</div>
+		                <div>奖励</div>
+		            </div>
+		            <div class="scroll-content">
+					<div class="list-wrap"></div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">活动解释权归团贷网所有</div>
+		</div>
+	</div>
+
+	<div class="dialog">
+		<div class="mask"></div>
+		<div class="rule-area">
+				<div class="close-btn"></div>
+				<div class="rule-title">红包秘籍</div>
+				<div class="rule-list">
+					<div class="rule-item">
+						1.  现金红包每日十点准时派送；   
+					</div>
+					<div class="rule-item">
+						2.  红包每人每日可抢一次；
+					</div>
+					<div class="rule-item">
+						3.  所有红包均24小时内发至团宝箱；
+					</div>
+					<div class="rule-item">
+						4.  红包使用详情请在团宝箱查看；
+					</div>
+				</div>
+				<div class="rule-footer">活动解释权归团贷网所有</div>
+		</div>
+		<div class="get-prize-wrapper">
+			<!-- <div class="close-btn"></div> -->
+			<div class="content-wrapper">
+				<div class="prize-icon"></div>
+				<div class="label">恭喜你获得</div>
+				<div class="prize-text"></div>
+				<div class="get-prize-btn">立即使用</div>
+			</div>
+		</div>
+		<div class="tip-wrapper">
+			<!-- <div class="close-btn"></div> -->
+			<div class="content-wrapper">
+				<div class="tip-icon"></div>
+				<div class="label"></div>
+				<div class="done-btn">我知道了</div>
+			</div>
+		</div>
+	</div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" charset="utf-8">
+	$(function() {
+		FastClick.attach(document.body);
+		var pageEl = $(".page");
+		var dialogEl = $(".dialog");
+
+		uiInitStatus("1");	//初始化用户状态，	获取到红包时必须传第二个参数
+
+		function initWinnerListData() {
+			var list = "";
+			var temp = "<div class='winner-item'><div class='winner-name'>Linda</div><div class='prize-name'>100元现金红包</div></div>";
+			var length = 10;	//根据此长度来计算滑动时间
+			for(var i = 1; i <= length; i++) {
+				list = temp + list;
+			}
+
+			var speed = 0.5 * length;
+			if(length >= 6) {
+				pageEl.find(".list-wrap").addClass('anit');
+				pageEl.find(".anit").css({
+					"-webkit-animation-duration": speed + "s",
+					"animation-duration": speed + "s",
+				});
+			}
+			pageEl.find(".winners-list").find(".list-wrap").append(list);
+		
+		};
+		// 拼接中奖名单数据
+		initWinnerListData();
+
+		// 初始化状态
+		function uiInitStatus(status, te) {
+			var text;
+			switch(status) {
+				case '0': 
+					text = "敬请期待";
+				break;
+				case '1': 	//倒计时
+					//TODO: 倒计时开始时间
+					var tipsText = pageEl.find(".tips-text");
+						var beginTime = new Date().setHours(10,00,00)	//倒计时时间, 当天10点
+						var leftTime = beginTime - +new Date() ;
+
+						if(leftTime > 0 && leftTime <= 60*60*1000) {	//一小时内开始倒计时
+							var inter = setInterval(function countDown(){
+								var leftsecond = parseInt(leftTime/1000); 
+								var day1 = parseInt(leftsecond/(24*60*60*6)); 
+								var hour = Math.floor((leftsecond-day1*24*60*60)/3600); 
+								var minute = Math.floor((leftsecond-day1*24*60*60-hour*3600)/60); 
+								var second = Math.floor(leftsecond-day1*24*60*60-hour*3600-minute*60); 
+								hour = hour > 9 ? hour : "0" + hour;
+								minute = minute > 9 ? minute : "0" + minute;
+								second = second > 9 ? second : "0" + second;
+								tipsText.text("倒计时 " + hour + ":" + minute + ":" + second)
+								leftTime = leftTime - 1000;
+								if(leftTime < 0) {
+									clearInterval(inter);
+									pageEl.find(".tips-text").text("游戏开始");
+								}
+							}, 1000)
+						} else {
+							pageEl.find(".tips-text").text("敬请期待");
+						}
+					
+				break;
+				case '2': 
+					text = "本场次已结束";
+				break;
+				case '3': 
+					text = "红包已抢完";
+				break;
+				case '4': //获取到红包，红包时必须传第二个参数
+					// text = "现金红包 ¥100元";
+					pageEl.find(".tips-text").text(te);
+				break;
+				case '5': 
+					text = "游戏开始";
+					break;
+				default: 
+					text = "敬请期待";
+			}
+			if(text && text !="") {
+				pageEl.find(".tips-text").text(text);
+			}
+		}
+
+		
+
+		// 点击规则按钮
+		$(".rule-btn").on("click" , function() {
+			onShowRules();
+		});
+
+		// 点击关闭按钮
+		dialogEl.on("click", ".close-btn", function() {
+			onHideDialogs();
+		});
+		// 点击遮罩层关闭
+		dialogEl.on("click", ".mask", function() {
+			onHideDialogs();
+		});
+
+		// 点击我知道了
+		dialogEl.on("click", ".done-btn", function() {
+			onHideDialogs();
+		});
+		
+		var rockerEl = pageEl.find(".rocker");
+
+		//点击摇杆抽奖
+		pageEl.on("click", ".rocker-wrapper", function() {
+			// if(!rockerEl.hasClass("shake")) {	//动画结束之后才可继续抽奖
+				rockerEl.removeClass("shake").addClass("shake");
+				onDrawLottery()
+			// }
+			
+		})
+
+		pageEl.on("animationend webkitAnimationEnd oAnimationEnd", ".rocker-wrapper", function() {
+			pageEl.find(".rocker").removeClass("shake");
+		})
+
+
+		// 抽奖
+		var onDrawLottery = function() {
+			var arr = ["投资红包 ¥100元", "投资红包 ¥50元", "投资红包 ¥30元", "投资红包 ¥20元", "投资红包 ¥10元", "投资红包 ¥5元", "现金红包 ¥100元", "现金红包 ¥50元", "现金红包 ¥20元", "现金红包 ¥10元", "现金红包 ¥5元"];
+			var lotteryTextEl = pageEl.find(".lottery-text");
+
+
+			var beginTime = new Date().setHours(10,00,00)	//倒计时时间, 当天10点
+			var leftTime = beginTime - +new Date() ;
+			if(leftTime > 0 ) {
+				onShowTip("游戏未开始，十点准时开抢哦");
+				return;
+			}
+
+			// if(true) {
+			// 	onShowTip("万元红包，瞬间被抢完，明天十点再来抢吧");
+			// 	return;
+			// }
+			// TODO： 如果已经抢完则 调用onShowTip("万元红包，瞬间被抢完，明天十点再来抢吧");
+
+
+			pageEl.find(".tips-text").hide();
+			function changeText(index, duration) {
+				setTimeout(function() {
+					lotteryTextEl.text(arr[Math.floor(Math.random() * arr.length)]);
+					duration = duration - 30;
+					if(duration <= 0) {
+
+						lotteryTextEl.text(arr[index]);
+
+						onShowResult(1, arr[index]);	//显示抽奖结果
+						return;
+					}
+					changeText(index, duration)
+				}, 20)
+			}
+			changeText(2, 3000);
+
+		}
+
+		// 点击立即使用
+		dialogEl.on("click", ".get-prize-btn", function() {
+			// TODO: 立即使用
+		})
+
+		// 显示抽奖结果
+		var onShowResult = function(status, text) {	//status 0：抽中奖（必须带上第二个参数）1：抢完 2：未开始
+			switch(status) {
+				case 0:
+					onHideDialogs();
+					dialogEl.find(".get-prize-wrapper").find(".prize-text").text(text);
+					dialogEl.find(".get-prize-wrapper").addClass("show").removeClass("hidden");
+					dialogEl.addClass("show").removeClass("hidden");
+					disableScrolling();
+					break;
+				case 1: 
+					onShowTip("万元红包，瞬间被抢完，明天十点再来抢吧");
+				break;
+
+				default:
+				case 2: 
+					onShowTip("游戏未开始，十点准时开抢哦");
+				break;
+
+			}
+		}
+
+		// 显示对话框（抢完，未开始）
+		var onShowTip = function(text) {
+			onHideDialogs();
+			dialogEl.find(".tip-wrapper").find(".label").text(text);
+			dialogEl.find(".tip-wrapper").addClass("show").removeClass("hidden");
+			dialogEl.addClass("show").removeClass("hidden");
+			disableScrolling();
+		}
+
+		// 显示规则
+		var onShowRules = function()  {
+			onHideDialogs();
+			dialogEl.find(".rule-area").addClass("show").removeClass("hidden");
+			dialogEl.addClass("show").removeClass("hidden");
+			disableScrolling();
+		}
+
+		// 关闭弹窗
+		var onHideDialogs = function() {
+			$(".show").removeClass("show");
+			enableScrolling();
+		}
+
+		
+		function scrolling(e) {
+			preventDefault(e);
+		}
+
+		function preventDefault(e) {
+			e = e || window.event;
+			if (e.preventDefault) {
+				e.preventDefault();
+			}
+			e.returnValue = false;
+		}
+
+		function disableScrolling() {
+			// $(".page").removeClass("active");
+			if (window.addEventListener) {
+				window.addEventListener('DOMMouseScroll', scrolling, false);
+				window.addEventListener('touchmove', scrolling, false);
+				window.onmousewheel = document.onmousewheel = scrolling;
+				// document.onkeydown = keydown;
+			}
+		}
+
+		function enableScrolling() {
+			// $(".page").addClass("active");
+			if (window.removeEventListener) {
+				window.removeEventListener('DOMMouseScroll', scrolling, false);
+				window.removeEventListener('touchmove', scrolling, false);
+			}
+			// window.onmousewheel = document.onmousewheel = document.onkeydown = null;
+			window.onmousewheel = document.onmousewheel = null;
+		}
+
+	});
+</script>
+</html>
