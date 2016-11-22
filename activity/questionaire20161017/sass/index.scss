@@ -1,0 +1,290 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    // overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-overflow-scrolling: touch !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+    .content-wrapper {
+        position: relative;
+        z-index: 99;
+        background-image: url("../images/bg-index.png");
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+        padding-top: pxToRem(60px);
+        padding-bottom: pxToRem(44px);
+        min-height: 100%;
+        box-sizing: border-box;
+    }
+    .logo {
+        background-image: url("../images/logo.png");
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+        width: pxToRem(400px);
+        height: pxToRem(74px);
+        position: relative;
+        z-index: 999;
+        margin: auto;
+        margin-bottom: pxToRem(506px);
+    }
+    .rule-btn {
+        background-image: url("../images/btn-rule.png");
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+        width: pxToRem(298px);
+        height: pxToRem(126px);
+        margin: auto;
+        font-size: pxToRem(38px);
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+        box-sizing: border-box;
+        line-height: pxToRem(76px);
+        padding-top: pxToRem(50px);
+        text-shadow: 0 pxToRem(4px) pxToRem(8px) rgba(0, 0, 0, .5);
+        margin-bottom: pxToRem(310px);
+    }
+    .go-btn {
+        background-image: url("../images/btn-go.png");
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+        width: pxToRem(564px);
+        height: pxToRem(100px);
+        display: block;
+        color: #ff881e;
+        font-size: pxToRem(34px);
+        margin: auto;
+        text-align: center;
+        line-height: pxToRem(100px);
+    }
+}
+
+.dialog {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    overflow: hidden;
+    &.show {
+        display: block;
+        .mask {
+            display: block;
+        }
+    }
+    .mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        z-index: 99;
+        display: none;
+    }
+    .rule {
+        background-image: url("../images/bg-rule.png");
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+        width: pxToRem(550px);
+        height: pxToRem(774px);
+        position: absolute;
+        left: 0;
+        top: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        z-index: 999;
+        padding-top: pxToRem(40px);
+        box-sizing: border-box;
+        .rule-title {
+            font-size: pxToRem(34px);
+            text-align: center;
+            color: #999;
+        }
+        .rule-list {
+            position: relative;
+            font-size: pxToRem(26px);
+            padding: pxToRem(28px) pxToRem(32px);
+            box-sizing: border-box;
+            word-break: break-all;
+            .rule-item {
+                line-height: pxToRem(52px);
+                color: #333;
+            }
+        }
+        .close-btn {
+            width: pxToRem(436px);
+            height: pxToRem(88px);
+            box-shadow: 0 pxToRem(4px) pxToRem(8px) rgba(0, 0, 0, .25);
+            background-color: #ff891f;
+            color: #fff;
+            font-size: pxToRem(34px);
+            text-align: center;
+            border-radius: pxToRem(44px);
+            line-height: pxToRem(88px);
+            margin: auto;
+        }
+        .rule-footer {
+            font-size: pxToRem(22px);
+            color: #999;
+            text-align: center;
+            line-height: pxToRem(36px);
+            width: pxToRem(436px);
+            margin: auto;
+            margin-top: pxToRem(30px);
+            &:before {
+                content: "";
+                transform-origin: 0 0;
+                -webkit-transform-origin: 0 0;
+                width: 100%;
+                border-top: 1px dashed #e6e6e6;
+                transform: scaleY(0.5);
+                -webkit-transform: scaleY(0.5);
+                display: block;
+                height: 1px;
+                margin-bottom: pxToRem(20px);
+                z-index: 99;
+            }
+            .footer-wrapper {
+                padding: 0 pxToRem(30px);
+            }
+        }
+    }
+    .tip-login {
+        position: absolute;
+        left: 0;
+        top: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        z-index: 999;
+        box-sizing: border-box;
+        background-color: #fff;
+        border-radius: pxToRem(20px);
+        padding: pxToRem(60px) pxToRem(56px);
+        padding-top: pxToRem(50px);
+        .label {
+            font-size: pxToRem(34px);
+            color: #333;
+            line-height: pxToRem(52px);
+            width: pxToRem(436px);
+            margin: auto;
+            text-align: center;
+            margin-bottom: pxToRem(50px);
+        }
+        .login-btn {
+            display: block;
+            width: pxToRem(436px);
+            height: pxToRem(88px);
+            box-shadow: 0 pxToRem(4px) pxToRem(8px) rgba(0, 0, 0, .25);
+            background-color: #ff891f;
+            color: #fff;
+            font-size: pxToRem(34px);
+            text-align: center;
+            border-radius: pxToRem(44px);
+            line-height: pxToRem(88px);
+            margin: auto;
+        }
+    }
+    .tip-writed {
+        position: absolute;
+        left: 0;
+        top: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        z-index: 999;
+        box-sizing: border-box;
+        background-color: #fff;
+        border-radius: pxToRem(20px);
+        padding: pxToRem(60px) pxToRem(56px);
+        padding-top: pxToRem(50px);
+        .label {
+            font-size: pxToRem(34px);
+            color: #333;
+            line-height: pxToRem(52px);
+            width: pxToRem(436px);
+            margin: auto;
+            text-align: center;
+            margin-bottom: pxToRem(50px);
+        }
+        .close-btn {
+            display: block;
+            width: pxToRem(436px);
+            height: pxToRem(88px);
+            box-shadow: 0 pxToRem(4px) pxToRem(8px) rgba(0, 0, 0, .25);
+            background-color: #ff891f;
+            color: #fff;
+            font-size: pxToRem(34px);
+            text-align: center;
+            border-radius: pxToRem(44px);
+            line-height: pxToRem(88px);
+            margin: auto;
+        }
+    }
+}
+
+.show {
+    display: block !important;
+}
+
+.hidden {
+    display: hidden !important;
+}
+
