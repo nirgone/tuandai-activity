@@ -1,0 +1,131 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    // overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-overflow-scrolling: touch !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page {
+    padding-bottom: pxToRem(88px);
+    min-height: 100%;
+    background-size: contain;
+     box-sizing: border-box;
+    .banner {
+        width: 100%;
+        height: pxToRem(320px);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .list {
+        // 
+        .item-wrapper {
+            padding: pxToRem(40px) 0;
+            padding-left: pxToRem(30px);
+            // padding-right: pxToRem(30px);
+            overflow: hidden;
+            position: relative;
+            &:after {
+                @include border(bottom, #e6e6e6);
+            }
+            .item-icon {
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: pxToRem(100px);
+                height: pxToRem(100px);
+                float: left;
+                margin-right: pxToRem(20px);
+                background-position: 50% 50%;
+            }
+            .text-wrapper {
+                padding-right: pxToRem(78px);
+                // width: pxToRem(550px);
+                margin-top: pxToRem(12px);
+                .label01 {
+                    font-size: pxToRem(34px);
+                    color: #333;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+                .label02 {
+                    font-size: pxToRem(26px);
+                    color: #999;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    line-height: pxToRem(32px);
+                    margin-top: pxToRem(20px);
+                }
+            }
+            .text-detail {
+                &:before {
+                    content: "";
+                    position: absolute;
+                    transform-origin: 0 0;
+                    -webkit-transform-origin: 0 0;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    border-top: 1px dashed #e6e6e6;
+                    transform: scaleY(0.5);
+                    -webkit-transform: scaleY(0.5);
+                }
+                clear: both;
+                margin-top: pxToRem(22px);
+                padding-left: pxToRem(120px);
+                position: relative;
+                padding-top: pxToRem(20px);
+                padding-right: pxToRem(78px);
+                font-size: pxToRem(26px);
+                line-height: pxToRem(40px);
+                color: #CCCCCC;
+                letter-spacing: 0px;
+                display: none;
+                text-align: justify;
+            }
+            .arrow-icon {
+                background-repeat: no-repeat;
+                background-size: pxToRem(14px) pxToRem(24px);
+                background-image: url('../images/icon-arrow.png');
+                width: pxToRem(30px);
+                height: pxToRem(30px);
+                background-position: 50% 50%;
+                position: absolute;
+                top: pxToRem(84px);
+                right: pxToRem(30px);
+                &.down {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+    .btn {
+        width: 100%;
+        margin: auto;
+        margin-top: pxToRem(60px);
+        height: pxToRem(88px);
+        line-height: pxToRem(88px);
+        font-size: pxToRem(34px);
+        text-align: center;
+        color: #fff;
+        background-color: #fab600;
+        display: block;
+        position: fixed;
+        bottom: 0;
+    }
+}

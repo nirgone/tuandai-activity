@@ -1,0 +1,170 @@
+/* @function baseFontSize($width) {
+	return 20 * $width / 640;
+}
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+/* @function baseFontSize($width) {
+	return 20 * $width / 640;
+}
+ */
+html,
+body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch !important; }
+
+a {
+  text-decoration: none; }
+
+.page {
+  padding-bottom: 3.2rem;
+  min-height: 100%;
+  background-size: contain;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+  .page .banner {
+    width: 100%;
+    height: 8.5333333333rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto; }
+  .page .list {
+    padding-left: 1.4506666667rem;
+    padding-right: 1.408rem;
+    margin-top: 0.8533333333rem;
+    overflow: hidden;
+    position: relative; }
+    .page .list .item-wrapper {
+      padding: 0.8533333333rem 0;
+      overflow: hidden;
+      position: relative; }
+      .page .list .item-wrapper:after {
+        content: "";
+        position: absolute;
+        transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-bottom: 1px solid #e6e6e6;
+        transform: scaleY(0.5);
+        -webkit-transform: scaleY(0.5); }
+      .page .list .item-wrapper .item-icon {
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 2.9866666667rem;
+        height: 2.9866666667rem;
+        float: left;
+        margin-right: 1.28rem;
+        background-position: 50% 50%; }
+      .page .list .item-wrapper .text-wrapper {
+        float: right;
+        width: 8.8746666667rem; }
+        .page .list .item-wrapper .text-wrapper .label01 {
+          font-size: 0.7253333333rem;
+          color: #333;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          line-height: 1.024rem; }
+        .page .list .item-wrapper .text-wrapper .label02 {
+          font-size: 0.5546666667rem;
+          color: #999;
+          margin-top: 0.4266666667rem;
+          line-height: 0.768rem;
+          /* text-overflow: ellipsis;
+                    overflow: hidden; */
+          white-space: nowrap;
+          text-align: justify; }
+        .page .list .item-wrapper .text-wrapper .label03 {
+          font-size: 0.5546666667rem;
+          color: #999;
+          line-height: 0.768rem;
+          text-align: justify; }
+  .page .btn-wrapper {
+    position: fixed;
+    bottom: 0;
+    width: 100%; }
+    .page .btn-wrapper .btn-bg {
+      position: absolute;
+      background-image: url("../images/btn-bg.png");
+      background-size: 16rem 2.56rem;
+      width: 100%;
+      height: 2.56rem;
+      z-index: 99;
+      bottom: 1.8773333333rem; }
+    .page .btn-wrapper .btn {
+      margin-top: 0.4266666667rem;
+      height: 1.8773333333rem;
+      line-height: 1.8773333333rem;
+      font-size: 0.7253333333rem;
+      text-align: center;
+      color: #fff;
+      background-color: #fab600;
+      display: block;
+      position: relative;
+      z-index: 999; }
+    .page .btn-wrapper .sec-btn {
+      font-size: 0.64rem;
+      line-height: 0.896rem;
+      color: #999999;
+      text-align: center;
+      margin: auto;
+      display: block;
+      white-space: nowrap;
+      width: 4.2666666667rem;
+      position: relative;
+      z-index: 999; }
+/*# sourceMappingURL=template03.css.map */

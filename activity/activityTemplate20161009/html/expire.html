@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+	<meta name="format-detection" content="telephone=no">
+	<title>活动过期拉</title>
+	<link rel="stylesheet" href="../css/expire.css">
+ 	<script>
+	//动态算rem
+	(function(doc, win) {
+		var docEl = doc.documentElement,
+        	resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        	recalc = function() {
+            	// if (docEl.style.fontSize) return;
+            	clientWidth = docEl.clientWidth;
+            	if (!clientWidth) return;
+            	docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+            	if (document.body) {
+                	document.body.style.fontSize = docEl.style.fontSize;
+            	}
+        	};
+    	recalc();
+    	if (!doc.addEventListener) return;
+    	win.addEventListener(resizeEvt, recalc, false);
+    	doc.addEventListener("DOMContentLoaded", recalc, false);
+	})(document, window);
+	</script>
+
+</head>
+<body>
+	<div class="page">
+		<div class="banner"></div>
+		<div class="content">
+			<div class="label01">Sorry，活动过期啦…</div>
+			<div class="label02">登录官网，查看其它精彩活动吧！</div>
+			<div class="label03">
+				<a href="//m.tuandai.com">马上查看</a>
+				<label class="second">5s</label>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+	(function() {
+		FastClick.attach(document.body);
+		var times = 5000;
+		var secondEl =  $(".second");
+		var interval = setInterval(function() {
+			times = times - 1000;
+			times = times < 0 ? 0: times;
+			secondEl.text(times/1000 + "s")
+			if(times <= 0) {
+				clearInterval(interval);
+				window.location.href = "//m.tuandai.com";
+			}
+		}, 1000)
+	})();
+</script>
+</html>

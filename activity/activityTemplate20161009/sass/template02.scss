@@ -1,0 +1,109 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    // overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-overflow-scrolling: touch !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page {
+    padding-bottom: pxToRem(150px);
+    min-height: 100%;
+    background-size: contain;
+    box-sizing: border-box;
+    .banner {
+        width: 100%;
+        height: pxToRem(360px);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: auto;
+    }
+    .list {
+        padding-left: pxToRem(100px);
+        padding-right: pxToRem(100px);
+        margin-top: pxToRem(60px);
+        overflow: hidden;
+        position: relative;
+        .item-wrapper {
+            overflow: hidden;
+            position: relative;
+            width: pxToRem(200px);
+            float: left;
+            margin-bottom: pxToRem(34px);
+            &:nth-child(2n) {
+                float: right;
+            }
+            .item-icon {
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: pxToRem(200px);
+                height: pxToRem(200px);
+                background-position: 50% 50%;
+                margin: auto;
+            }
+            .text {
+                width: pxToRem(200px);
+                text-align: center;
+                margin-top: pxToRem(20px);
+                font-size: pxToRem(30px);
+                color: #333;
+                line-height: pxToRem(42px);
+                height: pxToRem(84px);
+                word-break: break-all;
+                // white-space: nowrap;
+            }
+        }
+    }
+    .btn-wrapper {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        .btn-bg {
+            position: absolute;
+            background-image: url("../images/btn-bg.png");
+            background-size: pxToRem(750px) pxToRem(120px);
+            width: 100%;
+            height: pxToRem(120px);
+            z-index: 99;
+            bottom: pxToRem(88px);
+        }
+        .btn {
+            margin-top: pxToRem(20px);
+            height: pxToRem(88px);
+            line-height: pxToRem(88px);
+            font-size: pxToRem(34px);
+            text-align: center;
+            color: #fff;
+            background-color: #fab600;
+            display: block;
+            position: relative;
+            z-index: 999;
+        }
+        .sec-btn {
+            font-size: pxToRem(30px);
+            line-height: pxToRem(42px);
+            color: #999999;
+            text-align: center;
+            margin: auto;
+            display: block;
+            white-space: nowrap;
+            width: pxToRem(200px);
+            position: relative;
+            z-index: 999;
+        }
+    }
+}

@@ -1,0 +1,91 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    // overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-overflow-scrolling: touch !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page {
+    padding-bottom: pxToRem(88px);
+    min-height: 100%;
+    background-size: contain;
+    padding-top: pxToRem(40px);
+    box-sizing: border-box;
+    .banner {
+        width: pxToRem(690px);
+        height: pxToRem(420px);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: auto;
+    }
+    .list {
+         padding-left: pxToRem(80px);
+        padding-right: pxToRem(90px);
+        margin-top: pxToRem(40px);
+        overflow: hidden;
+        position: relative;
+        .item-wrapper {
+            padding-bottom: pxToRem(40px);
+            overflow: hidden;
+            position: relative;
+            .item-icon {
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: pxToRem(40px);
+                height: pxToRem(40px);
+                float: left;
+                // margin-right: pxToRem(40px);
+                background-position: 50% 50%;
+            }
+            .text-wrapper {
+                float: right;
+                width: pxToRem(500px);
+                .label01 {
+                    font-size: pxToRem(26px);
+                    line-height: pxToRem(36px);
+                    color: #fff;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+                .label02 {
+                    font-size: pxToRem(26px);
+                    color: #999;
+                     line-height: pxToRem(36px);
+                    color: #fff;
+                    margin-top: pxToRem(10px);
+                    text-align: justify;
+                }
+            }
+        }
+    }
+    .btn {
+        width: 100%;
+        margin: auto;
+        margin-top: pxToRem(60px);
+        height: pxToRem(88px);
+        line-height: pxToRem(88px);
+        font-size: pxToRem(34px);
+        text-align: center;
+        color: #fff;
+        background-color: #fab600;
+        display: block;
+        position: fixed;
+        bottom: 0;
+    }
+}

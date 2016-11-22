@@ -1,0 +1,87 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    // overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-overflow-scrolling: touch !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page {
+    padding-bottom: pxToRem(88px);
+    min-height: 100%;
+    padding-top: pxToRem(94px);
+    box-sizing: border-box;
+    .banner {
+        width: pxToRem(600px);
+        height: pxToRem(424px);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50% 50%;
+        background-image: url("../images/expire-banner.png");
+        margin: auto;
+        margin-bottom: pxToRem(84px);
+    }
+    .content {
+        .label01 {
+            font-size: pxToRem(34px);
+            color: #FAB600;
+            text-align: center;
+            line-height: pxToRem(48px);
+            margin-bottom: pxToRem(34px);
+        }
+        .label02 {
+            font-size: pxToRem(26px);
+            color: #999;
+            text-align: center;
+            line-height: pxToRem(36px);
+            margin-bottom: pxToRem(54px);
+        }
+        .label03 {
+            width: pxToRem(380px);
+            height: pxToRem(80px);
+            background: #FAB600;
+            margin: auto;
+            padding: pxToRem(16px) pxToRem(40px);
+            padding-left: pxToRem(60px);
+            box-sizing: border-box;
+            font-size: 0;
+            white-space: nowrap;
+            a {
+                display: inline-block;
+                font-size: pxToRem(34px);
+                color: #FFFFFF;
+                line-height: pxToRem(48px);
+                vertical-align: middle;
+                margin-right: pxToRem(62px);
+            }
+            .second {
+                display: inline-block;
+                font-size: pxToRem(34px);
+                color: #FFFFFF;
+                line-height: pxToRem(36px);
+                // border-left: 1px solid #fff;
+                padding-left: pxToRem(42px);
+                vertical-align: middle;
+                position: relative;
+                &:after {
+                    @include border(left,
+                    #fff);
+                }
+            }
+        }
+    }
+}

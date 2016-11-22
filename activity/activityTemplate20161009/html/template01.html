@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+	<meta name="format-detection" content="telephone=no">
+	<!-- 根据app标题控制 -->
+	<title>活动主题01</title>
+	<link rel="stylesheet" href="../css/template01.css">
+ 	<script>
+	//动态算rem
+	(function(doc, win) {
+		var docEl = doc.documentElement,
+        	resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        	recalc = function() {
+            	// if (docEl.style.fontSize) return;
+            	clientWidth = docEl.clientWidth;
+            	if (!clientWidth) return;
+            	docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+            	if (document.body) {
+                	document.body.style.fontSize = docEl.style.fontSize;
+            	}
+        	};
+    	recalc();
+    	if (!doc.addEventListener) return;
+    	win.addEventListener(resizeEvt, recalc, false);
+    	doc.addEventListener("DOMContentLoaded", recalc, false);
+	})(document, window);
+	</script>
+
+</head>
+<body>
+	<!-- 背景图控制在.page的style的url中 -->
+	<div class="page" style='background-image: url(""); background-color:#fff;'>
+		<!-- banner图控制在.banner的style的url中 -->
+		<div class="banner" style='background-image: url("http://hd.tuandai.com/weixin/Invite/imgs/top-pic1.png?v=20160831001")'>
+		</div>
+		<!-- 列表可配置数量 -->
+		<div class="list">
+			<div class="item-wrapper">
+				<!-- 列表项的图标 控制在.item-icon的style的url中-->
+				<div class="item-icon" style='background-image: url("http://hd.tuandai.com/weixin/Invite/imgs/top-pic1.png?v=20160831001");'></div>
+				<div class="text-wrapper">
+					<!-- 标题 -->
+					<div class="label01">安心-风险拨备金</div>
+					<!-- 备注 -->
+					<div class="label02">风险拨备金风险拨备金</div>
+				</div>
+				<!-- 详情如果为空，请将该元素隐藏 -->
+				<div class="text-detail"></div>
+				<div class="arrow-icon"></div>
+			</div>
+			<div class="item-wrapper">
+				<div class="item-icon" style='background-image: url("http://hd.tuandai.com/weixin/Invite/imgs/top-pic1.png?v=20160831001")'></div>
+				<div class="text-wrapper">
+					<div class="label01">安心-风险拨备金</div>
+					<div class="label02">风险拨备金风险拨备金</div>
+				</div>
+				<div class="text-detail">风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金</div>
+				<div class="arrow-icon"></div>
+			</div>
+			<div class="item-wrapper">
+				<div class="item-icon" style='background-image: url("http://hd.tuandai.com/weixin/Invite/imgs/top-pic1.png?v=20160831001")'></div>
+				<div class="text-wrapper">
+					<div class="label01">安心-风险拨备金</div>
+					<div class="label02">风险拨备金风险拨备金</div>
+				</div>
+				<div class="text-detail">风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金风险拨备金</div>
+				<div class="arrow-icon"></div>
+			</div>
+		</div>
+		<!-- a标签的文字、链接可配置 -->
+		<a class="btn" href="http://www.baidu.com">立即参加</a>
+	</div>
+</body>
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+	(function() {
+	FastClick.attach(document.body);
+
+	var pageEl = $(".page");
+	pageEl.on("click", ".item-wrapper", function(e) {
+		var currentTarget = $(e.currentTarget);
+		var arrowEl =  currentTarget.find(".arrow-icon")
+		if(arrowEl.hasClass("down")) {
+			arrowEl.removeClass("down")
+			currentTarget.find(".text-detail").hide();
+		} else {
+			arrowEl.addClass("down");
+			currentTarget.find(".text-detail").show();
+		}
+	})
+})();
+	
+</script>
+</html>
