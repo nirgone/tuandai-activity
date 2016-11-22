@@ -1,0 +1,514 @@
+    @charset "UTF-8";
+    @import "variables";
+    @import "sprite";
+    @import "../../../sass/reset";
+    @import "../../../sass/func";
+    html,
+    body {
+        position: relative;
+        // height: 100%;
+        // width: 100%;
+        // overflow: hidden;
+        font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+        margin: 0;
+        padding: 0;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-overflow-scrolling: touch !important;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    .page {
+        .header {
+            .top-box {
+                width: 100%;
+                height: pxToRem(90px);
+                background: #fff;
+                position: relative;
+            }
+            .logo {
+                width: pxToRem(328px);
+                height: pxToRem(56px);
+                position: absolute;
+                left: pxToRem(18px);
+                top: 50%;
+                margin-top: pxToRem(-28px);
+                img {
+                    width: 100%;
+                    display: block;
+                }
+            }
+        }
+        .footer {
+            background: #d5d5d5;
+            overflow: hidden;
+            padding: pxToRem(20px) 0;
+            .f-con {
+                width: pxToRem(690px);
+                overflow: hidden;
+                margin: 0 auto;
+            }
+            .icon {
+                width: pxToRem(50px);
+                height: pxToRem(50px);
+                background: url(../images/icon-f.png) no-repeat;
+                background-size: 100% 100%;
+            }
+            p {
+                color: #7a7a7a;
+                font-size: pxToRem(16px);
+            }
+            .add {
+                width: pxToRem(200px);
+                line-height: pxToRem(32px);
+                border-right: 1px solid #bbb;
+                padding-right: pxToRem(10px);
+                margin-right: pxToRem(10px);
+            }
+            .num {
+                margin: pxToRem(16px) 0 0 pxToRem(16px);
+                width: pxToRem(240px);
+                font-size: pxToRem(16px);
+                line-height: pxToRem(30px);
+                color: #7a7a7a;
+                border-right: 1px solid #bbb;
+            }
+            .num span {
+                font-size: pxToRem(18px);
+                color: #7a7a7a;
+            }
+            .toIndex {
+                color: #666;
+                border: 1px solid #666;
+                position: relative;
+                background: none;
+                width: pxToRem(120px);
+                right: 0;
+                font-size: pxToRem(20px);
+                height: pxToRem(40px);
+                line-height: pxToRem(40px);
+                top: pxToRem(16px);
+                margin-top: 0;
+            }
+        }
+        .content {
+            .banner {
+                background-image: url("../images/bg-banner02.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 100%;
+                height: pxToRem(672px);
+                padding-top: pxToRem(62px);
+                box-sizing: border-box;
+                position: relative;
+                z-index: 999;
+                .banner-text {
+                    background-image: url("../images/banner-text.png");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: 50% 50%;
+                    width: pxToRem(184px);
+                    height: pxToRem(74px);
+                    margin: auto;
+                    margin-bottom: pxToRem(18px);
+                }
+                .label01 {
+                    color: #fff;
+                    font-size: pxToRem(28px);
+                    text-align: center;
+                    margin-bottom: pxToRem(24px);
+                    font-family: 微软雅黑;
+                }
+                .banner-icon {
+                    background-image: url("../images/banner-icon.png");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: 50% 50%;
+                    width: pxToRem(574px);
+                    height: pxToRem(276px);
+                    margin: auto;
+                    margin-bottom: pxToRem(24px);
+                }
+                .label02 {
+                    color: #ffd200;
+                    font-size: pxToRem(40px);
+                    text-align: center;
+                    margin-bottom: pxToRem(24px);
+                    font-family: 微软雅黑;
+                }
+                .label03 {
+                    color: #fff;
+                    font-size: pxToRem(30px);
+                    text-align: center;
+                    margin-bottom: pxToRem(30px);
+                    font-family: 微软雅黑;
+                }
+                .btn-get {
+                    background-image: url("../images/btn-tuanbaoxiang.png");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: 50% 50%;
+                    width: pxToRem(370px);
+                    height: pxToRem(88px);
+                    margin: auto;
+                    display: block;
+                }
+            }
+            .content-md {
+                padding-top: pxToRem(120px);
+                margin-top: pxToRem(-4px);
+                background-color: #3b1e8a;
+                .rule-area {
+                    width: pxToRem(716px);
+                    margin: auto;
+                    border-radius: pxToRem(10px);
+                    background-color: #5329b9;
+                    padding-bottom: pxToRem(26px);
+                    .title {
+                        font-size: pxToRem(40px);
+                        color: #fff;
+                        line-height: pxToRem(100px);
+                        height: pxToRem(100px);
+                        background-color: #8419f1;
+                        border-top-left-radius: pxToRem(10px);
+                        border-top-right-radius: pxToRem(10px);
+                        text-align: center;
+                        font-weight: bold;
+                        font-family: 微软雅黑;
+                        .title-wrapper {
+                            display: inline-block;
+                            margin: auto;
+                            &:before {
+                                content: "";
+                                background: url(../images/flashl.png);
+                                background-size: contain;
+                                background-repeat: no-repeat;
+                                background-position: 50% 50%;
+                                width: pxToRem(32px);
+                                height: pxToRem(26px);
+                                display: inline-block;
+                                margin-right: pxToRem(10px);
+                                vertical-align: super;
+                            }
+                            &:after {
+                                content: "";
+                                background: url(../images/flashr.png);
+                                background-size: contain;
+                                background-repeat: no-repeat;
+                                background-position: 50% 50%;
+                                width: pxToRem(42px);
+                                height: pxToRem(26px);
+                                display: inline-block;
+                                margin-left: pxToRem(10px);
+                                vertical-align: super;
+                            }
+                        }
+                    }
+                    .rule-content {
+                        width: pxToRem(684px);
+                        margin: auto;
+                        padding-top: pxToRem(44px);
+                        .rule-wrapper {
+                            margin-bottom: pxToRem(48px);
+                            position: relative;
+                            overflow: hidden;
+                            .rule {
+                                background: url(../images/bg-rule.png);
+                                background-size: contain;
+                                background-repeat: no-repeat;
+                                background-position: 50% 50%;
+                                width: pxToRem(326px);
+                                height: pxToRem(256px);
+                                padding-top: pxToRem(30px);
+                                box-sizing: border-box;
+                                .label01 {
+                                    font-size: pxToRem(24px);
+                                    font-family: 微软雅黑;
+                                    color: #555;
+                                    text-align: center;
+                                    margin-bottom: pxToRem(12px);
+                                }
+                                .label02 {
+                                    font-size: pxToRem(24px);
+                                    font-family: 微软雅黑;
+                                    color: #555;
+                                    text-align: center;
+                                    margin-bottom: pxToRem(24px);
+                                }
+                                .label03 {
+                                    font-size: pxToRem(30px);
+                                    font-family: 微软雅黑;
+                                    color: #fe4450;
+                                    text-align: center;
+                                    margin-bottom: pxToRem(26px);
+                                }
+                                .btn {
+                                    display: block;
+                                    width: pxToRem(170px);
+                                    height: pxToRem(48px);
+                                    line-height: pxToRem(50px);
+                                    border-radius: pxToRem(10px);
+                                    margin: auto;
+                                    text-align: center;
+                                    color: #fff;
+                                    font-size: pxToRem(24px);
+                                    font-family: 微软雅黑;
+                                    font-weight: bold;
+                                    background-color: #fe4451;
+                                    box-shadow: 0px pxToRem(6px) 0 rgba(228, 6, 21, 1);
+                                }
+                            }
+                        }
+                        .rule-text {
+                            color: #debdff;
+                            width: 98%;
+                            margin: auto;
+                            text-align: left;
+                            font-family: 微软雅黑;
+                            // line-height: 160%;
+                            font-size: pxToRem(24px);
+                            display: inline-block;
+                            line-height: pxToRem(40px);
+                            /*  width: 100%;
+                            margin: auto;
+                            text-align: left;
+                            font-size: pxToRem(24px);
+                            
+                            color: #debdff;
+                            font-family: 微软雅黑;
+                            display: block; */
+                        }
+                    }
+                }
+            }
+            .content-footer {
+                background-color: #8419f1;
+                // padding-bottom: pxToRem(48px);
+                padding-top: pxToRem(86px);
+                background-color: #3b1e8a;
+                .title {
+                    font-size: pxToRem(40px);
+                    color: #fff;
+                    text-align: center;
+                    font-weight: bold;
+                    font-family: 微软雅黑;
+                    margin-bottom: pxToRem(40px);
+                    .title-wrapper {
+                        display: inline-block;
+                        margin: auto;
+                        &:before {
+                            content: "";
+                            background: url(../images/flashl.png);
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            background-position: 50% 50%;
+                            width: pxToRem(32px);
+                            height: pxToRem(26px);
+                            display: inline-block;
+                            margin-right: pxToRem(10px);
+                            vertical-align: super;
+                        }
+                        &:after {
+                            content: "";
+                            background: url(../images/flashr.png);
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            background-position: 50% 50%;
+                            width: pxToRem(42px);
+                            height: pxToRem(26px);
+                            display: inline-block;
+                            margin-left: pxToRem(10px);
+                            vertical-align: super;
+                        }
+                    }
+                }
+                .projects {
+                    width: pxToRem(690px);
+                    margin: auto;
+                    position: relative;
+                        z-index: 99;
+                    .project {
+                        background-color: #fff;
+                        border-radius: pxToRem(12px);
+                        width: 100%;
+                        margin-bottom: pxToRem(20px);
+                        position: relative;
+                        padding-top: pxToRem(26px);
+                        padding-bottom: pxToRem(36px);
+                        padding-left: pxToRem(16px);
+                        box-sizing: border-box;
+                        overflow: hidden;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                        .icon-hot {
+                            background: url(../images/icon-hot.png);
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            background-position: 0% 0%;
+                            width: pxToRem(90px);
+                            height: pxToRem(91px);
+                            position: absolute;
+                            right: pxToRem(-4px);
+                            top:  pxToRem(-2px);
+                            border-top-right-radius: pxToRem(12px);
+                        }
+                        .left-wrapper {
+                            display: inline-block;
+                            width: pxToRem(500px);
+                            overflow: hidden;
+                            vertical-align: middle;
+                            .project-name {
+                                color: #5a5a5a;
+                                font-size: pxToRem(24px);
+                                font-family: 微软雅黑;
+                                margin-bottom: pxToRem(26px);
+                            }
+                            .inline-row {
+                                font-size: 0;
+                                position: relative;
+                                &.first-row {
+                                    margin-bottom: pxToRem(32px);
+                                }
+                                .label01 {
+                                    font-size: pxToRem(24px);
+                                    color: #fd6040;
+                                    font-family: 微软雅黑;
+                                    display: inline-block;
+                                    vertical-align: bottom;
+                                    label {
+                                        font-size: pxToRem(50px);
+                                        font-weight: bold;
+                                        color: #fd6040;
+                                        margin-right: pxToRem(6px);
+                                        &:after {
+                                            content: "%";
+                                            font-size: pxToRem(28px);
+                                        }
+                                    }
+                                    margin-right: pxToRem(14px);
+                                }
+                                .line {
+                                    &:before {
+                                        @include border(left,
+                                        #bfbfbf);
+                                    }
+                                    display: inline-block;
+                                    vertical-align: bottom;
+                                    height: pxToRem(38px);
+                                    width: 1px;
+                                    position: relative;
+                                }
+                                .label02 {
+                                    display: inline-block;
+                                    vertical-align: bottom;
+                                    margin-left: pxToRem(14px);
+                                    font-size: pxToRem(24px);
+                                    color: #999;
+                                }
+                                .label03 {
+                                    width: pxToRem(380px);
+                                    height: pxToRem(8px);
+                                    background-color: #ebebeb;
+                                    position: relative;
+                                    border-radius: pxToRem(8px);
+                                    display: inline-block;
+                                    margin-right: pxToRem(10px);
+                                    vertical-align: middle;
+                                    .progress {
+                                        height: pxToRem(8px);
+                                        position: absolute;
+                                        left: 0;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                        border-radius: pxToRem(8px);
+                                        background-color: #ff544a;
+                                    }
+                                }
+                                .label04 {
+                                    font-size: pxToRem(16px);
+                                    color: #ffe400;
+                                    display: inline-block;
+                                    color: #ff5449;
+                                    vertical-align: middle;
+                                }
+                            }
+                        }
+                        .btn-buy {
+                            background: url(../images/btn-buy.png);
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            background-position: 50% 50%;
+                            width: pxToRem(120px);
+                            height: pxToRem(126px);
+                            position: absolute;
+                            bottom: pxToRem(14px);
+                            right: pxToRem(38px);
+                        }
+                    }
+                }
+                .footer-wrapper {
+                    padding-top: pxToRem(72px);
+                    position: relative;
+                    background-color: #4c27a8;
+                    margin-top: pxToRem(-18px);
+                    .footer-block {
+                        background: url(../images/bg-block.png);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: 50% 50%;
+                        width: 100%;
+                        height: pxToRem(30px);
+                        position: absolute;
+                        top: pxToRem(-28px);
+                        left: 0;
+                    }
+                    .btn-check {
+                        background: url(../images/btn-check.png);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: 50% 50%;
+                        width: pxToRem(540px);
+                        height: pxToRem(100px);
+                        margin: auto;
+                        display: block;
+                    }
+                    .footer-label {
+                        color: #9a9bc4;
+                        font-size: pxToRem(18px);
+                        font-family: 微软雅黑;
+                        padding-top: pxToRem(24px);
+                        padding-bottom: pxToRem(48px);
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    
+    .toIndex {
+        display: block;
+        border-radius: pxToRem(8px);
+        border: 1px solid #b5b5b5;
+        height: pxToRem(56px);
+        line-height: pxToRem(56px);
+        width: pxToRem(174px);
+        text-align: center;
+        font-size: pxToRem(30px);
+        color: #666;
+        position: absolute;
+        top: 50%;
+        margin-top: pxToRem(-28px);
+        right: pxToRem(36px);
+        background: #fff;
+    }
+    
+    .rf {
+        float: right;
+    }
+    
+    .lf {
+        float: left;
+    }

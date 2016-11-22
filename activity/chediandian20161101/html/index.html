@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+	<meta name="format-detection" content="telephone=no">
+	<title>王宝强请你免费洗车</title>
+	<link rel="stylesheet" href="../css/index.css">
+ 	<script>
+	//动态算rem
+	(function(doc, win) {
+		var docEl = doc.documentElement,
+        	resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        	recalc = function() {
+            	// if (docEl.style.fontSize) return;
+            	clientWidth = docEl.clientWidth;
+            	if (!clientWidth) return;
+            	docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+            	if (document.body) {
+                	document.body.style.fontSize = docEl.style.fontSize;
+            	}
+        	};
+    	recalc();
+    	if (!doc.addEventListener) return;
+    	win.addEventListener(resizeEvt, recalc, false);
+    	doc.addEventListener("DOMContentLoaded", recalc, false);
+	})(document, window);
+	</script>
+
+</head>
+<body>
+	<div class="page">
+		<div class="header">
+			<div class="top-box">
+	            <div class="logo"><img src="../images/logo.png?v=20161026"></div>
+	            <a href="//www.tuandai.com" class="toIndex">返回首页</a>
+	        </div>
+		</div>
+		<div class="content">
+			<div class="banner">
+				<div class="banner-people"></div>
+				<div class="banner-md">
+					<div class="coupon"></div>
+					<div class="icon-text-wrapper">
+						<div class="icon-text01"></div>
+						<div class="icon-text02"></div>
+					</div>
+					
+				</div>
+				<div class="banner-footer"></div>
+				<div class="banner-footer-cover"></div>
+			</div>
+			<div class="content-md">
+				<div class="registe-area">
+					<div class="phone input-area">
+						<input class="phone-input" placeholder="输入手机号，领取洗车券" type="text" name="phone" maxlength="11"  />
+						<div class="tips-error">
+							手机号码格式不正确 / 手机号码不能为空
+						</div>
+					</div>
+
+					<div class="password input-area">
+						<input class="password-input" placeholder="密码由6-16个字符（字母+数字）"type="password" name="password" maxlength="16"  />
+						<div class="tips-error">
+							密码格式错误
+						</div>
+					</div>
+
+					<div class="img-code input-area">
+						<input class="img-code-input" placeholder="图形验证码"type="text" name="imgCode" maxlength="4"  />
+						<img src="" class="img-code-img"/>
+						<div class="tips-error">
+							图形验证码不能为空
+						</div>
+					</div>
+					
+					<div class="message-code input-area">
+						<input class="message-code-input" placeholder="手机验证码"type="text" name="phone" maxlength="6"  />
+						<div class="get-message-code">获取验证码</div>
+						<div class="tips-error">
+							手机验证码不能为空
+						</div>
+					</div>
+					<div class="notices-part input-area" >
+			            <input type="checkbox" id="agree_notices">
+			            <div>我已阅读<span id="check_notices">《 团贷网服务协议 》</span></div>
+			        </div>
+			        <div class="btn-registe"></div>
+
+				</div>
+				<div class="md-footer"></div>
+			</div>
+			<div class="footer-label">
+				<div class="label01">完成首投即送最高120元洗车券<br/>详细领取流程请咨询团贷网:400-641-0888。</div>
+				<div class="label02">投资有风险，入市需谨慎，最终收益以实际为准</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="f-con">
+               <p class="lf add">2010- 2016版权所有©<br>团贷网 粤ICP备12043601号-1</p><p> 
+               <span class="lf icon"></span>
+               </p><p class="lf num">4006-410-888<br> <span>服务时间 09:00-22:00</span></p>
+               <!-- 返回首页 -->
+               <a href="//www.tuandai.com" class="toIndex rf">返回首页</a>
+           </div>
+		</div>
+	</div>
+</body>
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+(function() {
+    FastClick.attach(document.body);
+    var pageEl = $(".page");
+	var dialogEl = $(".dialog");
+	// 监听手机号码输入
+	pageEl.on("input", ".phone-input", function() {
+		var phoneEl =  pageEl.find(".phone-input");
+		var phoneNum =  phoneEl.val();
+		if(phoneNum.length == 11) {
+			if (checkPhoneNum(phoneNum)) { //号码有效
+				phoneEl.parent(".input-area").find(".tips-error").removeClass("show");
+				// TODO:判断号码的状态
+				var isRegiste = false;	//需要后台判断号码状态
+				if (!isRegiste) { //号码未注册
+					pageEl.find(".input-area").addClass("show");
+					pageEl.find(".content-md").addClass("registe-area-on");
+				} else {
+					phoneEl.parent(".input-area").find(".tips-error").addClass("show").html("手机号已注册");
+				}
+			} else {
+				phoneEl.parent(".input-area").find(".tips-error").addClass("show").html("手机号码格式不正确");
+			}
+		}
+	});	
+
+	var phoneEl = pageEl.find(".phone");
+	    var pwdEl = pageEl.find(".password");
+	    var imgCodeEl = pageEl.find(".img-code");
+	    var messageCodeEl = pageEl.find(".message-code");
+
+		// 点击确认领奖
+		pageEl.on('click',".btn-registe", function() {
+			// 点击领奖之前先判断手机号码状态
+		    var phoneNum = pageEl.find(".phone-input").val(); //手机号码
+			if(phoneNum.length ==  0) {
+				phoneEl.find(".tips-error").addClass("show").html("手机号码不能为空");
+				return ;
+			} else if(phoneNum.length < 11) {
+				phoneEl.find(".tips-error").addClass("show").html("手机号码格式不正确");
+				return ;
+			}
+
+			var isRegiste = false;	//需要后台判断号码状态
+			if (isRegiste) { //号码未注册
+				phoneEl.find(".tips-error").addClass("show").html("手机号已注册");
+				return;
+			}
+
+			var agreeLow = pageEl.find("#agree_notices")[0].checked//是否同意《 团贷网服务协议 》
+		    if(!agreeLow) {
+		        alert("请先阅读并同意《 团贷网服务协议 》");
+		        return;
+		    }
+
+			var pwd = pageEl.find(".password-input").val(); //密码
+			var imgCode = pageEl.find(".img-code-input").val(); //图形验证码
+			var messageCode =  pageEl.find(".message-code-input").val(); //短信验证码
+			var pwdRex = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/; //密码正则
+
+			var canSubmitFlag = true;	//用于判断是否能提交
+			/*if (!checkPhoneNum(phoneNum)) { //号码无效
+				phoneEl.find(".tips-error").addClass("show").html("手机号码格式不正确");
+				canSubmitFlag = false;
+			} else {
+				phoneEl.find(".tips-error").removeClass("show");
+			}*/
+
+			if (!pwd.trim().match(pwdRex)) {	//密码无效
+				pwdEl.find(".tips-error").addClass("show");
+				canSubmitFlag = false;
+			} else {
+				pwdEl.find(".tips-error").removeClass("show");
+			}
+
+			if (imgCode.trim() == "") {
+				imgCodeEl.find(".tips-error").addClass("show");
+				canSubmitFlag = false;
+			} else {
+				imgCodeEl.find(".tips-error").removeClass("show");
+			}
+
+			if (messageCode.trim() == "") {
+				messageCodeEl.find(".tips-error").addClass("show");
+				canSubmitFlag = false;
+			} else {
+				messageCodeEl.find(".tips-error").removeClass("show");
+			}
+			
+			if(canSubmitFlag) {	
+				// TODO: 提交成功之后 页面跳转至注册成功
+				window.location.href = "./registeSuccess.html";
+			}			
+		});
+
+		// 点击切换图形验证码
+		pageEl.on("click", ".img-code-img", function() {
+			console.log("切换图形验证码")
+		});
+
+		// 点击获取手机短信验证码
+		pageEl.on("click", ".get-message-code", function() {
+			console.log("获取手机短信验证码")
+		});
+
+	// 检查手机号码正则
+	function checkPhoneNum(phoneNum) {
+		var patTel = new RegExp("^(13|14|15|17|18)[0-9]{9}$", "i");
+		if (!phoneNum.match(patTel)) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+})();
+</script>
+</html>
