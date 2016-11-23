@@ -1,0 +1,347 @@
+/* @function baseFontSize($width) {
+	return 20 * $width / 640;
+}
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+/* @function baseFontSize($width) {
+	return 20 * $width / 640;
+}
+ */
+html,
+body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch !important; }
+
+a {
+  text-decoration: none; }
+
+.page {
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: auto; }
+  .page .content-wrapper {
+    position: relative;
+    z-index: 99;
+    background-image: url("../images/bg-index.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 1.7066666667rem;
+    padding-bottom: 0.9386666667rem;
+    min-height: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    background-color: #ffefe2; }
+  .page .logo {
+    background-image: url("../images/logo-index.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    width: 8.5333333333rem;
+    height: 1.5786666667rem;
+    position: relative;
+    z-index: 999;
+    margin: auto;
+    margin-bottom: 1.7493333333rem; }
+  .page .text {
+    background-image: url("../images/index-text.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    width: 14.8053333333rem;
+    height: 6.144rem;
+    position: relative;
+    z-index: 999;
+    margin: auto;
+    margin-bottom: 9.6rem; }
+  .page .rule-btn {
+    margin: auto;
+    color: #fc6b21;
+    text-align: center;
+    margin-bottom: 1.1093333333rem;
+    font-size: 0; }
+    .page .rule-btn .btn-text {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 0.5546666667rem;
+      font-size: 0.5546666667rem; }
+    .page .rule-btn:before {
+      content: "";
+      background-image: url("../images/rule-icon01.png");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: contain;
+      width: 0.4693333333rem;
+      height: 0.5546666667rem;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 0.1706666667rem; }
+    .page .rule-btn:after {
+      content: "";
+      background-image: url("../images/rule-icon02.png");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: contain;
+      width: 0.3413333333rem;
+      height: 0.5546666667rem;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 0.1706666667rem; }
+  .page .go-btn {
+    width: 11.7333333333rem;
+    height: 1.8346666667rem;
+    border-radius: 0.9386666667rem;
+    display: block;
+    color: #fff;
+    font-size: 0.7253333333rem;
+    margin: auto;
+    text-align: center;
+    line-height: 1.8346666667rem;
+    background-color: #ff891f;
+    -webkit-box-shadow: 0 0.0853333333rem 0.256rem rgba(255, 137, 31, 0.4);
+            box-shadow: 0 0.0853333333rem 0.256rem rgba(255, 137, 31, 0.4); }
+
+.dialog {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  overflow: hidden; }
+  .dialog.show {
+    display: block; }
+    .dialog.show .mask {
+      display: block; }
+  .dialog .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    display: none; }
+  .dialog .rule {
+    background-image: url("../images/bg-rule.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    width: 11.7333333333rem;
+    height: 18.432rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    display: none;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    z-index: 999;
+    padding-top: 0.8533333333rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+    .dialog .rule .rule-title {
+      font-size: 0.7253333333rem;
+      text-align: center;
+      color: #999; }
+    .dialog .rule .rule-list {
+      position: relative;
+      font-size: 0.5546666667rem;
+      padding: 0.64rem 0.6826666667rem;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      word-break: break-all;
+      height: 13.7813333333rem;
+      overflow: auto; }
+      .dialog .rule .rule-list .rule-item {
+        line-height: 0.9813333333rem;
+        color: #333;
+        margin-bottom: 0.2133333333rem;
+        text-align: justify; }
+    .dialog .rule .rule-footer {
+      position: relative; }
+      .dialog .rule .rule-footer .rule-gradient {
+        background-image: url("../images/rule-gradient.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 1.408rem;
+        position: absolute;
+        z-index: 99;
+        top: -1.3653333333rem; }
+      .dialog .rule .rule-footer .line {
+        height: 1px;
+        width: 9.3013333333rem;
+        border-bottom: 1px dashed #ccc;
+        margin: auto;
+        position: relative;
+        z-index: 999; }
+      .dialog .rule .rule-footer .close-btn {
+        width: 9.3013333333rem;
+        height: 1.8773333333rem;
+        -webkit-box-shadow: 0 0.0853333333rem 0.1706666667rem rgba(0, 0, 0, 0.25);
+                box-shadow: 0 0.0853333333rem 0.1706666667rem rgba(0, 0, 0, 0.25);
+        background-color: #ff891f;
+        color: #fff;
+        font-size: 0.7253333333rem;
+        text-align: center;
+        border-radius: 0.9386666667rem;
+        line-height: 1.8773333333rem;
+        margin: auto;
+        margin-top: 0.5973333333rem; }
+  .dialog .tip-login {
+    position: absolute;
+    left: 0;
+    top: 0;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    display: none;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    z-index: 999;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 0.4266666667rem;
+    padding: 1.28rem 1.1946666667rem;
+    padding-top: 1.0666666667rem; }
+    .dialog .tip-login .label {
+      font-size: 0.7253333333rem;
+      color: #333;
+      line-height: 1.1093333333rem;
+      width: 9.3013333333rem;
+      margin: auto;
+      text-align: center;
+      margin-bottom: 1.0666666667rem; }
+    .dialog .tip-login .login-btn {
+      display: block;
+      width: 9.3013333333rem;
+      height: 1.8773333333rem;
+      -webkit-box-shadow: 0 0.0853333333rem 0.1706666667rem rgba(0, 0, 0, 0.25);
+              box-shadow: 0 0.0853333333rem 0.1706666667rem rgba(0, 0, 0, 0.25);
+      background-color: #ff891f;
+      color: #fff;
+      font-size: 0.7253333333rem;
+      text-align: center;
+      border-radius: 0.9386666667rem;
+      line-height: 1.8773333333rem;
+      margin: auto; }
+  .dialog .tip-writed {
+    position: absolute;
+    left: 0;
+    top: 0;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    display: none;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    z-index: 999;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 0.4266666667rem;
+    padding: 1.28rem 1.1946666667rem;
+    padding-top: 1.0666666667rem; }
+    .dialog .tip-writed .label {
+      font-size: 0.7253333333rem;
+      color: #333;
+      line-height: 1.1093333333rem;
+      width: 9.3013333333rem;
+      margin: auto;
+      text-align: center;
+      margin-bottom: 1.0666666667rem; }
+    .dialog .tip-writed .close-btn {
+      display: block;
+      width: 9.3013333333rem;
+      height: 1.8773333333rem;
+      -webkit-box-shadow: 0 0.0853333333rem 0.1706666667rem rgba(0, 0, 0, 0.25);
+              box-shadow: 0 0.0853333333rem 0.1706666667rem rgba(0, 0, 0, 0.25);
+      background-color: #ff891f;
+      color: #fff;
+      font-size: 0.7253333333rem;
+      text-align: center;
+      border-radius: 0.9386666667rem;
+      line-height: 1.8773333333rem;
+      margin: auto; }
+
+.show {
+  display: block !important; }
+
+.hidden {
+  display: hidden !important; }
+/*# sourceMappingURL=index.css.map */
