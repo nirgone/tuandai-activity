@@ -214,15 +214,23 @@
                             margin-bottom: pxToRem(48px);
                             position: relative;
                             overflow: hidden;
+                            font-size: 0;
+                            white-space: nowrap;
                             .rule {
-                                background: url(../images/bg-rule.png);
+                                background: url(../images/bg-rule.png?v=2016112901);
                                 background-size: contain;
                                 background-repeat: no-repeat;
                                 background-position: 50% 50%;
-                                width: pxToRem(326px);
+                                width: pxToRem(222px);
                                 height: pxToRem(256px);
                                 padding-top: pxToRem(30px);
                                 box-sizing: border-box;
+                                display: inline-block;
+                                margin-right: pxToRem(9px);
+                                white-space: normal;
+                                &:last-child {
+                                    margin-right: 0;
+                                }
                                 .label01 {
                                     font-size: pxToRem(24px);
                                     font-family: 微软雅黑;
@@ -238,7 +246,7 @@
                                     margin-bottom: pxToRem(24px);
                                 }
                                 .label03 {
-                                    font-size: pxToRem(30px);
+                                    font-size: pxToRem(28px);
                                     font-family: 微软雅黑;
                                     color: #fe4450;
                                     text-align: center;
@@ -328,7 +336,7 @@
                     width: pxToRem(690px);
                     margin: auto;
                     position: relative;
-                        z-index: 99;
+                    z-index: 99;
                     .project {
                         background-color: #fff;
                         border-radius: pxToRem(12px);
@@ -352,7 +360,7 @@
                             height: pxToRem(91px);
                             position: absolute;
                             right: pxToRem(-4px);
-                            top:  pxToRem(-2px);
+                            top: pxToRem(-2px);
                             border-top-right-radius: pxToRem(12px);
                         }
                         .left-wrapper {
