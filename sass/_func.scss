@@ -12,6 +12,10 @@ $base-font-size: 23.4375px; //design 750px / 32 = 20px;
 	@return $px / $base-font-size /2 * 1rem;
 }
 
+@function percent($px, $px2: 1215) {
+	@return $px / $px2 * 100%;
+}
+
 @function black($opacity){
 	@return rgba(0,0,0,$opacity);
 }
@@ -90,7 +94,7 @@ $base-font-size: 23.4375px; //design 750px / 32 = 20px;
 	background:url($image) no-repeat center;
     width:pxToRem($width);
     height:pxToRem($height);
-    background-size:pxToRem($width) pxToRem($height);
+    background-size:contain;
 }
 @mixin background($image,$width,$height,$rate:1) {
 	display:block;
@@ -98,6 +102,11 @@ $base-font-size: 23.4375px; //design 750px / 32 = 20px;
     width:pxToRem($width * $rate);
     height:pxToRem($height * $rate);
     background-size:contain;
+}
+@mixin icon-background($image,$width,$height,$rate:1) {
+	background-image:url($image);
+    width:pxToRem($width * $rate);
+    height:pxToRem($height * $rate);
 }
 @mixin break {
 	-ms-word-break: break-all;
