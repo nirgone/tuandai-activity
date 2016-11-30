@@ -1,0 +1,54 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/func";
+@import "../../../sass/reset";
+
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-overflow-scrolling: touch !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.scroll {
+	max-width: 414px;
+	width: 100%;
+	height: 100%;
+	overflow: scroll;
+	position: relative;
+	background-color: $bg-orange;
+	.content {
+	padding-bottom: pxToRem(98px);
+		width: 100%;
+	}
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: $bg-orange-light;
+	height: pxToRem(98px);
+	line-height: pxToRem(98px);
+	font-size: 0;
+	a {
+		display: inline-block;
+		width: 25%;
+		height: 100%;
+		text-align: center;
+		font-size: pxToRem(30px);
+		color: #fffbe8;
+	}
+}

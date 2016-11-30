@@ -1,0 +1,12 @@
+@charset 'utf-8';
+@import "../../../sass/func";
+
+@mixin background-percent($image,$width,$height,$pH) {
+	background-image:url($image);
+    width: pxToRem($width);
+    height: $height / $pH * 100%;
+}
+
+@function percent($px, $px2: 1206) {
+	@return $px / $px2 * 100%;
+}

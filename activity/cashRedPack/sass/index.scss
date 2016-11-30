@@ -358,6 +358,7 @@ a {
         font-size: pxToRem(34px);
         animation: fadeIn 0.4s linear 2.3s 1 both
     }
+
     .icon-logo {
         position: absolute;
         bottom: 10.9%;
@@ -626,5 +627,10 @@ a {
             display: block;
             animation: none;
         }
+        #btn_log {
+        @extend .btn-down;
+        top: 48%;
+
+    }
     }
 }

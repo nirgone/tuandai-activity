@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>万圣节乐园寻宝活动</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <!-- build:css(dist)  ../js/lib/vendor/swiper/swiper.min.css-->
+    <link rel="stylesheet" href="../css/vendor/swiper/swiper.min.css">
+    <!-- endbuild -->
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="content main-content">
+        <div class="guide-transparent guide-piece">
+            
+        </div>
+        <i class="icon-guide guide-piece"></i>
+        <div class="masker guide-top guide-piece"></div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- <div class="swiper-slide" data-value="1"><i class="icon-helloween" data-value="小π"></i><i class="icon-shadow1"></i></div>
+                <div class="swiper-slide" data-value="2"><i class="icon-helloween" data-value="大唐"></i><i class="icon-shadow2"></i></div>
+                <div class="swiper-slide" data-value="3"><i class="icon-helloween" data-value="鬼怪"></i><i class="icon-shadow3"></i></div> -->
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="masker guide guide-piece">
+            </div>
+        </div>
+        <div class="masker guide-bottom guide-piece">
+
+        </div>
+        <div class="btn-blue" id="btn_go">
+            GO!
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<!-- build:js({dist}) ../js/lib/vendor/swiper/swiper.jquery.min.js -->
+<script src="../js/vendor/swiper/swiper.jquery.min.js"></script>
+<!-- endbuild -->
+<script>
+(function() {
+    FastClick.attach(document.body);
+    //do your thing.
+    var _indexs = [1, 2, 3],
+        _names = ['小π', '大唐', '鬼怪'];
+    //打乱出现顺序
+    _indexs.sort(function() {
+        return 0.5 - Math.random();
+    });
+    var _current_index = _indexs[0],
+        _template = "";
+    swiper = null;
+
+    init();
+
+    $("#btn_go").bind("click", function(e) {
+        window.location.href = "./result.html?type=" + _current_index;
+    });
+
+    $(".guide-transparent").on("click", function(e) {
+
+        $(".guide-piece").hide();
+    });
+
+    //初始化html
+    function init() {
+        for (var i = 0; i < _indexs.length; i++) {
+            var _index = _indexs[i];
+            _template += '<div class="swiper-slide" data-value="' + _index + '"><i class="icon-helloween" data-value="' + _names[_index - 1] + '"></i><i class="icon-shadow' + _index + '"></i></div>';
+        }
+
+        $(".swiper-wrapper").html(_template);
+
+        swiper = new Swiper('.swiper-container', {
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            loop: true,
+            onSlideChangeEnd: function(swiper) {
+                _temp = $(".swiper-slide-active").attr("data-value");
+                _current_index = _temp ? _temp : _current_index;
+            }
+        });
+
+    }
+})();
+</script>
+
+</html>

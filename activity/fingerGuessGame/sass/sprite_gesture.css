@@ -1,0 +1,54 @@
+.icon-paper_s {
+  display: block;
+  background-image: url(../images/sprite_gesture.png);
+  background-size: pxToRem(353px)  pxToRem(194px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-106px) pxToRem(0px);
+  width: pxToRem(85px);
+  height: pxToRem(80px);
+}
+.icon-paper_y {
+  display: block;
+  background-image: url(../images/sprite_gesture.png);
+  background-size: pxToRem(353px)  pxToRem(194px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(96px);
+  height: pxToRem(87px);
+}
+.icon-rock_s {
+  display: block;
+  background-image: url(../images/sprite_gesture.png);
+  background-size: pxToRem(353px)  pxToRem(194px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-277px) pxToRem(0px);
+  width: pxToRem(76px);
+  height: pxToRem(74px);
+}
+.icon-rock_y {
+  display: block;
+  background-image: url(../images/sprite_gesture.png);
+  background-size: pxToRem(353px)  pxToRem(194px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-78px) pxToRem(-97px);
+  width: pxToRem(82px);
+  height: pxToRem(79px);
+}
+.icon-scissors_s {
+  display: block;
+  background-image: url(../images/sprite_gesture.png);
+  background-size: pxToRem(353px)  pxToRem(194px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-97px);
+  width: pxToRem(68px);
+  height: pxToRem(97px);
+}
+.icon-scissors_y {
+  display: block;
+  background-image: url(../images/sprite_gesture.png);
+  background-size: pxToRem(353px)  pxToRem(194px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-201px) pxToRem(0px);
+  width: pxToRem(66px);
+  height: pxToRem(91px);
+}

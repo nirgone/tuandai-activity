@@ -1,0 +1,18 @@
+.icon-btn_game {
+  display: block;
+  background-image: url(../images/sprite_btn.png);
+  background-size: pxToRem(328px)  pxToRem(161px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(159px);
+  height: pxToRem(161px);
+}
+.icon-btn_game_a {
+  display: block;
+  background-image: url(../images/sprite_btn.png);
+  background-size: pxToRem(328px)  pxToRem(161px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-169px) pxToRem(0px);
+  width: pxToRem(159px);
+  height: pxToRem(159px);
+}

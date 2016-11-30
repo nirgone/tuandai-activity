@@ -89,3 +89,25 @@
     -webkit-animation-name: slideOutDown;
     animation-name: slideOutDown;
 }
+
+@-webkit-keyframes zoomIn {
+    0% {
+        -webkit-transform: scale(0.0);
+        transform: scale(0.0);
+    }
+    100% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        -webkit-transform: scale(0.0);
+        transform: scale(0.0);
+    }
+    100% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+}

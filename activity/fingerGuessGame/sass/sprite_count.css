@@ -1,0 +1,36 @@
+.icon-1 {
+  display: block;
+  background-image: url(../images/sprite_count.png);
+  background-size: pxToRem(237px)  pxToRem(204px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-180px) pxToRem(0px);
+  width: pxToRem(57px);
+  height: pxToRem(101px);
+}
+.icon-2 {
+  display: block;
+  background-image: url(../images/sprite_count.png);
+  background-size: pxToRem(237px)  pxToRem(204px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-89px) pxToRem(-101px);
+  width: pxToRem(79px);
+  height: pxToRem(101px);
+}
+.icon-3 {
+  display: block;
+  background-image: url(../images/sprite_count.png);
+  background-size: pxToRem(237px)  pxToRem(204px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-101px);
+  width: pxToRem(79px);
+  height: pxToRem(103px);
+}
+.icon-go {
+  display: block;
+  background-image: url(../images/sprite_count.png);
+  background-size: pxToRem(237px)  pxToRem(204px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(170px);
+  height: pxToRem(91px);
+}

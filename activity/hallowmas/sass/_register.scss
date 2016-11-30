@@ -1,0 +1,326 @@
+@charset "UTF-8";
+@import "../../../sass/func";
+.logSprite {
+    display: block;
+    background-image: url(../images/sprite_register.png);
+    background-size: pxToRem(252px) pxToRem(34px);
+    background-repeat: no-repeat;
+}
+
+.phone {
+    @extend .logSprite;
+    height: pxToRem(17px*2);
+    width: pxToRem(12px*2);
+    background-position: 0 0;
+}
+
+.close {
+    @extend .logSprite;
+    height: pxToRem(12px*2);
+    width: pxToRem(12px*2);
+    background-position: pxToRem(-15px*2) 0;
+}
+
+.unlock {
+    @extend .logSprite;
+    height: pxToRem(16px*2);
+    width: pxToRem(15px*2);
+    background-position: pxToRem(-29px*2) 0;
+}
+
+.info {
+    @extend .logSprite;
+    height: pxToRem(13px*2);
+    width: pxToRem(13px*2);
+    background-position: pxToRem(-46px*2) 0;
+    margin-top: pxToRem(3px*2);
+}
+
+.eye-close {
+    @extend .logSprite;
+    height: pxToRem(6px*2);
+    width: pxToRem(14px*2);
+    background-position: pxToRem(-61px*2) 0;
+}
+
+.eye-open {
+    @extend .logSprite;
+    height: pxToRem(10px*2);
+    width: pxToRem(14px*2);
+    background-position: pxToRem(-77px*2) 0;
+}
+
+.people {
+    @extend .logSprite;
+    height: pxToRem(13px*2);
+    width: pxToRem(14px*2);
+    background-position: pxToRem(-95px*2) 0;
+    margin-top: pxToRem(2px*2);
+}
+
+.lock {
+    @extend .logSprite;
+    height: pxToRem(32px*2);
+    width: pxToRem(26px*2);
+    background-position: pxToRem(-113px*2) 0;
+}
+
+.register-wrapper {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    @at-root .register-close {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: pxToRem(30px);
+        width: pxToRem(24px);
+        height: pxToRem(24px);
+    }
+    @at-root .register-title {
+        padding: pxToRem(30px) 0;
+        text-align: center;
+        font-size: pxToRem(34px);
+        color: #212121;
+    }
+    @at-root .register-body {
+        padding: 0 pxToRem(70px);
+        padding-top: pxToRem(40px);
+    }
+    .input-box {
+        position: relative;
+        width: 100%;
+        height: pxToRem(80px);
+        margin-top: pxToRem(36px);
+        box-sizing: border-box;
+        &:after {
+            @include border(bottom, #e6e6e6);
+        }
+        i {
+            position: absolute;
+            top: pxToRem(22px);
+            left: pxToRem(20px);
+        }
+        input {
+            height: pxToRem(78px);
+            width: 100%;
+            padding-left: pxToRem(80px);
+            border: none;
+            -webkit-appearance: none;
+            box-sizing: border-box;
+            font-size: pxToRem(30px);
+        }
+        p {
+            font-size: pxToRem(30px);
+            color: #ababab;
+            position: absolute;
+            left: pxToRem(80px);
+            top: 0;
+            height: pxToRem(78px);
+            line-height: pxToRem(78px);
+        }
+        @at-root .btnsee {
+            position: absolute;
+            right: pxToRem(-26px);
+            top: 0;
+            width: pxToRem(80px);
+            height: pxToRem(80px);
+            text-align: center;
+            b {
+                display: inline-block;
+            }
+        }
+        @at-root .timeout {
+            position: absolute;
+            width: pxToRem(206px);
+            text-align: center;
+            right: 0;
+            top: 0;
+            height: pxToRem(78px);
+            line-height: pxToRem(78px);
+            font-size: pxToRem(26px);
+            color: #ffcf1f;
+        }
+        @at-root .time-wrap {
+            @extend .timeout;
+            display: none;
+            @at-root .time-bg {
+                position: absolute;
+                right: pxToRem(78px);
+                top: pxToRem(-6px);
+                width: pxToRem(52px);
+                height: pxToRem(52px);
+                border: 2px solid #e6e6e6;
+                border-radius: pxToRem(52px);
+                box-sizing: border-box;
+            }
+            @at-root .time {
+                position: absolute;
+                right: pxToRem(78px);
+                top: pxToRem(-6px);
+                width: pxToRem(52px);
+                height: pxToRem(52px);
+                .wrap {
+                    position: absolute;
+                    width: pxToRem(26px);
+                    height: pxToRem(52px);
+                    top: 0;
+                    overflow: hidden;
+                    &.right {
+                        right: 0;
+                    }
+                    &.left {
+                        left: 0;
+                    }
+                }
+                .round {
+                    position: absolute;
+                    top: 0;
+                    width: pxToRem(52px);
+                    height: pxToRem(52px);
+                    border: 2px solid transparent;
+                    border-radius: pxToRem(52px);
+                    transform: rotate(-135deg);
+                    box-sizing: border-box;
+                }
+                .rightcircle {
+                    border-top: 2px solid #ffcf1f;
+                    border-right: 2px solid #ffcf1f;
+                    right: 0;
+                }
+                .leftcircle {
+                    border-bottom: 2px solid #ffcf1f;
+                    border-left: 2px solid #ffcf1f;
+                    left: 0;
+                }
+            }
+            @at-root #show {
+                text-align: center;
+                height: pxToRem(52px);
+                line-height: pxToRem(58px);
+                font-size: pxToRem(20px);
+                color: #ababab;
+            }
+        }
+    }
+    .qrcode-box {
+        input {
+            padding-left: pxToRem(30px);
+            width: pxToRem(324px);
+            // padding-right: pxToRem(286px);
+        }
+        img {
+            position: absolute;
+            text-align: center;
+            right: 0;
+            bottom: pxToRem(18px);
+            ;
+            height: pxToRem(80px);
+            line-height: pxToRem(76px);
+            width: pxToRem(206px);
+            font-size: pxToRem(26px);
+        }
+    }
+    @at-root .hide {
+        display: none;
+    }
+    #invite_inp {
+        margin-top: pxToRem(26px);
+    }
+    .invite-t {
+        padding-left: pxToRem(20px);
+        margin-top: pxToRem(16px);
+        font-size: pxToRem(28px);
+        color: #ffcf1f;
+        line-height: 24px;
+        @include clearfix();
+        @at-root .triangle-r {
+            width: 0;
+            height: 0;
+            border-top: pxToRem(10px) solid transparent;
+            border-bottom: pxToRem(10px) solid transparent;
+            border-left: pxToRem(20px) solid #ffcf1f;
+            display: inline-block;
+            margin-right: pxToRem(10px);
+        }
+        @at-root .triangle-d {
+            @extend .triangle-r;
+            vertical-align: middle;
+            border-right: pxToRem(10px) solid transparent;
+            border-left: pxToRem(10px) solid transparent;
+            border-top: pxToRem(20px) solid #ffcf1f;
+        }
+        .lf {
+            float: left;
+        }
+        .rf {
+            float: right;
+            width: pxToRem(206px);
+            text-align: center;
+        }
+    }
+    .btn {
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        height: pxToRem(84px);
+        line-height: pxToRem(84px);
+        border: 0;
+        box-shadow: none;
+        font-size: pxToRem(32px);
+        text-align: center;
+        border-radius: pxToRem(8px);
+        background-clip: padding-box;
+        margin-top: pxToRem(40px);
+    }
+    .btn-yellow {
+        @extend .btn;
+        background-color: #ffcf1f;
+        color: #fff;
+    }
+    .tips {
+        color: #ababab;
+        // text-align: center;
+        font-size: pxToRem(26px);
+        margin-top: pxToRem(16px);
+        a {
+            color: #ffcf1f;
+        }
+        input[type="checkbox"] {
+            vertical-align: pxToRem(-4px);
+        }
+        
+        .radio {
+            display: none
+        }
+        .radio-input {
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 100%;
+            display: inline-block;
+            height: pxToRem(12px*2);
+            margin-right: pxToRem(6px*2);
+            margin-top: pxToRem(-1px*2);
+            vertical-align: middle;
+            width: pxToRem(12px*2);
+            line-height: 1
+        }
+        .radio:checked + .radio-input:after {
+            background-color: rgba(0, 0, 0, 0.25);
+            border-radius: 100%;
+            content: "";
+            display: inline-block;
+            height: pxToRem(8px*2);
+            margin: pxToRem(2px*2);
+            width: pxToRem(8px*2);
+        }
+        .checkbox.radio-input,
+        .radio:checked + .checkbox.radio-input:after {
+            border-radius: 0
+        }
+    }
+}

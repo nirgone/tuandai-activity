@@ -1,0 +1,27 @@
+.icon-lose {
+  display: block;
+  background-image: url(../images/sprite_result.png);
+  background-size: pxToRem(255px)  pxToRem(253px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(255px);
+  height: pxToRem(77px);
+}
+.icon-tie {
+  display: block;
+  background-image: url(../images/sprite_result.png);
+  background-size: pxToRem(255px)  pxToRem(253px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-173px);
+  width: pxToRem(166px);
+  height: pxToRem(80px);
+}
+.icon-win {
+  display: block;
+  background-image: url(../images/sprite_result.png);
+  background-size: pxToRem(255px)  pxToRem(253px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-87px);
+  width: pxToRem(197px);
+  height: pxToRem(76px);
+}

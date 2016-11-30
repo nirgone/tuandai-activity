@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" /> -->
+    <meta name="viewport" content="width=750, user-scalable=0,  shrink-to-fit=no, target-desityDpi=device-dpi" />
+    <meta name="format-detection" content="telephone=no">
+    <title>2016北京金博会线上抽奖</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    // (function(doc, win) {
+    // 	var docEl = doc.documentElement,
+    //        	resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+    //        	recalc = function() {
+    //            	// if (docEl.style.fontSize) return;
+    //            	clientWidth = docEl.clientWidth;
+    //            	if (!clientWidth) return;
+    //            	docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+    //            	if (document.body) {
+    //                	document.body.style.fontSize = docEl.style.fontSize;
+    //            	}
+    //        	};
+    //    	recalc();
+    //    	if (!doc.addEventListener) return;
+    //    	win.addEventListener(resizeEvt, recalc, false);
+    //    	doc.addEventListener("DOMContentLoaded", recalc, false);
+    // })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="logo"></div>
+        <div class="top">
+            <i class="icon-text zoomIn"></i>
+            <i class="icon-go zoomInBig"></i>
+        </div>
+        <div class="bulb"></div>
+        <div class="rule-btn" id="rule_btn">
+            详细规则
+        </div>
+        <ul class="lottery-ul" id="lottery">
+            <li id="item0" class="item bg-yellow active"><i class="icon-redpack10 redpack"></i><span>投资红包10元</span></li>
+            <li id="item1" class="item bg-green active"><i class="icon-ticket"></i><span>卖座电影票2张</span></li>
+            <li id="item2" class="item bg-blue active"><i class="icon-ring"></i><span>指环支架</span></li>
+            <li id="item3" class="item bg-blue active"><i class="icon-youku"></i><span>优酷土豆会员</span></li>
+            <li id="item4" class="item bg-yellow active"><i class="icon-redpack50 redpack"></i><span>投资红包50元</span></li>
+            <li id="item5" class="item bg-green active"><i class="icon-tableware"></i><span>青花瓷餐具套装</span></li>
+            <li id="item6" class="item bg-green active"><i class="icon-redpack20 redpack"></i><span>投资红包20元</span></li>
+            <li id="item7" class="item bg-blue active"><i class="icon-umbrella"></i><span>酒瓶伞</span></li>
+            <li id="item8" class="item bg-yellow active"><i class="icon-clear"></i><span>车载空气净化器</span></li>
+        </ul>
+        <div class="btn" id="lottery_btn">
+            马上赚好运
+        </div>
+        <div class="tips">
+            本活动仅限团贷网新注册用户参加
+        </div>
+    </div>
+    <!-- 活动规则 -->
+    <div class="popup rule-part" id="rule">
+        <div class="masker"></div>
+        <div class="popup-content rule-content">
+            <div class="popup-title rule-title">
+                活动规则
+            </div>
+            <div class="popup-body rule-body">
+                <p>1、本活动仅限展会现场团贷网新注册用户参与；</p>
+                <p>2、每位新用户可参与1次抽奖；</p>
+                <p>3、奖品领取：虚拟奖品可直接领取，登录“个人账户-团宝箱”即可查看；实物奖品需出示兑奖二维码予现场工作人员验证兑换；</p>
+                <p>4、兑奖二维码一经验证立即失效，请勿以任意形式转发他人；</p>
+                <p>5、如有任何疑问，请询现场工作人员。</p>
+                <div class="popup-btn close-btn" data-value="确定">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 中奖部分  type 00:中奖提示，输入手机号 01:注册页面 1: 虚拟奖品 2: 实物奖品-->
+    <div class="popup prize-part type00" id="pop00">
+        <div class="masker"></div>
+        <div class="popup-content">
+            <div class="popup-title">
+                大奖我来啦！
+            </div>
+            <div class="popup-body">
+                <i class="icon-box"></i>
+                <div class="input-wrapper" >
+                    <input type="tel" value="" placeholder="请输入手机号领取奖品" id="tel">
+                    <p class="warn" id="tel_warn"></p>
+                </div>
+                <div class="popup-btn" data-value="确定" id="pop00_btn">
+                </div>
+            </div>
+        <div class="popup-close"></div>
+        </div>
+    </div>
+    <!-- 中奖部分  type 00:中奖提示，输入手机号 01:注册页面 1: 虚拟奖品 2: 实物奖品-->
+    <div class="popup prize-part type01" id="pop01">
+        <div class="masker"></div>
+        <div class="popup-content">
+            <div class="popup-title">
+                大奖我来啦！
+            </div>
+            <div class="popup-body">
+                <div class="input-wrapper" >
+                    <input type="tel" value="" placeholder="请输入手机号领取奖品" id="tel">
+                    <p class="warn" id="tel_warn"></p>
+                </div>
+                <div class="input-wrapper-small" >
+                	<div>
+                    <input type="tel" value="" placeholder="请输入短信验证码" id="msg_code">
+                	</div>
+                	<div class="get-msg-btn" id="get_msg_btn">
+                		获取
+                	</div>
+                    <p class="warn" id="mc_warn"></p>
+                </div>
+                <div class="input-wrapper-small" >
+                	<div>
+                    <input type="tel" value="" placeholder="请输入图形验证码" id="pic_code">
+                	</div>
+                	<div>
+                		<img src="../images/code.png" alt="图形验证码">
+                	</div>
+                    <p class="warn" id="pc_warn">请输入</p>
+                </div>
+                <div class="popup-btn" data-value="马上抽奖">
+                </div>
+                <p class="tip">注册即表示您已同意<a href="https://m.tuandai.com/pages/agreement.aspx">《团贷网服务协议》</a></p>
+            </div>
+        <div class="popup-close"></div>
+        </div>
+    </div>
+    <!-- 中奖部分  type 00:中奖提示，输入手机号 01:注册页面 1: 虚拟奖品 2: 实物奖品-->
+    <!-- <div class="popup prize-part type1">
+        <div class="masker"></div>
+        <div class="popup-content">
+            <div class="popup-title">
+                哇！中奖啦！
+            </div>
+            <div class="popup-body">
+                <div class="prize-bg">
+                	<p class="prize-title">优酷会员月卡</p>
+                	<i class="prize-ticket"></i>
+                </div>
+                <div class="popup-btn" data-value="查看奖品">
+                </div>
+            </div>
+        <div class="popup-close"></div>
+        </div>
+    </div> -->
+    <!-- 中奖部分  type 00:中奖提示，输入手机号 01:注册页面 1: 虚拟奖品 2: 实物奖品-->
+    <!-- <div class="popup prize-part type2">
+        <div class="masker"></div>
+        <div class="popup-content">
+            <div class="popup-title">
+                哇！中奖啦！
+            </div>
+            <div class="popup-body">
+                <p class="prize-title">车载空气净化器</p>
+                <img src="../images/qrcode.png" class="qrcode" alt="二维码">
+                <p class="info">请向现场工作人员出示该二维码以验证兑奖 二维码一经验证立即失效，请妥善保管</p>
+            </div>
+            <div class="popup-close"></div>
+        </div>
+    </div> -->
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

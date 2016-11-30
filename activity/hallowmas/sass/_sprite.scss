@@ -1,0 +1,95 @@
+@charset "UTF-8";
+@import "../../../sass/func";
+.icon {
+	display: block;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.icon-logo {
+	@extend .icon;
+	@include icon-background("../images/logo.png", 157px, 56px);
+}
+.icon-title {
+	@extend .icon;
+	@include icon-background("../images/title.png", 550px, 301px);
+}
+.icon-subtitle {
+	@extend .icon;
+	@include icon-background("../images/sub_title.png", 700px, 132px);
+}
+.icon-btn0 {
+	@extend .icon;
+	@include icon-background("../images/btn_common.png", 302px, 94px);
+}
+.icon-btn1 {
+	@extend .icon;
+	@include icon-background("../images/btn_blue.png", 273px, 125px);
+}
+.icon-btn2 {
+	@extend .icon;
+	@include icon-background("../images/btn_blue2.png", 315px, 124px);
+}
+.icon-shadow1 {
+	@extend .icon;
+	@include icon-background("../images/shadow1.png", 363px, 445px);
+}
+.icon-shadow2 {
+	@extend .icon;
+	@include icon-background("../images/shadow2.png", 359px, 666px);
+}
+.icon-shadow3 {
+	@extend .icon;
+	@include icon-background("../images/shadow3.png", 419px, 428px);
+}
+.icon-helloween {
+	@extend .icon;
+	@include icon-background("../images/helloween.png", 138px, 97px);
+}
+.icon-light {
+	@extend .icon;
+	@include icon-background("../images/light.png", 750px, 877px);
+}
+.icon-gift {
+	@extend .icon;
+	@include icon-background("../images/gift.png", 190px, 207px);
+}
+.icon-gift-big {
+	@extend .icon;
+	@include icon-background("../images/gift_big.png", 321px, 342px);
+}
+
+.icon-pop1 {
+	@extend .icon;
+	@include icon-background("../images/pop_icon1.png", 478px, 434px);
+}
+.icon-pop2 {
+	@extend .icon;
+	@include icon-background("../images/pop_icon2.png", 395px, 467px);
+}
+.icon-pop3 {
+	@extend .icon;
+	@include icon-background("../images/pop_icon3.png", 473px, 390px);
+}
+
+.icon-redpack {
+	@extend .icon;
+	@include icon-background("../images/redpack.png", 187px, 204px);
+}
+.icon-coin {
+	@extend .icon;
+	@include icon-background("../images/coin.png", 194px, 194px);
+}
+
+.icon-invite {
+	@extend .icon;
+	@include icon-background("../images/invite.png", 580px, 730px);
+}
+.icon-pumk {
+	@extend .icon;
+	@include icon-background("../images/pumk.png", 523px, 398px);
+}
+.icon-guide {
+	@extend .icon;
+	@include icon-background("../images/guide.png", 464px, 274px);
+}

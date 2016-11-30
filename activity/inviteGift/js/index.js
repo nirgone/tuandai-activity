@@ -9,7 +9,6 @@
     function pxToPx(px) {
         return px / 23.4375 / 2 * _fontsize;
     }
-    // $("#middle_sec").height(_height[0]);
     // $("#get_sec").height(_height[1]);
     // setTimeout(function() {
     //     $(".get-sec").show();

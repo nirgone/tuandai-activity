@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>newcomerStrategy</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth > 414 ? 414 : docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="icon-top"></div>
+        <section class="item">
+            <div class="item-header icon-title0">
+                四重礼，跟我有什么关系？
+            </div>
+            <ul class="item-list list0">
+                <li><i class="icon-phone"></i>
+                    <div class="descri">
+                        <span>app专属邀请，成功邀请1名好友得10元</span>
+                        <span class="sub-title">最高可领400元</span>
+                        <div class="detail with-top">
+                            <p>通过微信/APP邀请好友，好友通过邀请链接成功注册后你和好友都可以获得10元的投资红包，最高可获400元！</p>
+                        </div>
+                    </div>
+                    <i class="arrow"></i>
+                </li>
+                <li><i class="icon-card"></i>
+                    <div class="descri">
+                        <span>好友充值，我可获得现金红包</span>
+                        <div class="detail">
+                            <p>好友在10天累计充值达到1000元，你可获15元现金红包哦；</p>
+                            <p>好友在10天累计充值达到5000元，你可获15元+25元现金红包哦；</p>
+                            <p>好友在10天累计充值达到10000元，你可获15元+25+40元现金红包哦；</p>
+                            <p>好友在活动期间内只要充值了≥10000元，80元现金红包就收入囊中了！</p>
+                            <p>更何况，人在江湖漂，哪止一个好友啊。</p>
+                        </div>
+                    </div>
+                    <i class="arrow "></i>
+                </li>
+                <li><i class="icon-invest"></i>
+                    <div class="descri">
+                        <span>好友投资，我可获得投资红包</span>
+                        <div class="detail">
+                            <p>成功邀请了2位好友且每个好友单笔投资3000元≥1个月项目，60元投资红包就归你啦；</p>
+                            <p>成功邀请了3位好友且每个好友单笔投资3000元≥1个月项目，你就可获100元+60元的投资红包（红包叠加了哦）；+25元现金红包哦；</p>
+                            <p>这重礼拼的就是人脉这项技能，2个红包可以各增加12%的年化收益有木有！+25+40元现金红包哦；</p>
+                        </div>
+                    </div>
+                    <i class="arrow"></i>
+                </li>
+                <li><i class="icon-pig"></i>
+                    <div class="descri">
+                        <span>好友有净待收，我可获得365天佣金收入</span>
+                        <!-- <span class="sub-title">2016.9.1-30，还能获得佣金翻倍最高可获得1%收益</span> -->
+                        <div class="detail with-top">
+                            <!-- <p class="detail-form"><i>①</i>活动期间内，邀请5位及以上有效好友，且好友总净资产≥50万，可享受好友净待收0.7%年化收益；</p>
+                            <p class="detail-form"><i>②</i>邀请10位及以上有效好友，且好友总净资产≥100万，可享受好友净待收1%年化收益；（有效好友指充值金额≥1000的用户）；</p>
+                            <p class="detail-form"><i>③</i>活动期间若邀请人未满足以上条件，则享原有的0.5%佣金奖励；</p> -->
+                            <p>每日可获佣金=所有好友的净待收 × 0.5%/365（低于0.01元的佣金，平台不发放）；</p>
+                            <p>备注：净待收=待收本金-待还本金</p>
+                        </div>
+                    </div>
+                    <i class="arrow"></i>
+                </li>
+            </ul>
+        </section>
+
+        <section class="item ">
+        	<div class="item-header icon-title1">
+                如何能更高效快捷领到这些奖励呢？
+            </div>
+            <ul class="item-list list1">
+            	<li>
+            		<div class="li-title">
+            			<i>技能一</i><span>面对面邀请好友</span>
+            		</div>
+            		<div class="li-pics pics-two">
+            			<div>
+            				<i class="icon-qrcode"></i>
+            				<div class="bubble">
+            					步骤一
+            				</div>
+            				<p>亮出专属二维码</p>
+            			</div>
+            			<div>
+            				<i class="icon-scan"></i>
+            				<div class="bubble">
+            					步骤二
+            				</div>
+            				<p>好友微信扫一扫</p>
+            			</div>
+            		</div>
+            		<div class="txt">
+            			休闲聚会，面对面、一对一邀请，诚意十足！只需扫一扫，友福同享少不了！<font class="font-yellow">（打开app->发现->邀请有礼->马上邀请->面对面扫码）</font>
+            		</div>
+            	</li>
+            	<li>
+            		<div class="li-title">
+            			<i>技能二</i><span>分享微信好友及朋友圈</span>
+            		</div>
+            		<div class="li-pics icon-wxshare"></div>
+            		<div class="txt">
+            			朋友圈人气旺，一键分享给朋友，简单快捷，还能和好友一起领红包。
+            		</div>
+            	</li>
+            	<li>
+            		<div class="li-title">
+            			<i>技能三</i><span>微博分享</span>
+            		</div>
+            		<div class="li-pics icon-wbshare"></div>
+            		<div class="txt">
+            			如果是微博大V，那么恭喜了，只要把邀请链接分享到微博，收益就蹭蹭上涨了。
+            		</div>
+            	</li>
+            </ul>
+        </section>
+
+        <section class="item">
+        	<div class="item-header icon-title2">
+                最后再说两句
+            </div>
+            <div class="item-sub-header">
+            	以下是真实的案例
+            </div>
+            <ul class="item-list list2">
+            	<li>
+            		<div class="pics">
+            			<i class="icon-lady"></i>
+            			<p>－ 刘女士 －</p>
+            		</div>
+            		<div class="txt">
+            			团粉一枚，一次聚会时邀请了一位朋友注册，好友参与平台活动，累计投资113万，自己也获得5650元佣金奖励。
+            		</div>
+            	</li>
+            	<li>
+            		<div class="pics">
+            			<i class="icon-man"></i>
+            			<p>－ 舒先生 －</p>
+            		</div>
+            		<div class="txt">
+            			从B轮融资开始加入团贷网，通过朋友圈的方式，邀请了5位好友，其中的4位好友投资了1-3万元不等，自己也获得320元现金红包、200元投资红包奖励。
+            		</div>
+            	</li>
+            </ul>
+        </section>
+        <i class="icon-texts"></i>
+    </div>
+   	<footer class="footer">
+   		<div class="btn">
+   			马上邀请
+   		</div>
+   	</footer>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script>
+(function() {
+    FastClick.attach(document.body);
+    //do your thing.
+    var _clientWidth = document.documentElement.clientWidth > 414 ? 414 : document.documentElement.clientWidth,
+        _fontsize = 20 * (_clientWidth / 320);
+    var _height = [ pxToPx(160), pxToPx(480),pxToPx(360),pxToPx(200)];
+
+    function pxToPx(px) {
+        return px / 23.4375 / 2 * _fontsize;
+    }
+
+    $(".arrow").bind("click", function(e) {
+        var $target = $(e.currentTarget),
+            $parent = $target.parent(),
+            _index = $parent.index(),
+            $detail = $parent.find(".detail");
+
+        if ($target.hasClass("open")) {
+        	$target.removeClass("open");
+        	$detail[0].style.height = 0;
+        } else {
+        	$target.addClass("open");
+            $detail[0].style.height = _height[_index] + "px";
+        }
+    });
+})();
+</script>
+
+</html>

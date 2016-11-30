@@ -1,0 +1,144 @@
+.icon-txt1 {
+  display: block;
+  background-image: url(../images/sprite_txt.png);
+  background-size: pxToRem(501px)  pxToRem(387px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-57px);
+  width: pxToRem(220px);
+  height: pxToRem(52px);
+}
+.icon-txt10 {
+  display: block;
+  background-image: url(../images/sprite_txt.png);
+  background-size: pxToRem(501px)  pxToRem(387px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-170px);
+  width: pxToRem(199px);
+  height: pxToRem(48px);
+}
+.icon-txt11 {
+  display: block;
+  background-image: url(../images/sprite_txt.png);
+  background-size: pxToRem(501px)  pxToRem(387px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-119px);
+  width: pxToRem(261px);
+  height: pxToRem(41px);
+}
+.icon-txt12 {
+  display: block;
+  background-image: url(../images/sprite_txt.png);
+  background-size: pxToRem(501px)  pxToRem(387px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-228px);
+  width: pxToRem(197px);
+  height: pxToRem(47px);
+}
+.icon-txt13 {
+  display: block;
+  background-image: url(../images/sprite_txt.png);
+  background-size: pxToRem(501px)  pxToRem(387px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-304px) pxToRem(-219px);
+  width: pxToRem(181px);
+  height: pxToRem(43px);
+}
+.icon-txt14 {
+  display: block;
+  background-image: url(../images/sprite_txt.png);
+  background-size: pxToRem(501px)  pxToRem(387px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-304px) pxToRem(-165px);
+  width: pxToRem(181px);
+  height: pxToRem(44px);
+}
+.icon-txt15 {
+  display: block;
+  background-image: url(../images/sprite_txt.png);
+  background-size: pxToRem(501px)  pxToRem(387px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-392px) pxToRem(-285px);
+  width: pxToRem(90px);
+  height: pxToRem(43px);
+}
+.icon-txt16 {
+  display: block;
+  background-image: url(../images/sprite_txt.png);
+  background-size: pxToRem(501px)  pxToRem(387px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-292px) pxToRem(-285px);
+  width: pxToRem(90px);
+  height: pxToRem(43px);
+}
+.icon-txt2 {
+  display: block;
+  background-image: url(../images/sprite_txt.png);
+  background-size: pxToRem(501px)  pxToRem(387px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-108px) pxToRem(-339px);
+  width: pxToRem(98px);
+  height: pxToRem(48px);
+}
+.icon-txt3 {
+  display: block;
+  background-image: url(../images/sprite_txt.png);
+  background-size: pxToRem(501px)  pxToRem(387px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(294px);
+  height: pxToRem(47px);
+}
+.icon-txt4 {
+  display: block;
+  background-image: url(../images/sprite_txt.png);
+  background-size: pxToRem(501px)  pxToRem(387px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-304px) pxToRem(-111px);
+  width: pxToRem(182px);
+  height: pxToRem(44px);
+}
+.icon-txt5 {
+  display: block;
+  background-image: url(../images/sprite_txt.png);
+  background-size: pxToRem(501px)  pxToRem(387px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-285px);
+  width: pxToRem(136px);
+  height: pxToRem(44px);
+}
+.icon-txt6 {
+  display: block;
+  background-image: url(../images/sprite_txt.png);
+  background-size: pxToRem(501px)  pxToRem(387px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-304px) pxToRem(-57px);
+  width: pxToRem(182px);
+  height: pxToRem(44px);
+}
+.icon-txt7 {
+  display: block;
+  background-image: url(../images/sprite_txt.png);
+  background-size: pxToRem(501px)  pxToRem(387px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-146px) pxToRem(-285px);
+  width: pxToRem(136px);
+  height: pxToRem(44px);
+}
+.icon-txt8 {
+  display: block;
+  background-image: url(../images/sprite_txt.png);
+  background-size: pxToRem(501px)  pxToRem(387px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-304px) pxToRem(0px);
+  width: pxToRem(197px);
+  height: pxToRem(47px);
+}
+.icon-txt9 {
+  display: block;
+  background-image: url(../images/sprite_txt.png);
+  background-size: pxToRem(501px)  pxToRem(387px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-339px);
+  width: pxToRem(98px);
+  height: pxToRem(48px);
+}

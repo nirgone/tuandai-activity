@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>猜拳小游戏</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="content page0-content">
+        <i class="logo"></i>
+        <section class="title-sec">
+            <i class="icon-star0 starAnima0"></i>
+            <i class="icon-star1 starAnima1"></i>
+            <i class="icon-star2 starAnima2"></i>
+            <i class="icon-star3"></i>
+            <i class="icon-star4"></i>
+            <div class="icon-subtitle"></div>
+            <div class="icon-title zoomInBig"></div>
+        </section>
+        <div class="middle-sec">
+            <i class="icon-pai"></i>
+            <div class="btn-start" id="btn_start"></div>
+        </div>
+        <ul class="btn-ul">
+            <li id="show_rule"><i class="icon-rule"></i>游戏规则</li>
+            <li id="show_menu"><i class="icon-menu"></i>排行榜</li>
+        </ul>
+        <section class="tip-sec">
+            我可玩<span>3</span>局游戏，<a id="toget_chance" title="">点击赢更多机会></a>
+        </section>
+    </div>
+    <!-- 规则弹窗 -->
+    <div class="popup" id="pop_rule">
+        <div class="masker"></div>
+        <div class="popup-wrapper rule-wrapper">
+            <div class="popup-title">
+                <i class="icon-txt1"></i>
+            </div>
+            <p data-no="1">活动时间：截止至2016年12月31日；</p>
+            <p data-no="2">游戏玩法：单局60秒，赢1次得1分，单局得分≥20分可兑换奖励，每人3次机会；</p>
+            <p data-no="3">分享、邀请好友、消耗团币可增加游戏机会；</p>
+            <p data-no="4">赛季结束，积分排名前10可额外奖励（同积分以获得时间优先排名）；</p>
+            <p data-no="5">活动最终解释权归团贷网所有。</p>
+            <div class="btn-common popup-btn-close">
+                <i class="icon-txt2"></i>
+            </div>
+        </div>
+    </div>
+    <!-- 排行榜 -->
+    <div class="popup" id="pop_menu">
+        <div class="masker"></div>
+        <div class="popup-wrapper menu-wrapper">
+            <nav id="menu_nav">
+                <a class="active" id="nav_myrecode" data-type="0"><i class="icon"></i></a>
+                <a class="" id="nav_list" data-type- "1"><i class="icon"></i></a>
+            </nav>
+            <section class="menu-content">
+                <ul class="record-ul active" id="ul_record">
+                    <li><span>第一局</span><span>100分</span><a>兑换奖品></a></li>
+                    <li><span>第一局</span><span>100分</span><a>兑换奖品></a></li>
+                    <li><span>第一局</span><span>100分</span><a>兑换奖品></a></li>
+                    <li><span>第一局</span><span>100分</span><a>兑换奖品></a></li>
+                    <li><span>第一局</span><span>100分</span><a>兑换奖品></a></li>
+                    <li><span>第一局</span><span>100分</span><a class="disabled">兑换奖品></a></li>
+                    <li><span>第一局</span><span>100分</span><a>兑换奖品></a></li>
+                    <li><span>第一局</span><span>100分</span><a>兑换奖品></a></li>
+                    <li><span>第一局</span><span>100分</span><a>兑换奖品></a></li>
+                    <li><span>第一局</span><span>100分</span><a class="disabled">兑换奖品></a></li>
+                    <li><span>第一局</span><span>100分</span><a>兑换奖品></a></li>
+                </ul>
+                <ul class="list-ul" id="ul_list">
+                    <p>第一赛季积分排名前10名的用户可额外获得福利：</p>
+                    <li><span>名次</span><span>玩家</span><span>分数</span></li>
+                    <li><span><i>1</i></span><span>莫小萌</span><span>100分</span></li>
+                    <li><span><i>1</i></span><span>莫小萌</span><span>100分</span></li>
+                    <li><span><i>1</i></span><span>莫小萌</span><span>100分</span></li>
+                    <li><span><i>1</i></span><span>莫小萌</span><span>100分</span></li>
+                    <li><span><i>1</i></span><span>莫小萌</span><span>100分</span></li>
+                    <li><span><i>1</i></span><span>莫小萌</span><span>100分</span></li>
+                    <li><span><i>1</i></span><span>莫小萌</span><span>100分</span></li>
+                    <li><span><i>1</i></span><span>莫小萌</span><span>100分</span></li>
+                    <li><span><i>1</i></span><span>莫小萌sdfsfdsfsfdsf</span><span>100分</span></li>
+                </ul>
+            </section>
+            <div class="btn-common popup-btn-close">
+                <i class="icon-txt2"></i>
+            </div>
+        </div>
+    </div>
+    <!-- 更多机会 -->
+    <!-- <div class="popup" id="pop_chance">
+        <div class="masker"></div>
+        <div class="popup-wrapper chance-wrapper">
+            <div class="popup-close popup-btn-close"></div>
+            <div class="popup-title">
+                <i class="icon-txt3"></i>
+            </div>
+            <ul class="chance-ul">
+                <li>
+                    <p>通过分享朋友圈可多获得一次游戏机会（最多一次）</p>
+                    <div class="btn-rect toshare" data-type="2">马上分享</div>
+                </li>
+                <li>
+                    <p>分享给好友，好友成功注册团贷网即可1次游戏机会，上不封顶</p>
+                    <div class="btn-rect toshare" data-type="1">马上分享</div>
+                </li>
+                <li>
+                    <p>消耗100团币可兑换1次游戏机会，每月最多兑换5次</p>
+                    <div class="btn-rect" id="toexchange">兑换机会</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+ -->    <!-- 分享给朋友 -->
+   <!--  <div class="popup popup-share" id="pop_share">
+        <div class="masker"></div>
+        <i class="icon-share2" id="icon_share">
+			<div class="popup-btn-close"></div>
+		</i>
+    </div> -->
+    <!-- 弹窗 -->
+    <!-- <div class="popup dialog">
+        <div class="masker"></div>
+        <div class="popup-wrapper dialog-wrapper" data-title="">
+            <div class="dialog-close"></div>
+            兑换失败提醒
+            <i class="icon-icon4"></i>
+            <p>不好意思</p>
+            <p>您本月兑换机会已用完</p>
+            <div class="btn-group">
+                <div class="btn-common">
+                    <i class="icon-txt10"></i>
+                </div>
+            </div>
+            兑换提醒
+            <i class="icon-icon3"></i>
+            <p>本次兑换将会扣除您100团币</p>
+            <div class="btn-group">
+                <div class="btn-sn">
+                    <i class="icon-txt9"></i>
+                </div>
+                <div class="btn-small">
+                    <i class="icon-txt2	"></i>
+                </div>
+            </div>
+
+            兑换成功提示
+            <i class="icon-icon2"></i>
+            <p>恭喜你，兑换成功！</p>
+            <div class="btn-group">
+                <div class="btn-common">
+                    <i class="icon-txt10"></i>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

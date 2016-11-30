@@ -1,0 +1,129 @@
+@charset "UTF-8";
+@import "../../../sass/func";
+.icon-top {
+    @include background("../images/top.png", 750px, 524px);
+}
+
+
+.sprite-icons {
+    display: block;
+    background-image: url(../images/sprite_icons.png);
+    background-size: pxToRem(164px) pxToRem(114px);
+    background-repeat: no-repeat;
+}
+
+.icon-arrow {
+    @extend .sprite-icons;
+    background-position: pxToRem(-88px) pxToRem(-62px);
+    width: pxToRem(25px);
+    height: pxToRem(15px);
+}
+
+.icon-card {
+    @extend .sprite-icons;
+    background-position: pxToRem(0px) pxToRem(0px);
+    width: pxToRem(48px);
+    height: pxToRem(52px);
+}
+
+.icon-decorate {
+    @extend .sprite-icons;
+    background-position: pxToRem(-58px) pxToRem(-62px);
+    width: pxToRem(20px);
+    height: pxToRem(20px);
+}
+
+.icon-invest {
+    @extend .sprite-icons;
+    background-position: pxToRem(-58px) pxToRem(0px);
+    width: pxToRem(48px);
+    height: pxToRem(52px);
+}
+
+.icon-phone {
+    @extend .sprite-icons;
+    background-position: pxToRem(-116px) pxToRem(0px);
+    width: pxToRem(48px);
+    height: pxToRem(52px);
+}
+
+.icon-pig {
+    @extend .sprite-icons;
+    background-position: pxToRem(0px) pxToRem(-62px);
+    width: pxToRem(48px);
+    height: pxToRem(52px);
+}
+
+.sprite-icons2 {
+	display: block;
+  background-image: url(../images/sprite_icons2.png);
+  background-size:pxToRem(550px) pxToRem(323px);
+  background-repeat:no-repeat;
+}
+.icon-texts {
+  @extend .sprite-icons2;
+  background-position: pxToRem(0px) pxToRem(-281px);
+  width: pxToRem(306px);
+  height: pxToRem(42px);
+}
+.icon-title0 {
+  @extend .sprite-icons2;
+  background-position: pxToRem(0px) pxToRem(-94px);
+  width: pxToRem(430px);
+  height: pxToRem(84px);
+}
+.icon-title1 {
+  @extend .sprite-icons2;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(550px);
+  height: pxToRem(84px);
+}
+.icon-title2 {
+  @extend .sprite-icons2;
+  background-position: pxToRem(0px) pxToRem(-188px);
+  width: pxToRem(260px);
+  height: pxToRem(83px);
+}
+
+
+.icon-scan {
+    @include background("../images/scan.png",
+    240px,
+    248px);
+}
+
+.icon-qrcode {
+    @include background("../images/qrcode.png",
+    278px,
+    221px);
+}
+
+.icon-wxshare {
+    @include background("../images/wxshare.png",
+    590px,
+    305px);
+}
+
+.icon-wbshare {
+    @include background("../images/wbshare.png",
+    590px,
+    331px);
+}
+
+.icon-lady {
+    @include background("../images/lady.png",
+    204px,
+    204px);
+}
+
+.icon-man {
+    @include background("../images/man.png",
+    204px,
+    204px);
+}
+
+// .icon-texts {
+//     @include background("../images/texts.png",
+//     306px,
+//     42px);
+// }

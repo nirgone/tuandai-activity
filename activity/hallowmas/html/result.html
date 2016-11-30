@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>万圣节乐园寻宝活动</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="content result-content" id="result_content">
+        <div class="input-simu" id="to_input">
+            12321423
+        </div>
+        <div class="btn-blue2" id="btn_open">
+            拆开奖品
+        </div>
+    </div>
+    <!-- 礼物弹窗 -->
+     <!-- <div class="popup-wrapper gift-wrapper">
+        <div class="masker"></div>
+        <div class="popup">
+            <i class="icon-pop1"></i>
+            <div class="frame">
+               
+                <i class="icon-coin"></i>
+                <p>奖励现金红包</p>
+                <span>请登录【个人账户-我的会员】查看</span>
+            </div>
+            <div class="btn-group">
+                <div class="btn-blue">
+                    登录查看
+                </div>
+                <div class="btn-blue">
+                    邀请好友
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- 礼物动画 -->
+    <div class="popup-wrapper ani-gift-wrapper" id="ani_gift">
+        <div class="masker"></div>
+        <div class="white-masker fadeIn"></div>
+        <div class="popup">
+            <i class="icon-light zoomInLight"></i>
+            <i class="icon-gift zoomInBig"></i>
+        </div>
+    </div>
+    <!-- 分享弹窗 -->
+    <div class="popup-wrapper share-wrapper" id="share_popup">
+        <div class="masker"></div>
+        <i class="icon-invite"></i>
+    </div>
+    <!-- 输入弹出层 -->
+    <div class="input-popup slideInUp" id="input_popup">
+        <div class="close-part"><i class="icon-close"></i></div>
+        <div class="input-simu">
+            <input type="tel" name="" value="" placeholder="请输入手机号" id="tel_no">
+        </div>
+        <p class="tip"></p>
+        <div class="btn-blue2" id="btn_confirm">
+            确定
+        </div>
+    </div>
+    <!-- 注册页面弹窗 -->
+    <div class="register-wrapper slideInUp" id="register">
+        <div class="register-close">
+            <i class="close"></i>
+        </div>
+        <div class="register-title">
+            注册
+        </div>
+        <div class="register-body">
+            <div class="input-box">
+                <i class="phone"></i>
+                <input type="text" id="res_inp" placeholder="请输入手机号码" />
+            </div>
+            <div class="input-box" id="setPassword">
+                <i class="lock"></i>
+                <input type="password" />
+                <p id="likePlaceholder">设置密码<span>（6-16个字符，数字+字母）</span></p>
+                <div class="btnsee" id="btnSee">
+                    <b class="eye-close"></b>
+                </div>
+            </div>
+            <div class="input-box">
+                <i class="info"></i>
+                <input type="text" placeholder="验证码" />
+                <div class="timeout" id="getCode">
+                    获取验证码
+                </div>
+                <div class="time-wrap bl-e6e6e6" id="timeWrap">
+                    <div class="time-bg"></div>
+                    <div class="time">
+                        <div class="wrap right">
+                            <div class="round rightcircle" id="rightcircle"></div>
+                        </div>
+                        <div class="wrap left">
+                            <div class="round leftcircle" id="leftcircle"></div>
+                        </div>
+                        <div id="show"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="input-box qrcode-box">
+                <input type="text" value="" placeholder="输入图形验证码">
+                <img src="" alt="图形验证码">
+            </div>
+            <!--  <div class="invite-t">
+                <div class="lf " id="invite"><i class="triangle-r"></i>邀请人手机号码</div>
+                <div class="rf">语音验证码</div>
+            </div>
+            <div class="input-box" id="invite_inp">
+                <i class="people"></i>
+                <input type="text" placeholder="邀请人手机号码" />
+            </div> -->
+            <div class="btn-yellow">领取奖品</div>
+            <div class="tips">
+                <label class="label">
+                    <input class="radio" type="checkbox" id="read">
+                    <span class="heckbox radio-input"></span>我已阅读了<a href="http://m.tuandai.com/pages/agreement.aspx" >《团贷网服务协议》</a>
+                </label>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/index.js"></script>
+
+</html>

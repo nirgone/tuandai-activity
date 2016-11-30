@@ -1,0 +1,568 @@
+@charset "UTF-8";
+@import "../../../sass/func";
+@import "func";
+.icon {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.icon-logo {
+    @include background("../images/logo.png", 350px, 66px);
+}
+
+// .icon-star0 {
+//     @include background("../images/star.png", 68px, 70px);
+// }
+
+// .icon-star1 {
+//     @include background("../images/star_fly.png", 115px, 102px);
+// }
+.sprite-icons {
+	display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size: pxToRem(193px)  pxToRem(162px);
+  background-repeat:no-repeat;
+}
+.icon-close {
+  @extend .sprite-icons;
+  background-position: pxToRem(0px) pxToRem(-112px);
+  width: pxToRem(51px);
+  height: pxToRem(50px);
+}
+.icon-menu {
+  @extend .sprite-icons;
+  background-position: pxToRem(-113px) pxToRem(-112px);
+  width: pxToRem(34px);
+  height: pxToRem(41px);
+}
+.icon-rule {
+  @extend .sprite-icons;
+  background-position: pxToRem(-61px) pxToRem(-112px);
+  width: pxToRem(42px);
+  height: pxToRem(43px);
+}
+.icon-star0 {
+  @extend .sprite-icons;
+  background-position: pxToRem(-125px) pxToRem(0px);
+  width: pxToRem(68px);
+  height: pxToRem(70px);
+}
+.icon-star1 {
+  @extend .sprite-icons;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(115px);
+  height: pxToRem(102px);
+}
+.icon-star-s {
+  @extend .sprite-icons;
+  background-position: pxToRem(-157px) pxToRem(-112px);
+  width: pxToRem(36px);
+  height: pxToRem(34px);
+}
+
+
+.icon-star2 {
+    width: pxToRem(115px);
+    height: pxToRem(102px);
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0 !important;
+        left: 0 !important;
+        @extend .icon-star1;
+        transform: scale(-0.85, 0.85);
+    }
+}
+
+.icon-star3 {
+    @extend .icon-star0;
+    transform: scale(.75) rotate(-30deg);
+}
+
+.icon-star4 {
+    @extend .icon-star0;
+    transform: scale(.65);
+}
+
+.icon-title {
+    @extend .icon;
+    @include background-percent("../images/title.png", 604px, 413px, 580px);
+}
+
+.icon-subtitle {
+    @extend .icon;
+    @include background-percent("../images/title_sub.png", 611px, 167px, 580px);
+}
+
+.icon-pai {
+    @extend .icon;
+    @include background-percent("../images/pai.png", 168px, 158px, 135px);
+}
+
+// .icon-rule {
+//     @include background("../images/rule.png", 42px, 43px);
+// }
+
+// .icon-menu {
+//     @include background("../images/menu.png", 34px, 41px);
+// }
+
+.icon-ptitle {
+    @include background("../images/ptitle.png", 488px, 140px);
+}
+
+// .icon-star-s {
+//     @include background("../images/star_small.png", 36px, 34px);
+// }
+
+// .icon-close {
+//     @include background("../images/close.png", 51px, 50px);
+// }
+
+.icon-share1 {
+    @include background("../images/share1.png", 533px, 662px);
+}
+
+.icon-share2 {
+    @include background("../images/share2.png", 549px, 662px);
+}
+
+//dialog
+.icon-icon1 {
+    @include background("../images/icon1.png", 470px, 146px);
+}
+
+.icon-icon2 {
+    @include background("../images/icon2.png", 162px, 162px);
+}
+
+.icon-icon3 {
+    @include background("../images/icon3.png", 151px, 151px);
+}
+
+.icon-icon4 {
+    @include background("../images/icon4.png", 116px, 116px);
+}
+
+.icon-icon5 {
+    @include background("../images/icon5.png", 344px, 202px);
+}
+
+.icon-icon6 {
+    @include background("../images/icon6.png", 325px, 218px);
+}
+
+.icon-icon7 {
+    @include background("../images/icon7.png", 161px, 146px);
+}
+
+// .icon-clock {
+//     @include background("../images/clock.png", 315px, 77px);
+// }
+
+// .icon-score {
+//     @include background("../images/score.png", 210px, 78px);
+// }
+
+.icon-progress {
+    @include background("data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAN8AAAARCAMAAABqxYnaAAAAM1BMVEUAAAD/wQT/wwz/xA3/wwr/wgX/yST/ySP/wAD/yy3/11v/0UX/2Wf/xhj/wgv/0D3/yB/u4mPtAAAACHRSTlMA9IRTFNH00Q9w9ooAAACNSURBVEjH3daBEcQgCETRBdFAPNT+qz2SdLGvgz8wDCim1wg241LDq43Ye5LZuxLbmxcx501nzohTgTZiV96PTAXuOGLQw9h3f32p6Mm7n5kdkidI78vJJVgrq5DNeepyLYd7FVKqOnd4WZT8AXFmgu7MOtSZKYx5QcWA5ry+B5t1gtLwMu18idLVAPwBaaSPnfYVoacAAAAASUVORK5CYII=", 223px, 17px);
+}
+.sprite-long {
+	display: block;
+  background-image: url(../images/sprite_long.png);
+  background-size: pxToRem(315px)  pxToRem(165px);
+  background-repeat:no-repeat;
+}
+.icon-clock {
+  @extend .sprite-long;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(315px);
+  height: pxToRem(77px);
+}
+.icon-score {
+  @extend .sprite-long;
+  background-position: pxToRem(0px) pxToRem(-87px);
+  width: pxToRem(210px);
+  height: pxToRem(78px);
+}
+
+
+
+.icon-cat {
+    @include background("../images/cat.png", 196px, 136px);
+}
+
+.icon-timeout {
+    @include background("../images/timeout.png", 467px, 117px);
+}
+
+.icon-loader {
+    @include background("../images/loader.png", 120px, 130px);
+}
+
+// game
+.icon-rock {
+    @include background("../images/rock.png", 187px, 181px);
+}
+
+.icon-paper {
+    @include background("../images/paper.png", 233px, 211px);
+}
+
+.icon-scissors {
+    @include background("../images/scissors.png", 168px, 236px);
+}
+
+.sprite-gesture {
+	display: block;
+  background-image: url(../images/sprite_gesture.png);
+  background-size: pxToRem(353px)  pxToRem(194px);
+  background-repeat:no-repeat;
+}
+.icon-paper-s {
+  @extend .sprite-gesture;
+  background-position: pxToRem(-106px) pxToRem(0px);
+  width: pxToRem(85px);
+  height: pxToRem(80px);
+}
+.icon-paper-y {
+  @extend .sprite-gesture;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(96px);
+  height: pxToRem(87px);
+}
+.icon-rock-s {
+  @extend .sprite-gesture;
+  background-position: pxToRem(-277px) pxToRem(0px);
+  width: pxToRem(76px);
+  height: pxToRem(74px);
+}
+.icon-rock-y {
+  @extend .sprite-gesture;
+  background-position: pxToRem(-78px) pxToRem(-97px);
+  width: pxToRem(82px);
+  height: pxToRem(79px);
+}
+.icon-scissors-s {
+  @extend .sprite-gesture;
+  background-position: pxToRem(0px) pxToRem(-97px);
+  width: pxToRem(68px);
+  height: pxToRem(97px);
+}
+.icon-scissors-y {
+  @extend .sprite-gesture;
+  background-position: pxToRem(-201px) pxToRem(0px);
+  width: pxToRem(66px);
+  height: pxToRem(91px);
+}
+
+
+.icon-c-lose {
+    @include background("../images/c_lose.png", 443px, 443px);
+}
+
+.icon-c-tie {
+    @include background("../images/c_tie.png", 443px, 443px);
+}
+
+.icon-c-win {
+    @include background("../images/c_win.png", 443px, 443px);
+}
+
+// .icon-lose {
+//     @include background("../images/lose.png", 255px, 77px);
+// }
+
+// .icon-win {
+//     @include background("../images/win.png", 197px, 76px);
+// }
+
+// .icon-tie {
+//     @include background("../images/tie.png", 166px, 80px);
+// }
+.sprite-result {
+	display: block;
+  background-image: url(../images/sprite_result.png);
+  background-size: pxToRem(255px)  pxToRem(253px);
+  background-repeat:no-repeat;
+}
+.icon-lose {
+  @extend .sprite-result;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(255px);
+  height: pxToRem(77px);
+}
+.icon-tie {
+  @extend .sprite-result;
+  background-position: pxToRem(0px) pxToRem(-173px);
+  width: pxToRem(166px);
+  height: pxToRem(80px);
+}
+.icon-win {
+  @extend .sprite-result;
+  background-position: pxToRem(0px) pxToRem(-87px);
+  width: pxToRem(197px);
+  height: pxToRem(76px);
+}
+
+
+.icon-btn-game {
+    @include background("../images/btn_game.png", 159px, 161px);
+}
+
+.icon-btn-game-a {
+    @include background("../images/btn_game_a.png", 159px, 159px);
+}
+
+// game start countdown
+// .icon-1 {
+// 	@include background("../images/1.png", 57px, 101px);
+// }
+// .icon-2 {
+// 	@include background("../images/2.png", 79px, 101px);
+// }
+// .icon-3 {
+// 	@include background("../images/3.png", 79px, 103px);
+// }
+// .icon-go {
+// 	@include background("../images/go.png", 170px, 91px);
+// }
+.sprite-count {
+    display: block;
+  background-image: url(../images/sprite_count.png);
+  background-size: pxToRem(237px)  pxToRem(204px);
+  background-repeat:no-repeat;
+}
+
+.icon-1 {
+  @extend .sprite-count;
+  background-position: pxToRem(-180px) pxToRem(0px);
+  width: pxToRem(57px);
+  height: pxToRem(101px);
+}
+.icon-2 {
+  @extend .sprite-count;
+  background-position: pxToRem(-89px) pxToRem(-101px);
+  width: pxToRem(79px);
+  height: pxToRem(101px);
+}
+.icon-3 {
+  @extend .sprite-count;
+  background-position: pxToRem(0px) pxToRem(-101px);
+  width: pxToRem(79px);
+  height: pxToRem(103px);
+}
+.icon-go {
+  @extend .sprite-count;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(170px);
+  height: pxToRem(91px);
+}
+
+
+//btn
+.icon-btn-start {
+    @extend .icon;
+    @include background-percent("../images/btn_start.png", 414px, 135px, 135px);
+}
+
+.icon-btn-common {
+    @include background("../images/btn_common.png", 377px, 127px);
+}
+
+.icon-btn-rect {
+    @include background("../images/btn_rect.png", 154px, 86px);
+}
+
+.icon-btn-small {
+    @include background("../images/btn_small.png", 257px, 107px);
+}
+
+.icon-btn-sn {
+    @include background("../images/btn_sn.png", 257px, 107px);
+}
+
+//text
+// .icon-txt1 {
+//     //游戏规则
+//     @include background("../images/txt1.png", 220px, 52px);
+// }
+
+// .icon-txt2 {
+//     //确定
+//     @include background("../images/txt2.png", 98px, 48px);
+// }
+
+// .icon-txt3 {
+//     //获取更多机会
+//     @include background("../images/txt3.png", 294px, 47px);
+// }
+
+// .icon-txt4 {
+//     //我的战绩
+//     @include background("../images/txt4.png", 182px, 44px);
+// }
+
+// .icon-txt5 {
+//     //排行榜
+//     @include background("../images/txt5.png", 136px, 44px);
+// }
+
+// .icon-txt6 {
+//     //我的战绩
+//     @include background("../images/txt6.png", 182px, 44px);
+// }
+
+// .icon-txt7 {
+//     //排行榜
+//     @include background("../images/txt7.png", 136px, 44px);
+// }
+
+// .icon-txt8 {
+//     //再玩一局
+//     @include background("../images/txt8.png", 197px, 47px);
+// }
+
+// .icon-txt9 {
+//     //取消
+//     @include background("../images/txt9.png", 98px, 48px);
+// }
+
+// .icon-txt10 {
+//     //返回首页
+//     @include background("../images/txt10.png", 199px, 48px);
+// }
+
+// .icon-txt11 {
+//     //获取游戏机会
+//     @include background("../images/txt11.png", 261px, 41px);
+// }
+
+// .icon-txt12 {
+//     //领取奖品
+//     @include background("../images/txt12.png", 197px, 47px);
+// }
+
+// .icon-txt13 {
+//     //查看奖品
+//     @include background("../images/txt13.png", 181px, 43px);
+// }
+
+// .icon-txt14 {
+//     //获取机会
+//     @include background("../images/txt14.png", 181px, 44px);
+// }
+
+// .icon-txt15 {
+//     //登录
+//     @include background("../images/txt15.png", 90px, 43px);
+// }
+
+// .icon-txt16 {
+//     //注册
+//     @include background("../images/txt16.png", 90px, 43px);
+// }
+.sprite-txt {
+	display: block;
+  background-image: url(../images/sprite_txt.png);
+  background-size: pxToRem(501px)  pxToRem(387px);
+  background-repeat:no-repeat;
+}
+.icon-txt1 {
+  @extend .sprite-txt;
+  background-position: pxToRem(0px) pxToRem(-57px);
+  width: pxToRem(220px);
+  height: pxToRem(52px);
+}
+.icon-txt10 {
+  @extend .sprite-txt;
+  background-position: pxToRem(0px) pxToRem(-170px);
+  width: pxToRem(199px);
+  height: pxToRem(48px);
+}
+.icon-txt11 {
+  @extend .sprite-txt;
+  background-position: pxToRem(0px) pxToRem(-119px);
+  width: pxToRem(261px);
+  height: pxToRem(41px);
+}
+.icon-txt12 {
+  @extend .sprite-txt;
+  background-position: pxToRem(0px) pxToRem(-228px);
+  width: pxToRem(197px);
+  height: pxToRem(47px);
+}
+.icon-txt13 {
+  @extend .sprite-txt;
+  background-position: pxToRem(-304px) pxToRem(-219px);
+  width: pxToRem(181px);
+  height: pxToRem(43px);
+}
+.icon-txt14 {
+  @extend .sprite-txt;
+  background-position: pxToRem(-304px) pxToRem(-165px);
+  width: pxToRem(181px);
+  height: pxToRem(44px);
+}
+.icon-txt15 {
+  @extend .sprite-txt;
+  background-position: pxToRem(-392px) pxToRem(-285px);
+  width: pxToRem(90px);
+  height: pxToRem(43px);
+}
+.icon-txt16 {
+  @extend .sprite-txt;
+  background-position: pxToRem(-292px) pxToRem(-285px);
+  width: pxToRem(90px);
+  height: pxToRem(43px);
+}
+.icon-txt2 {
+  @extend .sprite-txt;
+  background-position: pxToRem(-108px) pxToRem(-339px);
+  width: pxToRem(98px);
+  height: pxToRem(48px);
+}
+.icon-txt3 {
+  @extend .sprite-txt;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(294px);
+  height: pxToRem(47px);
+}
+.icon-txt4 {
+  @extend .sprite-txt;
+  background-position: pxToRem(-304px) pxToRem(-111px);
+  width: pxToRem(182px);
+  height: pxToRem(44px);
+}
+.icon-txt5 {
+  @extend .sprite-txt;
+  background-position: pxToRem(0px) pxToRem(-285px);
+  width: pxToRem(136px);
+  height: pxToRem(44px);
+}
+.icon-txt6 {
+  @extend .sprite-txt;
+  background-position: pxToRem(-304px) pxToRem(-57px);
+  width: pxToRem(182px);
+  height: pxToRem(44px);
+}
+.icon-txt7 {
+  @extend .sprite-txt;
+  background-position: pxToRem(-146px) pxToRem(-285px);
+  width: pxToRem(136px);
+  height: pxToRem(44px);
+}
+.icon-txt8 {
+  @extend .sprite-txt;
+  background-position: pxToRem(-304px) pxToRem(0px);
+  width: pxToRem(197px);
+  height: pxToRem(47px);
+}
+.icon-txt9 {
+  @extend .sprite-txt;
+  background-position: pxToRem(0px) pxToRem(-339px);
+  width: pxToRem(98px);
+  height: pxToRem(48px);
+}
