@@ -1,2 +1,19 @@
 @charset "UTF-8";
 @import "../../../sass/func";
+
+.icon-block {
+	display: block;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+.icon-inline-block {
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+.icon-btn {
+	@extend .icon-block;
+	@include icon-background('../images/btn.png', 546px, 128px);
+}
