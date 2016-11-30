@@ -30,7 +30,7 @@ a {
     height: 100%;
     box-sizing: border-box;
     overflow: auto;
-    // height: pxToRem(752px);
+    // height: pxToRem(738px);
     .content-wrapper {
         position: relative;
         z-index: 99;
@@ -163,7 +163,7 @@ a {
                     margin-top: pxToRem(24px);
                     margin-left: pxToRem(46px);
                     max-height: pxToRem(720px);
-                    // padding-bottom: pxToRem(58px);
+                    padding-bottom: pxToRem(14px);
                     overflow: auto;
                     position: relative;
                     box-sizing: border-box;
