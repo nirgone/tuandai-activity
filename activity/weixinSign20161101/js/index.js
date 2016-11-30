@@ -11,6 +11,7 @@
 
 	var basePath = "//10.100.1.39";
 	// var basePath = "//bbs.tuandai.com";
+	// $("#redPacketPop").show();
 
 	function init() {
 		var signDays = getParam('signDays');
@@ -23,6 +24,8 @@
 			$(".ori").show();
 			$(".sub").hide();
 			var isLogined = getCookie('tuandaiw');
+			bbsWebLogin();
+			return;
 			//判断是否已登录
 			if (!isLogined) {
 				var returnUrl = window.location.href;
@@ -76,6 +79,7 @@
 					}
 					var signNum = signData.series_sign_num && !isNaN(signData.series_sign_num) ? signData.series_sign_num : 0;
 					pageEl.find(".sign-days").text(signNum);
+					$("title").html('我在团粉圈签到了' + signNum + '天！你也来试试');
 				}
 			},
 			error: function(err) {
@@ -92,11 +96,16 @@
 	$(".btn-share").on('click', function() {
 		$("#sharePop").show();
 	});
-	$("#sharePop, .masker").on('click', function() {
+	$("#sharePop, .masker, .icon-close-white").on('click', function() {
 		$(".mask").hide();
 	});
 	$(".btn-sign").on('click', function() {
 		$("#qrCodePop").show();
+	});
+	$("#wxLogo")[0].src = getOrigin() + '/images/icon.jpg';
+	//立即领取
+	$(".btn-check").on('click', function() {
+		$(".mask").hide();
 	});
 
 
@@ -131,7 +140,8 @@
 					num = 0;
 				}
 				var shareConfig = {
-					title: '打个卡 赌5块',
+					// title: '打个卡 赌5块',
+					title: '我在团粉圈签到了' + num + '天！你也来试试',
 					link: window.location.href + "?signDays=" + num,
 					imgUrl: getOrigin() + '/images/icon.jpg',
 					desc: '我用团粉圈签到，拿红包，为每一笔投资加码！'

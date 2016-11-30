@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no">
     <title>签到</title>
     <!-- <link rel="stylesheet" href="../css/index.css"> -->
-     <!-- build:css(dist) ../css/main.css -->
+    <!-- build:css(dist) ../css/main.css -->
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/media.css">
     <link rel="stylesheet" href="../css/animation.css">
@@ -36,11 +36,13 @@
 </head>
 
 <body>
+    <div style="display:none;"><img src="" id="wxLogo"></div>
     <div class="page">
         <div class="content">
             <div class="md">
-                <div class="title">您在团粉圈连续签到</div>
-                <div class="sign-days"></div>
+                <div class="title">签到成功！您已连续签到</div>
+                <div class="sign-days">21</div>
+                <div class="s-w">本次签到获得<i>1234</i>威望</div>
             </div>
             <div class="label">连续签到有惊喜哦！</div>
             <div class="ori">
@@ -74,11 +76,36 @@
     </div>
     <div class="mask" id="qrCodePop">
         <div class="qrcode">
-            <img src="../images/qrcode.jpg" >
+            <img src="../images/qrcode.jpg">
             <span class="p-txt"></span>
         </div>
         <div class="masker"></div>
     </div>
+    <div class="mask" id="awardPop">
+        <div class="pop-award">
+            <i class="icon-close-white"></i>
+            <div class="pop-cont gift-cont">
+                <span class="p-txt2">恭喜亲签到获得！</span>
+                <i class="icon-phone icon-award"></i>
+                <span class="p-txt3">iPhone6 Plus</span>
+            </div>
+            <div class="btn-red btn-check">立即领取</div>
+        </div>
+    </div>
+    <div class="mask" id="redPacketPop">
+        <div class="pop-award">
+            <i class="icon-close-white"></i>
+            <div class="redpacket-cont">
+                <i class="icon-redpacket"></i>
+                <div class="t-cont">
+                    <span class="p-txt4">恭喜亲签到获得！</span>
+                    <span class="p-award">投资红包5元</span>
+                </div>
+            </div>
+            <div class="btn-red btn-check">立即领取</div>
+        </div>
+    </div>
+
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>

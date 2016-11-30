@@ -276,7 +276,7 @@ a {
     z-index: 9999;
     img {
         width: pxToRem(408px);
-        height: pxT oRem(408px);
+        height: pxToRem(408px);
         display: block;
         margin: auto;
     }
@@ -300,4 +300,109 @@ a {
     @include background('../images/qr-txt.png', 530px, 51px);
     margin: auto;
     margin-top: pxToRem(56px);
+}
+.pop-award {
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    top: 15%;
+    left: 0;
+    * {
+        box-sizing: border-box;
+    }
+}
+.gift-cont {
+    @include background('../images/pop-bg1.png', 623px, 569px);
+    // position: absolute;
+    // top: 15%;
+    // left: 50%;
+    // margin-left: pxToRem(-312px);
+    margin: auto;
+    position: relative;
+    padding-top: pxToRem(60px);
+}
+.p-txt2 {
+    width: 100%;
+    text-align: center;
+    font-size: pxToRem(40px);
+    color: #fff;
+    display: inline-block;
+}
+.icon-phone {
+    @include background('../images/phone.png', 141px, 290px);
+    position: absolute;
+    left: 50%;
+    bottom: pxToRem(144px);
+    margin-left: pxToRem(-70px);
+    animation: zoomIn .5s linear both;
+}
+.p-txt3 {
+    width: 100%;
+    text-align: center;
+    font-size: pxToRem(48px);
+    color: #f4483e;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: pxToRem(50px);
+}
+.icon-close-white {
+    @include background('../images/icon-close-white.png', 57px, 57px);
+    position: absolute;
+    top: pxToRem(-30px);
+    right: pxToRem(30px);
+}
+.btn-red {
+    @include background('../images/btn-red.png', 568px, 88px);
+    margin: auto;
+    margin-top: pxToRem(40px);
+    font-size: pxToRem(38px);
+    color: #fff;
+    text-align: center;
+    line-height: pxToRem(88px);
+}
+.redpacket-cont {
+    @include background('../images/pop-bg2.png', 668px, 569px);
+    margin: auto;
+    position: relative;
+    padding-top: 100px;
+    .icon-redpacket {
+        @include background('../images/icon-redpaket.png', 166px, 230px);
+        position: absolute;
+        top: pxToRem(66px);
+        left: 50%;
+        margin-left: pxToRem(-83px);
+        animation: zoomIn .5s linear both;
+    }
+    span {
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        margin-bottom: pxToRem(40px);
+    }
+    .t-cont {
+        width: 100%;
+        height: pxToRem(200px);
+        position: absolute;
+        bottom: 0;
+    }
+    .p-txt4 {
+        font-size: pxToRem(40px);
+        color: #ababab;
+    }
+    .p-award {
+        font-size: pxToRem(48px);
+        color: #f4483e;
+    }
+}
+.s-w {
+    font-size: pxToRem(26px);
+    color: #ababab;
+    text-align: center;
+    margin-top: pxToRem(40px);
+    display: none;
+    i {
+        color: #424242;
+        margin: 0 pxToRem(6px);
+    }
 }
