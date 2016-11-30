@@ -29,6 +29,7 @@ a {
 	position: relative;
 	background-color: $bg-orange;
 	.content {
+	padding-bottom: pxToRem(98px);
 		width: 100%;
 	}
 }
