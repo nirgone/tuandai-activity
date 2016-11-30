@@ -1,0 +1,70 @@
+@charset "UTF-8";
+@import "../../../sass/func";
+.masker {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .2);
+    z-index: 999;
+}
+
+.component-alert {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    [class$='-wrapper'] {
+        position: absolute;
+        width: pxToRem(600px);
+        // height: pxToRem(292px);
+        top: 20%;
+        left: 50%;
+        margin-left: pxToRem(-300px);
+        background-color: #fff;
+        border-radius: 5px;
+        text-align: center;
+        font-size: pxToRem(34px);
+        z-index: 1000;
+        [class$='-content'] {
+            position: relative;
+            padding: pxToRem(50px) pxToRem(36px);
+            line-height: pxToRem(48px);
+            color: #333;
+            &:after {
+                @include border(bottom, #e6e6e6);
+            }
+        }
+        .btn {
+            height: pxToRem(90px);
+            line-height: pxToRem(90px);
+            font-size: pxToRem(34px);
+            color: #fab600;
+        }
+    }
+}
+
+.component-dialog {
+    @extend .component-alert;
+    position: fixed;
+    .dialog-content {
+        padding: pxToRem(50px) pxToRem(68px) !important;
+    }
+    .btns {
+        font-size: 0;
+        .btn {
+            display: inline-block;
+            width: 50%;
+            &.negative-btn {
+                position: relative;
+                color: #999;
+                &:after {
+                    @include border(right, #e6e6e6);
+                }
+            }
+        }
+    }
+}

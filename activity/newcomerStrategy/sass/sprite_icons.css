@@ -1,0 +1,54 @@
+.icon-arrow {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size:pxToRem(164px) pxToRem(114px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-88px) pxToRem(-62px);
+  width: pxToRem(25px);
+  height: pxToRem(15px);
+}
+.icon-card {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size:pxToRem(164px) pxToRem(114px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(48px);
+  height: pxToRem(52px);
+}
+.icon-decorate {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size:pxToRem(164px) pxToRem(114px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-58px) pxToRem(-62px);
+  width: pxToRem(20px);
+  height: pxToRem(20px);
+}
+.icon-invest {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size:pxToRem(164px) pxToRem(114px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-58px) pxToRem(0px);
+  width: pxToRem(48px);
+  height: pxToRem(52px);
+}
+.icon-phone {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size:pxToRem(164px) pxToRem(114px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-116px) pxToRem(0px);
+  width: pxToRem(48px);
+  height: pxToRem(52px);
+}
+.icon-pig {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size:pxToRem(164px) pxToRem(114px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-62px);
+  width: pxToRem(48px);
+  height: pxToRem(52px);
+}

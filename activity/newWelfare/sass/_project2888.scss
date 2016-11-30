@@ -133,8 +133,9 @@
         background: url('data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAAAdAQMAAAByuAe6AAAABlBMVEUAAADR0dFA2/DUAAAAAXRSTlMAQObYZgAAACZJREFUKM9jaGDAAKNipIgxMjAxsDBwMAgwKDA4ALnDXOw/BvgDAAYHLOuvDafFAAAAAElFTkSuQmCC');
         background-repeat: repeat-x;
         background-position: 0 100%;
-        background-size: pxToRem(150px) pxToRem(30px);
-        
+        background-size: pxToRem(151px) pxToRem(29px);
+        font-size: 0;
+
         .num {
         	position: absolute;
         	left: pxToRem(-75px);

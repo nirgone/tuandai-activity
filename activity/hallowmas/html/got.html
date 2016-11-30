@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>万圣节乐园寻宝活动</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="content got-content">
+    <!--图标，icon-gift-big 领取成功;  icon-pumk 你已经领过一次奖品了-->
+       <i class="icon-gift-big"></i>
+       <p>领取成功</p>
+       <span>请登录【个人账户－团宝箱】查看</span>
+       <!-- 已经领取过 -->
+       <div class="btn-yellow" id="to_invite">
+           邀请好友
+       </div>
+    </div>
+    <!-- 分享弹窗 -->
+    <div class="popup-wrapper share-wrapper" id="share_popup">
+        <div class="masker"></div>
+        <i class="icon-invite"></i>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script>
+(function() {
+    FastClick.attach(document.body);
+    //do your thing.
+    $("#to_invite").on("click", function(e) {
+        $("#share_popup").show();
+    });
+    //关闭分享弹窗
+    $("#share_popup").on("click", function(e) {
+        $(this).hide();
+    });
+})();
+</script>
+
+</html>

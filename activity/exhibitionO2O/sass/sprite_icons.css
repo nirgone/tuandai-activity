@@ -1,0 +1,81 @@
+.icon-clear {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size:417px 268px;
+  background-repeat:no-repeat;
+  background-position: -100px -180px;
+  width: 93px;
+  height: 85px;
+}
+.icon-redpack_10 {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size:417px 268px;
+  background-repeat:no-repeat;
+  background-position: -203px -180px;
+  width: 69px;
+  height: 77px;
+}
+.icon-redpack_20 {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size:417px 268px;
+  background-repeat:no-repeat;
+  background-position: -348px 0px;
+  width: 69px;
+  height: 77px;
+}
+.icon-redpack_50 {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size:417px 268px;
+  background-repeat:no-repeat;
+  background-position: -348px -87px;
+  width: 69px;
+  height: 77px;
+}
+.icon-ring {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size:417px 268px;
+  background-repeat:no-repeat;
+  background-position: 0px -180px;
+  width: 90px;
+  height: 88px;
+}
+.icon-stick {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size:417px 268px;
+  background-repeat:no-repeat;
+  background-position: 0px -102px;
+  width: 123px;
+  height: 68px;
+}
+.icon-ticket {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size:417px 268px;
+  background-repeat:no-repeat;
+  background-position: -127px 0px;
+  width: 116px;
+  height: 84px;
+}
+.icon-umbrella {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size:417px 268px;
+  background-repeat:no-repeat;
+  background-position: -253px 0px;
+  width: 85px;
+  height: 98px;
+}
+.icon-youku {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size:417px 268px;
+  background-repeat:no-repeat;
+  background-position: 0px 0px;
+  width: 117px;
+  height: 92px;
+}

@@ -1,0 +1,90 @@
+@charset "UTF-8";
+@import "../../../sass/func";
+@import "func";
+
+.icon-logo {
+	@include background-px("../images/logo.png", 261px, 45px);
+}
+.icon-text {
+	@include background-px("../images/text.png", 425px, 235px);
+}
+.icon-go {
+	@include background-px("../images/go.png", 190px, 155px);
+}
+.icon-bulb {
+	@include background-px("data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAlCAMAAABvTdm5AAAAaVBMVEUAAAAJM0UJM0UJM0UJM0UJM0UJM0UJM0UJM0UJM0UJM0UJM0UJM0UJM0UJM0X/50MJM0VZbkTk00OwrkT440PczkOnp0SanUSOlURhc0Tx3UN8h0RMZUQ4VkUkRkWHj0RvfkTLwUO+uEPD8mOAAAAAD3RSTlMA8x7Febqn5F1uDlSvKNcztT/TAAAA80lEQVQoz42RWXKDMBBEZ4TE4iW0AAEGbCe5/yFDyVI0ZUzZ75NHdTMNBZQ2BfOX0YokKmdEcqGODNi+6SbXW4BLClSAdXXAraoK7wNjLRiBo8/n+DwZVqvIYesnLHIiBTTPogEUaVzqDRdoMmi3ooWhIiXJrIIY3VZ04FVMr0UB9zJqt3z3c3cP3J3EjzjUkp/rY0Qq4fvdbfme77O9AQi/SuO6igH/aHpwYN/v2uE+j/0v+ECBk2wZcKJIiSWJxTfErDTY5JMiBn0UPQwlKth0XCWEAro4OBQJMrRx14wkWl4nOSdxps/IEMjeiI/DsvfiD15pI3TIPNBGAAAAAElFTkSuQmCC", 24px, 37px);
+}
+.icon-light {
+	@include background-px("data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAZCAMAAABAf11LAAAAP1BMVEUAAAAJM0UJM0UJM0UJM0UJM0UJM0UJM0UJM0UJM0UJM0UJM0UJM0UJM0UJM0UJM0UJM0UJM0UJM0UJM0UJM0XciatTAAAAFHRSTlMAHGI3LAnz0K9sFOnEvE2CW6ib4EMU8CwAAACKSURBVDjL7dDLDoMgEIXhGW5yEVB73v9Z60KSxjBSF6abfisyyU9gqM/6QLcYTE8EeuVeoFYrBBW5ExiAhSAmLMeR4ds0YyOJQoqtsJ8zUcYijAQxWDrhQj+gNX3DlvbeBM80VF4IbXMOLtC16IGJ6cAeMHRpO91Z6uiflenvQTN2M41ph526HbwBTaAFnLDASngAAAAASUVORK5CYII=", 48px, 25px);
+}
+//lottery icon
+.icon-redpack10 {
+	@include background-px("../images/redpack_10.png", 69px, 77px);
+}
+.icon-redpack20 {
+	@include background-px("../images/redpack_20.png", 69px, 77px);
+}
+.icon-redpack50 {
+	@include background-px("../images/redpack_50.png", 69px, 77px);
+}
+.icon-ticket {
+	@include background-px("../images/ticket.png", 116px, 84px);
+}
+.icon-ring {
+	@include background-px("../images/ring.png", 90px, 88px);
+}
+.icon-youku {
+	@include background-px("../images/youku.png", 117px, 92px);
+}
+.icon-stick {
+	@include background-px("../images/stick.png", 123px, 68px);
+}
+.icon-tableware {
+	@include background-px("../images/tableware.png", 119px, 96px);
+}
+.icon-umbrella {
+	@include background-px("../images/umbrella.png", 85px, 98px);
+}
+.icon-clear {
+	@include background-px("../images/clear.png", 93px, 85px);
+}
+
+.icon-box {
+	@include background-px("../images/box.png", 232px, 220px);
+}
+
+// prize
+.prize-redpack10 { 
+	@include background-px("../images/prize_redpack10.png", 142px, 158px);
+}
+.prize-redpack20 {
+	@include background-px("../images/prize_redpack20.png", 142px, 158px);
+}
+.prize-redpack50 {
+	@include background-px("../images/prize_redpack50.png", 142px, 158px);
+}
+.prize-ticket {
+	@include background-px("../images/prize_ticket.png", 241px, 168px);
+}
+.prize-ring {
+	@include background-px("../images/prize_ring.png", 161px, 156px);
+}
+.prize-youku {
+	@include background-px("../images/prize_youku.png", 244px, 191px);
+}
+.prize-stick {
+	@include background-px("../images/prize_stick.png", 256px, 133px);
+}
+.prize-tableware {
+	@include background-px("../images/prize_tableware.png", 240px, 187px);
+}
+.prize-umbrella {
+	@include background-px("../images/prize_umbrella.png", 177px, 202px);
+}
+.prize-clear {
+	@include background-px("../images/prize_clear.png", 182px, 165px);
+}
+
+.prize-close {
+	@include background-px("data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAABECAMAAAAPzWOAAAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMAgghMjM8e8ue2mjTDKkF3pFbZXW1VVySrAAAB/0lEQVRYw61Y2bLDIAg1GreYtan//6tXE+cydVxHeGnjcuQgCkjyIu5ZcyWtlYrr+RakV+h1KhuJOi/aAbEt0iZFLqYRYtdhCl8OZjYhNsOOhYfGdW+AEDqsyWjEkAX99FazxfQuBwi/OOvTPdOiMfizVIG40Q/RgjKX1/fDysqyj2d75boPULVIefbjjnSn71OMNAhTfrUcBm90S8EBJeay0maPXlOMLsBoR7mivZWOC+06XY6R3OIW1XlMhfLrRkZlpFPYr3E3+GwTWBoIaeentB+EOt/V/2ffIe6NEyevcWriGgBBzymLEXgDhTUcTIdnIq5TFiN0xVMXUCQaWsAAEstjHgnbm0eB5nibJX1/FU0PrzdS9Wpweo2SE2pNwRan+3mw0ig1jMCDEOE6ac6IdWNT1y7IbS2vbyd8xMKtvb1TLFWngL8po8zergcpoFQwyNd7GQe7plFyGGBZ7jfHkCJKEYMYvz0S7oQMSgYD7iJJni0qoFQwHhdBAUGhg2JYlC1GcTYUt0c5gChXAcalhHU9jl/UKCEDKXhBLISh/WEUAjqE4p6Ankkt5qk/tRhPcsbTLfhszpUiMjNyCjqeDI+n5eMFwnipMl40IZVv+IUkcG0taUVDca1zxbV+oyodL/NF94ODcGLYt/nBAYiPPX2A7qlHGJa3xfhz0B/kuD8R+sXGcgAAAABJRU5ErkJggg==", 68px, 68px);
+}

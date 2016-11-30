@@ -1,0 +1,18 @@
+.icon-clock {
+  display: block;
+  background-image: url(../images/sprite_long.png);
+  background-size: pxToRem(315px)  pxToRem(165px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(315px);
+  height: pxToRem(77px);
+}
+.icon-score {
+  display: block;
+  background-image: url(../images/sprite_long.png);
+  background-size: pxToRem(315px)  pxToRem(165px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-87px);
+  width: pxToRem(210px);
+  height: pxToRem(78px);
+}
