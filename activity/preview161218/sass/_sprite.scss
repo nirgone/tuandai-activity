@@ -17,3 +17,8 @@
 	@extend .icon-block;
 	@include icon-background('../images/btn.png', 546px, 128px);
 }
+
+.icon-bracket {
+	@extend .icon-inline-block;
+	@include icon-background('../images/bracket.png', 34px, 30px);
+}
