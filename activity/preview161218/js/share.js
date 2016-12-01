@@ -8,7 +8,7 @@
 	var scratchInviteEl = $(".scratch-byInvite");
 	var scratchEl = $('.scratch-item');
 
-	function initScatchPad() {
+	function initScatchPad() { //初始化刮奖效果
 
 		scratchEl.find(".scratch-area .scratch-area-cover").wScratchPad({
 			bg: '',
@@ -30,7 +30,7 @@
 		});
 	}
 
-	// // 绑定查看加息说明
+	//绑定查看加息说明
 	pageContentEl.on("click", ".check-rule", function() {
 		Util.message("规则说明", "<p>1、活动期间内，用户登录PC端或者App端进入活动页面点击领取，即可获得1%爱心加息特权，每个用户仅能领取1次。</p><p>2、 活动期间邀请好友注册并投资满500元即可参与邀请刮奖， 每个用户活动期间内仅有1次机会。</p><p>本活动规则解释权归团贷网所有， 如有疑问请联系在线客服或拨打400 - 6410 - 888</p>",
 			function() { //点击关闭按钮
@@ -39,7 +39,9 @@
 	});
 
 	function uiSetScratchStatus() { //设置抽奖状态
-
+		if (!$.support.canvas) { //不支持canvas标签，无法实现刮奖效果~降级处理
+			return;
+		}
 		switch (scratchByInveste) {
 			case 1:
 				setTimeout(function() { //延迟隐藏cover，防止看到奖品
@@ -67,42 +69,53 @@
 	initScatchPad(); //初始化刮奖效果
 	uiSetScratchStatus(); //设置抽奖状态
 
-	// 监听开始刮奖状态
-	scratchEl.on("touchstart", ".scratch-cover", function(e) {
+	// 监听刮奖状态
+	scratchEl.on("touchmove", ".scratch-cover", function(e) {
 		var currentTarget = $(e.currentTarget);
 		currentTargetParentEl = currentTarget.parents(".scratch-item")
 		if (currentTargetParentEl.hasClass("scratch-byInvestment")) {
-			Util.alertCommon({
-				type: 1,
-				content: "<p>您还需加入指定的智能理财项目满<font style='color:#ff7630;'>" + 1000 + "</font>元才能参与刮奖哦~</p>",
-				btn: {
-					name: "立即投资",
-					callback: function() {
-						// TODO: 跳转至立即投资链接
-						window.location.href = "https://m.tuandai.com/pages/invest/WE/WE_list.aspx"
-					}
-				},
-				closeCallback: function() {
+			if (scratchByInveste == 0) { //没有刮奖机会
+				if ($(".popup").length !== 0) return;
+				Util.alertCommon({
+					type: 1,
+					content: "<p>您还需加入指定的智能理财项目满<font style='color:#ff7630;'>" + 1000 + "</font>元才能参与刮奖哦~</p>",
+					btn: {
+						name: "立即投资",
+						callback: function() {
+							// TODO: 跳转至立即投资链接
+							window.location.href = "https://m.tuandai.com/pages/invest/WE/WE_list.aspx"
+						}
+					},
+					closeCallback: function() {
 
-				}
-			})
+					}
+				});
+			} else { //有刮奖机会，不支持刮奖效果，直接显示刮奖结果
+				currentTargetParentEl.find(".scratch-cover, .scratch-area").hide();
+				currentTargetParentEl.find(".scratch-right .text").text("投资获加息");
+			}
 		} else if (currentTargetParentEl.hasClass("scratch-byInvite")) {
-			Util.alertCommon({
-				type: 2,
-				content: "<p>您需邀请1名好友进行注册并累计投≥500元才能参与刮奖哦~</p>",
-				btn: {
-					name: "立即邀请",
-					callback: function() {
-						// TODO: 跳转至立即邀请链接
-						// window.location.href = "https://m.tuandai.com/pages/invest/WE/WE_list.aspx"
+			if (scratchByInvite == 0) {
+				if ($(".popup").length !== 0) return;
+				Util.alertCommon({
+					type: 2,
+					content: "<p>您需邀请1名好友进行注册并累计投≥500元才能参与刮奖哦~</p>",
+					btn: {
+						name: "立即邀请",
+						callback: function() {
+							// TODO: 跳转至立即邀请链接
+							window.location.href = "https://m.tuandai.com/pages/invest/WE/WE_list.aspx"
+						}
+					},
+					closeCallback: function() {
+
 					}
-				},
-				closeCallback: function() {
-
-				}
-			})
+				})
+			} else {
+				currentTargetParentEl.find(".scratch-cover, .scratch-area").hide();
+				currentTargetParentEl.find(".scratch-right .text").text("邀请得佣金");
+			}
 		}
-
 	})
 
 })();
