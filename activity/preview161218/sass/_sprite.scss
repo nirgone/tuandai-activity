@@ -1,17 +1,17 @@
 @charset "UTF-8";
 @import "../../../sass/func";
-
 .icon-block {
-	display: block;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
+
 .icon-inline-block {
-	display: inline-block;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 .icon-btn {
@@ -30,4 +30,29 @@
 .icon-pop2 {
 	@extend .icon-block;
 	@include icon-background('../images/pop2.png', 269px, 210px);
+}
+
+
+// .label-bg {
+// 	@include icon-background('../images/index_timeline_title_bg.png', 296px, 62px);
+// 	@extend .icon-block;
+// }
+.index-icon1 {
+    @include icon-background('../images/index_icon_1.png', 30px, 30px);
+    @extend .icon-inline-block;
+}
+
+.index-icon2 {
+    @include icon-background('../images/index_icon_2.png', 30px, 30px);
+    @extend .icon-inline-block;
+}
+
+.index-icon3 {
+    @include icon-background('../images/index_icon_3.png', 30px, 30px);
+    @extend .icon-inline-block;
+}
+
+.icon-bracket {
+    @extend .icon-inline-block;
+    @include icon-background('../images/bracket.png', 34px, 30px);
 }

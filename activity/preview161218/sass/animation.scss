@@ -1,2 +1,80 @@
 @charset "UTF-8";
 @import "../../../sass/func";
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes breath {
+	0%,50%,100% {
+		transform: scale(1);
+		-webkit-transform: scale(1);
+	}
+	25% {
+		transform: scale(.95);
+		-webkit-transform: scale(.95)''
+	}
+	75% {
+		transform: scale(1.05);
+		-webkit-transform: scale(1.05);
+	}
+}
+@-webkit-keyframes breath {
+	0%,50%,100% {
+		transform: scale(1);
+		-webkit-transform: scale(1);
+	}
+	25% {
+		transform: scale(.95);
+		-webkit-transform: scale(.95)''
+	}
+	75% {
+		transform: scale(1.05);
+		-webkit-transform: scale(1.05);
+	}
+}
