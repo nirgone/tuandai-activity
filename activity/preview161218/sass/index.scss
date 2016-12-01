@@ -143,6 +143,7 @@
     margin-top: pxToRem(110px);
     i {
         vertical-align: middle;
+        display: inline-block !important;
     }
     .icon-pai2 {
         @include background('../images/index_cartoon_2.png',
