@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+	<meta name="format-detection" content="telephone=no">
+	<title>12.18网贷爱心日</title>
+	<!-- build:css(dist) ../css/main.css -->
+	<link rel="stylesheet" href="../css/media.css">
+	<link rel="stylesheet" href="../css/animation.css">
+	<link rel="stylesheet" href="../css/privilege.css">
+	<!-- endbuild -->
+	<link rel="stylesheet" href="../css/common.css">
+ <!-- build:js({dist}) ../js/lib/adapt.js -->
+<script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+</head>
+<body>
+	<div class="scroll scroll-active">
+		<div class="content page-content">
+			<div class="title icon-block"></div>
+			<div class="date">活动时间：12月13日—12月17日</div>
+			<div class="rule rule-not-get">	
+				活动期间内，用户登录PC端或者App端进入活动页面点击领取，即可获得1%爱心加息特权，每个用户仅能领取1次。
+			</div>
+			<div class="rule rule-geted">	
+				加息说明：1、本活动的加息券可叠加使用，12月18日—12月19日加入符合条件的智能理财（含We计划、复投宝......<font class="check-rule">查看详情></font>
+			</div>
+			<div class="increase-interest icon-block">
+				<div class="increase-interest-title">
+					<div class="icon-bracket icon-bracket-left"></div>
+					<font></font>
+					<div class="icon-bracket icon-bracket-right"></div>
+				</div>
+				<div class="interest-ticket-wrapper icon-block">
+					<div class="water-mark icon-block"></div>
+					<font>1.0</font>
+				</div>
+				<div class="btn-get icon-btn">
+					立即领取
+				</div>
+				<a class="btn-invest icon-btn" href="">
+					立即投资
+				</a>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		 <a href="" class="active">爱心特权</a>
+		 <a href="" >爱心分享</a>
+		 <a href="" >预售专场</a>
+		 <a href="" >敬请期待</a>
+	</footer>
+	<div class="popup dialog">
+        <div class="masker"></div>
+        <div class="popup-wrapper more">
+            <div class="popup-header" data-title="加息说明">
+            	<div class="popup-close"><i class="close"></i></div>
+            </div>
+            <div class="popup-content">
+                <p>1、本活动的加息特权可叠加使用，12月18日—12月19日加入符合条件的智能理财（含We计划、复投宝、安盈计划、预售智能理财）均可获得最终叠加后的加息奖励；若该期间开放的智能理财未能在活动期内满额，则该计划加息可延续至其满额为止（如：12月19日开放的智能理财当天未能满额，则用户次日加入该计划仍能享受加息）</p>
+                <p>2、所有环节获取的加息特权可叠加，且仅限12月18日—12月19日使用，过期作废；</p>
+                <p>3、加息特权所加利息额度会在12月20日00:00开始的5个工作日内发出，由系统自动添加至用户符合条件的智能理财上：<br/>
+                ①普通We计划，加息匹配至所投标的；<br/>
+                We计划X/Y加息奖励将于计划到期时一次性发放；<br/>
+                We计划A/B/C/G加息奖励将随标的回款计划按月发放或到期发放。<br/>
+                ②复投宝，复投宝以复投宝为单位，退出时一次性发持有时间的产生的加息奖励。</p>
+                <p>本活动规则解释权归团贷网所有，如有疑问请联系在线客服或拨打400-6410-888</p>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/Util.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+	(function() {
+   		FastClick.attach(document.body);
+   		var pageContentEl = $(".page-content");
+   		// 绑定领取加息劵
+	   	pageContentEl.on("click", ".rule-geted",function() {
+	   		$(".dialog").show();
+	   	});
+		
+	   	// 绑定查看加息说明
+	   	pageContentEl.on("click", ".btn-get",function() {
+	   		// TODO: 判断是否登录
+			// 登录之后
+			Util.alertJiaxi("1", function() {	//点击关闭按钮
+				pageContentEl.addClass("geted");	//切换至领完加息状态
+			})
+	   	});
+
+	   	$(".popup-close, .masker").on("click", function() {
+	   		$(".dialog").hide();
+	   	})
+
+	   	var uiSetStatus  = function() {	//判断是否领取了加息特权
+			//TODO: 判断是否已经领取
+			var isGeted = false;
+			isGeted ? pageContentEl.addClass("geted") : pageContentEl.removeClass("geted");
+	   	}
+	   	uiSetStatus();
+	})();
+
+</script>
+</html>

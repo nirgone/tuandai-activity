@@ -1,0 +1,186 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    // height: 100%;
+    // width: 100%;
+    // overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-overflow-scrolling: touch !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.scroll .content.page-content {
+    padding-top: pxToRem(56px);
+    margin: auto;
+    .title {
+        width: pxToRem(720px);
+        height: pxToRem(54px);
+        background-image: url("../images/share-title.png");
+        margin: auto;
+        margin-bottom: pxToRem(24px);
+    }
+    .date {
+        color: #fc7934;
+        font-size: pxToRem(22px);
+        background-color: #fdfce8;
+        width: pxToRem(354px);
+        height: pxToRem(36px);
+        line-height: pxToRem(36px);
+        margin: auto;
+        text-align: center;
+        border-radius: pxToRem(18px);
+        margin-bottom: pxToRem(32px);
+    }
+    .rule {
+        font-size: pxToRem(24px);
+        line-height: pxToRem(40px);
+        width: pxToRem(684px);
+        margin: auto;
+        color: #fff;
+        margin-bottom: pxToRem(26px);
+        .check-rule {
+            color: #ddff25;
+        }
+    }
+    .lottery-num {
+        font-size: pxToRem(24px);
+        color: #fff;
+        width: pxToRem(372px);
+        height: pxToRem(62px);
+        line-height: pxToRem(62px);
+        margin: auto;
+        text-align: center;
+        background-image: url("../images/hexagon.png");
+        margin-bottom: pxToRem(30px);
+        font {
+            margin: 0 pxToRem(8px);
+            color: #ddff25;
+        }
+    }
+    .scratch-item {
+        width: pxToRem(696px);
+        height: pxToRem(272px);
+        background-image: url("../images/bg-scratch.png");
+        margin: auto;
+        margin-top: pxToRem(20px);
+        position: relative;
+        font-size: 0;
+        vertical-align: middle;
+        .icon-lottery {
+            background-image: url("../images/icon-lottery.png");
+            width: pxToRem(136px);
+            height: pxToRem(80px);
+            z-index: 99;
+            position: absolute;
+            top: pxToRem(12px);
+            left: pxToRem(12px);
+        }
+        .scratch-wrapper {
+            position: relative;
+            top: pxToRem(12px);
+            left: pxToRem(12px);
+            width: pxToRem(460px);
+            height: pxToRem(246px);
+            padding: pxToRem(20px) pxToRem(30px);
+            box-sizing: border-box;
+            z-index: 9;
+            display: inline-block;
+            .scratch-cover {
+                background-image: url("../images/bg-interest-ticket-cover.png");
+                width: pxToRem(404px);
+                height: pxToRem(206px);
+                position: absolute;
+                top: pxToRem(20px);
+                left: pxToRem(30px);
+                z-index: 9999;
+            }
+            .scratch-area {
+                // background-image: url("../images/bg-interest-ticket-cover.png");
+                width: pxToRem(404px);
+                height: pxToRem(206px);
+                position: absolute;
+                top: pxToRem(20px);
+                left: pxToRem(30px);
+                z-index: 999;
+                // display: none;
+                // background-color: #fff;
+                .scratch-area-cover {
+                    height: 100%;
+                    width: 100%;
+                    z-index: 99;
+                }
+            }
+            .ticket-get {
+                background-image: url("../images/bg-interest-ticket-get.png");
+                width: pxToRem(404px);
+                height: pxToRem(206px);
+                text-align: center;
+                .award {
+                    color: #fff55b;
+                    font-size: 0;
+                    line-height: pxToRem(206px);
+                    text-align: center;
+                    font-weight: bold;
+                    font {
+                        font-size: pxToRem(72px);
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    &:after {
+                        content: "";
+                        background-image: url("../images/icon-privilege.png");
+                        width: pxToRem(102px);
+                        height: pxToRem(76px);
+                        display: inline-block;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        vertical-align: middle;
+                        margin-left: pxToRem(16px);
+                    }
+                }
+            }
+        }
+        .scratch-right {
+            display: inline-block;
+            width: pxToRem(208px);
+            height: pxToRem(246px);
+            vertical-align: middle;
+            padding-top: pxToRem(32px);
+            position: relative;
+            float: right;
+            right: pxToRem(12px);
+            top: pxToRem(12px);
+            box-sizing: border-box;
+            text-align: center;
+            .right-wrapper {
+                display: inline-block;
+                .text {
+                    font-size: pxToRem(28px);
+                    color: #f86b29;
+                    font-weight: bold;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .tip {
+        font-size: pxToRem(24px);
+        line-height: pxToRem(40px);
+        width: pxToRem(684px);
+        margin: auto;
+        color: #fff;
+        margin-bottom: pxToRem(30px);
+        margin-top: pxToRem(22px);
+    }
+}

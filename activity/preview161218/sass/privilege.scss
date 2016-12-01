@@ -1,0 +1,166 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    // height: 100%;
+    // width: 100%;
+    // overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-overflow-scrolling: touch !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.scroll .content.page-content {
+    padding-top: pxToRem(56px);
+    width: pxToRem(678px);
+    margin: auto;
+    .title {
+        width: pxToRem(652px);
+        height: pxToRem(54px);
+        background-image: url("../images/privilege-title.png");
+        margin: auto;
+        margin-bottom: pxToRem(24px);
+    }
+    .date {
+        color: #fc7934;
+        font-size: pxToRem(22px);
+        background-color: #fdfce8;
+        width: pxToRem(354px);
+        height: pxToRem(36px);
+        line-height: pxToRem(36px);
+        margin: auto;
+        text-align: center;
+        border-radius: pxToRem(18px);
+        margin-bottom: pxToRem(34px);
+    }
+    .rule {
+        font-size: pxToRem(24px);
+        line-height: pxToRem(40px);
+        width: 100%;
+        margin: auto;
+        color: #fff;
+        margin-bottom: pxToRem(36px);
+        .check-rule {
+            color: #ddff25;
+        }
+        &.rule-geted {
+            display: none;
+        }
+    }
+    .increase-interest {
+        width: pxToRem(674px);
+        height: pxToRem(758px);
+        border-radius: pxToRem(28px);
+        background-image: url("../images/bg-increase-interest.png");
+        margin: auto;
+        margin-bottom: pxToRem(30px);
+        padding-top: pxToRem(74px);
+        box-sizing: border-box;
+        .increase-interest-title {
+            text-align: center;
+            margin: auto;
+            font-size: 0;
+            margin-bottom: pxToRem(84px);
+            font {
+                font-size: pxToRem(48px);
+                font-weight: bold;
+                color: #fd7a33;
+                margin-right: pxToRem(24px);
+                margin-left: pxToRem(24px);
+                line-height: pxToRem(56px);
+                &:after {
+                    content: "特权加息";
+                }
+            }
+            .icon-bracket {
+                vertical-align: top;
+                &.icon-bracket-right {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        .interest-ticket-wrapper {
+            position: relative;
+            width: pxToRem(564px);
+            height: pxToRem(306px);
+            background-image: url("../images/bg-interest-ticket.png");
+            margin: auto;
+            text-align: center;
+            margin-bottom: pxToRem(64px);
+            .water-mark {
+                background-image: url("../images/watermark.png");
+                width: pxToRem(160px);
+                height: pxToRem(160px);
+                position: absolute;
+                top: pxToRem(-80px);
+                right: pxToRem(-32px);
+                z-index: 99;
+            }
+            font {
+                line-height: pxToRem(306px);
+                text-align: center;
+                color: #fff;
+                font-size: pxToRem(156px);
+                font-weight: bold;
+                text-shadow: 0 pxToRem(5px) pxToRem(10px) rgba(255, 162, 42, 1);
+                &:after {
+                    content: "%";
+                    font-size: pxToRem(84px);
+                    margin-left: pxToRem(12px);
+                }
+            }
+        }
+        .icon-btn {
+            font-size: pxToRem(34px);
+            text-align: center;
+            margin: auto;
+            color: #fff;
+            line-height: pxToRem(110px);
+            &.btn-invest {
+                display: none;
+            }
+        }
+    }
+    &.geted {
+        .rule-not-get {
+            display: none !important;
+        }
+        .rule-geted {
+            display: block !important;
+        }
+        .btn-get {
+            display: none !important;
+        }
+        .btn-invest {
+            display: block !important;
+        }
+        .increase-interest {
+            .increase-interest-title {
+                font {
+                    font-size: pxToRem(40px);
+                    &:after {
+                        content: "目前你共拥有的加息特权";
+                    }
+                }
+            }
+            .interest-ticket-wrapper {
+                .water-mark {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+.dialog {
+    display: none;
+}
