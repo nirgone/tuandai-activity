@@ -280,3 +280,42 @@ a {
         transform: rotateY(180deg);
     }
 }
+.to-start {
+    color: #fd7a33;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    span {
+        position: relative;
+        &:before {
+            content: "";
+            @include icon-background('../images/bracket.png', 33px, 29px);
+            @extend .icon-block;
+            position: absolute;
+            left: pxToRem(-50px);
+            top: pxToRem(-20px);
+        }
+        &:after {
+            content: "";
+            @include icon-background('../images/bracket.png', 33px, 29px);
+            @extend .icon-block;
+            position: absolute;
+            right: pxToRem(-50px);
+            top: pxToRem(-20px);
+            transform: rotate(180deg);
+        }
+    }
+}
+.act-time {
+    width: pxToRem(356px);
+    height: pxToRem(40px);
+    line-height: pxToRem(40px);
+    border-radius: pxToRem(40px);
+    background-color: #fffbe8;
+    font-size: pxToRem(22px);
+    color: #fc7934;
+    text-align: center;
+    margin: auto;
+    display: block;
+    margin-top: pxToRem(26px);
+}

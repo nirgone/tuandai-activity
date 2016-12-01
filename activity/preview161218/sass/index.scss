@@ -1,23 +1,9 @@
 @charset "UTF-8";
 @import "variables";
-@import "sprite";
-@import "../../../sass/reset";
+// @import "sprite";
+// @import "../../../sass/reset";
 @import "../../../sass/func";
-html,
-body {
-    position: relative;
-    // height: 100%;
-    // width: 100%;
-    // overflow: hidden;
-    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-    margin: 0;
-    padding: 0;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-overflow-scrolling: touch !important;
-}
-a {
-    text-decoration: none;
-}
+
 
 .m-cont {
     background-color: #ff6e30;
@@ -29,20 +15,20 @@ a {
     padding-bottom: pxToRem(150px) !important;
     &:before {
         content: "";
-        @include icon-background('../images/index_cl.png',
+        @include background('../images/index_cl.png',
         245px,
         211px);
-        @extend .icon-block;
+        // @extend .icon-block;
         position: absolute;
         left: 0;
         top: 0;
     }
     &:after {
         content: "";
-        @include icon-background('../images/index_cl.png',
+        @include background('../images/index_cl.png',
         245px,
         211px);
-        @extend .icon-block;
+        // @extend .icon-block;
         position: absolute;
         right: 0;
         top: 0;
@@ -59,28 +45,28 @@ a {
 }
 
 .icon-label {
-    @include icon-background('../images/index_tag.png',
+    @include background('../images/index_tag.png',
     275px,
     203px);
     margin: auto;
-    @extend .icon-block;
+    // @extend .icon-block;
 }
 
 .icon-m-title {
-    @include icon-background('../images/index_title.png',
+    @include background('../images/index_title.png',
     574px,
     345px);
-    @extend .icon-block;
+    // @extend .icon-block;
     margin-left: pxToRem(60px);
     position: relative;
     animation: zoomIn .8s linear both;
 }
 
 .icon-pai {
-    @include icon-background('../images/icon-pai.png',
+    @include background('../images/icon-pai.png',
     136px,
     204px);
-    @extend .icon-block;
+    // @extend .icon-block;
     position: absolute;
     top: pxToRem(30px);
     right: pxToRem(-80px);
@@ -159,13 +145,13 @@ a {
         vertical-align: middle;
     }
     .icon-pai2 {
-        @include icon-background('../images/index_cartoon_2.png',
+        @include background('../images/index_cartoon_2.png',
         104px,
         119px);
         @extend .icon-inline-block;
     }
     .icon-title2 {
-        @include icon-background('../images/index_title_2.png',
+        @include background('../images/index_title_2.png',
         564px,
         77px);
         @extend .icon-inline-block;
@@ -194,10 +180,10 @@ a {
         }
     }
     .label-bg {
-        @include icon-background('../images/index_timeline_title_bg.png',
+        @include background('../images/index_timeline_title_bg.png',
         296px,
         62px);
-        @extend .icon-block;
+        // @extend .icon-block;
         font-size: pxToRem(46px);
         color: #ffe983;
         line-height: pxToRem(62px);
@@ -205,10 +191,10 @@ a {
         // padding-left: pxToRem(20px);
     }
     .icon-txt {
-        @include icon-background('../images/index_timeline_2.png',
+        @include background('../images/index_timeline_2.png',
         574px,
         169px);
-        @extend .icon-block;
+        // @extend .icon-block;
         margin-left: pxToRem(40px);
         margin-top: pxToRem(20px);
     }
@@ -216,6 +202,7 @@ a {
 
 .f-cont {
     max-width: 414px;
+    margin: auto;
     width: 100%;
     height: pxToRem(130px);
     position: absolute;

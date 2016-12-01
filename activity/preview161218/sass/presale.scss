@@ -1,13 +1,89 @@
 @charset "UTF-8";
 @import "variables";
-@import "sprite";
-@import "../../../sass/reset";
+// @import "sprite";
+// @import "../../../sass/reset";
 @import "../../../sass/func";
 .pre-cont {
-	padding-top: pxToRem(50px);
+    padding-top: pxToRem(50px);
+    * {
+        box-sizing: border-box;
+    }
+    span,
+    ul,
+    li {
+        display: inline-block;
+    }
 }
+
 .icon-pre-txt {
-	@include icon-background('../images/presale-txt.png', 614px, 54px);
-	@extend .icon-block;
-	margin: auto;
+    @include background('../images/presale-txt.png', 614px, 54px);
+    // @extend .icon-block;
+    margin: auto;
 }
+
+/* .act-time {
+    width: pxToRem(356px);
+    height: pxToRem(40px);
+    line-height: pxToRem(40px);
+    border-radius: pxToRem(40px);
+    background-color: #fffbe8;
+    font-size: pxToRem(22px);
+    color: #fc7934;
+    text-align: center;
+    margin: auto;
+    display: block;
+    margin-top: pxToRem(26px);
+} */
+
+.pre-desc {
+    width: 100%;
+    margin-top: pxToRem(40px);
+    padding: 0 pxToRem(36px);
+    color: #fffbe8;
+    // font-size: pxToRem(24px);
+    text-align: justify;
+    // line-height: 1.5;
+    font-size: 0;
+    span {
+        width: 100%;
+        font-size: pxToRem(24px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .txt-g {
+        color: #deff27;
+        text-align: center;
+        margin-top: pxToRem(20px);
+    }
+}
+
+.pro-cont {
+    width: 100%;
+    margin-top: pxToRem(40px);
+    .no-pro {
+    	display: none;
+        @include background('../images/presale_bg1.png', 674px, 758px);
+        // @extend .icon-block;
+        margin: auto;
+        position: relative;
+        &:before {
+            content: "";
+            @include background('../images/icon_chair.png', 225px, 236px);
+            // @extend .icon-block;
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            margin-left: pxToRem(-113px);
+            // margin-top: pxToRem(-118px);
+        }
+        .to-start {
+            font-size: pxToRem(40px);
+            position: absolute;
+            left: 0;
+            top: 68%;
+        }
+    }
+}
+
+
