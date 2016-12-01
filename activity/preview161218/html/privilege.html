@@ -47,8 +47,8 @@
 		</div>
 	</div>
 	<footer class="footer">
-		 <a href="" class="active">爱心特权</a>
-		 <a href="" >爱心分享</a>
+		 <a class="active">爱心特权</a>
+		 <a href="./share.html">爱心分享</a>
 		 <a href="" >预售专场</a>
 		 <a href="" >敬请期待</a>
 	</footer>
@@ -79,12 +79,12 @@
 	(function() {
    		FastClick.attach(document.body);
    		var pageContentEl = $(".page-content");
-   		// 绑定领取加息劵
-	   	pageContentEl.on("click", ".rule-geted",function() {
+   		// 绑定查看加息说明
+	   	pageContentEl.on("click", ".rule-geted .check-rule",function() {
 	   		$(".dialog").show();
 	   	});
 		
-	   	// 绑定查看加息说明
+	   	//绑定领取加息劵
 	   	pageContentEl.on("click", ".btn-get",function() {
 	   		// TODO: 判断是否登录
 			// 登录之后
