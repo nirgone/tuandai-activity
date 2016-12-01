@@ -13,7 +13,7 @@ body {
     margin: 0;
     padding: 0;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    
+    background-color:$bg-orange;
 }
 .scroll-active {
       -webkit-overflow-scrolling: touch !important;
@@ -31,7 +31,6 @@ a {
     overflow: scroll;
     position: relative;
     background-color: $bg-orange;
-    
     .content {
         padding-bottom: pxToRem(98px);
         width: 100%;
@@ -47,6 +46,7 @@ a {
     height: pxToRem(98px);
     line-height: pxToRem(98px);
     font-size: 0;
+    z-index: 999;
     a {
         display: inline-block;
         width: 25%;
@@ -54,6 +54,9 @@ a {
         text-align: center;
         font-size: pxToRem(30px);
         color: #fffbe8;
+        &.active {
+        	background-color: #ef8406;
+        }
     }
 }
 
