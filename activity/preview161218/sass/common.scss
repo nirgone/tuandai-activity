@@ -251,3 +251,25 @@ a {
         }
     }
 }
+.title-heart {
+    position: relative;
+    &:before {
+        content: "";
+        @include icon-background('../images/txt-heart.png', 40px, 44px);
+        @extend .icon-block;
+        position: absolute;
+        right: pxToRem(-50px);
+        top: 50%;
+        margin-top: pxToRem(-20px);
+    }
+    &:after {
+        content: "";
+        @include icon-background('../images/txt-heart.png', 40px, 44px);
+        @extend .icon-block;
+        position: absolute;
+        left: pxToRem(-50px);
+        top: 50%;
+        margin-top: pxToRem(-20px);
+        transform: rotateY(180deg);
+    }
+}

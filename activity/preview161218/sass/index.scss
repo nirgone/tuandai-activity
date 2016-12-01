@@ -21,9 +21,9 @@ a {
 }
 
 .m-cont {
-    background-color: $bg-orange;
+    background-color: #ff6e30;
     background-image: url('../images/index_bg.jpg'), url('../images/index_love.jpg'), url('../images/index_bg_2.jpg'), url('../images/index_bg_3.png');
-    background-size: pxToRem(750px) pxToRem(940px), pxToRem(189px) pxToRem(187px), pxToRem(725px) pxToRem(326px), pxToRem(750px) pxToRem(570px);
+    background-size: pxToRem(750px) pxToRem(940px), pxToRem(189px) pxToRem(187px), pxToRem(720px) pxToRem(326px), pxToRem(750px) pxToRem(570px);
     background-position: 0 0, pxToRem(550px) pxToRem(1000px), right 62%, 0 bottom;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
     position: relative;
@@ -216,6 +216,7 @@ a {
 }
 
 .f-cont {
+    max-width: 414px;
     width: 100%;
     height: pxToRem(130px);
     position: absolute;
