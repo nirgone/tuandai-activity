@@ -56,3 +56,8 @@
     @extend .icon-inline-block;
     @include icon-background('../images/bracket.png', 34px, 30px);
 }
+
+.icon-go {
+    @extend .icon-inline-block;
+    @include icon-background('../images/btn-go.png', 160px, 160px);
+}
