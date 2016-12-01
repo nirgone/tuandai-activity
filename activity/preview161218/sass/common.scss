@@ -13,9 +13,12 @@ body {
     margin: 0;
     padding: 0;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-overflow-scrolling: touch !important;
+    
 }
+.scroll-active {
+      -webkit-overflow-scrolling: touch !important;
 
+    }
 a {
     text-decoration: none;
 }
@@ -28,6 +31,7 @@ a {
     overflow: scroll;
     position: relative;
     background-color: $bg-orange;
+    
     .content {
         padding-bottom: pxToRem(98px);
         width: 100%;
