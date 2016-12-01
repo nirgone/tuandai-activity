@@ -3,7 +3,6 @@
 @import "sprite";
 @import "../../../sass/func";
 @import "../../../sass/reset";
-
 html,
 body {
     position: relative;
@@ -22,40 +21,233 @@ a {
 }
 
 .scroll {
-	max-width: 414px;
-	width: 100%;
-	height: 100%;
-	overflow: scroll;
-	position: relative;
-	background-color: $bg-orange;
-	.content {
-	padding-bottom: pxToRem(98px);
-		width: 100%;
-	}
+    max-width: 414px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    position: relative;
+    background-color: $bg-orange;
+    .content {
+        padding-bottom: pxToRem(98px);
+        width: 100%;
+    }
 }
+
 .footer {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background-color: $bg-orange-light;
-	height: pxToRem(98px);
-	line-height: pxToRem(98px);
-	font-size: 0;
-	a {
-		display: inline-block;
-		width: 25%;
-		height: 100%;
-		text-align: center;
-		font-size: pxToRem(30px);
-		color: #fffbe8;
-	}
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $bg-orange-light;
+    height: pxToRem(98px);
+    line-height: pxToRem(98px);
+    font-size: 0;
+    a {
+        display: inline-block;
+        width: 25%;
+        height: 100%;
+        text-align: center;
+        font-size: pxToRem(30px);
+        color: #fffbe8;
+    }
 }
+
 .masker {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-color: rgba(0, 0, 0, .7);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 999;
+}
+
+//btn
+.btn-orange {
+    @extend .icon-btn;
+    color: #fff;
+    line-height: pxToRem(110px);
+    font-size: pxToRem(34px);
+    margin: 0 auto;
+}
+
+//font
+.font-orange {
+    color: #ff5500;
+}
+
+// popup
+.popup {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    $top: 10%;
+    .popup-wrapper {
+        position: absolute;
+        top: $top;
+        left: 50%;
+        width: pxToRem(610px);
+        margin-left: pxToRem(-610px /2);
+        max-height: 70%;
+        // background-color: #fff;
+        z-index: 1000;
+        border-radius: pxToRem(30px);
+        // overflow: hidden;
+        &.more {
+            height: pxToRem(970px);
+            .popup-content {
+                position: absolute;
+                top: pxToRem(100px);
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                border-bottom: pxToRem(38px) solid #fff;
+                height: pxToRem(48px);
+                background: linear-gradient(to top, #fff, transparent);
+                border-bottom-left-radius: pxToRem(30px);
+                border-bottom-right-radius: pxToRem(30px);
+                z-index: 1111;
+            }
+        }
+        .icon {
+            position: absolute;
+            left: 50%;
+            bottom: pxToRem(-118px);
+            margin-left: pxToRem(-269px/2);
+        }
+    }
+    .popup-close {
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: pxToRem(100px);
+        border-top-right-radius: pxToRem(30px);
+        .close {
+            position: absolute;
+            width: pxToRem(52px);
+            height: pxToRem(52px);
+            top: 50%;
+            left: 50%;
+            margin-left: pxToRem(-52px /2);
+            margin-top: pxToRem(-52px /2);
+            border-radius: pxToRem(52px);
+            background-color: #fffcf0;
+            &:before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: pxToRem(-14px);
+                margin-top: pxToRem(-2px);
+                display: block;
+                width: pxToRem(28px);
+                height: pxToRem(4px);
+                border-radius: pxToRem(4px);
+                transform: rotate(45deg);
+                background-color: #fc7734;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: pxToRem(-14px);
+                margin-left: pxToRem(-2px);
+                display: block;
+                height: pxToRem(28px);
+                width: pxToRem(4px);
+                border-radius: pxToRem(4px);
+                transform: rotate(45deg);
+                background-color: #fc7734;
+            }
+        }
+    }
+    .popup-header {
+        position: relative;
+        // top: $top;
+        // left: 50%;
+        width: pxToRem(610px);
+        // margin-left: pxToRem(-610px /2);
+        background-color: $bg-orange;
+        height: pxToRem(100px);
+        line-height: pxToRem(100px);
+        border-top-left-radius: pxToRem(30px);
+        border-top-right-radius: pxToRem(30px);
+        text-align: center;
+        color: #fff;
+        font-size: pxToRem(34px);
+        z-index: 1000;
+        &:after {
+            content: attr(data-title);
+        }
+    }
+    .popup-content {
+        // position: absolute;
+        // top: $top;
+        // left: 50%;
+        // width: pxToRem(610px);
+        // margin-left: pxToRem(-610px /2);
+        // margin-top: pxToRem(100px);
+        // max-height: 70%;
+        // height: 100%;
+        width: 100%;
+        padding: pxToRem(30px) pxToRem(48px);
+        // bottom: 0;
+        box-sizing: border-box;
+        border-bottom-left-radius: pxToRem(30px);
+        border-bottom-right-radius: pxToRem(30px);
+        background-color: #fff;
+        overflow: scroll;
+        z-index: 1000;
+        text-align: justify;
+        // box-shadow: 0 pxToRem(-78px) pxToRem(78px) black inset;
+        // .popup-content {
+        // 	width: 100%;
+        // 	height: 100%;
+        // 	overflow: scroll;
+        // 	z-index: 1000;
+        // }
+        // &.more {
+        // 
+        // }
+        p {
+            font-size: pxToRem(26px);
+            line-height: pxToRem(46px);
+            color: #424242;
+            margin-bottom: pxToRem(20px);
+        }
+    }
+}
+
+.popup-icon {
+    .popup-content {
+        padding: pxToRem(140px) pxToRem(32px) pxToRem(22px);
+        text-align: center;
+        p {
+            font-size: pxToRem(34px);
+            line-height: initial;
+            &.percent {
+                font-size: pxToRem(86px);
+                color: #ff5500;
+                &:after {
+                    content: '%';
+                    color: #ff5500;
+                    font-size: pxToRem(44px);
+                }
+            }
+        }
+        .btn-orange {
+        	margin-top: (20px);
+        }
+    }
 }

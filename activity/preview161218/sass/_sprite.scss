@@ -13,7 +13,21 @@
 	background-position: center;
 	background-size: contain;
 }
+
 .icon-btn {
 	@extend .icon-block;
 	@include icon-background('../images/btn.png', 546px, 128px);
+}
+
+.icon-pop0 {
+	@extend .icon-block;
+	@include icon-background('../images/pop0.png', 269px, 241px);
+}
+.icon-pop1 {
+	@extend .icon-block;
+	@include icon-background('../images/pop1.png', 269px, 207px);
+}
+.icon-pop2 {
+	@extend .icon-block;
+	@include icon-background('../images/pop2.png', 269px, 210px);
 }
