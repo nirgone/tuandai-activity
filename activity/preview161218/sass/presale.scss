@@ -1,0 +1,13 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+.pre-cont {
+	padding-top: pxToRem(50px);
+}
+.icon-pre-txt {
+	@include icon-background('../images/presale-txt.png', 614px, 54px);
+	@extend .icon-block;
+	margin: auto;
+}
