@@ -11,20 +11,6 @@
 		$(".dialog").show();
 	});
 
-	//显示签到
-	pageContentEl.on("click", ".btn-sign", function() {
-		Util.alertCommon({
-			type: 1,
-			content: "<p style='font-size:0.64rem;line-height:1.28rem;'>活动期间内，在APP进行签到并成功分享，即有机会获得<font style='color:#ff7630;'>0.1%</font>加息特权。</p>",
-			btn: {
-				name: "马上签到",
-				callback: function() {
-					// TODO: 跳转至手机签到链接
-					window.location.href = ""
-				}
-			}
-		});
-	});
 
 	//显示签到
 	pageContentEl.on("click", ".btn-sign", function() {
@@ -54,7 +40,7 @@
 	})
 
 	// 通过以下状态来控制页面
-	var statusSign = 1; //手机签到状态 0当天未签到	1当天未获加息	2当天获加息
+	var statusSign = 0; //手机签到状态 0当天未签到	1当天未获加息	2当天获加息
 	var statusOnePercent = 0; //是否获取1%加息特权 0未获取	1已获取	
 	var statusInvest = 0; //是否获取投资加息 0未获取	 1已获取	
 	var statusInvite = 0; //是否获取邀请加息 0未获取	 1已获取	
