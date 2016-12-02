@@ -102,6 +102,7 @@ a {
         // background-color: #fff;
         z-index: 1000;
         border-radius: pxToRem(30px);
+        background-color: #fffcf0;
         // overflow: hidden;
         &.more {
             height: pxToRem(970px);
@@ -111,16 +112,14 @@ a {
                 bottom: 0;
                 left: 0;
                 right: 0;
+                padding-bottom: pxToRem(56px);
             }
             &:after {
                 content: '';
+                @extend .icon-masker-txt;
                 position: absolute;
                 bottom: 0;
                 left: 0;
-                width: 100%;
-                border-bottom: pxToRem(38px) solid #fff;
-                height: pxToRem(48px);
-                background: linear-gradient(to top, #fff, transparent);
                 border-bottom-left-radius: pxToRem(30px);
                 border-bottom-right-radius: pxToRem(30px);
                 z-index: 1111;
@@ -187,6 +186,7 @@ a {
         // margin-left: pxToRem(-610px /2);
         background: url(../images/pop_header.png) no-repeat center;
         background-size: 100% 100%;
+        background-color: #fc7734;
         height: pxToRem(100px);
         line-height: pxToRem(100px);
         border-top-left-radius: pxToRem(30px);
@@ -209,12 +209,14 @@ a {
         // max-height: 70%;
         // height: 100%;
         width: 100%;
+        margin-top: pxToRem(30px);
         padding: pxToRem(30px) pxToRem(48px);
+        padding-top: 0;
         // bottom: 0;
         box-sizing: border-box;
         border-bottom-left-radius: pxToRem(30px);
         border-bottom-right-radius: pxToRem(30px);
-        background-color: #fff;
+        background-color: #fffcf0;
         overflow: scroll;
         z-index: 1000;
         text-align: justify;
@@ -308,15 +310,15 @@ a {
     }
 }
 .act-time {
-    width: pxToRem(356px);
-    height: pxToRem(40px);
-    line-height: pxToRem(40px);
-    border-radius: pxToRem(40px);
-    background-color: #fffbe8;
-    font-size: pxToRem(22px);
-    color: #fc7934;
+    // width: pxToRem(356px);
+    // height: pxToRem(40px);
+    // line-height: pxToRem(40px);
+    // border-radius: pxToRem(40px);
+    // background-color: #fffbe8;
+    // color: #fc7934;
+    font-size: pxToRem(24px);
+    color: #fffbe8;
     text-align: center;
-    margin: auto;
     display: block;
     margin-top: pxToRem(26px);
 }

@@ -18,10 +18,6 @@
 	@extend .icon-block;
 	@include icon-background('../images/btn.png', 546px, 128px);
 }
-.icon-btn-item {
-	@extend .icon-block;
-	@include icon-background('../images/btn-item.png', 256px, 98px);
-}
 
 .icon-pop0 {
 	@extend .icon-block;
@@ -35,12 +31,30 @@
 	@extend .icon-block;
 	@include icon-background('../images/pop2.png', 269px, 210px);
 }
-
+.icon-masker-txt {
+	@extend .icon-block;
+	@include icon-background('../images/masker_txt.png', 610px, 96px);
+}
 
 // .label-bg {
 // 	@include icon-background('../images/index_timeline_title_bg.png', 296px, 62px);
 // 	@extend .icon-block;
 // }
+
+.index-icon1 {
+    @include icon-background('../images/index_icon_1.png', 30px, 30px);
+    @extend .icon-inline-block;
+}
+
+.index-icon2 {
+    @include icon-background('../images/index_icon_2.png', 30px, 30px);
+    @extend .icon-inline-block;
+}
+
+.index-icon3 {
+    @include icon-background('../images/index_icon_3.png', 30px, 30px);
+    @extend .icon-inline-block;
+}
 
 
 .icon-bracket {

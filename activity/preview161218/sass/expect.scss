@@ -47,8 +47,7 @@
 
 .countdown {
     // width:pxToRem(590px);
-    padding-left: pxToRem(50px);
-    padding-top: pxToRem(46px);
+    padding: pxToRem(46px) 0 pxToRem(42px) pxToRem(50px);
     // display: flex;
     overflow: hidden;
     font-size: 0;
