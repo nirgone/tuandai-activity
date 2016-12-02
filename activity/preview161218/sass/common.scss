@@ -185,7 +185,8 @@ a {
         // left: 50%;
         width: pxToRem(610px);
         // margin-left: pxToRem(-610px /2);
-        background-color: $bg-orange;
+        background: url(../images/pop_header.png) no-repeat center;
+        background-size: 100% 100%;
         height: pxToRem(100px);
         line-height: pxToRem(100px);
         border-top-left-radius: pxToRem(30px);

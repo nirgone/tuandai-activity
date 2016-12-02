@@ -1,0 +1,187 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+.icon-title-page3 {
+    @include background('../images/title_page3.png', 614px, 54px);
+    margin: auto;
+    margin-top: pxToRem(50px);
+}
+
+.list {
+    font-size: 0;
+    padding: pxToRem(46px) pxToRem(58px) 0 pxToRem(58px);
+    .item {
+        position: relative;
+        display: inline-block;
+        width: pxToRem(317px);
+        height: pxToRem(307px);
+        background: url(../images/bg_forum.png) no-repeat center;
+        background-size: contain;
+        .icon-block {
+            position: absolute;
+            left: 50%;
+        }
+        p {
+            font-size: pxToRem(26px);
+            height: pxToRem(60px);
+            line-height: pxToRem(60px);
+            text-align: center;
+            color: #fff;
+            margin-top: pxToRem(214px);
+        }
+    }
+}
+
+.subtitle {
+    width: pxToRem(750px);
+    height: pxToRem(65px);
+    line-height: pxToRem(65px);
+    background: url(../images/subtitle_page3.png) no-repeat center;
+    background-size: contain;
+    font-size: pxToRem(34px);
+    color: #fff;
+    text-align: center;
+    margin-top: pxToRem(30px);
+}
+
+.countdown {
+    // width:pxToRem(590px);
+    padding-left: pxToRem(50px);
+    padding-top: pxToRem(46px);
+    // display: flex;
+    overflow: hidden;
+    font-size: 0;
+    // z-index: 999;
+    // transform: translateZ(1);
+    .bloc-time {
+        // float: left;
+        display: inline-block;
+        text-align: center;
+        font-size: 0;
+        // // flex:1;
+        // &:not(:nth-child(2)) {
+        //     flex:1;
+        // }
+        // &:last-child {
+        //     margin-right: 0;
+        // }
+        &>span {
+            // float: left;
+            // display:block;
+            color: #fff;
+            line-height: pxToRem(108px);
+            font-size: pxToRem(34px);
+            z-index: 9;
+            vertical-align: bottom;
+            margin: 0 pxToRem(8px);
+        }
+    }
+    .figure {
+        position: relative;
+        // float: left;
+        @include background("../images/bg_countdown.png", 108px, 108px);
+        display: inline-block;
+        overflow: hidden;
+        font-size: 0;
+        &:after {
+            @include border(bottom, #fafafa);
+            left: pxToRem(8px);
+            right: pxToRem(8px);
+            bottom: 50%;
+        }
+    }
+    @at-root .unit {
+    	position: relative;
+        width: 50%;
+        height: 100%;
+        font-size: pxToRem(60px);
+        line-height: pxToRem(108px);
+        color: #fb6f34;
+        display: inline-block;
+        box-sizing: border-box;
+        text-align:left;
+        padding-left: pxToRem(2px);
+        font-weight: bold;
+        span {
+        	display: block;
+        	position: absolute;
+        	left: 0;
+        	top: 0;
+        	width: 100%;
+        	height: 100%;
+        	transition-property: transform;
+        }
+        .next {
+        	transform: translate(0, -100%);
+        	// color: black;
+        }
+        .current {
+        	transform: translate(0, 0);
+        	transition-duration: .2s;
+        }
+        .prev {
+        	transform: translate(0, 100%);
+        	transition-duration: .2s;
+        }
+    }
+    @at-root .tens {
+    	@extend .unit;
+    	text-align: right;
+    	padding-left: auto;
+    	padding-right: pxToRem(2px);
+    }
+}
+
+// .current {
+//     animation-duration: 0.6s;
+//     animation-fill-mode: forwards;
+//     -webkit-animation-name: current;
+//     animation-name: current;
+// }
+
+// @-webkit-keyframes current {
+//     0% {
+//         -webkit-transform: rotateX(0deg);
+//         transform: rotateX(0deg);
+//     }
+//     100% {
+//         -webkit-transform: rotateX(-180deg);
+//         transform: rotateX(-180deg);
+//     }
+// }
+
+// @keyframes current {
+//     0% {
+//         -webkit-transform: rotateX(0deg);
+//         transform: rotateX(0deg);
+//     }
+//     100% {
+//         -webkit-transform: rotateX(-180deg);
+//         transform: rotateX(-180deg);
+//     }
+// }
+//icon
+.icon-ticket {
+    @include icon-background('../images/ticket.png', 204px, 142px);
+    margin-left: pxToRem(-204px/2);
+    top: pxToRem(46px);
+}
+
+.icon-box {
+    @include icon-background('../images/box.png', 151px, 125px);
+    margin-left: pxToRem(-151px/2);
+    top: pxToRem(50px);
+}
+
+.icon-gold {
+    @include icon-background('../images/gold.png', 154px, 158px);
+    margin-left: pxToRem(-154px/2);
+    top: pxToRem(42px);
+}
+
+.icon-redpack {
+    @include icon-background('../images/redpack.png', 166px, 169px);
+    margin-left: pxToRem(-166px/2);
+    top: pxToRem(34px);
+}
