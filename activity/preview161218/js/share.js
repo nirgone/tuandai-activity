@@ -16,10 +16,11 @@
 			fg: '../images/bg-interest-ticket-cover.png',
 			cursor: "auto",
 			scratchMove: function(e, percent) { //刮奖中
-				if (percent >= 30) {
+				if (percent >= 30) { //刮奖超过30%
 					var currentTarget = $(e.currentTarget);
-					currentTarget.parents(".scratch-area").hide();
+					currentTarget.parents(".scratch-area").hide(); //隐藏刮奖区域
 					var scratchItemEl = currentTarget.parents(".scratch-item");
+					//修改文案
 					if (scratchItemEl.hasClass("scratch-byInvite")) {
 						scratchItemEl.find(".scratch-right .text").text("邀请得佣金");
 					} else if (scratchItemEl.hasClass("scratch-byInvestment")) {
@@ -43,24 +44,24 @@
 			return;
 		}
 		switch (scratchByInveste) {
-			case 1:
+			case 1: //可抽奖
 				setTimeout(function() { //延迟隐藏cover，防止看到奖品
 					scratchInvestEl.find(".scratch-cover").hide();
 				}, 200)
 				break;
-			case 2:
+			case 2: //已中奖
 				scratchInvestEl.find(".scratch-cover, .scratch-area").hide();
 				scratchInvestEl.find(".scratch-right .text").text("投资获加息");
 				break;
 		}
 
 		switch (scratchByInvite) {
-			case 1:
+			case 1: //可抽奖
 				setTimeout(function() { //延迟隐藏cover，防止看到奖品
 					scratchInviteEl.find(".scratch-cover").hide();
 				}, 200)
 				break;
-			case 2:
+			case 2: //已中奖
 				scratchInviteEl.find(".scratch-cover, .scratch-area").hide();
 				scratchInviteEl.find(".scratch-right .text").text("邀请得佣金");
 				break;
@@ -85,9 +86,6 @@
 							// TODO: 跳转至立即投资链接
 							window.location.href = "https://m.tuandai.com/pages/invest/WE/WE_list.aspx"
 						}
-					},
-					closeCallback: function() {
-
 					}
 				});
 			} else { //有刮奖机会，不支持刮奖效果，直接显示刮奖结果
@@ -106,12 +104,9 @@
 							// TODO: 跳转至立即邀请链接
 							window.location.href = "https://m.tuandai.com/pages/invest/WE/WE_list.aspx"
 						}
-					},
-					closeCallback: function() {
-
 					}
 				})
-			} else {
+			} else { //有刮奖机会，不支持刮奖效果，直接显示刮奖结果
 				currentTargetParentEl.find(".scratch-cover, .scratch-area").hide();
 				currentTargetParentEl.find(".scratch-right .text").text("邀请得佣金");
 			}
