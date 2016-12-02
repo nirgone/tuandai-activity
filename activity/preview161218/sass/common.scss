@@ -40,8 +40,11 @@ a {
 .footer {
     position: absolute;
     bottom: 0;
+    width: 100%;
     left: 0;
-    right: 0;
+    // left: 50%;
+    // max-width: 414px;
+    // transform: translate(-50%, 0);
     background-color: $bg-orange-light;
     height: pxToRem(98px);
     line-height: pxToRem(98px);
