@@ -43,7 +43,7 @@ a {
         }
         .check-rule {
             color: #f16c26;
-            font-size: pxToRem(22px);
+            font-size: 0;
             display: inline-block;
             vertical-align: middle;
             line-height: pxToRem(36px);
@@ -53,10 +53,20 @@ a {
             background-color: #fee13d;
             width: pxToRem(142px);
             text-align: center;
-            &:after {
-                content: ">";
+            .rule-text {
+               font-size: pxToRem(22px); 
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .icon-arrow {
+                vertical-align: middle;
                 margin-left: pxToRem(10px);
             }
+           /*  &:after {
+                @extend .icon-arrow;
+                content: "";
+                margin-left: pxToRem(10px);
+            } */
         }
     }
     /* .date {
