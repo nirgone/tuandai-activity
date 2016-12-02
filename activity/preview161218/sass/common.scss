@@ -81,7 +81,7 @@ a {
 
 //font
 .font-orange {
-    color: #ff5500;
+    color: #ff5500 !important;
 }
 
 // popup
@@ -232,7 +232,7 @@ a {
         // }
         p {
             font-size: pxToRem(26px);
-            line-height: pxToRem(46px);
+            line-height: pxToRem(48px);
             color: #424242;
             margin-bottom: pxToRem(20px);
         }
@@ -241,7 +241,7 @@ a {
 
 .popup-icon {
     .popup-content {
-        padding: pxToRem(140px) pxToRem(32px) pxToRem(22px);
+        padding: pxToRem(110px) pxToRem(32px) pxToRem(22px);
         text-align: center;
         p {
             font-size: pxToRem(34px);

@@ -29,58 +29,57 @@ a {
         height: pxToRem(54px);
         background-image: url("../images/privilege-title.png");
         margin: auto;
-        margin-bottom: pxToRem(24px);
+        margin-bottom: pxToRem(26px);
     }
-    .date {
-        color: #fc7934;
-        font-size: pxToRem(22px);
-        background-color: #fdfce8;
-        width: pxToRem(354px);
-        height: pxToRem(36px);
-        line-height: pxToRem(36px);
-        margin: auto;
+    .md {
+        font-size: 0;
+        margin-bottom: pxToRem(38px);
         text-align: center;
-        border-radius: pxToRem(18px);
-        margin-bottom: pxToRem(34px);
-    }
-    .rule {
-        font-size: pxToRem(24px);
-        line-height: pxToRem(40px);
-        width: 100%;
-        margin: auto;
-        color: #fff;
-        margin-bottom: pxToRem(36px);
-        .check-rule {
-            color: #ddff25;
+        .act-time {
+            display: inline-block;
+            line-height: pxToRem(36px);
+            vertical-align: middle;
+            height: pxToRem(36px);
+            margin-top: 0;
         }
-        &.rule-geted {
-            display: none;
+        .check-rule {
+            color: #f16c26;
+            font-size: pxToRem(22px);
+            display: inline-block;
+            vertical-align: middle;
+            line-height: pxToRem(36px);
+            height: pxToRem(36px);
+            margin-left: pxToRem(36px);
+            border-radius: pxToRem(18px);
+            background-color: #fee13d;
+            width: pxToRem(142px);
+            text-align: center;
+            &:after {
+                content: ">";
+                margin-left: pxToRem(10px);
+            }
         }
     }
     .increase-interest {
         width: pxToRem(674px);
-        height: pxToRem(758px);
-        border-radius: pxToRem(28px);
+        height: pxToRem(374px);
         background-image: url("../images/bg-increase-interest.png");
         margin: auto;
-        margin-bottom: pxToRem(30px);
-        padding-top: pxToRem(74px);
+        margin-bottom: pxToRem(36px);
+        padding-top: pxToRem(42px);
         box-sizing: border-box;
         .increase-interest-title {
             text-align: center;
             margin: auto;
             font-size: 0;
-            margin-bottom: pxToRem(84px);
+            margin-bottom: pxToRem(36px);
             font {
-                font-size: pxToRem(48px);
+                font-size: pxToRem(36px);
                 font-weight: bold;
                 color: #fd7a33;
                 margin-right: pxToRem(24px);
                 margin-left: pxToRem(24px);
                 line-height: pxToRem(56px);
-                &:after {
-                    content: "特权加息";
-                }
             }
             .icon-bracket {
                 vertical-align: top;
@@ -91,76 +90,134 @@ a {
         }
         .interest-ticket-wrapper {
             position: relative;
-            width: pxToRem(564px);
-            height: pxToRem(306px);
+            width: pxToRem(456px);
+            height: pxToRem(192px);
             background-image: url("../images/bg-interest-ticket.png");
             margin: auto;
             text-align: center;
-            margin-bottom: pxToRem(64px);
-            .water-mark {
-                background-image: url("../images/watermark.png");
-                width: pxToRem(160px);
-                height: pxToRem(160px);
-                position: absolute;
-                top: pxToRem(-80px);
-                right: pxToRem(-32px);
-                z-index: 99;
-            }
             font {
-                line-height: pxToRem(306px);
+                line-height: pxToRem(192px);
                 text-align: center;
                 color: #fff;
-                font-size: pxToRem(156px);
+                font-size: pxToRem(106px);
                 font-weight: bold;
-                text-shadow: 0 pxToRem(5px) pxToRem(10px) rgba(255, 162, 42, 1);
+                &:before {
+                    content: "+";
+                }
                 &:after {
                     content: "%";
-                    font-size: pxToRem(84px);
-                    margin-left: pxToRem(12px);
+                    font-size: pxToRem(56px);
+                    margin-left: pxToRem(10px);
                 }
-            }
-        }
-        .icon-btn {
-            font-size: pxToRem(34px);
-            text-align: center;
-            margin: auto;
-            color: #fff;
-            line-height: pxToRem(110px);
-            &.btn-invest {
-                display: none;
             }
         }
     }
-    &.geted {
-        .rule-not-get {
-            display: none !important;
+    .task-wrapper {
+        border-radius: pxToRem(24px);
+        background-color: #f16d25;
+        box-shadow: 0 pxToRem(10px) pxToRem(20px) rgba(0, 0, 0, .1);
+        width: pxToRem(674px);
+        height: pxToRem(464px);
+        padding: pxToRem(12px);
+        box-sizing: border-box;
+        position: relative;
+        .task-icon {
+            background-image: url("../images/icon-task.png");
+            width: pxToRem(212px);
+            height: pxToRem(74px);
+            position: absolute;
+            left: pxToRem(30px);
+            top: 0;
         }
-        .rule-geted {
-            display: block !important;
-        }
-        .btn-get {
-            display: none !important;
-        }
-        .btn-invest {
-            display: block !important;
-        }
-        .increase-interest {
-            .increase-interest-title {
-                font {
-                    font-size: pxToRem(40px);
+        .task-list {
+            background-color: #fff;
+            border-radius: pxToRem(20px);
+            width: 100%;
+            height: 100%;
+            padding: pxToRem(16px) pxToRem(20px);
+            padding-top: pxToRem(56px);
+            box-sizing: border-box;
+            .task {
+                height: pxToRem(92px);
+                line-height: pxToRem(92px);
+                padding-left: pxToRem(40px);
+                box-sizing: border-box;
+                font-size: 0;
+                position: relative;
+                &:after {
+                    @include border(bottom,
+                    #e6e6e6);
+                    z-index: 99;
+                }
+                &:last-child {
                     &:after {
-                        content: "目前你共拥有的加息特权";
+                        border-bottom: none;
                     }
                 }
-            }
-            .interest-ticket-wrapper {
-                .water-mark {
-                    display: none;
+                .flag-icon {
+                    background-image: url("../images/icon-flag.png");
+                    width: pxToRem(24px);
+                    height: pxToRem(30px);
+                    vertical-align: middle;
+                    margin-right: pxToRem(38px);
+                }
+                .task-name {
+                    color: #424242;
+                    font-size: pxToRem(30px);
+                    vertical-align: middle;
+                    display: inline-block;
+                }
+                .task-status {
+                    position: absolute;
+                    right: pxToRem(12px);
+                    top: 0;
+                    height: 100%;
+                    .btn-get {
+                        background-image: url("../images/btn_small.png");
+                        width: pxToRem(188px);
+                        height: pxToRem(98px);
+                        line-height: pxToRem(80px);
+                        font-size: pxToRem(24px);
+                        color: #fff;
+                        text-align: center;
+                        position: relative;
+                        top: pxToRem(2px);
+                    }
+                    .task-done {
+                        display: none;
+                        width: pxToRem(202px);
+                        font-size: 0;
+                        position:relative;
+                        .icon-tick {
+                            background-image: url("../images/icon-tick.png");
+                            width: pxToRem(44px);
+                            height: pxToRem(44px);
+                            vertical-align: middle;
+                            position: relative;
+                            top: pxToRem(2px);
+                        }
+                        .done-text {
+                            font-size: pxToRem(24px);
+                            color: #fd7a33;
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin-left: pxToRem(10px);
+                        }
+                    }
+                    &.done {
+                       .btn-get  {
+                        display: none;
+                       } 
+                       .task-done  {
+                        display: block;;
+                       } 
+                    }
                 }
             }
         }
     }
 }
+
 .dialog {
     display: none;
 }
