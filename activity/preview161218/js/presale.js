@@ -1,6 +1,24 @@
 (function() {
 	FastClick.attach(document.body);
-	
+	var hasStarted = true; //预售活动是否开始
+	var objs = $(".btn-countdown"); //倒计时对象
+	var timeJson = {};
+	var sTime = 0;
+	var startTime = new Date().getTime();
+	var count = 0;
+	function init() {
+		if (hasStarted) {
+			$(".no-pro").hide();
+			$(".pro-wrapper").show();
+		} else {
+			$(".no-pro").show();
+			$(".pro-wrapper").hide();
+		}
+		//开始倒计时
+		start();
+	}
+	init();
+
 	//查看详情
 	$(".pre-desc").on('click', function() {
 		Util.message("温馨提示", "<p>1、用户加入预售智能理财后，将在12月18日00:00后匹配标的，按照各理财项目计息规则进行利息结算；</p><p>2、成功加入预售智能理财的金额将计入12月18日—12月19日的个人累计加入智能理财金额。</p>",
@@ -9,14 +27,14 @@
 			});
 	});
 	//倒计时
-	var objs = $(".btn-countdown");
+	/*var objs = $(".btn-countdown");
 	var timeJson = {};
 	var sTime = 0;
 	var startTime = new Date().getTime();
-	var count = 0;
+	var count = 0;*/
 
 	function start() {
-		// console.info("objs----", objs.eq(0).attr('data-id'));
+		// console.info("objs----", objs);
 		if (objs && objs.length > 0) {
 			for (var i = 0; i < objs.length; i++) {
 				var item = objs.eq(i);
@@ -38,7 +56,7 @@
 			setTimeout(countDown, 0);
 		}
 	}
-	start();
+	// start();
 
 	function countDown() {
 		// sTime = sTime - count * 1000;
@@ -60,7 +78,7 @@
 						var showTime = timeFormate(iTime);
 						oItem.html(showTime);
 						timeJson[id] = +iTime - 1000;
-					}else{
+					} else {
 						oItem.removeClass('btn-countdown').addClass('btn-get');
 						oItem.html('立即抢');
 					}
@@ -99,9 +117,9 @@
 	//跳转到WE计划项目详情
 	$("body").on('click', '.btn-get', function() {
 		var id = $(this).attr('data-id');
-		if(Jsbridge.isNewVersion()) {
+		if (Jsbridge.isNewVersion()) {
 			Jsbridge.toAppWePlanDetail(productId, typeId, subTypeId, weXPlanType, title);
-		}else{
+		} else {
 
 		}
 	});
