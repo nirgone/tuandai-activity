@@ -31,6 +31,10 @@
 	@extend .icon-block;
 	@include icon-background('../images/pop2.png', 269px, 210px);
 }
+.icon-pop3 {
+    @extend .icon-block;
+    @include icon-background('../images/pop3.png', 269px, 206px);
+}
 .icon-masker-txt {
 	@extend .icon-block;
 	@include icon-background('../images/masker_txt.png', 610px, 96px);
