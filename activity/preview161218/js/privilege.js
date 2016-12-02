@@ -50,10 +50,10 @@
 	var uiShowSign = function() { //是否显示签到中奖与否弹窗
 		if (isShowSignDialog) {
 			switch (statusSign) { //签到
-				case 2:
+				case 2: //获得加息
 					Util.alertJiaxi("0.1")
 					break;
-				case 1:
+				case 1: //未获得加息
 					Util.alertCommon({
 						type: 3,
 						content: '<p>噢哦，未抽中加息特权～</p><p>明日再接再厉，签到赢加息特权</p>'
