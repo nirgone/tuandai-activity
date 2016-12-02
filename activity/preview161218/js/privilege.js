@@ -11,6 +11,15 @@
 		$(".dialog").show();
 	});
 
+	//领取1%加息
+	pageContentEl.on("click", ".get-interest-onepercent", function() {
+		Util.alertJiaxi("1", function() {
+			// 设置总的加息特权 百分比根据实际变化
+			interestTextEl.text("1");
+		});
+
+
+	});
 
 	//显示签到
 	pageContentEl.on("click", ".btn-sign", function() {
