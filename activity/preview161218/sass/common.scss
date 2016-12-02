@@ -322,3 +322,7 @@ a {
     display: block;
     margin-top: pxToRem(26px);
 }
+.icon-arrow {
+    @include icon-background('../images/icon-arrow.png', 11px, 19px);
+    @extend .icon-inline-block;
+}

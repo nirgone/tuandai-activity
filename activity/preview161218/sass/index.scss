@@ -224,21 +224,67 @@
     }
 }
 .index-icon1 {
-    @include background('../images/index_icon_1.png', 30px, 30px);
+    @include background('../images/icon-index-1.png', 30px, 30px);
     display: inline-block;
 }
 
 .index-icon2 {
-    @include background('../images/index_icon_2.png', 30px, 30px);
+    @include background('../images/icon-index-2.png', 30px, 30px);
     display: inline-block;
 }
 
 .index-icon3 {
-    @include background('../images/index_icon_3.png', 30px, 30px);
+    @include background('../images/icon-index-3.png', 30px, 30px);
     display: inline-block;
 }
-@charset "UTF-8";
-@import "../../../sass/func";
+.index-icon4 {
+    @include background('../images/icon-index-4.png', 28px, 28px);
+    display: inline-block;
+}
+
+.index-icon5 {
+    @include background('../images/icon-index-5.png', 28px, 24px);
+    display: inline-block;
+}
+.m-txt-bg {
+    padding: pxToRem(30px) pxToRem(90px);
+    background-color: #fffcf0;
+    border-radius: pxToRem(30px);
+    margin-left: pxToRem(50px);
+    margin-top: pxToRem(30px);
+    max-width: pxToRem(560px);
+    position: relative;
+    .m-txt {
+        padding-left: 0;
+        font-size: pxToRem(30px);
+        color: #fa6525;
+        margin-top: pxToRem(20px);
+    }
+    .m-txt:nth-of-type(2) {
+        margin-bottom: pxToRem(20px);
+    }
+    &:before {
+        content: "";
+        @include background('../images/icon-txt-bg.png', 140px, 87px);
+        position: absolute;
+        bottom: pxToRem(-30px);
+        right: pxToRem(-30px);
+
+    }
+    // background-image: url('../images/icon-txt-bg.png');
+    // background-repeat: no-repeat;
+    // background-size: pxToRem(140px) pxToRem(97px);
+    // background-position: right bottom;
+    .to-start {
+        span {
+            color: #fd7a33;
+            font-size: pxToRem(36px);
+            padding-left: 0;
+            margin: pxToRem(20px) 0;
+        }
+    }
+}
+
 @-webkit-keyframes zoomIn {
   from {
     opacity: 0;

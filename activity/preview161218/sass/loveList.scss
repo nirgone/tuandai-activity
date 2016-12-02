@@ -1,0 +1,180 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../../sass/func";
+.l-content {
+    * {
+        box-sizing: border-box;
+    }
+}
+
+.icon-l-title {
+    @include background('../images/l-title.png', 614px, 54px);
+    margin: auto;
+    margin-top: pxToRem(56px);
+}
+
+.l-rule-btn {
+    width: pxToRem(160px);
+    height: pxToRem(36px);
+    border-radius: pxToRem(36px);
+    line-height: pxToRem(36px);
+    display: inline-block;
+    font-size: pxToRem(22px);
+    color: #f16c26;
+    background-color: #ffe13e;
+    margin-left: pxToRem(30px);
+    .icon-arrow {
+        margin-left: pxToRem(10px);
+        vertical-align: baseline;
+    }
+}
+
+.l-cont {
+    width: pxToRem(670px);
+    height: pxToRem(760px);
+    background-color: #f16c26;
+    margin: auto;
+    border-radius: pxToRem(40px);
+    padding: pxToRem(10px);
+    margin-top: pxToRem(40px);
+    // overflow: hidden;
+}
+
+.l-list {
+    width: 100%;
+    height: 100%;
+    border-radius: pxToRem(30px);
+    background-color: #fff;
+    // font-size: 0;
+    padding: pxToRem(20px);
+    // overflow: scroll;
+    overflow: hidden;
+    position: relative;
+    .lr-cont {
+    	overflow: scroll;
+    	width: 100%;
+    	height: pxToRem(640px);
+    	padding-bottom: pxToRem(120px);
+    	font-size: 0;
+    }
+    li {
+        width: 100%;
+        display: block;
+        white-space: nowrap;
+        font-size: 0;
+        &>div {
+            display: inline-block;
+            height: 100%;
+            vertical-align: top;
+        }
+        &>div:first-child {
+            width: pxToRem(90px);
+            text-align: center;
+            position: relative;
+        }
+        &>div:nth-child(2) {
+            width: pxToRem(250px);
+            padding-left: pxToRem(20px);
+        }
+        &>div:nth-child(3) {
+            width: pxToRem(250px);
+            text-align: right;
+        }
+    }
+    &>li:nth-child(n+3) {
+    	position: relative;
+    	&:before {
+    		@include border('top', #e6e6e6);
+    	}
+    }
+    .l-th {
+        color: #cccccc;
+        height: pxToRem(60px);
+        &>div{
+        	font-size: pxToRem(28px);
+        }
+    }
+    .l-tr {
+        height: pxToRem(80px);
+        line-height: pxToRem(80px);
+        .l-ranking {
+            color: #666666;
+            font-size: pxToRem(28px);
+            i {
+            	position: absolute;
+            	width: pxToRem(46px);
+            	height: pxToRem(52px);
+            	top: 50%;
+            	left: 50%;
+            	margin-top: pxToRem(-26px);
+            	margin-left: pxToRem(-23px);
+            	background-size: contain;
+            	display: block;
+            }
+        }
+        .l-name {
+        	font-size: pxToRem(30px);
+        	color: #424242;
+        }
+        .l-amount {
+        	font-size: pxToRem(30px);
+        	color: #ff6e30;
+        }
+    }
+    // .l-tr:nth-of-type(n) {
+    // 	position: relative;
+    // 	&:before {
+    // 		@include border('top', #e6e6e6);
+    // 	}
+    // }
+    .medal-gold {
+    	background: url('../images/medal-gold.png') no-repeat;
+    }
+    .medal-sliver {
+    	background: url('../images/medal-sliver.png') no-repeat;
+    }
+    .medal-bonze {
+    	background: url('../images/medal-bonze.png') no-repeat;
+    }
+}
+.mr-cont {
+	width: 100%;
+	height: pxToRem(136px);
+	padding: pxToRem(28px) pxToRem(20px);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, 1) 15%);;
+	// background-image: url('../images/l-masker.png');
+	// background-size: pxToRem(610px) pxToRem(38px);
+	// background-position: top center;
+	// background-repeat: no-repeat;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	border-bottom-left-radius: pxToRem(30px);
+	border-bottom-right-radius: pxToRem(30px);
+	.l-tr {
+		@include background('../images/mr-bg.png', 610px, 80px);
+	}
+}
+
+.gift-list {
+	width: 100%;
+	margin-top: pxToRem(40px);
+	padding-left: pxToRem(36px);
+	text-align: center;
+	.g-cont {
+		@include background('../images/gift-bg.png', 519px, 184px);
+		position: relative;
+		margin-top: pxToRem(10px);
+		padding-top: pxToRem(54px);
+	}
+	.g-title {
+		@include background('../images/gt-bg.png', 161px, 57px);
+		position: absolute;
+		top: pxToRem(-6px);
+		left: 50%;
+		margin-left: pxToRem(-80px);
+		font-size: pxToRem(26px);
+		color: #fff;
+		line-height: pxToRem(50px);
+	}
+}
