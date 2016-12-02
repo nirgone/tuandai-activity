@@ -54,8 +54,8 @@ a {
             background-color: #fee13d;
             width: pxToRem(142px);
             text-align: center;
-             .rule-text {
-               font-size: pxToRem(22px); 
+            .rule-text {
+                font-size: pxToRem(22px);
                 display: inline-block;
                 vertical-align: middle;
             }
@@ -171,6 +171,11 @@ a {
                     font-size: pxToRem(30px);
                     vertical-align: middle;
                     display: inline-block;
+                    .not-win {
+                        font-size: pxToRem(24px);
+                        color: #fd8d4d;
+                        display: none;
+                    }
                 }
                 .task-status {
                     position: absolute;
@@ -187,12 +192,15 @@ a {
                         text-align: center;
                         position: relative;
                         top: pxToRem(2px);
+                        &.btn-sign-nothing {
+                            display: none;
+                        }
                     }
                     .task-done {
                         display: none;
                         width: pxToRem(202px);
                         font-size: 0;
-                        position:relative;
+                        position: relative;
                         .icon-tick {
                             background-image: url("../images/icon-tick.png");
                             width: pxToRem(44px);
@@ -210,12 +218,13 @@ a {
                         }
                     }
                     &.done {
-                       .btn-get  {
-                        display: none;
-                       } 
-                       .task-done  {
-                        display: block;;
-                       } 
+                        .btn-get {
+                            display: none;
+                        }
+                        .task-done {
+                            display: block;
+                            ;
+                        }
                     }
                 }
             }
