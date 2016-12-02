@@ -68,6 +68,13 @@
             }
             hide(popup);
         });
+        masker.on("click", function(e) {
+            var _closefun = _options.closeCallback;
+            if (_closefun) {
+                _closefun();
+            }
+            hide(popup);
+        });
 
         function hide(target) {
             target.remove();
