@@ -10,9 +10,11 @@
 		if (hasStarted) {
 			$(".no-pro").hide();
 			$(".pro-wrapper").show();
+			$(".icon-list").show();
 		} else {
 			$(".no-pro").show();
 			$(".pro-wrapper").hide();
+			$(".icon-list").hide();
 		}
 		//开始倒计时
 		start();
@@ -26,6 +28,10 @@
 
 			});
 	});
+	//爱心榜单
+	$(".icon-list").on('click', function() {
+		window.location.href = "./loveList.html";
+	})
 	//倒计时
 	/*var objs = $(".btn-countdown");
 	var timeJson = {};
