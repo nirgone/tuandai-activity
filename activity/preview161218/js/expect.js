@@ -184,10 +184,10 @@
                     } else {
                         system = 9;
                     }
-                    _next = value - 1 ? system: value -1;
+                    _next = value - 1 < 0 ? system: value -1;
                     
                 } else {
-                    _next = value - 1 ? 2 : value -1;
+                    _next = value - 1 < 0 ? 2 : value -1;
                 }
             } else {
                 system = system ? system - 1 : 9;

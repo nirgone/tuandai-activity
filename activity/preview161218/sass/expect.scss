@@ -1,6 +1,5 @@
 @charset "UTF-8";
 @import "variables";
-@import "../../../sass/reset";
 @import "../../../sass/func";
 
 
@@ -97,7 +96,7 @@
         box-sizing: border-box;
         text-align:left;
         padding-left: pxToRem(2px);
-        font-weight: bold;
+        // font-weight: bold;
         span {
         	display: block;
         	position: absolute;
