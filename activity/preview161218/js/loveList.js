@@ -1,5 +1,10 @@
 (function() {
 	FastClick.attach(document.body);
-	var mySwiper = new Swiper('.swiper-container', {});
+
+	var swiper = new Swiper('.swiper-container', {
+		slidesPerView: 'auto',
+		// spaceBetween: 15
+	});
+
 
 })();
