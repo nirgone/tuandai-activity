@@ -2,11 +2,7 @@
 @import "variables";
 @import "../../../sass/reset";
 @import "../../../sass/func";
-.icon-title-page3 {
-    @include background('../images/title_page3.png', 614px, 54px);
-    margin: auto;
-    margin-top: pxToRem(56px);
-}
+
 
 .list {
     font-size: 0;
@@ -161,6 +157,11 @@
 //     }
 // }
 //icon
+.icon-title-page3 {
+    @include background('../images/title_page3.png', 610px, 54px);
+    margin: auto;
+    margin-top: pxToRem(56px);
+}
 .icon-ticket {
     @include icon-background('../images/ticket.png', 204px, 142px);
     margin-left: pxToRem(-204px/2);

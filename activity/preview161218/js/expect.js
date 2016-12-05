@@ -100,7 +100,7 @@
                             _nexts = [5, 9];
                         } else {
                             var _next_ten = Math.floor(value/10) - 1;
-                            _nexts = [_next_ten < 0 ? 9 : _next_ten ,(value - 1)%10];
+                            _nexts = [_next_ten < 0 ? 5 : _next_ten, (value - 1)%10];
                         }
                         
                     break;
