@@ -30,7 +30,46 @@ a {
         margin: auto;
         margin-bottom: pxToRem(24px);
     }
-    .date {
+    .md {
+        font-size: 0;
+        margin-bottom: pxToRem(78px);
+        text-align: center;
+        .act-time {
+            display: inline-block;
+            line-height: pxToRem(36px);
+            vertical-align: middle;
+            height: pxToRem(36px);
+            margin-top: 0;
+        }
+        .check-rule {
+            color: #f16c26;
+            font-size: 0;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: pxToRem(36px);
+            height: pxToRem(36px);
+            margin-left: pxToRem(36px);
+            border-radius: pxToRem(18px);
+            background-color: #fee13d;
+            width: pxToRem(142px);
+            text-align: center;
+            .rule-text {
+               font-size: pxToRem(22px); 
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .icon-arrow {
+                vertical-align: middle;
+                margin-left: pxToRem(10px);
+            }
+           /*  &:after {
+                @extend .icon-arrow;
+                content: "";
+                margin-left: pxToRem(10px);
+            } */
+        }
+    }
+    /* .date {
         color: #fc7934;
         font-size: pxToRem(22px);
         background-color: #fdfce8;
@@ -52,7 +91,7 @@ a {
         .check-rule {
             color: #ddff25;
         }
-    }
+    } */
     .lottery-num {
         font-size: pxToRem(24px);
         color: #fff;
@@ -62,7 +101,7 @@ a {
         margin: auto;
         text-align: center;
         background-image: url("../images/hexagon.png");
-        margin-bottom: pxToRem(30px);
+        margin-bottom: pxToRem(48px);
         font {
             margin: 0 pxToRem(8px);
             color: #ddff25;
@@ -181,6 +220,6 @@ a {
         margin: auto;
         color: #fff;
         margin-bottom: pxToRem(30px);
-        margin-top: pxToRem(22px);
+        margin-top: pxToRem(42px);
     }
 }
