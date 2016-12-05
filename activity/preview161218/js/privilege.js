@@ -14,6 +14,7 @@
 	//领取1%加息
 	pageContentEl.on("click", ".get-interest-onepercent", function() {
 		Util.alertJiaxi("1", function() {
+			onePercentTaskEl.find(".task-status").addClass("done");
 			// 设置总的加息特权 百分比根据实际变化
 			interestTextEl.text("1");
 		});
@@ -32,6 +33,9 @@
 					// TODO: 跳转至手机签到链接
 					window.location.href = ""
 				}
+			},
+			closeCallback: function() {
+
 			}
 		});
 	});
@@ -40,7 +44,10 @@
 	pageContentEl.on("click", ".btn-sign-nothing", function() {
 		Util.alertCommon({
 			type: 3,
-			content: '<p>噢哦，未抽中加息特权～</p><p>明日再接再厉，签到赢加息特权</p>'
+			content: '<p>噢哦，未抽中加息特权～</p><p>明日再接再厉，签到赢加息特权</p>',
+			closeCallback: function() {
+
+			}
 		});
 	});
 
@@ -59,12 +66,17 @@
 		if (isShowSignDialog) {
 			switch (statusSign) { //签到
 				case 2: //获得加息
-					Util.alertJiaxi("0.1")
+					Util.alertJiaxi("0.1", function() {
+
+					})
 					break;
 				case 1: //未获得加息
 					Util.alertCommon({
 						type: 3,
-						content: '<p>噢哦，未抽中加息特权～</p><p>明日再接再厉，签到赢加息特权</p>'
+						content: '<p>噢哦，未抽中加息特权～</p><p>明日再接再厉，签到赢加息特权</p>',
+						closeCallback: function() {
+
+						}
 					});
 					break;
 			}

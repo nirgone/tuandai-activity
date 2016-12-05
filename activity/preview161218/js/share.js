@@ -86,6 +86,9 @@
 							// TODO: 跳转至立即投资链接
 							window.location.href = "https://m.tuandai.com/pages/invest/WE/WE_list.aspx"
 						}
+					},
+					closeCallback: function() {
+
 					}
 				});
 			} else { //有刮奖机会，不支持刮奖效果，直接显示刮奖结果
@@ -104,6 +107,9 @@
 							// TODO: 跳转至立即邀请链接
 							window.location.href = "https://m.tuandai.com/pages/invest/WE/WE_list.aspx"
 						}
+					},
+					closeCallback: function() {
+
 					}
 				})
 			} else { //有刮奖机会，不支持刮奖效果，直接显示刮奖结果
