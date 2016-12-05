@@ -148,18 +148,20 @@
                         that.values.hours = 23;
                         --that.values.days;
                     }
+
+
                     // Update DOM values
                     // Days
-                    that.checkHour(that.values.days, $day_0, $day_1);
+                    // that.checkHour(that.values.days, $day_0, $day_1);
 
-                    // Hours
-                    that.checkHour(that.values.hours, $hour_0, $hour_1);
+                    // // Hours
+                    // that.checkHour(that.values.hours, $hour_0, $hour_1);
 
-                    // Minutes
-                    that.checkHour(that.values.minutes, $min_0, $min_1);
+                    // // Minutes
+                    // that.checkHour(that.values.minutes, $min_0, $min_1);
 
                     // Seconds
-                    that.checkHour(that.values.seconds, $sec_0, $sec_1)
+                    that.checkSec(that.values.seconds, $sec_0, $sec_1);
 
                     --that.total_seconds;
                 } else {
@@ -178,16 +180,16 @@
             // console.log(_type, this.values);
 
             if (_type === "hour") {
-                if(system) {
-                    if(this.values.hour < 9) {
+                if (system) {
+                    if (this.values.hour < 9) {
                         system = 3;
                     } else {
                         system = 9;
                     }
-                    _next = value - 1 < 0 ? system: value -1;
-                    
+                    _next = value - 1 < 0 ? system : value - 1;
+
                 } else {
-                    _next = value - 1 < 0 ? 2 : value -1;
+                    _next = value - 1 < 0 ? 2 : value - 1;
                 }
             } else {
                 system = system ? system - 1 : 9;
@@ -198,16 +200,38 @@
             $current[0].className = "prev";
             $current.html(_next);
 
-
-
             // animated
             setTimeout(function() {
                 $current[0].className = "next";
             }, 200);
 
         },
-
         checkHour: function(value, $el_0, $el_1) {
+            this.checkTime(value, $el_0, $el_1);
+            var $day_0 = this.$.minutes.find(".day0"),
+                $day_1 = this.$.minutes.find(".day1");
+            if (this.values.hours == 23) {
+                this.checkDay(this.values.days, $day_0, $day_1);
+            }
+        },
+        checkMin: function(value, $el_0, $el_1) {
+            this.checkTime(value, $el_0, $el_1);
+            var $hour_0 = this.$.minutes.find(".hour0"),
+                $hour_1 = this.$.minutes.find(".hour1");
+            if (this.values.minutes == 59) {
+                this.checkHour(this.values.hours, $hour_0, $hour_1);
+            }
+        },
+        checkSec: function(value, $el_0, $el_1) {
+            this.checkTime(value, $el_0, $el_1);
+            var $min_0 = this.$.minutes.find(".min0"),
+                $min_1 = this.$.minutes.find(".min1");
+            if (this.values.seconds == 59) {
+                this.checkMin(this.values.minutes, $min_0, $min_1);
+            }
+        },
+
+        checkTime: function(value, $el_0, $el_1) {
             var val_0 = value.toString().charAt(0),
                 val_1 = value.toString().charAt(1),
                 fig_0_value = $el_0.find('.current').html(),
