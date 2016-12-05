@@ -206,18 +206,19 @@
             }, 200);
 
         },
+        
         checkHour: function(value, $el_0, $el_1) {
             this.checkTime(value, $el_0, $el_1);
-            var $day_0 = this.$.minutes.find(".day0"),
-                $day_1 = this.$.minutes.find(".day1");
+            var $day_0 = this.$.days.find(".day0"),
+                $day_1 = this.$.days.find(".day1");
             if (this.values.hours == 23) {
-                this.checkDay(this.values.days, $day_0, $day_1);
+                this.checkTime(this.values.days, $day_0, $day_1);
             }
         },
         checkMin: function(value, $el_0, $el_1) {
             this.checkTime(value, $el_0, $el_1);
-            var $hour_0 = this.$.minutes.find(".hour0"),
-                $hour_1 = this.$.minutes.find(".hour1");
+            var $hour_0 = this.$.hours.find(".hour0"),
+                $hour_1 = this.$.hours.find(".hour1");
             if (this.values.minutes == 59) {
                 this.checkHour(this.values.hours, $hour_0, $hour_1);
             }
@@ -257,7 +258,7 @@
     };
 
     // Let's go !
-    Countdown.init(new Date(2016, 11, 18, 0, 00, 0));
+    Countdown.init(new Date(2016, 11, 18, 18, 5, 0));
 
     // 倒计时   end---------------
 })();
