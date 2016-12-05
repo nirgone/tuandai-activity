@@ -13,12 +13,13 @@ body {
     margin: 0;
     padding: 0;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    background-color:$bg-orange;
+    background-color: $bg-orange;
 }
-.scroll-active {
-      -webkit-overflow-scrolling: touch !important;
 
-    }
+.scroll-active {
+    -webkit-overflow-scrolling: touch !important;
+}
+
 a {
     text-decoration: none;
 }
@@ -58,7 +59,7 @@ a {
         font-size: pxToRem(30px);
         color: #fffbe8;
         &.active {
-        	background-color: #ef8406;
+            background-color: #ef8406;
         }
     }
 }
@@ -225,10 +226,10 @@ a {
         text-align: justify;
         // box-shadow: 0 pxToRem(-78px) pxToRem(78px) black inset;
         // .popup-content {
-        // 	width: 100%;
-        // 	height: 100%;
-        // 	overflow: scroll;
-        // 	z-index: 1000;
+        //  width: 100%;
+        //  height: 100%;
+        //  overflow: scroll;
+        //  z-index: 1000;
         // }
         // &.more {
         // 
@@ -260,10 +261,11 @@ a {
             }
         }
         .btn-orange {
-        	margin-top: (20px);
+            margin-top: (20px);
         }
     }
 }
+
 .title-heart {
     position: relative;
     &:before {
@@ -286,6 +288,7 @@ a {
         transform: rotateY(180deg);
     }
 }
+
 .to-start {
     color: #fd7a33;
     text-align: center;
@@ -295,23 +298,26 @@ a {
         position: relative;
         &:before {
             content: "";
-            @include icon-background('../images/bracket.png', 33px, 29px);
-            @extend .icon-block;
+            @extend .icon-bracket;
+            // @extend .icon-block;
+            // @include icon-background('../images/bracket.png', 33px, 29px);
             position: absolute;
-            left: pxToRem(-50px);
             top: pxToRem(-20px);
+            left: pxToRem(-50px);
         }
         &:after {
             content: "";
-            @include icon-background('../images/bracket.png', 33px, 29px);
-            @extend .icon-block;
+            @extend .icon-bracket;
+            // @extend .icon-block;
+            // @include icon-background('../images/bracket.png', 33px, 29px);
             position: absolute;
-            right: pxToRem(-50px);
             top: pxToRem(-20px);
+            right: pxToRem(-50px);
             transform: rotate(180deg);
         }
     }
 }
+
 .act-time {
     // width: pxToRem(356px);
     // height: pxToRem(40px);
@@ -325,7 +331,8 @@ a {
     display: block;
     margin-top: pxToRem(26px);
 }
+
 .icon-arrow {
-    @include icon-background('../images/icon-arrow.png', 11px, 19px);
+    @include icon-background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAATBAMAAAC0B+rjAAAAJFBMVEUAAAD8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDS9xPZPAAAADHRSTlMA/RXUkEla5nNHJxeUcVZ0AAAAMElEQVQI12PgZgCD5Q5gaqIImGIVhHADieGyCTaAKGVhBSDJZGhEDIch0QiiF8wBABkUB6BnlrRMAAAAAElFTkSuQmCC', 11px, 19px);
     @extend .icon-inline-block;
 }
