@@ -57,15 +57,15 @@
 
             // Init countdown values
             this.values = {
-                hours  : 10,
+                hours: 10,
                 minutes: 0,
                 seconds: 0,
             };
-    
+
             // Initialize total seconds
             this.total_seconds = date - new Date();
             this.values = getTimeDiff(this.total_seconds);
-            this.total_seconds = this.values.days * 24 * 60 * 60 + this.values.hours * 60 * 60 + (this.values.minutes * 60) + this.values.seconds -1;
+            this.total_seconds = this.values.days * 24 * 60 * 60 + this.values.hours * 60 * 60 + (this.values.minutes * 60) + this.values.seconds - 1;
             this.initData(this.values);
             // Animate countdown to the end 
             this.count();
@@ -80,32 +80,32 @@
                 var _type = $el.attr("data-type");
                 var _values = value < 10 ? [0, value] : getTensAndUnit(value);
                 var _nexts = [];
-                
+
                 switch (_type) {
-                    case "day": 
-                        var _next_ten = Math.floor(value/10) - 1;
-                            _nexts = [_next_ten < 0 ? 9 : _next_ten ,(value - 1)%10];
-                    break;
-                    case "hour": 
-                        if(value == 0) {
+                    case "day":
+                        var _next_ten = Math.floor(value / 10) - 1;
+                        _nexts = [_next_ten < 0 ? 9 : _next_ten, (value - 1) % 10];
+                        break;
+                    case "hour":
+                        if (value == 0) {
                             _nexts = [2, 3];
                         } else {
-                            var _next_ten = Math.floor(value/10) - 1;
-                            _nexts = [_next_ten < 0 ? 2: _next_ten,(value - 1)%10];
+                            var _next_ten = Math.floor(value / 10) - 1;
+                            _nexts = [_next_ten < 0 ? 2 : _next_ten, (value - 1) % 10];
                         }
-                    break;
-                    case "min": 
-                    case "sec": 
-                        if(value == 0) {
+                        break;
+                    case "min":
+                    case "sec":
+                        if (value == 0) {
                             _nexts = [5, 9];
                         } else {
-                            var _next_ten = Math.floor(value/10) - 1;
-                            _nexts = [_next_ten < 0 ? 5 : _next_ten, (value - 1)%10];
+                            var _next_ten = Math.floor(value / 10) - 1;
+                            _nexts = [_next_ten < 0 ? 5 : _next_ten, (value - 1) % 10];
                         }
-                        
-                    break;
+
+                        break;
                 }
-               
+
 
                 $el.find(".tens .current").html(_values[0]);
                 $el.find(".tens .next").html(_nexts[0]);
@@ -144,7 +144,7 @@
                         --that.values.hours;
                     }
 
-                    if (that.values.days >= 0 && that.values.hours < 0 ) {
+                    if (that.values.days >= 0 && that.values.hours < 0) {
                         that.values.hours = 23;
                         --that.values.days;
                     }
@@ -174,15 +174,26 @@
             var _type = $el.parent().attr("data-type");
             var system = $el.attr("data-system");
             var _next;
-            if(_type === "hour") {
-                if(this.values.hours === 0 ) {
-                    _next = system ? 2 : 3;
+
+            // console.log(_type, this.values);
+
+            if (_type === "hour") {
+                if(system) {
+                    if(this.values.hour < 9) {
+                        system = 3;
+                    } else {
+                        system = 9;
+                    }
+                    _next = value - 1 ? system: value -1;
+                    
+                } else {
+                    _next = value - 1 ? 2 : value -1;
                 }
             } else {
-                system = system  ? system - 1 : 9;
+                system = system ? system - 1 : 9;
                 _next = value - 1 < 0 ? system : value - 1;
             }
-            
+
             $next[0].className = "current";
             $current[0].className = "prev";
             $current.html(_next);
