@@ -162,6 +162,7 @@
         color: #ffffff;
         text-align: center;
         margin: auto;
+        @include background('../images/btn-item.png', 256px, 98px);
     }
     .btn-get {
         font-size: pxToRem(30px);
