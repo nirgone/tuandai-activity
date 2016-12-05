@@ -43,23 +43,23 @@
             popup.addClass("popup-icon");
         }
         popup_header.append(popup_close);
-        if(_options.btn) {
+        if (_options.btn) {
             var btn = $("<div/>").addClass("btn-orange").html(_options.btn.name);
 
             popup_content.append(btn);
             btn.on("click", function(e) {
                 var _callback = _options.btn.callback;
-            if (_callback) {
-                _callback();
-            }
-            hide(popup);
-        });
+                if (_callback) {
+                    _callback();
+                }
+                hide(popup);
+            });
         }
         popup_wrapper.append(popup_header).append(popup_content);
         popup.append(masker).append(popup_wrapper);
         $("body").append(popup);
         disableScrolling();
-        
+
 
         popup_close.on("click", function(e) {
             var _closefun = _options.closeCallback;
@@ -103,19 +103,12 @@
         //加息提示弹窗，percent--加息百分比
         alertJiaxi: function(percent, closeCallback) {
             popup({
-                "icon":"pop0",
-                "content": '<p>恭喜您获得加息特权</p><p class="percent">'+percent+'</p>',
+                "icon": "pop0",
+                "content": '<p>恭喜您获得加息特权</p><p class="percent">' + percent + '</p>',
                 "closeCallback": closeCallback
             });
         },
-        //加息提示弹窗，percent--加息百分比
-        alertJiaxi: function(percent, closeCallback) {
-            popup({
-                "icon":"pop0",
-                "content": '<p>恭喜您获得加息特权</p><p class="percent">'+percent+'</p>',
-                "closeCallback": closeCallback
-            });
-        },
+
         //带icon和按钮的弹窗
         // option: {
         //     type:  取值[1, 2]--icon类型
@@ -128,7 +121,7 @@
         // }
         alertCommon: function(option) {
             popup({
-                "icon":"pop" + option.type,
+                "icon": "pop" + option.type,
                 "content": option.content,
                 "btn": option.btn,
                 "closeCallback": option.closeCallback
