@@ -123,10 +123,10 @@
         }
     }
     // .l-tr:nth-of-type(n) {
-    // 	position: relative;
-    // 	&:before {
-    // 		@include border('top', #e6e6e6);
-    // 	}
+    //  position: relative;
+    //  &:before {
+    //      @include border('top', #e6e6e6);
+    //  }
     // }
     .medal-gold {
         // background: url('../images/medal-gold.png') no-repeat;
@@ -274,10 +274,4 @@
     align-items: center;
 }
 
-.swiper-slide:nth-child(2n) {
-    // width: 80%;
-}
 
-.swiper-slide:nth-child(3n) {
-    // width: 80%;
-}

@@ -318,6 +318,43 @@ a {
     }
 }
 
+.no-pro {
+    @include background('../images/presale_bg1.png', 674px, 758px);
+    // @extend .icon-block;
+    display: none;
+    margin: auto;
+    // position: relative;
+    &:before {
+        width: pxToRem(225px);
+        height: pxToRem(236px);
+        margin-left: pxToRem(-113px);
+        top: 30%;
+    }
+    .to-start {
+        font-size: pxToRem(40px);
+    }
+}
+
+.ts-cont {
+    position: relative;
+    &:before {
+        content: "";
+        // @include background('../images/icon_chair.png', 225px, 236px);
+        background: url('../images/icon_chair.png') no-repeat;
+        background-size: contain;
+        position: absolute;
+        left: 50%;
+        // top: 30%;
+        // margin-left: pxToRem(-113px);
+    }
+    .to-start {
+        // font-size: pxToRem(40px);
+        position: absolute;
+        left: 0;
+        top: 68%;
+    }
+}
+
 .act-time {
     // width: pxToRem(356px);
     // height: pxToRem(40px);
@@ -333,6 +370,8 @@ a {
 }
 
 .icon-arrow {
-    @include icon-background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAATBAMAAAC0B+rjAAAAJFBMVEUAAAD8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDS9xPZPAAAADHRSTlMA/RXUkEla5nNHJxeUcVZ0AAAAMElEQVQI12PgZgCD5Q5gaqIImGIVhHADieGyCTaAKGVhBSDJZGhEDIch0QiiF8wBABkUB6BnlrRMAAAAAElFTkSuQmCC', 11px, 19px);
+    @include icon-background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAATBAMAAAC0B+rjAAAAJFBMVEUAAAD8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDS9xPZPAAAADHRSTlMA/RXUkEla5nNHJxeUcVZ0AAAAMElEQVQI12PgZgCD5Q5gaqIImGIVhHADieGyCTaAKGVhBSDJZGhEDIch0QiiF8wBABkUB6BnlrRMAAAAAElFTkSuQmCC',
+    11px,
+    19px);
     @extend .icon-inline-block;
 }

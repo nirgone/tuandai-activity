@@ -104,10 +104,27 @@
 <!-- build:js({dist}) ../js/lib/vendor/swiper/swiper.jquery.min.js -->
 <script src="../js/vendor/swiper/swiper.jquery.min.js"></script>
 <!-- endbuild -->
+<!-- build:js({dist}) ../js/lib/vendor/jsbridge-3.0.0.js -->
+<script src="../js/vendor/jsbridge-3.1.0.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/Util.js" type="text/javascript" charset="utf-8"></script>
 <!-- <script src="../js/index.js" type="text/javascript" charset="utf-8"></script> -->
 <script type="text/javascript">
 (function() {
     FastClick.attach(document.body);
+    var isApp = true; //是否为app端打开
+    var isLogined; //是否已登录
+    var option;
+    if (isApp) {
+        option = {
+            t: Util.getParam('t'),
+            s: Util.getParam('s'),
+        };
+        isLogined = Util.checkLogin(option);
+        // console.info("juan------", isLogined);
+    } else {
+        //获取触屏版登录状态
+    }
     var mySwiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
     });
@@ -137,8 +154,10 @@
         });
     }
     $(".btn-join").on('click', function() {
-        window.location.href = './privilege.html';
-    })
+        window.location.href = './privilege.html?option='  + JSON.stringify(option);
+    });
+
+
 })();
 </script>
 

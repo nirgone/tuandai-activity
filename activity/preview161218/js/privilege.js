@@ -6,6 +6,18 @@
 	var investTaskEl = pageContentEl.find(".get-interest-invest"); //投资任务dom
 	var inviteTaskEl = pageContentEl.find(".get-interest-invite"); //邀请任务dom
 	var interestTextEl = pageContentEl.find(".interest-ticket-wrapper font"); //加息文本dom
+
+	var isApp = true; //是否为app端打开
+	var isLogined; //是否已登录
+	var option;
+	//获取登录状态
+	if (isApp) {
+		option = Util.getParam('option');
+		isLogined = Util.checkLogin(option);
+		// console.info("juan------", isLogined);
+	} else {
+		//获取触屏版登录状态
+	}
 	// 查看加息说明
 	pageContentEl.on("click", ".check-rule", function() {
 		$(".dialog").show();
