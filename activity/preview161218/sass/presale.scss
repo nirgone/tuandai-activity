@@ -62,43 +62,43 @@
 .pro-cont {
     width: 100%;
     margin-top: pxToRem(40px);
-    .no-pro {
-        @include background('../images/presale_bg1.png', 674px, 758px);
-        // @extend .icon-block;
-        display: none;
-        margin: auto;
-        // position: relative;
-        &:before {
-            width: pxToRem(225px);
-            height: pxToRem(236px);
-            margin-left: pxToRem(-113px);
-            top: 30%;
-        }
-        .to-start {
-            font-size: pxToRem(40px);
-        }
-    }
+    // .no-pro {
+    //     @include background('../images/presale_bg1.png', 674px, 758px);
+    //     // @extend .icon-block;
+    //     display: none;
+    //     margin: auto;
+    //     // position: relative;
+    //     &:before {
+    //         width: pxToRem(225px);
+    //         height: pxToRem(236px);
+    //         margin-left: pxToRem(-113px);
+    //         top: 30%;
+    //     }
+    //     .to-start {
+    //         font-size: pxToRem(40px);
+    //     }
+    // }
 }
 
-.ts-cont {
-    position: relative;
-    &:before {
-        content: "";
-        // @include background('../images/icon_chair.png', 225px, 236px);
-        background: url('../images/icon_chair.png') no-repeat;
-        background-size: contain;
-        position: absolute;
-        left: 50%;
-        // top: 30%;
-        // margin-left: pxToRem(-113px);
-    }
-    .to-start {
-        // font-size: pxToRem(40px);
-        position: absolute;
-        left: 0;
-        top: 68%;
-    }
-}
+// .ts-cont {
+//     position: relative;
+//     &:before {
+//         content: "";
+//         // @include background('../images/icon_chair.png', 225px, 236px);
+//         background: url('../images/icon_chair.png') no-repeat;
+//         background-size: contain;
+//         position: absolute;
+//         left: 50%;
+//         // top: 30%;
+//         // margin-left: pxToRem(-113px);
+//     }
+//     .to-start {
+//         // font-size: pxToRem(40px);
+//         position: absolute;
+//         left: 0;
+//         top: 68%;
+//     }
+// }
 
 .pro-wrapper {
     // display: none;
@@ -204,5 +204,5 @@
 	position: absolute;
 	right: pxToRem(10px);
 	bottom: pxToRem(124px);
-	display: none;
+	// display: none;
 }

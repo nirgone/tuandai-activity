@@ -6,15 +6,28 @@
 	var sTime = 0;
 	var startTime = new Date().getTime();
 	var count = 0;
+	var isApp = true; //是否为app端打开
+	var isLogined; //是否已登录
+	var option;
+
+
 	function init() {
 		if (hasStarted) {
 			$(".no-pro").hide();
 			$(".pro-wrapper").show();
-			$(".icon-list").show();
+			// $(".icon-list").show();
 		} else {
 			$(".no-pro").show();
 			$(".pro-wrapper").hide();
-			$(".icon-list").hide();
+			// $(".icon-list").hide();
+		}
+		//获取登录状态
+		if (isApp) {
+			option = Util.getParam('option');
+			isLogined = Util.checkLogin(option);
+			// console.info("juan------", isLogined);
+		} else {
+			//获取触屏版登录状态
 		}
 		//开始倒计时
 		start();
@@ -30,14 +43,14 @@
 	});
 	//爱心榜单
 	$(".icon-list").on('click', function() {
-		window.location.href = "./loveList.html";
-	})
-	//倒计时
-	/*var objs = $(".btn-countdown");
-	var timeJson = {};
-	var sTime = 0;
-	var startTime = new Date().getTime();
-	var count = 0;*/
+			window.location.href = "./loveList.html?option=" + option;
+		})
+		//倒计时
+		/*var objs = $(".btn-countdown");
+		var timeJson = {};
+		var sTime = 0;
+		var startTime = new Date().getTime();
+		var count = 0;*/
 
 	function start() {
 		// console.info("objs----", objs);
@@ -123,10 +136,15 @@
 	//跳转到WE计划项目详情
 	$("body").on('click', '.btn-get', function() {
 		var id = $(this).attr('data-id');
-		if (Jsbridge.isNewVersion()) {
-			Jsbridge.toAppWePlanDetail(productId, typeId, subTypeId, weXPlanType, title);
-		} else {
+		if (isLogined) {
+			if (Jsbridge.isNewVersion()) {
+				Jsbridge.toAppWePlanDetail(productId, typeId, subTypeId, weXPlanType, title);
+			} else {
 
+			}
+		} else {
+			//打开登录页面
+			Util.openLogin();
 		}
 	});
 

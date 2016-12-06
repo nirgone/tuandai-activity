@@ -110,6 +110,9 @@
                         </li>
                     </div>
                 </ul>
+                <div class="no-pro ts-cont">
+                    <div class="to-start"><span>敬请期待</span></div>
+                </div>
             </div>
             <div class="gift-list">
                 <div class="swiper-container">
@@ -217,7 +220,14 @@
 <script type="text/javascript">
 (function() {
     FastClick.attach(document.body);
-
+    var hasStarted = true;//活动是否开始
+    if (hasStarted) {
+        $(".l-list").show();
+        $(".no-pro").hide();
+    } else {
+        $(".l-list").hide();
+        $(".no-pro").show();
+    }
     var swiper = new Swiper('.swiper-container', {
         slidesPerView: 'auto',
         // spaceBetween: 15
@@ -228,6 +238,7 @@
 
             });
     });
+
 
 
 })();
