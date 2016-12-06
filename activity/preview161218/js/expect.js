@@ -172,7 +172,8 @@
         animateFigure: function($el, value) {
             var that = this,
                 $next = $el.find('.next'),
-                $current = $el.find('.current');
+                $current = $el.find('.current'),
+                $prev = $el.find('.prev');
             var _type = $el.parent().attr("data-type");
             var system = $el.attr("data-system");
             var _next;
@@ -198,15 +199,21 @@
 
             $next[0].className = "current";
             $current[0].className = "prev";
-            $current.html(_next);
+            $prev[0].className = "next";
+            $prev.html(_next);
 
             // animated
-            setTimeout(function() {
-                $current[0].className = "next";
-            }, 200);
+            // (function(el) {
+            //     setTimeout(function() {
+            //         el.className = "next";
+            //     }, 200);
+            // })($current[0])
+            // setTimeout(function() {
+            //     $current[0].className = "next";
+            // }, 200);
 
         },
-        
+
         checkHour: function(value, $el_0, $el_1) {
             this.checkTime(value, $el_0, $el_1);
             var $day_0 = this.$.days.find(".day0"),
