@@ -205,13 +205,15 @@
 
 .f-cont {
     max-width: 414px;
-    margin: auto;
+    // margin: auto;
+    left: 50%;
     width: 100%;
     height: pxToRem(130px);
     position: absolute;
     bottom: 0;
     background: linear-gradient(180deg, rgba(255,110,48,0) 2%, rgba(255,110,48,1) 99%) !important;
     text-align: center;
+    transform: translate(-50%, 0);
     .btn-join {
         width: pxToRem(360px);
         height: pxToRem(80px);
