@@ -45,7 +45,7 @@
         total_seconds: 0,
 
         // Initialize the countdown  
-        init: function(date) {
+        init: function(ms) {
 
             // DOM
             this.$ = {
@@ -63,9 +63,10 @@
             };
 
             // Initialize total seconds
-            this.total_seconds = date - new Date();
-            this.values = getTimeDiff(this.total_seconds);
-            this.total_seconds = this.values.days * 24 * 60 * 60 + this.values.hours * 60 * 60 + (this.values.minutes * 60) + this.values.seconds - 1;
+            // this.total_seconds = seconds;
+            this.values = getTimeDiff(ms);
+            // this.total_seconds = this.values.days * 24 * 60 * 60 + this.values.hours * 60 * 60 + (this.values.minutes * 60) + this.values.seconds - 1;
+            this.total_seconds = ms / 1000 - 1;
             this.initData(this.values);
             // Animate countdown to the end 
             this.count();
@@ -265,7 +266,7 @@
     };
 
     // Let's go !
-    Countdown.init(new Date(2016, 11, 18, 18, 5, 0));
+    Countdown.init(24 * 60 * 60 * 1000);
 
     // 倒计时   end---------------
 })();
