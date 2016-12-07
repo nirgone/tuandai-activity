@@ -67,17 +67,17 @@ a {
     }
     .increase-interest {
         width: pxToRem(674px);
-        height: pxToRem(374px);
+        height: pxToRem(314px);
         background-image: url("../images/bg-increase-interest.png");
         margin: auto;
-        margin-bottom: pxToRem(36px);
-        padding-top: pxToRem(42px);
+        margin-bottom: pxToRem(26px);
+        padding-top: pxToRem(38px);
         box-sizing: border-box;
         .increase-interest-title {
             text-align: center;
             margin: auto;
             font-size: 0;
-            margin-bottom: pxToRem(36px);
+            margin-bottom: pxToRem(32px);
             font {
                 font-size: pxToRem(36px);
                 font-weight: bold;
@@ -95,24 +95,24 @@ a {
         }
         .interest-ticket-wrapper {
             position: relative;
-            width: pxToRem(456px);
-            height: pxToRem(192px);
+            width: pxToRem(384px);
+            height: pxToRem(146px);
             background-image: url("../images/bg-interest-ticket.png");
             margin: auto;
             text-align: center;
             font {
-                line-height: pxToRem(192px);
+                line-height: pxToRem(146px);
                 text-align: center;
                 color: #fff;
-                font-size: pxToRem(106px);
+                font-size: pxToRem(80px);
                 font-weight: bold;
                 &:before {
                     content: "+";
                 }
                 &:after {
                     content: "%";
-                    font-size: pxToRem(56px);
-                    margin-left: pxToRem(10px);
+                    font-size: pxToRem(38px);
+                    margin-left: pxToRem(6px);
                 }
             }
         }
@@ -122,7 +122,7 @@ a {
         background-color: #f16d25;
         box-shadow: 0 pxToRem(10px) pxToRem(20px) rgba(0, 0, 0, .1);
         width: pxToRem(674px);
-        height: pxToRem(464px);
+        height: pxToRem(544px);
         padding: pxToRem(12px);
         box-sizing: border-box;
         position: relative;
@@ -192,6 +192,9 @@ a {
                         text-align: center;
                         position: relative;
                         top: pxToRem(2px);
+                        &.btn-lottery {
+                            display: none;
+                        }
                         &.btn-sign-nothing {
                             display: none;
                         }
@@ -219,11 +222,10 @@ a {
                     }
                     &.done {
                         .btn-get {
-                            display: none;
+                            display: none !important;
                         }
                         .task-done {
-                            display: block;
-                            ;
+                            display: block !important;
                         }
                     }
                 }
