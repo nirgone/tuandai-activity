@@ -153,7 +153,7 @@
 		// 设置总的加息特权 百分比根据实际变化
 		interestTextEl.text("X");
 	}
-	uiShowLottery(); //是否显示签到中奖与否弹窗
+	uiShowLottery(); //是否显示签到抽奖按钮
 	uiSetStatus(); //设置页面状态
 
 	/**/
