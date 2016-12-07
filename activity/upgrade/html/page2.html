@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+	<meta name="format-detection" content="telephone=no">
+	<title>升级官方专业版</title>
+	<!-- build:css(dist) ../css/main.css -->
+	<link rel="stylesheet" href="../css/index.css">
+	<link rel="stylesheet" href="../css/media.css">
+	<link rel="stylesheet" href="../css/animation.css">
+	<!-- endbuild -->
+ 	<script>
+	//动态算rem
+	(function(doc, win) {
+		var docEl = doc.documentElement,
+        	resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        	recalc = function() {
+            	// if (docEl.style.fontSize) return;
+            	clientWidth = docEl.clientWidth;
+            	if (!clientWidth) return;
+            	docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+            	if (document.body) {
+                	document.body.style.fontSize = docEl.style.fontSize;
+            	}
+        	};
+    	recalc();
+    	if (!doc.addEventListener) return;
+    	win.addEventListener(resizeEvt, recalc, false);
+    	doc.addEventListener("DOMContentLoaded", recalc, false);
+	})(document, window);
+	</script>
+
+</head>
+<body>
+<div class="content">
+	<div class="page d-cont">
+		<div class="dl-cont">
+			<ul class="d-list">
+			<li><i class="icon-checked"></i><font>安全：</font>了解团贷网的安全保障系统</li>
+			<li><i class="icon-checked"></i><font>丰富：</font>理财产品类型/期限丰富多样</li>
+			<li><i class="icon-checked"></i><font>创新：</font>投资理财即可体验信用借款</li>
+			<li><i class="icon-checked"></i><font>交流：</font>与团粉们交流最新投资资讯</li>
+			<li><i class="icon-checked"></i><font>服务：</font>在线客服及时解决您的疑问</li>
+			<li><i class="icon-checked"></i><font>投资：</font>即时通知您最新的投资进度</li>
+		</ul>
+		<i class="icon-wave"></i>
+		</div>
+		<div class="d-steps">
+			<span class="d-title">如何下载团贷网官方版</span>
+			<span class="d-step" data-content="1">打开App Store，点击“搜索”</span>
+			<span class="d-step" data-content="2"> 在搜索框输入“团贷网”</span>
+			<i class="icon-tip"></i>
+			<span class="d-step" data-content="3">点击“获取”下载团贷网官方版APP</span>
+		</div>
+	</div>
+</div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+</html>
