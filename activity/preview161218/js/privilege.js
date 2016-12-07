@@ -83,7 +83,7 @@
 	// 通过以下状态来控制页面
 	var statusSign = 0; //手机签到状态 0当天未签到	1当天未获加息	2当天获加息
 	var statusOnePercent = 0; //是否获取1%加息特权 0未获取	1已获取	
-	var statusTuanbi = 1; //是否获取团币加息 0未获取 	1已获取	
+	var statusTuanbi = 0; //是否获取团币加息 0未获取 	1已获取	
 	var statusInvest = 0; //是否获取投资加息 0未获取	 1已获取	
 	var statusInvite = 0; //是否获取邀请加息 0未获取	 1已获取	
 

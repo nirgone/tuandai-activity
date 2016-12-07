@@ -34,6 +34,7 @@ a {
         font-size: 0;
         margin-bottom: pxToRem(78px);
         text-align: center;
+        position: relative;
         .act-time {
             display: inline-block;
             line-height: pxToRem(36px);
@@ -54,7 +55,7 @@ a {
             width: pxToRem(142px);
             text-align: center;
             .rule-text {
-               font-size: pxToRem(22px); 
+                font-size: pxToRem(22px);
                 display: inline-block;
                 vertical-align: middle;
             }
@@ -62,36 +63,18 @@ a {
                 vertical-align: middle;
                 margin-left: pxToRem(10px);
             }
-           /*  &:after {
-                @extend .icon-arrow;
-                content: "";
-                margin-left: pxToRem(10px);
-            } */
+        }
+        .btn-share {
+            background-image: url("../images/icon-share.png");
+            width: pxToRem(74px);
+            height: pxToRem(114px);
+            position: absolute;
+            right: pxToRem(-2px);
+            top: 50%;
+            transform: translateY(-44%);
+                // background-position: 100% 50% ;
         }
     }
-    /* .date {
-        color: #fc7934;
-        font-size: pxToRem(22px);
-        background-color: #fdfce8;
-        width: pxToRem(354px);
-        height: pxToRem(36px);
-        line-height: pxToRem(36px);
-        margin: auto;
-        text-align: center;
-        border-radius: pxToRem(18px);
-        margin-bottom: pxToRem(32px);
-    }
-    .rule {
-        font-size: pxToRem(24px);
-        line-height: pxToRem(40px);
-        width: pxToRem(684px);
-        margin: auto;
-        color: #fff;
-        margin-bottom: pxToRem(26px);
-        .check-rule {
-            color: #ddff25;
-        }
-    } */
     .lottery-num {
         font-size: pxToRem(24px);
         color: #fff;
@@ -118,12 +101,22 @@ a {
         vertical-align: middle;
         .icon-lottery {
             background-image: url("../images/icon-lottery.png");
-            width: pxToRem(136px);
+            width: pxToRem(140px);
             height: pxToRem(80px);
             z-index: 99;
             position: absolute;
-            top: pxToRem(12px);
-            left: pxToRem(12px);
+            top: pxToRem(14px);
+            left: pxToRem(10px);
+        }
+        .icon-get {
+            background-image: url("../images/icon-get.png");
+            width: pxToRem(140px);
+            height: pxToRem(80px);
+            z-index: 99;
+            position: absolute;
+            top: pxToRem(14px);
+            left: pxToRem(10px);
+            display: none;
         }
         .scratch-wrapper {
             position: relative;
@@ -221,5 +214,129 @@ a {
         color: #fff;
         margin-bottom: pxToRem(30px);
         margin-top: pxToRem(42px);
+    }
+}
+
+.sharecont {
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    .smask {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 999;
+        transform: translateZ(0);
+        display: none;
+    }
+    .icon-share {
+        @include background('../images/share.png',
+        628px,
+        488px);
+        position: absolute;
+        top: pxToRem(30px);
+        right: pxToRem(30px);
+    }
+    .share-popup {
+        width: 100%;
+        height: 100%;
+        background-color: #F6F7F8;
+        font-size: pxToRem(24px);
+        position: relative;
+        /* left: 0;
+        right: 0;
+        bottom: 0; */
+        color: #212121;
+        padding-top: pxToRem(70px);
+        text-align: center;
+        .stxt {
+            width: 100%;
+            height: pxToRem(100px);
+            line-height: pxToRem(100px);
+            padding: 0 pxToRem(100px);
+            box-sizing: border-box;
+            b {
+                background: #d1d1d1;
+                width: 25%;
+                height: 1px;
+                margin-top: pxToRem(50px);
+            }
+            &>b:first-child {
+                float: left;
+            }
+            &>b:last-child {
+                float: right;
+            }
+        }
+        .iconcont {
+            width: 100%;
+            height: pxToRem(200px);
+            display: flex;
+            display: -webkit-box;
+            margin-top: pxToRem(50px);
+            &>div {
+                width: pxToRem(250px);
+                text-align: center;
+            }
+            span {
+                width: 100%;
+                margin-top: pxToRem(30px);
+                display: inline-block;
+            }
+        }
+        .social-share-icon {
+            position: relative;
+            width: pxToRem(100px);
+            height: pxToRem(100px);
+            border-radius: pxToRem(100px);
+            border: 1px solid #e6e6e6;
+            background-color: #fff;
+            margin: auto;
+            display: block;
+            i {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+            }
+        }
+        .icon-sina {
+            @include background('../images/icon-sina.png',
+            59px,
+            46px);
+            margin-left: pxToRem(-30px);
+            margin-top: pxToRem(-23px);
+        }
+        .icon-tenc {
+            @include background('../images/icon-qq.png',
+            48px,
+            54px);
+            margin-left: pxToRem(-24px);
+            margin-top: pxToRem(-27px);
+        }
+        .icon-zone {
+            @include background('../images/icon-zone.png',
+            56px,
+            54px);
+            margin-left: pxToRem(-28px);
+            margin-top: pxToRem(-27px);
+        }
+        .cancle-share {
+            margin-top: pxToRem(30px);
+            .icon-close {
+                @include background('../images/icon-close.png',
+                28px,
+                28px);
+                margin-left: pxToRem(-14px);
+                margin-top: pxToRem(-14px);
+            }
+        }
     }
 }

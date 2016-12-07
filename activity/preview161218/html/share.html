@@ -23,13 +23,9 @@
 			<div class="md">
 				<i class="act-time">活动时间：12月13日—12月17日</i>
 				<i class="check-rule"><div class="rule-text">刮奖规则</div><i class="icon-arrow"></i></i>
+				<div class="btn-share icon-block"></div>
 			</div>
-			<!-- <div class="date">活动时间：12月13日—12月17日</div>
-
-			<div class="rule">	
-				活动期间内，累计加入智能理财（we计划/复投宝/安盈计划）、预售专场智能理财满1000元即可参与刮奖......<font class="check-rule">查看详情></font>
-			</div> -->
-			<div class="lottery-num icon-block">您有<font>1</font>次刮奖机会</div>
+			<div class="lottery-num icon-block">您有<font>0</font>次刮奖机会</div>
 			<div class="scratch-item icon-block scratch-byInvestment">
 				<div class="icon-lottery icon-block"></div>
 				<div class="scratch-wrapper">
@@ -44,35 +40,33 @@
 					</div>
 				</div>
 				<div class="scratch-right">
-					<a class="right-wrapper" href="">
+					<a class="right-wrapper" href="https://m.tuandai.com/pages/invest/WE/WE_list.aspx">
 						<div class="icon-go"></div>
 						<div class="text">立即投资</div>
 					</a>>
 				</div>
 			</div>
 			<div class="scratch-item icon-block scratch-byInvite">
-				<div class="icon-lottery icon-block"></div>
+				<div class="icon-get icon-block"></div>
 				<div class="scratch-wrapper">
-					<div class="scratch-cover icon-block"></div>
-					<div class="scratch-area">
-						<div class="scratch-area-cover"></div>
-					</div>
 					<div class="ticket-get icon-block">
 						<div class="award">
-							<font>0.2%</font>
+							<font>0.15%</font>
 						</div>
 					</div>
 				</div>
 				<div class="scratch-right">
-					<a class="right-wrapper" href="">
+					<a class="right-wrapper" href="https://hd.tuandai.com/weixin/Invite/InviteIndex.aspx">
 						<div class="icon-go"></div>
 						<div class="text">立即邀请</div>
 					</a>>
 				</div>
 			</div>
 			<div class="tip">
-				每个用户仅有1次机会，若邀请1名好友进行注册并累计投≥500元，用户即可获得再次刮奖的机会且仅有1次。
+				每个用户仅有1次刮奖机会，若邀请1名好友进行注册并累计投≥500元即可获得0.15%加息特权，且仅有1次。
 			</div>
+			
+			
 		</div>
 	</div>
 	<footer class="footer">
@@ -81,9 +75,44 @@
 		<a data-type="2">预售专场</a>
         <a data-type="3">敬请期待</a>
 	</footer>
+	<!-- 分享 -->
+	<div class="sharecont">
+		<div class="smask">
+			<i class="icon-share"></i>
+		</div>
+		<div class="share-popup">
+			<div class="stxt">
+				<b></b>
+				分享到
+				<b></b>
+			</div>
+
+			<div class="iconcont social-share" data-initialized="true" id="sociShare">
+				<div>
+					<a class="social-share-icon icon-weibo" ><i class="icon-sina"></i></a>
+					<span>新浪微博</span>
+				</div>
+				<div>
+					<a class="social-share-icon icon-qq" ><i class="icon-tenc"></i></a>
+					<span>QQ</span>
+				</div>
+				<div>
+					<a class="social-share-icon icon-qzone"><i class="icon-zone"></i></a>
+					<span>QQ空间</span>
+				</div>
+			</div>
+			<div class="cancle-share social-share-icon" @click="hideBrowserShare">
+				<i class="icon-close"></i>
+			</div>
+		</div>
+	</div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
 <script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- build:js({dist}) ../js/lib/vendor/jsbridge-3.1.0.js -->
+<script src="../js/vendor/jsbridge-3.1.0.js" type="text/javascript" charset="utf-8"></script>
+<!-- build:js({dist}) ../js/lib/vendor/social-share.js -->
+<script src="../js/vendor/social-share.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
 <script src="../js/wScratchPad.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="../js/Util.js" type="text/javascript" charset="utf-8"></script>
