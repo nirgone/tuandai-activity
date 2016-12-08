@@ -1,6 +1,6 @@
 (function() {
 	FastClick.attach(document.body);
-	var scratchByInveste = 0; //是否有投资刮奖机会 0 没有刮奖机会且未刮奖 1 有刮奖机会 2 已经刮奖
+	var scratchByInveste = 1; //是否有投资刮奖机会 0 没有刮奖机会且未刮奖 1 有刮奖机会 2 已经刮奖
 	var isInvite = true; //是否已经获取邀请加息 
 
 	var pageContentEl = $(".page-content");
@@ -65,7 +65,7 @@
 		}
 	});
 
-	// 监听刮奖状态
+	// 监听邀请点击
 	scratchInviteEl.on("click", ".scratch-wrapper", function(e) {
 		if ($(".popup").length !== 0) return;
 		if (!isInvite) {
@@ -92,11 +92,40 @@
 
 	var uiShowInvite = function() { //是否已经邀请
 		if (isInvite) {
-			scratchInviteEl.find(".icon-get").show();
+			// scratchInviteEl.find(".icon-get").show();
 			scratchInviteEl.find(".scratch-right .text").text("邀请得佣金");
 		}
 
 	}
+
+	// 绑定邀请
+	scratchInviteEl.on("click", ".right-wrapper", function() {
+		if (isInvite) {
+			window.location.href = "https://hd.tuandai.com/weixin/Invite/InviteIndex.aspx"
+		} else {
+			var canGet = true;
+			// TODO: 如果符合条件
+
+			if (canGet) {
+				// TODO:领取
+			} else {
+				Util.alertCommon({
+					type: 2,
+					content: "<p>您需邀请1名好友进行注册并累计投≥500元才能获取加息特权哦~</p>",
+					btn: {
+						name: "立即邀请",
+						callback: function() {
+							//跳转至邀请有礼链接
+							window.location.href = "https://hd.tuandai.com/weixin/Invite/InviteIndex.aspx"
+						}
+					},
+					closeCallback: function() {
+
+					}
+				});
+			}
+		}
+	})
 
 
 	function uiSetScratchStatus() { //设置抽奖状态

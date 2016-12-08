@@ -72,7 +72,7 @@ a {
             right: pxToRem(-2px);
             top: 50%;
             transform: translateY(-44%);
-                // background-position: 100% 50% ;
+            // background-position: 100% 50% ;
         }
     }
     .lottery-num {
@@ -108,15 +108,21 @@ a {
             top: pxToRem(14px);
             left: pxToRem(10px);
         }
-        .icon-get {
-            background-image: url("../images/icon-get.png");
+        .icon-flag {
+            
             width: pxToRem(140px);
             height: pxToRem(80px);
             z-index: 99;
             position: absolute;
             top: pxToRem(14px);
             left: pxToRem(10px);
-            display: none;
+            // display: none;
+            &.icon-get {
+                background-image: url("../images/icon-get.png");
+            }
+            &.icon-renren {
+                background-image: url("../images/icon-renren.png");
+            }
         }
         .scratch-wrapper {
             position: relative;
@@ -158,6 +164,13 @@ a {
                 width: pxToRem(404px);
                 height: pxToRem(206px);
                 text-align: center;
+                .award-init {
+                    font-size: pxToRem(60px);
+                    color: #fff55b;
+                    text-align: center;
+                    font-weight: bold;
+                    line-height: pxToRem(206px);
+                }
                 .award {
                     color: #fff55b;
                     font-size: 0;
