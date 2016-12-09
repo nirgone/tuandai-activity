@@ -33,7 +33,7 @@
 	pageContentEl.on("click", ".btn-sign", function() {
 		Util.alertCommon({
 			type: 1,
-			content: "<p style='font-size:0.64rem;line-height:1.28rem;'>活动期间内，在APP进行签到并成功分享，即有机会获得<font style='color:#ff7630;'>0.05%</font>加息特权。</p>",
+			content: "<p style='font-size:0.64rem;line-height:1.28rem;'>活动期间内，在APP进行签到并成功分享，即有机会获得加息特权。</p>",
 			btn: {
 				name: "马上签到",
 				callback: function() {
