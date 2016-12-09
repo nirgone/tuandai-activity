@@ -116,6 +116,8 @@
         .l-name {
             font-size: pxToRem(30px);
             color: #424242;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         .l-amount {
             font-size: pxToRem(30px);
