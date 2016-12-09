@@ -169,6 +169,7 @@
         // $('#video_b').html('<img id="img_b" src="../images/index_video1.png" />');
         $("#showVideo").html('<img src="../images/index_video1.png" id="pimg">');
         $(".masker").show();
+        $(".scroll").removeClass('scroll-active');
         showVideo('showVideo', 'XMTc2ODk1NTUzMg==');
     });
 
@@ -178,10 +179,12 @@
         // $('#video_a').html('<img id="img_a" src="../images/index_video1.png" />');
         $("#showVideo").html('<img src="../images/index_video1.png" id="pimg">');
         $(".masker").show();
+        $(".scroll").removeClass('scroll-active');
         showVideo('showVideo', 'XMTc3MDY0NDkxMg==');
     });
     $(".hover, .icon-vclose").on('click', function() {
         $(".masker").hide();
+        $(".scroll").addClass('scroll-active');
     });
 
     function showVideo(domid, vid) {
