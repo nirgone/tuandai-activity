@@ -9,6 +9,7 @@
 	var isApp = true; //是否为app端打开
 	var isLogined; //是否已登录
 	var option;
+	var timeArr = [];
 
 
 	function init() {
@@ -36,22 +37,17 @@
 
 	//查看详情
 	$(".pre-desc").on('click', function() {
-		Util.message("温馨提示", "<p>1、用户加入预售智能理财后，将在12月18日00:00后匹配标的，按照各理财项目计息规则进行利息结算；</p><p>2、成功加入预售智能理财的金额将计入12月18日—12月19日的个人累计加入智能理财金额。</p>",
+		Util.message("温馨提示", "<p>1、用户加入预售智能理财后，将在12月18日00:00后匹配标的，按照各理财项目计息规则进行利息结算；</p><p>2、成功加入预售智能理财的金额将计入12月18日—12月19日的个人累计加入智能理财金额。</p><p>3、加入预售理财，同样享有加息特权奖励，12月18日可优先匹配标的。</p>",
 			function() { //点击关闭按钮
 
 			});
 	});
 	//爱心榜单
 	$(".icon-list").on('click', function() {
-			window.location.href = "./loveList.html?option=" + option;
-		})
-		//倒计时
-		/*var objs = $(".btn-countdown");
-		var timeJson = {};
-		var sTime = 0;
-		var startTime = new Date().getTime();
-		var count = 0;*/
+		window.location.href = "./loveList.html?option=" + option;
+	});
 
+	
 	function start() {
 		// console.info("objs----", objs);
 		if (objs && objs.length > 0) {
@@ -59,18 +55,25 @@
 				var item = objs.eq(i);
 				var itemTime = item.attr('data-time');
 				// console.info(itemTime);
-				itemTime = new Date(itemTime).getTime() - new Date().getTime();
-				if (itemTime > sTime) {
+				// itemTime = new Date(itemTime).getTime() - new Date().getTime();
+				// console.info("sTime=" + sTime, "itemTime=" + itemTime);
+				if (+itemTime > sTime) {
 					sTime = itemTime;
 				}
 				var itemId = item.attr('data-id');
-				if (!timeJson[itemId]) {
+				/*if (!timeJson[itemId]) {
 					timeJson[itemId] = itemTime;
+				}*/
+				if(!timeJson[itemTime]) {
+					timeJson[itemTime] = itemTime;
+					timeArr.push(itemTime);
 				}
 			}
 
 		}
+		console.info(timeArr, timeJson);
 		// console.info("sTime-----", sTime, timeJson);
+		sTime = Math.round(sTime / 1000);
 		if (sTime > 0) {
 			setTimeout(countDown, 0);
 		}
@@ -85,10 +88,12 @@
 			newTime = 0;
 		}
 		// console.info(new Date().getTime() - (startTime + count * 1000));
-		if (sTime > 0) {
+		console.info("sTime-----", sTime);
+		if (sTime >= 0) {
 			// var showTime = timeFormate(sTime);
 			// obj.html(showTime);
-			if (objs && objs.length > 0) {
+
+			/*if (objs && objs.length > 0) {
 				for (var i = 0; i < objs.length; i++) {
 					var oItem = objs.eq(i);
 					var id = oItem.attr('data-id');
@@ -103,8 +108,36 @@
 					}
 				}
 
+			}*/
+			if(timeArr) {
+				var arrLength = timeArr.length;
+				for(var i = 0; i < arrLength; i++) {
+					var key = timeArr[i];
+					var btns = $(".btn-countdown[data-time='" + key + "']");
+					var iTime = timeJson[key];
+					console.info(Math.round(+iTime/1000));
+					if(Math.round(+iTime/1000) > 0) {
+						var showTime = timeFormate(iTime);
+						btns.html(showTime);
+						timeJson[key] = +iTime - 1000; 
+					}else{
+						btns.removeClass('btn-countdown').addClass('btn-get');
+						btns.html('立即抢');
+					}
+				}
+				/*timeArr.forEach(function(time, index) {
+					console.info("time-------", time);
+					if(+time > 0) {
+						var showTime = timeFormate(time);
+						$(".btn-countdown[data-time='" + time + "']").html(showTime);
+						time = +time - 1000;
+					}else{
+						$(".btn-countdown[data-time='" + time + "']").removeClass('btn-countdown').addClass('btn-get');
+						$(".btn-countdown[data-time='" + time + "']").html('立即抢');
+					}
+				})*/
 			}
-			sTime = sTime - 1000;
+			sTime = sTime - 1;
 			setTimeout(countDown, newTime);
 		}
 
@@ -118,7 +151,7 @@
 		var minutes = Math.floor(leave1 / (60 * 1000))
 			//计算相差秒数
 		var leave2 = leave1 % (60 * 1000) //计算分钟数后剩余的毫秒数
-		var seconds = Math.floor(leave2 / 1000);
+		var seconds = Math.round(leave2 / 1000);
 		hours = hours < 10 ? "0" + hours : hours;
 		minutes = minutes < 10 ? "0" + minutes : minutes;
 		seconds = seconds < 10 ? "0" + seconds : seconds;

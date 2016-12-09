@@ -14,6 +14,7 @@
     <!-- endbuild -->
     <!-- build:css(dist)  ../js/lib/vendor/swiper/swiper.min.css-->
     <link rel="stylesheet" href="../css/vendor/swiper/swiper.min.css">
+    <!-- <link rel="stylesheet" href="../css/vendor/swipe/style.css"> -->
     <!-- endbuild -->
     <link rel="stylesheet" href="../css/index.css">
     <!-- build:js({dist}) ../js/lib/adapt.js -->
@@ -26,7 +27,7 @@
         <div class="content m-cont">
             <!-- <i class="icon-label"></i> -->
             <i class="icon-m-title">
-			<i class="icon-pai"></i>
+            <i class="icon-pai"></i>
             </i>
             <div class="sv-container">
                 <div class="swiper-container">
@@ -46,16 +47,33 @@
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
+                <!--  <div id='slider' class='swipe'>
+                  <div class='swipe-wrap'>
+                    <div class="swiper-slide">
+                        <div id="video_a" class="video-con">
+                            <img id="img_a" src="../images/index_video1.png" />
+                            <span>标题11111</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div id="video_b" class="video-con">
+                            <img id="img_b" src="../images/index_video1.png" />
+                            <span>标题222222</span>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination">
+                    <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                </div> -->
             </div>
             <ul class="txt-cont">
                 <li>
-                    12月18日，一年一度的网贷爱心日，旨在帮助小微企业融资借款，渡过资金周转寒冬或完成创业梦想。
+                    12月18日，一年一度的网贷爱心日，旨在帮助小微企业融资借款，渡过资金周转寒冬或完成创业梦想。今年我们也将和各位团粉一起努力，用我们的力量帮助小微企业渡过年关。
                 </li>
                 <li>
-                    2013年到2016年的12月18日，我们一直都在，今后也必将与各位团粉同在，帮助小微企业渡过难关，为投资用户带来丰厚的奖励回馈。
-                </li>
-                <li>
-                    1218网贷爱心日”，与您相约，让我们朝着爱心与梦想出发！
+                    “12.18网贷爱心日”，与您相约，让我们朝着爱心与梦想出发！
                 </li>
             </ul>
             <div class="m-title-cont">
@@ -96,6 +114,15 @@
     <div class="f-cont">
         <div class="btn-join">进入团贷网爱心专场</div>
     </div>
+    <div class="masker">
+        <div class="iv">
+            <div id="showVideo">
+                <img src="../images/index_video1.png" id="pimg">
+            </div>
+            <i class="icon-vclose"></i>
+        </div>
+        <div class="hover"></div>
+    </div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
 <script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
@@ -103,6 +130,7 @@
 <script type="text/javascript" src="https://players.youku.com/jsapi"></script>
 <!-- build:js({dist}) ../js/lib/vendor/swiper/swiper.jquery.min.js -->
 <script src="../js/vendor/swiper/swiper.jquery.min.js"></script>
+<!-- <script src="../js/vendor/swipe/swipe.js"></script> -->
 <!-- endbuild -->
 <!-- build:js({dist}) ../js/lib/vendor/jsbridge-3.0.0.js -->
 <script src="../js/vendor/jsbridge-3.1.0.js" type="text/javascript" charset="utf-8"></script>
@@ -128,21 +156,32 @@
     var mySwiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
     });
-    //视频播放	
-    $(function() {
-        $('#img_a').live('click', function() {
-            showVideo('video_a', 'XMTc2ODk1NTUzMg==');
-            $('#video_b').html('<img id="img_b" src="../images/index_video1.png" />');
-            console.log('video_a');
-        });
+    /*var mySwiper = new Swipe(document.getElementById('slider'), {
+        callback: function(index) {
+            // console.info("index-----",index);
+            $(".swiper-pagination-bullet").removeClass('swiper-pagination-bullet-active');
+            $(".swiper-pagination-bullet").eq(index).addClass('swiper-pagination-bullet-active');
+        }
+    });*/
+    //视频播放  
+
+    $('.sv-container').on('click', '#img_a', function() {
+        // $('#video_b').html('<img id="img_b" src="../images/index_video1.png" />');
+        $("#showVideo").html('<img src="../images/index_video1.png" id="pimg">');
+        $(".masker").show();
+        showVideo('showVideo', 'XMTc2ODk1NTUzMg==');
+    });
 
 
-        $('#img_b').live('click', function() {
-            showVideo('video_b', 'XMTc3MDY0NDkxMg==');
-            console.log('video_b');
-            $('#video_a').html('<img id="img_a" src="../images/index_video1.png" />');
-        });
-
+    $('.sv-container').on('click', '#img_b', function() {
+        // showVideo('video_b', 'XMTc3MDY0NDkxMg==');
+        // $('#video_a').html('<img id="img_a" src="../images/index_video1.png" />');
+        $("#showVideo").html('<img src="../images/index_video1.png" id="pimg">');
+        $(".masker").show();
+        showVideo('showVideo', 'XMTc3MDY0NDkxMg==');
+    });
+    $(".hover, .icon-vclose").on('click', function() {
+        $(".masker").hide();
     });
 
     function showVideo(domid, vid) {
@@ -154,7 +193,7 @@
         });
     }
     $(".btn-join").on('click', function() {
-        window.location.href = './privilege.html?option='  + JSON.stringify(option);
+        window.location.href = './privilege.html?option=' + JSON.stringify(option);
     });
 
 
