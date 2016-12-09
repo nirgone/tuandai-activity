@@ -128,11 +128,11 @@ a {
         position: relative;
         .task-icon {
             background-image: url("../images/icon-task.png");
-            width: pxToRem(212px);
+            width: pxToRem(242px);
             height: pxToRem(74px);
             position: absolute;
             left: pxToRem(30px);
-            top: 0;
+            top: pxToRem(-4px);
         }
         .task-list {
             background-color: #fff;
