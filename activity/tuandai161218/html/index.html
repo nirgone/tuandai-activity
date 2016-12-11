@@ -38,18 +38,36 @@
 <body>
     <div class="scroll scroll-active">
         <div class="content m-content">
-        	<div class="mt">
-        		<div class="mt-title">
-        			<i class="icon-m-pai"></i>
-        		</div>
-        		<i class="icon-sub-title"></i>
-        	</div>
+            <div class="mt">
+                <div class="mt-title">
+                    <i class="icon-m-pai"></i>
+                    <i class="icon-sub-title"></i>
+                </div>
+            </div>
+            <div class="num-cont">
+                <div class="desc-cont">
+                    <ul class="desc">
+                        <li class="desc-title"><span>融资金额</span></li>
+                        <li class="desc-num">2,846,283,948.00</li>
+                        <li class="desc-title"><span>交易人数</span></li>
+                        <li class="desc-num">56689</li>
+                    </ul>
+                </div>
+                <div class="btn-join">1218团贷网爱心专场<i class="m-arrow"></i></div>
+            </div>
         </div>
     </div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
-<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+<!-- <script src="../js/index.js" type="text/javascript" charset="utf-8"></script> -->
+<script type="text/javascript">
+	(function() {
+		$(".btn-join").on('click', function() {
+			location.href = './chest.html';
+		})
+	})();
+</script>
 
 </html>
