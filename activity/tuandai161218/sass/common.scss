@@ -165,6 +165,14 @@ a {
     19px);
     @extend .icon-inline-block;
 }
+.icon-arrow-red {
+    @include icon-background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAWBAMAAAAGFmApAAAAElBMVEUAAAD9SDn9SDn9SDn9SDn9SDmyku/tAAAABXRSTlMAFdSVOAsY+jEAAAAmSURBVAjXY3AWYAABU0UwJRQE5jKqksMNhlJQQagSIjkIR0CdBABlQgf1/uHRCQAAAABJRU5ErkJggg==',
+    11px,
+    19px);
+    @extend .icon-inline-block;
+    vertical-align: middle;
+}
+
 
 .footer {
     position: absolute;
