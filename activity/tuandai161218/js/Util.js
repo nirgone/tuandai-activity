@@ -68,6 +68,7 @@
             var i = $("<i/>").addClass("icon").addClass("icon-" + _options.icon);
             popup_header.append(i);
             popup.addClass("popup-icon");
+            popup_content.addClass(_options.icon+"-content");
         }
         popup_header.append(popup_close);
         if (_options.btn) {
@@ -128,14 +129,21 @@
             });
         },
         //加息提示弹窗，percent--加息百分比
-        alertJiaxi: function(percent, closeCallback) {
-            popup({
-                "icon": "pop0",
-                "content": '<p>恭喜您获得加息特权</p><p class="percent">' + percent + '</p>',
-                "closeCallback": closeCallback
-            });
+        // alertJiaxi: function(percent, closeCallback) {
+        //     popup({
+        //         "icon": "pop0",
+        //         "content": '<p>恭喜您获得加息特权</p><p class="percent">' + percent + '</p>',
+        //         "closeCallback": closeCallback
+        //     });
+        // },
+        // 获奖提示 {}
+        alertPrize: function(options) {
+            this.alert(0,options.content, options.btn, options.closeCallback);
         },
-
+        
+        alertCommon: function(options) {
+            this.alert(1,options.content, options.btn, options.closeCallback);
+        },
         //带icon和按钮的弹窗
         // option: {
         //     type:  取值[1, 2]--icon类型
@@ -146,12 +154,12 @@
         //     },
         //     closeCallback: 关闭回调
         // }
-        alertCommon: function(option) {
+        alert: function(type, content, btn, closeCallback) {
             popup({
-                "icon": "pop" + option.type,
-                "content": option.content,
-                "btn": option.btn,
-                "closeCallback": option.closeCallback
+                "icon": "pop" + type,
+                "content": content,
+                "btn": btn,
+                "closeCallback": closeCallback
             });
         },
         getParam: function(name, url) {

@@ -13,3 +13,17 @@
     background-position: center;
     background-size: contain;
 }
+
+.icon-pop0 {
+	@extend .icon-block;
+	@include icon-background('../images/pop0.png', 247px, 223px);
+}
+.icon-pop1 {
+	@extend .icon-block;
+	@include icon-background('../images/pop1.png', 269px, 206px);
+}
+
+.icon-masker-txt {
+	@extend .icon-block;
+	@include icon-background('../images/masker_txt.png', 703px, 90px);
+}

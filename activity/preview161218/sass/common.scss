@@ -135,6 +135,7 @@ a {
             bottom: pxToRem(-118px);
             margin-left: pxToRem(-269px/2);
         }
+        
     }
     .popup-close {
         position: absolute;
@@ -240,6 +241,10 @@ a {
             color: #424242;
             margin-bottom: pxToRem(20px);
         }
+        .icon-block {
+            margin:0 auto;
+            margin-bottom: pxToRem(20px);
+        }
     }
 }
 
@@ -261,7 +266,8 @@ a {
             }
         }
         .btn-orange {
-            margin-top: (20px);
+            margin-top: pxToRem(20px);
+            margin-bottom: 0;
         }
     }
 }

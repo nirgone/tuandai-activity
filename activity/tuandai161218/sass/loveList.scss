@@ -279,3 +279,8 @@ span {
     -webkit-align-items: center;
     align-items: center;
 }
+.popup-content {
+    &>p:first-child {
+        text-indent: 2em;
+    }
+}
