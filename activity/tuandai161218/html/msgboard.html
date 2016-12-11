@@ -28,9 +28,56 @@
             <section class="icon-block msg-board">
                 <i class="icon-yr-float"></i>
                 <i class="icon-hz-float"></i>
-                <ul>
-                    <li></li>
+                <ul class="msg-list">
+                    <li class="msg">
+                        <div class="avatar">
+                            <img src="../images/default23.png" alt="">
+                        </div>
+                        <div class="msg-content">
+                            <p><span class="name">明天更好明天更好明天更好明天更好明天更好明天更好明天更好明天更好明天更好</span><span>12-18 00:25</span></p>
+                            <div class="">
+                                签到的日志表明，我在团贷516天了。连我自己都不相信能毫不间断签到了五百多天。
+                            </div>
+                        </div>
+                    </li>
+                    <li class="msg">
+                        <div class="avatar">
+                            <img src="../images/default.png" alt="">
+                        </div>
+                        <div class="msg-content">
+                            <p><span class="name">明天更好</span><span>12-18 00:25</span></p>
+                            <div class="">
+                                签到的日志表明，我在团贷516天了。连我自己都不相信能毫不间断签到了五百多天。
+                            </div>
+                        </div>
+                    </li>
+                    <li class="msg mine">
+                        <div class="avatar">
+                            <img src="../images/default.png" alt="">
+                        </div>
+                        <div class="msg-content">
+                            <p><span class="name">明天更好</span><span>12-18 00:25</span></p>
+                            <div class="">
+                                签到的日志表明，我在。团贷516天了。连我自己都不相信能毫不间断签到了五百多天。
+                            </div>
+                        </div>
+                    </li>
+                    <li class="msg">
+                        <div class="avatar">
+                            <img src="../images/default.png" alt="">
+                        </div>
+                        <div class="msg-content">
+                            <p><span class="name">明天更好</span><span>12-18 00:25</span></p>
+                            <div class="">
+                                签到的日志表明，我在团贷516天了。连我自己都不相信能毫不间断签到了五百多天。
+                            </div>
+                        </div>
+
+                    </li>
                 </ul>
+                <div class="btn-yellow-b" id="to_input">
+                    我要留言
+                </div>
             </section>
         </div>
     </div>
@@ -39,6 +86,21 @@
         <a href="">爱心榜单</a>
         <a href="" class="active">为爱发声</a>
     </footer>
+
+    <!-- 留言板输入层 -->
+    <div class="input-popup slideInUp" id="input_popup">
+        <div class="board-title">
+            发表留言
+        </div>
+        <div class="textarea-wrapper">
+            <textarea id="text_input" value="" class="text-area" placeholder="请输入不超过100个字符的留言" maxlength="100"></textarea>
+        </div>
+        <div class="btn-red" id="submit">
+            提交
+        </div>
+        <div class="close-part"><i class="icon-close"></i></div>
+        <i class="icon-block icon-board-close"></i>
+    </div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
 <script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>

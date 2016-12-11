@@ -83,6 +83,7 @@ a {
 //btn
 .btn {
     margin: 0 auto;
+    text-align: center;
 }
 .btn-orange {
     @extend .btn;
@@ -96,6 +97,32 @@ a {
   line-height: pxToRem(92px);
   color: #fff;
   font-size: pxToRem(34px);
+}
+.btn-yellow-b {
+    @extend .btn;
+    background-image: -moz-linear-gradient( 90deg, rgb(255,206,11) 0%, rgb(255,254,185) 100%);
+  background-image: -webkit-linear-gradient( 90deg, rgb(255,206,11) 0%, rgb(255,254,185) 100%);
+  background-image: -ms-linear-gradient( 90deg, rgb(255,206,11) 0%, rgb(255,254,185) 100%);
+  box-shadow: pxToRem(4px) pxToRem(10px) pxToRem(30px) pxToRem(10px) rgba(190, 28, 26, 0.4);
+  width: pxToRem(490px);
+  height: pxToRem(90px);
+  line-height: pxToRem(90px);
+  border-radius: pxToRem(90px);
+  color: #fa4d18;
+  font-size: pxToRem(36px);
+  font-weight: bold;
+  border: pxToRem(2px) solid #ce3f00;
+}
+.btn-red {
+    @extend .btn;
+    width: pxToRem(650px);
+    height: pxToRem(80px);
+    border-radius: pxToRem(80px);
+    line-height: pxToRem(80px);
+    color: #fff;
+    text-align: center;
+    background-color: #ff4a3b;
+    font-size: pxToRem(34px);
 }
 
 .md {
