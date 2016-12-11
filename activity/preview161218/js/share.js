@@ -161,8 +161,9 @@
 	sharecontEl.on("click", ".cancle-share, .smask", function() {
 		sharecontEl.hide();
 	})
+	var isApp = false; //判断是否为app
 	var onShowShare = function() {
-		var isApp = false; //判断是否为app
+
 		if (isApp) {
 			Bbsbridge.toActivityAppInviteFriend();
 		} else if (Util.isWeiXin()) { //微信
@@ -185,19 +186,107 @@
 		sharecontEl.show();
 	}
 
-	var onConfigShare = function() { //配置分享信息
-		var config = {
-			url: window.location.href,
-			source: "",
-			title: document.title,
-			description: "",
-			image: "",
-			sites: ['qzone', 'qq', 'weibo'], // 启用的站点
+	var initShare = function(shareData, weixinConfig) { //初始化分享配置
+		if (Util.isWeiXin()) {
+			wx.config({
+				debug: false,
+				appId: weixinConfig.appid, // 必填，公众号的唯一标识
+				timestamp: weixinConfig.timeStamp, // 必填，生成签名的时间戳
+				nonceStr: weixinConfig.nonceStr, // 必填，生成签名的随机串
+				signature: weixinConfig.signature, // 必填，签名，见附录1
+				jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo', 'onMenuShareQZone']
+			});
 
-		};
-		socialShare("#sociShare", config);
+			//分享到朋友圈
+			wx.onMenuShareTimeline({
+				title: shareData.title,
+				link: shareData.link, // 分享链接
+				imgUrl: shareData.imgUrl, // 分享图标
+				success: function() {
+					// 用户确认分享后执行的回调函数
+				},
+				cancel: function() {
+					// 用户取消分享后执行的回调函数
+				}
+			});
+			//分享给朋友
+			wx.onMenuShareAppMessage({
+				title: shareData.title, // 分享标题
+				desc: shareData.desc, // 分享描述
+				link: shareData.link, // 分享链接
+				imgUrl: shareData.imgUrl, // 分享图标
+				type: '', // 分享类型,music、video或link，不填默认为link
+				dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+				success: function() {
+					// 用户确认分享后执行的回调函数
+				},
+				cancel: function() {
+					// 用户取消分享后执行的回调函数
+				}
+			});
+			//分享到QQ
+			wx.onMenuShareQQ({
+				title: shareData.title, // 分享标题
+				desc: shareData.desc, // 分享描述
+				link: shareData.link, // 分享链接
+				imgUrl: shareData.imgUrl, // 分享图标
+				success: function() {
+					// 用户确认分享后执行的回调函数
+				},
+				cancel: function() {
+					// 用户取消分享后执行的回调函数
+				}
+			});
+			//分享到腾讯微博
+			wx.onMenuShareWeibo({
+				title: shareData.title, // 分享标题
+				desc: shareData.desc, // 分享描述
+				link: shareData.link, // 分享链接
+				imgUrl: shareData.imgUrl, // 分享图标
+				success: function() {
+					// 用户确认分享后执行的回调函数
+				},
+				cancel: function() {
+					// 用户取消分享后执行的回调函数
+				}
+			});
+			//分享到QQ空间
+			wx.onMenuShareQZone({
+				title: shareData.title, // 分享标题
+				desc: shareData.desc, // 分享描述
+				link: shareData.link, // 分享链接
+				imgUrl: shareData.imgUrl, // 分享图标
+				success: function() {
+					// 用户确认分享后执行的回调函数
+				},
+				cancel: function() {
+					// 用户取消分享后执行的回调函数
+				}
+			});
+		} else if (!isApp) {
+			var config = {
+				url: shareData.link,
+				source: shareData.source,
+				title: shareData.title,
+				description: shareData.desc,
+				image: shareData.imgUrl,
+				sites: ['qzone', 'qq', 'weibo'], // 启用的站点
+
+			};
+			socialShare("#sociShare", config);
+		}
 	}
-	onConfigShare();
+	var shareData = {
+		title: "1218网贷爱心日",
+		link: window.location.href,
+		source: window.location.href,
+		description: "全场加息狂欢，到手不止1%！",
+		image: "../images/logo.png"
+	}
+	var weixinConfig = { //微信分享配置
+
+	};
+	initShare(shareData, weixinConfig); //初始化分享配置
 
 
 })();
