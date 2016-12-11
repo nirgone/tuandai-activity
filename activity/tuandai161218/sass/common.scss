@@ -52,6 +52,23 @@ a {
     margin: auto;
     margin-top: pxToRem(40px);
 }
+//btn
+.btn {
+    margin: 0 auto;
+}
+.btn-orange {
+    @extend .btn;
+    border-radius: pxToRem(92px);
+  background-image: -moz-linear-gradient( 90deg, rgb(243,67,51) 0%, rgb(255,117,56) 100%);
+  background-image: -webkit-linear-gradient( 90deg, rgb(243,67,51) 0%, rgb(255,117,56) 100%);
+  background-image: -ms-linear-gradient( 90deg, rgb(243,67,51) 0%, rgb(255,117,56) 100%);
+  box-shadow: 0 pxToRem(8px) pxToRem(20px) 0 rgb( 255, 178, 148 );
+  width: pxToRem(512px);
+  height: pxToRem(92px);
+  line-height: pxToRem(92px);
+  color: #fff;
+  font-size: pxToRem(34px);
+}
 
 .footer {
     position: absolute;
@@ -75,6 +92,199 @@ a {
         color: #fff;
         &.active {
             background-color: #f58225;
+        }
+    }
+}
+
+// popup
+.popup {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    $top: 15%;
+    .popup-wrapper {
+        position: absolute;
+        top: $top;
+        left: 50%;
+        width: pxToRem(610px);
+        margin-left: pxToRem(-610px /2);
+        max-height: 70%;
+        // background-color: #fff;
+        z-index: 1000;
+        border-radius: pxToRem(30px);
+        background-color: #fff;
+        // overflow: hidden;
+        &.more {
+            height: pxToRem(970px);
+            .popup-content {
+                position: absolute;
+                top: pxToRem(100px);
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding-bottom: pxToRem(56px);
+            }
+            &:after {
+                content: '';
+                @extend .icon-masker-txt;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100% !important;
+                background-position: bottom;
+                border-bottom-left-radius: pxToRem(30px);
+                border-bottom-right-radius: pxToRem(30px);
+                z-index: 1111;
+            }
+        }
+        .icon {
+            position: absolute;
+            left: 50%;
+            bottom: pxToRem(-118px);
+            margin-left: pxToRem(-269px/2);
+        }
+        
+    }
+    .popup-close {
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: pxToRem(100px);
+        border-top-right-radius: pxToRem(30px);
+        .close {
+            position: absolute;
+            width: pxToRem(52px);
+            height: pxToRem(52px);
+            top: 50%;
+            left: 50%;
+            margin-left: pxToRem(-52px /2);
+            margin-top: pxToRem(-52px /2);
+            border-radius: pxToRem(52px);
+            background-color: #fffcf0;
+            &:before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: pxToRem(-14px);
+                margin-top: pxToRem(-2px);
+                display: block;
+                width: pxToRem(28px);
+                height: pxToRem(4px);
+                border-radius: pxToRem(4px);
+                transform: rotate(45deg);
+                background-color: $main-red;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: pxToRem(-14px);
+                margin-left: pxToRem(-2px);
+                display: block;
+                height: pxToRem(28px);
+                width: pxToRem(4px);
+                border-radius: pxToRem(4px);
+                transform: rotate(45deg);
+                background-color: $main-red;
+            }
+        }
+    }
+    .popup-header {
+        position: relative;
+        // top: $top;
+        // left: 50%;
+        width: pxToRem(610px);
+        // margin-left: pxToRem(-610px /2);
+        background: url(../images/pop_header.png) no-repeat center;
+        background-size: 100% 100%;
+        background-color: #ff4a3b;
+        height: pxToRem(100px);
+        line-height: pxToRem(100px);
+        border-top-left-radius: pxToRem(28px);
+        border-top-right-radius: pxToRem(28px);
+        text-align: center;
+        color: #fff;
+        font-size: pxToRem(34px);
+        z-index: 1000;
+        &:after {
+            content: attr(data-title);
+        }
+    }
+    .popup-content {
+        // position: absolute;
+        // top: $top;
+        // left: 50%;
+        // width: pxToRem(610px);
+        // margin-left: pxToRem(-610px /2);
+        // margin-top: pxToRem(100px);
+        // max-height: 70%;
+        // height: 100%;
+        width: 100%;
+        margin-top: pxToRem(40px);
+        padding: pxToRem(30px) pxToRem(30px);
+        padding-top: 0;
+        // bottom: 0;
+        box-sizing: border-box;
+        border-bottom-left-radius: pxToRem(30px);
+        border-bottom-right-radius: pxToRem(30px);
+        background-color: #fff;
+        overflow: scroll;
+        z-index: 1000;
+        text-align: justify;
+        color: #60352d;
+        // box-shadow: 0 pxToRem(-78px) pxToRem(78px) black inset;
+        // .popup-content {
+        //  width: 100%;
+        //  height: 100%;
+        //  overflow: scroll;
+        //  z-index: 1000;
+        // }
+        // &.more {
+        // 
+        // }
+        p {
+            font-size: pxToRem(26px);
+            line-height: pxToRem(48px);
+            // color: #424242;
+            margin-bottom: pxToRem(20px);
+        }
+        .icon-block {
+            margin:0 auto;
+            margin-bottom: pxToRem(20px);
+        }
+    }
+}
+
+.popup-icon {
+    .icon-pop0 {
+        bottom: 0 !important;
+    }
+    .popup-content {
+        padding: pxToRem(110px) pxToRem(32px) pxToRem(22px);
+        text-align: center;
+        &.pop0-content {
+            padding-top: 0;
+        }
+        p {
+            font-size: pxToRem(34px);
+            line-height: initial;
+            &.percent {
+                font-size: pxToRem(86px);
+                color: #ff5500;
+                &:after {
+                    content: '%';
+                    color: #ff5500;
+                    font-size: pxToRem(44px);
+                }
+            }
+        }
+        .btn-orange {
+            margin-top: pxToRem(34px);
+            margin-bottom: pxToRem(18px);
         }
     }
 }
