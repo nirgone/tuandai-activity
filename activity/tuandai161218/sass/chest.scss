@@ -1,27 +1,8 @@
 @charset "UTF-8";
 @import "variables";
-@import "sprite";
-@import "../../../sass/reset";
 @import "../../../sass/func";
-html,
-body {
-    position: relative;
-    // height: 100%;
-    // width: 100%;
-    // overflow: hidden;
-    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-    margin: 0;
-    padding: 0;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-a {
-    text-decoration: none;
-}
-
 .content {
     .title {
-        @extend .icon-block;
         background-image: url("../images/title-chest.png");
         width: pxToRem(630px);
         height: pxToRem(140px);
@@ -31,6 +12,498 @@ a {
         margin-bottom: pxToRem(14px);
     }
     .md {
-    	margin-bottom: pxToRem(56px);
+        margin-bottom: pxToRem(56px);
+    }
+    .chest-item {
+        position: relative;
+        z-index: 9;
+        .item-wrapper {
+            margin: auto;
+            position: relative;
+            width: pxToRem(710px);
+            height: pxToRem(880px);
+            background-color: #ff642e;
+            border-radius: pxToRem(20px);
+            box-sizing: border-box;
+            border: pxToRem(10px) solid #ea3426;
+            z-index: 9;
+            box-shadow: 0 pxToRem(10px) pxToRem(60px) #ca2416;
+            .item-content {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                box-sizing: border-box;
+                border-radius: pxToRem(12px);
+                border: 1px solid #feb96b;
+                .light-wrapper {
+                    position: absolute;
+                    top: pxToRem(-80px);
+                    left: 50%;
+                    margin-left: pxToRem(-356px);
+                    z-index: 9;
+                    .light-bg {
+                        background-image: url("../images/icon-light-bg.png");
+                        width: pxToRem(710px);
+                        height: pxToRem(710px);
+                    }
+                    .light {
+                        background-image: url("../images/icon-light.png");
+                        width: pxToRem(710px);
+                        height: pxToRem(678px);
+                        position: absolute;
+                        z-index: 99;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+                .star {
+                    position: absolute;
+                    z-index: 999;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                .chest {
+                    position: relative;
+                    z-index: 99;
+                    margin-top: pxToRem(92px);
+                    .chest-body {
+                        position: absolute;
+                        z-index: 99;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        bottom: pxToRem(46px);
+                        .chest-gift-wrapper {
+                            display: none;
+                            width: pxToRem(150px);
+                            height: pxToRem(150px);
+                            .chest-gift {}
+                        }
+                    }
+                    .chest-base {
+                        position: absolute;
+                        z-index: 9;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        bottom: 0;
+                    }
+                }
+                .tip-wrapper {
+                    background-image: url("../images/bg-tip.png");
+                    width: pxToRem(502px);
+                    height: pxToRem(132px);
+                    margin: auto;
+                    padding-top: pxToRem(34px);
+                    box-sizing: border-box;
+                    font-size: 0;
+                    position: relative;
+                    z-index: 999;
+                    &.tip-notGet,
+                    &.tip-get {
+                        .tip-left {
+                            color: #fff;
+                            padding-left: pxToRem(32px);
+                            width: pxToRem(270px);
+                            font-size: pxToRem(24px);
+                            line-height: pxToRem(30px);
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin-right: pxToRem(28px);
+                            text-align: center;
+                        }
+                        .tip-right {
+                            // background-image: url("../images/btn-yellow.png");
+                            width: pxToRem(130px);
+                            height: pxToRem(52px);
+                            line-height: pxToRem(52px);
+                            vertical-align: middle;
+                            font-size: 0;
+                            color: #fd493a;
+                            font-weight: initial;
+                            font {
+                                vertical-align: middle;
+                                display: inline-block;
+                                font-size: pxToRem(26px);
+                            }
+                            .icon-arrow-red {
+                                margin-left: pxToRem(6px);
+                            }
+                        }
+                    }
+                    &.tip-text {
+                        padding-top: pxToRem(12px);
+                        font-size: pxToRem(24px);
+                        color: #fff;
+                        line-height: pxToRem(106px);
+                        margin: auto;
+                        text-align: center;
+                        position: relative;
+                        z-index: 999;
+                    }
+                }
+                .gift-wrapper {
+                    position: absolute;
+                    bottom: -1px;
+                    width: 100%;
+                    height: pxToRem(272px);
+                    border-radius: pxToRem(12px);
+                    border: 1px solid #ffbc6d;
+                    box-sizing: border-box;
+                    background-color: #fffbe5;
+                    .gift-title {
+                        background-image: url("../images/bg-gift-title.png");
+                        width: pxToRem(316px);
+                        height: pxToRem(42px);
+                        font-size: pxToRem(28px);
+                        text-align: center;
+                        line-height: pxToRem(42px);
+                        position: absolute;
+                        top: pxToRem(-22px);
+                        left: 50%;
+                        margin-left: pxToRem(-156px);
+                        color: #fff;
+                    }
+                    .gift-list {
+                        margin-top: pxToRem(56px);
+                        padding-left: pxToRem(20px);
+                        padding-right: pxToRem(20px);
+                        overflow: auto;
+                        display: flex;
+                        height: pxToRem(216px);
+                        .gift-item {
+                            width: pxToRem(192px);
+                            margin-right: pxToRem(20px);
+                            display: inline-block;
+                            .icon-wrapper {
+                                padding: pxToRem(16px) pxToRem(14px);
+                                box-sizing: border-box;
+                                width: pxToRem(192px);
+                                height: pxToRem(160px);
+                                border-radius: pxToRem(10px);
+                                border: 1px solid #ffe4b9;
+                                background-color: #fff;
+                                margin-bottom: pxToRem(16px);
+                                .gift-icon {
+                                    width: 100%;
+                                    height: 100%;
+                                    // background-size: pxToRem(160px) pxToRem(100px);
+                                }
+                            }
+                            .gift-text {
+                                font-size: pxToRem(20px);
+                                color: #ff6630;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.chest-silver {
+            margin-bottom: pxToRem(52px);
+            .star {
+                background-image: url("../images/icon-star-silver.png");
+                width: pxToRem(460px);
+                height: pxToRem(226px);
+                top: pxToRem(60px);
+            }
+            .chest {
+                height: pxToRem(336px);
+                .chest-body {
+                    background-image: url("../images/icon-silver-chest-off.png");
+                    width: pxToRem(316px);
+                    height: pxToRem(290px);
+                    &.open {
+                        background-image: url("../images/icon-silver-chest-open.png");
+                        width: pxToRem(362px);
+                        height: pxToRem(334px);
+                        .chest-gift-wrapper {
+                            display: inline-block;
+                        }
+                    }
+                    .chest-gift-wrapper {
+                        background-image: url("../images/bg-silver-gift.png");
+                    }
+                }
+                .chest-base {
+                    background-image: url("../images/icon-silver-base.png");
+                    width: pxToRem(380px);
+                    height: pxToRem(166px);
+                }
+            }
+            .gift-icon {
+                &.gift01 {
+                    background-image: url("../images/silver-gift01.png");
+                }
+                &.gift02 {
+                    background-image: url("../images/silver-gift02.png");
+                }
+                &.gift03 {
+                    background-image: url("../images/silver-gift03.png");
+                }
+                &.gift04 {
+                    background-image: url("../images/silver-gift04.png");
+                }
+                &.gift05 {
+                    background-image: url("../images/silver-gift05.png");
+                }
+                &.gift06 {
+                    background-image: url("../images/silver-gift06.png");
+                }
+                &.gift07 {
+                    background-image: url("../images/silver-gift07.png");
+                }
+                &.gift08 {
+                    background-image: url("../images/silver-gift08.png");
+                }
+            }
+            .ribbon01 {
+                background-image: url("../images/icon-ribbon01.png");
+                width: pxToRem(228px);
+                height: pxToRem(110px);
+                position: absolute;
+                top: pxToRem(-66px);
+                right: 0;
+                z-index: 999;
+            }
+            .ribbon02 {
+                background-image: url("../images/icon-ribbon02.png");
+                width: pxToRem(198px);
+                height: pxToRem(420px);
+                position: absolute;
+                bottom: pxToRem(-288px);
+                left: 0;
+                z-index: 1;
+            }
+            .float01 {
+                background-image: url("../images/icon-float01.png");
+                width: pxToRem(110px);
+                height: pxToRem(196px);
+                position: absolute;
+                top: pxToRem(40px);
+                left: 0;
+                z-index: 999;
+            }
+            .float02 {
+                background-image: url("../images/icon-float02.png");
+                width: pxToRem(66px);
+                height: pxToRem(156px);
+                position: absolute;
+                top: pxToRem(170px);
+                left: 0;
+                z-index: 999;
+            }
+            .float03 {
+                background-image: url("../images/icon-float03.png");
+                width: pxToRem(116px);
+                height: pxToRem(168px);
+                position: absolute;
+                top: pxToRem(400px);
+                right: 0;
+                z-index: 999;
+            }
+        }
+        &.chest-gold {
+            margin-bottom: pxToRem(110px);
+            .star {
+                background-image: url("../images/icon-star-gold.png");
+                width: pxToRem(460px);
+                height: pxToRem(226px);
+                top: pxToRem(60px);
+            }
+            .chest {
+                height: pxToRem(336px);
+                .chest-body {
+                    background-image: url("../images/icon-gold-chest-off.png");
+                    width: pxToRem(306px);
+                    height: pxToRem(272px);
+                    &.open {
+                        background-image: url("../images/icon-gold-chest-open.png");
+                        width: pxToRem(364px);
+                        height: pxToRem(340px);
+                        .chest-gift-wrapper {
+                            display: inline-block;
+                        }
+                    }
+                    .chest-gift-wrapper {
+                        background-image: url("../images/bg-gold-gift.png");
+                    }
+                }
+                .chest-base {
+                    background-image: url("../images/icon-gold-base.png");
+                    width: pxToRem(370px);
+                    height: pxToRem(166px);
+                }
+            }
+            .gift-icon {
+                &.gift01 {
+                    background-image: url("../images/gold-gift01.png");
+                }
+                &.gift02 {
+                    background-image: url("../images/gold-gift02.png");
+                }
+                &.gift03 {
+                    background-image: url("../images/gold-gift03.png");
+                }
+                &.gift04 {
+                    background-image: url("../images/gold-gift04.png");
+                }
+                &.gift05 {
+                    background-image: url("../images/gold-gift05.png");
+                }
+                &.gift06 {
+                    background-image: url("../images/gold-gift06.png");
+                }
+                &.gift07 {
+                    background-image: url("../images/gold-gift07.png");
+                }
+                &.gift08 {
+                    background-image: url("../images/gold-gift08.png");
+                }
+                &.gift09 {
+                    background-image: url("../images/gold-gift09.png");
+                }
+            }
+            .float04 {
+                background-image: url("../images/icon-float04.png");
+                width: pxToRem(116px);
+                height: pxToRem(178px);
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 999;
+            }
+            .ribbon03 {
+                background-image: url("../images/icon-ribbon03.png");
+                width: pxToRem(224px);
+                height: pxToRem(454px);
+                position: absolute;
+                top: pxToRem(684px);
+                right: pxToRem(4px);
+                z-index: 1;
+            }
+        }
+    }
+    .winners-wrapper {
+        position: relative;
+        z-index: 9;
+        margin-bottom: pxToRem(70px);
+        .winners-list {
+            position: relative;
+            z-index: 9;
+            width: pxToRem(710px);
+            height: pxToRem(610px);
+            border-radius: pxToRem(20px);
+            background-color: #ff7033;
+            margin: auto;
+            text-align: center;
+            border: pxToRem(10px) solid #ea3426;
+            box-shadow: 0 pxToRem(10px) pxToRem(60px) #ca2416;
+            .winner-title {
+                width: pxToRem(460px);
+                height: pxToRem(100px);
+                position: absolute;
+                z-index: 99;
+                background-image: url("../images/winner-title.png");
+                left: 50%;
+                margin-left: pxToRem(-230px);
+                top: pxToRem(-48px)
+            }
+            .scroll-content {
+                width: 100%;
+                height: pxToRem(530px);
+                position: relative;
+                // margin: auto;
+                margin-top: pxToRem(70px);
+                padding-top: pxToRem(42px);
+                padding-bottom: pxToRem(30px);
+                font-size: 0;
+                overflow: hidden;
+                box-sizing: border-box;
+                z-index: 99;
+                .anit {
+                    animation: move-list 5s linear infinite;
+                }
+                .winner-item {
+                    position: relative;
+                    margin-bottom: pxToRem(52px);
+                    white-space: nowrap;
+                    font-size: 0;
+                    text-align: left;
+                    padding: 0 pxToRem(32px);
+                    color: #fff7dd;
+                    .winner-name {
+                        font-size: pxToRem(24px);
+                        line-height: 120%;
+                        display: inline-block;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        margin-right: pxToRem(30px);
+                        vertical-align: middle;
+                        width: pxToRem(180px);
+                    }
+                    .prize-name {
+                        font-size: pxToRem(24px);
+                        line-height: 120%;
+                        display: inline-block;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        vertical-align: middle;
+                        width: pxToRem(340px);
+                    }
+                    .win-time {
+                        font-size: pxToRem(24px);
+                        display: inline-block;
+                        vertical-align: middle;
+                        float: right;
+                    }
+                }
+            }
+        }
+        .ribbon04 {
+            background-image: url("../images/icon-ribbon04.png");
+            width: pxToRem(288px);
+            height: pxToRem(234px);
+            position: absolute;
+            left: 0;
+            bottom: pxToRem(-20px);
+            z-index: 1;
+        }
+        .float05 {
+            background-image: url("../images/icon-float05.png");
+            width: pxToRem(128px);
+            height: pxToRem(182px);
+            position: absolute;
+            z-index: 99;
+            left: 0;
+            top: 0;
+        }
+    }
+}
+
+@keyframes move-list {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+        display: block !important;
+    }
+    100% {
+        // opacity: 0;
+        transform: translateY(-50%);
+        display: block !important;
+    }
+}
+
+@-webkit-keyframes move-list {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        display: block !important;
+    }
+    100% {
+        // opacity: 0;
+        -webkit-transform: translateY(-50%);
+        display: block !important;
     }
 }
