@@ -1,0 +1,72 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../../sass/func";
+
+.title {
+	@include icon-background('../images/title3.png', 628px, 138px);
+	margin-top: pxToRem(10px);
+	margin-left: pxToRem(44px);
+}
+.descri {
+	position: relative;
+	width: pxToRem(650px);
+	margin: 0 auto;
+	// margin
+	color: #fffbe8;
+	font-size: pxToRem(24px);
+	line-height: pxToRem(32px);
+	padding: pxToRem(20px) pxToRem(18px);
+	text-align: justify;
+	box-sizing: border-box;
+}
+.msg-board {
+	position: relative;
+	@include icon-background('../images/bg_board.png', 750px, 909px);
+	.icon-yr-float {
+		position: absolute;
+		right: 0;
+		top: pxToRem(-26px);
+	}
+	.icon-hz-float {
+		position: absolute;
+		left: 0;
+		bottom: pxToRem(-50px);
+	}
+}
+
+//icon
+.icon-open-arrow {
+	position: absolute;
+	right: 0;
+	top: pxToRem(4px);
+	width: pxToRem(58px);
+	height: pxToRem(58px);
+	&:before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		margin-top: pxToRem(6px);
+		left: pxToRem(10px);
+		display: block;
+		width: pxToRem(20px);
+		height: pxToRem(2px);
+		border-radius: pxToRem(2px);
+		background-color: #ffe03e;
+		transform: rotateZ(40deg);
+		transform-origin: right;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		margin-top: pxToRem(6px);
+		right: pxToRem(10px);
+		display: block;
+		width: pxToRem(20px);
+		height: pxToRem(2px);
+		border-radius: pxToRem(2px);
+		background-color: #ffe03e;
+		transform:rotateZ(-40deg);
+		transform-origin: left;
+	}
+}

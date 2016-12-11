@@ -28,13 +28,16 @@
     @extend .icon-block;
     @include icon-background('../images/masker_txt.png', 703px, 90px);
 }
-
+.icon-hz-float {
+    @extend .icon-block;
+    @include icon-background('../images/hz-float.png', 119px, 179px);
+}
 .icon-lz-float {
     @include icon-background('../images/lz-float.png', 119px, 179px);
     @extend .icon-block;
 }
 
 .icon-yr-float {
-    @include icon-background('../images/yr-float.png', 115px, 161px);
+    @include icon-background('../images/yr-float.png', 127px, 161px);
     @extend .icon-block;
 }
