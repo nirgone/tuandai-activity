@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import "variables";
 @import "../../../sass/func";
+@import "listsprite";
 .icon-block {
     display: block;
     background-repeat: no-repeat;
@@ -125,16 +126,19 @@ span {
         text-align: right;
     }
     .medal-gold {
-        @include icon-background('../images/medal-gold.png', 46px, 56px);
-        @extend .icon-inline-block;
+        // @include icon-background('../images/medal-gold.png', 46px, 56px);
+        // @extend .icon-inline-block;
+        @extend .icon-medal-gold ;
     }
     .medal-sliver {
-        @include icon-background('../images/medal-sliver.png', 46px, 56px);
-        @extend .icon-inline-block;
+        // @include icon-background('../images/medal-sliver.png', 46px, 56px);
+        // @extend .icon-inline-block;
+        @extend .icon-medal-sliver;
     }
     .medal-bonze {
-        @include icon-background('../images/medal-bonze.png', 46px, 56px);
-        @extend .icon-inline-block;
+        // @include icon-background('../images/medal-bonze.png', 46px, 56px);
+        // @extend .icon-inline-block;
+        @extend .icon-medal-bonze;
     }
     .mr-cont {
         width: 100%;
@@ -211,30 +215,33 @@ span {
         }
     }
     .icon-g-gold {
-        @include icon-background('../images/l-gold.png',
-        66px,
-        68px);
-        @extend .icon-inline-block;
+        // @include icon-background('../images/l-gold.png',
+        // 66px,
+        // 68px);
+        // @extend .icon-inline-block;
+        @extend .icon-l-gold;
         position: absolute;
         left: pxToRem(68px);
         top: 50%;
         margin-top: pxToRem(-34px);
     }
     .icon-plus {
-        @include icon-background('../images/icon-plus.png',
-        29px,
-        29px);
-        @extend .icon-inline-block;
+        // @include icon-background('../images/icon-plus.png',
+        // 29px,
+        // 29px);
+        // @extend .icon-inline-block;
+        @extend .icon-icon-plus;
         position: absolute;
         left: pxToRem(20px);
         top: 50%;
         margin-top: pxToRem(-14px);
     }
     .g-title {
-        @include inline-background('../images/lp-title-bg.png',
-        235px,
-        50px);
-        @extend .icon-block;
+        // @include inline-background('../images/lp-title-bg.png',
+        // 235px,
+        // 50px);
+        // @extend .icon-block;
+        @extend .icon-lp-title-bg;
         position: absolute;
         left: 50%;
         top: pxToRem(-20px);
@@ -244,10 +251,11 @@ span {
         line-height: pxToRem(54px);
     }
     .g-icon-packet {
-        @include icon-background('../images/l-redpacket.png',
-        71px,
-        72px);
-        @extend .icon-inline-block;
+        // @include icon-background('../images/l-redpacket.png',
+        // 71px,
+        // 72px);
+        // @extend .icon-inline-block;
+        @extend .icon-l-redpacket;
         position: absolute;
         left: pxToRem(40px);
         top: 50%;
@@ -283,4 +291,7 @@ span {
     &>p:first-child {
         text-indent: 2em;
     }
+}
+.popup {
+    display: none;
 }

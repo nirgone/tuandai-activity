@@ -32,6 +32,7 @@
     750px,
     700px);
     @extend .icon-block;
+    max-width: 414px;
     padding-top: pxToRem(90px);
     &:before {
         content: "";

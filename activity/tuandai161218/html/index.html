@@ -13,26 +13,10 @@
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/animation.css">
     <!-- endbuild -->
-    <script>
-    //动态算rem
-    (function(doc, win) {
-        var docEl = doc.documentElement,
-            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-            recalc = function() {
-                // if (docEl.style.fontSize) return;
-                clientWidth = docEl.clientWidth;
-                if (!clientWidth) return;
-                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
-                if (document.body) {
-                    document.body.style.fontSize = docEl.style.fontSize;
-                }
-            };
-        recalc();
-        if (!doc.addEventListener) return;
-        win.addEventListener(resizeEvt, recalc, false);
-        doc.addEventListener("DOMContentLoaded", recalc, false);
-    })(document, window);
-    </script>
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+    
 </head>
 
 <body>

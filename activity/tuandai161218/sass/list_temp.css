@@ -1,0 +1,63 @@
+.icon-icon-plus {
+  display: block;
+  background-image: url(../images/list/list.png);
+  background-size:pxToRem(235px) pxToRem(198px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-112px) pxToRem(-142px);
+  width: pxToRem(29px);
+  height: pxToRem(29px);
+}
+.icon-l-gold {
+  display: block;
+  background-image: url(../images/list/list.png);
+  background-size:pxToRem(235px) pxToRem(198px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-81px) pxToRem(-60px);
+  width: pxToRem(66px);
+  height: pxToRem(68px);
+}
+.icon-l-redpacket {
+  display: block;
+  background-image: url(../images/list/list.png);
+  background-size:pxToRem(235px) pxToRem(198px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-60px);
+  width: pxToRem(71px);
+  height: pxToRem(72px);
+}
+.icon-lp-title-bg {
+  display: block;
+  background-image: url(../images/list/list.png);
+  background-size:pxToRem(235px) pxToRem(198px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(235px);
+  height: pxToRem(50px);
+}
+.icon-medal-bonze {
+  display: block;
+  background-image: url(../images/list/list.png);
+  background-size:pxToRem(235px) pxToRem(198px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-157px) pxToRem(-60px);
+  width: pxToRem(46px);
+  height: pxToRem(56px);
+}
+.icon-medal-gold {
+  display: block;
+  background-image: url(../images/list/list.png);
+  background-size:pxToRem(235px) pxToRem(198px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-56px) pxToRem(-142px);
+  width: pxToRem(46px);
+  height: pxToRem(55px);
+}
+.icon-medal-sliver {
+  display: block;
+  background-image: url(../images/list/list.png);
+  background-size:pxToRem(235px) pxToRem(198px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-142px);
+  width: pxToRem(46px);
+  height: pxToRem(56px);
+}
