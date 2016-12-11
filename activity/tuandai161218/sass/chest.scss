@@ -1,0 +1,36 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    // height: 100%;
+    // width: 100%;
+    // overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+    text-decoration: none;
+}
+
+.content {
+    .title {
+        @extend .icon-block;
+        background-image: url("../images/title-chest.png");
+        width: pxToRem(630px);
+        height: pxToRem(140px);
+        position: relative;
+        margin-top: pxToRem(12px);
+        left: pxToRem(44px);
+        margin-bottom: pxToRem(14px);
+    }
+    .md {
+    	margin-bottom: pxToRem(56px);
+    }
+}
