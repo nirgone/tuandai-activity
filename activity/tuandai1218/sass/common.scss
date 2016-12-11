@@ -1,0 +1,54 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/func";
+@import "../../../sass/reset";
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background-color: $bg-red;
+}
+
+.scroll-active {
+    -webkit-overflow-scrolling: touch !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.scroll {
+    max-width: 414px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    position: relative;
+    background-color: $bg-red;
+    .content {
+        padding-bottom: pxToRem(98px);
+        width: 100%;
+    }
+}
+
+.act-time {
+    font-size: pxToRem(24px);
+    color: #fffbe8;
+    text-align: center;
+    display: block;
+    margin-top: pxToRem(26px);
+}
+
+.title-bg {
+    @include icon-background('../images/title-bg.png', 594px, 98px);
+    @extend .icon-block;
+    margin: auto;
+    margin-top: pxToRem(40px);
+}
