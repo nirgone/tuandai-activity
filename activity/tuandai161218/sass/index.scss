@@ -1,20 +1,59 @@
 @charset "UTF-8";
 @import "variables";
-@import "sprite";
-@import "../../../sass/reset";
 @import "../../../sass/func";
-html,
-body {
-    position: relative;
-    // height: 100%;
-    // width: 100%;
-    // overflow: hidden;
-    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-    margin: 0;
-    padding: 0;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+.icon-block {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
-a {
-    text-decoration: none;
+.icon-inline-block {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+*{
+	box-sizing: border-box;
+}
+.mt {
+	@include icon-background('../images/m-t-bg.png', 750px, 700px);
+	@extend .icon-block;
+	padding-top: pxToRem(150px);
+	&:before {
+		content: "";
+		@include icon-background('../images/m-label.png', 248px, 215px);
+		@extend .icon-block;
+		position: absolute;
+		top: 0;
+		left: pxToRem(30px);
+	}
+	.mt-title {
+		/* @include icon-background('../images/m-title.png', 511px, 258px);
+		@extend .icon-block;
+		margin: auto;
+		position: relative;
+		i {
+			@extend .icon-block;
+			position: absolute;
+		} */
+		width: 100%;
+		height: pxToRem(334px);
+		background-image: url('../images/m-title.png'), url('../images/ribbon1.png'), url('../images/ribbon2.png'), url('../images/ribbon4.png'),url('../images/ribbon5.png');
+		background-repeat: no-repeat,no-repeat,no-repeat,no-repeat;
+		background-size: pxToRem(511px) pxToRem(258px), pxToRem(146px) pxToRem(78px), pxToRem(211px) pxToRem(222px),  pxToRem(97px) pxToRem(127px), pxToRem(208px) pxToRem(66px);
+		background-position: center, pxToRem(220px) 0, pxToRem(490px) pxToRem(80px), pxToRem(24px) pxToRem(134px), pxToRem(40px) bottom ;
+	}
+	.icon-sub-title {
+		@include icon-background('../images/icon-sub-title.png', 579px, 73px);
+		@extend .icon-block;
+		margin: auto;
+		margin-top: pxToRem(20px);
+	}
+	/* .icon-ribbon1 {
+		@include icon-background('../images/ribbon1.png', 146px, 78px);
+		top: 0;
+		left: 0%;
+	} */
 }
