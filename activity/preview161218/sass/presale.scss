@@ -19,6 +19,7 @@
     @include background('../images/presale-txt.png', 610px, 54px);
     // @extend .icon-block;
     margin: auto;
+    margin-bottom: pxToRem(24px);
 }
 
 

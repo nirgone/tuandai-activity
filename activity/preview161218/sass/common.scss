@@ -368,6 +368,40 @@ a {
     display: block;
     margin-top: pxToRem(26px);
 }
+.md {
+        font-size: 0;
+        margin-bottom: pxToRem(38px);
+        text-align: center;
+        .act-time {
+            display: inline-block;
+            // line-height: pxToRem(36px);
+            vertical-align: middle;
+            // height: pxToRem(36px);
+            margin-top: 0;
+        }
+        .check-rule {
+            color: #f16c26;
+            font-size: 0;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: pxToRem(36px);
+            height: pxToRem(36px);
+            margin-left: pxToRem(36px);
+            border-radius: pxToRem(18px);
+            background-color: #fee13d;
+            width: pxToRem(142px);
+            text-align: center;
+            .rule-text {
+                font-size: pxToRem(22px);
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .icon-arrow {
+                vertical-align: middle;
+                margin-left: pxToRem(10px);
+            }
+        }
+    }
 
 .icon-arrow {
     @include icon-background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAATBAMAAAC0B+rjAAAAJFBMVEUAAAD8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDS9xPZPAAAADHRSTlMA/RXUkEla5nNHJxeUcVZ0AAAAMElEQVQI12PgZgCD5Q5gaqIImGIVhHADieGyCTaAKGVhBSDJZGhEDIch0QiiF8wBABkUB6BnlrRMAAAAAElFTkSuQmCC',

@@ -34,14 +34,14 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div id="video_a" class="video-con">
-                                <img id="img_a" src="../images/index_video1.png" />
-                                <span>标题11111</span>
+                                <img id="img_a" src="../images/video1.jpg" />
+                                <span>12.18网贷爱心日 你的梦想 我们来守护</span>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div id="video_b" class="video-con">
-                                <img id="img_b" src="../images/index_video1.png" />
-                                <span>标题222222</span>
+                                <img id="img_b" src="../images/video1.jpg" />
+                                <span>懂你背后的认真 专注帮扶小微企业</span>
                             </div>
                         </div>
                     </div>
@@ -51,13 +51,13 @@
                   <div class='swipe-wrap'>
                     <div class="swiper-slide">
                         <div id="video_a" class="video-con">
-                            <img id="img_a" src="../images/index_video1.png" />
+                            <img id="img_a" src="../images/video1.jpg" />
                             <span>标题11111</span>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div id="video_b" class="video-con">
-                            <img id="img_b" src="../images/index_video1.png" />
+                            <img id="img_b" src="../images/video1.jpg" />
                             <span>标题222222</span>
                         </div>
                     </div>
@@ -70,10 +70,7 @@
             </div>
             <ul class="txt-cont">
                 <li>
-                    12月18日，一年一度的网贷爱心日，旨在帮助小微企业融资借款，渡过资金周转寒冬或完成创业梦想。今年我们也将和各位团粉一起努力，用我们的力量帮助小微企业渡过年关。
-                </li>
-                <li>
-                    “12.18网贷爱心日”，与您相约，让我们朝着爱心与梦想出发！
+                    12月18日，一年一度的网贷爱心日，旨在帮助小微企业融资借款，渡过资金周转寒冬或完成创业梦想。今年我们也将和各位团粉一起努力，用我们的力量帮助小微企业渡过年关。“12.18网贷爱心日”，与您相约，让我们朝着爱心与梦想出发！
                 </li>
             </ul>
             <div class="m-title-cont">
@@ -117,7 +114,7 @@
     <div class="masker">
         <div class="iv">
             <div id="showVideo">
-                <img src="../images/index_video1.png" id="pimg">
+                <img src="../images/video1.jpg" id="pimg">
             </div>
             <i class="icon-vclose"></i>
         </div>
@@ -143,6 +140,7 @@
     var isApp = true; //是否为app端打开
     var isLogined; //是否已登录
     var option;
+    var player;
     if (isApp) {
         option = {
             t: Util.getParam('t'),
@@ -155,6 +153,13 @@
     }
     var mySwiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
+        onTransitionEnd: function(swiper) {
+            if(swiper.activeIndex === 0) {
+                $(".txt-cont").html('<li> 12月18日，一年一度的网贷爱心日，旨在帮助小微企业融资借款，渡过资金周转寒冬或完成创业梦想。今年我们也将和各位团粉一起努力，用我们的力量帮助小微企业渡过年关。“12.18网贷爱心日”，与您相约，让我们朝着爱心与梦想出发！</li>');
+            }else{
+                 $(".txt-cont").html('<li>我们来守护年关OR难关？一年中卯足了劲奋斗的小微企业，到了年关却失了朝气，年底资金的短缺让他们的梦想搁浅在这个冷冰冰的冬季。锦上添花到处有，雪中送炭世间无，而我们团贷网却是要做那个不惧风雪的送炭的人，12.18网贷爱心日，你愿意和我们一起守护小微企业的梦想吗？</li>');
+            }
+        }
     });
     /*var mySwiper = new Swipe(document.getElementById('slider'), {
         callback: function(index) {
@@ -166,8 +171,8 @@
     //视频播放  
 
     $('.sv-container').on('click', '#img_a', function() {
-        // $('#video_b').html('<img id="img_b" src="../images/index_video1.png" />');
-        $("#showVideo").html('<img src="../images/index_video1.png" id="pimg">');
+        // $('#video_b').html('<img id="img_b" src="../images/video1.jpg" />');
+        $("#showVideo").html('<img src="../images/video1.jpg" id="pimg">');
         $(".masker").show();
         $(".scroll").removeClass('scroll-active');
         showVideo('showVideo', 'XMTc2ODk1NTUzMg==');
@@ -176,8 +181,8 @@
 
     $('.sv-container').on('click', '#img_b', function() {
         // showVideo('video_b', 'XMTc3MDY0NDkxMg==');
-        // $('#video_a').html('<img id="img_a" src="../images/index_video1.png" />');
-        $("#showVideo").html('<img src="../images/index_video1.png" id="pimg">');
+        // $('#video_a').html('<img id="img_a" src="../images/video1.jpg" />');
+        $("#showVideo").html('<img src="../images/video1.jpg" id="pimg">');
         $(".masker").show();
         $(".scroll").removeClass('scroll-active');
         showVideo('showVideo', 'XMTc3MDY0NDkxMg==');
@@ -185,6 +190,7 @@
     $(".hover, .icon-vclose").on('click', function() {
         $(".masker").hide();
         $(".scroll").addClass('scroll-active');
+        player.pauseVideo();
     });
 
     function showVideo(domid, vid) {
