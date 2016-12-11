@@ -66,15 +66,15 @@ span {
         margin-left: pxToRem(-230px);
     }
     .icon-lz-float {
-        @include icon-background('../images/lz-float.png', 119px, 179px);
-        @extend .icon-block;
+        // @include icon-background('../images/lz-float.png', 119px, 179px);
+        // @extend .icon-block;
         position: absolute;
         left: pxToRem(-30px);
         bottom: pxToRem(-110px);
     }
     .icon-yr-float {
-        @include icon-background('../images/yr-float.png', 115px, 161px);
-        @extend .icon-block;
+        // @include icon-background('../images/yr-float.png', 115px, 161px);
+        // @extend .icon-block;
         position: absolute;
         right: pxToRem(-30px);
         top: pxToRem(-50px);

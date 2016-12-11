@@ -30,30 +30,27 @@
 		left: pxToRem(30px);
 	}
 	.mt-title {
-		/* @include icon-background('../images/m-title.png', 511px, 258px);
-		@extend .icon-block;
-		margin: auto;
-		position: relative;
-		i {
-			@extend .icon-block;
-			position: absolute;
-		} */
 		width: 100%;
 		height: pxToRem(334px);
+		position: relative;
 		background-image: url('../images/m-title.png'), url('../images/ribbon1.png'), url('../images/ribbon2.png'), url('../images/ribbon4.png'),url('../images/ribbon5.png');
 		background-repeat: no-repeat,no-repeat,no-repeat,no-repeat;
 		background-size: pxToRem(511px) pxToRem(258px), pxToRem(146px) pxToRem(78px), pxToRem(211px) pxToRem(222px),  pxToRem(97px) pxToRem(127px), pxToRem(208px) pxToRem(66px);
-		background-position: center, pxToRem(220px) 0, pxToRem(490px) pxToRem(80px), pxToRem(24px) pxToRem(134px), pxToRem(40px) bottom ;
+		background-position: pxToRem(90px) pxToRem(60px), pxToRem(220px) 0, pxToRem(490px) pxToRem(80px), pxToRem(24px) pxToRem(134px), pxToRem(40px) bottom ;
 	}
 	.icon-sub-title {
 		@include icon-background('../images/icon-sub-title.png', 579px, 73px);
 		@extend .icon-block;
-		margin: auto;
-		margin-top: pxToRem(20px);
+		// margin: auto;
+		margin-left: pxToRem(50px);
+		margin-top: pxToRem(10px);
 	}
-	/* .icon-ribbon1 {
-		@include icon-background('../images/ribbon1.png', 146px, 78px);
-		top: 0;
-		left: 0%;
-	} */
+	.icon-m-pai {
+		@include icon-background('../images/m-pai.png', 139px, 209px);
+		@extend .icon-block;
+		position: absolute;
+		bottom: 0;
+		right: pxToRem(26px);
+	}
+	
 }

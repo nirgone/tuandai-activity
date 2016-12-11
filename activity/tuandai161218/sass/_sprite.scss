@@ -33,3 +33,8 @@
     @include icon-background('../images/lz-float.png', 119px, 179px);
     @extend .icon-block;
 }
+
+.icon-yr-float {
+    @include icon-background('../images/yr-float.png', 115px, 161px);
+    @extend .icon-block;
+}
