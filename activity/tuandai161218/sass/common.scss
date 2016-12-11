@@ -38,7 +38,7 @@ a {
     }
 }
 
-.act-time {
+/* .act-time {
     font-size: pxToRem(24px);
     color: #fffbe8;
     text-align: center;
@@ -46,12 +46,32 @@ a {
     margin-top: pxToRem(26px);
 }
 
-.title-bg {
+.l-rule-btn {
+    height: pxToRem(36px);
+    line-height: pxToRem(36px);
+    background-color: #ffe13e;
+    color: #f16c26;
+    font-size: pxToRem(22px);
+    border-radius: pxToRem(36px);
+    padding: 0 pxToRem(10px);
+    margin-left: pxToRem(20px);
+    .icon-arrow {
+        @include icon-background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAATBAMAAAC0B+rjAAAAJFBMVEUAAAD8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDS9xPZPAAAADHRSTlMA/RXUkEla5nNHJxeUcVZ0AAAAMElEQVQI12PgZgCD5Q5gaqIImGIVhHADieGyCTaAKGVhBSDJZGhEDIch0QiiF8wBABkUB6BnlrRMAAAAAElFTkSuQmCC', 11px, 19px);
+        @extend .icon-inline-block;
+        vertical-align: middle;
+        margin-left: pxToRem(6px);
+    }
+} */
+
+/* .title-bg {
     @include icon-background('../images/title-bg.png', 594px, 98px);
     @extend .icon-block;
     margin: auto;
     margin-top: pxToRem(40px);
-}
+    line-height: pxToRem(98px);
+    text-align: center;
+    position: relative;
+} */
 
 .footer {
     position: absolute;

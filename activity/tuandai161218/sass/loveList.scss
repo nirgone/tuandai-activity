@@ -15,10 +15,68 @@
     background-size: contain;
 }
 
-.icon-l-title {
+/* .icon-l-title {
 	@include icon-background('../images/l-title.png', 478px, 44px);
 	@extend .icon-inline-block;
 }
-
+.icon-l-pai {
+    @include icon-background('../images/l-pai.png', 94px, 135px);
+    @extend .icon-inline-block;
+    position: absolute;
+    left: pxToRem(-44px);
+    top: pxToRem(-26px);
+} */
+.icon-l-title {
+    @include icon-background('../images/icon-l-title.png', 629px, 139px);
+    @extend .icon-block;
+    margin: auto;
+    margin-top: pxToRem(20px);
+    margin-bottom: pxToRem(16px);
+}
+.l-cont {
+    width: pxToRem(710px);
+    height: pxToRem(650px);
+    margin: auto;
+    border-radius: pxToRem(10px);
+    border: pxToRem(10px) solid #ea3425;
+    background-color: #fffce4;
+    color: #b73e28;
+    position: relative;
+    margin-top: pxToRem(110px);
+    padding: pxToRem(100px) 0;
+    // overflow: hidden;
+    .icon-l-label {
+        @include icon-background('../images/l-label.png', 459px, 103px);
+        @extend .icon-block;
+        position: absolute;
+        left: 50%;
+        top: pxToRem(-50px);
+        margin-left: pxToRem(-230px);
+    }
+    .icon-lz-float {
+        @include icon-background('../images/lz-float.png', 119px, 179px);
+        @extend .icon-block;
+        position: absolute;
+        left: pxToRem(-20px);
+        bottom: pxToRem(-110px);
+    }
+    .icon-yr-float {
+        @include icon-background('../images/yr-float.png', 115px, 161px);
+        @extend .icon-block;
+        position: absolute;
+        right: pxToRem(-10px);
+        top: pxToRem(-50px);
+    }
+    .l-list {
+        width: 100%;
+        height: 100%;
+        overflow: scroll;
+    }
+    li {
+        width: 100%;
+        height: pxToRem(110px);
+        line-height: pxToRem(110px);
+    }
+}
 
 
