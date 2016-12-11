@@ -72,7 +72,13 @@ a {
     text-align: center;
     position: relative;
 } */
-
+.act-time {
+    font-size: pxToRem(24px);
+    color: #fffbe8;
+    text-align: center;
+    display: block;
+    // margin-top: pxToRem(26px);
+}
 .md {
     font-size: 0;
     margin-bottom: pxToRem(38px);

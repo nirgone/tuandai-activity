@@ -15,9 +15,19 @@
     background-size: contain;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+i,
+span {
+    display: inline-block;
+}
+
+
 /* .icon-l-title {
-	@include icon-background('../images/l-title.png', 478px, 44px);
-	@extend .icon-inline-block;
+    @include icon-background('../images/l-title.png', 478px, 44px);
+    @extend .icon-inline-block;
 }
 .icon-l-pai {
     @include icon-background('../images/l-pai.png', 94px, 135px);
@@ -26,6 +36,7 @@
     left: pxToRem(-44px);
     top: pxToRem(-26px);
 } */
+
 .icon-l-title {
     @include icon-background('../images/icon-l-title.png', 629px, 139px);
     @extend .icon-block;
@@ -33,17 +44,18 @@
     margin-top: pxToRem(20px);
     margin-bottom: pxToRem(16px);
 }
+
 .l-cont {
     width: pxToRem(710px);
     height: pxToRem(650px);
     margin: auto;
-    border-radius: pxToRem(10px);
+    border-radius: pxToRem(20px);
     border: pxToRem(10px) solid #ea3425;
     background-color: #fffce4;
     color: #b73e28;
     position: relative;
     margin-top: pxToRem(110px);
-    padding: pxToRem(100px) 0;
+    padding: pxToRem(90px) 0 pxToRem(100px) 0;
     // overflow: hidden;
     .icon-l-label {
         @include icon-background('../images/l-label.png', 459px, 103px);
@@ -57,26 +69,213 @@
         @include icon-background('../images/lz-float.png', 119px, 179px);
         @extend .icon-block;
         position: absolute;
-        left: pxToRem(-20px);
+        left: pxToRem(-30px);
         bottom: pxToRem(-110px);
     }
     .icon-yr-float {
         @include icon-background('../images/yr-float.png', 115px, 161px);
         @extend .icon-block;
         position: absolute;
-        right: pxToRem(-10px);
+        right: pxToRem(-30px);
         top: pxToRem(-50px);
     }
     .l-list {
         width: 100%;
         height: 100%;
         overflow: scroll;
+        padding: 0 pxToRem(40px) 0 pxToRem(20px);
+        font-size: 0;
     }
-    li {
+    .l-tr {
         width: 100%;
-        height: pxToRem(110px);
-        line-height: pxToRem(110px);
+        height: pxToRem(60px);
+        line-height: pxToRem(60px);
+        margin-bottom: pxToRem(20px);
+        white-space: nowrap;
+        display: block;
+        &>div {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+    }
+    .l-ranking {
+        width: pxToRem(60px);
+        font-size: pxToRem(28px);
+        text-align: center;
+        position: relative;
+        i {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: pxToRem(-23px);
+            margin-top: pxToRem(-28px);
+        }
+    }
+    .l-name {
+        width: pxToRem(330px);
+        font-size: pxToRem(30px);
+        padding-left: pxToRem(40px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .l-amount {
+        width: pxToRem(238px);
+        font-size: pxToRem(30px);
+        text-align: right;
+    }
+    .medal-gold {
+        @include icon-background('../images/medal-gold.png', 46px, 56px);
+        @extend .icon-inline-block;
+    }
+    .medal-sliver {
+        @include icon-background('../images/medal-sliver.png', 46px, 56px);
+        @extend .icon-inline-block;
+    }
+    .medal-bonze {
+        @include icon-background('../images/medal-bonze.png', 46px, 56px);
+        @extend .icon-inline-block;
+    }
+    .mr-cont {
+        width: 100%;
+        height: pxToRem(100px);
+        background-color: rgb( 255, 255, 255);
+        // box-shadow: 0px 0px 30px 0px rgb( 245, 229, 207);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-bottom-left-radius: pxToRem(20px);
+        border-bottom-right-radius: pxToRem(20px);
+        padding: pxToRem(20px) pxToRem(40px) pxToRem(20px) pxToRem(20px);
+        z-index: 10;
     }
 }
 
+.gift-list {
+    width: 100%;
+    margin: pxToRem(90px) 0;
+    padding-left: pxToRem(30px);
+    text-align: center;
+    .g-cont {
+        // @include background('../images/gift-bg.png', 519px, 184px);
+        width: pxToRem(480px);
+        height: pxToRem(186px);
+        border: pxToRem(10px) solid #ea3425;
+        background-color: #fff;
+        border-radius: pxToRem(20px);
+        background-image: url('../images/lp-bg.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: pxToRem(433px) pxToRem(88px);
+        position: relative;
+        margin-top: pxToRem(10px);
+        padding-top: pxToRem(40px);
+        font-size: 0;
+        &>div {
+            height: pxToRem(100px);
+            width: 49.9%;
+            display: inline-block;
+            font-size: pxToRem(24px);
+            color: #424242;
+            vertical-align: top;
+            white-space: nowrap;
+            position: relative;
+        }
+        .g-redpacket {
+            // background-image: url('../images/g-redpacket.png');
+            // background-repeat: no-repeat;
+            // background-size: pxToRem(72px) pxToRem(72px);
+            // background-position: pxToRem(50px) pxToRem(14px);
+            padding: pxToRem(20px) 0 pxToRem(20px) pxToRem(110px);
+            &>span:last-child {
+                margin-top: pxToRem(10px);
+            }
+        }
+        i,
+        p,
+        span {
+            display: inline-block !important;
+            // vertical-align: middle;
+        }
+        .txt-o {
+            color: #fc7934;
+        }
+        .g-txt {
+            height: 100%;
+        }
+        .hg-cont {
+            text-align: left;
+            line-height: pxToRem(100px);
+            position: relative;
+            padding-left: pxToRem(140px);
+        }
+    }
+    .icon-g-gold {
+        @include icon-background('../images/l-gold.png',
+        66px,
+        68px);
+        @extend .icon-inline-block;
+        position: absolute;
+        left: pxToRem(68px);
+        top: 50%;
+        margin-top: pxToRem(-34px);
+    }
+    .icon-plus {
+        @include icon-background('../images/icon-plus.png',
+        29px,
+        29px);
+        @extend .icon-inline-block;
+        position: absolute;
+        left: pxToRem(20px);
+        top: 50%;
+        margin-top: pxToRem(-14px);
+    }
+    .g-title {
+        @include inline-background('../images/lp-title-bg.png',
+        235px,
+        50px);
+        @extend .icon-block;
+        position: absolute;
+        left: 50%;
+        top: pxToRem(-20px);
+        margin-left: pxToRem(-118px);
+        font-size: pxToRem(26px);
+        color: #fff;
+        line-height: pxToRem(54px);
+    }
+    .g-icon-packet {
+        @include icon-background('../images/l-redpacket.png',
+        71px,
+        72px);
+        @extend .icon-inline-block;
+        position: absolute;
+        left: pxToRem(40px);
+        top: 50%;
+        margin-top: pxToRem(-36px);
+    }
+}
 
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    // background: #fff;
+    width: 76%;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
