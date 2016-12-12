@@ -1,0 +1,206 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../../sass/func";
+@import "sprite";
+* {
+    box-sizing: border-box;
+}
+
+.mi-content {
+    padding-top: pxToRem(116px);
+}
+
+.mi {
+    width: pxToRem(710px);
+    min-height: pxToRem(420px);
+    border: pxToRem(10px) solid $border-red;
+    border-radius: pxToRem(20px);
+    background-color: #fff;
+    position: relative;
+    margin: auto;
+}
+
+.mi-right {
+    background-image: url('../images/interest-bg.png');
+    background-size: pxToRem(640px) pxToRem(202px);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    text-align: center;
+    padding-top: pxToRem(90px);
+    &:before {
+        content: "";
+        @extend .icon-yr-float;
+        position: absolute;
+        bottom: pxToRem(40px);
+        right: pxToRem(-32px);
+        transform: scale(1.2);
+    }
+    &:after {
+        content: "";
+        @extend .icon-yr-float;
+        position: absolute;
+        left: pxToRem(-36px);
+        top: pxToRem(40px);
+        transform: scale(-2, 2);
+    }
+    .icon-mi-label {
+        @include icon-background('../images/mi-label.png',
+        459px,
+        103px);
+        @extend .icon-block;
+        position: absolute;
+        left: 50%;
+        top: pxToRem(-40px);
+        margin-left: pxToRem(-230px);
+    }
+}
+
+.icon-comma {
+    @include icon-background('../images/comma.png',
+    33px,
+    29px);
+    @extend .icon-block;
+    position: absolute;
+    top: pxToRem(-16px);
+    content: "";
+}
+
+.txt-comma {
+    font-size: pxToRem(30px);
+    color: #b73e28;
+    display: inline-block;
+    position: relative;
+    &:before {
+        @extend .icon-comma;
+        left: pxToRem(-50px);
+    }
+    &:after {
+        @extend .icon-comma;
+        right: pxToRem(-50px);
+        transform: rotate(180deg);
+    }
+}
+
+.icon-intervest {
+    @extend .icon-interest-yellow;
+    margin: auto;
+    margin-top: pxToRem(46px);
+    // margin-bottom: pxToRem(30px);
+    z-index: 20;
+    position: relative;
+    line-height: pxToRem(138px);
+    span {
+        display: inline-block;
+        font-size: pxToRem(100px);
+        color: #fffce4;
+        position: relative;
+        padding-right: pxToRem(46px);
+        &:before {
+            content: "%";
+            color: #fffce4;
+            font-size: pxToRem(46px);
+            position: absolute;
+            bottom: pxToRem(-14px);
+            right: 0;
+        }
+    }
+}
+
+.icon-shadow {
+    @include icon-background('../images/shadow.png',
+    326px,
+    18px);
+    @extend .icon-block;
+    margin: auto;
+    z-index: 1;
+    position: relative;
+    top: pxToRem(-8px);
+}
+
+.i-remark {
+    font-size: pxToRem(24px);
+    color: #ff4a3b;
+    position: relative;
+    top: pxToRem(-10px);
+    .icon-mark {
+        @include icon-background('../images/mark.png',
+        26px,
+        26px);
+        @extend .icon-inline-block;
+        vertical-align: text-bottom;
+        margin-right: pxToRem(6px);
+    }
+}
+
+.desc-cont {
+    margin-top: pxToRem(60px);
+    padding: pxToRem(50px) pxToRem(30px) pxToRem(20px) pxToRem(30px);
+    &:before {
+        content: "";
+        @include icon-background('../images/i-label.png',
+        242px,
+        74px);
+        @extend .icon-block;
+        position: absolute;
+        left: pxToRem(20px);
+        top: pxToRem(-16px);
+    }
+    &:after {
+        content: "";
+        @extend .icon-lz-float;
+        position: absolute;
+        left: pxToRem(-30px);
+        bottom: pxToRem(-100px);
+    }
+    &>li:not(:last-child) {
+        position: relative;
+        &:before {
+            @include border('bottom',
+            #e6e6e6);
+        }
+    }
+}
+
+.desc-row {
+    width: 100%;
+    font-size: 0;
+    white-space: nowrap;
+    height: pxToRem(90px);
+    line-height: pxToRem(90px);
+    &>div:first-child {
+        width: 79.9%;
+        font-size: pxToRem(30px);
+        color: #424242;
+        padding-left: pxToRem(84px);
+        display: inline-block;
+        &:before {
+            content: "";
+            @include icon-background('../images/flag.png',
+            24px,
+            30px);
+            @extend .icon-inline-block;
+            position: relative;
+            left: pxToRem(-30px);
+        }
+    }
+    &>div:last-child {
+        width: 20%;
+        text-align: right;
+        font-size: pxToRem(30px);
+        color: #fd7a33;
+        display: inline-block;
+        padding-right: pxToRem(20px);
+    }
+    .btn-interest {
+        box-shadow: 0px pxToRem(4px) pxToRem(14px) 0px rgb( 255, 178, 148);
+        background-image: linear-gradient( 0deg, rgb(243, 67, 51) 0%, rgb(255, 117, 56) 100%);
+        width: pxToRem(130px);
+        height: pxToRem(50px);
+        border-radius: pxToRem(50px);
+        line-height: pxToRem(50px);
+        text-align: center;
+        display: inline-block;
+        font-size: pxToRem(24px);
+        color: #fff;
+    }
+}

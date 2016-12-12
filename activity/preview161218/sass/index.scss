@@ -50,6 +50,11 @@
     margin: auto;
     // @extend .icon-block;
 }
+.t-cont {
+    width: 100%;
+    height: pxToRem(340px);
+    position: relative;
+}
 
 .icon-m-title {
     @include background('../images/index_title.png',
@@ -67,8 +72,10 @@
     204px);
     // @extend .icon-block;
     position: absolute;
-    top: pxToRem(30px);
-    right: pxToRem(-80px);
+    // top: pxToRem(30px);
+    // right: pxToRem(-80px);
+    top: pxToRem(50px);
+    right: pxToRem(40px);
     animation: slideInRight .3s linear .8s both;
 }
 
@@ -89,14 +96,14 @@
     border: pxToRem(6px) solid #fff;
     // margin-bottom: pxToRem(40px);
     position: relative;
-    &:before {
-        content: "";
+    .icon-play {
         @include background('../images/icon-play.png', 90px, 90px);
         position: absolute;
         left: 50%;
         top: 50%;
         margin-left: pxToRem(-45px);
         margin-top: pxToRem(-45px);
+        display: inline-block;
     }
     img {
         width: 100%;
@@ -359,8 +366,8 @@
 @-webkit-keyframes zoomIn {
     from {
         // opacity: 0;
-        -webkit-transform: scale3d(.3, .3, .3);
-        transform: scale3d(.3, .3, .3);
+        -webkit-transform: scale(.3);
+        transform: scale(.3);
     }
     50% {
         opacity: 1;
@@ -370,8 +377,8 @@
 @keyframes zoomIn {
     from {
         // opacity: 0;
-        -webkit-transform: scale3d(.3, .3, .3);
-        transform: scale3d(.3, .3, .3);
+        -webkit-transform: scale(.3);
+        transform: scale(.3);
     }
     50% {
         opacity: 1;
@@ -380,27 +387,27 @@
 
 @-webkit-keyframes slideInRight {
   from {
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
+    -webkit-transform: translate(130%, 0);
+    transform: translate(130%, 0);
     visibility: visible;
   }
 
   to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
   }
 }
 
 @keyframes slideInRight {
   from {
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
+    -webkit-transform: translate(130%, 0);
+    transform: translate(130%, 0);
     visibility: visible;
   }
 
   to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
   }
 }
 
