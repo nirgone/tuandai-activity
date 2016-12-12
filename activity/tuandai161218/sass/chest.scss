@@ -510,16 +510,16 @@
         height: pxToRem(110px);
         margin-top: pxToRem(10px);
         color: #ea5800;
-        font-size: pxToRem(30px);
+        font-size: pxToRem(36px);
         font-weight: bold;
-        padding-top: pxToRem(28px);
-        padding-left: pxToRem(30px);
+        padding-top: pxToRem(24px);
+        padding-left: pxToRem(22px);
         box-sizing: border-box;
         border-radius: 50%;
         box-shadow: 0 0 pxToRem(40px) rgba(237, 55, 39, 0.7);
         &:after {
             content: "%";
-            font-size: pxToRem(18px);
+            font-size: pxToRem(22px);
             font-weight: initial;
         }
     }
