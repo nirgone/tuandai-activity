@@ -255,6 +255,7 @@
         $(".popup").show();
     });
     $(".masker, .popup-close").on('click', function() {
+        $(".popup-content")[0].scrollTop = 0;
         $(".popup").hide();
     })
 

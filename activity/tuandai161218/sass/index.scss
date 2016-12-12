@@ -58,8 +58,7 @@
         @extend .icon-block;
         position: relative;
         margin-left: pxToRem(20px);
-        // animation: zoomIn .8s linear both;
-        animation-duration: .8s !important;
+        animation: zoomIn .8s linear both;
     }
     .icon-sub-title {
         @include icon-background('../images/icon-sub-title.png',
@@ -184,27 +183,27 @@
     }
 }
 
-// @-webkit-keyframes zoomIn {
-//     from {
-//         opacity: 0;
-//         -webkit-transform: scale3d(.3, .3, .3);
-//         transform: scale3d(.3, .3, .3);
-//     }
-//     50% {
-//         opacity: 1;
-//     }
-// }
+@-webkit-keyframes zoomIn {
+    from {
+        // opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+    50% {
+        opacity: 1;
+    }
+}
 
-// @keyframes zoomIn {
-//     from {
-//         opacity: 0;
-//         -webkit-transform: scale3d(.3, .3, .3);
-//         transform: scale3d(.3, .3, .3);
-//     }
-//     50% {
-//         opacity: 1;
-//     }
-// }
+@keyframes zoomIn {
+    from {
+        // opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+    50% {
+        opacity: 1;
+    }
+}
 
 @-webkit-keyframes slideInRight {
   from {
