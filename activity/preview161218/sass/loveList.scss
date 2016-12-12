@@ -9,7 +9,7 @@
 }
 
 .icon-l-title {
-    @include background('../images/l-title.png', 611px, 54px);
+    @include background('../images/l-title.png?v=2016121201', 418px, 52px);
     margin: auto;
     margin-top: pxToRem(56px);
 }

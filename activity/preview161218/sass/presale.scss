@@ -201,7 +201,7 @@
 }
 
 .icon-list {
-	@include background('../images/icon-list.png', 150px, 140px);
+	@include background('../images/icon-list.png?v=2016121201', 150px, 140px);
 	position: absolute;
 	right: pxToRem(10px);
 	bottom: pxToRem(124px);
