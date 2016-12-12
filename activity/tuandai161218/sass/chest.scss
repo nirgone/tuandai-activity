@@ -546,6 +546,8 @@
         font-size: pxToRem(100px);
         color: #fffce4;
         line-height: pxToRem(244px);
+    }
+    [class^='prize silver-gift'] {
         &:after {
             content: '%';
             font-size: pxToRem(46px);
