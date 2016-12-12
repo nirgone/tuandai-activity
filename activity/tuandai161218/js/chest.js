@@ -1,16 +1,25 @@
 (function() {
 	FastClick.attach(document.body);
-	//do your thing.
-	var pageEl = $(".content");
 
+	var pageContentEl = $(".content");
 
-	// 控制列表滚动
+	// 查看加息说明
+	pageContentEl.on("click", ".check-rule", function() {
+		$(".dialog-rule").show();
+	});
+
+	// 关闭弹窗
+	$(".popup-close, .masker").on("click", function() {
+
+			$(".dialog").hide();
+		})
+		// 控制列表滚动
 	function anit() {
-		var length = pageEl.find(".winner-item").length;
+		var length = pageContentEl.find(".winner-item").length;
 		var speed = 0.5 * length;
 		if (length >= 6) {
-			pageEl.find(".wrap").addClass('anit');
-			pageEl.find(".anit").css({
+			pageContentEl.find(".wrap").addClass('anit');
+			pageContentEl.find(".anit").css({
 				"-webkit-animation-duration": speed + "s",
 				"animation-duration": speed + "s",
 			});
