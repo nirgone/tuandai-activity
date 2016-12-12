@@ -62,11 +62,13 @@
                     z-index: 999;
                     left: 50%;
                     transform: translateX(-50%);
+                    z-index: 9;
                 }
                 @at-root .chest {
                     position: relative;
                     z-index: 99;
                     margin-top: pxToRem(92px);
+                    z-index: 99;
                     .chest-body {
                         position: absolute;
                         z-index: 99;
@@ -617,4 +619,12 @@
 
 .gold-gift09 {
     background-image: url("../images/gold-gift09.png");
+}
+
+.gold-gift10 {
+    background-image: url("../images/gold-gift10.png");
+}
+
+.gold-gift11 {
+    background-image: url("../images/gold-gift11.png");
 }
