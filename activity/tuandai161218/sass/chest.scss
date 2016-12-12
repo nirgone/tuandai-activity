@@ -519,6 +519,31 @@
 .dialog-rule {
     display: none;
 }
+.popup {
+    .popup-content {
+        overflow: inherit;
+        padding-top: pxToRem(40px) !important;
+        margin-top: 0;
+        background: url(../images/prize_decora.png) no-repeat top;
+        background-size: pxToRem(610px) pxToRem(440px);
+    }
+    .prize {
+        display: block;
+        margin: pxToRem(20px) auto pxToRem(48px);
+        width: pxToRem(300px);
+        height: pxToRem(244px);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        font-size: pxToRem(100px);
+        color: #fffce4;
+        line-height: pxToRem(244px);
+        &:after {
+            content: '%';
+            font-size: pxToRem(46px);
+        }
+    }
+}
 
 @keyframes move-list {
     0% {
