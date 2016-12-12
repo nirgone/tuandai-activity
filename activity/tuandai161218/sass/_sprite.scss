@@ -41,3 +41,7 @@
     @include icon-background('../images/yr-float.png', 127px, 161px);
     @extend .icon-block;
 }
+.icon-interest-yellow {
+    @include icon-background('../images/interest-yellow.png', 318px, 138px);
+    @extend .icon-block;
+}
