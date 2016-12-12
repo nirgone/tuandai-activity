@@ -181,6 +181,7 @@
             @extend .icon-inline-block;
             position: relative;
             left: pxToRem(-30px);
+            top: pxToRem(2px);
         }
     }
     &>div:last-child {
@@ -203,4 +204,7 @@
         font-size: pxToRem(24px);
         color: #fff;
     }
+}
+.popup {
+    display: none;
 }

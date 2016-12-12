@@ -52,7 +52,27 @@
                     <div>邀请获加息</div>
                     <div>0.15%</div>
                 </li>
+                <li class="desc-row">
+                    <div>充值获加息</div>
+                    <div>0.15%</div>
+                </li>
             </ul>
+        </div>
+    </div>
+    <div class="popup" >
+        <div class="masker"></div>
+        <div class="popup-wrapper more">
+            <div class="popup-header" data-title="加息说明">
+                <div class="popup-close"><i class="close"></i></div>
+            </div>
+            <div class="popup-content">
+                <p>1、本活动的加息特权可叠加使用，12月18日—12月19日加入符合条件的智能理财（含We计划、复投宝、安盈计划、预售智能理财）均可获得最终叠加后的加息奖励；若该期间开放的智能理财未能在活动期内满额，则该计划加息可延续至其满额为止（如：12月19日开放的智能理财当天未能满额，则用户次日加入该计划仍能享受加息）；</p>
+                <p>2、所有环节获取的加息特权可叠加，且仅限12月18日—12月19日使用，过期作废；</p>
+                <p>3、加息特权所加利息额度会在12月20日00:00开始的5个工作日内发出，由系统自动添加至用户符合条件的智能理财上：</p>
+                <p>①普通We计划，加息匹配至所投标的；<br>We计划A/B/C/G加息奖励将随标的回款计划按月发放或到期发放。</p>
+                <p>②复投宝，复投宝以复投宝为单位，退出时一次性发持有时间的产生的加息奖励。</p>
+                <p>本活动规则解释权归团贷网所有，如有疑问请联系在线客服或拨打400-6410-888</p>
+            </div>
         </div>
     </div>
 </body>
@@ -62,7 +82,12 @@
 <!-- <script src="../js/index.js" type="text/javascript" charset="utf-8"></script> -->
 <script type="text/javascript">
 	(function() {
-		
+        $(".i-remark").on('click', function() {
+            $(".popup").show();
+        });
+        $(".masker, .popup-close").on('click', function() {
+            $(".popup").hide();
+        });
 	})();
 </script>
 
