@@ -205,6 +205,7 @@
                             width: pxToRem(192px);
                             margin-right: pxToRem(20px);
                             display: inline-block;
+                            vertical-align: middle;
                             .icon-wrapper {
                                 padding: pxToRem(16px) pxToRem(14px);
                                 box-sizing: border-box;
@@ -224,7 +225,8 @@
                                 font-size: pxToRem(20px);
                                 color: #ff6630;
                                 text-align: center;
-                                line-height: 120%;
+                                line-height: pxToRem(32px);
+                                white-space: normal;
                             }
                         }
                     }
@@ -364,6 +366,9 @@
                     width: pxToRem(370px);
                     height: pxToRem(166px);
                 }
+            }
+            .gift-text {
+                height: pxToRem(64px) !important;
             }
             .float04 {
                 background-image: url("../images/icon-float04.png");
