@@ -323,7 +323,7 @@
 }
 .masker {
     display: none;
-    background-color: rgba(0, 0, 0, .8) !important;
+    background-color: rgba(0, 0, 0, .9) !important;
     .iv {
         position: absolute;
         width: pxToRem(690px);
@@ -361,6 +361,9 @@
         bottom: 0;
         z-index: 9999;
     }
+}
+.x-title {
+    font-size: pxToRem(20px) !important;
 }
 
 @-webkit-keyframes zoomIn {
