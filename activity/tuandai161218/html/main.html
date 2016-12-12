@@ -129,7 +129,7 @@
 // }
 
 // Util.alertCommon({
-// 	content: '<p>您还需加入制定的智能理财项目</p><p>满<font class="font-orange">1000</font>元才能参与刮奖哦～</p>',
+// 	content: '<p>您还需加入指定的智能理财项目</p><p>满<font class="font-red">1000</font>元才能打开银箱哦～</p>',
 // 	btn: {
 // 		name: '立即投资',
 // 		callback: function() {
@@ -142,18 +142,32 @@
 // });
 
 Util.alertPrize({
-	content: '<p>您需邀请1名好友进行注册并累计</p><p>投≥500元才能参与刮奖哦～</p>',
-	btn: {
-		name: '立即邀请',
-		callback: function() {
-			console.log('立即邀请')
-		}
-	},
-	closeCallback: function() {
-		console.log('关闭');
-	},
+    content: '<p>恭喜你获得加息机会！</p><p class="grey align-justify">12月18日13时30分至12月19日24时00分，您只需额外充值12,000元，即可自动获得<font class="font-red">0.2%</font>加息特权，数量有限先到先哦。</p>',
+    btn: {
+        name: '立即邀请',
+        callback: function() {
+            console.log('立即邀请')
+        }
+    },
+    closeCallback: function() {
+        console.log('关闭');
+    },
     hasAnimation: true
 });
+
+// Util.alertPrize({
+// 	content: '<p>您需邀请1名好友进行注册并累计</p><p>投≥500元才能参与刮奖哦～</p>',
+// 	btn: {
+// 		name: '立即邀请',
+// 		callback: function() {
+// 			console.log('立即邀请')
+// 		}
+// 	},
+// 	closeCallback: function() {
+// 		console.log('关闭');
+// 	},
+//     hasAnimation: true
+// });
 </script>
 
 </html>
