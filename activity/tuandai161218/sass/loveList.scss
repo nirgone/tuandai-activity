@@ -94,6 +94,7 @@ span {
         margin-bottom: pxToRem(20px);
         white-space: nowrap;
         display: block;
+        font-size: 0;
         &>div {
             display: inline-block;
             height: 100%;
@@ -101,7 +102,7 @@ span {
         }
     }
     .l-ranking {
-        width: pxToRem(60px);
+        width: pxToRem(80px);
         font-size: pxToRem(28px);
         text-align: center;
         position: relative;
@@ -114,7 +115,7 @@ span {
         }
     }
     .l-name {
-        width: pxToRem(330px);
+        width: pxToRem(310px);
         font-size: pxToRem(30px);
         padding-left: pxToRem(40px);
         overflow: hidden;
@@ -177,6 +178,7 @@ span {
         position: relative;
         margin-top: pxToRem(10px);
         padding-top: pxToRem(48px);
+        margin-right: pxToRem(100px);
         font-size: 0;
         &>div {
             height: pxToRem(100px);
@@ -193,7 +195,7 @@ span {
             // background-repeat: no-repeat;
             // background-size: pxToRem(72px) pxToRem(72px);
             // background-position: pxToRem(50px) pxToRem(14px);
-            padding: pxToRem(20px) 0 pxToRem(20px) pxToRem(110px);
+            padding: pxToRem(20px) 0 pxToRem(20px) pxToRem(80px);
             &>span:last-child {
                 margin-top: pxToRem(10px);
             }
@@ -260,7 +262,7 @@ span {
         // @extend .icon-inline-block;
         @extend .icon-l-redpacket;
         position: absolute;
-        left: pxToRem(40px);
+        left: pxToRem(30px);
         top: 50%;
         margin-top: pxToRem(-36px);
     }
