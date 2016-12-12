@@ -52,7 +52,8 @@
             "icon": "",
             "content": "",
             "btn": null,
-            "closeCallback": null
+            "closeCallback": null,
+            "hasAnimation": false
         };
         _options = $.extend(_options, options || {});
         var popup = $("<div/>").addClass("popup");
@@ -68,7 +69,7 @@
             var i = $("<i/>").addClass("icon").addClass("icon-" + _options.icon);
             popup_header.append(i);
             popup.addClass("popup-icon");
-            popup_content.addClass(_options.icon+"-content");
+            popup_content.addClass(_options.icon + "-content");
         }
         popup_header.append(popup_close);
         if (_options.btn) {
@@ -82,6 +83,9 @@
                 }
                 hide(popup);
             });
+        }
+        if (_options.hasAnimation) {
+            popup_wrapper.addClass("zoomIn");
         }
         popup_wrapper.append(popup_header).append(popup_content);
         popup.append(masker).append(popup_wrapper);
@@ -105,8 +109,17 @@
         });
 
         function hide(target) {
-            target.remove();
-            enableScrolling();
+            if (_options.hasAnimation) {
+                popup_wrapper.addClass("zoomOut");
+                setTimeout(function() {
+                    target.remove();
+                    enableScrolling();
+                }, 300);
+            } else {
+                target.remove();
+                enableScrolling();
+            }
+
         }
     }
 
@@ -117,7 +130,6 @@
     function disableScrolling() {
         $(".scroll").removeClass("scroll-active");
     }
-
 
     var util = {
         //普通带title带文字内容弹窗，content--html片段， closeCallback--关闭回调
@@ -138,11 +150,11 @@
         // },
         // 获奖提示 {}
         alertPrize: function(options) {
-            this.alert(0,options.content, options.btn, options.closeCallback);
+            this.alert(0, options.content, options.btn, options.closeCallback, options.hasAnimation);
         },
-        
+
         alertCommon: function(options) {
-            this.alert(1,options.content, options.btn, options.closeCallback);
+            this.alert(1, options.content, options.btn, options.closeCallback, options.hasAnimation);
         },
         //带icon和按钮的弹窗
         // option: {
@@ -154,12 +166,13 @@
         //     },
         //     closeCallback: 关闭回调
         // }
-        alert: function(type, content, btn, closeCallback) {
+        alert: function(type, content, btn, closeCallback, hasAnimation) {
             popup({
                 "icon": "pop" + type,
                 "content": content,
                 "btn": btn,
-                "closeCallback": closeCallback
+                "closeCallback": closeCallback,
+                "hasAnimation": hasAnimation
             });
         },
         getParam: function(name, url) {
