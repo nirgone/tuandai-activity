@@ -16,12 +16,12 @@
 
 .icon-pop0 {
     @extend .icon-block;
-    @include icon-background('../images/pop0.png', 247px, 223px);
+    @include icon-background('../images/pop0.png', 245px, 222px);
 }
 
 .icon-pop1 {
     @extend .icon-block;
-    @include icon-background('../images/pop1.png', 269px, 206px);
+    @include icon-background('../images/pop1.png', 267px, 201px);
 }
 
 .icon-masker-txt {
