@@ -87,6 +87,9 @@
         if (_options.hasAnimation) {
             popup_wrapper.addClass("zoomIn");
         }
+        if(_options.popupClass) {
+            popup.addClass(_options.popupClass)
+        }
         popup_wrapper.append(popup_header).append(popup_content);
         popup.append(masker).append(popup_wrapper);
         $("body").append(popup);
@@ -150,11 +153,11 @@
         // },
         // 获奖提示 {}
         alertPrize: function(options) {
-            this.alert(0, options.content, options.btn, options.closeCallback, options.hasAnimation);
+            this.alert(0, options.content, options.btn, options.closeCallback, options.hasAnimation, options.popupClass);
         },
 
         alertCommon: function(options) {
-            this.alert(1, options.content, options.btn, options.closeCallback, options.hasAnimation);
+            this.alert(1, options.content, options.btn, options.closeCallback, options.hasAnimation, options.popupClass);
         },
         //带icon和按钮的弹窗
         // option: {
@@ -166,13 +169,14 @@
         //     },
         //     closeCallback: 关闭回调
         // }
-        alert: function(type, content, btn, closeCallback, hasAnimation) {
+        alert: function(type, content, btn, closeCallback, hasAnimation, popupClass) {
             popup({
                 "icon": "pop" + type,
                 "content": content,
                 "btn": btn,
                 "closeCallback": closeCallback,
-                "hasAnimation": hasAnimation
+                "hasAnimation": hasAnimation,
+                "popupClass": popupClass
             });
         },
         getParam: function(name, url) {
