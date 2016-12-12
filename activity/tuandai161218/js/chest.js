@@ -6,11 +6,13 @@
 	// 查看加息说明
 	pageContentEl.on("click", ".check-rule", function() {
 		$(".dialog-rule").show();
+		$(".scroll").removeClass("scroll-active");
 	});
 
 	// 关闭弹窗
 	$(".popup-close, .masker").on("click", function() {
 		$(".dialog").hide();
+		$(".scroll").addClass("scroll-active");
 	});
 
 	// 点击宝箱
