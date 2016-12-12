@@ -206,7 +206,7 @@
                 }
             }
         }
-        &.chest-silver {
+       @at-root &.chest-silver {
             margin-bottom: pxToRem(52px);
             .star {
                 background-image: url("../images/icon-star-silver.png");
@@ -214,7 +214,7 @@
                 height: pxToRem(226px);
                 top: pxToRem(60px);
             }
-            @at-root .chest {
+             .chest {
                 height: pxToRem(336px);
                 .chest-body {
                     background-image: url("../images/icon-silver-chest-off.png");
@@ -346,7 +346,7 @@
                 z-index: 999;
             }
         }
-        &.chest-gold {
+        @at-root &.chest-gold {
             margin-bottom: pxToRem(110px);
             .star {
                 background-image: url("../images/icon-star-gold.png");
@@ -354,7 +354,7 @@
                 height: pxToRem(226px);
                 top: pxToRem(60px);
             }
-            @at-root .chest {
+             .chest {
                 height: pxToRem(336px);
                 .chest-body {
                     background-image: url("../images/icon-gold-chest-off.png");
