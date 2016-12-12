@@ -21,7 +21,7 @@
             margin: auto;
             position: relative;
             width: pxToRem(710px);
-            height: pxToRem(880px);
+            height: pxToRem(910px);
             background-color: #ff642e;
             border-radius: pxToRem(20px);
             box-sizing: border-box;
@@ -152,7 +152,7 @@
                     position: absolute;
                     bottom: -1px;
                     width: 100%;
-                    height: pxToRem(272px);
+                    height: pxToRem(302px);
                     border-radius: pxToRem(12px);
                     border: 1px solid #ffbc6d;
                     box-sizing: border-box;
@@ -176,7 +176,7 @@
                         padding-right: pxToRem(20px);
                         overflow: auto;
                         display: flex;
-                        height: pxToRem(216px);
+                        height: pxToRem(246px);
                         .gift-item {
                             width: pxToRem(192px);
                             margin-right: pxToRem(20px);
@@ -200,13 +200,14 @@
                                 font-size: pxToRem(20px);
                                 color: #ff6630;
                                 text-align: center;
+                                line-height: 120%;
                             }
                         }
                     }
                 }
             }
         }
-       @at-root &.chest-silver {
+        @at-root &.chest-silver {
             margin-bottom: pxToRem(52px);
             .star {
                 background-image: url("../images/icon-star-silver.png");
@@ -214,7 +215,7 @@
                 height: pxToRem(226px);
                 top: pxToRem(60px);
             }
-             .chest {
+            .chest {
                 height: pxToRem(336px);
                 .chest-body {
                     background-image: url("../images/icon-silver-chest-off.png");
@@ -227,6 +228,16 @@
                         .chest-gift-wrapper {
                             display: inline-block;
                             .chest-gift {
+                                font-size: pxToRem(46px);
+                                font-weight: bold;
+                                color: #fff;
+                                line-height: pxToRem(98px);
+                                text-align: center;
+                                &:after {
+                                    content: "%";
+                                    font-size: pxToRem(18px);
+                                    font-weight: bold;
+                                }
                                 &.gift01 {
                                     background-image: url("../images/silver-gift01.png");
                                 }
@@ -354,7 +365,7 @@
                 height: pxToRem(226px);
                 top: pxToRem(60px);
             }
-             .chest {
+            .chest {
                 height: pxToRem(336px);
                 .chest-body {
                     background-image: url("../images/icon-gold-chest-off.png");
