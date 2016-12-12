@@ -224,7 +224,7 @@
                         background-image: url("../images/icon-silver-chest-open.png");
                         width: pxToRem(362px);
                         height: pxToRem(334px);
-                        @at-root .chest-gift-wrapper {
+                        .chest-gift-wrapper {
                             display: inline-block;
                             .chest-gift {
                                 &.gift01 {
@@ -364,7 +364,7 @@
                         background-image: url("../images/icon-gold-chest-open.png");
                         width: pxToRem(364px);
                         height: pxToRem(340px);
-                        @at-root .chest-gift-wrapper {
+                        .chest-gift-wrapper {
                             display: inline-block;
                             .chest-gift {
                                 &.gift01 {
