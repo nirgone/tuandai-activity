@@ -45,6 +45,9 @@
         margin: 0 pxToRem(96px) pxToRem(138px);
         height: pxToRem(652px);
         overflow: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
         @at-root .msg {
             position: relative;
             font-size: 0;
