@@ -56,7 +56,7 @@
 }
 
 .icon-comma {
-    @include icon-background('../images/comma.png',
+    @include icon-background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAdBAMAAADWchiKAAAAG1BMVEX9ejMAAAD9ejP9ejP9ejP9ejP9ejP9ejP9ejPC77ytAAAACXRSTlMzAAcnDxUhChsXRFF7AAAAlElEQVQoz93QwQ3CMBAEwCVBwNOGJHwTKjASBcCHd+ggdEAJ0Dm3e7lPSsh+bI1vdZKRF0kuz232NNNHMmKWFpB0CCkuDULucBkl6kg0Uj8ofLrZrh7Aj3AGcOD2wpM5mbxMWHoTWNplE74MsbqipCgdWaLY7F7ScpjyBTaSziRTJuAaUksKmIrLlX61clEG+zG/pT+yjBunsBwitAAAAABJRU5ErkJggg==',
     33px,
     29px);
     @extend .icon-block;
@@ -107,7 +107,7 @@
 }
 
 .icon-shadow {
-    @include icon-background('../images/shadow.png',
+    @include icon-background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUYAAAASCAMAAAAQYYeXAAAAgVBMVEUAAADp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jp49jFhtQtAAAAKnRSTlMA793MvJmHZlZ0Eqp3J0X8s44z5tleCux/Tzqh0qyTSSEcBKbzPyu4xmu34+gqAAABoUlEQVRYw+3Yi26CMBgFYC4ttGWUu1xFAeeF93/AHSQhm9k0Dl3I7PcA/5+ctKEc7YmEaLb7sJAyZ4zZ8AaWZQWU0tJxHJ8QcjQhNkapPtn139rpk9QYxSYcMcrHyBKjA6x4AxuwOJeyCPfbRghtqVZi64bvkiU2Rz41wlkTMsQSIYcF2unREDshawReI21uJ0y+h+5WrLQ/smr2xYbZPAto5xMTUfX/CiI2id/RIOM22xT75lHJCrfIE27RNUJLvf7leCmCXVOLJ3nhijsPnSsTHpSHKnrB4K7xoupQBjyR7rVj2ro5r/0q7ZWb0sqvee62F5d3k/mxOnt382I/2wjtLAziXpkhDkJN63pltk4re2W2Tl3qR1xq9YmZ/4lRD565D57bz29SRb3yRVSR6fl9h1b9DH7+GWwfXk0452pikSXO7+3O1YQzs5qYX5RROvZkhqHrCz27nq4bxtiUUXpRlC1TK0SDkJGyZGNte0KXmllDL0lph471QBD6wBhF+sT7OYdJZIzMAUYdMLLD6BorMqw6YSUDiZwQVCNwLZ/lAz6t281DsAZKAAAAAElFTkSuQmCC',
     326px,
     18px);
     @extend .icon-block;
@@ -123,7 +123,7 @@
     position: relative;
     top: pxToRem(-10px);
     .icon-mark {
-        @include icon-background('../images/mark.png',
+        @include icon-background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAAXVBMVEUAAAD/Sjv/Sjv/Sjv/Sjv/Sjv/Sjv/Sjv/Sjv/Sjv/Sjv/Sjv/Sjv/Sjv/Sjv/Sjv/////em//hnz/t7H/kon/Vkj/8/L/w77/npb/YlX/5+X/z8v/bmL/29j/q6RXGrfoAAAAD3RSTlMAxL6ZPwnmyIEvJxLnd3bTdd/yAAAA2UlEQVQoz4WS6xKCQAiFcbU1tYT1fu39H7NRoI2apu8PrGeA47KglLXziN7VJViyBF8kGUQuKRrSiyqVlsTCSmpyZPrQNRunOddpt4kO1pl7ng5EaWnpQrPTzsfDiwzaaOmPOFDH4wAKKXpQayIWcBVppHDGjkb+cAUn0jxzXGnixIFHQ0NDz5kHqwSiRnP4UIaAimnYDxQVD84MGuPBsXmh5d9V88V71TTHQyEX9U3C16tM64ZKxktRgxRtpHaV2C4BzSqhEi2SV7+fzb/HppR3d0O8uXsJwhNqZCA1lFhopgAAAABJRU5ErkJggg==',
         26px,
         26px);
         @extend .icon-inline-block;
@@ -175,7 +175,7 @@
         display: inline-block;
         &:before {
             content: "";
-            @include icon-background('../images/flag.png',
+            @include icon-background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAeBAMAAADEAMPWAAAAGFBMVEUAAACq5GCq5GCq5GCq5GCq5GCq5GCq5GBcDIqRAAAAB3RSTlMAhtokfXh16jjPQgAAADFJREFUGNNjEC8HAWUGMCgHgxJkTiESByZSjgQGA6cA6MBwZE46MscI4moQBw4GGQcAMBxiwiFibVYAAAAASUVORK5CYII=',
             24px,
             30px);
             @extend .icon-inline-block;
