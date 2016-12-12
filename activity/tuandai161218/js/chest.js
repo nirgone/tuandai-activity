@@ -25,6 +25,13 @@
 			var canOpenSilverChest = true; //是否能打开银宝箱
 			if (canOpenSilverChest) {
 				// TODO:获取的加息百分比
+				// type:0 -- 银箱 1 -- 金箱 prize--{icon: 奖品图标 text: 奖品值或者奖品名字} callback--按钮回调
+				showPrizeDialog(0, {
+					icon: "silver-gift01",
+					text: "2"
+				}, function() {
+					console.log(123123123)
+				});
 				var i = 2; // 获得的加息百分比
 				currentTarget.find(".chest-gift").addClass("silver-gift01"); //2 01 1.5 02  1 03 0.8 04 0.5 05 0.3 06 0.25 07 0.2 08
 				currentTarget.find(".chest-gift").text(i);
@@ -53,6 +60,12 @@
 				// 小米移动电源20000mAh 07     德尔玛DEM-F500加湿器 08
 				// 100元京东E卡 09     50元投资红包 10
 				// 10元投资红包 10
+				showPrizeDialog(1, {
+					icon: "gold-gift01",
+					text: "夏普60寸4k电视机（LCD-60UF30A）"
+				}, function() {
+					console.log(111)
+				});
 				currentTarget.find(".chest-gift").addClass("gold-gift01");
 				currentTarget.addClass("open");
 			} else {
@@ -86,6 +99,39 @@
 			}
 		});
 	});
+	// type:0 -- 银箱 1 -- 金箱 prize--{icon: 奖品图标 text: 奖品值或者奖品名字} callback--按钮回调
+	function showPrizeDialog(type, prize, callback) {
+		var _prizetext = "",
+			_btn_name = "";
+		switch (type) {
+			case 0:
+				_prizetext = prize.text + "%加息特权";
+				_btn_name = "立即领取";
+				break;
+			case 1:
+				_prizetext = prize.text;
+				prize.text = "";
+				_btn_name = "查看奖品";
+		}
+		var _content = '<div class="prize-bg"></div><i class="prize ' + prize.icon + '">' + prize.text + '</i><p>恭喜您获得<font class="font-red">' + _prizetext + '</font></p>';
+
+		Util.alertPrize({
+			content: _content,
+			btn: {
+				name: _btn_name,
+				callback: function() {
+					if (callback) {
+						callback();
+					}
+				}
+			},
+			closeCallback: function() {
+				console.log('关闭');
+			},
+			hasAnimation: true,
+			popupClass: 'popup-prize'
+		});
+	}
 
 	// 控制列表滚动
 	function anit() {
@@ -99,6 +145,7 @@
 			});
 		}
 	}
+
 	// 控制列表滚动
 	anit();
 })();
