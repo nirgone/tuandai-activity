@@ -177,6 +177,26 @@
                         overflow: auto;
                         display: flex;
                         height: pxToRem(246px);
+                        &>div:nth-child(4n-3) {
+                            .coupon {
+                                @extend .silver-gift01;
+                            }
+                        }
+                        &>div:nth-child(4n-2) {
+                            .coupon {
+                                @extend .silver-gift02;
+                            }
+                        }
+                        &>div:nth-child(4n-1) {
+                            .coupon {
+                                @extend .silver-gift03;
+                            }
+                        }
+                        &>div:nth-child(4n) {
+                            .coupon {
+                                @extend .silver-gift04;
+                            }
+                        }
                         .gift-item {
                             width: pxToRem(192px);
                             margin-right: pxToRem(20px);
@@ -238,30 +258,6 @@
                                     font-size: pxToRem(18px);
                                     font-weight: bold;
                                 }
-                                &.gift01 {
-                                    background-image: url("../images/silver-gift01.png");
-                                }
-                                &.gift02 {
-                                    background-image: url("../images/silver-gift02.png");
-                                }
-                                &.gift03 {
-                                    background-image: url("../images/silver-gift03.png");
-                                }
-                                &.gift04 {
-                                    background-image: url("../images/silver-gift04.png");
-                                }
-                                &.gift05 {
-                                    background-image: url("../images/silver-gift01.png");
-                                }
-                                &.gift06 {
-                                    background-image: url("../images/silver-gift02.png");
-                                }
-                                &.gift07 {
-                                    background-image: url("../images/silver-gift03.png");
-                                }
-                                &.gift08 {
-                                    background-image: url("../images/silver-gift04.png");
-                                }
                             }
                         }
                     }
@@ -285,30 +281,6 @@
                     content: "%";
                     font-size: pxToRem(24px);
                     font-weight: bold;
-                }
-                &.gift01 {
-                    background-image: url("../images/silver-gift01.png");
-                }
-                &.gift02 {
-                    background-image: url("../images/silver-gift02.png");
-                }
-                &.gift03 {
-                    background-image: url("../images/silver-gift03.png");
-                }
-                &.gift04 {
-                    background-image: url("../images/silver-gift04.png");
-                }
-                &.gift05 {
-                    background-image: url("../images/silver-gift01.png");
-                }
-                &.gift06 {
-                    background-image: url("../images/silver-gift02.png");
-                }
-                &.gift07 {
-                    background-image: url("../images/silver-gift03.png");
-                }
-                &.gift08 {
-                    background-image: url("../images/silver-gift04.png");
                 }
             }
             .ribbon01 {
@@ -377,35 +349,6 @@
                         height: pxToRem(340px);
                         .chest-gift-wrapper {
                             display: inline-block;
-                            .chest-gift {
-                                &.gift01 {
-                                    background-image: url("../images/gold-gift01.png");
-                                }
-                                &.gift02 {
-                                    background-image: url("../images/gold-gift02.png");
-                                }
-                                &.gift03 {
-                                    background-image: url("../images/gold-gift03.png");
-                                }
-                                &.gift04 {
-                                    background-image: url("../images/gold-gift04.png");
-                                }
-                                &.gift05 {
-                                    background-image: url("../images/gold-gift05.png");
-                                }
-                                &.gift06 {
-                                    background-image: url("../images/gold-gift06.png");
-                                }
-                                &.gift07 {
-                                    background-image: url("../images/gold-gift07.png");
-                                }
-                                &.gift08 {
-                                    background-image: url("../images/gold-gift08.png");
-                                }
-                                &.gift09 {
-                                    background-image: url("../images/gold-gift09.png");
-                                }
-                            }
                         }
                     }
                     .chest-gift-wrapper {
@@ -416,35 +359,6 @@
                     background-image: url("../images/icon-gold-base.png");
                     width: pxToRem(370px);
                     height: pxToRem(166px);
-                }
-            }
-            .gift-icon {
-                &.gift01 {
-                    background-image: url("../images/gold-gift01.png");
-                }
-                &.gift02 {
-                    background-image: url("../images/gold-gift02.png");
-                }
-                &.gift03 {
-                    background-image: url("../images/gold-gift03.png");
-                }
-                &.gift04 {
-                    background-image: url("../images/gold-gift04.png");
-                }
-                &.gift05 {
-                    background-image: url("../images/gold-gift05.png");
-                }
-                &.gift06 {
-                    background-image: url("../images/gold-gift06.png");
-                }
-                &.gift07 {
-                    background-image: url("../images/gold-gift07.png");
-                }
-                &.gift08 {
-                    background-image: url("../images/gold-gift08.png");
-                }
-                &.gift09 {
-                    background-image: url("../images/gold-gift09.png");
                 }
             }
             .float04 {
@@ -650,4 +564,57 @@
         -webkit-transform: rotateZ(360deg);
         transform: rotateZ(360deg);
     }
+}
+
+//icon
+.silver-gift01 {
+    background-image: url("../images/silver-gift01.png");
+}
+
+.silver-gift02 {
+    background-image: url("../images/silver-gift02.png");
+}
+
+.silver-gift03 {
+    background-image: url("../images/silver-gift03.png");
+}
+
+.silver-gift04 {
+    background-image: url("../images/silver-gift04.png");
+}
+
+.gold-gift01 {
+    background-image: url("../images/gold-gift01.png");
+}
+
+.gold-gift02 {
+    background-image: url("../images/gold-gift02.png");
+}
+
+.gold-gift03 {
+    background-image: url("../images/gold-gift03.png");
+}
+
+.gold-gift04 {
+    background-image: url("../images/gold-gift04.png");
+}
+
+.gold-gift05 {
+    background-image: url("../images/gold-gift05.png");
+}
+
+.gold-gift06 {
+    background-image: url("../images/gold-gift06.png");
+}
+
+.gold-gift07 {
+    background-image: url("../images/gold-gift07.png");
+}
+
+.gold-gift08 {
+    background-image: url("../images/gold-gift08.png");
+}
+
+.gold-gift09 {
+    background-image: url("../images/gold-gift09.png");
 }
