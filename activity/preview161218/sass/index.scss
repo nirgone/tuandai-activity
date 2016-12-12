@@ -69,7 +69,7 @@
     position: absolute;
     top: pxToRem(30px);
     right: pxToRem(-80px);
-    animation: fadeInRight .3s linear .8s both;
+    animation: slideInRight .3s linear .8s both;
 }
 
 .sv-container {
@@ -358,7 +358,7 @@
 
 @-webkit-keyframes zoomIn {
     from {
-        opacity: 0;
+        // opacity: 0;
         -webkit-transform: scale3d(.3, .3, .3);
         transform: scale3d(.3, .3, .3);
     }
@@ -369,7 +369,7 @@
 
 @keyframes zoomIn {
     from {
-        opacity: 0;
+        // opacity: 0;
         -webkit-transform: scale3d(.3, .3, .3);
         transform: scale3d(.3, .3, .3);
     }
@@ -378,30 +378,30 @@
     }
 }
 
-@-webkit-keyframes fadeInRight {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 @keyframes breath {
