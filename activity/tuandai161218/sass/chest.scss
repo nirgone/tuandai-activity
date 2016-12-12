@@ -13,6 +13,8 @@
     }
     .md {
         margin-bottom: pxToRem(56px);
+        position:relative;
+        z-index: 100;
     }
     .chest-item {
         position: relative;
