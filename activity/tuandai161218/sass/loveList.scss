@@ -55,7 +55,7 @@ span {
     background-color: #fffce4;
     color: #b73e28;
     position: relative;
-    margin-top: pxToRem(110px);
+    margin-top: pxToRem(100px);
     padding: pxToRem(90px) 0 pxToRem(100px) 0;
     // overflow: hidden;
     .icon-l-label {
@@ -157,9 +157,12 @@ span {
 
 .gift-list {
     width: 100%;
-    margin: pxToRem(90px) 0;
-    padding-left: pxToRem(30px);
+    margin: pxToRem(70px) 0;
+   
     text-align: center;
+    .swiper-wrapper {
+         padding-left: pxToRem(30px);
+    }
     .g-cont {
         // @include background('../images/gift-bg.png', 519px, 184px);
         width: pxToRem(480px);
@@ -173,7 +176,7 @@ span {
         background-size: pxToRem(433px) pxToRem(88px);
         position: relative;
         margin-top: pxToRem(10px);
-        padding-top: pxToRem(40px);
+        padding-top: pxToRem(48px);
         font-size: 0;
         &>div {
             height: pxToRem(100px);
