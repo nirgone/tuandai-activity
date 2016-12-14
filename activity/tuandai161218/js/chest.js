@@ -147,7 +147,7 @@
 	function anit() {
 		var length = pageContentEl.find(".winner-item").length;
 		var speed = 0.5 * length;
-		if (length >= 6) {
+		if (length >= 5) {
 			pageContentEl.find(".wrap").addClass('anit');
 			pageContentEl.find(".anit").css({
 				"-webkit-animation-duration": speed + "s",
@@ -158,4 +158,21 @@
 
 	// 控制列表滚动
 	anit();
+	//切换金银宝箱中奖名单
+	var winnersWrapperEl = $(".winners-wrapper");
+	pageContentEl.on("click", ".chest-type", function(e) {
+		var currentTarget = $(e.currentTarget);
+		var chestTypeIndex = 0;	//默认为金箱
+		var chestType = ["gold", "silver"];
+		if (currentTarget.hasClass("silver")) { //银箱
+			chestTypeIndex = 1;	//银箱
+		}
+		winnersWrapperEl.find("." + chestType[chestTypeIndex]).addClass("active");
+		winnersWrapperEl.find("." + chestType[chestTypeIndex] + "-winners").addClass("active");
+		winnersWrapperEl.find(".active." + chestType[chestTypeIndex == 0 ? 1 : 0]).removeClass("active");
+		winnersWrapperEl.find(".active." + chestType[chestTypeIndex == 0 ? 1 : 0] + "-winners").removeClass("active");
+
+
+	})
+
 })();
