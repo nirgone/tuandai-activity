@@ -28,14 +28,18 @@
 			if (canOpenSilverChest) {
 				// TODO:获取的加息百分比
 				// type:0 -- 银箱 1 -- 金箱 prize--{icon: 奖品图标 text: 奖品值或者奖品名字} callback--按钮回调
+				//2 01 1.5 02  1.3 03 1.25 04 1.2 01  1 02  0.8 03  0.5 04  0.3 01  0.25 02  0.2 01
+				// 加息劵的类 4个一组循环
+				var i = 2; // 获得的加息百分比
 				showPrizeDialog(0, {
-					icon: "silver-gift01",
-					text: "2"
+					icon: "silver-gift04",
+					text: i
 				}, function() {
 					console.log(123123123)
 				});
-				var i = 2; // 获得的加息百分比
-				currentTarget.find(".chest-gift").addClass("silver-gift01"); //2 01 1.5 02  1 03 0.8 04 0.5 05 0.3 06 0.25 07 0.2 08
+
+
+				currentTarget.find(".chest-gift").addClass("silver-gift04");
 				currentTarget.find(".chest-gift").text(i);
 				currentTarget.addClass("open");
 			} else {
