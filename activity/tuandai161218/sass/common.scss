@@ -203,10 +203,10 @@ a {
     z-index: 999;
     a {
         display: inline-block;
-        width: 33.33%;
+        width: 25%;
         height: 100%;
         text-align: center;
-        font-size: pxToRem(30px);
+        font-size: pxToRem(28px);
         color: #fff;
         &.active {
             background-color: #f58225;
