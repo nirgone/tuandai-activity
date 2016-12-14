@@ -67,7 +67,7 @@
 }
 
 .icon-pai {
-    @include background('../images/icon-pai.png',
+    @include background('../images/icon-pai.png?v=2016121301',
     136px,
     204px);
     // @extend .icon-block;

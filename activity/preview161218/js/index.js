@@ -6,7 +6,7 @@
 	//视频播放	
 	$(function() {
 		$('#img_a').live('click', function() {
-			showVideo('video_a', 'XMTc2ODk1NTUzMg==');
+			showVideo('video_a', 'XMTg2MjIxNzUwOA==');
 			$('#video_b').html('<img id="img_b" src="../images/index_video1.png" />');
 			console.log('video_a');
 		});
