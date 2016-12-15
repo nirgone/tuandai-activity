@@ -48,6 +48,15 @@ span {
 .has-pd {
     padding-bottom: pxToRem(100px);
 }
+.l-txt {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: pxToRem(64px);
+    font-size: pxToRem(24px);
+    text-align: center;
+    color: #ffac62;
+}
 
 .l-cont {
     width: pxToRem(710px);
@@ -60,7 +69,8 @@ span {
     position: relative;
     margin-top: pxToRem(100px);
     // padding: pxToRem(90px) 0 pxToRem(100px) 0;
-    padding-top: pxToRem(90px);
+    // padding-top: pxToRem(90px);
+    padding-top: pxToRem(116px);
     // overflow: hidden;
     .icon-l-label {
         @include icon-background('../images/l-label.png', 459px, 103px);

@@ -110,6 +110,7 @@
                     font-size: 0;
                     position: relative;
                     z-index: 999;
+                    transform: translateZ(0);
                     &.tip-notGet,
                     &.tip-get {
                         .tip-left {
@@ -122,6 +123,7 @@
                             vertical-align: middle;
                             margin-right: pxToRem(8px);
                             text-align: center;
+                            white-space: nowrap;
                         }
                         .tip-right {
                             // background-image: url("../images/btn-yellow.png");
@@ -181,10 +183,10 @@
                         padding-right: pxToRem(20px);
                         // overflow-y: hidden;
                         overflow: auto;
-                        // display: flex;
                         white-space: nowrap;
                         height: pxToRem(246px);
                         font-size: 0;
+                        transform: translateZ(0);
                         &>div:nth-child(4n-3) {
                             .coupon {
                                 @extend .silver-gift01;
