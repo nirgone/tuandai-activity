@@ -31,6 +31,7 @@
     @include icon-background('../images/m-t-bg.png',
     750px,
     700px);
+    overflow: hidden;
     @extend .icon-block;
     max-width: 414px;
     padding-top: pxToRem(90px);
