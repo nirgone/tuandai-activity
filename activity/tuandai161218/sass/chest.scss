@@ -458,6 +458,7 @@
                     box-sizing: border-box;
                     z-index: 99;
                     display: none;
+                    background-color: #fffbe5;
                     &.active {
                         display: block;
                     }
@@ -545,7 +546,7 @@
         color: #ea5800;
         font-size: pxToRem(36px);
         font-weight: bold;
-        padding-top: pxToRem(24px);
+        padding-top: pxToRem(20px);
         padding-left: pxToRem(8px);
         text-align: center;
         box-sizing: border-box;
