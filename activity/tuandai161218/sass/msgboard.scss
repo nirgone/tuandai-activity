@@ -9,15 +9,16 @@
 
 .descri {
     position: relative;
-    width: pxToRem(650px);
+    width: pxToRem(690px);
     margin: 0 auto;
     // margin
     color: #fffbe8;
     font-size: pxToRem(24px);
     line-height: pxToRem(32px);
-    padding: pxToRem(20px) pxToRem(18px);
+    padding: pxToRem(20px) pxToRem(38px);
     text-align: justify;
     box-sizing: border-box;
+    z-index: 998;
 }
 
 .msg-board {
@@ -190,7 +191,7 @@
 //icon
 .icon-open-arrow {
     position: absolute;
-    right: 0;
+    right: pxToRem(30px);
     top: pxToRem(4px);
     width: pxToRem(58px);
     height: pxToRem(58px);
