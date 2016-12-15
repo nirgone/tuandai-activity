@@ -97,7 +97,7 @@
     // margin-bottom: pxToRem(40px);
     position: relative;
     .icon-play {
-        @include background('../images/icon-play.png', 90px, 90px);
+        @include background('../images/icon-play.png?v=2016121201', 90px, 90px);
         position: absolute;
         left: 50%;
         top: 50%;
@@ -110,7 +110,8 @@
         height: 100%;
     }
     span {
-        width: pxToRem(638px);
+        // width: pxToRem(638px);
+        width: 100%;
         height: pxToRem(66px);
         line-height: pxToRem(66px);
         padding-left: pxToRem(30px);
@@ -118,10 +119,10 @@
         color: #fff;
         font-size: pxToRem(28px);
         position: absolute;
-        left: 50%;
+        // left: 50%;
         // bottom: pxToRem(34px);
         bottom: 0;
-        margin-left: pxToRem(-319px);
+        // margin-left: pxToRem(-319px);
     }
 }
 
@@ -283,7 +284,7 @@
 }
 
 .m-txt-bg {
-    padding: pxToRem(30px) pxToRem(90px);
+    padding: pxToRem(30px) pxToRem(80px);
     background-color: #fffcf0;
     border-radius: pxToRem(30px);
     margin-left: pxToRem(50px);
@@ -414,36 +415,36 @@
   }
 }
 
-@keyframes breath {
-    0%,
-    50%,
-    100% {
-        transform: scale(1);
-        -webkit-transform: scale(1);
-    }
-    25% {
-        transform: scale(.95);
-        -webkit-transform: scale(.95)''
-    }
-    75% {
-        transform: scale(1.05);
-        -webkit-transform: scale(1.05);
-    }
-}
+// @keyframes breath {
+//     0%,
+//     50%,
+//     100% {
+//         transform: scale(1);
+//         -webkit-transform: scale(1);
+//     }
+//     25% {
+//         transform: scale(.95);
+//         -webkit-transform: scale(.95)''
+//     }
+//     75% {
+//         transform: scale(1.05);
+//         -webkit-transform: scale(1.05);
+//     }
+// }
 
-@-webkit-keyframes breath {
-    0%,
-    50%,
-    100% {
-        transform: scale(1);
-        -webkit-transform: scale(1);
-    }
-    25% {
-        transform: scale(.95);
-        -webkit-transform: scale(.95)''
-    }
-    75% {
-        transform: scale(1.05);
-        -webkit-transform: scale(1.05);
-    }
-}
+// @-webkit-keyframes breath {
+//     0%,
+//     50%,
+//     100% {
+//         transform: scale(1);
+//         -webkit-transform: scale(1);
+//     }
+//     25% {
+//         transform: scale(.95);
+//         -webkit-transform: scale(.95)''
+//     }
+//     75% {
+//         transform: scale(1.05);
+//         -webkit-transform: scale(1.05);
+//     }
+// }

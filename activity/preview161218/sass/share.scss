@@ -46,16 +46,16 @@
                 margin-left: pxToRem(10px);
             }
         }
-        .btn-share {
-            background-image: url("../images/icon-share.png");
-            width: pxToRem(74px);
-            height: pxToRem(114px);
-            position: absolute;
-            right: pxToRem(-2px);
-            top: 50%;
-            transform: translateY(-44%);
-            // background-position: 100% 50% ;
-        }
+        // .btn-share {
+        //     background-image: url("../images/icon-share.png");
+        //     width: pxToRem(74px);
+        //     height: pxToRem(114px);
+        //     position: absolute;
+        //     right: pxToRem(-2px);
+        //     top: 50%;
+        //     transform: translateY(-44%);
+        //     // background-position: 100% 50% ;
+        // }
     }
     .lottery-num {
         font-size: pxToRem(28px);

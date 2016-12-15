@@ -128,6 +128,17 @@ a {
                 border-bottom-right-radius: pxToRem(30px);
                 z-index: 1111;
             }
+            &:before {
+                content: "";
+                @include icon-background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAATBAMAAAC0B+rjAAAAJFBMVEUAAAD8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDS9xPZPAAAADHRSTlMA/RXUkEla5nNHJxeUcVZ0AAAAMElEQVQI12PgZgCD5Q5gaqIImGIVhHADieGyCTaAKGVhBSDJZGhEDIch0QiiF8wBABkUB6BnlrRMAAAAAElFTkSuQmCC', 20px, 40px);
+                @extend .icon-block;
+                position: absolute;
+                bottom: pxToRem(20px);
+                left: 50%;
+                margin-left: pxToRem(-6px);
+                z-index: 1112;
+                transform: rotate(90deg);
+            }
         }
         .icon {
             position: absolute;
@@ -135,7 +146,6 @@ a {
             bottom: pxToRem(-118px);
             margin-left: pxToRem(-269px/2);
         }
-        
     }
     .popup-close {
         position: absolute;
@@ -242,7 +252,7 @@ a {
             margin-bottom: pxToRem(20px);
         }
         .icon-block {
-            margin:0 auto;
+            margin: 0 auto;
             margin-bottom: pxToRem(20px);
         }
     }
@@ -374,44 +384,56 @@ a {
     display: block;
     margin-top: pxToRem(26px);
 }
+
 .md {
+    font-size: 0;
+    margin-bottom: pxToRem(38px);
+    text-align: center;
+    .act-time {
+        display: inline-block;
+        // line-height: pxToRem(36px);
+        vertical-align: middle;
+        // height: pxToRem(36px);
+        margin-top: 0;
+    }
+    .check-rule {
+        color: #f16c26;
         font-size: 0;
-        margin-bottom: pxToRem(38px);
+        display: inline-block;
+        vertical-align: middle;
+        line-height: pxToRem(36px);
+        height: pxToRem(36px);
+        margin-left: pxToRem(36px);
+        border-radius: pxToRem(18px);
+        background-color: #fee13d;
+        width: pxToRem(142px);
         text-align: center;
-        .act-time {
+        .rule-text {
+            font-size: pxToRem(22px);
             display: inline-block;
-            // line-height: pxToRem(36px);
             vertical-align: middle;
-            // height: pxToRem(36px);
-            margin-top: 0;
         }
-        .check-rule {
-            color: #f16c26;
-            font-size: 0;
-            display: inline-block;
+        .icon-arrow {
             vertical-align: middle;
-            line-height: pxToRem(36px);
-            height: pxToRem(36px);
-            margin-left: pxToRem(36px);
-            border-radius: pxToRem(18px);
-            background-color: #fee13d;
-            width: pxToRem(142px);
-            text-align: center;
-            .rule-text {
-                font-size: pxToRem(22px);
-                display: inline-block;
-                vertical-align: middle;
-            }
-            .icon-arrow {
-                vertical-align: middle;
-                margin-left: pxToRem(10px);
-            }
+            margin-left: pxToRem(10px);
         }
     }
+}
 
 .icon-arrow {
     @include icon-background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAATBAMAAAC0B+rjAAAAJFBMVEUAAAD8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDT8eDS9xPZPAAAADHRSTlMA/RXUkEla5nNHJxeUcVZ0AAAAMElEQVQI12PgZgCD5Q5gaqIImGIVhHADieGyCTaAKGVhBSDJZGhEDIch0QiiF8wBABkUB6BnlrRMAAAAAElFTkSuQmCC',
     11px,
     19px);
     @extend .icon-inline-block;
+}
+
+.btn-share {
+    background-image: url("../images/icon-share.png");
+    width: pxToRem(74px);
+    height: pxToRem(114px);
+    position: absolute;
+    right: pxToRem(-2px);
+    // top: 50%;
+    // transform: translateY(-44%);
+    // background-position: 100% 50% ;
 }
