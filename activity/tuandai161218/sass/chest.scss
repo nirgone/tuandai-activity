@@ -43,6 +43,7 @@
                     left: 50%;
                     margin-left: pxToRem(-356px);
                     z-index: 9;
+                    overflow: hidden;
                     .light-bg {
                         background-image: url("../images/icon-light-bg.png");
                         width: pxToRem(710px);
@@ -461,7 +462,7 @@
                 }
                 @at-root .scroll-content {
                     width: 100%;
-                    height: pxToRem(430px);
+                    height: pxToRem(434px);
                     position: relative;
                     padding-top: pxToRem(50px);
                     padding-bottom: pxToRem(30px);
@@ -471,6 +472,7 @@
                     z-index: 99;
                     display: none;
                     background-color: #fffbe5;
+                    border-radius:pxToRem(10px);
                     &.active {
                         display: block;
                     }
