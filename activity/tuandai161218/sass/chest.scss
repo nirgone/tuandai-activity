@@ -430,9 +430,10 @@
                     height: pxToRem(76px);
                     line-height: pxToRem(72px);
                     white-space: nowrap;
-                    position:relative;
+                    position: relative;
                     &:after {
-                        @include border("bottom", #ffc976);
+                        @include border("bottom",
+                        #ffc976);
                     }
                     .chest-type {
                         width: 50%;
@@ -545,7 +546,8 @@
         font-size: pxToRem(36px);
         font-weight: bold;
         padding-top: pxToRem(24px);
-        padding-left: pxToRem(22px);
+        padding-left: pxToRem(8px);
+        text-align: center;
         box-sizing: border-box;
         border-radius: 50%;
         box-shadow: 0 0 pxToRem(40px) rgba(237, 55, 39, 0.7);
