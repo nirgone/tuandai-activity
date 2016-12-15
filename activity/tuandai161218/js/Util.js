@@ -179,6 +179,14 @@
                 "popupClass": popupClass
             });
         },
+        showLoader: function(msg) {
+            msg = msg ? msg : '';
+             var loader = $("<div/>").addClass("loader").html(msg);
+             $("body").append(loader);
+        },
+        hideLoader: function() {
+            $(".loader").remove();
+        },
         getParam: function(name, url) {
             if (!url) {
                 url = decodeURIComponent(location.href);

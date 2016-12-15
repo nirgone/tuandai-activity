@@ -106,6 +106,10 @@
             </div>
         </div>
     </div> -->
+
+    <!-- <div class="loader">
+        正在开箱中，请稍候
+    </div> -->
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
 <script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
@@ -169,6 +173,10 @@
 // 	},
 //     hasAnimation: true
 // });
+Util.showLoader('正在开箱中，请稍候');
+setTimeout(function() {
+    Util.hideLoader();
+}, 3000);
 </script>
 
 </html>
