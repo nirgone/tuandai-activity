@@ -442,14 +442,15 @@
                         display: inline-block;
                         text-align: center;
                         position: relative;
-                        z-index: 999;
+                        z-index: 99;
                         &.active {
                             color: #eb5819;
                             &:after {
                                 content: "";
                                 width: 100%;
                                 height: pxToRem(4px);
-                                z-index: 999;
+                                box-sizing: border-box;
+                                z-index: 99;
                                 border-bottom: pxToRem(4px) solid #e85a1a;
                                 position:absolute;
                                 left: 0;
