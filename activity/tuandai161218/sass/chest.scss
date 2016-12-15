@@ -110,6 +110,7 @@
                     font-size: 0;
                     position: relative;
                     z-index: 999;
+                    transform: translateZ(0);
                     &.tip-notGet,
                     &.tip-get {
                         .tip-left {
