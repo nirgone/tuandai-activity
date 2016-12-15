@@ -428,7 +428,7 @@
                 .chest-type-wrapper {
                     font-size: 0;
                     height: pxToRem(76px);
-                    line-height: pxToRem(72px);
+                    line-height: pxToRem(76px);
                     white-space: nowrap;
                     position: relative;
                     &:after {
@@ -441,9 +441,20 @@
                         font-size: pxToRem(30px);
                         display: inline-block;
                         text-align: center;
+                        position: relative;
+                        z-index: 999;
                         &.active {
                             color: #eb5819;
-                            border-bottom: pxToRem(4px) solid #e85a1a;
+                            &:after {
+                                content: "";
+                                width: 100%;
+                                height: pxToRem(4px);
+                                z-index: 999;
+                                border-bottom: pxToRem(4px) solid #e85a1a;
+                                position:absolute;
+                                left: 0;
+                                bottom:0;
+                            }
                         }
                     }
                 }
