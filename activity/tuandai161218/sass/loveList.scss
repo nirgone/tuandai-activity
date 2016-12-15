@@ -45,6 +45,9 @@ span {
     margin-top: pxToRem(20px);
     margin-bottom: pxToRem(16px);
 }
+.has-pd {
+    padding-bottom: pxToRem(100px);
+}
 
 .l-cont {
     width: pxToRem(710px);
@@ -56,7 +59,8 @@ span {
     color: #b73e28;
     position: relative;
     margin-top: pxToRem(100px);
-    padding: pxToRem(90px) 0 pxToRem(100px) 0;
+    // padding: pxToRem(90px) 0 pxToRem(100px) 0;
+    padding-top: pxToRem(90px);
     // overflow: hidden;
     .icon-l-label {
         @include icon-background('../images/l-label.png', 459px, 103px);
@@ -86,12 +90,15 @@ span {
         overflow: scroll;
         padding: 0 pxToRem(40px) 0 pxToRem(20px);
         font-size: 0;
+        .l-tr {
+            margin-bottom: pxToRem(20px);
+        }
     }
     .l-tr {
         width: 100%;
         height: pxToRem(60px);
         line-height: pxToRem(60px);
-        margin-bottom: pxToRem(20px);
+        // margin-bottom: pxToRem(20px);
         white-space: nowrap;
         display: block;
         font-size: 0;

@@ -145,13 +145,28 @@
 
 	// 控制列表滚动
 	function anit() {
-		var length = pageContentEl.find(".winner-item").length;
-		var speed = 0.5 * length;
-		if (length >= 5) {
-			pageContentEl.find(".wrap").addClass('anit');
-			pageContentEl.find(".anit").css({
-				"-webkit-animation-duration": speed + "s",
-				"animation-duration": speed + "s",
+		var goldWinnersEl = pageContentEl.find(".gold-winners");
+		var silverWinnersEl = pageContentEl.find(".silver-winners");
+		
+		var goldLength = goldWinnersEl.find(".winner-item").length;
+		var silverLength = silverWinnersEl.find(".winner-item").length;
+
+		var goldSpeed = 0.5 * goldLength;
+		var silverSpeed = 0.5 * silverLength;
+		
+		if (goldLength >= 5) {
+			goldWinnersEl.find(".wrap").addClass('anit');
+			goldWinnersEl.find(".anit").css({
+				"-webkit-animation-duration": goldSpeed + "s",
+				"animation-duration": goldSpeed + "s",
+			});
+		}
+
+		if (silverLength >= 5) {
+			silverWinnersEl.find(".wrap").addClass('anit');
+			silverWinnersEl.find(".anit").css({
+				"-webkit-animation-duration": silverSpeed + "s",
+				"animation-duration": silverSpeed + "s",
 			});
 		}
 	}
@@ -162,10 +177,10 @@
 	var winnersWrapperEl = $(".winners-wrapper");
 	pageContentEl.on("click", ".chest-type", function(e) {
 		var currentTarget = $(e.currentTarget);
-		var chestTypeIndex = 0;	//默认为金箱
+		var chestTypeIndex = 0; //默认为金箱
 		var chestType = ["gold", "silver"];
 		if (currentTarget.hasClass("silver")) { //银箱
-			chestTypeIndex = 1;	//银箱
+			chestTypeIndex = 1; //银箱
 		}
 		winnersWrapperEl.find("." + chestType[chestTypeIndex]).addClass("active");
 		winnersWrapperEl.find("." + chestType[chestTypeIndex] + "-winners").addClass("active");

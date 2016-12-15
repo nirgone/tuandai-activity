@@ -43,6 +43,7 @@
                     left: 50%;
                     margin-left: pxToRem(-356px);
                     z-index: 9;
+                    overflow: hidden;
                     .light-bg {
                         background-image: url("../images/icon-light-bg.png");
                         width: pxToRem(710px);
@@ -68,9 +69,9 @@
                 }
                 @at-root .chest {
                     position: relative;
-                    z-index: 99;
+                    z-index: 999;
                     margin-top: pxToRem(92px);
-                    z-index: 99;
+                    transform: translateZ(0);
                     .chest-body {
                         position: absolute;
                         z-index: 99;
@@ -114,12 +115,12 @@
                         .tip-left {
                             color: #fff;
                             padding-left: pxToRem(32px);
-                            width: pxToRem(270px);
+                            width: pxToRem(290px);
                             font-size: pxToRem(24px);
                             line-height: pxToRem(30px);
                             display: inline-block;
                             vertical-align: middle;
-                            margin-right: pxToRem(28px);
+                            margin-right: pxToRem(8px);
                             text-align: center;
                         }
                         .tip-right {
@@ -178,11 +179,12 @@
                         margin-top: pxToRem(56px);
                         padding-left: pxToRem(20px);
                         padding-right: pxToRem(20px);
-                        overflow-y: hidden;
-                        overflow-x: scroll;
+                        // overflow-y: hidden;
+                        overflow: auto;
                         // display: flex;
                         white-space: nowrap;
                         height: pxToRem(246px);
+                        font-size: 0;
                         &>div:nth-child(4n-3) {
                             .coupon {
                                 @extend .silver-gift01;
@@ -205,7 +207,7 @@
                         }
                         .gift-item {
                             width: pxToRem(192px);
-                            margin-right: pxToRem(20px);
+                            margin-right: pxToRem(16px);
                             display: inline-block;
                             vertical-align: middle;
                             .icon-wrapper {
@@ -427,11 +429,12 @@
                 .chest-type-wrapper {
                     font-size: 0;
                     height: pxToRem(76px);
-                    line-height: pxToRem(72px);
+                    line-height: pxToRem(76px);
                     white-space: nowrap;
-                    position:relative;
+                    position: relative;
                     &:after {
-                        @include border("bottom", #ffc976);
+                        @include border("bottom",
+                        #ffc976);
                     }
                     .chest-type {
                         width: 50%;
@@ -439,15 +442,27 @@
                         font-size: pxToRem(30px);
                         display: inline-block;
                         text-align: center;
+                        position: relative;
+                        z-index: 99;
                         &.active {
                             color: #eb5819;
-                            border-bottom: pxToRem(4px) solid #e85a1a;
+                            &:after {
+                                content: "";
+                                width: 100%;
+                                height: pxToRem(4px);
+                                box-sizing: border-box;
+                                z-index: 99;
+                                border-bottom: pxToRem(4px) solid #e85a1a;
+                                position: absolute;
+                                left: 0;
+                                bottom: 0;
+                            }
                         }
                     }
                 }
                 @at-root .scroll-content {
                     width: 100%;
-                    height: pxToRem(430px);
+                    height: pxToRem(434px);
                     position: relative;
                     padding-top: pxToRem(50px);
                     padding-bottom: pxToRem(30px);
@@ -456,6 +471,8 @@
                     box-sizing: border-box;
                     z-index: 99;
                     display: none;
+                    background-color: #fffbe5;
+                    border-radius: pxToRem(10px);
                     &.active {
                         display: block;
                     }
@@ -489,7 +506,7 @@
                             overflow: hidden;
                             white-space: nowrap;
                             vertical-align: middle;
-                            width: pxToRem(300px);
+                            width: pxToRem(250px);
                         }
                         .win-time {
                             font-size: pxToRem(24px);
@@ -543,8 +560,9 @@
         color: #ea5800;
         font-size: pxToRem(36px);
         font-weight: bold;
-        padding-top: pxToRem(24px);
-        padding-left: pxToRem(22px);
+        padding-top: pxToRem(20px);
+        padding-left: pxToRem(8px);
+        text-align: center;
         box-sizing: border-box;
         border-radius: 50%;
         box-shadow: 0 0 pxToRem(40px) rgba(237, 55, 39, 0.7);
