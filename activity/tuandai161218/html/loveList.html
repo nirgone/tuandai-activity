@@ -32,10 +32,10 @@
             </div> -->
             <i class="icon-l-title"></i>
             <div class="md">
-                <i class="act-time">活动时间：12月13日~12月17日</i>
+                <i class="act-time">活动时间：12月13日~12月19日</i>
                 <i class="check-rule"><div class="rule-text">规则说明</div><i class="icon-arrow"></i></i>
             </div>
-            <div class="l-cont">
+            <div class="l-cont has-pd">
                 <i class="icon-l-label"></i>
                 <!-- <i class="icon-lz-float"></i> -->
                 <i class="icon-yr-float"></i>
@@ -117,9 +117,9 @@
                         <div class="l-amount">100,100,000</div>
                     <!-- </div> -->
                 </div>
-                <div class="no-pro ts-cont">
+                <!-- <div class="no-pro ts-cont">
                     <div class="to-start"><span>敬请期待</span></div>
-                </div>
+                </div> -->
             </div>
             <div class="gift-list">
                 <div class="swiper-container">
@@ -228,10 +228,10 @@
                 <div class="popup-close"><i class="close"></i></div>
             </div>
             <div class="popup-content">
-                <p>活动期间内，根据用户累计加入智能理财（we计划/复投宝/安盈计划）预售专场智能理财金额进行排名，前50名用户可获得额外奖励。</p>
-                <p>1、榜单以截至12月20日00:00排行信息为准；</p>
-                <p>2、投资红包将于24小时内发至用户团宝箱，均是1000元起投，投资期限≥180天，有效期：3天；</p>
-                <p>3、成功获得金条的用户请按要求前往团宝箱完善个人配送信息，奖励将在投资成功后的15个工作日内发出，商品颜色默认随机发放。</p>
+                <p>1、榜单以截至12月19日23:59排行信息为准；</p>
+                <p>2、现金红包将于活动结束后的24小时内发至用户团宝箱，有效期15天；</p>
+                <p>3、若用户加入金额相同，则根据加入时间进行排名；</p>
+                <p>4、成功获得金条的用户请按要求前往团宝箱完善个人配送信息，奖励将在活动结束后的15个工作日内发出。</p>
                 <p>本活动规则解释权归团贷网所有，如有疑问请联系在线客服或拨打400-6410-888</p>
             </div>
         </div>
@@ -258,7 +258,15 @@
     $(".masker, .popup-close").on('click', function() {
         $(".popup-content")[0].scrollTop = 0;
         $(".popup").hide();
-    })
+    });
+    var hasMyRank = true;
+    if(hasMyRank) {
+        $(".l-cont").addClass('has-pd');
+        $(".mr-cont").show();
+    }else{
+        $(".l-cont").removeClass('has-pd');
+        $(".mr-cont").hide();
+    }
 
 
 
