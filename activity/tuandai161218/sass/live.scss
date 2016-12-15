@@ -38,18 +38,22 @@
     }
     .top {
         position: relative;
-        width: pxToRem(560px);
-        height: pxToRem(110px);
+        width: pxToRem(590px);
+        // height: pxToRem(110px);
+        padding: pxToRem(48px) pxToRem(30px) pxToRem(22px) pxToRem(30px);
         margin: 0 auto;
-        line-height: pxToRem(148px);
+        line-height: pxToRem(48px);
         text-align: center;
         font-size: pxToRem(30px);
         border: 1px solid #ffca88;
         border-radius: pxToRem(20px);
+        box-sizing: border-box;
         &:before {
             content: attr(data-text);
             position: absolute;
+            left: 50%;
             top: pxToRem(-30px);
+            margin-left: pxToRem(-210px);
             background-image: -moz-linear-gradient( 90deg, rgb(255, 133, 35) 0%, rgb(255, 204, 67) 100%);
             background-image: -webkit-linear-gradient( 90deg, rgb(255, 133, 35) 0%, rgb(255, 204, 67) 100%);
             background-image: -ms-linear-gradient( 90deg, rgb(255, 133, 35) 0%, rgb(255, 204, 67) 100%);
