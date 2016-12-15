@@ -183,6 +183,7 @@
                         // display: flex;
                         white-space: nowrap;
                         height: pxToRem(246px);
+                        font-size: 0;
                         &>div:nth-child(4n-3) {
                             .coupon {
                                 @extend .silver-gift01;
@@ -205,7 +206,7 @@
                         }
                         .gift-item {
                             width: pxToRem(192px);
-                            margin-right: pxToRem(20px);
+                            margin-right: pxToRem(16px);
                             display: inline-block;
                             vertical-align: middle;
                             .icon-wrapper {
