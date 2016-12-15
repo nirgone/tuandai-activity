@@ -69,9 +69,9 @@
                 }
                 @at-root .chest {
                     position: relative;
-                    z-index: 99;
+                    z-index: 999;
                     margin-top: pxToRem(92px);
-                    z-index: 99;
+                    transform: translateZ(0);
                     .chest-body {
                         position: absolute;
                         z-index: 99;
@@ -115,12 +115,12 @@
                         .tip-left {
                             color: #fff;
                             padding-left: pxToRem(32px);
-                            width: pxToRem(270px);
+                            width: pxToRem(290px);
                             font-size: pxToRem(24px);
                             line-height: pxToRem(30px);
                             display: inline-block;
                             vertical-align: middle;
-                            margin-right: pxToRem(28px);
+                            margin-right: pxToRem(8px);
                             text-align: center;
                         }
                         .tip-right {
@@ -179,8 +179,8 @@
                         margin-top: pxToRem(56px);
                         padding-left: pxToRem(20px);
                         padding-right: pxToRem(20px);
-                        overflow-y: hidden;
-                        overflow-x: scroll;
+                        // overflow-y: hidden;
+                        overflow: auto;
                         // display: flex;
                         white-space: nowrap;
                         height: pxToRem(246px);
@@ -453,9 +453,9 @@
                                 box-sizing: border-box;
                                 z-index: 99;
                                 border-bottom: pxToRem(4px) solid #e85a1a;
-                                position:absolute;
+                                position: absolute;
                                 left: 0;
-                                bottom:0;
+                                bottom: 0;
                             }
                         }
                     }
@@ -472,7 +472,7 @@
                     z-index: 99;
                     display: none;
                     background-color: #fffbe5;
-                    border-radius:pxToRem(10px);
+                    border-radius: pxToRem(10px);
                     &.active {
                         display: block;
                     }
