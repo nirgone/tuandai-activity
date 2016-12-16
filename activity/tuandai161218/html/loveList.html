@@ -24,6 +24,7 @@
 <body>
     <div class="scroll scroll-active">
         <div class="content l-content">
+            <div class="btn-share icon-block"></div>
             <!--   <i class="title-bg">
                 <i class="icon-l-title"></i>
             <i class="icon-l-pai"></i>
@@ -113,9 +114,9 @@
                 <div class="mr-cont l-tr">
                     <i class="icon-lz-float"></i>
                     <!-- <div class="l-tr"> -->
-                        <div class="l-ranking">99</div>
-                        <div class="l-name">王宝强</div>
-                        <div class="l-amount">100,100,000</div>
+                    <div class="l-ranking">99</div>
+                    <div class="l-name">王宝强</div>
+                    <div class="l-amount">100,100,000</div>
                     <!-- </div> -->
                 </div>
                 <!-- <div class="no-pro ts-cont">
@@ -137,7 +138,8 @@
                                 <div class="hg-cont g-present">
                                     <i class="icon-plus"></i>
                                     <i class="icon-g-gold"></i>
-                                    <span>金条</span><br>
+                                    <span>金条</span>
+                                    <br>
                                     <span>(30g，约1万元)</span>
                                 </div>
                             </div>
@@ -154,7 +156,8 @@
                                 <div class="hg-cont g-present">
                                     <i class="icon-plus"></i>
                                     <i class="icon-g-gold"></i>
-                                    <span>金条</span><br>
+                                    <span>金条</span>
+                                    <br>
                                     <span>(30g，约1万元)</span>
                                 </div>
                             </div>
@@ -171,7 +174,8 @@
                                 <div class="hg-cont g-present">
                                     <i class="icon-plus"></i>
                                     <i class="icon-g-gold"></i>
-                                    <span>金条</span><br>
+                                    <span>金条</span>
+                                    <br>
                                     <span>(30g，约1万元)</span>
                                 </div>
                             </div>
@@ -188,7 +192,8 @@
                                 <div class="hg-cont g-present">
                                     <i class="icon-plus"></i>
                                     <i class="icon-g-gold"></i>
-                                    <span>金条</span><br>
+                                    <span>金条</span>
+                                    <br>
                                     <span>(30g，约1万元)</span>
                                 </div>
                             </div>
@@ -220,13 +225,13 @@
             </div>
         </div>
     </div>
-     <footer class="footer">
-        <a href="./chest.html" >爱心宝箱</a>
-        <a  class="active">爱心榜单</a>
+    <footer class="footer">
+        <a href="./chest.html">爱心宝箱</a>
+        <a class="active">爱心榜单</a>
         <a href="./msgboard.html">为爱发声</a>
         <a href="./live.html">12.18直播</a>
     </footer>
-    <div class="popup" >
+    <div class="popup">
         <div class="masker"></div>
         <div class="popup-wrapper more">
             <div class="popup-header" data-title="规则说明">
@@ -248,6 +253,9 @@
 <!-- build:js({dist}) ../js/lib/vendor/swiper/swiper.jquery.min.js -->
 <script src="../js/vendor/swiper/swiper.jquery.min.js"></script>
 <!-- endbuild -->
+<!-- build:js({dist}) ../js/lib/vendor/social-share.js -->
+<script src="../js/vendor/social-share.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
 <script src="../js/Util.js" type="text/javascript" charset="utf-8"></script>
 <!-- <script src="../js/loveList.js" type="text/javascript" charset="utf-8"></script> -->
 <script type="text/javascript">
@@ -265,13 +273,14 @@
         $(".popup").hide();
     });
     var hasMyRank = true;
-    if(hasMyRank) {
+    if (hasMyRank) {
         $(".l-cont").addClass('has-pd');
         $(".mr-cont").show();
-    }else{
+    } else {
         $(".l-cont").removeClass('has-pd');
         $(".mr-cont").hide();
     }
+    Util.bindShare();
 
 
 
