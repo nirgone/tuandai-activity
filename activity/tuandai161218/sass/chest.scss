@@ -112,7 +112,8 @@
                     z-index: 999;
                     transform: translateZ(0);
                     &.tip-notGet,
-                    &.tip-get, &.tip-notOpen {
+                    &.tip-get,
+                    &.tip-notOpen {
                         .tip-left {
                             color: #fff;
                             padding-left: pxToRem(32px);
@@ -124,6 +125,11 @@
                             margin-right: pxToRem(8px);
                             text-align: center;
                             white-space: nowrap;
+                            div {
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                            }
                         }
                         .tip-right {
                             // background-image: url("../images/btn-yellow.png");
@@ -233,6 +239,9 @@
                                 text-align: center;
                                 line-height: pxToRem(32px);
                                 white-space: normal;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
                             }
                         }
                     }
@@ -701,7 +710,6 @@
         display: block !important;
     }
 }
-
 
 //icon
 .silver-gift01 {
