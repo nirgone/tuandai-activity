@@ -319,11 +319,14 @@ span {
     -ms-flex-align: center;
     align-items: center;
 }
-.popup-content {
-    &>p:first-child {
-        text-indent: 2em;
-    }
-}
+// .popup-content {
+//     &>p:first-child {
+//         text-indent: 2em;
+//     }
+// }
 .popup {
     display: none;
+    .more {
+        height: pxToRem(760px) !important;
+    }
 }
