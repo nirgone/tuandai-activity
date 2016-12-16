@@ -168,6 +168,9 @@
     var initShare = function(shareData) { //初始化分享配置
          var IsInApp = false;    //TODO：需要后台加此参数
         if (!IsInApp) {
+            if($("body").find(".sharecont").length == 0) {
+                $("body").append('<div class="sharecont"><div class="smask"><i class="icon-share"></i></div><div class="share-popup"><div class="stxt"><b></b>分享到<b></b></div><div class="iconcont social-share" data-initialized="true" id="sociShare"><div><a class="social-share-icon icon-weibo" ><i class="icon-sina"></i></a><span>新浪微博</span></div><div><a class="social-share-icon icon-qq" ><i class="icon-tenc"></i></a><span>QQ</span></div><div><a class="social-share-icon icon-qzone"><i class="icon-zone"></i></a><span>QQ空间</span></div></div><div class="cancle-share social-share-icon"><i class="icon-close"></i></div></div></div>')
+            }
             var config = {
                 url: "Globals.ActivityWebsiteUrl" + "/weixin/20161218YR/index.aspx",
                 source: "Globals.ActivityWebsiteUrl" + "/weixin/20161218YR/index.aspx",
