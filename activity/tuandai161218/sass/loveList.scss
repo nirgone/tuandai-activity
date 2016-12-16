@@ -172,6 +172,11 @@ span {
         z-index: 10;
     }
 }
+@media screen and (max-width:320px) {
+    .g-cont {
+        width: 96% !important;
+    }
+}
 
 .gift-list {
     width: 100%;
@@ -182,24 +187,25 @@ span {
          padding-left: pxToRem(30px);
     }
     .g-cont {
-        // @include background('../images/gift-bg.png', 519px, 184px);
-        width: pxToRem(480px);
+        // @include background('../images/lp-bg.png', 433px, 88px);
+        // width: pxToRem(480px);
+        width: 90%;
         height: pxToRem(186px);
         border: pxToRem(10px) solid #ea3425;
         background-color: #fff;
         border-radius: pxToRem(20px);
         background-image: url('../images/lp-bg.png');
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: center pxToRem(50px);
         background-size: pxToRem(433px) pxToRem(88px);
         position: relative;
         margin-top: pxToRem(10px);
         padding-top: pxToRem(48px);
-        margin-right: pxToRem(100px);
+        // margin-right: pxToRem(100px);
         font-size: 0;
         &>div {
             height: pxToRem(100px);
-            width: 49.9%;
+            // width: 49.9%;
             display: inline-block;
             font-size: pxToRem(24px);
             color: #424242;
@@ -207,15 +213,14 @@ span {
             white-space: nowrap;
             position: relative;
         }
-        .g-redpacket {
-            // background-image: url('../images/g-redpacket.png');
-            // background-repeat: no-repeat;
-            // background-size: pxToRem(72px) pxToRem(72px);
-            // background-position: pxToRem(50px) pxToRem(14px);
-            padding: pxToRem(20px) 0 pxToRem(20px) pxToRem(80px);
+        .g-present {
+            padding: pxToRem(20px) 0 pxToRem(20px) pxToRem(100px);
             &>span:last-child {
                 margin-top: pxToRem(10px);
             }
+        }
+        .g-redpacket {
+            width: 38%;
         }
         i,
         p,
@@ -230,10 +235,14 @@ span {
             height: 100%;
         }
         .hg-cont {
+            width: 61.9%;
             text-align: left;
-            line-height: pxToRem(100px);
-            position: relative;
-            padding-left: pxToRem(140px);
+            padding-left: pxToRem(132px) !important;
+            // text-align: left;
+            // line-height: pxToRem(100px);
+            // position: relative;
+            // padding-left: pxToRem(140px);
+
         }
     }
     .icon-g-gold {
@@ -243,7 +252,7 @@ span {
         // @extend .icon-inline-block;
         @extend .icon-l-gold;
         position: absolute;
-        left: pxToRem(68px);
+        left: pxToRem(60px);
         top: 50%;
         margin-top: pxToRem(-34px);
     }
@@ -254,7 +263,7 @@ span {
         // @extend .icon-inline-block;
         @extend .icon-icon-plus;
         position: absolute;
-        left: pxToRem(20px);
+        left: pxToRem(24px);
         top: 50%;
         margin-top: pxToRem(-14px);
     }
@@ -279,9 +288,12 @@ span {
         // @extend .icon-inline-block;
         @extend .icon-l-redpacket;
         position: absolute;
-        left: pxToRem(30px);
+        left: 0;
         top: 50%;
         margin-top: pxToRem(-36px);
+    }
+    .g-icon-packet {
+        left: pxToRem(20px) !important;
     }
 }
 
@@ -294,7 +306,7 @@ span {
     text-align: center;
     font-size: 18px;
     // background: #fff;
-    width: 76%;
+    width: 80%;
     /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
@@ -302,11 +314,9 @@ span {
     display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
+    justify-content: flex-start;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    -webkit-align-items: center;
     align-items: center;
 }
 .popup-content {
