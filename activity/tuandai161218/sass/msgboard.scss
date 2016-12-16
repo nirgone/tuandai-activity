@@ -192,37 +192,11 @@
 .icon-open-arrow {
     position: absolute;
     right: pxToRem(30px);
-    top: pxToRem(4px);
+    top: pxToRem(10px);
     width: pxToRem(58px);
     height: pxToRem(58px);
-    &:before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        margin-top: pxToRem(6px);
-        left: pxToRem(10px);
-        display: block;
-        width: pxToRem(20px);
-        height: pxToRem(2px);
-        border-radius: pxToRem(2px);
-        background-color: #ffe03e;
-        transform: rotateZ(40deg);
-        transform-origin: right;
-    }
-    &:after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        margin-top: pxToRem(6px);
-        right: pxToRem(10px);
-        display: block;
-        width: pxToRem(20px);
-        height: pxToRem(2px);
-        border-radius: pxToRem(2px);
-        background-color: #ffe03e;
-        transform: rotateZ(-40deg);
-        transform-origin: left;
-    }
+    background: url('data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAANBAMAAACwSehuAAAAGFBMVEUAAAD/4T7/4T7/4T7/4T7/4T7/4T7/4T582HaRAAAAB3RSTlMA1hfPEEu+Tp8LnQAAAEVJREFUCNdjYHVgQIBwIRhL2YDBsVABwmYSNwBiqJQiUBRCMIAEISRUAkrBhMA0XALMAAvApMASMCmQBFwKKAEHbkZgCgBY/AoFMhin/QAAAABJRU5ErkJggg==') no-repeat center;
+    background-size: pxToRem(24px) pxToRem(14px);
 }
 .icon-board-close {
 	@include icon-background('../images/close_board.png', 82px, 82px);

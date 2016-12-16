@@ -201,6 +201,7 @@ a {
     line-height: pxToRem(98px);
     font-size: 0;
     z-index: 999;
+    white-space: nowrap;
     a {
         display: inline-block;
         width: 25%;
