@@ -112,7 +112,7 @@
                     z-index: 999;
                     transform: translateZ(0);
                     &.tip-notGet,
-                    &.tip-get {
+                    &.tip-get, &.tip-notOpen {
                         .tip-left {
                             color: #fff;
                             padding-left: pxToRem(32px);
