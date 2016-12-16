@@ -15,6 +15,10 @@
         margin-bottom: pxToRem(56px);
         position: relative;
         z-index: 100;
+        .btn-share {
+            top: 50%;
+            margin-top: pxToRem(-52px);
+        }
     }
     .chest-item {
         position: relative;

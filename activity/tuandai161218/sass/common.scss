@@ -450,3 +450,14 @@ a {
     background-color: rgba(0, 0, 0, .7);
     z-index: 999;
 }
+
+.btn-share {
+    background-image: url("../images/icon-share.png");
+    width: pxToRem(74px);
+    height: pxToRem(116px);
+    position: absolute;
+    right: pxToRem(-2px);
+    // top: 50%;
+    // transform: translateY(-44%);
+    // background-position: 100% 50% ;
+}
