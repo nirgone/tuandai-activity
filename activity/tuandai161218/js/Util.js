@@ -406,7 +406,7 @@
         // 分享按钮
         bindShare: function() {
             initShare();
-            $(".btn-share").on("click", function() {
+            $("body").on("click", ".btn-share", function() {
                 onShowShare();
             });
             // 隐藏分享
