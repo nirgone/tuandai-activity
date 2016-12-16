@@ -23,7 +23,7 @@
             margin: auto;
             position: relative;
             width: pxToRem(710px);
-            height: pxToRem(910px);
+            // height: pxToRem(910px);
             background-color: #ff642e;
             border-radius: pxToRem(20px);
             box-sizing: border-box;
@@ -101,9 +101,7 @@
                     }
                 }
                 @at-root .tip-wrapper {
-                    background-image: url("../images/bg-tip.png");
                     width: pxToRem(502px);
-                    height: pxToRem(132px);
                     margin: auto;
                     padding-top: pxToRem(34px);
                     box-sizing: border-box;
@@ -111,9 +109,55 @@
                     position: relative;
                     z-index: 999;
                     transform: translateZ(0);
-                    &.tip-notGet,
+                    &.tip-notGet {
+                        height: pxToRem(172px) !important;
+                        background-image: url("../images/bg-tip02.png");
+                        .first-row {
+                            color: #fff;
+                            padding-left: pxToRem(32px);
+                            font-size: pxToRem(22px);
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            box-sizing: border-box;
+                            margin-bottom: pxToRem(18px);
+                        }
+                        .tip-left {
+                            color: #fff;
+                            padding-left: pxToRem(32px);
+                            width: pxToRem(290px);
+                            font-size: pxToRem(22px);
+                            line-height: pxToRem(30px);
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin-right: pxToRem(8px);
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+                        .tip-right {
+                            // background-image: url("../images/btn-yellow.png");
+                            width: pxToRem(130px);
+                            height: pxToRem(52px);
+                            line-height: pxToRem(52px);
+                            vertical-align: middle;
+                            font-size: 0;
+                            color: #fd493a;
+                            font-weight: initial;
+                            font {
+                                vertical-align: middle;
+                                display: inline-block;
+                                font-size: pxToRem(26px);
+                            }
+                            .icon-arrow-red {
+                                margin-left: pxToRem(6px);
+                            }
+                        }
+                    }
                     &.tip-get,
                     &.tip-notOpen {
+                        height: pxToRem(132px);
+                        background-image: url("../images/bg-tip.png");
                         .tip-left {
                             color: #fff;
                             padding-left: pxToRem(32px);
@@ -132,7 +176,6 @@
                             }
                         }
                         .tip-right {
-                            // background-image: url("../images/btn-yellow.png");
                             width: pxToRem(130px);
                             height: pxToRem(52px);
                             line-height: pxToRem(52px);
@@ -162,14 +205,16 @@
                     }
                 }
                 @at-root .gift-wrapper {
-                    position: absolute;
-                    bottom: -1px;
+                    // position: absolute;
+                    // bottom: -1px;
+                    position: relative;
                     width: 100%;
                     height: pxToRem(302px);
                     border-radius: pxToRem(12px);
                     border: 1px solid #ffbc6d;
                     box-sizing: border-box;
                     background-color: #fffbe5;
+                    margin-top: pxToRem(30px);
                     .gift-title {
                         background-image: url("../images/bg-gift-title.png");
                         width: pxToRem(316px);
