@@ -87,7 +87,7 @@
         if (_options.hasAnimation) {
             popup_wrapper.addClass("zoomIn");
         }
-        if(_options.popupClass) {
+        if (_options.popupClass) {
             popup.addClass(_options.popupClass)
         }
         popup_wrapper.append(popup_header).append(popup_content);
@@ -132,6 +132,53 @@
 
     function disableScrolling() {
         $(".scroll").removeClass("scroll-active");
+    }
+    var onShowShare = function() {
+        var IsInApp = false;    //TODO：需要后台加此参数
+        if (IsInApp == true) {
+            MobileRedirector.go_share(5);
+        } else if (Util.isWeiXin()) { //微信
+            onShowShareWeiXin();
+        } else { //浏览器分享
+            onShowBrowserShare();
+        }
+    }
+    var onShowShareWeiXin = function() { //显示微信分享
+        if($("body").find(".sharecont").length == 0) {
+            $("body").append('<div class="sharecont"><div class="smask"><i class="icon-share"></i></div><div class="share-popup"><div class="stxt"><b></b>分享到<b></b></div><div class="iconcont social-share" data-initialized="true" id="sociShare"><div><a class="social-share-icon icon-weibo" ><i class="icon-sina"></i></a><span>新浪微博</span></div><div><a class="social-share-icon icon-qq" ><i class="icon-tenc"></i></a><span>QQ</span></div><div><a class="social-share-icon icon-qzone"><i class="icon-zone"></i></a><span>QQ空间</span></div></div><div class="cancle-share social-share-icon"><i class="icon-close"></i></div></div></div>')
+        }
+        var sharecontEl = $(".sharecont");
+        sharecontEl.find(".share-popup").hide();
+        sharecontEl.find(".smask").show();
+        sharecontEl.show();
+        $(".scroll").removeClass("scroll-active");
+    }
+
+    var onShowBrowserShare = function() { //显示浏览器分享
+        if($("body").find(".sharecont").length == 0) {
+            $("body").append('<div class="sharecont"><div class="smask"><i class="icon-share"></i></div><div class="share-popup"><div class="stxt"><b></b>分享到<b></b></div><div class="iconcont social-share" data-initialized="true" id="sociShare"><div><a class="social-share-icon icon-weibo" ><i class="icon-sina"></i></a><span>新浪微博</span></div><div><a class="social-share-icon icon-qq" ><i class="icon-tenc"></i></a><span>QQ</span></div><div><a class="social-share-icon icon-qzone"><i class="icon-zone"></i></a><span>QQ空间</span></div></div><div class="cancle-share social-share-icon"><i class="icon-close"></i></div></div></div>')
+        }
+        var sharecontEl = $(".sharecont");
+        sharecontEl.find(".smask").hide();
+        sharecontEl.find(".share-popup").show();
+        sharecontEl.show();
+        $(".scroll").removeClass("scroll-active");
+    }
+
+    var initShare = function(shareData) { //初始化分享配置
+         var IsInApp = false;    //TODO：需要后台加此参数
+        if (!IsInApp) {
+            var config = {
+                url: "Globals.ActivityWebsiteUrl" + "/weixin/20161218YR/index.aspx",
+                source: "Globals.ActivityWebsiteUrl" + "/weixin/20161218YR/index.aspx",
+                title: "#1218网贷爱心日#领军互金平台团贷网全场加息！年度最壕，最高年化可加2%！",
+                description: "#1218网贷爱心日#领军互金平台团贷网全场加息！年度最壕，最高年化可加2%！",
+                image: "images/logo.png",
+                sites: ['qzone', 'qq', 'weibo'], // 启用的站点
+
+            };
+            socialShare && socialShare("#sociShare", config);
+        }
     }
 
     var util = {
@@ -181,8 +228,8 @@
         },
         showLoader: function(msg) {
             msg = msg ? msg : '';
-             var loader = $("<div/>").addClass("loader").html(msg);
-             $("body").append(loader);
+            var loader = $("<div/>").addClass("loader").html(msg);
+            $("body").append(loader);
         },
         hideLoader: function() {
             $(".loader").remove();
@@ -353,6 +400,18 @@
                 return false;
             }
         },
+        // 分享按钮
+        bindShare: function() {
+            initShare();
+            $(".btn-share").on("click", function() {
+                onShowShare();
+            });
+            // 隐藏分享
+            $("body").on("click", ".cancle-share, .smask", function() {
+                $(".sharecont").remove();
+                $(".scroll").addClass("scroll-active");
+            })
+        }
     }
 
     window.Util = util;

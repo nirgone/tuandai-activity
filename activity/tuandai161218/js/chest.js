@@ -189,5 +189,5 @@
 
 
 	})
-
+	Util.bindShare();
 })();
