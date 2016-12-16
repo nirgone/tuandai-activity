@@ -15,10 +15,14 @@
     color: #fffbe8;
     font-size: pxToRem(24px);
     line-height: pxToRem(32px);
-    padding: pxToRem(20px) pxToRem(38px);
+    padding: pxToRem(20px) pxToRem(48px);
     text-align: justify;
     box-sizing: border-box;
     z-index: 998;
+}
+
+.btn-share {
+    top: pxToRem(144px);
 }
 
 .msg-board {
@@ -198,11 +202,15 @@
     background: url('data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAANBAMAAACwSehuAAAAGFBMVEUAAAD/4T7/4T7/4T7/4T7/4T7/4T7/4T582HaRAAAAB3RSTlMA1hfPEEu+Tp8LnQAAAEVJREFUCNdjYHVgQIBwIRhL2YDBsVABwmYSNwBiqJQiUBRCMIAEISRUAkrBhMA0XALMAAvApMASMCmQBFwKKAEHbkZgCgBY/AoFMhin/QAAAABJRU5ErkJggg==') no-repeat center;
     background-size: pxToRem(24px) pxToRem(14px);
 }
+
 .icon-board-close {
-	@include icon-background('../images/close_board.png', 82px, 82px);
-	margin: 0 auto;
-	margin-top: pxToRem(82px);
+    @include icon-background('../images/close_board.png',
+    82px,
+    82px);
+    margin: 0 auto;
+    margin-top: pxToRem(82px);
 }
+
 //animation
 .animated {
     animation-duration: 0.6s;

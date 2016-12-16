@@ -20,6 +20,7 @@
 
 <body>
     <div class="scroll scroll-active">
+        <div class="btn-share icon-block"></div>
         <div class="content">
             <div class="icon-block title"></div>
             <div class="board">
@@ -52,12 +53,20 @@
         <a href="./msgboard.html">为爱发声</a>
         <a class="active">12.18直播</a>
     </footer>
-
-    
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
 <script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
+<!-- build:js({dist}) ../js/lib/vendor/social-share.js -->
+<script src="../js/vendor/social-share.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
 <script src="../js/Util.js" type="text/javascript" charset="utf-8"></script>
+<script>
+(function() {
+    FastClick.attach(document.body);
+    //do your thing.
+    Util.bindShare();
+})();
+</script>
 
 </html>

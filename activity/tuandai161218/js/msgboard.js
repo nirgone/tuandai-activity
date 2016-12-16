@@ -1,5 +1,6 @@
 (function() {
     FastClick.attach(document.body);
+    Util.bindShare();
     //do your thing.
     $("#descri, .icon-open-arrow").on("click", function(e) {
         var _unfold = $("#descri").attr("data-unfold");
@@ -27,7 +28,7 @@
             btn: {
                 name: '我知道了',
                 callback: function() {
-                    $("#input_popup").removeClass("slideInUp").addClass("slideOutDown");
+                    $("#input_popup").removeClass("slideInUp").addClass("   ");
                 }
             },
             closeCallback: function() {
