@@ -411,7 +411,7 @@
             });
             // 隐藏分享
             $("body").on("click", ".cancle-share, .smask", function() {
-                $(".sharecont").remove();
+                $(".sharecont").hide();
                 $(".scroll").addClass("scroll-active");
             })
         }
