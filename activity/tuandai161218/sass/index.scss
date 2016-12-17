@@ -39,9 +39,9 @@
     position: relative;
     &:before {
         content: "";
-        @include icon-background('../images/m-label.png',
+        @include icon-background('../images/m-label.png?v=2016121701',
         248px,
-        215px);
+        196px);
         @extend .icon-block;
         position: absolute;
         top: 0;
@@ -150,11 +150,15 @@
         }
     }
     .desc-num {
-        font-size: pxToRem(60px);
-        color: #ff6813;
-        text-shadow: 0px 1px 2px rgb( 255, 94, 0);
+        font-size: pxToRem(54px);
+        color: rgb( 255, 104, 19 );
+        text-shadow: 0px pxToRem(1px) pxToRem(2px) rgb( 255, 94, 0);
+        font {
+            font-size: pxToRem(48px);
+        }
     }
 }
+
 
 .btn-join {
     background-image: linear-gradient( 0deg, rgb(255, 206, 11) 0%, rgb(255, 254, 185) 100%);

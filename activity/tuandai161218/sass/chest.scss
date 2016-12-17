@@ -342,7 +342,7 @@
                 }
             }
             .gift-icon {
-                font-size: pxToRem(60px);
+                font-size: pxToRem(50px);
                 font-weight: bold;
                 color: #fffce4;
                 line-height: pxToRem(120px);
@@ -482,11 +482,13 @@
             .list-wrapper {
                 width: pxToRem(650px);
                 height: pxToRem(510px);
-                background-color: #fff8c2;
+                // background-color: #fff8c2;
+                background-color: #fffbe5;
                 border-radius: pxToRem(10px);
                 margin: auto;
                 margin-top: pxToRem(72px);
                 .chest-type-wrapper {
+                    background-color: #fff8c2;
                     font-size: 0;
                     height: pxToRem(76px);
                     line-height: pxToRem(76px);
