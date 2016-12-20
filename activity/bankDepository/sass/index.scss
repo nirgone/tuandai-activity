@@ -1,0 +1,183 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    height: auto;
+    width: 100%;
+    // overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-overflow-scrolling: touch !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.bg-grey {
+    background-color: #f2f2f0;
+}
+
+.result-content {
+    width: 100%;
+    min-height: pxToRem(600px);
+    text-align: center;
+    background-color: #fff;
+    // padding-top: pxToRem(100px);
+    box-sizing: border-box;
+    .status-icon {
+        margin: 0 auto;
+        padding-top: pxToRem(100px);
+        margin-bottom: pxToRem(70px);
+        background-position: bottom;
+    }
+    .status-txt {
+        color: $font-black;
+        font-size: 17px;
+        padding-bottom: pxToRem(12px);
+    }
+    .info {
+        color: $font-grey;
+        font-size: 12px;
+        line-height: pxToRem(42px);
+        width: pxToRem(546px);
+        margin: 0 auto;
+    }
+    .more-info {
+        @extend .info;
+        width: auto;
+        padding: pxToRem(26px) pxToRem(30px);
+        text-align: justify;
+    }
+    @at-root .steps-list {
+        position: relative;
+        padding: pxToRem(10px) 0 0 pxToRem(80px);
+        text-align: left;
+        &:before {
+            content: '';
+            position: absolute;
+            left: pxToRem(96px);
+            top: pxToRem(68px);
+            bottom: pxToRem(68px);
+            width: pxToRem(4px);
+            border-radius: pxToRem(4px);
+            background-color: $bg-grey;
+        }
+        &>li:first-child {
+            &:before {
+                display: none;
+            }
+        }
+        &>li:last-child {
+            &:after {
+                display: none;
+            }
+        }
+        .step {
+            position: relative;
+            height: pxToRem(140px);
+            padding-top: pxToRem(48px);
+            box-sizing: border-box;
+            i {
+                position: absolute;
+                top: pxToRem(48px);
+                left: 0;
+                width: pxToRem(36px);
+                height: pxToRem(36px);
+                border-radius: pxToRem(36px);
+                background-color: $bg-grey;
+                display: block;
+                z-index: 19;
+            }
+            div {
+                padding-left: pxToRem(54px);
+                font-size: 15px;
+                color: $font-black;
+            }
+            span {
+                display: block;
+                padding-top: pxToRem(18px);
+                font-size: 12px;
+                color: $font-grey;
+            }
+            &.finish {
+                i {
+                    background-color: $bg-yellow;
+                }
+                div {
+                color: $font-yellow;
+                }
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: pxToRem(16px);
+                    width: pxToRem(4px);
+                    height: pxToRem(70px);
+                    border-box: pxToRem(4px);
+                    background-color: $bg-yellow;
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: pxToRem(16px);
+                    width: pxToRem(4px);
+                    height: pxToRem(70px);
+                    bottom: 0;
+                    border-box: pxToRem(4px);
+                    background-color: $bg-yellow;
+                }
+            }
+        }
+    }
+}
+
+.text-list {
+    padding-top: pxToRem(20px);
+    &>li {
+        padding: 0 pxToRem(30px);
+        width: pxToRem(750px);
+        height: pxToRem(100px);
+        line-height: pxToRem(100px);
+        background-image: url(../images/sprite_rects.png);
+        background-size: pxToRem(750px) pxToRem(540px);
+        background-repeat:no-repeat;
+        margin-bottom: pxToRem(20px);
+        font-size: 15px;
+        text-align: center;
+        color: $font-black;
+        box-sizing: border-box;
+        &:after {
+            content: '';
+            padding-left: pxToRem(16px);
+            @extend .icon-inline-block;
+            @include icon-background("data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAUAgMAAAAmQi/7AAAADFBMVEUAAACZmZmZmZmZmZnk5WrOAAAAA3RSTlMAzhS11epjAAAALklEQVQI12OIYGBgKAPiuQ0MDOoJDAycNxgYmDAESkAYxAaJgeTAahBcsBkgswAdMA2NGlJpkQAAAABJRU5ErkJggg==", 12px, 20px);
+        }
+        &:nth-child(5n-4) {
+            // background-image: url(../images/rect0.png);
+            background-position: pxToRem(0px) pxToRem(0px);
+        }
+        &:nth-child(5n-3) {
+            // background-image: url(../images/rect1.png);
+            background-position: pxToRem(0px) pxToRem(-110px);
+        }
+        &:nth-child(5n-2) {
+            // background-image: url(../images/rect2.png);
+            background-position: pxToRem(0px) pxToRem(-220px);
+        }
+        &:nth-child(5n-1) {
+            // background-image: url(../images/rect3.png);
+            background-position: pxToRem(0px) pxToRem(-330px);
+        }
+        &:nth-child(5n) {
+            // background-image: url(../images/rect4.png);
+            background-position: pxToRem(0px) pxToRem(-440px);
+        }
+    }
+}
