@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>Bank Depository</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body class="bg-grey">
+    <div class="result-content">
+        <!-- 提现申请成功 -->
+        <!-- <i class="status-icon icon-success"></i>
+		<div class="status-txt">
+			体现申请已提交
+		</div>
+		<p class="info">请耐心等到到账</p>
+		<p class="more-info">团贷网将在周一至周六8:30-18:00；周日及其他国家法定假日下午15:00处理提现申请；提现申请会在申请处理成功后2个小时内到账，仅限中国工商银行、中国农业银行、中国招商银行、中国建设银行、中国交通银行，其他银行在申请处理成功后的第二天24：00前到账（注：若有特殊情况，最终由该银行解释为准）</p> -->
+        <!-- 提现申请成功 -->
+        <!-- <i class="status-icon icon-success"></i>
+		<div class="status-txt">
+			申请已提交
+		</div>
+		<p class="info">由于当前申请人数过多，请稍后进入“我”页面查看投资详情</p> -->
+        <!-- 购买失败 -->
+        <!-- <i class="status-icon icon-fail"></i>
+		<div class="status-txt">
+			购买失败
+		</div>
+		<p class="info">后台返回失败错误提示</p> -->
+
+        <ul class="steps-list">
+            <li class="step finish">
+                <i class="icon-finish"></i>
+                <div>
+                	<p>项目上线，开始募集</p>
+                	<span>2016-01-01 星期一</span>
+                </div>
+            </li>
+            <li class="step finish">
+                <i class="icon-finish"></i>
+                <div>
+                	<p>成功投资1,012.00元</p>
+                	<span>今天投资，立即开始计算利息</span>
+                </div>
+            </li>
+            <li class="step ">
+                <i class="icon-return"></i>
+                <div>
+                	<p>正常回款</p>
+                	<span>项目还款中</span>
+                </div>
+            </li>
+            <li class="step ">
+                <i class="icon-deadline"></i>
+                <div>
+                	<p>成功投资1,012.00元</p>
+                	<span>今天投资，立即开始计算利息</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <ul class="text-list">
+        <li>这是一段文字</li>
+        <li>这是一段文字</li>
+        <li>这是一段文字</li>
+        <li>这是一段文字</li>
+        <li>这是一段文字</li>
+    </ul>
+</body>
+
+</html>

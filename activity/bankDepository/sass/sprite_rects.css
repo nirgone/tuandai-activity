@@ -1,0 +1,45 @@
+.icon-rect0 {
+  display: block;
+  background-image: url(../images/sprite_rects.png);
+  background-size: pxToRem(750px)  pxToRem(540px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(750px);
+  height: pxToRem(100px);
+}
+.icon-rect1 {
+  display: block;
+  background-image: url(../images/sprite_rects.png);
+  background-size: pxToRem(750px)  pxToRem(540px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-110px);
+  width: pxToRem(750px);
+  height: pxToRem(100px);
+}
+.icon-rect2 {
+  display: block;
+  background-image: url(../images/sprite_rects.png);
+  background-size: pxToRem(750px)  pxToRem(540px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-220px);
+  width: pxToRem(750px);
+  height: pxToRem(100px);
+}
+.icon-rect3 {
+  display: block;
+  background-image: url(../images/sprite_rects.png);
+  background-size: pxToRem(750px)  pxToRem(540px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-330px);
+  width: pxToRem(750px);
+  height: pxToRem(100px);
+}
+.icon-rect4 {
+  display: block;
+  background-image: url(../images/sprite_rects.png);
+  background-size: pxToRem(750px)  pxToRem(540px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-440px);
+  width: pxToRem(750px);
+  height: pxToRem(100px);
+}
