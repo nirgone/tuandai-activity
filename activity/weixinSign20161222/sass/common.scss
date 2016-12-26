@@ -1,0 +1,154 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/func";
+@import "../../../sass/reset";
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.scroll-active {
+    -webkit-overflow-scrolling: touch !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+// popup
+.popup {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    // $top: 15%;
+    .popup-wrapper {
+        position: absolute;
+        // top: $top;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-55%);
+        width: pxToRem(650px);
+        margin-left: pxToRem(-650px /2);
+        // max-height: 70%;
+        z-index: 1000;
+        border-radius: pxToRem(10px);
+        background-color: #fff;
+    }
+    .popup-close {
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50% 50%;
+        background-image: url("../images/icon-close.png");
+        width: pxToRem(50px);
+        height: pxToRem(90px);
+        top: pxToRem(-90px);
+        right: pxToRem(10px);
+    }
+    .popup-content {
+        border-radius: pxToRem(10px);
+        background-color: #fff;
+        z-index: 99;
+        box-shadow: 0 0 0 pxToRem(10px) rgba(255, 255, 255, 0.3);
+        padding-top: pxToRem(42px);
+        padding-bottom: pxToRem(30px);
+        box-sizing: border-box;
+        background-repeat: no-repeat;
+        background-size: pxToRem(257px) pxToRem(172px);
+        background-position: 100% 100%;
+        background-image: url("../images/icon-coin.png");
+        position: relative;
+        .popup-icon-ribbon {
+              background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 50% 50%;
+            background-image: url("../images/icon-ribbon.png");
+            width: pxToRem(468px);
+            height: pxToRem(178px);
+            position: absolute;
+            left: 50%;
+            margin-left: pxToRem(-234px);
+            top: pxToRem(6px);
+        }
+        .popup-icon {
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 50% 50%;
+            margin: auto;
+            margin-bottom: pxToRem(38px);
+            line-height: 4.94933rem;
+            text-align:center;
+            font-size: pxToRem(68px);
+            color: #fffd78;
+            font-weight: bold;
+        }
+        p {
+            font-size: pxToRem(34px);
+            color: #454545;
+            text-align: center;
+        }
+        .btn-yellow {
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 50% 50%;
+            background-image: url("../images/btn-yellow.png");
+            width: pxToRem(292px);
+            height: pxToRem(100px);
+            line-height: pxToRem(88px);
+            color: #932d33;
+            font-size: pxToRem(40px);
+            text-align: center;
+            margin: auto;
+            margin-top: pxToRem(32px);
+        }
+    }
+}
+
+
+/* .popup-icon {
+    .icon-pop0 {
+        bottom: pxToRem(-12px) !important;
+        margin-left: pxToRem(-248px/2) !important;
+    }
+    .popup-content {
+        padding: pxToRem(110px) pxToRem(32px) pxToRem(22px);
+        text-align: center;
+        &.pop0-content {
+            padding-top: 0;
+        }
+        p {
+            font-size: pxToRem(34px);
+            line-height: initial;
+            &.percent {
+                font-size: pxToRem(86px);
+                color: #ff5500;
+                &:after {
+                    content: '%';
+                    color: #ff5500;
+                    font-size: pxToRem(44px);
+                }
+            }
+        }
+        
+    }
+} */
+
+.masker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 99;
+}

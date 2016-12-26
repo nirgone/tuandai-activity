@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>第二期团粉圈签到抽奖活动页面</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/lottery.css">
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="page scroll-active">
+        <div class="lottery-wrapper">
+            <div class="icon icon-xiaopai"></div>
+            <div class="icon icon-line icon-line-left"></div>
+            <div class="icon icon-line icon-line-right"></div>
+            <div class="icon icon-point icon-point-left"></div>
+            <div class="icon icon-point icon-point-right"></div>
+            <ul class="lottery-wrapper-content" id="lottery">
+                <li>
+                    <div class="lotitem lottery-unit lottery-unit-0">
+                        <div class="icon"></div>
+                    </div>
+                    <div class="lotitem lottery-unit lottery-unit-1">
+                        <div class="icon"></div>
+                    </div>
+                    <div class="lotitem lottery-unit lottery-unit-2">
+                        <div class="icon"></div>
+                    </div> 
+               </li>
+               <li>
+                    <div class="lotitem lottery-unit lottery-unit-7">
+                        <div class="icon"></div>
+                    </div>
+                    
+                    <div class="lotbtn lottery-unit">
+                       <i class="icon-lotterybtn"></i>
+                    </div>
+                    <div class="lotitem lottery-unit lottery-unit-3">
+                        <div class="icon"></div>
+                    </div>
+                    
+               </li>
+               <li>
+                   
+                    <div class="lotitem lottery-unit lottery-unit-6">
+                        <div class="icon"></div>
+                    </div>
+                     <div class="lotitem lottery-unit lottery-unit-5">
+                        <div class="icon"></div>
+                    </div>
+                    <div class="lotitem lottery-unit lottery-unit-4">
+                        <div class="icon"></div>
+                    </div>
+               </li>
+            </ul>
+        </div>
+        <div class="loading">
+            <div class="spinner">
+              <div class="spinner-container container1">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+              </div>
+              <div class="spinner-container container2">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+              </div>
+              <div class="spinner-container container3">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="dialog">
+        <div class="mask"></div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/lib/awardRotate.js" type="text/javascript" charset="utf-8"></script>
+<!-- <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script> -->
+<script src="../js/Util.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/lottery.js" type="text/javascript" charset="utf-8"></script>
+
+</html>
