@@ -1,24 +1,6 @@
 @charset "UTF-8";
 @import "variables";
-@import "sprite";
-@import "../../../sass/reset";
 @import "../../../sass/func";
-html,
-body {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    // font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-    font-family: 微软雅黑, sans-serif;
-    margin: 0;
-    padding: 0;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-a {
-    text-decoration: none;
-}
 
 .scroll-active {
     -webkit-overflow-scrolling: touch !important;
@@ -222,7 +204,7 @@ a {
                 box-sizing: border-box;
                 padding-bottom: pxToRem(20px);
                 .item {
-                    padding: pxToRem(6px) 0;
+                    // padding: pxToRem(6px) 0;
                     padding-left: pxToRem(30px);
                     font-size: 0;
                     height: pxToRem(42px);
@@ -235,9 +217,10 @@ a {
                         font-size: pxToRem(24px);
                         display: inline-block;
                         vertical-align: middle;
-                        padding-top: pxToRem(4px);
+                        // padding-top: pxToRem(4px);
                         box-sizing: border-box;
-                        height: pxToRem(28px);
+                        height: pxToRem(42px);
+                        line-height: pxToRem(42px);
                         text-overflow: ellipsis;
                         overflow: hidden;
                         white-space: nowrap;

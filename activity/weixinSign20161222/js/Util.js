@@ -103,7 +103,7 @@
     }
 
     var util = {
-        basePath: "",
+        basePath: "//bbs2.tuandai.com",
         enableScrolling: enableScrolling,
 
         disableScrolling: disableScrolling,
@@ -179,10 +179,10 @@
             }
         },
         bbsInit: function(cb) { //初始化，判断是否登录之后的初始化
-            return;
+             return;
             var isLogined = this.isLogined();
             if (isLogined) {
-                cb && cb.call(this);
+                typeof cb === "function" && cb.call(this);
             } else {
                 var isTuandaiLogined = this.isTuandaiLogined();
                 //判断是否已登录
@@ -197,6 +197,7 @@
             }
         },
         isLogined: function() { //判断是否已经登录团粉圈
+            // var isLogined = this.getCookie('voHF_b718_auth');
             var isLogined = this.getCookie('voHF_2132_auth');
             return !!isLogined;
         },
@@ -206,7 +207,8 @@
             return !!isTuandaiLogined;
         },
 
-        bbsWebLogin: function(success, error) { //登录团粉圈
+        bbsWebLogin: function(success, error) { //通过团贷网登录团粉圈
+            return;
             var me = this;
             var tuandaiCookie = me.getCookie('tuandaiw');
             if (!tuandaiCookie) { //如果没有已经登录团贷网
@@ -219,21 +221,27 @@
                 url: me.basePath + "/app/index.php",
                 type: 'post',
                 dataType: 'json',
+                timeout: 60000,
                 data: {
                     version: 4,
                     module: "member",
                     action: 'login',
                     tuandaiwang_cookie: tuandaiCookie,
                 },
-               
+                beforeSend: function() {
+                    $(".loading").show(); // 显示loading图标
+                },
                 success: function(v_data) {
                     if (v_data.code == "200") {
-                        success && success.call(this, v_data);
+                        typeof success === "function" && success.call(this, v_data);
                     } else {
+                        $(".loading").hide();
                         me.alertServeError(); //服务器错误
                     }
                 },
                 error: function(e) {
+                    // 错误时隐藏loading图标，成功留给callback隐藏
+                    $(".loading").hide();
                     me.alertServeError(); //服务器错误
                 }
             });
@@ -276,38 +284,4 @@
     }
 
     window.Util = util;
-    /*util.alertPrize({
-        iconUrl: "../images/icon-hongbao.png",
-        contentText: "<p>恭喜你！获得<font style='color:#f93737;font-weight:bold;'>" + 3 + "元</font>投资红包</p>",
-        btn: {
-            name: "领取",
-            callback: function() {
-                window.location.href = "//m.tuandai.com/Member/UserPrize/Index.aspx";
-            }
-        },
-        hasRibbon: true,
-        prizeText: "3元"
-    });*/
-
-    /*util.alertPrize({
-        iconUrl: "../images/icon-weiwang.png",
-        contentText: "<p>恭喜你！获得<font style='color:#f93737;font-weight:bold;'>" + 80 + "威望</font></p>",
-        btn: {
-            name: "领取",
-            callback: function() {
-                window.location.href = "//m.tuandai.com/Member/UserPrize/Index.aspx";
-            }
-        },
-        hasRibbon: true,
-        prizeText: "80"
-    });*/
-
-    /*util.alertPrize({
-        iconUrl: "../images/icon-unhappy.png",
-        contentText: "<p>差一点就中啦！明天再来吧！</p>",
-        btn: {
-            name: "关了吧"
-        },
-    });*/
-
 })();

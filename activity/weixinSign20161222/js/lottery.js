@@ -5,13 +5,13 @@
     var dialogEl = $(".dialog");
 
 
-  
 
-   // 初始化判断是否已经登录
-   
-    Util.bbsInit();
+    // 初始化判断是否已经登录
+    Util.bbsInit(function() {
+        $(".loading").hide();
+    });
 
-    
+
     /*抽奖*/
     var lottery = {
         index: 0, //当前转动到哪个位置，起点位置
@@ -46,7 +46,7 @@
         clear: function(index) {
             $(this.obj).find(".active").removeClass("active");
         }
-        
+
     };
 
     function roll() {
@@ -55,7 +55,7 @@
         if (lottery.times > lottery.cycle + 10 && lottery.prize == lottery.index) {
             clearTimeout(lottery.timer);
             setTimeout(function() {
-                // showXsPresnet(lottery.prize);
+                onShowPrize(lottery.prize, lottery.prizeValue);
                 lottery.prize = -1;
                 lottery.times = 0;
             }, 500);
@@ -79,47 +79,143 @@
             lottery.timer = setTimeout(roll, lottery.speed);
         }
         return false;
-    } 
+    }
     // 初始化抽奖配置
     (function() {
         lottery.init('lottery');
         lottery.speed = 100;
     })();
-    //新手抽奖开始
-    pageEl.on('click',".lotbtn", function() {
-       
-       lottery.prize = 6; //设置获取的奖品
-        roll();
+
+    //抽奖开始
+    pageEl.on('click', ".lotbtn", function() {
+        $.ajax({
+            url: Util.basePath + "/app/index.php",
+            type: "POST",
+            dataType: 'json',
+            data: {
+                "version": 4,
+                "module": "member",
+                "action": "luck_app"
+            },
+            beforeSend: function() {
+                $(".loading").show();
+            },
+            success: function(respond) {
+                if (respond.code == 200) {
+                    var data = respond.data;
+                    var prizeType = 0;
+                    if (data.is_luck == "1") { //中奖
+                        switch (data.face_value) {
+                            case 50: //50威望
+                                prizeType = 0;
+                                break;
+                            case 80: //80威望
+                                prizeType = 5;
+                                break;
+                            case 100: //100威望
+                                prizeType = 2;
+                                break;
+                            case 3: //3元红包
+                                prizeType = 1;
+                                break;
+                            case 5: //5元红包
+                                prizeType = 4;
+                                break;
+                            case 10: //10元红包
+                                prizeType = 7;
+                                break;
+                        }
+                    } else { //未中奖
+                        prizeType = [3, 6][Math.round(Math.random())]
+                    }
+                    lottery.prize = prizeType; //设置获取的奖品
+                    lottery.prizeValue = data.face_value; //设置获取的奖品
+                    roll();
+
+                } else if (respond.code == 401) { //未登录
+                    var returnUrl = window.location.href;
+                    returnUrl = encodeURIComponent(returnUrl);
+                    window.location.href = "//m.tuandai.com/user/Login.aspx?tdfrom=tuanfenquan-p1611-01&ReturnUrl=" + returnUrl;
+                } else { //服务器错误
+                    Util.alertPrize({
+                        iconUrl: "../images/icon-unhappy.png",
+                        contentText: "<p>" + respond.message + "</p>",
+                        btn: {
+                            name: "关了吧"
+                        },
+                    });
+                }
+
+            },
+            error: function() {
+
+            },
+            complete: function() {
+                $(".loading").hide();
+            }
+        });
     });
+
+    var onShowPrize = function(prizeType, prizeValue) {
+        switch (prizeType) {
+            case 3:
+            case 6:
+                Util.alertPrize({
+                    iconUrl: "../images/icon-unhappy.png",
+                    contentText: "<p>差一点就中啦！明天再来吧！</p>",
+                    btn: {
+                        name: "关了吧"
+                    },
+                });
+                break;
+            case 1:
+            case 4:
+            case 7:
+                Util.alertPrize({
+                    iconUrl: "../images/icon-hongbao.png",
+                    contentText: "<p>恭喜你！获得<font style='color:#f93737;font-weight:bold;'>" + prizeValue + "元</font>投资红包</p>",
+                    btn: {
+                        name: "领取",
+                        callback: function() {
+                            window.location.href = "//m.tuandai.com/Member/UserPrize/Index.aspx";
+                        }
+                    },
+                    hasRibbon: true,
+                    prizeText: prizeValue + "元"
+                });
+                break;
+            case 2:
+            case 5:
+            case 0:
+                Util.alertPrize({
+                    iconUrl: "../images/icon-weiwang.png",
+                    contentText: "<p>恭喜你！获得<font style='color:#f93737;font-weight:bold;'>" + prizeValue + "威望</font></p>",
+                    btn: {
+                        name: "领取",
+                        callback: function() {
+                            window.location.href = "//bbs.tuandai.com/mobile/index.html#!/user";
+                        }
+                    },
+                    hasRibbon: true,
+                    prizeText: prizeValue
+                });
+                break;
+        }
+    }
 
     // 关闭弹窗
     dialogEl.on("click", ".icon-close, .close-btn, .mask", function() {
         onHideDialogs();
     })
 
-    // 显示中奖弹窗
-	var onShowLuckyDialog = function(i) {
-		if(isNaN(Number(i))) {	//如果非数值
-			return;
-		}
-		dialogEl.find(".lucky-dialog .lucky-prize-value").text(i);
-		dialogEl.find(".lucky-dialog").addClass("show");
-		dialogEl.addClass("show");
-		var luckyValueEl = pageEl.find(".lucky-value");
-		var luckyProgressEl = pageEl.find(".lucky-progress");
-		var luckyValue = luckyValueEl.text() ? luckyValueEl.text() : 0;
-		var luckyProgress = (Number(luckyValue) + Number(i)) > 100 ? 100 : (Number(luckyValue) + Number(i));
-		luckyProgressEl.css("width",  luckyProgress+ "%");
-		disableScrolling();
-	}
-	
-	
+
+
     // 关闭弹窗
     var onHideDialogs = function() {
         $(".show").removeClass("show");
         enableScrolling();
     }
 
-   
+
 
 })();
