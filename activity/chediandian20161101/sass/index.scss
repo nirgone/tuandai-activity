@@ -304,7 +304,6 @@ a {
                     margin: auto;
                     margin-top: pxToRem(66px);
                 }
-               
             }
             .md-footer {
                 width: 100%;
@@ -323,13 +322,38 @@ a {
             padding-bottom: pxToRem(26px);
             text-align: center;
             .label01 {
-                    font-size: pxToRem(20px);
-                    line-height: pxToRem(26px);
-                    text-align: center;
+                font-size: pxToRem(20px);
+                line-height: pxToRem(26px);
+                text-align: center;
             }
             .label02 {
                 margin-top: pxToRem(26px);
                 font-size: pxToRem(18px);
+            }
+        }
+    }
+    .ad-wrapper {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        .icon-close {
+            width: pxToRem(50px);
+            height: pxToRem(50px);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url("../images/icon-close.png");
+            position: absolute;
+            right: pxToRem(30px);
+            top: pxToRem(-44px);
+            z-index: 99;
+
+        }
+        .ad {
+            width: 100%;
+            img {
+                width: 100%;
+                display: block;
             }
         }
     }

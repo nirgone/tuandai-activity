@@ -166,7 +166,25 @@
                <a href="//www.tuandai.com" class="toIndex rf">返回首页</a>
            </div>
 		</div>
+		<!-- 1218广告位 -->
+		<div class="ad-wrapper">
+			<div class="icon-close"></div>
+			<a class="ad" href="https://hd.tuandai.com/weixin/20161218YR/index.aspx">
+				<img src="../images/icon-ad1218.png" />
+			</a>
+		</div>
 	</div>
 </body>
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+(function() {
+    FastClick.attach(document.body);
+    var pageEl = $(".page");
+	// 点击1218广告关闭按钮
+	pageEl.on("click", ".icon-close", function() {
+		console.log(11);
+		pageEl.find(".ad").hide();
+	})
+})();
+</script>
 </html>
