@@ -43,7 +43,13 @@
                     returnUrl = encodeURIComponent(returnUrl);
                     window.location.href = "//m.tuandai.com/user/Login.aspx?tdfrom=tuanfenquan-p1611-01&ReturnUrl=" + returnUrl;
                 } else { //服务器错误
-                    Util.alertServeError();
+                    Util.alertPrize({
+                        iconUrl: "../images/icon-unhappy.png",
+                        contentText: "<p>" + respond.message + "</p>",
+                        btn: {
+                            name: "关了吧"
+                        },
+                    });
                 }
             },
             error: function(err) {

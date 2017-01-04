@@ -179,7 +179,7 @@
             }
         },
         bbsInit: function(cb) { //初始化，判断是否登录之后的初始化
-             return;
+            // return;
             var isLogined = this.isLogined();
             if (isLogined) {
                 typeof cb === "function" && cb.call(this);
@@ -208,7 +208,7 @@
         },
 
         bbsWebLogin: function(success, error) { //通过团贷网登录团粉圈
-            return;
+            // return;
             var me = this;
             var tuandaiCookie = me.getCookie('tuandaiw');
             if (!tuandaiCookie) { //如果没有已经登录团贷网
@@ -234,9 +234,19 @@
                 success: function(v_data) {
                     if (v_data.code == "200") {
                         typeof success === "function" && success.call(this, v_data);
-                    } else {
+                    } else if (v_data.code == 401) { //未登录
+                        var returnUrl = window.location.href;
+                        returnUrl = encodeURIComponent(returnUrl);
+                        window.location.href = "//m.tuandai.com/user/Login.aspx?tdfrom=tuanfenquan-p1611-01&ReturnUrl=" + returnUrl;
+                    } else { //服务器错误
                         $(".loading").hide();
-                        me.alertServeError(); //服务器错误
+                        Util.alertPrize({
+                            iconUrl: "../images/icon-unhappy.png",
+                            contentText: "<p>" + v_data.message + "</p>",
+                            btn: {
+                                name: "关了吧"
+                            },
+                        });
                     }
                 },
                 error: function(e) {
