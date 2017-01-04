@@ -87,7 +87,13 @@
     })();
 
     //抽奖开始
-    pageEl.on('click', ".lotbtn", function() {
+    pageEl.on('click', ".lotbtn", function(e) {
+        var currentTarget = $(e.currentTarget);
+        if(currentTarget.hasClass("disable")) { //不可抽奖状态
+            return;
+        }
+        
+        currentTarget.addClass("disable");
         $.ajax({
             url: Util.basePath + "/app/index.php",
             type: "POST",
@@ -106,22 +112,22 @@
                     var prizeType = 0;
                     if (data.is_luck == "1") { //中奖
                         switch (data.face_value) {
-                            case 50: //50威望
+                            case "50": //50威望
                                 prizeType = 0;
                                 break;
-                            case 80: //80威望
+                            case "80": //80威望
                                 prizeType = 5;
                                 break;
-                            case 100: //100威望
+                            case "100": //100威望
                                 prizeType = 2;
                                 break;
-                            case 3: //3元红包
+                            case "3": //3元红包
                                 prizeType = 1;
                                 break;
-                            case 5: //5元红包
+                            case "5": //5元红包
                                 prizeType = 4;
                                 break;
-                            case 10: //10元红包
+                            case "10": //10元红包
                                 prizeType = 7;
                                 break;
                         }
@@ -144,13 +150,16 @@
                             name: "关了吧"
                         },
                     });
+                    pageEl.find(".lotbtn").removeClass("disable");
                 }
 
             },
             error: function() {
-
+                Util.alertServeError();
+                pageEl.find(".lotbtn").removeClass("disable");
             },
             complete: function() {
+                
                 $(".loading").hide();
             }
         });
@@ -201,6 +210,7 @@
                 });
                 break;
         }
+        pageEl.find(".lotbtn").removeClass("disable");
     }
 
     // 关闭弹窗
