@@ -38,7 +38,177 @@ a {
     }
 }
 
+.index-header {
+    @include background("../images/index-titil.png", 384px, 89px);
+    margin: auto;
+    margin-top: pxToRem(98px);
+    margin-bottom: pxToRem(60px);
+    position: relative;
+    .btn-rule {
+        position: absolute;
+        z-index: 99;
+        width: pxToRem(80px);
+        height: pxToRem(80px);
+        top: 0;
+        right: 0;
+    }
+}
 
+.index-md {
+    position: relative;
+    margin: auto;
+    width: pxToRem(342px);
+    margin-bottom: pxToRem(160px);
+    .phone-wrapper {
+        width: pxToRem(342px);
+        height: pxToRem(342px);
+        border: pxToRem(4px) solid #d6b57d;
+        border-radius: 50%;
+        z-index: 99;
+        position: relative;
+        background-color: $bg-color-yellow;
+        overflow: hidden;
+        .phone {
+            @include background("../images/phone.png", 287px, 294px);
+            margin-top: pxToRem(30px);
+            animation: swing 1.2s linear both;
+            transform-origin: 18% 90%;
+        }
+    }
+    .cloud {
+        z-index: 9;
+        position: relative;
+        margin-top: pxToRem(-86px);
+        margin-left: pxToRem(-54px);
+        @include background("../images/cloud1.png", 560px, 172px);
+    }
+}
 
+.index-footer {
+    width: pxToRem(580px);
+    height: pxToRem(238px);
+    border-radius: pxToRem(33px);
+    margin: auto;
+    margin-bottom: pxToRem(36px);
+    .frame-title {
+        span {
+            color: $txt-color-red;
+        }
+    }
+}
+
+.frame {
+    border: 1px solid $border-color;
+    position: relative;
+    .frame-title {
+        position: absolute;
+        background-color: $bg-color-yellow;
+        font-size: pxToRem(36px);
+        top: pxToRem(-18px);
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        width: pxToRem(346px);
+        &:before {
+            content: "";
+            position: absolute;
+            width: pxToRem(8px);
+            height: pxToRem(8px);
+            border: 1px solid $border-color;
+            border-radius: 50%;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 99;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            width: pxToRem(8px);
+            height: pxToRem(8px);
+            border: 1px solid $border-color;
+            border-radius: 50%;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 99;
+        }
+    }
+}
+
+.snow1 {
+    @include background("../images/snow.png", 38px, 44px);
+    position: absolute;
+    top: pxToRem(256px);
+    left: pxToRem(100px);
+}
+
+.snow2 {
+    @include background("../images/snow.png", 36px, 40px);
+    position: absolute;
+    top: pxToRem(364px);
+    right: pxToRem(142px);
+}
+
+.snow3 {
+    @include background("../images/snow.png", 26px, 30px);
+    position: absolute;
+    top: pxToRem(716px);
+    left: pxToRem(152px);
+}
+
+@-webkit-keyframes swing {
+    0% {
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+    20% {
+        -webkit-transform: rotate3d(0, 0, 1, 10deg);
+        transform: rotate3d(0, 0, 1, 10deg);
+    }
+    40% {
+        -webkit-transform: rotate3d(0, 0, 1, -10deg);
+        transform: rotate3d(0, 0, 1, -10deg);
+    }
+    60% {
+        -webkit-transform: rotate3d(0, 0, 1, 5deg);
+        transform: rotate3d(0, 0, 1, 5deg);
+    }
+    80% {
+        -webkit-transform: rotate3d(0, 0, 1, -5deg);
+        transform: rotate3d(0, 0, 1, -5deg);
+    }
+    to {
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+}
+
+@keyframes swing {
+    0% {
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+    20% {
+        -webkit-transform: rotate3d(0, 0, 1, 10deg);
+        transform: rotate3d(0, 0, 1, 10deg);
+    }
+    40% {
+        -webkit-transform: rotate3d(0, 0, 1, -10deg);
+        transform: rotate3d(0, 0, 1, -10deg);
+    }
+    60% {
+        -webkit-transform: rotate3d(0, 0, 1, 5deg);
+        transform: rotate3d(0, 0, 1, 5deg);
+    }
+    80% {
+        -webkit-transform: rotate3d(0, 0, 1, -5deg);
+        transform: rotate3d(0, 0, 1, -5deg);
+    }
+    to {
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+}
 
 @import 'sign.scss';

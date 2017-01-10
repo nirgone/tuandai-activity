@@ -1,4 +1,10 @@
 (function() {
     FastClick.attach(document.body);
-	    //do your thing.
+	  var pageContentEl = $(".content");
+	   	// 查看规则
+	    pageContentEl.on("click", ".btn-rule", function() {
+	    	console.log("查看规则")
+	        $(".dialog-rule").show();
+	        $(".scroll").removeClass("scroll-active");
+	    });
 })();
