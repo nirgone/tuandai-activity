@@ -13,6 +13,13 @@
 
     //拉起输入碳层
     $("#to_input").click(function(e) {
+        Util.alertCommon({
+            content: '<p>活动已经结束了哦</p>',
+            btn: {
+                name: '我知道了'
+            }
+        });
+        return;
         $("#input_popup").removeClass("slideOutDown").addClass("slideInUp");
         $("#input_popup").show();
     });
