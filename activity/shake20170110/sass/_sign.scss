@@ -1,4 +1,96 @@
-.simona {
-	width: 100%;
-	height: 100%;
+@charset "UTF-8";
+@import "variables";
+@import "../../../sass/func";
+.font-orange {
+    color: $txt-color-orange;
+}
+
+.date-sec {
+    padding-top: pxToRem(66px);
+    text-align: center;
+    font-size: pxToRem(34px);
+    color: $txt-color-brown;
+    .sub-font {
+        font-size: pxToRem(30px);
+    }
+    .day {
+        margin: pxToRem(46px) auto pxToRem(10px) auto;
+        color: $txt-color-red;
+        font-size: pxToRem(100px);
+        line-height: pxToRem(58px);
+    }
+}
+
+.sign-sec {
+    position: relative;
+    width: pxToRem(580px);
+    // height: pxToRem(410px);
+    margin: pxToRem(40px) auto 0 auto;
+    padding-bottom: pxToRem(24px);
+    background: url(../images/shadow.png) no-repeat bottom;
+    background-size: pxToRem(602px) pxToRem(70px);
+    font-size: pxToRem(30px);
+    text-align: center;
+    // &:after {
+    // 	content: '';
+    // 	@extend .icon-shadow;
+    // 	z-index: 1;
+    // }
+    @at-root .sign {
+        position: relative;
+        width: 100%;
+        // padding: pxToRem(56px) pxToRem(40px) pxToRem(36px) pxToRem(40px);
+        background-color: #fdfdfd;
+        box-sizing: border-box;
+        color: $txt-color-brown;
+        z-index: 2;
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            @extend .icon-corner;
+            top: pxToRem(14px);
+        }
+        &:before {
+            left: pxToRem(14px);
+        }
+        &:after {
+            transform: scale(-1, 1);
+            right: pxToRem(14px);
+        }
+        .sign-content {
+            position: relative;
+            padding: pxToRem(56px) pxToRem(40px) pxToRem(36px) pxToRem(40px);
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                @extend .icon-corner;
+                bottom: pxToRem(14px);
+            }
+            &:before {
+            	transform: scale(1, -1);
+            	left: pxToRem(14px);
+            }
+            &:after {
+            	transform: scale(-1, -1);
+            	right: pxToRem(14px);
+            }
+        }
+        .sign-txt {
+        	line-height: pxToRem(50px);
+        	&:before {
+        		content:'';
+        		@extend .icon-quotation;
+        		vertical-align: text-top;
+        		margin-right: pxToRem(12px);
+        	}
+        	&:after {
+        		content:'';
+        		@extend .icon-quotation;
+        		transform: scale(-1, -1);
+        		vertical-align: text-top;
+        	}
+        }
+    }
 }

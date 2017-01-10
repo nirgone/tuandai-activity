@@ -1,2 +1,33 @@
 @charset "UTF-8";
 @import "../../../sass/func";
+
+.icon-block {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.icon-inline-block {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.icon-cloud2 {
+	@extend .icon-block;
+	@include icon-background('../images/cloud2.png', 314px, 90px);
+}
+.icon-shadow {
+	@extend .icon-block;
+	@include icon-background('../images/shadow.png', 602px, 70px);
+}
+.icon-corner {
+	@extend .icon-block;
+	@include icon-background("../images/corner.png", 76px, 76px);
+}
+.icon-quotation {
+	@extend .icon-inline-block;
+	@include icon-background("../images/quotation.png", 18px, 18px);
+}
