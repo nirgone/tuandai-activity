@@ -494,6 +494,30 @@
                 }
             }
         }
+        .ad-wrapper {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 999;
+            .icon-close {
+                width: pxToRem(50px);
+                height: pxToRem(50px);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-image: url("../images/icon-close.png");
+                position: absolute;
+                right: pxToRem(30px);
+                top: pxToRem(-44px);
+                z-index: 99;
+            }
+            .ad {
+                width: 100%;
+                img {
+                    width: 100%;
+                    display: block;
+                }
+            }
+        }
     }
     
     .toIndex {

@@ -95,15 +95,15 @@ a {
     }
     .content {
         .banner {
-            background-image: url("../images/bg-banner01.png");
+            background-image: url("../images/bg-banner01.png?v=2017010501");
             background-size: cover;
             background-repeat: no-repeat;
             width: 100%;
-            height: pxToRem(526px);
-            padding-top: pxToRem(10px);
+            height: pxToRem(525px);
+            padding-top: pxToRem(34px);
             box-sizing: border-box;
             .banner-people {
-                background-image: url("../images/banner-people.png");
+                background-image: url("../images/banner-people.png?v=2017010501");
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: 50% 50%;
@@ -114,7 +114,7 @@ a {
             .banner-md {
                 position: relative;
                 .coupon {
-                    background-image: url("../images/icon-coupon.png");
+                    background-image: url("../images/icon-coupon.png?v=2017010501");
                     background-size: contain;
                     background-repeat: no-repeat;
                     background-position: 50% 50%;
@@ -130,7 +130,7 @@ a {
                     position: relative;
                     z-index: 999;
                     margin: auto;
-                    width: pxToRem(534px);
+                    width: pxToRem(619px);
                     margin-top: pxToRem(40px);
                     .icon-text01 {
                         background-image: url("../images/icon-text01.png");
@@ -143,12 +143,12 @@ a {
                         animation: zoomIn .8s both;
                     }
                     .icon-text02 {
-                        background-image: url("../images/icon-text02.png");
+                        background-image: url("../images/icon-text02.png?v=2017010501");
                         background-size: contain;
                         background-repeat: no-repeat;
                         background-position: 50% 50%;
-                        width: pxToRem(534px);
-                        height: pxToRem(192px);
+                        width: pxToRem(619px);
+                        height: pxToRem(122px);
                         margin: auto;
                         animation: slideInUp .8s both;
                     }
@@ -164,7 +164,7 @@ a {
             &.registe-area-on {
                 height: pxToRem(990px);
                 .registe-area {
-                    background-image: url("../images/bg-redPackage-on.png");
+                    background-image: url("../images/bg-redPackage-on.png?v=2017010501");
                     height: pxToRem(1020px);
                     .phone {
                         width: pxToRem(642px) !important;
@@ -175,7 +175,7 @@ a {
                 }
             }
             .registe-area {
-                background-image: url("../images/bg-redPackage-off.png");
+                background-image: url("../images/bg-redPackage-off.png?v=2017010501");
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: 50% 50%;
@@ -295,7 +295,7 @@ a {
                     }
                 }
                 .btn-registe {
-                    background: url(../images/btn-registe.png);
+                    background: url("../images/btn-registe.png?v=2017010501");
                     background-size: contain;
                     background-repeat: no-repeat;
                     background-position: 50% 50%;
@@ -304,7 +304,6 @@ a {
                     margin: auto;
                     margin-top: pxToRem(66px);
                 }
-               
             }
             .md-footer {
                 width: 100%;
@@ -323,9 +322,9 @@ a {
             padding-bottom: pxToRem(26px);
             text-align: center;
             .label01 {
-                    font-size: pxToRem(20px);
-                    line-height: pxToRem(26px);
-                    text-align: center;
+                font-size: pxToRem(20px);
+                line-height: pxToRem(26px);
+                text-align: center;
             }
             .label02 {
                 margin-top: pxToRem(26px);
@@ -333,6 +332,31 @@ a {
             }
         }
     }
+    /* .ad-wrapper {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        .icon-close {
+            width: pxToRem(50px);
+            height: pxToRem(50px);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url("../images/icon-close.png");
+            position: absolute;
+            right: pxToRem(30px);
+            top: pxToRem(-44px);
+            z-index: 99;
+
+        }
+        .ad {
+            width: 100%;
+            img {
+                width: 100%;
+                display: block;
+            }
+        }
+    } */
 }
 
 .show {

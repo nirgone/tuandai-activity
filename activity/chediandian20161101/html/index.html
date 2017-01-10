@@ -54,7 +54,7 @@
 			<div class="content-md">
 				<div class="registe-area">
 					<div class="phone input-area">
-						<input class="phone-input" placeholder="输入手机号，领取洗车券" type="text" name="phone" maxlength="11"  />
+						<input class="phone-input" placeholder="输入手机号，领取打蜡券" type="text" name="phone" maxlength="11"  />
 						<div class="tips-error">
 							手机号码格式不正确 / 手机号码不能为空
 						</div>
@@ -92,7 +92,7 @@
 				<div class="md-footer"></div>
 			</div>
 			<div class="footer-label">
-				<div class="label01">完成首投即送最高120元洗车券<br/>详细领取流程请咨询团贷网:400-641-0888。</div>
+				<div class="label01">完成首投即送最高300元打蜡券<br/>详细领取流程请咨询团贷网:400-641-0888。</div>
 				<div class="label02">投资有风险，入市需谨慎，最终收益以实际为准</div>
 			</div>
 		</div>
@@ -105,7 +105,15 @@
                <a href="//www.tuandai.com" class="toIndex rf">返回首页</a>
            </div>
 		</div>
+		<!-- 1218广告位 -->
+		<!-- <div class="ad-wrapper">
+			<div class="icon-close"></div>
+			<a class="ad" href="https://hd.tuandai.com/weixin/20161218YR/index.aspx">
+				<img src="../images/icon-ad1218.png" />
+			</a>
+		</div> -->
 	</div>
+
 </body>
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
@@ -212,6 +220,11 @@
 		pageEl.on("click", ".get-message-code", function() {
 			console.log("获取手机短信验证码")
 		});
+		
+		// 点击1218广告关闭按钮
+		pageEl.on("click", ".icon-close", function() {
+			pageEl.find(".ad").hide();
+		})
 
 	// 检查手机号码正则
 	function checkPhoneNum(phoneNum) {

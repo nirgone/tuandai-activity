@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>第二期团粉圈签到抽奖活动页面</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/index.css">
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="page scroll-active">
+        <div class="content">
+            <div class="header">
+                <div class="lucky-wrapper">
+                    <div class="lucky-text">
+                        <span class="icon-star"></span>
+                        <font>
+                            我的幸运值：<span class="lucky-value" id="luckyValue"></span>
+                        </font>
+                    </div>
+                    <div class="lucky-progress-bg">
+                         <div class="lucky-progress"></div>
+                    </div>
+                </div>
+                <div class="btn-rule">规则</div>
+                <div class="sign-days">
+                    <font class="days">0</font>
+                    <font>天</font>
+                </div>
+                <div class="label">您已连续签到</div>
+                <div class="btn-lottery disable">抽奖</div>
+                <div class="label02">签到排名前200可获得抽奖机会</div>
+            </div>
+            <div class="sign-list">
+                <div class="list-header">
+                    <span class="icon-rank"></span>
+                    <span class="my-rank">我的排名：<font></font></span>
+                </div>
+                <div class="list-top10-wrapper">
+                    <div class="list-top10-header">
+                        <font class="row01">今日排名</font>
+                        <font class="row02">团粉名称</font>
+                    </div>
+                    <div class="list-top10">
+                                              
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="loading">
+            <div class="spinner">
+              <div class="spinner-container container1">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+              </div>
+              <div class="spinner-container container2">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+              </div>
+              <div class="spinner-container container3">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="dialog">
+        <div class="mask"></div>
+        <div class="rule-content">
+             <div class="icon-close"></div>
+            <div class="rule-title">
+                <span class="title-decorate"></span>
+                <font>活动规则</font>
+                <span class="title-decorate title-decorate-right"></span>
+            </div>
+            <div class="rule-list">
+                <div class="rule-item">
+                    <div class="rule-text">1、每天19点重置签到排名，按时间先后，只要签到排名200内，即可获得一次抽奖机会；</div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-text">2、连续签到第二天开始，可随机获得签到幸运值，幸运值代表中奖机率，当幸运值累计达到100，同时也满足前200名，即可100%中奖；</div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-text">3、当幸运值累计满100，抽奖后会自动清零，并重新累计，达到100可再次获得100%中奖机会。</div>
+                </div>
+           </div>
+           <div class="close-btn">确定</div>
+        </div>
+        <div class="lucky-dialog">
+            <div class="lucky-prize">
+                <font class="lucky-prize-value">3</font>
+                <div>幸运值</div>
+            </div>
+            <div class="label label01">签到成功！</div>
+            <div class="label label02">本次签到获得幸运值+<font class="lucky-prize-value">3</font></div>
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<!-- build:js({dist}) ../js/lib/countUp.min.js -->
+<script src="../js/lib/countUp.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/Util.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+
+</html>
