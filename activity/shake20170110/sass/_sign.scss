@@ -36,7 +36,7 @@
     // 	@extend .icon-shadow;
     // 	z-index: 1;
     // }
-    @at-root .sign {
+    @at-root .square {
         position: relative;
         width: 100%;
         // padding: pxToRem(56px) pxToRem(40px) pxToRem(36px) pxToRem(40px);
@@ -58,7 +58,7 @@
             transform: scale(-1, 1);
             right: pxToRem(14px);
         }
-        .sign-content {
+        .square-content {
             position: relative;
             padding: pxToRem(56px) pxToRem(40px) pxToRem(36px) pxToRem(40px);
             &:before,
