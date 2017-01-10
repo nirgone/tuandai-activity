@@ -20,7 +20,10 @@
 
 			// TODO:抽签中
 			onShowLoading();
-
+			// 抽签完成之后关闭
+			setTimeout(function() {
+				onHideLoading();
+			}, 5000);
 
 			pageContentEl.addClass("beingShake");
 		}
