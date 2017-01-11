@@ -23,6 +23,9 @@ a {
 .bg-grey {
     background-color: #f2f2f0;
 }
+.font-orange {
+    color: $font-orange !important;
+}
 
 .result-content {
     width: 100%;
@@ -180,4 +183,13 @@ a {
             background-position: pxToRem(0px) pxToRem(-440px);
         }
     }
+}
+.footer {
+    position: fixed;
+    bottom: pxToRem(60px);
+    left: 0;
+    right: 0;
+    font-size: pxToRem(24px);
+    color: $font-grey;
+    text-align: center;
 }

@@ -1,0 +1,13 @@
+@charset 'utf-8';
+
+@mixin background-px($image,$width,$height,$rate:1) {
+	display:block;
+	background:url($image) no-repeat center;
+    background-size:contain;
+    width: $width * $rate;
+    height: $height * $rate;
+}
+
+@function percent($px, $px2: 1286) {
+	@return $px / $px2 * 100%;
+}
