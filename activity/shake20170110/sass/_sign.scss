@@ -173,27 +173,32 @@
             padding-top: pxToRem(36px);
             &[data-value='0'] {
                 &>i {
-                    @extend .icon-face-cry;
+                    // @extend .icon-face-cry;
+                    background-image: url(../images/face-cry.png);
                 }
             }
             &[data-value='1'] {
                 &>i:nth-child(n+2) {
-                    @extend .icon-face-cry;
+                    // @extend .icon-face-cry;
+                    background-image: url(../images/face-cry.png);
                 }
             }
             &[data-value='2'] {
                 &>i:nth-child(n+3) {
-                    @extend .icon-face-cry;
+                    // @extend .icon-face-cry;
+                    background-image: url(../images/face-cry.png);
                 }
             }
             &[data-value='3'] {
                 &>i:nth-child(n+4) {
-                    @extend .icon-face-cry;
+                    // @extend .icon-face-cry;
+                    background-image: url(../images/face-cry.png);
                 }
             }
             &[data-value='4'] {
                 &>i:nth-child(n+5) {
-                    @extend .icon-face-cry;
+                    // @extend .icon-face-cry;
+                    background-image: url(../images/face-cry.png);
                 }
             }
         }
