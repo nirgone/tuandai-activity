@@ -59,20 +59,38 @@
                             摇签奖励
                         </div>
                         <div class="frame-content">
-                        	<i class="icon-coins">8团币</i>
-                        	<i class="vip-days">7天VIP</i>
+                            <i class="icon-coins">8团币</i>
+                            <i class="vip-days">7天VIP</i>
                         </div>
                     </div>
                 </li>
             </ul>
-            <div class="btn-common">
-            	邀请好友PK运势
+            <div class="btn-common" id="btn_invite">
+                邀请好友PK运势
             </div>
         </div>
+    </div>
+    <!-- 分享 -->
+    <div class="popup share" id="share">
+        发送给朋友或分享到朋友圈，
+        <br/>一起PK运势吧
     </div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
+<script>
+(function() {
+    FastClick.attach(document.body);
+    $("#btn_invite").on("click", function(e) {
+    	$("#share").show();
+    	$(".scroll").removeClass("scroll-active");
+    });
+    $("#share").on("click", function(e) {
+    	$("#share").hide();
+    	$(".scroll").addClass("scroll-active");
+    })
+})()
+</script>
 
 </html>

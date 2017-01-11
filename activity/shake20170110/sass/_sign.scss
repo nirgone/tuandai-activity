@@ -144,6 +144,12 @@
         		display: inline-block;
         	}
         }
+        .icon-coins {
+        	font-size: pxToRem(22px);
+        	color: #b41717;
+        	text-align: center;
+        	line-height: pxToRem(84px);
+        }
     }
     @at-root .luck-frame {
         @extend .reward-frame;
@@ -199,4 +205,27 @@
 	text-align:center;
 	border-radius: pxToRem(6px);
 	margin: pxToRem(98px) auto 0;
+}
+
+// popup 
+.popup {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.share {
+	display: none;
+	background: url(../images/arrow.png) no-repeat;
+	background-size: pxToRem(152px) pxToRem(170px);
+	background-position: pxToRem(548px) pxToRem(52px);
+	background-color: rgba(0, 0, 0, .7);
+	z-index: 999;
+	text-align: center;
+	color: #fff;
+	font-size: pxToRem(36px);
+	line-height: pxToRem(60px);
+	padding-top: pxToRem(226px);
+	box-sizing: border-box;
 }
