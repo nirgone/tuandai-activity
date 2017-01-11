@@ -2,7 +2,7 @@
 @import "variables";
 @import "../../../sass/func";
 .font-orange {
-    color: $txt-color-orange;
+    color: $txt-color-orange !important;
 }
 
 .date-sec {
@@ -25,7 +25,7 @@
     position: relative;
     width: pxToRem(580px);
     // height: pxToRem(410px);
-    margin: pxToRem(40px) auto 0 auto;
+    margin: pxToRem(40px) auto pxToRem(44px) auto;
     padding-bottom: pxToRem(24px);
     background: url(../images/shadow.png) no-repeat bottom;
     background-size: pxToRem(602px) pxToRem(70px);
@@ -121,7 +121,7 @@
 }
 
 .list {
-    padding: pxToRem(44px) pxToRem(85px) 0 pxToRem(85px);
+    padding: 0 pxToRem(85px);
     white-space: nowrap;
     font-size: 0;
     li {
@@ -153,6 +153,7 @@
     }
     @at-root .luck-frame {
         @extend .reward-frame;
+        margin: 0 auto;
         width: pxToRem(288px);
         .frame-content {
             font-size: 0;
@@ -193,7 +194,25 @@
         }
     }
 }
-
+.pk-sec {
+	width: pxToRem(580px);
+	// height: pxToRem
+	box-sizing: border-box;
+	padding: pxToRem(40px) pxToRem(38px);
+	margin: pxToRem(68px) auto 0;
+	border-radius: pxToRem(6px);
+	color: $txt-color-brown;
+	background: url(data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAdCAMAAAB/hKeOAAAANlBMVEUAAABAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiYYr0PcAAAAEXRSTlMAlHxoD+nZxqaEWUci9bhzNkynmMMAAABeSURBVCjP3c+5EcAwDANBWtT/o/9mzXEIqQIz3ARHEdEmfBWobAmAI/PTMAvdYzg94TKMnXcGEDbhDsDgph4BKM8nw8Lz+dZUDBM36a2pGQZ/frROKie5P5HoR4xMLxybBqstuEB6AAAAAElFTkSuQmCC) no-repeat;
+	background-color: #ebdfc5;
+	background-size: pxToRem(19px) pxToRem(29px);
+	div {
+		font-size: pxToRem(43px);
+		padding-bottom: pxToRem(20px);
+	}
+	p {
+		font-size: pxToRem(34px);
+	}
+}
 // 按钮
 .btn-common {
 	width: pxToRem(580px);

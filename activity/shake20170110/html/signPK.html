@@ -65,32 +65,17 @@
                     </div>
                 </li>
             </ul>
-            <div class="btn-common" id="btn_invite">
-                邀请好友PK运势
-            </div>
+           <section class="pk-sec">
+               <div>
+                   1人与我比拼运势
+               </div>
+               <p>我的战绩 1胜0负</p>
+           </section>
         </div>
-    </div>
-    <!-- 分享 -->
-    <div class="popup share" id="share">
-        发送给朋友或分享到朋友圈，
-        <br/>一起PK运势吧
     </div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
-<script>
-(function() {
-    FastClick.attach(document.body);
-    $("#btn_invite").on("click", function(e) {
-    	$("#share").show();
-    	$(".scroll").removeClass("scroll-active");
-    });
-    $("#share").on("click", function(e) {
-    	$("#share").hide();
-    	$(".scroll").removeClass("scroll-active");
-    })
-})()
-</script>
 
 </html>
