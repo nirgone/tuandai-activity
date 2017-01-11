@@ -292,22 +292,31 @@
 }
 
 .score {
+	display: none;
     .square {
         z-index: 1000;
         position: absolute;
         width: pxToRem(580px);
         left: 50%;
         top: 50%;
-        transform: translate(-50%, -60%);
-        max-height: 60%;
+        transform: translate(-50%, -55%);
+        // max-height: 60%;
         // overflow: auto;
     }
     .square-content {
     	// height: 100%;
     	padding: pxToRem(48px) pxToRem(58px);
     }
+    .rule-title {
+    	margin-bottom: pxToRem(45px);
+    }
+    .list-sec {
+    	max-height: pxToRem(520px);
+    	overflow: auto;
+    }
     .list-win {
     	position:relative;
+    	padding-top: 1px;
     	padding-left: pxToRem(118px);
     	// padding-bottom: pxToRem(34px);
     	font-size: 0;

@@ -65,7 +65,7 @@
                     </div>
                 </li>
             </ul>
-            <section class="pk-sec">
+            <section class="pk-sec" id="show_score">
                 <div>
                     1人与我比拼运势
                 </div>
@@ -197,5 +197,17 @@
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
-
+<script>
+(function() {
+    FastClick.attach(document.body);
+    $("#show_score").on("click", function(e) {
+        $("#score").show();
+        $(".scroll").removeClass("scroll-active");
+    });
+    $("#score").on("click",".mask", function(e) {
+        $("#score").hide();
+        $(".scroll").removeClass("scroll-active");
+    })
+})()
+</script>
 </html>
