@@ -60,33 +60,43 @@ a {
     width: pxToRem(344px);
     margin-bottom: pxToRem(160px);
     .phone-wrapper {
-        width: pxToRem(344px);
-        height: pxToRem(344px);
-        border: pxToRem(4px) solid #d6b57d;
-        border-radius: 50%;
+        // border: pxToRem(4px) solid #d6b57d;
+        // border-radius: 50%;
         z-index: 99;
         position: relative;
-        background-color: $bg-color-yellow;
+        // background-color: $bg-color-yellow;
         overflow: hidden;
         box-sizing: border-box;
-        .phone {
-            @include background("../images/phone.png", 287px, 294px);
-            animation: swing 1.2s linear both;
-            transform-origin: 18% 90%;
-            position: relative;
-            z-index: 9;
-            border-bottom-left-radius: 50%;
-            margin-top: pxToRem(30px);
-            margin-left: pxToRem(4px);
-        }
+        background-image: url("../images/phone-wrapper.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        width: pxToRem(560px);
+        height: pxToRem(429px);
+        display: inline-block;
+        margin-left: pxToRem(-60px);
     }
-    .cloud {
+    .phone {
+        @include background("../images/phone.png",
+        287px,
+        294px);
+        animation: swing 1.2s linear both;
+        transform-origin: 18% 90%;
+        position: relative;
+        z-index: 9;
+        // border-bottom-left-radius: 50%;
+        // margin-top: pxToRem(30px);
+        // margin-left: pxToRem(4px);
+        position:absolute;
+        top: pxToRem(30px);
+    }
+    /* .cloud {
         z-index: 9;
         position: relative;
         margin-top: pxToRem(-86px);
         margin-left: pxToRem(-54px);
         @include background("../images/cloud1.png", 560px, 172px);
-    }
+    } */
 }
 
 .index-footer {
@@ -109,7 +119,9 @@ a {
             font-size: pxToRem(36px);
         }
         @at-root .vip-days {
-            @include background("../images/bg-vip.png", 158px, 92px);
+            @include background("../images/bg-vip.png",
+            158px,
+            92px);
             font-size: pxToRem(32px);
             color: #8f5325;
             line-height: pxToRem(92px);
@@ -279,6 +291,7 @@ a {
     position: absolute;
     top: pxToRem(256px);
     left: pxToRem(100px);
+    z-index: 999;
 }
 
 .snow2 {
@@ -288,6 +301,7 @@ a {
     position: absolute;
     top: pxToRem(364px);
     right: pxToRem(142px);
+    z-index: 999;
 }
 
 .snow3 {
@@ -297,6 +311,7 @@ a {
     position: absolute;
     top: pxToRem(716px);
     left: pxToRem(152px);
+    z-index: 999;
 }
 
 @-webkit-keyframes shake {
