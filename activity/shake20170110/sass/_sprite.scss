@@ -15,6 +15,7 @@
     background-size: contain;
 }
 
+
 .icon-cloud2 {
 	@extend .icon-block;
 	@include icon-background('../images/cloud2.png', 314px, 90px);
@@ -47,3 +48,4 @@
 	@extend .icon-block;
 	@include icon-background('data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAUCAMAAABh7EcdAAAAOVBMVEUAAABAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiaHpjz4AAAAEnRSTlMAzxAa2u2+sjwl5y6ckHpvWVAkNBGdAAAARklEQVQY073NtwHAMAzEQFI5OGL/YV0+JzC6q2A2WjbllCllpw4xdepj6oQr8IYj8K20JI6FZ3E6a4sburYFTz/AWoTNLnywCQLPsJ3I3AAAAABJRU5ErkJggg==', 13px, 20px);
 }
+

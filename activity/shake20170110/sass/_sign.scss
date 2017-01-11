@@ -141,26 +141,26 @@
             padding: 0 pxToRem(22px);
         }
         .frame-content {
-        	text-align: center;
-        	padding-top: pxToRem(30px);
-        	i {
-        		display: inline-block;
-        	}
+            text-align: center;
+            padding-top: pxToRem(30px);
+            i {
+                display: inline-block;
+            }
         }
         .icon-coins {
-        	font-size: pxToRem(22px);
-        	color: #b41717;
-        	text-align: center;
-        	line-height: pxToRem(84px);
-        	vertical-align: bottom;
-        	margin-right: pxToRem(12px);
+            font-size: pxToRem(22px);
+            color: #b41717;
+            text-align: center;
+            line-height: pxToRem(84px);
+            vertical-align: bottom;
+            margin-right: pxToRem(12px);
         }
         .vip-days {
-        	width: pxToRem(106px);
-        	height: pxToRem(62px);
-        	line-height: pxToRem(62px);
-        	font-size: pxToRem(22px);
-        	margin-top: 0;
+            width: pxToRem(106px);
+            height: pxToRem(62px);
+            line-height: pxToRem(62px);
+            font-size: pxToRem(22px);
+            margin-top: 0;
         }
     }
     @at-root .luck-frame {
@@ -207,64 +207,178 @@
         }
     }
 }
+
 .pk-sec {
-	position: relative;
-	width: pxToRem(580px);
-	// height: pxToRem
-	box-sizing: border-box;
-	padding: pxToRem(28px);
-	margin: pxToRem(48px) auto 0;
-	border-radius: pxToRem(6px);
-	color: $txt-color-brown;
-	background-color: #ebdfc5;
-	&:after {
-		content: '';
-		position: absolute;
-		@extend .icon-arrow-brown;
-		right: pxToRem(28px);
-		top: 50%;
-		transform: translate( 0, -50%);
-	}
-	div {
-		font-size: pxToRem(30px);
-		padding-bottom: pxToRem(20px);
-	}
-	p {
-		font-size: pxToRem(24px);
-	}
+    position: relative;
+    width: pxToRem(580px);
+    // height: pxToRem
+    box-sizing: border-box;
+    padding: pxToRem(28px);
+    margin: pxToRem(48px) auto 0;
+    border-radius: pxToRem(6px);
+    color: $txt-color-brown;
+    background-color: #ebdfc5;
+    &:after {
+        content: '';
+        position: absolute;
+        @extend .icon-arrow-brown;
+        right: pxToRem(28px);
+        top: 50%;
+        transform: translate( 0, -50%);
+    }
+    div {
+        font-size: pxToRem(30px);
+        padding-bottom: pxToRem(20px);
+    }
+    p {
+        font-size: pxToRem(24px);
+    }
 }
+
 // 按钮
 .btn-common {
-	width: pxToRem(580px);
-	height: pxToRem(92px);
-	line-height: pxToRem(92px);
-	color: #fff;
-	font-size: pxToRem(32px);
-	background-color: $txt-color-red;
-	text-align:center;
-	border-radius: pxToRem(6px);
-	margin: pxToRem(98px) auto 0;
+    width: pxToRem(580px);
+    height: pxToRem(92px);
+    line-height: pxToRem(92px);
+    color: #fff;
+    font-size: pxToRem(32px);
+    background-color: $txt-color-red;
+    text-align: center;
+    border-radius: pxToRem(6px);
+    margin: pxToRem(98px) auto 0;
+}
+
+.qrcode-sec {
+    margin: pxToRem(36px) 0 pxToRem(24px);
+    text-align: center;
+    font-size: pxToRem(24px);
+    color: $txt-color-brown;
+    .icon-triangle-down {
+        margin: pxToRem(12px) auto;
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: pxToRem(8px) solid transparent;
+        border-right: pxToRem(8px) solid transparent;
+        border-top: pxToRem(9px) solid $txt-color-brown;
+    }
+    img {
+        width: pxToRem(194px);
+    }
 }
 
 // popup 
 .popup {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
+
 .share {
-	display: none;
-	background: url(../images/arrow.png) no-repeat;
-	background-size: pxToRem(152px) pxToRem(170px);
-	background-position: pxToRem(548px) pxToRem(52px);
-	background-color: rgba(0, 0, 0, .7);
-	z-index: 999;
-	text-align: center;
-	color: #fff;
-	font-size: pxToRem(36px);
-	line-height: pxToRem(60px);
-	padding-top: pxToRem(226px);
-	box-sizing: border-box;
+    display: none;
+    background: url(../images/arrow.png) no-repeat;
+    background-size: pxToRem(152px) pxToRem(170px);
+    background-position: pxToRem(548px) pxToRem(52px);
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 999;
+    text-align: center;
+    color: #fff;
+    font-size: pxToRem(36px);
+    line-height: pxToRem(60px);
+    padding-top: pxToRem(226px);
+    box-sizing: border-box;
+}
+
+.score {
+    .square {
+        z-index: 1000;
+        position: absolute;
+        width: pxToRem(580px);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -60%);
+        max-height: 60%;
+        // overflow: auto;
+    }
+    .square-content {
+    	// height: 100%;
+    	padding: pxToRem(48px) pxToRem(58px);
+    }
+    .list-win {
+    	position:relative;
+    	padding-left: pxToRem(118px);
+    	// padding-bottom: pxToRem(34px);
+    	font-size: 0;
+    	@at-root .avatar {
+    		display: inline-block;
+    		width: pxToRem(58px);
+    		height: pxToRem(58px);
+    		border-radius: pxToRem(58px);
+    		box-sizing: border-box;
+    		border: 1px solid #f9edd9;
+    		margin: 0 pxToRem(14px) pxToRem(34px) pxToRem(14px);
+    		img {
+    			width: 100%;
+    		}
+    	}
+    }
+    .list-lose {
+    	@extend .list-win;
+    }
+    .list-tie {
+    	@extend .list-win;
+    }
+}
+
+.icon-win {
+    position: absolute;
+    left: pxToRem(29px);
+    display: block;
+    width: pxToRem(69px);
+    height: pxToRem(36px);
+    line-height: pxToRem(36px);
+    color: #fdfdfd;
+    border-top-right-radius: pxToRem(79px);
+    border-bottom-right-radius: pxToRem(79px);
+    background-color: $txt-color-red;
+    font-size: pxToRem(24px);
+    box-sizing: border-box;
+    text-align: right;
+    padding-right: pxToRem(18px);
+    &:before {
+        content: '胜';
+        display: block;
+        position: absolute;
+        top: -1px;
+        left: pxToRem(-29px);
+        width: pxToRem(58px);
+        height: pxToRem(58px);
+        line-height: pxToRem(58px);
+        border-radius: pxToRem(58px);
+        font-size: pxToRem(30px);
+        background-color: #fdfdfd;
+        text-align: center;
+        border: 1px solid $txt-color-red;
+        color: $txt-color-red;
+    }
+}
+.icon-tie {
+	@extend .icon-win;
+	background-color: #d7b680;
+	&:before {
+		content: '平';
+		border: 1px solid #d7b680;
+        color: #d7b680;
+	}
+}
+.icon-lose {
+	@extend .icon-win;
+	background-color: #8f7e71;
+	&:before {
+		content: '负';
+		border: 1px solid #8f7e71;
+        color: #8f7e71;
+	}
 }
