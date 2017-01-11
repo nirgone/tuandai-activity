@@ -126,6 +126,7 @@
     font-size: 0;
     li {
         display: inline-block;
+        vertical-align: bottom;
         &:first-child {
             margin-right: pxToRem(22px);
         }
@@ -140,6 +141,8 @@
             padding: 0 pxToRem(22px);
         }
         .frame-content {
+        	text-align: center;
+        	padding-top: pxToRem(30px);
         	i {
         		display: inline-block;
         	}
@@ -149,6 +152,15 @@
         	color: #b41717;
         	text-align: center;
         	line-height: pxToRem(84px);
+        	vertical-align: bottom;
+        	margin-right: pxToRem(12px);
+        }
+        .vip-days {
+        	width: pxToRem(106px);
+        	height: pxToRem(62px);
+        	line-height: pxToRem(62px);
+        	font-size: pxToRem(22px);
+        	margin-top: 0;
         }
     }
     @at-root .luck-frame {
@@ -161,56 +173,64 @@
             padding-top: pxToRem(36px);
             &[data-value='0'] {
                 &>i {
-                    background-image: url(../images/face-cry.png)
+                    @extend .icon-face-cry;
                 }
             }
             &[data-value='1'] {
                 &>i:nth-child(n+2) {
-                    background-image: url(../images/face-cry.png)
+                    @extend .icon-face-cry;
                 }
             }
             &[data-value='2'] {
                 &>i:nth-child(n+3) {
-                    background-image: url(../images/face-cry.png)
+                    @extend .icon-face-cry;
                 }
             }
             &[data-value='3'] {
                 &>i:nth-child(n+4) {
-                    background-image: url(../images/face-cry.png)
+                    @extend .icon-face-cry;
                 }
             }
             &[data-value='4'] {
                 &>i:nth-child(n+5) {
-                    background-image: url(../images/face-cry.png)
+                    @extend .icon-face-cry;
                 }
             }
         }
         .icon-face {
-            @extend .icon-inline-block;
-            background-image: url(../images/face-smile.png);
-            width: pxToRem(47px);
-            height: pxToRem(47px);
+            // @extend .icon-inline-block;
+            // background-image: url(../images/face-smile.png);
+            // width: pxToRem(47px);
+            // height: pxToRem(47px);
+            @extend .icon-face-smile;
             margin: 0 pxToRem(2px);
         }
     }
 }
 .pk-sec {
+	position: relative;
 	width: pxToRem(580px);
 	// height: pxToRem
 	box-sizing: border-box;
-	padding: pxToRem(40px) pxToRem(38px);
-	margin: pxToRem(68px) auto 0;
+	padding: pxToRem(28px);
+	margin: pxToRem(48px) auto 0;
 	border-radius: pxToRem(6px);
 	color: $txt-color-brown;
-	background: url(data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAdCAMAAAB/hKeOAAAANlBMVEUAAABAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiYYr0PcAAAAEXRSTlMAlHxoD+nZxqaEWUci9bhzNkynmMMAAABeSURBVCjP3c+5EcAwDANBWtT/o/9mzXEIqQIz3ARHEdEmfBWobAmAI/PTMAvdYzg94TKMnXcGEDbhDsDgph4BKM8nw8Lz+dZUDBM36a2pGQZ/frROKie5P5HoR4xMLxybBqstuEB6AAAAAElFTkSuQmCC) no-repeat;
 	background-color: #ebdfc5;
-	background-size: pxToRem(19px) pxToRem(29px);
+	&:after {
+		content: '';
+		position: absolute;
+		@extend .icon-arrow-brown;
+		right: pxToRem(28px);
+		top: 50%;
+		transform: translate( 0, -50%);
+	}
 	div {
-		font-size: pxToRem(43px);
+		font-size: pxToRem(30px);
 		padding-bottom: pxToRem(20px);
 	}
 	p {
-		font-size: pxToRem(34px);
+		font-size: pxToRem(24px);
 	}
 }
 // 按钮
