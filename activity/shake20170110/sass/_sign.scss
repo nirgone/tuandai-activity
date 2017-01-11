@@ -70,51 +70,133 @@
                 bottom: pxToRem(14px);
             }
             &:before {
-            	transform: scale(1, -1);
-            	left: pxToRem(14px);
+                transform: scale(1, -1);
+                left: pxToRem(14px);
             }
             &:after {
-            	transform: scale(-1, -1);
-            	right: pxToRem(14px);
+                transform: scale(-1, -1);
+                right: pxToRem(14px);
             }
         }
         .sign-txt {
-        	line-height: pxToRem(50px);
-        	&:before {
-        		content:'';
-        		@extend .icon-quotation;
-        		vertical-align: text-top;
-        		margin-right: pxToRem(12px);
-        	}
-        	&:after {
-        		content:'';
-        		@extend .icon-quotation;
-        		transform: scale(-1, -1);
-        		vertical-align: text-top;
-        	}
+            line-height: pxToRem(50px);
+            &:before {
+                content: '';
+                @extend .icon-quotation;
+                vertical-align: text-top;
+                margin-right: pxToRem(12px);
+            }
+            &:after {
+                content: '';
+                @extend .icon-quotation;
+                transform: scale(-1, -1);
+                vertical-align: text-top;
+            }
         }
         .sign-status {
-        	display: block;
-        	width: pxToRem(60px);
-        	height: pxToRem(60px);
-        	line-height: pxToRem(64px);
-        	margin: pxToRem(32px) auto 0;
-        	border-radius: pxToRem(60px);
-        	color: $txt-color-red;
-        	border: 1px solid $txt-color-red;
+            display: block;
+            width: pxToRem(60px);
+            height: pxToRem(60px);
+            line-height: pxToRem(64px);
+            margin: pxToRem(32px) auto 0;
+            border-radius: pxToRem(60px);
+            color: $txt-color-red;
+            border: 1px solid $txt-color-red;
         }
         @at-root .cutoff-title {
-        	padding: pxToRem(36px) 0 pxToRem(24px) 0;
-        	&:before, &:after {
-        		content: '';
+            padding: pxToRem(36px) 0 pxToRem(24px) 0;
+            &:before,
+            &:after {
+                content: '';
+                display: inline-block;
+                width: pxToRem(8px);
+                height: pxToRem(8px);
+                border-radius: pxToRem(8px);
+                background-color: $txt-color-brown;
+                margin: 0 pxToRem(18px);
+                vertical-align: pxToRem(8px);
+            }
+        }
+    }
+}
+
+.list {
+    padding: pxToRem(44px) pxToRem(85px) 0 pxToRem(85px);
+    white-space: nowrap;
+    font-size: 0;
+    li {
+        display: inline-block;
+        &:first-child {
+            margin-right: pxToRem(22px);
+        }
+    }
+    @at-root .reward-frame {
+        width: pxToRem(272px);
+        height: pxToRem(110px);
+        border-radius: pxToRem(20px);
+        box-sizing: border-box;
+        .frame-title {
+            font-size: pxToRem(30px);
+            padding: 0 pxToRem(22px);
+        }
+        .frame-content {
+        	i {
         		display: inline-block;
-        		width: pxToRem(8px);
-        		height: pxToRem(8px);
-        		border-radius: pxToRem(8px);
-        		background-color: $txt-color-brown;
-        		margin: 0 pxToRem(18px);
-        		vertical-align: pxToRem(8px);
         	}
         }
     }
+    @at-root .luck-frame {
+        @extend .reward-frame;
+        width: pxToRem(288px);
+        .frame-content {
+            font-size: 0;
+            text-align: center;
+            padding-top: pxToRem(36px);
+            &[data-value='0'] {
+                &>i {
+                    background-image: url(../images/face-cry.png)
+                }
+            }
+            &[data-value='1'] {
+                &>i:nth-child(n+2) {
+                    background-image: url(../images/face-cry.png)
+                }
+            }
+            &[data-value='2'] {
+                &>i:nth-child(n+3) {
+                    background-image: url(../images/face-cry.png)
+                }
+            }
+            &[data-value='3'] {
+                &>i:nth-child(n+4) {
+                    background-image: url(../images/face-cry.png)
+                }
+            }
+            &[data-value='4'] {
+                &>i:nth-child(n+5) {
+                    background-image: url(../images/face-cry.png)
+                }
+            }
+        }
+        .icon-face {
+            @extend .icon-inline-block;
+            background-image: url(../images/face-smile.png);
+            width: pxToRem(47px);
+            height: pxToRem(47px);
+            margin: 0 pxToRem(2px);
+        }
+    }
+}
+
+// 按钮
+.btn-common {
+	width: pxToRem(580px);
+	height: pxToRem(92px);
+	line-height: pxToRem(92px);
+	color: #fff;
+	font-size: pxToRem(32px);
+	background-color: $txt-color-red;
+	text-align:center;
+	border-radius: pxToRem(6px);
+	margin: pxToRem(98px) auto 0;
 }

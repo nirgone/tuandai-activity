@@ -31,3 +31,7 @@
 	@extend .icon-inline-block;
 	@include icon-background("../images/quotation.png", 18px, 18px);
 }
+.icon-coins {
+	@extend .icon-inline-block;
+	@include icon-background("../images/coins.png", 111px, 64px);
+}

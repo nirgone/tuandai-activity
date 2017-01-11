@@ -104,7 +104,7 @@ a {
         font {
             font-size: pxToRem(36px);
         }
-        .vip-days {
+        @at-root .vip-days {
             @include background("../images/bg-vip.png", 158px, 92px);
             font-size: pxToRem(32px);
             color: #8f5325;
