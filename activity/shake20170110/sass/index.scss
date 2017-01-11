@@ -205,18 +205,21 @@ a {
             .line {
                 display: inline-block;
                 vertical-align: middle;
-                height: pxToRem(2px);
-                width: pxToRem(200px);
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
+                height: pxToRem(8px);
+                width: pxToRem(150px);
+                // position: absolute;
+                // top: 50%;
+                // transform: translateY(-50%);
+                background-image: url("../images/icon-line.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
                 &.left-line {
-                    left: pxToRem(-34px);
-                }
-                &.right-line {
                     transform: rotate(180deg);
-                    right: pxToRem(-34px);
                 }
+                // &.right-line {
+                //     right: pxToRem(-34px);
+                // }
             }
         }
         @at-root .rule-content {

@@ -1,10 +1,15 @@
 (function() {
 	FastClick.attach(document.body);
 	var pageContentEl = $(".content");
+	var ruleEl = $(".dialog-rule");
 	// 查看规则
 	pageContentEl.on("click", ".btn-rule", function() {
-		console.log("查看规则")
 		onShowRule();
+	});
+
+	// 关闭规则
+	ruleEl.on("click", ".mask", function() {
+		onHideRule();
 	});
 
 	(function listentToShake() { //监听手机摇一摇
@@ -20,10 +25,10 @@
 
 			// TODO:抽签中
 			onShowLoading();
-			// 抽签完成之后关闭
-			setTimeout(function() {
-				onHideLoading();
-			}, 5000);
+			// // 抽签完成之后关闭
+			// setTimeout(function() {
+			// 	onHideLoading();
+			// }, 5000);
 
 			pageContentEl.addClass("beingShake");
 		}
