@@ -41,6 +41,7 @@
         width: 100%;
         // padding: pxToRem(56px) pxToRem(40px) pxToRem(36px) pxToRem(40px);
         background-color: #fdfdfd;
+        border-radius: pxToRem(4px);
         box-sizing: border-box;
         color: $txt-color-brown;
         z-index: 2;
@@ -90,6 +91,29 @@
         		@extend .icon-quotation;
         		transform: scale(-1, -1);
         		vertical-align: text-top;
+        	}
+        }
+        .sign-status {
+        	display: block;
+        	width: pxToRem(60px);
+        	height: pxToRem(60px);
+        	line-height: pxToRem(64px);
+        	margin: pxToRem(32px) auto 0;
+        	border-radius: pxToRem(60px);
+        	color: $txt-color-red;
+        	border: 1px solid $txt-color-red;
+        }
+        @at-root .cutoff-title {
+        	padding: pxToRem(36px) 0 pxToRem(24px) 0;
+        	&:before, &:after {
+        		content: '';
+        		display: inline-block;
+        		width: pxToRem(8px);
+        		height: pxToRem(8px);
+        		border-radius: pxToRem(8px);
+        		background-color: $txt-color-brown;
+        		margin: 0 pxToRem(18px);
+        		vertical-align: pxToRem(8px);
         	}
         }
     }
