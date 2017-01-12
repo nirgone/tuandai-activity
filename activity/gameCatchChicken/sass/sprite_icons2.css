@@ -1,0 +1,154 @@
+.icon-bg_cb {
+  display: block;
+  background-image: url(../images/sprite_icons2.png);
+  background-size: pxToRem(166px)  pxToRem(127px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-82px) pxToRem(-85px);
+  width: pxToRem(30px);
+  height: pxToRem(30px);
+}
+.icon-lock {
+  display: block;
+  background-image: url(../images/sprite_icons2.png);
+  background-size: pxToRem(166px)  pxToRem(127px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-40px) pxToRem(-85px);
+  width: pxToRem(32px);
+  height: pxToRem(36px);
+}
+.icon-phone {
+  display: block;
+  background-image: url(../images/sprite_icons2.png);
+  background-size: pxToRem(166px)  pxToRem(127px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-136px) pxToRem(0px);
+  width: pxToRem(30px);
+  height: pxToRem(42px);
+}
+.icon-tick {
+  display: block;
+  background-image: url(../images/sprite_icons2.png);
+  background-size: pxToRem(166px)  pxToRem(127px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-122px) pxToRem(-85px);
+  width: pxToRem(18px);
+  height: pxToRem(12px);
+}
+.icon-tip {
+  display: block;
+  background-image: url(../images/sprite_icons2.png);
+  background-size: pxToRem(166px)  pxToRem(127px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-136px) pxToRem(-52px);
+  width: pxToRem(22px);
+  height: pxToRem(21px);
+}
+.icon-tip2 {
+  display: block;
+  background-image: url(../images/sprite_icons2.png);
+  background-size: pxToRem(166px)  pxToRem(127px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-94px) pxToRem(-50px);
+  width: pxToRem(22px);
+  height: pxToRem(21px);
+}
+.icon-title_chick {
+  display: block;
+  background-image: url(../images/sprite_icons2.png);
+  background-size: pxToRem(166px)  pxToRem(127px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(84px);
+  height: pxToRem(75px);
+}
+.icon-vali_msg {
+  display: block;
+  background-image: url(../images/sprite_icons2.png);
+  background-size: pxToRem(166px)  pxToRem(127px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-85px);
+  width: pxToRem(30px);
+  height: pxToRem(42px);
+}
+.icon-vali_pic {
+  display: block;
+  background-image: url(../images/sprite_icons2.png);
+  background-size: pxToRem(166px)  pxToRem(127px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-94px) pxToRem(0px);
+  width: pxToRem(32px);
+  height: pxToRem(40px);
+}
+
+
+
+
+
+
+
+.sprite-icons2 {
+  display: block;
+  background-image: url(../images/sprite_icons2.png);
+  background-size: pxToRem(166px)  pxToRem(127px);
+  background-repeat:no-repeat;
+}
+.icon-bg-cb {
+  @extend .sprite-icons2;
+  background-position: pxToRem(-82px) pxToRem(-85px);
+  width: pxToRem(30px);
+  height: pxToRem(30px);
+}
+.icon-lock {
+  @extend .sprite-icons2;
+  background-position: pxToRem(-40px) pxToRem(-85px);
+  width: pxToRem(32px);
+  height: pxToRem(36px);
+}
+.icon-phone {
+  @extend .sprite-icons2;
+  background-position: pxToRem(-136px) pxToRem(0px);
+  width: pxToRem(30px);
+  height: pxToRem(42px);
+}
+.icon-tick {
+  @extend .sprite-icons2;
+  background-position: pxToRem(-122px) pxToRem(-85px);
+  width: pxToRem(18px);
+  height: pxToRem(12px);
+}
+.icon-tip {
+  @extend .sprite-icons2;
+  display: inline-block;
+  background-position: pxToRem(-136px) pxToRem(-52px);
+  width: pxToRem(22px);
+  height: pxToRem(21px);
+  vertical-align: pxToRem(-2px);
+  margin-right: pxToRem(12px);
+}
+.icon-tip2 {
+  @extend .sprite-icons2;
+  display: inline-block;
+  background-position: pxToRem(-94px) pxToRem(-50px);
+  width: pxToRem(22px);
+  height: pxToRem(21px);
+  vertical-align: pxToRem(-2px);
+  margin-right: pxToRem(12px);
+}
+.icon-title-chick {
+  @extend .sprite-icons2;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(84px);
+  height: pxToRem(75px);
+}
+.icon-vali-msg {
+  @extend .sprite-icons2;
+  background-position: pxToRem(0px) pxToRem(-85px);
+  width: pxToRem(30px);
+  height: pxToRem(42px);
+}
+.icon-vali-pic {
+  @extend .sprite-icons2;
+  background-position: pxToRem(-94px) pxToRem(0px);
+  width: pxToRem(32px);
+  height: pxToRem(40px);
+}

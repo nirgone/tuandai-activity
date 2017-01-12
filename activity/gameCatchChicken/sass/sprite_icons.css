@@ -1,0 +1,45 @@
+.icon-card {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size: pxToRem(196px)  pxToRem(119px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-76px) pxToRem(0px);
+  width: pxToRem(68px);
+  height: pxToRem(34px);
+}
+.icon-chick {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size: pxToRem(196px)  pxToRem(119px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-154px) pxToRem(-57px);
+  width: pxToRem(34px);
+  height: pxToRem(47px);
+}
+.icon-circle {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size: pxToRem(196px)  pxToRem(119px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(66px);
+  height: pxToRem(66px);
+}
+.icon-clock {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size: pxToRem(196px)  pxToRem(119px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-154px) pxToRem(0px);
+  width: pxToRem(42px);
+  height: pxToRem(47px);
+}
+.icon-face {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size: pxToRem(196px)  pxToRem(119px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-76px);
+  width: pxToRem(46px);
+  height: pxToRem(43px);
+}

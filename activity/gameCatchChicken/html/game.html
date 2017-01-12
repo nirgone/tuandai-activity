@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>catchChickenGame</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+	<div class="audio-btn" id="audio_btn">
+        <div id="music" class="play"></div>
+        <audio loop="" src="../music/music.mp3" id="bg_music" autoplay="" preload=""></audio>
+    </div>
+    <div class="content page1">
+        <header id="header" class="header">
+            <i class="icon-inline-block icon-logo"></i>
+            <a class="btn-simple">
+			返回首页
+			</a>
+        </header>
+        <!-- /header -->
+        <section class="top">
+            <div class="title">
+                <i class="icon-clock"></i> 30秒内捉住幸运鸡
+            </div>
+            <div class="subtitle">
+                红包到手！2017年会大发哦！
+            </div>
+        </section>
+        <div class="tips" id="tip">
+            <i class="icon-chick"></i>
+            <span>还有一只幸运鸡，别漏了哦</span>
+        </div>
+        <div class="stick active">
+            <i class="claw-left"></i>
+            <i class="claw-right"></i>
+            <i class="icon-caught" id="claw_caught"></i>
+        </div>
+        <div class="stick-big ">
+            <i class="claw-left"></i>
+            <i class="claw-right"></i>
+            <i class="icon-caught icon-monkey0"></i>
+            <i class="icon-caught icon-monkey1"></i>
+            <i class="icon-caught icon-chicken0"></i>
+            <i class="icon-caught icon-chicken1"></i>
+            <i class="icon-caught icon-pai0"></i>
+            <i class="icon-caught icon-pai1"></i>
+            <i class="icon-caught icon-rabbit0"></i>
+            <i class="icon-caught icon-rabbit1"></i>
+        </div>
+        <section class="puppet-sec">
+            <ul class="list-puppet">
+                <li>
+                    <i class="puppet monkey0"></i>
+                    <span class="card">猴子0</span>
+                </li>
+                <li>
+                    <i class="puppet chicken0"></i>
+                    <span class="card">小鸡0</span>
+                </li>
+                <li>
+                    <i class="puppet pai0">
+                		<i class="shadow-chic"></i>
+                    </i>
+                    <span class="card">小π0</span>
+                </li>
+                <li>
+                    <i class="puppet rabbit0"></i>
+                    <span class="card">小兔0</span>
+                </li>
+                <li>
+                    <i class="puppet monkey1"></i>
+                    <span class="card">猴子1</span>
+                </li>
+                <li>
+                    <i class="puppet pai1"></i>
+                    <span class="card">小π1</span>
+                </li>
+                <li>
+                    <i class="puppet chicken1"></i>
+                    <span class="card">小鸡1</span>
+                </li>
+                <li>
+                    <i class="puppet rabbit1"></i>
+                    <span class="card">小兔1</span>
+                </li>
+            </ul>
+            <ul class="list-puppet list2">
+                <li>
+                    <i class="puppet monkey0"></i>
+                    <span class="card">猴子0</span>
+                </li>
+                <li>
+                    <i class="puppet chicken0"></i>
+                    <span class="card">小鸡0</span>
+                </li>
+                <li>
+                    <i class="puppet pai0">
+                		<i class="shadow-chic"></i>
+                    </i>
+                    <span class="card">小π0</span>
+                </li>
+                <li>
+                    <i class="puppet rabbit0"></i>
+                    <span class="card">小兔0</span>
+                </li>
+                <li>
+                    <i class="puppet monkey1"></i>
+                    <span class="card">猴子1</span>
+                </li>
+                <li>
+                    <i class="puppet pai1"></i>
+                    <span class="card">小π1</span>
+                </li>
+                <li>
+                    <i class="puppet chicken1"></i>
+                    <span class="card">小鸡1</span>
+                </li>
+                <li>
+                    <i class="puppet rabbit1"></i>
+                    <span class="card">小兔1</span>
+                </li>
+            </ul>
+        </section>
+        <section class="bottom">
+            <div class="btn-game" id="btn_game"></div>
+            <div class="page1-frame" id="frame">
+                <span class="icon-circle ">x<span id="count">0</span></span>
+                <!-- <i class="icon-block icon-chicken-catch"></i> -->
+                <i class="icon-block icon-chicken-empty"></i>
+            </div>
+            <div class="btn-common disabled" id="exchange">
+                兑换幸运鸡
+            </div>
+        </section>
+        <footer class="footer">
+            <div>
+                2010- 2016 版权所有 ©
+                <br/>团贷网 粤ICP备12043601号-1
+            </div>
+            <div>
+                <i class="icon-face"></i>
+                <p>
+                    <font class="font-big">4006-410-888</font>
+                    <br/>
+                    <font class="font-small">服务时间 09:00-22:00</font>
+                </p>
+            </div>
+            <div>
+                <a class="btn-simple">
+				返回首页
+			</a>
+            </div>
+        </footer>
+    </div>
+    <!-- 弹窗 -->
+    <div class="popup-wrapper" id="popup">
+        <div class="popup">
+            <p>鸡是好鸡</p>
+            <p>就是手气差了点～</p>
+            <div class="btn0" id="restart">
+                换个姿势再捉
+            </div>
+            <div class="btn1" id="usetool">
+                使用道具
+            </div>
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/game.js" type="text/javascript" charset="utf-8"></script>
+
+</html>
