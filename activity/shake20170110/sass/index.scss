@@ -122,7 +122,7 @@ a {
             @include background("../images/bg-vip.png",
             156px,
             92px);
-            font-size: pxToRem(32px);
+            font-size: .4826666667rem;
             color: #8f5325;
             line-height: pxToRem(92px);
             text-align: center;
@@ -141,15 +141,16 @@ a {
         position: absolute;
         background-color: $bg-color-yellow;
         font-size: pxToRem(36px);
-        top: pxToRem(-18px);
+        // top: pxToRem(-18px);
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
         text-align: center;
         padding: 0 pxToRem(40px);
         white-space: nowrap;
         max-width: 70%;
         text-overflow: ellipsis;
         overflow: hidden;
+        line-height: 120%;
         // width: pxToRem(346px);
         &:before {
             content: "";

@@ -400,6 +400,7 @@
         padding-left: pxToRem(118px);
         // padding-bottom: pxToRem(34px);
         font-size: 0;
+        min-height: pxToRem(92px);
         @at-root .avatar {
             display: inline-block;
             width: pxToRem(58px);
@@ -425,7 +426,7 @@
     position: absolute;
     left: pxToRem(29px);
     display: block;
-    width: pxToRem(69px);
+    min-width: pxToRem(84px);
     height: pxToRem(36px);
     line-height: pxToRem(36px);
     color: #fdfdfd;
@@ -434,8 +435,9 @@
     background-color: $txt-color-red;
     font-size: pxToRem(24px);
     box-sizing: border-box;
-    text-align: right;
+    text-align: left;
     padding-right: pxToRem(18px);
+    padding-left: pxToRem(40px);
     &:before {
         content: '胜';
         display: block;
