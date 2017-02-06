@@ -28,6 +28,10 @@
 	@extend .icon-block;
 	@include icon-background("../images/corner.png", 76px, 76px);
 }
+.icon-corner-red {
+	@extend .icon-block;
+	@include icon-background("../images/corner-red.png", 60px, 62px);
+}
 .icon-quotation {
 	@extend .icon-inline-block;
 	@include icon-background("../images/quotation.png", 18px, 18px);

@@ -1,0 +1,212 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../../sass/func";
+@import "func";
+.m-content {
+    // background-image: url('../images/bg-icon.png'), url('../images/bg.png');
+    // background-size: pxToRem(745px) pxToRem(955px),cover;
+    // background-position: center, center;
+    // background-repeat: no-repeat, no-repeat;
+    background-image: url('../images/icon1.png'), url('../images/icon2.png'), url('../images/icon3.png'), url('../images/bg.png');
+    background-size: pxToRem(126px) pxToRem(37px), pxToRem(707px) pxToRem(326px), pxToRem(745px) pxToRem(295px), pxToRem(87px) pxToRem(85px);
+    background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+    background-position: 95% 15%, right 67%, right 74%, 0 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-top: pxToRem(120px);
+}
+
+.icon-logo {
+    @include background('../images/icon-logo.png',
+    189px,
+    62px);
+    position: absolute;
+    left: pxToRem(30px);
+    top: pxToRem(20px);
+}
+
+
+
+.moon-container {
+    width: 100%;
+    height: percent(660);
+    background-image: url('../images/halo.png');
+    // background-size: pxToRem(588px) pxToRem(587px), pxToRem(657px) pxToRem(658px);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    &:before {
+        content: "";
+        @include adapBackground('../images/circle.png',
+        588px,
+        587px);
+        height: percent(587, 660);
+        transform: translate(-50%, -50%);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+    }
+    .icon-moon {
+        @include adapBackground('../images/moon.png',
+        558px,
+        559px);
+        height: percent(559, 660);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        // margin-left: pxToRem(-279px);
+        // margin-top: pxToRem(-279px);
+        transform: translate(-50%, -50%);
+        animation: rotate 8s linear both infinite;
+    }
+    .icon-walk {
+        // width: pxToRem(200px);
+        // top: pxToRem(-120px);
+        // margin-left: pxToRem(-100px);
+        @include adapBackground('../images/people1.png',
+        136px,
+        250px);
+        height: percent(100, 559);
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -20%);
+        animation: walk 1.5s steps(9) both infinite;
+    }
+}
+
+.icon-txt1 {
+    @include adapBackground('../images/m-text.png',
+    531px,
+    320px);
+    height: percent(320);
+    margin: auto;
+    margin-top: pxToRem(50px);
+}
+
+
+
+
+.s-content {
+    background-image: url('../images/icon2.png'), url('../images/bg.png');
+    background-size: pxToRem(707px) pxToRem(326px),  pxToRem(87px) pxToRem(85px);
+    background-repeat: no-repeat, repeat;
+    background-position: right 90%, 0 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.st-container {
+	@include adapBackground('../images/moon-part.png', 750px, 962px);
+	height: percent(962);
+	background-size: 100% 100%;
+	position: relative;
+	.s-txt1 {
+		@include adapBackground('../images/txt3.png', 609px, 588px);
+		height: percent(588, 962);
+		position: absolute;
+		left: 50%;
+		top: pxToRem(30px);
+		transform: translate(-50%, 0);
+	}
+}
+.s-btn {
+	@include background('../images/icon-btn.png', 390px, 77px);
+	margin: auto;
+	margin-top: pxToRem(130px);
+	position: relative;
+	.icon-people {
+		@include adapBackground('../images/people1.png', 87px, 160px);
+		height: percent(160, 77);
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, -100%);
+		// height: percent(160)
+
+	}
+}
+
+
+@keyframes walk {
+    0%,
+    23%,
+    100% {
+        background-image: url('../images/people1.png');
+    }
+    25%,
+    48%,
+    75%,
+    98% {
+        background-image: url('../images/people2.png');
+    }
+    50%,
+    73% {
+        background-image: url('../images/people3.png');
+    }
+}
+
+@-webkit-keyframes walk {
+    0%,
+    23%,
+    100% {
+        background-image: url('../images/people1.png');
+    }
+    25%,
+    48%,
+    75%,
+    98% {
+        background-image: url('../images/people2.png');
+    }
+    50%,
+    73% {
+        background-image: url('../images/people3.png');
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform:  translate(-50%, -50%) rotate(0);
+        -webkit-transform:  translate(-50%, -50%) rotate(0);
+    }
+    to {
+        transform:  translate(-50%, -50%) rotate(-360deg);
+        -webkit-transform:  translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+@-webkit-keyframes rotate {
+    from {
+        transform:  translate(-50%, -50%) rotate(0);
+        -webkit-transform:  translate(-50%, -50%) rotate(0);
+    }
+    to {
+        transform:  translate(-50%, -50%) rotate(-360deg);
+        -webkit-transform:  translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+@keyframes up {
+	from {
+		transform: translate(0, 0);
+		-webkit-transform: translate(0, 0);
+		opacity: 1;
+	}
+	to {
+		transform: translate(0, -100%);
+		-webkit-transform: translate(0, -100%);
+		opacity: 0;
+	}
+}
+@-webkit-keyframes up {
+	from {
+		transform: translate(0, 0);
+		-webkit-transform: translate(0, 0);
+		opacity: 1;
+	}
+	to {
+		transform: translate(0, -100%);
+		-webkit-transform: translate(0, -100%);
+		opacity: 0;
+	}
+}

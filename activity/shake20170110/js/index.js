@@ -27,10 +27,10 @@
 			onShowLoading();
 			// 抽签完成之后关闭，出现动画至少500毫秒
 			setTimeout(function() {
-				onHideLoading();
+				// onHideLoading();
 				//TODO: 与好友pk，则跳转至signPK.html
 				window.location.href = "./Sign.html";
-			}, 500);
+			}, 1500);
 
 			pageContentEl.addClass("beingShake");
 		}

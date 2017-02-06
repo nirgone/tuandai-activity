@@ -1,0 +1,12 @@
+@charset 'utf-8';
+@function percent($px1, $px2:1333) {
+    @return $px1 / $px2 * 100%
+}
+
+@mixin adapBackground($image, $width, $height, $rate:1) {
+    display: block;
+    background: url($image) no-repeat center;
+    width: pxToRem($width * $rate);
+    // height: pxToRem($height * $rate);
+    background-size: contain;
+}
