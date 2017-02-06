@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>我想对你说</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/index.css">
+    <!-- build:css(dist)  ../js/lib/vendor/swiper/swiper.min.css-->
+    <link rel="stylesheet" href="../css/vendor/swiper/swiper.min.css">
+    <!-- endbuild -->
+    <!-- build:js({dist}) ../js/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="scroll">
+        <div class="content">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="page m-content">
+                            <i class="icon-logo"></i>
+                            <i class="icon-rule"></i>
+                            <div class="moon-container">
+                                <i class="icon-moon"></i>
+                                <i class="icon-walk"></i>
+                            </div>
+                            <i class="icon-txt1"></i>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                    	<div class="page s-content">
+                    		<div class="st-container">
+                    			<i class="s-txt1"></i>
+                    		</div>
+                    		<i class="s-btn"><i class="icon-people"></i></i>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-container">
+                <i class="icon-arrow"></i>
+            </div>
+        </div>
+    </div>
+    <div class="mask rule-mask">
+    	<div class="pop-cont">
+    		<i class="rule-title"></i>
+    		<ul class="rule-cont">
+    			<li>
+    				<span class="r-th">参与活动时间：</span>
+    				<p class="r-tr">2017年2月10日-14日</p>
+    			</li>
+    			<li>
+    				<span class="r-th">活动流程：</span>
+    				<p class="r-tr">上传个人原创照片，写下你想对家说的宣言并署名，一键生成海报</p>
+    				<p class="r-tr">分享后留下正确手机号码，参与活动评选，以手机号码为凭证领奖</p>
+    				<p class="r-tr">分享后海报不可修改</p>
+    			</li>
+    			<li>
+    				<span class="r-th">大奖评选：</span>
+    				<p class="r-tr">从参与者中挑选二十个精彩作品，颁发丰厚奖品</p>
+    				<p class="r-tr">获奖结果于2月17日团贷网微信公众号</p>
+    				<p class="r-tr">
+    					<span>*&nbsp;&nbsp;所有个人信息仅用于本次活动</span><br>
+    					<span>*&nbsp;&nbsp;本次活动最终解释权归团贷网所有</span>
+    				</p>
+    			</li>
+    		</ul>
+    		<i class="pop-btn-submit"></i>
+    	</div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<!-- build:js({dist}) ../js/lib/vendor/swiper/swiper.jquery.min.js -->
+<script src="../js/vendor/swiper/swiper.jquery.min.js"></script>
+<!-- endbuild -->
+<!-- <script src="../js/index.js" type="text/javascript" charset="utf-8"></script> -->
+<script type="text/javascript">
+(function() {
+    FastClick.attach(document.body);
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        onTransitionEnd: function(swiper) {
+        	if(swiper.activeIndex === 1) {
+        		$(".icon-arrow").hide();
+        	}else{
+        		$(".icon-arrow").show();
+        	}
+        }
+    });
+    $(".icon-rule").on('click', function() {
+    	$(".mask").show();
+    });
+    $(".pop-btn-submit").on('click', function() {
+    	$(".mask").hide();
+    });
+    $(".s-btn").on('click', function() {
+    	window.location.href = './modelPage.html';
+    });
+})();
+</script>
+
+</html>

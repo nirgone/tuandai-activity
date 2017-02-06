@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>我想对你说</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/modelPage.css">
+    <!-- build:css(dist)  ../js/lib/vendor/swiper/swiper.min.css-->
+    <link rel="stylesheet" href="../css/vendor/swiper/swiper.min.css">
+    <!-- endbuild -->
+    <!-- build:js({dist}) ../js/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="scroll">
+        <div class="content">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- <div class="swiper-slide">
+                        <div class="page model-page">
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            
+        </div>
+        <i class="icon-pointer"></i>
+        <div class="b-popup">
+            <div class="bp-container">
+                <span class="bp-txt1">上传照片，留下你想对家说的一句话，一键生成</span>
+                <span class="bp-txt2">“我要对家说”同款海报</span>
+                <i class="bp-btn-edit"></i>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<!-- build:js({dist}) ../js/lib/vendor/swiper/swiper.jquery.min.js -->
+<script src="../js/vendor/swiper/swiper.jquery.min.js"></script>
+<!-- endbuild -->
+<!-- <script src="../js/index.js" type="text/javascript" charset="utf-8"></script> -->
+<script type="text/javascript">
+(function() {
+    FastClick.attach(document.body);
+
+    var indexArr = [];
+
+    function init() {
+        getRandomIndex();
+        var temp = "";
+        for (var i = 0; i < indexArr.length; i++) {
+            var bgImg = '../images/model' + indexArr[i] + '.jpg';
+            temp += '<div class="swiper-slide"><i class="model-page" style="background-image:url(' + bgImg + ')"></i></div>';
+        }
+        $(".swiper-wrapper").append(temp);
+        var mySwiper = new Swiper('.swiper-container', {
+            onTransitionEnd: function(swiper) {
+                if(swiper.activeIndex === 2) {
+                    // $(".b-popup").show();
+                    $(".b-popup").addClass('to-show');
+                }
+            },
+            onSlideChangeStart: function(swiper) {
+                // console.info('start---', swiper.activeIndex);
+                if(swiper.activeIndex === 0) {
+                    $(".icon-pointer").show();
+                }else{
+                    $(".icon-pointer").hide();
+                }
+                if(swiper.activeIndex === 1) {
+                    // $(".b-popup").hide();
+                    $(".b-popup").removeClass('to-show');
+                }
+
+            }
+        });
+    }
+    init();
+    $(".bp-btn-edit").on('click', function() {
+        window.location.href = './editPage.html';
+    });
+
+    function getRandomIndex() {
+        var index = Math.round(Math.random() * 7);
+        if (indexArr.indexOf(index) === -1) {
+            indexArr.push(index);
+            // return index;
+        }
+        if (indexArr.length < 3) {
+            getRandomIndex();
+        }
+    }
+    
+})();
+</script>
+
+</html>
