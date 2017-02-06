@@ -16,13 +16,13 @@ body {
     background-color: $bg-color-yellow;
 }
 
+a {
+    text-decoration: none;
+}
 .scroll-active {
     -webkit-overflow-scrolling: touch !important;
 }
 
-a {
-    text-decoration: none;
-}
 
 .scroll {
     max-width: 414px;
