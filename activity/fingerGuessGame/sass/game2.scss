@@ -1,0 +1,62 @@
+@charset "UTF-8";
+@import "variables";
+@import "func";
+@import "../../../sass/func";
+.page2-content {
+    background: url(../images/bg-game2.jpg) no-repeat center;
+    background-size: 100% 100%;
+    .game-sec {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: percent(245);
+        left: 0;
+        z-index: 9;
+        .icon-rock-s, .icon-paper-s, .icon-scissors-s {
+        	position: absolute;
+        	transition-property: transform;
+        	transition-timing-function: linear;
+        	transform: translateY(0);
+        }
+        .icon-rock-s { 
+            top: pxToRem(-74px);
+        }
+        .icon-paper-s {
+        	top: pxToRem(-80px);
+        }
+        .icon-scissors-s {
+        	top: pxToRem(-97px);
+        }
+    }
+}
+
+.game-tip {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, .91);
+	z-index: 999;
+	.icon-tip0, .icon-tip1 {
+		position: absolute;
+		z-index: 1000;
+	}
+	.icon-tip0 {
+		width: pxToRem(440px);
+		left: 50%;
+		margin-left: pxToRem(-220px);
+		bottom: percent(26);
+		height: percent(407);
+		background: url(../images/tips0.png) no-repeat center;
+		background-size: contain;
+	}
+	.icon-tip1 {
+		width: pxToRem(186px);
+		height: percent(237);
+		right: 0;
+		bottom: percent(180);
+		background: url(../images/tips1.png)  no-repeat right;
+		background-size: contain;
+	}
+}

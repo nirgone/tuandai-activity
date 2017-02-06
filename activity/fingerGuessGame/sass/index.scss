@@ -159,6 +159,7 @@ a {
     overflow: hidden;
     .top-sec {
         &>div {
+        z-index: 19;
             position: absolute;
         }
         @at-root .icon-clock {
@@ -379,6 +380,7 @@ a {
             box-sizing: border-box;
             &.active {
                 @extend .icon-btn-game-a;
+                height: percent(161, 193);
             }
             &:nth-child(2) {
                 margin: 0 pxToRem(76px);

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>猜拳小游戏</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/game2.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <audio loop="" src="../music/bg.mp3" id="bg" preload=""></audio>
+    <audio src="../music/lose.mp3" preload id="lose"></audio>
+    <audio src="../music/win.mp3" preload id="win"></audio>
+    <audio src="../music/tie.mp3" preload id="tie"></audio>
+    <audio src="../music/gameover.mp3" preload id="gameover"></audio>
+    <audio src="../music/gift.mp3" preload id="gift"></audio>
+    <div class="content page1-content page2-content">
+        <section class="top-sec">
+            <div class="icon-clock"><i class="icon-progress" id="progress"></i></div>
+            <div class="icon-score" id="score">0</div>
+        </section>
+        <div class="icon-cat" id="game_count">
+            5
+        </div>
+        <!-- 0 :lose 1: win 2: tie-->
+        <section class="game-sec" id="game_area">
+            <!-- <i class="icon-rock-s" data-value="1"></i> -->
+        </section>
+        <div class="countdown" data-value="3" id="countdown"></div>
+        <section class="bottom-sec">
+            <div class="btn-game" data-type="2"></div>
+            <div class="btn-game" data-type="1"></div>
+            <div class="btn-game" data-type="0"></div>
+        </section>
+    </div>
+    <section class="game-tip" id="game_tips">
+        <i class="icon-tip0"></i>
+        <i class="icon-tip1"></i>
+    </section>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/game2.js" type="text/javascript" charset="utf-8"></script>
+
+</html>
