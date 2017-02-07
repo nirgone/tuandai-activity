@@ -1,0 +1,36 @@
+.icon-up1 {
+  display: block;
+  background-image: url(../images/up/up.png);
+  background-size:pxToRem(2021px) pxToRem(985px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(666px);
+  height: pxToRem(494px);
+}
+.icon-up2 {
+  display: block;
+  background-image: url(../images/up/up.png);
+  background-size:pxToRem(2021px) pxToRem(985px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-676px) pxToRem(0px);
+  width: pxToRem(667px);
+  height: pxToRem(485px);
+}
+.icon-up3 {
+  display: block;
+  background-image: url(../images/up/up.png);
+  background-size:pxToRem(2021px) pxToRem(985px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-504px);
+  width: pxToRem(668px);
+  height: pxToRem(481px);
+}
+.icon-up4 {
+  display: block;
+  background-image: url(../images/up/up.png);
+  background-size:pxToRem(2021px) pxToRem(985px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-1353px) pxToRem(0px);
+  width: pxToRem(668px);
+  height: pxToRem(474px);
+}

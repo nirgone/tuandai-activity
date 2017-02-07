@@ -1,0 +1,63 @@
+.icon-fire1 {
+  display: block;
+  background-image: url(../images/fire/fire.png);
+  background-size:pxToRem(2183px) pxToRem(1604px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(721px);
+  height: pxToRem(528px);
+}
+.icon-fire2 {
+  display: block;
+  background-image: url(../images/fire/fire.png);
+  background-size:pxToRem(2183px) pxToRem(1604px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-731px) pxToRem(0px);
+  width: pxToRem(721px);
+  height: pxToRem(528px);
+}
+.icon-fire3 {
+  display: block;
+  background-image: url(../images/fire/fire.png);
+  background-size:pxToRem(2183px) pxToRem(1604px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-538px);
+  width: pxToRem(721px);
+  height: pxToRem(528px);
+}
+.icon-fire4 {
+  display: block;
+  background-image: url(../images/fire/fire.png);
+  background-size:pxToRem(2183px) pxToRem(1604px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-731px) pxToRem(-538px);
+  width: pxToRem(721px);
+  height: pxToRem(528px);
+}
+.icon-fire5 {
+  display: block;
+  background-image: url(../images/fire/fire.png);
+  background-size:pxToRem(2183px) pxToRem(1604px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-1462px) pxToRem(0px);
+  width: pxToRem(721px);
+  height: pxToRem(528px);
+}
+.icon-fire6 {
+  display: block;
+  background-image: url(../images/fire/fire.png);
+  background-size:pxToRem(2183px) pxToRem(1604px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-1462px) pxToRem(-538px);
+  width: pxToRem(721px);
+  height: pxToRem(528px);
+}
+.icon-fire7 {
+  display: block;
+  background-image: url(../images/fire/fire.png);
+  background-size:pxToRem(2183px) pxToRem(1604px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-1076px);
+  width: pxToRem(721px);
+  height: pxToRem(528px);
+}

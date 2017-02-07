@@ -1,0 +1,81 @@
+.icon-module-ceo {
+  display: block;
+  background-image: url(../images/modules/modules.png);
+  background-size:pxToRem(308px) pxToRem(234px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-164px) pxToRem(-71px);
+  width: pxToRem(64px);
+  height: pxToRem(74px);
+}
+.icon-module-hot {
+  display: block;
+  background-image: url(../images/modules/modules.png);
+  background-size:pxToRem(308px) pxToRem(234px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-252px) pxToRem(0px);
+  width: pxToRem(56px);
+  height: pxToRem(84px);
+}
+.icon-module-invest {
+  display: block;
+  background-image: url(../images/modules/modules.png);
+  background-size:pxToRem(308px) pxToRem(234px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-170px);
+  width: pxToRem(70px);
+  height: pxToRem(64px);
+}
+.icon-module-news {
+  display: block;
+  background-image: url(../images/modules/modules.png);
+  background-size:pxToRem(308px) pxToRem(234px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-80px) pxToRem(-170px);
+  width: pxToRem(72px);
+  height: pxToRem(62px);
+}
+.icon-module-question {
+  display: block;
+  background-image: url(../images/modules/modules.png);
+  background-size:pxToRem(308px) pxToRem(234px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-82px);
+  width: pxToRem(70px);
+  height: pxToRem(78px);
+}
+.icon-module-speak {
+  display: block;
+  background-image: url(../images/modules/modules.png);
+  background-size:pxToRem(308px) pxToRem(234px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(78px);
+  height: pxToRem(72px);
+}
+.icon-module-suggest {
+  display: block;
+  background-image: url(../images/modules/modules.png);
+  background-size:pxToRem(308px) pxToRem(234px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-88px) pxToRem(-84px);
+  width: pxToRem(66px);
+  height: pxToRem(73px);
+}
+.icon-module-td-news {
+  display: block;
+  background-image: url(../images/modules/modules.png);
+  background-size:pxToRem(308px) pxToRem(234px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-88px) pxToRem(0px);
+  width: pxToRem(66px);
+  height: pxToRem(74px);
+}
+.icon-module-video {
+  display: block;
+  background-image: url(../images/modules/modules.png);
+  background-size:pxToRem(308px) pxToRem(234px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-164px) pxToRem(0px);
+  width: pxToRem(78px);
+  height: pxToRem(61px);
+}

@@ -1,0 +1,330 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../../sass/func";
+@import "sprite";
+$fireTime: .5s;
+.m-content {
+    padding-bottom: 0 !important;
+    background-color: #01245A;
+}
+.anit {
+  .fw-cont {
+    animation: fadeOut .5s linear 8s both;
+    &:before {
+      animation: zoomIn .5s linear 6.5s both;
+    }
+    &:after {
+      animation: zoomIn .5s linear 6.8s both;
+    }
+  }
+  .icon-firework3 {
+    animation: fadeInUp 5s ease-in-out $fireTime*3 both;
+  }
+  .icon-character {
+    animation: fire 1.5s steps(7) both .5s;
+  }
+  .icon-year {
+    animation: fadeIn 1.5s linear 8s both;
+  }
+
+}
+
+.s-top {
+    width: 100%;
+    height: pxToRem(2694px);
+    background-image: url('../images/dots.png'), linear-gradient(top, #0D1136 0%, #00265D 30%, #162CA6 50%, #743AAC, #162CA6, #011C4D 90%), url('../images/m-bg.png');
+    //  background-image: url('../images/dots.png');
+    background-size: pxToRem(750px) pxToRem(1456px), 100% 100%, 100% 100%;
+    background-repeat: repeat-y, no-repeat, no-repeat;
+    background-position: top, top, 0 pxToRem(1456px);
+}
+
+.t-cont {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    padding-top: pxToRem(200px);
+    .star {
+        width: pxToRem(276px);
+        height: pxToRem(276px);
+        opacity: 1;
+    }
+    .icon-star1 {
+        transform: scale(.6);
+        left: 20%;
+        top: 40%;
+    }
+    .icon-star2 {
+        transform: scale(.6);
+        right: -10%;
+        top: 30%;
+    }
+    .icon-star3 {
+        transform: scale(.3);
+        left: 0;
+        top: 0;
+    }
+    .icon-star4 {
+        transform: scale(.4);
+        right: 0;
+        top: 10%;
+    }
+    .icon-shooting-star1 {
+        right: 0;
+        top: 10%;
+    }
+    .icon-shooting-star2 {
+        right: pxToRem(-200px);
+        top: 25%;
+        animation-delay: 2.5s;
+    }
+    .icon-shooting-star3 {
+        right: pxToRem(-300px);
+        top: pxToRem(-200px);
+        animation-delay: 3s;
+        opacity: 0;
+    }
+}
+
+.fw-cont {
+    width: 100%;
+    height: pxToRem(600px);
+    position: relative;
+    // animation: fadeOut .5s linear 8s both;
+    &:before {
+        content: "";
+        @include background('../images/fireworks1.png',
+        680px,
+        600px);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: pxToRem(-360px);
+        z-index: 2;
+        transform: scale(0);
+        // animation: zoomIn .5s linear 6.5s both;
+    }
+    &:after {
+        content: "";
+        @include background('../images/fireworks2.png',
+        564px,
+        536px);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: pxToRem(-282px);
+        margin-top: pxToRem(-268px);
+        z-index: 3;
+        transform: scale(0);
+        // animation: zoomIn .5s linear 6.7s both;
+    }
+}
+
+.btn-white {
+    border: 1px solid #fff;
+    width: pxToRem(607px);
+    height: pxToRem(80px);
+    line-height: pxToRem(80px);
+    text-align: center;
+    border-radius: pxToRem(10px);
+    margin: auto;
+    font-size: pxToRem(42px);
+    color: #fff;
+    margin-top: pxToRem(220px);
+}
+.btn-anti {
+    animation: fadeIn 1s linear 8.5s both;
+    
+}
+
+// .icon-firework4 {
+//   @include background('../images/fireworks4.png', 168px, 718px);
+//   position: absolute;
+//   left: 50%;
+//   top: 50%;
+//   margin-left: pxToRem(-134px); 
+//   animation: fadeInUp 1.5s ease-in $fireTime*7 both; 
+// }
+.icon-firework3 {
+    @include background('../images/fireworks3.png',
+    46px,
+    628px);
+    position: absolute;
+    left: 50%;
+    bottom: pxToRem(200px);
+    margin-left: pxToRem(-23px);
+    // animation: fadeInUp 5s ease-in-out $fireTime*4 both;
+    transform: scale3d(1, 0, 1);
+}
+
+.s-bottom {
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/m-bg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.icon-character {
+    // @extend .icon-fire1;
+    position: absolute;
+    left: 50%;
+    bottom: pxToRem(30px);
+    margin-left: pxToRem(-360px);
+    display: block;
+    // background-image: url(../images/fire/fire.png);
+    // background-size:pxToRem(1336px) pxToRem(1133px);
+    background-image: url('../images/fire1.png');
+    background-repeat: no-repeat;
+    width: pxToRem(721px);
+    height: pxToRem(528px);
+    background-size: cover;
+}
+.icon-logo {
+  @include background('../images/logo.png', 272px, 51px);
+  position: absolute;
+  left: pxToRem(30px);
+  top: pxToRem(30px);
+}
+.icon-year {
+  @include background('../images/m-2017.png', 644px, 295px);
+  position: absolute;
+  left: 50%;
+  margin-left: pxToRem(-322px);
+  top: pxToRem(402px);
+
+}
+.m-title {
+  @include background('../images/m-title.png', 126px, 531px);
+  position: absolute;
+  left: 50%;
+  top: pxToRem(100px);
+  margin-left: pxToRem(-63px);
+}
+
+@keyframes fire {
+    0% {
+        background-image: url('../images/fire1.png');
+    }
+    5% {
+        background-image: url('../images/fire2.png');
+    }
+    10% {
+        background-image: url('../images/fire3.png');
+    }
+    85% {
+        background-image: url('../images/fire4.png');
+    }
+    90% {
+        background-image: url('../images/fire5.png');
+    }
+    95% {
+        background-image: url('../images/fire6.png');
+    }
+    100% {
+        background-image: url('../images/fire7.png');
+    }
+}
+
+@-webkit-keyframes fire {
+    0% {
+        background-image: url('../images/fire1.png');
+    }
+    5% {
+        background-image: url('../images/fire2.png');
+    }
+    10% {
+        background-image: url('../images/fire3.png');
+    }
+    85% {
+        background-image: url('../images/fire4.png');
+    }
+    90% {
+        background-image: url('../images/fire5.png');
+    }
+    95% {
+        background-image: url('../images/fire6.png');
+    }
+    100% {
+        background-image: url('../images/fire7.png');
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        -webkit-transform: scale3d(0, 0, 0);
+        transform: scale3d(0, 0, 0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+        -webkit-transform: scale3d(1, 1, 1);
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale3d(1, 1.4, 1);
+        -webkit-transform: scale3d(1, 1.4, 1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        -webkit-transform: scale3d(0, 0, 0);
+        transform: scale3d(0, 0, 0);
+    }
+    30% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+        -webkit-transform: scale3d(1, 1, 1);
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale3d(1, 1.4, 1);
+        -webkit-transform: scale3d(1, 1.4, 1);
+    }
+}
+
+@-webkit-keyframes zoomIn {
+    0% {
+      transform: scale(0);
+      -webkit-transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+      -webkit-transform: (1);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+      transform: scale(0);
+      -webkit-transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+      -webkit-transform: (1);
+    }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
