@@ -1,0 +1,157 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../../sass/func";
+@import "func";
+$page-height: 1296;
+.title-yellow {
+    font-size: pxToRem(56px);
+    color: #ffd200;
+    text-align: center;
+    padding-top: pxToRem(70px);
+}
+
+.title-post {
+    padding-top: pxToRem(48px);
+    text-align: center;
+    font-size: pxToRem(42px);
+    color: #d7ceb1;
+    .avatar-container {
+        display: inline-block;
+        width: pxToRem(86px);
+        height: pxToRem(86px);
+        background-color: #d7ceb1;
+        border-radius: pxToRem(86px);
+        margin-right: pxToRem(20px);
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .nickname {
+        @include ellipsis();
+        max-width: pxToRem(360px);
+        vertical-align: pxToRem(24px);
+    }
+}
+
+.post-container {
+    position: relative;
+    height: percent(895, $page-height);
+    margin: auto;
+    margin-top: pxToRem(30px);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(../images/masking.png) no-repeat center;
+        background-size: 100% 100%;
+        z-index: 1;
+    }
+    .post-text {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: percent(136, 895);
+        color: #fff;
+        z-index: 3;
+        font-size: pxToRem(36px);
+        padding: 0 pxToRem(52px) 0 pxToRem(72px);
+        @at-root .msg {
+            line-height: pxToRem(46px);
+            &:before,
+            &:after {
+                content: '';
+                display: inline-block;
+                background: url(../images/sign.png) no-repeat center;
+                background-size: contain;
+                width: pxToRem(36px);
+                height: pxToRem(32px);
+            }
+            &:before {
+                position: absolute;
+                top: pxToRem(-8px);
+                left: pxToRem(38px);
+            }
+            &:after {
+                transform: scale(-1, -1);
+                vertical-align: top;
+            }
+        }
+        .name {
+            text-align: right;
+            font-size: pxToRem(24px);
+            padding-top: pxToRem(12px);
+        }
+    }
+}
+
+.popup-share {
+    .share-msg {
+        position: relative;
+        width: pxToRem(440px);
+        padding: pxToRem(20px) pxToRem(30px);
+        background-color: #575757;
+        font-size: pxToRem(42px);
+        line-height: pxToRem(56px);
+        color: #a6a6a6;
+        margin: pxToRem(140px) auto;
+        border-radius: pxToRem(20px);
+        .icon-arrow-share {
+            @include background('../images/arrow-share.png', 134px, 77px);
+            position: absolute;
+            right: pxToRem(-46px);
+            top: pxToRem(-100px);
+        }
+    }
+}
+
+.btn-share {
+    background: url(../images/btn-share.png) no-repeat center;
+    background-size: contain;
+    width: pxToRem(390px);
+    height: percent(77, $page-height);
+    margin: pxToRem(14px) auto 0;
+}
+.btn-share2 {
+    @extend .btn-share;
+    background: url(../images/btn-share2.png) no-repeat center;
+    background-size: contain;
+    height: percent(76, $page-height);
+}
+.btn-create {
+    @extend .btn-share;
+    background: url(../images/btn-create.png) no-repeat center;
+    background-size: contain;
+    height: percent(76, $page-height);
+}
+
+.btn-text {
+    width: pxToRem(240px);
+    font-size: pxToRem(34px);
+    color: #d7ceb1;
+    margin: pxToRem(28px) auto 0;
+    text-align: center;
+    &:before,
+    &:after {
+        content: '';
+        display: inline-block;
+        background: url(../images/arrow-hori.png) no-repeat center;
+        background-size: contain;
+        width: pxToRem(16px);
+        height: pxToRem(26px);
+    }
+    &:after {
+        transform: scale(-1, -1);
+    }
+}
+
+.font-yellow {
+    color: #ffd200;
+}
