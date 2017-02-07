@@ -73,6 +73,7 @@
         font-size: pxToRem(28px);
         // padding-left: pxToRem(30px);
         margin-top: pxToRem(10px);
+        display: none;
         &:before {
             content: '*';
             color: #ffd200;

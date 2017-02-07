@@ -1,0 +1,27 @@
+.icon-icon-arrow {
+  display: block;
+  background-image: url(../images/icons/icons.png);
+  background-size:pxToRem(292px) pxToRem(104px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-94px) pxToRem(-64px);
+  width: pxToRem(15px);
+  height: pxToRem(10px);
+}
+.icon-icon-bottom {
+  display: block;
+  background-image: url(../images/icons/icons.png);
+  background-size:pxToRem(292px) pxToRem(104px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-64px);
+  width: pxToRem(84px);
+  height: pxToRem(40px);
+}
+.icon-icon-wave {
+  display: block;
+  background-image: url(../images/icons/icons.png);
+  background-size:pxToRem(292px) pxToRem(104px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(292px);
+  height: pxToRem(54px);
+}

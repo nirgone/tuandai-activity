@@ -114,7 +114,7 @@ span {
             content: "";
             width: 100%;
             height: pxToRem(3px);
-            background-image: url('../images/line.png');
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAikAAAADCAMAAABh5W9VAAAAPFBMVEXc3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d1M608ZAAAAFHRSTlNfXGVVUUxHKS5YDEIjND0UOBwGYhhUYOEAAAEASURBVDjL1dRBEoMgDEBRrFCtKKi9/12bQCCJ6LhqZ/qSdq/+idmLaYIlEVbY2AwrDPNQjcUyLtm6rCRknj0F93SFZb3wIl0HW5mv6S69Gn3L9vbIwbbSwyteCj5o+CpXtmjw5g+Ggxmngq9JYoRN4NuzfdorQ5nIUCIO2XBwqRNZSRvJVSI+lD48tYGTWKfasDIMkYUp3uTxA2/F4DQOHeWR2oyYSz/uJg9LL0xkA1vpZHB0NDfJVFvGqXAtKQtVCsVycVQwOMK5tDdlPLkpBJ6qFsPJEKdvCpeD1dh/vCk2/WkOR+EqOA6PUwX84bAVR7i9KWN7VNhWxNObgpmwDxgAMt+jybr6AAAAAElFTkSuQmCC');
             background-size: pxToRem(553px) pxToRem(3px);
             background-repeat: no-repeat;
             background-position: center bottom;
@@ -180,7 +180,7 @@ span {
         transform: scale(-1, 1);
     }
     .icon-arrow {
-        @include background('../images/icon-arrow.png',
+        @include background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAKCAMAAABcxfTLAAAAbFBMVEUAAADTyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq4mlSxRAAAAJHRSTlMA+ePOKBPy6pJuRQ8IBd7Wu7SroYt7dF1LQTAZC7yqhGRUOjR1J3xnAAAAaElEQVQI10WMWQ6AIBQD+1AQBdx3cb//HSUYwvy1aQc/Uzkhwls2iJaHWLCDY6uz2SctxQU1WuTUKWCtkhQLE+WDNGELqDe6p9FKOo0ZCIWrq9Vb3PCFu0ntRaqjHNidNnBnNRqOyNZ8ZowEfFeaGEYAAAAASUVORK5CYII=',
         15px,
         10px);
         position: absolute;
@@ -203,6 +203,9 @@ span {
 
 .black-bg {
     background-image: url('../images/bg.png');
-    background-size: pxToRem(87px) pxToRem(85px);
+    background-size: pxToRem(72px) pxToRem(37px);
     background-repeat: repeat;
+}
+.hide {
+    display: none;
 }

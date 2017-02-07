@@ -1,5 +1,6 @@
 (function() {
 	FastClick.attach(document.body);
+	var postData = {}; //海报数据
 
 	function init() {
 		var data = {
@@ -7,6 +8,7 @@
 			content: 'aaaa',
 			name: 'alice'
 		};
+		data = {};
 		if (data && data.imgUrl) {
 			$(".step-container").addClass('has-preview');
 			$(".btn-upload-txt").html('重新上传');
@@ -96,10 +98,30 @@
 		$(".normal-mask").show();
 	});
 	$(".input-submit").on('click', function() {
-		var value = $('.pop-input').val();
+		var value = $('.pop-input').val().trim();
 		$(".label-input[data-type='" + inputType + "']").html(value);
+		postData[inputType] = value;
 		$('.pop-input').val('');
 		$(".normal-mask").hide();
 	});
+
+	//一键生成海报
+	$(".btn-create").on('click', function() {
+		console.info('postData----', postData);
+		if (!postData.content || postData.content.length === 0) {
+			showErrorTips('content', '请输入您要对家说的一句话 / 字数<font>不超过<i>28</i>个字</font>');
+			return;
+		} 
+		if(!postData.name || postData.name.length === 0) {
+			showErrorTips('name', '请输入您的署名 / <font>不能超过<i>8</i>个字</font>');
+			return;
+		}
+	});
+
+	function showErrorTips(type, tips) {
+		var obj = $(".error-tips[data-type='" + type + "']");
+		obj.html(tips);
+		obj.show();
+	}
 
 })();

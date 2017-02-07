@@ -22,6 +22,12 @@
 </head>
 
 <body>
+<div class="hide">
+    <img src="../images/people1.png">
+    <img src="../images/people2.png">
+    <img src="../images/people3.png">
+    <img src="../images/moon.png">
+</div>
     <div class="scroll">
         <div class="content">
             <div class="swiper-container">
@@ -90,6 +96,9 @@
 <script type="text/javascript">
 (function() {
     FastClick.attach(document.body);
+    window.onload = function () {
+        $('.content').addClass('anit');
+    }
     var mySwiper = new Swiper('.swiper-container', {
         direction: 'vertical',
         onTransitionEnd: function(swiper) {
