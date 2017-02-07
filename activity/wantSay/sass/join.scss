@@ -1,0 +1,99 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../../sass/func";
+@import "func";
+.black-bg {
+    .icon-rule {
+        top: pxToRem(40px) !important;
+    }
+}
+
+.txt-container {
+    width: 100%;
+    padding-top: pxToRem(200px);
+    font-size: 0;
+    span {
+        width: 100%;
+        color: #fff;
+        text-align: center;
+    }
+    .j-txt1 {
+        font-size: pxToRem(48px);
+    }
+    .j-txt1:nth-of-type(n+1) {
+        margin-top: pxToRem(30px);
+    }
+    .j-txt2 {
+        font-size: pxToRem(36px);
+        margin-top: pxToRem(40px);
+        .jt-num {
+            font-size: pxToRem(38px);
+            color: #ffd200;
+            width: pxToRem(36px);
+            height: pxToRem(44px);
+            border: pxToRem(2px) solid rgba(209, 192, 165, 1);
+            line-height: pxToRem(44px);
+            margin-left: pxToRem(10px);
+        }
+        &>font:last-child {
+            margin-right: pxToRem(10px);
+        }
+    }
+}
+
+.u-phone {
+    width: pxToRem(580px);
+    height: pxToRem(66px);
+    line-height: pxToRem(66px);
+    border: 1px solid rgba(255, 210, 0, 1);
+    border-radius: pxToRem(10px);
+    background-color: rgb( 106, 106, 106);
+    display: block;
+    margin: auto;
+    margin-top: pxToRem(100px);
+    font-size: pxToRem(36px);
+    color: #fff;
+    text-align: center;
+}
+
+.u-phone::-webkit-input-placeholder {
+    color: rbga(255, 255, 255, .3);
+}
+
+.error-tips {
+    width: pxToRem(580px);
+    margin: auto;
+    display: block;
+    font-size: pxToRem(20px);
+    color: rgba(255, 255, 255, .5);
+    margin-top: pxToRem(10px);
+    display: none;
+}
+
+.btn-join {
+    @include background('../images/btn-join.png', 397px, 77px);
+    margin: auto;
+    margin-top: pxToRem(60px);
+}
+
+.msg-cont {
+    width: pxToRem(550px);
+    padding: pxToRem(50px) pxToRem(30px);
+    // font-size: 0;
+    text-align: center;
+    background-color: #565656;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: pxToRem(10px);
+    font-size: pxToRem(40px);
+    color: #ffd200;
+    line-height: 1.5;
+    // .t-txt {
+    // 	width: 100%;
+    // }
+}
+.m-btn-submit {
+	margin-top: pxToRem(50px);
+}

@@ -1,0 +1,65 @@
+@charset "UTF-8";
+@import "../../../sass/func";
+.icon-fire1 {
+  display: block;
+  background-image: url(../images/fire/fire.png);
+  background-size:pxToRem(1336px) pxToRem(1133px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-605px);
+  width: pxToRem(683px);
+  height: pxToRem(528px);
+}
+.icon-fire2 {
+  display: block;
+  background-image: url(../images/fire/fire.png);
+  background-size:pxToRem(1336px) pxToRem(1133px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-676px) pxToRem(0px);
+  width: pxToRem(660px);
+  height: pxToRem(554px);
+}
+.icon-fire3 {
+  display: block;
+  background-image: url(../images/fire/fire.png);
+  background-size:pxToRem(1336px) pxToRem(1133px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(666px);
+  height: pxToRem(595px);
+}
+.icon-up1 {
+  display: block;
+  background-image: url(../images/up/up.png);
+  background-size:pxToRem(2021px) pxToRem(985px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(666px);
+  height: pxToRem(494px);
+}
+.icon-up2 {
+  display: block;
+  background-image: url(../images/up/up.png);
+  background-size:pxToRem(2021px) pxToRem(985px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-676px) pxToRem(0px);
+  width: pxToRem(667px);
+  height: pxToRem(485px);
+}
+.icon-up3 {
+  display: block;
+  background-image: url(../images/up/up.png);
+  background-size:pxToRem(2021px) pxToRem(985px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-504px);
+  width: pxToRem(668px);
+  height: pxToRem(481px);
+}
+.icon-up4 {
+  display: block;
+  background-image: url(../images/up/up.png);
+  background-size:pxToRem(2021px) pxToRem(985px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-1353px) pxToRem(0px);
+  width: pxToRem(668px);
+  height: pxToRem(474px);
+}

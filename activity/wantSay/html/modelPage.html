@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
     <meta name="format-detection" content="telephone=no">
-    <title>我想对你说</title>
+    <title>我想对家说</title>
     <!-- build:css(dist) ../css/main.css -->
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/media.css">
@@ -16,7 +16,7 @@
     <!-- build:css(dist)  ../js/lib/vendor/swiper/swiper.min.css-->
     <link rel="stylesheet" href="../css/vendor/swiper/swiper.min.css">
     <!-- endbuild -->
-    <!-- build:js({dist}) ../js/adapt.js -->
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
     <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
     <!-- endbuild -->
 </head>
@@ -39,7 +39,10 @@
             <div class="bp-container">
                 <span class="bp-txt1">上传照片，留下你想对家说的一句话，一键生成</span>
                 <span class="bp-txt2">“我要对家说”同款海报</span>
+                <!-- 定制我的海报 -->
                 <i class="bp-btn-edit"></i>
+                <!-- 查看我的海报 -->
+                <!-- <i class="bp-btn-check"></i> -->
             </div>
         </div>
     </div>
@@ -89,8 +92,13 @@
         });
     }
     init();
+    //定制我的海报
     $(".bp-btn-edit").on('click', function() {
         window.location.href = './editPage.html';
+    });
+    //查看我的海报
+    $(".bp-btn-check").on('click', function() {
+
     });
 
     function getRandomIndex() {

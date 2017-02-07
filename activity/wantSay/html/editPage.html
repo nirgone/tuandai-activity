@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
     <meta name="format-detection" content="telephone=no">
-    <title>我想对你说</title>
+    <title>我想对家说</title>
     <!-- build:css(dist) ../css/main.css -->
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/media.css">
     <link rel="stylesheet" href="../css/animation.css">
     <!-- endbuild -->
     <link rel="stylesheet" href="../css/editPage.css">
-    <!-- build:js({dist}) ../js/adapt.js -->
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
     <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
     <!-- endbuild -->
 </head>
 
 <body>
-    <div class="scroll">
+    <div class="scroll scroll-active">
         <div class="content black-bg">
             <i class="icon-rule"></i>
             <ul class="step-container">
@@ -55,6 +55,7 @@
                     <span class="error-tips">请输入您的署名 / <font>不能超过<i>8</i>个字</font></span>
                 </li>
             </ul>
+            <i class="btn-create"></i>
             <div class="bottom-container"></div>
         </div>
     </div>
@@ -90,7 +91,8 @@
         <div class="pop-input-cont">
             <textarea class="pop-input" id="popInput"></textarea>
             <span class="p-input-tips">*字数不能超过28个字</span>
-            <i class="pop-submit-small input-submit"></i>
+            <!-- <i class="pop-submit-small input-submit"></i> -->
+             <i class="pop-btn-submit input-submit"></i>
         </div>
     </div>
 </body>

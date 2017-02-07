@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>170101</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/wishCard.css">
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="scroll scroll-active">
+        <audio src="../media/music.mp3" preload id="bgMusic"></audio>
+        <i class="icon-music play"></i>
+        <div class="content wish-page">
+            <span class="wish-title">愿望卡片</span>
+            <div class="letter-cont">
+                <!-- <i class="envelope-top"></i> -->
+                <i class="envelope-top front-face"></i>
+                <i class="envelope-top back-face"></i>
+                <div class="letter-det">
+                    <i class="icon-avator" style="background-image: url('../images/avator.png');"></i>
+                    <span class="letter">活动时间活动时间活动时间活动时间活动时间活动时间活动时间活动时间活动时间活动时间活动时间活动时间活动时间活动时间活动时间活动时间活动时间活动时间活动时间活动时间</span>
+                    <span></span>
+                </div>
+                <i class="envelope-back"></i>
+                <i class="envelope-bottom"></i>
+                <div class="btn-red go-again hidden">我要再许愿</div>
+                <div class="btn-red go-index hidden">我也要许愿</div>
+                <i class="l-pai hidden"></i>
+                <i class="pai-coins hidden"></i>
+                <i class="envelope-close hidden"></i>
+            </div>
+            <div class="btn-red go-wish hidden">流星别跑，我要许愿</div>
+            <div class="c-remark hidden">
+                <!-- <span>恭喜你！小派有XX个团币送给你</span><span><a>登录</a>团贷网领取奖品</span> -->
+                您的好友1111获得【小派新年祝福30团币】
+            </div>
+        </div>
+        <div class="content star-page hidden">
+            <i class="icon-envelope send-letter"></i>
+            <div class="star-cont">
+                <i class="star icon-star1 star-anit"></i>
+                <i class="star icon-star2 star-anit"></i>
+                <i class="star icon-star3 star-anit"></i>
+                <i class="star icon-star4 star-anit"></i>
+            </div>
+            <i class="shooting-star icon-shooting-star1"></i>
+            <i class="shooting-star icon-shooting-star2"></i>
+            <i class="icon-tips show-tips"></i>
+            <i class="pai-star show-pai"></i>
+        </div>
+    </div>
+    <div class="mask share-mask hidden">
+        <i class="icon-share"></i>
+    </div>
+    <div class="img-cont">
+        <img src="../images/star-bg.png">
+        <img src="../images/icon-envelope.png">
+    </div>
+    <!-- <div class="mask"><i class="icon-loader"></i></div> -->
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script type="text/javascript" src="../js/util.js"></script>
+<script type="text/javascript" src="../js/wishCard.js"></script>
+
+</html>

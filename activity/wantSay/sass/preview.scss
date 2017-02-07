@@ -125,9 +125,9 @@ $page-height: 1296;
     background-size: contain;
     height: percent(76, $page-height);
 }
-.btn-create {
+.btn-create2 {
     @extend .btn-share;
-    background: url(../images/btn-create.png) no-repeat center;
+    background: url(../images/btn-create2.png) no-repeat center;
     background-size: contain;
     height: percent(76, $page-height);
 }

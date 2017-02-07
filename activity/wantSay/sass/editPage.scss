@@ -2,6 +2,11 @@
 @import "variables";
 @import "../../../sass/func";
 @import "func";
+.scroll-active {
+	.content {
+		overflow: scroll;
+	}
+}
 .black-bg {
     .icon-rule {
         top: pxToRem(40px) !important;
@@ -201,8 +206,9 @@
 		resize: none;
 		background-color: #a6a6a6;
 		color: #fff;
-		font-size: pxToRem(28px);
+		font-size: pxToRem(30px);
 		line-height: 1.5;
+		padding: pxToRem(18px);
 		border: 0 !important;
 	}
 	.p-input-tips {
@@ -217,8 +223,16 @@
 		margin: auto;
 		margin-top: pxToRem(10px);
 	}
+	.input-submit {
+		width: pxToRem(250px) !important;
+		height: pxToRem(80px) !important;
+	}
 }
-
+.btn-create {
+	@include background('../images/btn-create.png', 390px, 76px);
+	margin: auto;
+	margin-bottom: pxToRem(50px);
+}
 
 @keyframes loading-rotate {
     from {
