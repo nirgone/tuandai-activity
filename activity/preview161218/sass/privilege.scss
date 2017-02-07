@@ -3,6 +3,16 @@
 /* @import "sprite";
 @import "../../../sass/reset"; */
 @import "../../../sass/func";
+.i-txt {
+    width: 100%;
+    text-align: center;
+    font-size: pxToRem(24px);
+    color: #fd7a33;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: pxToRem(30px);
+}
 
 .scroll .content.page-content {
     padding-top: pxToRem(56px);
@@ -55,13 +65,16 @@
         background-image: url("../images/bg-increase-interest.png");
         margin: auto;
         margin-bottom: pxToRem(26px);
-        padding-top: pxToRem(38px);
+        // padding-top: pxToRem(38px);
+        padding-top: pxToRem(30px);
         box-sizing: border-box;
+        position: relative;
         .increase-interest-title {
             text-align: center;
             margin: auto;
             font-size: 0;
-            margin-bottom: pxToRem(32px);
+            // margin-bottom: pxToRem(32px);
+            margin-bottom: pxToRem(10px);
             font {
                 font-size: pxToRem(36px);
                 font-weight: bold;
