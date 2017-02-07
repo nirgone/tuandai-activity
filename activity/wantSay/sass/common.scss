@@ -59,7 +59,7 @@ span {
 }
 
 .normal-mask {
-    background-color: rgba(0, 0, 0, .8);
+    // background-color: rgba(0, 0, 0, .8);
 }
 
 .mask {
@@ -69,6 +69,7 @@ span {
     top: 0;
     bottom: 0;
     z-index: 999;
+    background-color: rgba(0, 0, 0, .8);
     display: none;
     .pop-cont {
         width: pxToRem(620px);

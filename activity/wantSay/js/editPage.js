@@ -1,5 +1,21 @@
 (function() {
 	FastClick.attach(document.body);
+
+	function init() {
+		var data = {
+			imgUrl: '../images/model0.jpg',
+			content: 'aaaa',
+			name: 'alice'
+		};
+		if (data && data.imgUrl) {
+			$(".step-container").addClass('has-preview');
+			$(".btn-upload-txt").html('重新上传');
+			$("#uploadImg")[0].src = data.imgUrl;
+			$(".label-input[data-type='content']").html(data.content);
+			$(".label-input[data-type='name']").html(data.name);
+		}
+	}
+	init();
 	$(".icon-rule").on('click', function() {
 		$(".rule-mask").show();
 	});
@@ -7,13 +23,13 @@
 		$(".rule-mask").hide();
 	});
 	// $(".btn-upload").on('click', function() {
-		// if ($(".step-container").hasClass('has-preview')) {
-		// 	$(".step-container").removeClass('has-preview');
-		// 	$(".btn-upload").html('点击上传');
-		// } else {
-		// 	$(".step-container").addClass('has-preview');
-		// 	$(".btn-upload").html('重新上传');
-		// }
+	// if ($(".step-container").hasClass('has-preview')) {
+	// 	$(".step-container").removeClass('has-preview');
+	// 	$(".btn-upload").html('点击上传');
+	// } else {
+	// 	$(".step-container").addClass('has-preview');
+	// 	$(".btn-upload").html('重新上传');
+	// }
 	// });
 	// $("#file").on('click', function(e) {
 	// 	e.preventDefault();
@@ -70,10 +86,12 @@
 		inputType = $(this).attr('data-type');
 		$('.pop-input').val($(this).html());
 		$('.pop-input').focus();
-		if(inputType === 'content') {
+		if (inputType === 'content') {
 			$(".p-input-tips").html('*字数不能超过28个字');
-		}else{
+			$('.pop-input').attr('maxLength', 28);
+		} else {
 			$(".p-input-tips").html('*字数不能超过8个字');
+			$('.pop-input').attr('maxLength', 8);
 		}
 		$(".normal-mask").show();
 	});
