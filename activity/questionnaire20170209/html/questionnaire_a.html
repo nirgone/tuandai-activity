@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="format-detection" content="telephone=no">
+    <title>1分钟问卷 赢百元话费</title>
+    <link rel="stylesheet" href="../css/questionnaire.css">
+    <script>
+	//动态算rem
+	(function(doc, win) {
+		var docEl = doc.documentElement,
+        	resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        	recalc = function() {
+            	// if (docEl.style.fontSize) return;
+            	clientWidth = docEl.clientWidth;
+            	if (!clientWidth) return;
+            	docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+            	if (document.body) {
+                	document.body.style.fontSize = docEl.style.fontSize;
+            	}
+        	};
+    	recalc();
+    	if (!doc.addEventListener) return;
+    	win.addEventListener(resizeEvt, recalc, false);
+    	doc.addEventListener("DOMContentLoaded", recalc, false);
+	})(document, window);
+	</script>
+</head>
+<body>
+<div class="page">
+	<div class="content-wrapper">
+	<div class="logo"></div>
+	<div class="question-area">
+		<div class="area-title-bg"></div>
+		<div class="area-title">调查问卷</div>
+		<div class="question-wrapper">
+			<div class="questions" data-index="1">
+				<!-- <div class="question">
+					<div class="question-index">Q1</div>
+					<div class='question-text'>您的学历：</div>
+					<div class='answers'>
+						<div class='answer'>
+							<span class='option-icon'></span>
+							<span class='option-text'>高中及以下</span>
+						</div>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="btn-wrapper">
+			<div class="prev">上一题</div>
+			<div class="next">下一题</div>
+			<div class="submit-button">提交领团币</div>
+		</div>
+		<div class="only-next">下一题</div>
+
+	</div>
+	</div>
+	
+</div>
+<div class="dialog">
+	<div class="mask"></div>
+	<div class="tip-null tip-toast">你的答案不能为空</div>
+	<div class="tip-multiple tip-toast">该题目最少选择2个答案</div>
+	<div class="tip-onetotwo tip-toast">该题目最多只能选择两个答案</div>
+</div>
+<div class="get-prize">
+	<div class="mask"></div>
+	<div class="get-prize-wrapper">
+		<div class="dialog-logo"></div>
+		<div class="label">恭喜你，获得20团币</div>
+		<div class="label02">100元话费获奖名单，将于活动结束后的7个工作日内在微信订阅号【团贷网】上公布，并有专人通知领奖。</div>
+		<a class="btn-use" href="">使用团币</a>
+		<div class="btn-back">返回首页</div>
+	</div>
+</div>
+
+<div class="tip-dialog">
+	<div class="mask"></div>	
+	<div class="tip-login ">
+		<div class="label">为确保您的奖励顺利发放， 请先登录！</div>
+		<!-- 登录url,写入href中 -->
+		<a class="login-btn" href="https://m.tuandai.com/user/Login.aspx">确定</a>
+	</div>
+	<div class="tip-writed">
+		<div class="label">您已经填写过该问卷了</div>
+		<div class="close-btn">确定</div>
+	</div>
+</div>
+</body>
+
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<script  type="text/javascript" charset="utf-8">
+(function() {
+	FastClick.attach(document.body);
+	var pageEl = $(".page");
+	var dialogEl = $(".dialog");
+	var tipDialogEl  = $(".tip-dialog");
+
+	+function init() {
+		var logined = true;	//是否已经登录
+		var writed = false;	//是否已经填写;
+		if(!logined) {	//如果未登录
+			onHideDialogs();
+			tipDialogEl.find(".tip-login").addClass("show").removeClass("hidden");
+			tipDialogEl.addClass("show").removeClass("hidden");
+			disableScrolling();
+			return;
+		} else if(writed) {
+			onHideDialogs();
+			tipDialogEl.find(".tip-writed").addClass("show").removeClass("hidden");
+			tipDialogEl.addClass("show").removeClass("hidden");
+			disableScrolling();
+			return;
+		}
+	}()
+
+	+function initData() {
+		// 问题数据
+		var dataList = [{
+			"question": "您的学历：",
+			"options": ["高中及以下", "中专", "大专","本科", "研究生", "研究生以上"],
+			"type": "single",
+			"hasOtherOption": false,
+			"index": "1"
+		},{
+			"question": "您的职业：",
+			"options": ["互联网（包括互联网金融）从业人员", "银行、保险、证券、信托等传统金融从业人员", "国有企业职员、机关事业单位职员、公务员等", "老师、医生、律师等专业人士", "有限公司股份公司老板、公司中高层管理等", "私企、民营企业职员", "个体工商户", "自由职业者", "学生", "其他"],
+			"type": "single",
+			"hasOtherOption": true,
+			"index": "2"
+		},{
+			"question": "您的月收入：",
+			"options": ["5000以下", "5001-10000", "10001-30000", "30001-50000", "50001-100000", "100000以上"],
+			"type": "single",
+			"hasOtherOption": false,
+			"index": "3"
+		},{
+			"question": "您每年可支配收入占比？（占比收入）",
+			"options": ["10%以下", "10%-30%", "30%-50%", "50%-70%", "70%以上"],
+			"type": "single",
+			"hasOtherOption": false,
+			"index": "4"
+		},{
+			"question": "您每年用于理财投资的资金占比？（占比收入）",
+			"options": ["10%以下", "10%-30%", "30%-50%", "50%-70%", "70%以上"],
+			"type": "single",
+			"hasOtherOption": false,
+			"index": "5"
+		},{
+			"question": "除P2P投资以外，您平时使用理财方式有：<label>（不定项选择）</label>",
+			"options": ["股票、基金", "期货、外汇、黄金", "银行理财产品、信托产品、债券等固定收益", "保险", "宝宝类理财（如：支付宝的余额宝，腾讯的理财通）", "私募", "海外资产配置", "其他"],
+			"type": "indefinite",
+			"hasOtherOption": true,
+			"index": "6"
+		},{
+			"question": "您投资P2P互联网金融产品多久了？",
+			"options": ["6个月以内", "6个月-12个月", "1-2年", "2年以上"],
+			"type": "single",
+			"hasOtherOption": false,
+			"index": "7"
+		},{
+			"question": "您现在投资的P2P互联网金融平台数量：",
+			"options": ["1 个", "2 个", "3 个", "4 个及以上"],
+			"type": "single",
+			"hasOtherOption": false,
+			"index": "8"
+		},{
+			"question": "您最常通过什么方式了解团贷网最新动态？<label>（不定项选择）</label>",
+			"options": ["团贷网官网（电脑端)", "团贷网官网（手机APP)", "微信公众订阅号", "短信通知", "APP推送", "站内信（电脑端）", "站内信（手机APP）", "线下交流活动"],
+			"type": "indefinite",
+			"hasOtherOption": false,
+			"index": "9"
+		},{
+			"question": "您是否愿意参加线下团粉活动？",
+			"options": ["愿意参加，但看时间安排，视活动内容而定", "愿意参加，并希望能带朋友一起参加", "不愿意参加，但有兴趣了解活动情况", "不愿意参加，来团贷网只想投资，对线下活动不感兴趣"],
+			"type": "single",
+			"hasOtherOption": false,
+			"index": "10"
+		},{
+			"question": "参加线下团粉活动，您的期待是：<label>（不定项选择）</label>",
+			"options": ["认识更多投资人，交流投资心得", " 认识更多投资人，拓宽人脉圈子", "了解团贷网的战略发展规划（未来发展目标及方向）", "了解团贷网产品规划（新增理财产品及服务）", "了解团贷网品牌规划（品牌打造、定位及推广方向）", "了解团贷网资本运作（融资与上市计划）", "了解团贷网安全保障及风控体系", "体验问题反馈，当场答疑"],
+			"type": "indefinite",
+			"hasOtherOption": false,
+			"index": "11"
+		},{
+			"question": "参与团粉线下活动，你更在意哪些方面：<label>（不定项选择）</label>",
+			"options": ["活动场地是否方便", " 活动内容是否丰富", "是否包餐", "是否有礼品或奖励", "其他"],
+			"type": "indefinite",
+			"hasOtherOption": true,
+			"index": "12"
+		},{
+			"question": "您最期待的线下活动类型是：<label>（不定项选择）</label>",
+			"options": ["投资理财知识讲座", " 骑行、徒步等户外活动", "电影、音乐会等娱乐活动", "可带小孩、家人一起参与的亲子活动", "氛围轻松的团粉主题聚会", "其他"],
+			"type": "indefinite",
+			"hasOtherOption": true,
+			"index": "13"
+		},{
+			"question": "团贷网举办线下团粉活动，您是否愿意当志愿者？",
+			"options": ["愿意当志愿者，如果是本地的活动，有时间一定参加", "愿意当志愿者，但是否参加需要视活动内容而定", "不愿意当志愿者"],
+			"type": "single",
+			"hasOtherOption": false,
+			"index": "14"
+		},{
+			"question": "请说说您在团贷网投资过程中的感受及建议。<label>（选填）</label>",
+			"options": [""],
+			"type": "optional",
+			"hasOtherOption": false,
+			"index": "15"
+		},{
+			"question": "推荐一个您觉得最优秀的P2P平台，并说出原因。<label>（选填）</label>",
+			"options": [""],
+			"type": "optional",
+			"hasOtherOption": false,
+			"index": "16"
+		}];
+
+  	var questionList = $(".questions");
+  	dataList.forEach(function(data) {
+  		// 拼接问题
+  		var questionStr = "<div class='question "+ data.type 
+  			+ "'><div class='question-index'>Q" 
+  			+ data.index +"</div><div class='question-text'>" 
+	  		+ data.question + "</div><div class='answers'>";
+		// var hasInput = "";
+
+		var arr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+		var i = 0;	//给答案编号
+		data.options.forEach(function(option) {
+			var	otherInputEl = (data.hasOtherOption && option == '其他') ? "<span class='other'><div class='inputMask'></div><input class='otherInput'  maxlength='200'/></span>" : "";	//拥有其他选项
+			i =  (data.hasOtherOption && option == '其他') ? 14 : i;	//控制其他的答案编号为O
+
+			var answerStr = "<div class='answer' data-value='" + arr[i % 26]+"'>"; 
+			if(data.type !== "optional") {
+				answerStr += "<span class='option-icon'></span>";
+			} else {
+				otherInputEl = "<span class='other'><textarea class='optionInput otherInput' placeholder='请输入' maxlength='200' ></textarea></span>"; 
+			}
+			// hasInput = otherInputEl == "" ? "" : "hasInput";
+			answerStr += "<span class='option-text'>" + option +  otherInputEl +  "</span></div>";
+
+			questionStr += answerStr;
+			i++;
+		});
+		questionStr = questionStr + "</div><div class='gradient'></div></div>";
+
+  		questionList.append($(questionStr));
+  	});
+
+	}()
+
+	// 点击切换问题选项是否选中(根据条件)
+	pageEl.on("click", ".answer", function(e) {
+		var currentTarget = $(e.currentTarget);
+		var target = $(e.target);
+		var optionEl = currentTarget.find(".option-icon");	
+		var questionEl = currentTarget.parents(".question");
+		var answerList = currentTarget.parents(".answers");	//父元素
+
+		var option = currentTarget.find(".option-text").text();
+		if(target.hasClass("otherInput") && currentTarget.hasClass("check")) {
+			return ;
+		}
+
+		if(questionEl.hasClass("single")) {	//单选
+			if(currentTarget.hasClass("check")) {
+				answerList.find(".answer").removeClass("check");
+			} else if(answerList.find(".check").length >= 1) {
+				answerList.find(".answer").removeClass("check");
+				currentTarget.addClass("check");
+			} else {
+				currentTarget.toggleClass("check");
+			}
+			// 判断该题是否填写完成
+			if(questionEl.find(".check").length >=1) {
+				questionEl.find(".error-tip").addClass("hide").removeClass("show");
+				questionEl.addClass("complete");
+			} else {
+				questionEl.removeClass("complete");
+			}
+			// alert(questionEl.find(".answer.check").attr("data-value") + ":" + questionEl.find(".answer.check").find(".option-text").text())
+		} else if(questionEl.hasClass("indefinite")) {	//不定项选择
+				currentTarget.toggleClass("check");
+				// 限制其他选项的填写
+				var displayArr = ['show', 'hide'];
+				var displayIndex = answerList.find(".check").length >= 2 && option !=="其他"  ? 0 : 1;
+				answerList.find(".inputMask").removeClass(displayArr[displayIndex==1? 0:1]).addClass(displayArr[displayIndex==1? 1:0]);
+			
+			// 判断该题是否填写完成
+			var checkNum = questionEl.find(".check").length;
+			if(checkNum >= 1) {
+				questionEl.find(".error-tip").addClass("hide").removeClass("show");
+				questionEl.addClass("complete");
+			} else {
+				questionEl.removeClass("complete");
+			}
+			
+		} /*else {	//多选
+			currentTarget.toggleClass("check");
+			if(questionEl.find(".check").length >=2) {
+				questionEl.find(".error-tip").addClass("hide").removeClass("show");
+				questionEl.addClass("complete");
+			} else {
+				questionEl.removeClass("complete");
+			}
+		}*/
+
+		//用于判断该题目答案是否为用空
+		if(questionEl.find(".check").length >=1) {
+			questionEl.addClass("writed");	
+		} else {
+			questionEl.removeClass("writed");
+		}
+
+	});
+	
+
+	// 切换题目到下一题
+	pageEl.on("click", ".only-next, .next", function() {
+
+		var questionsEl = pageEl.find(".questions");
+		var index = pageEl.find(".questions").attr("data-index");
+		var currentQuestionEl = pageEl.find(".question").eq(index - 1);
+
+		// 判断是否没填写答案
+		if(!currentQuestionEl.hasClass("writed") && !currentQuestionEl.hasClass("optional")) {
+			onToast("tip-null");
+			return;
+		}
+
+		/*// 判断是否按照限制选择答案
+		if(!currentQuestionEl.hasClass("complete")) {
+			if(currentQuestionEl.hasClass("multiple")) {
+				onToast("tip-multiple");
+			} else if(currentQuestionEl.hasClass("oneToTwo")) {
+				onToast("tip-onetotwo");
+			}
+			return;
+		}*/
+		
+
+		pageEl.find(".question").hide();
+		pageEl.find(".question").eq(index).show();
+
+		// 初始化题目选项区的最大可视高度
+		var titleHeight = pageEl.find(".question").eq(index).find(".question-text").height();
+		// 换算成rem
+		titleHeight = titleHeight / parseFloat($("body").attr("style").split(":")[1]);
+		var visbleHeight = 16.0426666667 - titleHeight;
+
+		pageEl.find(".question").eq(index).find(".answers").css("max-height", visbleHeight + "rem");
+
+
+		index++; 
+		questionsEl.attr("data-index", index);
+
+		if(index == questionsEl.find(".question").length) {
+				pageEl.find(".only-next").hide();
+				pageEl.find(".btn-wrapper").show();
+				pageEl.find(".btn-wrapper").find(".next").hide();
+				pageEl.find(".btn-wrapper").find(".submit-button").show();
+		} else if(index > 1) {
+			pageEl.find(".only-next").hide();
+			pageEl.find(".btn-wrapper").show();	
+			pageEl.find(".btn-wrapper").find(".next").show();
+			pageEl.find(".btn-wrapper").find(".submit-button").hide();
+		}
+	});
+
+	// 切换题目到上一题
+	pageEl.on("click", ".prev", function() {
+		var questionsEl = pageEl.find(".questions");
+		var index = pageEl.find(".questions").attr("data-index");
+		pageEl.find(".question").hide();
+		index = index - 2; 
+		pageEl.find(".question").eq(index).show();
+		index++;
+		questionsEl.attr("data-index", index);
+		if(index == 1) {
+			pageEl.find(".only-next").show();
+			pageEl.find(".btn-wrapper").hide();	
+			
+		} else {
+			pageEl.find(".only-next").hide();
+			pageEl.find(".btn-wrapper").show();	
+			pageEl.find(".btn-wrapper").find(".next").show();
+			pageEl.find(".btn-wrapper").find(".submit-button").hide();
+		}
+	});
+
+	// 提交问卷
+	$(".submit-button").on("click", function() {
+
+		var questionListEl = $('.questions');
+		var questionList = $(".question");
+		var questionAnswers = [];	//保存数据
+
+      	for(var i = 0; i < questionList.length; i++) {
+      	var questionEl = questionList.eq(i); 
+      	// 获取调查问卷数据
+	    var questionAnswer = {};
+	    questionAnswer.question = questionEl.find(".question-text").text();
+	    questionAnswer.answers = [];
+
+	    var questionAnswerList = [];
+	    questionAnswerList = questionEl.hasClass("optional") ? questionEl.find(".option-text") : questionEl.find(".check").find(".option-text");
+
+	    $.each(questionAnswerList, function(index, questionAnswerDom) {
+	    	// var answer = questionAnswerDom.textContent;
+	    	var answer = $(questionAnswerDom).parent(".answer").attr("data-value")  + ":" +  questionAnswerDom.textContent;
+	    	var otherInputEl = $(questionAnswerDom).find(".otherInput")
+	    	if(otherInputEl && otherInputEl.length > 0) {
+		    	var otherValue = otherInputEl.val();
+
+		    	// 可输入文字部分，例如其他：团贷网 
+		      	if(otherValue /*&& otherValue.trim() !== ""*/) {
+		      		var flag = questionAnswerDom.textContent ? "：" : "";
+		      		answer = answer + flag + otherValue.trim();
+		      	}
+	    	}
+	    	questionAnswer.answers.push(answer);
+
+	    });
+
+	      questionAnswers.push(questionAnswer);
+      }
+	//总数据
+	var allData = {};	
+	
+	allData.questionAnswers = questionAnswers;
+
+	// console.log(allData)
+
+	// TODO：成功之后显示获得团币奖励
+		$(".get-prize").addClass("show");
+	});
+
+	// 回到首页
+	$(".btn-back").on("click", function() {
+		window.history.back();
+	})
+
+	// 点击关闭按钮
+	tipDialogEl.on("click", ".close-btn", function() {
+		onHideDialogs();
+	});
+	// 点击遮罩层关闭
+	tipDialogEl.on("click", ".mask", function() {
+		onHideDialogs();
+	});
+
+	// 关闭弹窗
+	function onHideDialogs() {
+		$(".show").removeClass("show");
+		enableScrolling();
+	}
+
+	// 显示toast提示
+	function onToast(elClass, time) {
+			dialogEl.addClass("show");
+			dialogEl.find(".tip-toast").hide();
+			dialogEl.find("." + elClass).show();
+			disableScrolling();
+			 setTimeout(function() {	//2秒之后隐藏
+			 	dialogEl.removeClass("show");
+
+			 	enableScrolling();
+			 }, time ? time : 1500)
+		}
+		
+		function scrolling(e) {
+			preventDefault(e);
+		}
+
+		function preventDefault(e) {
+			e = e || window.event;
+			if (e.preventDefault) {
+				e.preventDefault();
+			}
+			e.returnValue = false;
+		}
+
+		function disableScrolling() {
+			// $(".page").removeClass("active");
+			if (window.addEventListener) {
+				window.addEventListener('DOMMouseScroll', scrolling, false);
+				window.addEventListener('touchmove', scrolling, false);
+				window.onmousewheel = document.onmousewheel = scrolling;
+				// document.onkeydown = keydown;
+			}
+		}
+
+		function enableScrolling() {
+			// $(".page").addClass("active");
+			if (window.removeEventListener) {
+				window.removeEventListener('DOMMouseScroll', scrolling, false);
+				window.removeEventListener('touchmove', scrolling, false);
+			}
+			// window.onmousewheel = document.onmousewheel = document.onkeydown = null;
+			window.onmousewheel = document.onmousewheel = null;
+		}
+})();
+</script>
+</html>
