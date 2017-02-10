@@ -33,7 +33,7 @@ a {
         // background-position: 50% 50%;
         background-size: cover;
         padding-top: pxToRem(30px);
-        padding-bottom: pxToRem(66px);
+        padding-bottom: pxToRem(30px);
         min-height: 100%;
         box-sizing: border-box;
         background-color: #25c390;
@@ -104,7 +104,7 @@ a {
             font-size: pxToRem(34px);
             margin: auto;
             text-align: center;
-            line-height: pxToRem(96px);
+            line-height: pxToRem(107px);
             margin-top: pxToRem(-64px);
             position: relative;
             z-index: 999;
@@ -189,7 +189,7 @@ a {
             }
         }
         .rule-gradient {
-            background-image: url("../images/rule-gradient.png");
+            background-image: url("../images/bg-gradient.png");
             background-repeat: no-repeat;
             // background-position: 50% 50%;
             background-size: cover;
@@ -237,7 +237,7 @@ a {
             font-size: pxToRem(34px);
             color: #4e260e;
             line-height: pxToRem(60px);
-            width: pxToRem(436px);
+            width: pxToRem(480px);
             margin: auto;
             text-align: center;
             margin-bottom: pxToRem(36px);
@@ -283,7 +283,7 @@ a {
             font-size: pxToRem(34px);
             color: #4e260e;
             line-height: pxToRem(60px);
-            width: pxToRem(436px);
+            width: pxToRem(480px);
             margin: auto;
             text-align: center;
             margin-bottom: pxToRem(36px);

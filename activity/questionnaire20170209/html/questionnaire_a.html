@@ -7,8 +7,8 @@
     <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
     <meta http-equiv="Pragma" content="no-cache">
     <meta name="format-detection" content="telephone=no">
-    <title>1分钟问卷 赢百元话费</title>
-    <link rel="stylesheet" href="../css/questionnaire.css">
+    <title>参加小调查,幸运奖励等你拿</title>
+    <link rel="stylesheet" href="../css/questionnaire_a.css">
     <script>
 	//动态算rem
 	(function(doc, win) {
@@ -35,9 +35,7 @@
 	<div class="content-wrapper">
 	<div class="logo"></div>
 	<div class="question-area">
-		<div class="area-title-bg"></div>
-		<div class="area-title">调查问卷</div>
-		<div class="question-wrapper">
+		<!-- <div class="question-wrapper"> -->
 			<div class="questions" data-index="1">
 				<!-- <div class="question">
 					<div class="question-index">Q1</div>
@@ -50,13 +48,14 @@
 					</div>
 				</div> -->
 			</div>
-		</div>
+		<!-- </div> -->
 	</div>
 	<div class="footer">
 		<div class="btn-wrapper">
-			<div class="prev">上一题</div>
 			<div class="next">下一题</div>
-			<div class="submit-button">提交领团币</div>
+			<div class="submit-button">提交赢奖励</div>
+			<div class="prev">返回上一题</div>
+			
 		</div>
 		<div class="only-next">下一题</div>
 
@@ -65,26 +64,16 @@
 	
 </div>
 <div class="dialog">
-	<div class="mask"></div>
+	<!-- <div class="mask"></div> -->
 	<div class="tip-null tip-toast">你的答案不能为空</div>
-	<div class="tip-multiple tip-toast">该题目最少选择2个答案</div>
-	<div class="tip-onetotwo tip-toast">该题目最多只能选择两个答案</div>
-</div>
-<div class="get-prize">
-	<div class="mask"></div>
-	<div class="get-prize-wrapper">
-		<div class="dialog-logo"></div>
-		<div class="label">恭喜你，获得20团币</div>
-		<div class="label02">100元话费获奖名单，将于活动结束后的7个工作日内在微信订阅号【团贷网】上公布，并有专人通知领奖。</div>
-		<a class="btn-use" href="">使用团币</a>
-		<div class="btn-back">返回首页</div>
-	</div>
+	<!-- <div class="tip-multiple tip-toast">该题目最少选择2个答案</div> -->
+	<div class="tip-onetotwo tip-toast">该题目最多只能选择两项答案</div>
 </div>
 
 <div class="tip-dialog">
 	<div class="mask"></div>	
 	<div class="tip-login ">
-		<div class="label">为确保您的奖励顺利发放， 请先登录！</div>
+		<div class="label">为确保您的奖励顺利发放，请先登录！</div>
 		<!-- 登录url,写入href中 -->
 		<a class="login-btn" href="https://m.tuandai.com/user/Login.aspx">确定</a>
 	</div>
@@ -102,7 +91,9 @@
 	var pageEl = $(".page");
 	var dialogEl = $(".dialog");
 	var tipDialogEl  = $(".tip-dialog");
+	var global = {	//全局变量
 
+	};
 	+function init() {
 		var logined = true;	//是否已经登录
 		var writed = false;	//是否已经填写;
@@ -123,7 +114,7 @@
 
 	+function initData() {
 		// 问题数据
-		var dataList = [{
+		var dataList = [/*{
 			"question": "您的学历：",
 			"options": ["高中及以下", "中专", "大专","本科", "研究生", "研究生以上"],
 			"type": "single",
@@ -154,77 +145,120 @@
 			"hasOtherOption": false,
 			"index": "5"
 		},{
-			"question": "除P2P投资以外，您平时使用理财方式有：<label>（不定项选择）</label>",
-			"options": ["股票、基金", "期货、外汇、黄金", "银行理财产品、信托产品、债券等固定收益", "保险", "宝宝类理财（如：支付宝的余额宝，腾讯的理财通）", "私募", "海外资产配置", "其他"],
-			"type": "indefinite",
-			"hasOtherOption": true,
+			"question": "您最常使用手机上网的时间段是？<label>（可选1-2项）</label>",
+			"options": ["07:00-08:59", "09:00-11:59", "12:00-13:59", "14:00-17:59", "18:00-19:59", "20:00-23:59", "00:00-06:59"],
+			"type": "oneToTwo",
+			"hasOtherOption": false,
 			"index": "6"
 		},{
-			"question": "您投资P2P互联网金融产品多久了？",
-			"options": ["6个月以内", "6个月-12个月", "1-2年", "2年以上"],
-			"type": "single",
+			"question": "您最常浏览团贷网的时间段是？<label>（可选1-2项）</label>",
+			"options":  ["07:00-08:59", "09:00-11:59", "12:00-13:59", "14:00-17:59", "18:00-19:59", "20:00-23:59", "00:00-06:59"],
+			"type": "oneToTwo",
 			"hasOtherOption": false,
 			"index": "7"
 		},{
-			"question": "您现在投资的P2P互联网金融平台数量：",
-			"options": ["1 个", "2 个", "3 个", "4 个及以上"],
+			"question": "您浏览团贷网的频率：",
+			"options": ["基本每天1次及以上", "基本每周1次", "每周2次或以上", "每月1次", "每月2次或以上", "收到回款短信的时候才会浏览", "很少浏览，想起来的时候才会看看"],
 			"type": "single",
 			"hasOtherOption": false,
 			"index": "8"
 		},{
-			"question": "您最常通过什么方式了解团贷网最新动态？<label>（不定项选择）</label>",
-			"options": ["团贷网官网（电脑端)", "团贷网官网（手机APP)", "微信公众订阅号", "短信通知", "APP推送", "站内信（电脑端）", "站内信（手机APP）", "线下交流活动"],
-			"type": "indefinite",
+			"question": "您每次浏览团贷网的时长：",
+			"options": ["5分钟以内", "5-15分钟", "15-30分钟", "30-60分钟", "60分钟以上"],
+			"type": "single",
 			"hasOtherOption": false,
 			"index": "9"
 		},{
-			"question": "您是否愿意参加线下团粉活动？",
-			"options": ["愿意参加，但看时间安排，视活动内容而定", "愿意参加，并希望能带朋友一起参加", "不愿意参加，但有兴趣了解活动情况", "不愿意参加，来团贷网只想投资，对线下活动不感兴趣"],
-			"type": "single",
-			"hasOtherOption": false,
+			"question": "您一般浏览团贷网的目的是：<label>（不定项选择）</label>",
+			"options": ["APP签到", "投资", "关注回款情况", "关注网站最新消息或动态", "关注网站最新活动（包括线上、线下活动）", "查看团宝箱（收到红包或加息短信）", "看看App是否有异常", "其他"],
+			"type": "indefinite",
+			"hasOtherOption": true,
 			"index": "10"
 		},{
-			"question": "参加线下团粉活动，您的期待是：<label>（不定项选择）</label>",
-			"options": ["认识更多投资人，交流投资心得", " 认识更多投资人，拓宽人脉圈子", "了解团贷网的战略发展规划（未来发展目标及方向）", "了解团贷网产品规划（新增理财产品及服务）", "了解团贷网品牌规划（品牌打造、定位及推广方向）", "了解团贷网资本运作（融资与上市计划）", "了解团贷网安全保障及风控体系", "体验问题反馈，当场答疑"],
+			"question": "以下哪种类型的App是您最常用的？<label>（不定项选择）</label>",
+			"options": ["购物类App（淘宝、京东、唯品会等）", " 外卖类App（美团外卖、饿了么、百度外卖等）", "团购类App（大众点评、美团、百度糯米等）", "社交类App（QQ、微信、微博等）", "社区类App（知乎、豆瓣、天涯论坛等）", "导航类App（百度地图、高德地图等）", "打车类App（滴滴打车、Uber、神州专车等）", "旅行类App（同城、携程、去哪儿、途牛等)", "其他"],
 			"type": "indefinite",
-			"hasOtherOption": false,
+			"hasOtherOption": true,
 			"index": "11"
 		},{
-			"question": "参与团粉线下活动，你更在意哪些方面：<label>（不定项选择）</label>",
-			"options": ["活动场地是否方便", " 活动内容是否丰富", "是否包餐", "是否有礼品或奖励", "其他"],
-			"type": "indefinite",
+			"question": "团贷网App在您手机的位置是？",
+			"options": ["第一屏（手机开机后展现的首屏界面）", "第二屏", "第三屏或更后面", "第一屏的文件夹里面", "第二屏的文件夹里面", "第三屏或更后面的文件夹里面", "其他"],
+			"type": "single",
 			"hasOtherOption": true,
 			"index": "12"
 		},{
-			"question": "您最期待的线下活动类型是：<label>（不定项选择）</label>",
-			"options": ["投资理财知识讲座", " 骑行、徒步等户外活动", "电影、音乐会等娱乐活动", "可带小孩、家人一起参与的亲子活动", "氛围轻松的团粉主题聚会", "其他"],
-			"type": "indefinite",
-			"hasOtherOption": true,
-			"index": "13"
-		},{
-			"question": "团贷网举办线下团粉活动，您是否愿意当志愿者？",
-			"options": ["愿意当志愿者，如果是本地的活动，有时间一定参加", "愿意当志愿者，但是否参加需要视活动内容而定", "不愿意当志愿者"],
+			"question": "您是否有习惯在网上阅读理财或财富管理相关的文章或专栏连载？",
+			"options": ["是", " 否"],
 			"type": "single",
 			"hasOtherOption": false,
+			"index": "13"
+		},*/{
+			"question": "您是否有兴趣在团贷网阅读综合财富管理相关的文章或专栏连载？",
+			"options": ["是", "否"],
+			"type": "single",
+			"hasOtherOption": false,
+			"hasBranch": "hasBranch",
 			"index": "14"
 		},{
-			"question": "请说说您在团贷网投资过程中的感受及建议。<label>（选填）</label>",
-			"options": [""],
-			"type": "optional",
-			"hasOtherOption": false,
+			"question": "A、以下的理财类信息中，哪种类型是您最有兴趣关注的？<label>（不定项选择）</label>",
+			"options": ["理财主题连载故事", "理财投资基础知识（各种理财方式、理财类型以及投资风险相关科普）", "理财案例（根据不同资金流及风险承受能力，推荐理财组合）", "理财专家专栏", "金融行业突发事件分析报道", "其他"],
+			"type": "indefinite",
+			"hasOtherOption": true,
+			"underBranch": "under14",
+			"index": "14"
+		},{
+			"question": "B、您希望通过什么渠道阅读团贷网关于综合财务管理的相关文章或专栏连载？<label>（不定项选择）</label>",
+			"options": ["团贷网微信公众号", "团贷网官网（电脑端）", "团贷网App（移动端）", "团贷网社区", "短信推送","其他"],
+			"type": "indefinite",
+			"hasOtherOption": true,
+			"underBranch": "under14",
+			"index": "14"
+		},{
+			"question": "除了团贷网以外，以下哪家P2P平台是你觉得比较优秀的？<label>（不定项选择）</label>",
+			"options": ["陆金所", "宜人贷", "点融网", "投哪网", "拍拍贷", "微贷网", "你我贷", "PPmoney理财", "小牛在线", "人人贷", "爱钱进", "开鑫贷", "其他"],
+			"type": "indefinite",
+			"hasOtherOption": true,
 			"index": "15"
 		},{
-			"question": "推荐一个您觉得最优秀的P2P平台，并说出原因。<label>（选填）</label>",
+			"question": "您同时投资了多少个P2P平台（包括团贷网）",
+			"options": ["1 个", "2 个", "3 个", "4 个", "5 个", "6 个及以上"],
+			"type": "single",
+			"hasBranch": "hasBranch",
+			"hasOtherOption": false,
+			"index": "16"
+		},{
+			"question": "A、除了团贷网以外，以下哪些P2P平台是您同时在投资的？<label>（不定项选择）</label>",
+			"options": ["陆金所", "宜人贷", "点融网", "投哪网", "拍拍贷", "微贷网", "你我贷", "PPmoney理财", "小牛在线", "人人贷", "爱钱进", "开鑫贷", "其他"],
+			"type": "indefinite",
+			"hasOtherOption": true,
+			"underBranch": "under16",
+			"index": "16"
+		},{
+			"question": "以下P2P平台中，哪家的新手福利是您认为比较合理的？<label>（不定项选择）</label>",
+			"options": ["陆金所", "宜人贷", "点融网", "投哪网", "拍拍贷", "微贷网", "你我贷", "PPmoney理财", "小牛在线", "人人贷", "爱钱进", "开鑫贷", "其他"],
+			"type": "indefinite",
+			"hasOtherOption": true,
+			"index": "17"
+		},{
+			"question": "以下P2P平台中，哪家的邀请有礼奖励是您认为比较合理的？ <label>（不定项选择）</label>",
+			"options": ["陆金所", "宜人贷", "点融网", "投哪网", "拍拍贷", "微贷网", "你我贷", "PPmoney理财", "小牛在线", "人人贷", "爱钱进", "开鑫贷", "其他"],
+			"type": "indefinite",
+			"hasOtherOption": true,
+			"index": "18"
+		},{
+			"question": "分享一个你投资时间最长的P2P平台，并说说长期投资的原因。<label>（选填）</label>",
 			"options": [""],
 			"type": "optional",
 			"hasOtherOption": false,
-			"index": "16"
+			"index": "19"
 		}];
 
   	var questionList = $(".questions");
   	dataList.forEach(function(data) {
   		// 拼接问题
-  		var questionStr = "<div class='question "+ data.type 
+  		var hasBranch = data.hasBranch ? data.hasBranch : "";
+  		var underBranch = data.underBranch ? data.underBranch : "";
+  		var questionStr = "<div class='question "+ data.type + " " + hasBranch + " " + underBranch
   			+ "'><div class='question-index'>Q" 
   			+ data.index +"</div><div class='question-text'>" 
 	  		+ data.question + "</div><div class='answers'>";
@@ -284,7 +318,6 @@
 			} else {
 				questionEl.removeClass("complete");
 			}
-			// alert(questionEl.find(".answer.check").attr("data-value") + ":" + questionEl.find(".answer.check").find(".option-text").text())
 		} else if(questionEl.hasClass("indefinite")) {	//不定项选择
 				currentTarget.toggleClass("check");
 				// 限制其他选项的填写
@@ -301,15 +334,29 @@
 				questionEl.removeClass("complete");
 			}
 			
-		} /*else {	//多选
+		} else if(questionEl.hasClass("oneToTwo")) {	//1-2项
 			currentTarget.toggleClass("check");
-			if(questionEl.find(".check").length >=2) {
+			var checkNum = questionEl.find(".check").length;
+			if(checkNum > 2) {	//最多只能选2项
+				currentTarget.toggleClass("check");
+				onToast("tip-onetotwo");
+				return;
+			}
+
+			// 限制其他选项的填写
+			var displayArr = ['show', 'hide'];
+			var displayIndex = answerList.find(".check").length >= 2 && option !=="其他"  ? 0 : 1;
+			answerList.find(".inputMask").removeClass(displayArr[displayIndex==1? 0:1]).addClass(displayArr[displayIndex==1? 1:0]);
+			
+			// 判断该题是否填写完成
+			if(checkNum >= 1 && checkNum <= 2) {
 				questionEl.find(".error-tip").addClass("hide").removeClass("show");
 				questionEl.addClass("complete");
 			} else {
 				questionEl.removeClass("complete");
 			}
-		}*/
+			
+		}
 
 		//用于判断该题目答案是否为用空
 		if(questionEl.find(".check").length >=1) {
@@ -327,44 +374,70 @@
 		var questionsEl = pageEl.find(".questions");
 		var index = pageEl.find(".questions").attr("data-index");
 		var currentQuestionEl = pageEl.find(".question").eq(index - 1);
+		
+		index++;
+		if(currentQuestionEl.hasClass("hasBranch")) {	//有分支
+			var answerTxt = currentQuestionEl.find(".answer.check").text();
+			if((answerTxt == "否" ||  answerTxt == "1 个")) {
+				
+				global.currentIndex = parseInt(currentQuestionEl.find(".question-index").text().split("Q")[1]);
+				questionsEl.attr("data-index", index);
+				questionsEl.find(".under" + global.currentIndex).addClass("hidden");
+				$(this).trigger("click");
+				return;
+			} else {
+				questionsEl.find(".under" + global.currentIndex).removeClass("hidden");
+			}
+		}
+		
 
 		// 判断是否没填写答案
-		if(!currentQuestionEl.hasClass("writed") && !currentQuestionEl.hasClass("optional")) {
+		if(!currentQuestionEl.hasClass("writed") && !currentQuestionEl.hasClass("optional") && !currentQuestionEl.hasClass("hidden")) {
 			onToast("tip-null");
 			return;
 		}
 
-		/*// 判断是否按照限制选择答案
-		if(!currentQuestionEl.hasClass("complete")) {
-			if(currentQuestionEl.hasClass("multiple")) {
+		// 判断是否按照限制选择答案
+		if(!currentQuestionEl.hasClass("complete") && !currentQuestionEl.hasClass("optional") && !currentQuestionEl.hasClass("hidden")) {
+			/*if(currentQuestionEl.hasClass("multiple")) {
 				onToast("tip-multiple");
-			} else if(currentQuestionEl.hasClass("oneToTwo")) {
+			} else*/ if(currentQuestionEl.hasClass("oneToTwo")) {
 				onToast("tip-onetotwo");
 			}
 			return;
-		}*/
+		}
+
+		
+		if(currentQuestionEl.hasClass("hidden")) {	//分支中不显示的问题
+			questionsEl.attr("data-index", index);
+			var underList = questionsEl.find(".under" + global.currentIndex);
+
+			if(underList.index(currentQuestionEl) !== underList.length-1) {	//在同一分支中，而且不是最后一个
+				$(this).trigger("click");
+				return;
+			} 
+		} 
 		
 
 		pageEl.find(".question").hide();
-		pageEl.find(".question").eq(index).show();
+		pageEl.find(".question").eq(index-1).show();
 
 		// 初始化题目选项区的最大可视高度
-		var titleHeight = pageEl.find(".question").eq(index).find(".question-text").height();
+		var titleHeight = pageEl.find(".question").eq(index-1).find(".question-text").height();
 		// 换算成rem
 		titleHeight = titleHeight / parseFloat($("body").attr("style").split(":")[1]);
-		var visbleHeight = 16.0426666667 - titleHeight;
+		var visbleHeight = 16.4693333334 - titleHeight;
 
-		pageEl.find(".question").eq(index).find(".answers").css("max-height", visbleHeight + "rem");
+		pageEl.find(".question").eq(index-1).find(".answers").css("max-height", visbleHeight + "rem");
 
-
-		index++; 
+		// index++; 
 		questionsEl.attr("data-index", index);
-
+	
 		if(index == questionsEl.find(".question").length) {
-				pageEl.find(".only-next").hide();
-				pageEl.find(".btn-wrapper").show();
-				pageEl.find(".btn-wrapper").find(".next").hide();
-				pageEl.find(".btn-wrapper").find(".submit-button").show();
+			pageEl.find(".only-next").hide();
+			pageEl.find(".btn-wrapper").show();
+			pageEl.find(".btn-wrapper").find(".next").hide();
+			pageEl.find(".btn-wrapper").find(".submit-button").show();
 		} else if(index > 1) {
 			pageEl.find(".only-next").hide();
 			pageEl.find(".btn-wrapper").show();	
@@ -379,9 +452,15 @@
 		var index = pageEl.find(".questions").attr("data-index");
 		pageEl.find(".question").hide();
 		index = index - 2; 
-		pageEl.find(".question").eq(index).show();
+		var currentQuestionEl = pageEl.find(".question").eq(index);
+		currentQuestionEl.show();
 		index++;
 		questionsEl.attr("data-index", index);
+
+		if(currentQuestionEl.hasClass("hidden")) {	//如果是没选择的分支
+			$(this).trigger("click");
+			return;
+		}
 		if(index == 1) {
 			pageEl.find(".only-next").show();
 			pageEl.find(".btn-wrapper").hide();	
@@ -403,6 +482,11 @@
 
       	for(var i = 0; i < questionList.length; i++) {
       	var questionEl = questionList.eq(i); 
+      	if(questionEl.hasClass("hidden")) {	//如果是分支中隐藏的数据~则不提交
+      		continue;
+      	}
+      	
+
       	// 获取调查问卷数据
 	    var questionAnswer = {};
 	    questionAnswer.question = questionEl.find(".question-text").text();
@@ -411,7 +495,7 @@
 	    var questionAnswerList = [];
 	    questionAnswerList = questionEl.hasClass("optional") ? questionEl.find(".option-text") : questionEl.find(".check").find(".option-text");
 
-	    $.each(questionAnswerList, function(index, questionAnswerDom) {
+	    $.each(questionAnswerList, function(index, questionAnswerDom) {	//获取答案
 	    	// var answer = questionAnswerDom.textContent;
 	    	var answer = $(questionAnswerDom).parent(".answer").attr("data-value")  + ":" +  questionAnswerDom.textContent;
 	    	var otherInputEl = $(questionAnswerDom).find(".otherInput")
@@ -435,10 +519,11 @@
 	
 	allData.questionAnswers = questionAnswers;
 
-	// console.log(allData)
+	console.log(allData)
 
-	// TODO：成功之后显示获得团币奖励
-		$(".get-prize").addClass("show");
+	// TODO：成功之后跳转至问卷结束页面
+	// window.location.href = "../questionnaire_done.html"
+		
 	});
 
 	// 回到首页
