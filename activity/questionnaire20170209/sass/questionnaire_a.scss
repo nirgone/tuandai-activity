@@ -56,7 +56,7 @@ a {
         margin: auto;
         margin-bottom: pxToRem(64px);
     }
-    .question-area {
+     @at-root .question-area {
         position: relative;
         z-index: 99;
         margin-bottom: pxToRem(18px);
@@ -67,7 +67,7 @@ a {
         padding-top: pxToRem(58px);
         margin: auto;
         margin-bottom: pxToRem(20px);
-        .question {
+         @at-root .question {
             width: 100%;
             display: none;
             &:first-child {
@@ -140,7 +140,7 @@ a {
                     margin-left: 0 !important;
                 }
             }
-            .answers {
+            @at-root .answers {
                 margin-top: pxToRem(24px);
                 margin-left: pxToRem(46px);
                 max-height: pxToRem(720px);
@@ -358,7 +358,6 @@ a {
     }
 }
 
-
 .tip-dialog {
     display: none;
     position: absolute;
@@ -484,5 +483,5 @@ a {
 }
 
 .hidden {
-    display: hidden !important;
+    display: none !important;
 }

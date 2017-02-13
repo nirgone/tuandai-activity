@@ -114,7 +114,7 @@
 
 	+function initData() {
 		// 问题数据
-		var dataList = [/*{
+		var dataList = [{
 			"question": "您的学历：",
 			"options": ["高中及以下", "中专", "大专","本科", "研究生", "研究生以上"],
 			"type": "single",
@@ -192,7 +192,7 @@
 			"type": "single",
 			"hasOtherOption": false,
 			"index": "13"
-		},*/{
+		},{
 			"question": "您是否有兴趣在团贷网阅读综合财富管理相关的文章或专栏连载？",
 			"options": ["是", "否"],
 			"type": "single",
@@ -378,9 +378,8 @@
 		index++;
 		if(currentQuestionEl.hasClass("hasBranch")) {	//有分支
 			var answerTxt = currentQuestionEl.find(".answer.check").text();
+			global.currentIndex = parseInt(currentQuestionEl.find(".question-index").text().split("Q")[1]);
 			if((answerTxt == "否" ||  answerTxt == "1 个")) {
-				
-				global.currentIndex = parseInt(currentQuestionEl.find(".question-index").text().split("Q")[1]);
 				questionsEl.attr("data-index", index);
 				questionsEl.find(".under" + global.currentIndex).addClass("hidden");
 				$(this).trigger("click");
@@ -519,10 +518,10 @@
 	
 	allData.questionAnswers = questionAnswers;
 
-	console.log(allData)
+	// console.log(allData)
 
 	// TODO：成功之后跳转至问卷结束页面
-	// window.location.href = "../questionnaire_done.html"
+	window.location.href = "./questionnaire_done.html"
 		
 	});
 
