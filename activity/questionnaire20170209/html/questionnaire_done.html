@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta name="format-detection" content="telephone=no">
+	<title>参加小调查,幸运奖励等你拿</title>
+	<link rel="stylesheet" href="../css/questionnaire_done.css">
+ 	<script>
+	//动态算rem
+	(function(doc, win) {
+		var docEl = doc.documentElement,
+        	resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        	recalc = function() {
+            	// if (docEl.style.fontSize) return;
+            	clientWidth = docEl.clientWidth;
+            	if (!clientWidth) return;
+            	docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+            	if (document.body) {
+                	document.body.style.fontSize = docEl.style.fontSize;
+            	}
+        	};
+    	recalc();
+    	if (!doc.addEventListener) return;
+    	win.addEventListener(resizeEvt, recalc, false);
+    	doc.addEventListener("DOMContentLoaded", recalc, false);
+	})(document, window);
+	</script>
+</head>
+<body>
+<div class="page">
+	<div class="content-wrapper">
+		<div class="logo"></div>
+		<div class="text-wrapper">
+			<div class="icon-coin"></div>
+			<div class="label01">感谢您的参与</div>
+			<div class="label02">（我们将在活动结束后的7个工作日内，随机抽取100位认真填写问卷用户奖励200团币，感谢您对团贷网的支持！）</div>
+		</div>
+		<!-- 返回首页 -->
+		<a href="./index.html" class="footer">返回首页</a>
+	</div>
+</div>
+
+</body>
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" charset="utf-8">
+	(function() {
+    	FastClick.attach(document.body);
+
+    	var pageEl = $(".page");
+		var dialogEl = $(".dialog");
+
+		// 点击规则按钮
+		pageEl.on("click", ".rule-btn", function() {
+			onShowRules();
+		});
+
+		// 点击开始填写
+		pageEl.on("click", ".go-btn", function() {
+			var logined = true;	//是否已经登录
+			var writed = false;	//是否已经填写;
+			if(!logined) {	//如果未登录
+				onHideDialogs();
+				dialogEl.find(".tip-login").addClass("show").removeClass("hidden");
+				dialogEl.addClass("show").removeClass("hidden");
+				disableScrolling();
+				return;
+			} else if(writed) {
+				onHideDialogs();
+				dialogEl.find(".tip-writed").addClass("show").removeClass("hidden");
+				dialogEl.addClass("show").removeClass("hidden");
+				disableScrolling();
+				return;
+			}
+			window.location.href = "./questionnaire.html";
+
+		});
+
+		// 点击关闭按钮
+		dialogEl.on("click", ".close-btn", function() {
+			onHideDialogs();
+		});
+		// 点击遮罩层关闭
+		dialogEl.on("click", ".mask", function() {
+			onHideDialogs();
+		});
+
+		// 显示规则
+		var onShowRules = function()  {
+			onHideDialogs();
+			dialogEl.find(".rule").addClass("show").removeClass("hidden");
+			dialogEl.addClass("show").removeClass("hidden");
+			disableScrolling();
+		}
+
+		// 关闭弹窗
+		var onHideDialogs = function() {
+			$(".show").removeClass("show");
+			enableScrolling();
+		}
+
+		function scrolling(e) {
+			preventDefault(e);
+		}
+
+		function preventDefault(e) {
+			e = e || window.event;
+			if (e.preventDefault) {
+				e.preventDefault();
+			}
+			e.returnValue = false;
+		}
+
+		function disableScrolling() {
+			// $(".page").removeClass("active");
+			if (window.addEventListener) {
+				window.addEventListener('DOMMouseScroll', scrolling, false);
+				window.addEventListener('touchmove', scrolling, false);
+				window.onmousewheel = document.onmousewheel = scrolling;
+				// document.onkeydown = keydown;
+			}
+		}
+
+		function enableScrolling() {
+			// $(".page").addClass("active");
+			if (window.removeEventListener) {
+				window.removeEventListener('DOMMouseScroll', scrolling, false);
+				window.removeEventListener('touchmove', scrolling, false);
+			}
+			// window.onmousewheel = document.onmousewheel = document.onkeydown = null;
+			window.onmousewheel = document.onmousewheel = null;
+		}
+	})();
+
+</script>
+</html>

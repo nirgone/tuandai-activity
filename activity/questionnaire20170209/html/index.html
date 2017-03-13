@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta name="format-detection" content="telephone=no">
+	<title>参加小调查,幸运奖励等你拿</title>
+	<link rel="stylesheet" href="../css/index.css">
+ 	<script>
+	//动态算rem
+	(function(doc, win) {
+		var docEl = doc.documentElement,
+        	resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        	recalc = function() {
+            	// if (docEl.style.fontSize) return;
+            	clientWidth = docEl.clientWidth;
+            	if (!clientWidth) return;
+            	docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+            	if (document.body) {
+                	document.body.style.fontSize = docEl.style.fontSize;
+            	}
+        	};
+    	recalc();
+    	if (!doc.addEventListener) return;
+    	win.addEventListener(resizeEvt, recalc, false);
+    	doc.addEventListener("DOMContentLoaded", recalc, false);
+	})(document, window);
+	</script>
+</head>
+<body>
+<div class="page">
+	<div class="content-wrapper">
+		<div class="logo"></div>
+		<div class="text"></div>
+		<div class="rule-btn"></div>
+		<div class="footer">
+			<div class="icon-pai"></div>
+			<div class="go-btn">开始填写</div>
+		</div>
+	</div>
+</div>
+<div class="dialog">
+	<div class="mask"></div>	
+	<div class="rule">
+		<div class="rule-title">
+			<label>活动规则</label>
+		</div>
+		<div class="rule-list">
+			<div class="rule-item">
+				<div class="rule-text">1、活动时间：2017年2月x日-2017年2月X日；</div>
+			</div>
+			<div class="rule-item">
+				<div class="rule-text">2、活动期间，用户登录团贷网账户，完整填写调查问卷，点击提交问卷领团币，提交成功后即有机会获得200团币的奖励。活动期间每个用户仅有1次参与机会，同一用户最多可获得1次奖励；</div>
+			</div>
+			<div class="rule-item">
+				<div class="rule-text">3、活动奖品及数量：200团币/人，共100份；</div>
+			</div>
+			<div class="rule-item">
+				<div class="rule-text">4、我们会在认真填本次问卷的用户中，随机抽取100名用户，每位用户赠与200团币奖励。获奖用户会在本次调研活动结束后的7个工作日内发放，对应的团币奖励将直接发放至用户账户，可登录团贷网APP-【我】-【我的会员】或PC端会员中心查看；</div>
+			</div>
+			<div class="rule-item">
+				<div class="rule-text">5、我们将会对您的信息进行严格保密处理，调查结果仅用于团贷网了解用户需求及优化产品设计；</div>
+			</div>
+			<div class="rule-item">
+				<div class="rule-text">6、团贷网可根据活动举办的实际情况，在法律允许的范围内，对本活动规则进行变动及调整，相关变动或调整将公布在活动规则页面上，公布后依法生效。</div>
+			</div>
+		</div>
+		<div class="rule-gradient"></div>
+		<div class="close-btn"></div>
+	</div>
+	<div class="tip-login">
+		<div class="label">为确保您的奖励顺利发放，请先登录！</div>
+		<!-- 登录url,写入href中 -->
+		<a class="login-btn" href="https://m.tuandai.com/user/Login.aspx">确定</a>
+	</div>
+	<div class="tip-writed">
+		<div class="label">您已经填写过该问卷了</div>
+		<div class="close-btn">确定</div>
+	</div>
+</div>
+</body>
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" charset="utf-8">
+	(function() {
+    	FastClick.attach(document.body);
+
+    	var pageEl = $(".page");
+		var dialogEl = $(".dialog");
+
+		// 点击规则按钮
+		pageEl.on("click", ".rule-btn", function() {
+			onShowRules();
+		});
+
+		// 点击开始填写
+		pageEl.on("click", ".go-btn", function() {
+			var logined = true;	//是否已经登录
+			var writed = false;	//是否已经填写;
+			if(!logined) {	//如果未登录
+				onHideDialogs();
+				dialogEl.find(".tip-login").addClass("show").removeClass("hidden");
+				dialogEl.addClass("show").removeClass("hidden");
+				disableScrolling();
+				return;
+			} else if(writed) {
+				onHideDialogs();
+				dialogEl.find(".tip-writed").addClass("show").removeClass("hidden");
+				dialogEl.addClass("show").removeClass("hidden");
+				disableScrolling();
+				return;
+			}
+			window.location.href = "./questionnaire_a.html";
+
+		});
+
+		// 点击关闭按钮
+		dialogEl.on("click", ".close-btn", function() {
+			onHideDialogs();
+		});
+		// 点击遮罩层关闭
+		dialogEl.on("click", ".mask", function() {
+			onHideDialogs();
+		});
+
+		// 显示规则
+		var onShowRules = function()  {
+			onHideDialogs();
+			dialogEl.find(".rule").addClass("show").removeClass("hidden");
+			dialogEl.addClass("show").removeClass("hidden");
+			disableScrolling();
+		}
+
+		// 关闭弹窗
+		var onHideDialogs = function() {
+			$(".show").removeClass("show");
+			enableScrolling();
+		}
+
+		function scrolling(e) {
+			// preventDefault(e);
+		}
+
+		function preventDefault(e) {
+			e = e || window.event;
+			if (e.preventDefault) {
+				e.preventDefault();
+			}
+			e.returnValue = false;
+		}
+
+		function disableScrolling() {
+			// $(".page").removeClass("active");
+			if (window.addEventListener) {
+				window.addEventListener('DOMMouseScroll', scrolling, false);
+				window.addEventListener('touchmove', scrolling, false);
+				window.onmousewheel = document.onmousewheel = scrolling;
+				// document.onkeydown = keydown;
+			}
+		}
+
+		function enableScrolling() {
+			// $(".page").addClass("active");
+			if (window.removeEventListener) {
+				window.removeEventListener('DOMMouseScroll', scrolling, false);
+				window.removeEventListener('touchmove', scrolling, false);
+			}
+			// window.onmousewheel = document.onmousewheel = document.onkeydown = null;
+			window.onmousewheel = document.onmousewheel = null;
+		}
+	})();
+
+</script>
+</html>
