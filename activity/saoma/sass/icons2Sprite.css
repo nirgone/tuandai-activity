@@ -1,0 +1,45 @@
+.icon-icon1-p4 {
+  display: block;
+  background-image: url(../images/icons2/icons2.png);
+  background-size:pxToRem(99px) pxToRem(68px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-38px) pxToRem(-40px);
+  width: pxToRem(25px);
+  height: pxToRem(27px);
+}
+.icon-icon2-p4 {
+  display: block;
+  background-image: url(../images/icons2/icons2.png);
+  background-size:pxToRem(99px) pxToRem(68px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-78px) pxToRem(0px);
+  width: pxToRem(21px);
+  height: pxToRem(27px);
+}
+.icon-icon3-p4 {
+  display: block;
+  background-image: url(../images/icons2/icons2.png);
+  background-size:pxToRem(99px) pxToRem(68px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-40px) pxToRem(0px);
+  width: pxToRem(28px);
+  height: pxToRem(28px);
+}
+.icon-icon4-p4 {
+  display: block;
+  background-image: url(../images/icons2/icons2.png);
+  background-size:pxToRem(99px) pxToRem(68px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-40px);
+  width: pxToRem(28px);
+  height: pxToRem(28px);
+}
+.icon-radio-check {
+  display: block;
+  background-image: url(../images/icons2/icons2.png);
+  background-size:pxToRem(99px) pxToRem(68px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(30px);
+  height: pxToRem(30px);
+}

@@ -1,0 +1,151 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../sass/func";
+
+/*  for small width screen  */
+
+@media screen and (max-width:374px) {}
+
+
+/* =========for short screen============== */
+
+@media screen and (max-height: 540px) and (min-width:321px) {
+    $ratio: 0.85;
+    .msg-container {
+        bottom: pxToRem(30px);
+    }
+    .desc-container {
+        &:before {
+            width: pxToRem(266px) * $ratio;
+            height: pxToRem(130px) * $ratio;
+        }
+        &:after {
+            width: pxToRem(361px) * $ratio;
+            height: pxToRem(257px) * $ratio;
+        }
+    }
+    .p2-bg {
+        padding-top: pxToRem(140px) * $ratio;
+    }
+    .credit-title {
+        line-height: pxToRem(80px) * .85;
+    }
+    .title-sec {
+        margin-top: pxToRem(90px) * $ratio;
+        margin-bottom: pxToRem(36px) * $ratio;
+    }
+    .list-container {
+        padding: 0 pxToRem(30px);
+        &>li {
+            line-height: pxToRem(46px) * .85;
+        }
+    }
+}
+
+//* -----------meizu  mx3----------------- */
+@media screen and (min-height: 589px) and (min-width:430px) {
+    $ratio: 0.9;
+    .msg-container {
+        bottom: pxToRem(30px);
+    }
+    .desc-container {
+        &:before {
+            width: pxToRem(266px) * $ratio;
+            height: pxToRem(130px) * $ratio;
+        }
+        &:after {
+            width: pxToRem(361px) * $ratio;
+            height: pxToRem(257px) * $ratio;
+        }
+    }
+    .p2-bg {
+        padding-top: pxToRem(140px) * $ratio;
+    }
+    .credit-title {
+        line-height: pxToRem(80px) * .85;
+    }
+    .title-sec {
+        margin-top: pxToRem(90px) * $ratio;
+        margin-bottom: pxToRem(36px) * $ratio;
+    }
+    .list-container {
+        padding: 0 pxToRem(30px);
+        &>li {
+            line-height: pxToRem(46px) * .85;
+        }
+    }
+}
+
+
+/* ------------------------iphone 5------------------------ */
+
+@media screen and (max-width:320px) and (max-height:508px) {
+    $ratio: 0.9;
+    .msg-container {
+        bottom: pxToRem(30px);
+    }
+    .desc-container {
+        &:before {
+            width: pxToRem(266px) * $ratio;
+            height: pxToRem(130px) * $ratio;
+        }
+        &:after {
+            width: pxToRem(361px) * $ratio;
+            height: pxToRem(257px) * $ratio;
+        }
+    }
+    .p2-bg {
+        padding-top: pxToRem(140px) * $ratio;
+    }
+    .credit-title {
+        line-height: pxToRem(80px) * .85;
+    }
+    .title-sec {
+        margin-top: pxToRem(90px) * $ratio;
+        margin-bottom: pxToRem(36px) * $ratio;
+    }
+    .list-container {
+        padding: 0 pxToRem(30px);
+        &>li {
+            line-height: pxToRem(46px) * .85;
+        }
+    }
+}
+
+
+/* -------------------------iphone4---------------------------- */
+
+@media screen and (max-width:320px) and (max-height:416px) {
+    $ratio: 0.85;
+    .msg-container {
+        bottom: pxToRem(10px) !important;
+    }
+    .desc-container {
+        &:before {
+            width: pxToRem(266px) * $ratio;
+            height: pxToRem(130px) * $ratio;
+        }
+        &:after {
+            width: pxToRem(361px) * $ratio;
+            height: pxToRem(257px) * $ratio;
+        }
+    }
+    .p2-bg {
+        padding-top: pxToRem(60px);
+    }
+    .credit-title {
+        line-height: pxToRem(80px) * .75;
+    }
+    .title-sec {
+        margin-top: pxToRem(30px);
+        margin-bottom: pxToRem(10px);
+    }
+    .list-container {
+        padding: 0 pxToRem(30px);
+        &>li {
+            line-height: pxToRem(46px) * .75;
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {}
