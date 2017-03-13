@@ -17,6 +17,7 @@
     width: 100%;
     padding-left: pxToRem(60px);
     font-size: 0;
+    overflow: hidden;
     &>li:first-child {
         padding-top: pxToRem(280px);
         // padding-top: pxToRem(120px);
@@ -66,6 +67,7 @@
         // margin-top: pxToRem(30px);
         color: #fff;
         font-size: pxToRem(28px);
+        overflow: hidden;
     }
     .error-tips {
         width: 100%;
@@ -95,7 +97,7 @@
     height: pxToRem(60px);
     line-height: pxToRem(60px);
     text-align: center;
-    border: pxToRem(2px) solid rgba(255, 210, 0, .5);
+    border: 1px solid rgba(255, 210, 0, .5);
     border-radius: pxToRem(10px);
     background-image: url('../images/ubtn-bg.png');
     background-size: pxToRem(231px) pxToRem(60px);

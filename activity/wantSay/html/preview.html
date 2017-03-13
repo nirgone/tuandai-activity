@@ -6,32 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
     <meta name="format-detection" content="telephone=no">
-    <title>我想对家说</title>
+    <title>我想对你说</title>
     <!-- build:css(dist) ../css/main.css -->
     <link rel="stylesheet" href="../css/common.css">
+    <!-- <link rel="stylesheet" href="../css/media.css"> -->
     <link rel="stylesheet" href="../css/animation.css">
     <!-- endbuild -->
-   <!-- build:css(dist) ../css/join.css -->
-    <link rel="stylesheet" href="../css/media.css">
-    <link rel="stylesheet" href="../css/join.css">
-     <!-- endbuild -->
+    <link rel="stylesheet" href="../css/preview.css">
     <!-- build:js({dist}) ../js/lib/adapt.js -->
     <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
     <!-- endbuild -->
+    <script>
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            calc = function() {
+                // if (docEl.style.fontSize) return;
+                // clientWidth = docEl.clientWidth;
+                clientHeight = docEl.clientHeight;
+                if (!clientHeight) return;
+                var post_con = document.querySelector('.post-container');
+                post_con.style.width = 571  / 1296 * clientHeight + "px"
+            };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, calc, false);
+        doc.addEventListener('DOMContentLoaded', calc, false);
+    })(document, window);
+    </script>
 </head>
 
 <body>
     <div class="scroll">
         <div class="content black-bg">
             <i class="icon-rule"></i>
-            <div class="txt-container">
-                <span class="j-txt1">无论身在何处</span>
-                <span class="j-txt1">家，永远是我们投入的原动力</span>
-                <span class="j-txt2">团贷网，已有<i class="num"></i>万人为家投入</span>
+            <div class="bottom-container"></div>
+            <div class="title-yellow">我的海报</div>
+            <div class="post-container" style="background-image:url(../images/moon.png)">
+                <div class="post-text">
+                    <div class="msg">家，就是圆心，<br/>无论在一起或离别。<br/>如果人一生的形成是个圆</div>
+                    <div class="name">
+                        邓莉莉
+                    </div>
+                </div>
             </div>
-            <input type="tel" name="phone" id="phone" class="u-phone" placeholder="请输入您的手机号码参与评奖">
-            <div class="error-tips"></div>
-            <i class="btn-join"></i>
+            <div class="btn-share" id="btn_share"></div>
+            <div class="btn-text" id="btn_back">
+                返回修改
+            </div>
         </div>
     </div>
     <div class="mask rule-mask">
@@ -51,7 +72,7 @@
                 <li>
                     <span class="r-th">大奖评选：</span>
                     <p class="r-tr">从参与者中挑选二十个精彩作品，颁发丰厚奖品</p>
-                    <p class="r-tr">获奖结果将于2月17日在微信公众号“团贷网”推文中公布</p>
+                    <p class="r-tr">获奖结果于2月17日团贷网微信公众号</p>
                     <p class="r-tr">
                         <span>*&nbsp;&nbsp;所有个人信息仅用于本次活动</span>
                         <br>
@@ -62,58 +83,26 @@
             </ul>
         </div>
     </div>
-    <div class="mask pop-mask">
-        <div class="msg-cont">
-            <span class="t-txt">提交成功<br>获奖名单于2月17日<br>将于团贷网微信公众号公布</span>
-            <i class="pop-btn-submit m-btn-submit"></i>
+    <div class="mask normal-mask">
+        <div class="pop-input-cont">
+            <textarea class="pop-input" id="popInput"></textarea>
+            <span class="p-input-tips">*字数不能超过28个字</span>
+            <i class="pop-submit-small input-submit"></i>
+        </div>
+    </div>
+    <!-- 分享弹窗 -->
+    <div class="mask normal-mask popup-share" id="popup_share">
+        <div class="share-msg">
+            <i class="icon-arrow-share"></i>
+            点击&nbsp;&nbsp;<font class="font-yellow">“发送给朋友”</font><br/>
+            分享你想对家说的话
         </div>
     </div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
-<!-- <script src="../js/index.js" type="text/javascript" charset="utf-8"></script> -->
-<script type="text/javascript">
-(function() {
-    FastClick.attach(document.body);
-    $(".icon-rule").on('click', function() {
-        $(".rule-mask").show();
-    });
-    $(".pop-btn-submit").on('click', function() {
-        $(".rule-mask").hide();
-    });
-    var num = 465;
-    num = "" + 465;
-    var arr = num.split('');
-    var temp = '';
-    arr.forEach(function(item) {
-        temp += '<font class="jt-num">' + item + '</font>';
-    });
-    $(".num").html(temp);
-
-    // $(".u-phone").on('input', function() {
-
-    // });
-
-    $(".btn-join").on('click', function() {
-        var mobileRegex = /^(((1[3456789][0-9]{1})|(15[0-9]{1}))+\d{8})$/;
-        var phone = $("#phone").val().trim();
-        if (mobileRegex.test(phone)) {
-             $(".pop-mask").show();
-             $(".error-tips").hide();
-        } else {
-            //错误提示
-            $(".error-tips").html('*手机号码有误，请输入正确的手机号');
-            $(".error-tips").show();
-        }
-       
-    });
-    $(".m-btn-submit").on('click', function() {
-        $(".pop-mask").hide();
-    });
-
-
-})();
+<script src="../js/preview.js" type="text/javascript" charset="utf-8"></script>
 </script>
 
 </html>

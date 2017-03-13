@@ -1,0 +1,177 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../../sass/func";
+@import "func";
+$page-height: 1296;
+.title-yellow {
+    font-size: pxToRem(56px);
+    color: #ffd200;
+    text-align: center;
+    padding-top: pxToRem(70px);
+}
+
+.title-post {
+    padding-top: pxToRem(48px);
+    text-align: center;
+    font-size: pxToRem(42px);
+    color: #d7ceb1;
+    .avatar-container {
+        display: inline-block;
+        width: pxToRem(86px);
+        height: pxToRem(86px);
+        background-color: #d7ceb1;
+        border-radius: pxToRem(86px);
+        margin-right: pxToRem(20px);
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .nickname {
+        @include ellipsis();
+        max-width: pxToRem(360px);
+        vertical-align: pxToRem(24px);
+    }
+}
+
+.p-share {
+    padding-top: pxToRem(80px);
+    .post-container {
+        height: percent(1074, $page-height) !important;
+        &:before {
+            background-image: url(../images/masking2.png) !important;
+        }
+    }
+}
+
+.post-container {
+    position: relative;
+    height: percent(895, $page-height);
+    margin: auto;
+    margin-top: pxToRem(30px);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(../images/masking.png) no-repeat center;
+        background-size: 100% 100%;
+        z-index: 1;
+    }
+    .post-text {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: percent(136, 895);
+        color: #fff;
+        z-index: 3;
+        font-size: pxToRem(36px);
+        padding: 0 pxToRem(52px) 0 pxToRem(72px);
+        @at-root .msg {
+            line-height: pxToRem(46px);
+            word-break: break-all;
+            &:before,
+            &:after {
+                content: '';
+                display: inline-block;
+                background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAgCAMAAABNTyq8AAAAYFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAADp6ekAAAAAAADBwcH9/f36+vr4+Pjx8fGQkJDp6em5ubnJyclISEh1dXXc3NzPz8/MzMzf39+CgoLb29v39/f39/fCwsLd3d3////9NT2NAAAAH3RSTlMBCSYVMhxC0zpNqvLm2M1xsIU8OCOnno1uP7q2pWlKBa0WpQAAAR5JREFUOMu10utygyAQhuG4sEir8ZRzT9z/XfbbFZCq/dXmzSTD4jOGSTw8pwqvvEY7IrasJwxb8vXRVLl7G/C5Nuf3EEIi0zEOKyPbwSgxU5OHwhjTBYmNdFbTsCkRzF22jw+GYh50OCkqbsQtttsTETHTI8QBKiOYT9kfrSXpJsMNg6J8I7rIfu9nNOShQIZJj/12vY4wVodj3Q2CqoSIQqyzqE4TscmIyabtGsbvIVMib71bEEVUKWoTcr5A9ieqM0IFYpx8g5o1MhuE/oQqoEsdk4OPr1rfR5R+TO9eNOet9W4eXPpf0vfpFefEWGW6Js5Ib4UrXgRJVlNTIENoBswUg1G0KI7CIEaE9+oZB0sV62yy2u9Q9Bv5774B2ZAhU38hK0sAAAAASUVORK5CYII=) no-repeat center;
+                background-size: contain;
+                width: pxToRem(36px);
+                height: pxToRem(32px);
+            }
+            &:before {
+                position: absolute;
+                top: pxToRem(-8px);
+                left: pxToRem(38px);
+            }
+            &:after {
+                transform: scale(-1, -1);
+                vertical-align: top;
+            }
+        }
+        .name {
+            text-align: right;
+            font-size: pxToRem(24px);
+            padding-top: pxToRem(12px);
+        }
+    }
+}
+
+.popup-share {
+    .share-msg {
+        position: relative;
+        width: pxToRem(440px);
+        padding: pxToRem(20px) pxToRem(30px);
+        background-color: #575757;
+        font-size: pxToRem(42px);
+        line-height: pxToRem(56px);
+        color: #a6a6a6;
+        margin: pxToRem(140px) auto;
+        border-radius: pxToRem(20px);
+        .icon-arrow-share {
+            @include background('../images/arrow-share.png', 134px, 77px);
+            position: absolute;
+            right: pxToRem(-46px);
+            top: pxToRem(-100px);
+        }
+    }
+}
+
+.btn-share {
+    background: url(../images/btn-share.png) no-repeat center;
+    background-size: contain;
+    width: pxToRem(390px);
+    height: percent(77, $page-height);
+    margin: pxToRem(40px) auto 0;
+}
+
+.btn-share2 {
+    @extend .btn-share;
+    background: url(../images/btn-share2.png) no-repeat center;
+    background-size: contain;
+    height: percent(76, $page-height);
+}
+
+.btn-create2 {
+    @extend .btn-share;
+    background: url(../images/btn-create2.png) no-repeat center;
+    background-size: contain;
+    height: percent(76, $page-height);
+}
+
+.btn-text {
+    width: pxToRem(240px);
+    font-size: pxToRem(34px);
+    color: #d7ceb1;
+    margin: pxToRem(28px) auto 0;
+    text-align: center;
+    &:before,
+    &:after {
+        content: '';
+        display: inline-block;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAaCAMAAACJtiw1AAAAM1BMVEUAAADXzrHXzrHXzrHXzrHXzrHXzrHXzrHXzrHXzrHXzrHXzrHXzrHXzrHXzrHXzrHXzrEmh2GaAAAAEHRSTlMA8BDQILAwkIBA4MBQcGCguMry/AAAAIxJREFUGNNVkEEWxCAIQ0FBa1sd7n/aQRYlsvxtXvKlOBmU95iQ2ptgmVLhuyTp/vk1TVBuFvphqNmzKYQumzSc5lWWoBCqmzYMXUFxXqPp9DvhuikoTOtOcTBzjAaBRQ22jK3oc8CnHAG1cRgvryicelGnMKLGzH6KcC3ZWOOn4wU7eKlNWjBRPIANf4fRBVV0W38GAAAAAElFTkSuQmCC) no-repeat center;
+        background-size: contain;
+        width: pxToRem(16px);
+        height: pxToRem(26px);
+    }
+    &:after {
+        transform: scale(-1, -1);
+    }
+}
+
+.font-yellow {
+    color: #ffd200;
+}
+.icon-p-rule {
+    @include background('../images/icon-rule2.png', 151px, 75px);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}

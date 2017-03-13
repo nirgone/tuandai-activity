@@ -57,6 +57,7 @@
 				setTimeout(function() {
 					$(".loading").hide();
 					$("#uploadImg")[0].src = rst.base64;
+					postData.img = rst.base64;
 				}, 1000);
 				/*// 额外添加参数
 				rst.formData.append('fileLen', rst.fileLen);
@@ -108,6 +109,10 @@
 	//一键生成海报
 	$(".btn-create").on('click', function() {
 		console.info('postData----', postData);
+		if(!postData.img) {
+			alert('请上传您的照片');
+			return;
+		}
 		if (!postData.content || postData.content.length === 0) {
 			showErrorTips('content', '请输入您要对家说的一句话 / 字数<font>不超过<i>28</i>个字</font>');
 			return;
@@ -116,6 +121,7 @@
 			showErrorTips('name', '请输入您的署名 / <font>不能超过<i>8</i>个字</font>');
 			return;
 		}
+		window.location.href = './preview.html';
 	});
 
 	function showErrorTips(type, tips) {

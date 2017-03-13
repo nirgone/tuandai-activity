@@ -1,0 +1,142 @@
+<!-- <!DOCTYPE html> -->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>我想对你说</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/common.css">
+    <!-- <link rel="stylesheet" href="../css/media.css"> -->
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/preview.css">
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+    <script>
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            calc = function() {
+                // if (docEl.style.fontSize) return;
+                // clientWidth = docEl.clientWidth;
+                clientHeight = docEl.clientHeight;
+                if (!clientHeight) return;
+                var post_con = document.querySelector('.post-container');
+                post_con.style.width = 685 / 1296 * clientHeight + "px"
+            };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, calc, false);
+        doc.addEventListener('DOMContentLoaded', calc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="scroll">
+        <div class="content black-bg p-share">
+            <div class="bottom-container"></div>
+            <!-- <div class="title-post">
+                <div class="avatar-container">
+                    <img src="../images/people1.png">
+                </div>
+                <span class="nickname">莫晓梦</span>
+            </div> -->
+            <i class="icon-p-rule" id="btn_rule"></i>
+            <div class="post-container" style="background-image:url(../images/moon.png)">
+                <div class="post-text">
+                    <div class="msg">家，就是圆心，
+                        <br/>无论在一起或离别。
+                        <br/>如果人一生的形成是个圆</div>
+                    <div class="name">
+                        邓莉莉
+                    </div>
+                </div>
+            </div>
+            <!--  分享给更多好友 -->
+            <!-- <div class="btn-share2" id="btn_share"></div> -->
+            <!-- 生成我的海报 -->
+            <div class="btn-create2" id="btn_create"></div>
+            <!-- <div class="btn-text" id="btn_rule">
+                活动规则
+            </div> -->
+        </div>
+    </div>
+    <div class="mask rule-mask">
+        <div class="pop-cont">
+            <i class="rule-title"></i>
+            <ul class="rule-cont">
+                <li>
+                    <span class="r-th">参与活动时间：</span>
+                    <p class="r-tr">2017年2月10日-14日</p>
+                </li>
+                <li>
+                    <span class="r-th">活动流程：</span>
+                    <p class="r-tr">上传个人原创照片，写下你想对家说的宣言并署名，一键生成海报</p>
+                    <p class="r-tr">分享后留下正确手机号码，参与活动评选，手机号码将作为唯一领奖凭证</p>
+                    <p class="r-tr">分享后视为海报制作完成，不可修改</p>
+                </li>
+                <li>
+                    <span class="r-th">大奖评选：</span>
+                    <p class="r-tr">从参与者中挑选二十个精彩作品，颁发丰厚奖品</p>
+                    <p class="r-tr">获奖结果将于2月17日在微信公众号“团贷网”推文中公布</p>
+                    <p class="r-tr">
+                        <span>*&nbsp;&nbsp;所有个人信息仅用于本次活动</span>
+                        <br>
+                        <span>*&nbsp;&nbsp;本次活动最终解释权归团贷网所有</span>
+                    </p>
+                </li>
+            <i class="pop-btn-submit rule-submit"></i>
+            </ul>
+        </div>
+    </div>
+    <div class="mask normal-mask">
+        <div class="pop-input-cont">
+            <textarea class="pop-input" id="popInput"></textarea>
+            <span class="p-input-tips">*字数不能超过28个字</span>
+            <i class="pop-submit-small input-submit"></i>
+        </div>
+    </div>
+    <!-- 分享弹窗 -->
+    <div class="mask normal-mask popup-share" id="popup_share">
+        <div class="share-msg">
+            <i class="icon-arrow-share"></i> 点击&nbsp;&nbsp;
+            <font class="font-yellow">“发送给朋友”</font>
+            <br/> 分享你想对家说的话
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script>
+(function() {
+    FastClick.attach(document.body);
+    $("#btn_rule").on('click', function() {
+        $(".rule-mask").show();
+    });
+    $(".rule-submit").on('click', function() {
+        $(".rule-mask").hide();
+    });
+    //返回修改
+    $('#btn_back').on('click', function(e) {
+        history.back()
+    });
+    //分享按钮
+    $('#btn_share').on('click', function(e) {
+        $("#popup_share").show();
+    });
+    $('#popup_share').on('click', function(e) {
+        $("#popup_share").hide();
+    });
+    //生成我的海报
+    $('#btn_create').on('click', function(e) {
+        window.location.href = 'index.html'
+    });
+})();
+</script>
+
+</html>

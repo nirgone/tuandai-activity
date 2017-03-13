@@ -73,17 +73,18 @@ span {
     display: none;
     .pop-cont {
         width: pxToRem(620px);
-        max-height: 90%;
+        height: 90%;
         background-image: url('../images/pop-bg.png');
         background-size: pxToRem(63px) pxToRem(42px);
         background-repeat: repeat;
         padding-bottom: pxToRem(50px);
+        padding-top: pxToRem(105px);
         border-radius: pxToRem(10px);
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        overflow: auto;
+        // overflow: auto;
         font-size: 0;
     }
 }
@@ -98,12 +99,17 @@ span {
     background-size: pxToRem(230px) pxToRem(55px);
     background-position: center;
     background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .rule-cont {
     width: 100%;
+    height: 100%;
     padding: pxToRem(30px) 0;
     font-size: 0;
+    overflow: auto;
     &>li {
         width: 100%;
         padding: pxToRem(20px) pxToRem(60px);
@@ -147,6 +153,9 @@ span {
     390px,
     77px);
     margin: auto;
+}
+.rule-submit {
+    margin-top: pxToRem(30px);
 }
 
 .b-wave {
@@ -205,6 +214,7 @@ span {
     background-image: url('../images/bg.png');
     background-size: pxToRem(72px) pxToRem(37px);
     background-repeat: repeat;
+    padding-bottom: pxToRem(40px);
 }
 .hide {
     display: none;
