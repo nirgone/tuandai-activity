@@ -71,8 +71,8 @@ a {
         width: pxToRem(233px);
         height: pxToRem(231px);
         position: absolute;
-        top: pxToRem(600px);
-        right: pxToRem(44px);
+        top: pxToRem(654px);
+        left: pxToRem(96px);
         z-index: 9999;
     }
     .footer {
@@ -80,17 +80,17 @@ a {
         position: relative;
         z-index: 999;
         margin: auto;
-        margin-top: pxToRem(-120px);
+        margin-top: pxToRem(-150px);
         .icon-pai {
             background-image: url("../images/icon-pai.png");
             background-repeat: no-repeat;
             background-position: 50% 50%;
             background-size: contain;
-            width: pxToRem(340px);
-            height: pxToRem(433px);
+            width: pxToRem(290px);
+            height: pxToRem(410px);
             position: relative;
             z-index: 99;
-            margin-left: pxToRem(44px);
+            margin-left: pxToRem(330px);
         }
         .go-btn {
             background-image: url("../images/bg-btn.png");
@@ -105,7 +105,7 @@ a {
             margin: auto;
             text-align: center;
             line-height: pxToRem(107px);
-            margin-top: pxToRem(-64px);
+            margin-top: pxToRem(-14px);
             position: relative;
             z-index: 999;
         }
