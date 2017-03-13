@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+	<meta name="format-detection" content="telephone=no">
+	<title>股市涨跌猜猜猜</title>
+	<!-- build:css(dist) ../css/main.css -->
+	<link rel="stylesheet" href="../css/bet.css">
+	<link rel="stylesheet" href="../css/media.css">
+	<link rel="stylesheet" href="../css/animation.css">
+	<!-- endbuild -->
+ <!-- build:js({dist}) ../js/lib/adapt.js -->
+<script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+</head>
+<body>
+	<div class="page">
+		<div class="content-wrapper">
+			<div class="header">
+				<div class="row">
+					<div class="tb-wrapper">
+						<label>我的团币</label>
+						<!-- 团币数量 -->
+						<span class='icon-coin'></span>
+						<label class="tb-nums">9999</label>
+					</div>
+					<div class="btn-tbTips"></div>
+					<div class="btn-wrapper">
+						<span class="btn-rule">规则</span>
+						<span class="line"></span>
+						<span class="btn-record">记录</span>
+						<span class="icon-red-point"></span>
+					</div>
+				</div>
+				<div class="text"></div>
+			</div>
+			<div class="md">
+				<div class="md-header">
+					<!-- 日期 -->
+					<span class="date">02月23日</span>
+					<span class="symbol">></span>
+					<span class="">上证指数是升还是跌？ </span>
+					<!-- 倒计时 -->
+					<span class="countdown-wrapper">
+						<span class='icon-time'></span>
+						<span class='countdown'>00:00:00</span>
+					</span>
+				</div>
+				<div class="md-content">
+					<div class="k-line-wrapper"></div>
+					<div class="bet-show">
+						<div class="up-show"></div>
+						<div class="down-show"></div>
+						<div class="progress-wrapper">
+						<!-- 位置由百分比计算 -->
+							<div class="progress-up" style="width: 76%"></div>
+							<div class="progress-down" style="width: 24%"></div>
+							<div class="icon-vs" style="left: 76%"></div>
+						</div>
+					</div>
+					<div class="bet-wrapper">
+						<div class="bet-up-wrapper bet-wrapper-item">
+							<div class="row01">
+								<span class="icon-people"></span>
+								<!-- 看涨人数 -->
+								<span>800人看好涨</span>
+							</div>
+							<div class="row02">
+								<span class="icon-coin"></span>
+								<!-- 押的团币数 -->
+								<span>954500团币</span>
+							</div>
+							<div class="btn-bet bet-up">
+								<div class="label01">
+									<span class="">我看涨</span>
+									<span class="icon-arrow icon-arrow-up"></span>
+								</div>
+								<div class="label02">我已押200团币</div>
+							</div>
+						</div>
+						<div class="bet-down-wrapper bet-wrapper-item">
+							<div class="row01">
+								<span class="icon-people"></span>
+								<!-- 看涨人数 -->
+								<span>800人看好跌</span>
+							</div>
+							<div class="row02">
+								<span class="icon-coin"></span>
+								<!-- 押的团币数 -->
+								<span>954500团币</span>
+							</div>
+							<div class="btn-bet bet-down">
+								<div class="label01">
+									<span class="">我看跌</span>
+									<span class="icon-arrow icon-arrow-down"></span>
+								</div>
+								<div class="label02">我已押200团币</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="footer-header">
+					<span class="icon-cup"></span>
+					<span>股市达人榜</span>
+				</div>
+				<div class="footer-content">
+					<div class="list-header">
+						<span>达人排行</span>
+						<span>头像</span>
+						<span>用户名</span>
+						<span>胜率</span>
+					</div>
+					<ul class="list-content">
+						<li class="list-item">
+							<span>股神</span>
+							<span><img src="" /></span>
+							<span>人**何</span>
+							<span>98%</span>
+						</li>
+						<li class="list-item">
+							<span>预言家</span>
+							<span><img src="../images/icon-coin.png" /></span>
+							<span>人**何</span>
+							<span>98%</span>
+						</li>
+						<li class="list-item">
+							<span>神算子</span>
+							<span><img src="" /></span>
+							<span>人**何</span>
+							<span>98%</span>
+						</li>
+						<li class="list-item">
+							<span>#4</span>
+							<span><img src="" /></span>
+							<span>人**何</span>
+							<span>98%</span>
+						</li>
+						<li class="list-item">
+							<span>#5</span>
+							<span><img src="" /></span>
+							<span>人**何</span>
+							<span>98%</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/bet.js" type="text/javascript" charset="utf-8"></script>
+</html>

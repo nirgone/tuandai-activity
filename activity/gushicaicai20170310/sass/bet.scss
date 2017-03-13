@@ -1,0 +1,519 @@
+        @charset "UTF-8";
+        @import "variables";
+        @import "sprite";
+        @import "../../../sass/reset";
+        @import "../../../sass/func";
+        html,
+        body {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            -webkit-overflow-scrolling: touch !important;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        .page {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            @at-root .content-wrapper {
+                position: relative;
+                z-index: 99;
+                background-image: url("../images/icon-bg-bet.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                padding-bottom: pxToRem(76px);
+                min-height: 100%;
+                @at-root .header {
+                    margin-bottom: pxToRem(26px);
+                    .row {
+                        position: absolute;
+                        width: 100%;
+                        top: pxToRem(20px);
+                        z-index: 9;
+                        padding-left: pxToRem(30px);
+                        .tb-wrapper {
+                            display: inline-block;
+                            vertical-align: middle;
+                            border: 1px solid #fff;
+                            padding: pxToRem(12px) pxToRem(20px);
+                            border-radius: pxToRem(30px);
+                            font-size: 0;
+                            label {
+                                font-size: pxToRem(30px);
+                                color: #fff;
+                                display: inline-block;
+                                vertical-align: middle;
+                                line-height: pxToRem(30px);
+                                &.tb-nums {
+                                    color: #fee92c;
+                                }
+                            }
+                            .icon-coin {
+                                margin-left: pxToRem(8px);
+                                margin-right: pxToRem(6px);
+                                width: pxToRem(30px);
+                                height: pxToRem(30px);
+                                background-image: url("../images/icon-coin.png");
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                background-position: 50% 50%;
+                                display: inline-block;
+                                vertical-align: middle;
+                            }
+                        }
+                        .btn-tbTips {
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: pxToRem(43px);
+                            height: pxToRem(43px);
+                            background-image: url("../images/icon-doubt.png");
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            background-position: 50% 50%;
+                        }
+                        .btn-wrapper {
+                            position: absolute;
+                            top: 50%;
+                            right: pxToRem(30px);
+                            transform: translateY(-50%);
+                            font-size: 0;
+                            span {
+                                display: inline-block;
+                                vertical-align: middle;
+                                font-size: pxToRem(30px);
+                                color: #fff;
+                                font-family: 微软雅黑;
+                                &.line {
+                                    border-left: 1px solid #fff;
+                                    width: 1px;
+                                    height: pxToRem(30px);
+                                    margin: 0 pxToRem(26px);
+                                }
+                                &.icon-red-point {
+                                    width: pxToRem(14px);
+                                    height: pxToRem(14px);
+                                    background-image: url("../images/icon-red-point.png");
+                                    background-repeat: no-repeat;
+                                    background-size: contain;
+                                    background-position: 50% 50%;
+                                    margin-left: pxToRem(8px);
+                                }
+                            }
+                        }
+                    }
+                    .text {
+                        width: pxToRem(634px);
+                        height: pxToRem(246px);
+                        background-image: url("../images/icon-text-bet.png");
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: 50% 100%;
+                        margin: auto;
+                    }
+                }
+                @at-root .md {
+                    margin-bottom: pxToRem(40px);
+                    @at-root .md-header {
+                        width: 100%;
+                        height: pxToRem(70px);
+                        background-color: rgba(255, 255, 255, .2);
+                        font-size: 0;
+                        color: #371407;
+                        line-height: pxToRem(70px);
+                        padding-left: pxToRem(30px);
+                        position: relative;
+                        span {
+                            display: inline-block;
+                            vertical-align: middle;
+                            font-size: pxToRem(24px);
+                            &.symbol {
+                                margin-left: pxToRem(20px);
+                                margin-right: pxToRem(12px);
+                            }
+                        }
+                        .countdown-wrapper {
+                            position: absolute;
+                            right: pxToRem(30px);
+                            top: 50%;
+                            transform: translateY(-50%);
+                            font-size: 0;
+                            span {
+                                display: inline-block;
+                                vertical-align: middle;
+                                font-size: pxToRem(24px);
+                                &.icon-time {
+                                    width: pxToRem(34px);
+                                    height: pxToRem(33px);
+                                    background-image: url("../images/icon-time.png");
+                                    background-repeat: no-repeat;
+                                    background-size: contain;
+                                    background-position: 50% 50%;
+                                    margin-right: pxToRem(10px);
+                                }
+                                &.countdown {
+                                    min-width: pxToRem(100px)
+                                }
+                            }
+                        }
+                    }
+                    @at-root .md-content {
+                        position: relative;
+                        z-index: 99;
+                        background-color: #fff;
+                        padding: pxToRem(40px) pxToRem(30px);
+                        padding-bottom: 0;
+                        @at-root .k-line-wrapper {
+                            height: pxToRem(210px);
+                            margin-bottom: pxToRem(40px);
+                        }
+                        @at-root .bet-show {
+                            position: relative;
+                            width: pxToRem(690px);
+                            height: pxToRem(76px);
+                            background-image: url("../images/icon-line-wrapper.png");
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            background-position: 50% 50%;
+                            margin: auto;
+                            margin-bottom: pxToRem(8px);
+                            .up-show {
+                                position: absolute;
+                                top: 50%;
+                                left: pxToRem(4px);
+                                transform: translateY(-50%);
+                                width: pxToRem(68px);
+                                height: pxToRem(70px);
+                                background-image: url("../images/icon-up.png");
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                background-position: 50% 50%;
+                                z-index: 99;
+                            }
+                            .down-show {
+                                position: absolute;
+                                top: 50%;
+                                right: pxToRem(4px);
+                                transform: translateY(-50%);
+                                width: pxToRem(68px);
+                                height: pxToRem(70px);
+                                background-image: url("../images/icon-down.png");
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                background-position: 50% 50%;
+                                z-index: 99;
+                            }
+                            .progress-wrapper {
+                                position: absolute;
+                                left: pxToRem(72px);
+                                right: pxToRem(72px);
+                                top: 50%;
+                                transform: translateY(-50%);
+                                height: pxToRem(24px);
+                                z-index: 9;
+                                .progress-up {
+                                    position: absolute;
+                                    top: 50%;
+                                    left: pxToRem(-2px);
+                                    transform: translateY(-50%);
+                                    width: 50%;
+                                    height: pxToRem(24px);
+                                    background-image: url("../images/icon-up-progress.png");
+                                    background-repeat: no-repeat;
+                                    background-size: cover;
+                                }
+                                .progress-down {
+                                    position: absolute;
+                                    top: 50%;
+                                    right: pxToRem(-2px);
+                                    transform: translateY(-50%);
+                                    width: 50%;
+                                    height: pxToRem(24px);
+                                    background-image: url("../images/icon-down-progress.png");
+                                    background-repeat: no-repeat;
+                                    background-size: cover;
+                                }
+                                .icon-vs {
+                                    position: absolute;
+                                    z-index: 99;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    width: pxToRem(71px);
+                                    height: pxToRem(71px);
+                                    background-image: url("../images/icon-vs.png");
+                                    background-repeat: no-repeat;
+                                    background-size: contain;
+                                    background-position: 50% 50%;
+                                }
+                            }
+                        }
+                        @at-root .bet-wrapper {
+                            height: pxToRem(348px);
+                            font-size: 0;
+                            .bet-wrapper-item {
+                                padding-top: pxToRem(48px);
+                                width: 50%;
+                                height: 100%;
+                                display: inline-block;
+                                vertical-align: middle;
+                                &.bet-up-wrapper {
+                                    background-image: linear-gradient(to bottom, rgba(255, 228, 219, .7), #fff);
+                                }
+                                &.bet-down-wrapper {
+                                    background-image: linear-gradient(to bottom, rgba(223, 232, 239, .7), #fff);
+                                    .row01,
+                                    .row02 {
+                                        span {
+                                            color: #5798d7;
+                                            &.icon-people {
+                                                background-image: url("../images/icon-people-blue.png");
+                                            }
+                                            &.icon-coin {
+                                                background-image: url("../images/icon-coin-blue.png");
+                                            }
+                                        }
+                                    }
+                                }
+                                .row01 {
+                                    margin-bottom: pxToRem(22px);
+                                    padding-left: pxToRem(76px);
+                                    span {
+                                        display: inline-block;
+                                        vertical-align: middle;
+                                        color: #f97259;
+                                        font-family: 微软雅黑;
+                                        font-size: pxToRem(26px);
+                                        &.icon-people {
+                                            width: pxToRem(30px);
+                                            height: pxToRem(27px);
+                                            background-image: url("../images/icon-people-red.png");
+                                            background-repeat: no-repeat;
+                                            background-size: contain;
+                                            background-position: 50% 50%;
+                                            margin-right: pxToRem(10px);
+                                        }
+                                    }
+                                }
+                                .row02 {
+                                    margin-bottom: pxToRem(30px);
+                                    padding-left: pxToRem(76px);
+                                    span {
+                                        display: inline-block;
+                                        vertical-align: middle;
+                                        color: #f97259;
+                                        font-family: 微软雅黑;
+                                        font-size: pxToRem(26px);
+                                        &.icon-coin {
+                                            width: pxToRem(33px);
+                                            height: pxToRem(33px);
+                                            background-image: url("../images/icon-coin-red.png");
+                                            background-repeat: no-repeat;
+                                            background-size: contain;
+                                            background-position: 50% 50%;
+                                            margin-right: pxToRem(10px);
+                                        }
+                                    }
+                                }
+                                .btn-bet {
+                                    width: pxToRem(320px);
+                                    height: pxToRem(128px);
+                                    margin: auto;
+                                    border-radius: pxToRem(6px);
+                                    background-color: rgb(248, 87, 57);
+                                    text-align: center;
+                                    padding-top: pxToRem(28px);
+                                    &.bet-down {
+                                        background-color: rgb(87, 152, 215);
+                                        .label02 {
+                                            color: #9fcdf9;
+                                        }
+                                    }
+                                    .label01 {
+                                        margin-bottom: pxToRem(12px);
+                                        span {
+                                            display: inline-block;
+                                            vertical-align: middle;
+                                            color: #fff;
+                                            font-family: 微软雅黑;
+                                            font-size: pxToRem(44px);
+                                            &.icon-arrow {
+                                                width: pxToRem(27px);
+                                                height: pxToRem(38px);
+                                                background-image: url("../images/icon-arrow.png");
+                                                background-repeat: no-repeat;
+                                                background-size: contain;
+                                                background-position: 50% 50%;
+                                                margin-right: pxToRem(18px);
+                                                &.icon-arrow-down {
+                                                    transform: rotate(-180deg);
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .label02 {
+                                        color: #ffcbc1;
+                                        font-size: pxToRem(22px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                @at-root .footer {
+                    padding: 0 pxToRem(30px);
+                    .footer-header {
+                        font-size: 0;
+                        text-align: center;
+                        margin-bottom: pxToRem(42px);
+                        span {
+                            display: inline-block;
+                            vertical-align: middle;
+                            font-size: pxToRem(40px);
+                            font-weight: bold;
+                            font-family: 微软雅黑;
+                            color: #fff;
+                            &.icon-cup {
+                                width: pxToRem(44px);
+                                height: pxToRem(48px);
+                                background-image: url("../images/icon-cup.png");
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                background-position: 50% 50%;
+                                margin-right: pxToRem(18px);
+                            }
+                        }
+                    }
+                    @at-root .footer-content {
+                        border-radius: pxToRem(6px);
+                        // height: pxToRem(700px);
+                        background-color: #fff;
+                        .list-header {
+                            padding: 0 pxToRem(54px);
+                            color: #a4a4a4;
+                            font-size: 0;
+                            border-bottom: 1px solid #dedede;
+                            height: pxToRem(100px);
+                            line-height: pxToRem(100px);
+                            white-space: nowrap;
+                            span {
+                                font-size: pxToRem(22px);
+                                text-align: center;
+                                vertical-align: middle;
+                                display: inline-block;
+                                &:first-child {
+                                    width: pxToRem(100px);
+                                    margin-right: pxToRem(74px);
+                                }
+                                &:nth-child(2) {
+                                    width: pxToRem(80px);
+                                    margin-right: pxToRem(74px);
+                                }
+                                &:nth-child(3) {
+                                    width: pxToRem(86px);
+                                    margin-right: pxToRem(108px);
+                                }
+                                &:last-child {
+                                    width: pxToRem(60px);
+                                }
+                            }
+                        }
+                        .list-content {
+                            .list-item {
+                                height: pxToRem(120px);
+                                // line-height: pxToRem(120px);
+                                padding: pxToRem(20px) pxToRem(54px);
+                                font-size: 0;
+                                white-space: nowrap;
+                                &:nth-child(2n) {
+                                    background-color: #f6f6f6;
+                                }
+                                &:nth-child(2) {
+                                    span {
+                                        &:first-child {
+                                            color: #fff;
+                                            background-color: rgb(252, 143, 85);
+                                        }
+                                    }
+                                }
+                                &:nth-child(3) {
+                                    span {
+                                        &:first-child {
+                                            color: #fff;
+                                            background-color: rgb(255, 195, 80);
+                                        }
+                                    }
+                                }
+                                &:nth-child(4) {
+                                    span {
+                                        &:first-child {
+                                            color: #5c5c5c;
+                                            background-color: rgb(200, 200, 200);
+                                        }
+                                    }
+                                }
+                                &:nth-child(5) {
+                                    span {
+                                        &:first-child {
+                                            color: #5c5c5c;
+                                            background-color: rgb(200, 200, 200);
+                                        }
+                                    }
+                                }
+                                span {
+                                    font-size: pxToRem(22px);
+                                    text-align: center;
+                                    vertical-align: middle;
+                                    display: inline-block;
+                                    &:first-child {
+                                        width: pxToRem(100px);
+                                        margin-right: pxToRem(74px);
+                                        border-radius: pxToRem(10px);
+                                        background-color: rgb(247, 98, 91);
+                                        height: pxToRem(46px);
+                                        line-height: pxToRem(46px);
+                                        color: #fff;
+                                        font-size: pxToRem(26px);
+                                    }
+                                    &:nth-child(2) {
+                                        width: pxToRem(80px);
+                                        height: pxToRem(80px);
+                                        margin-right: pxToRem(74px);
+                                        border-radius: 50%;
+                                        img {
+                                            width: 100%;
+                                            height: 100%;
+                                            border-radius: 50%;
+                                        }
+                                    }
+                                    &:nth-child(3) {
+                                        width: pxToRem(86px);
+                                        margin-right: pxToRem(108px);
+                                        line-height: 120%;
+                                        text-overflow: ellipsis;
+                                        overflow: hidden;
+                                        white-space: nowrap;
+                                    }
+                                    &:last-child {
+                                        width: pxToRem(60px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
