@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+	<meta name="format-detection" content="telephone=no">
+	<title>股市涨跌猜猜猜</title>
+	<!-- build:css(dist) ../css/main.css -->
+	<link rel="stylesheet" href="../css/list.css">
+	<link rel="stylesheet" href="../css/media.css">
+	<link rel="stylesheet" href="../css/animation.css">
+	<!-- endbuild -->
+ <!-- build:js({dist}) ../js/lib/adapt.js -->
+<script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+</head>
+<body>
+	<div class="page">
+		<div class="content-wrapper">
+			<div class="header">
+				<span class="btn-record btn-award-record active">开奖记录</span>
+				<span class="line"></span>
+				<span class="btn-record btn-my-record">我的战绩</span>
+			</div>
+			<div class="md">
+				<div class="award-record list show">
+					<div class="md-header">                               
+						<span>交易日</span>
+						<span>开盘价</span>
+						<span>收盘价</span>
+						<span>收盘</span>
+					</div>
+					<div class="md-content">
+						<div id="awardListWrapper" class="wrapper">
+							<div class="scroller">
+								<div class="pull-el pull-refresh">
+								   <div class="arrow-wrapper pull-wrapper show">
+								     <label>下拉可以刷新</label>
+								   </div>
+								   <div class="loading-wrapper pull-wrapper">
+								     <label>加载中...</label>
+								   </div>
+								</div>
+
+								<ul class="award-list">
+								 	<li class="award-item">
+								 		<span>02-24</span>
+								 		<span>10869.2</span>
+								 		<span>10879.2</span>
+								 		<span class="up">涨</span>
+								 	</li>
+								 	<li class="award-item">
+								 		<span>02-24</span>
+								 		<span>10869.2</span>
+								 		<span>10879.2</span>
+								 		<span class="up">涨</span>
+								 	</li>
+								 	<li class="award-item">
+								 		<span>02-24</span>
+								 		<span>10869.2</span>
+								 		<span>10879.2</span>
+								 		<span class="up">涨</span>
+								 	</li>
+								 	<li class="award-item">
+								 		<span>02-24</span>
+								 		<span>10869.2</span>
+								 		<span>10879.2</span>
+								 		<span class="up">涨</span>
+								 	</li>
+								 	<li class="award-item">
+								 		<span>02-24</span>
+								 		<span>10869.2</span>
+								 		<span>10879.2</span>
+								 		<span class="up">涨</span>
+								 	</li>
+								 	<li class="award-item">
+								 		<span>02-24</span>
+								 		<span>10869.2</span>
+								 		<span>10879.2</span>
+								 		<span class="up">涨</span>
+								 	</li>
+								 	<li class="award-item">
+								 		<span>02-24</span>
+								 		<span>10869.2</span>
+								 		<span>10879.2</span>
+								 		<span class="up">涨</span>
+								 	</li>
+								 	<li class="award-item">
+								 		<span>02-24</span>
+								 		<span>10869.2</span>
+								 		<span>10879.2</span>
+								 		<span class="up">涨</span>
+								 	</li>
+								 	<li class="award-item">
+								 		<span>02-24</span>
+								 		<span>10869.2</span>
+								 		<span>10879.2</span>
+								 		<!-- 涨为up -->
+								 		<span class="up">涨</span>
+								 	</li>
+								 	<li class="award-item">
+								 		<span>01-24</span>
+								 		<span>10869.2</span>
+								 		<span>10879.2</span>
+								 		<!-- 跌为down -->
+								 		<span class="down">跌</span>
+								 	</li>
+								</ul>
+								<div class="pull-el pull-down">
+									<!-- 如果还有加载更多数据 则在此类加上show -->
+								   	<div class="loading-wrapper pull-wrapper show">
+								     	<label>加载中...</label>
+								   	</div>
+								   	<!-- 否则则在此类加上show -->
+								   	<div class="pull-wrapper show-all">
+								   		<label>已经加载全部数据</label>
+								   	</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="my-record list">
+					<div class="md-header">                 
+						<span>交易日</span>
+						<span>买涨</span>
+						<span>买跌</span>
+						<span>收盘</span>
+						<span>团币</span>
+					</div>
+					<div class="md-content">
+						
+						<div id="myListWrapper" class="wrapper">
+							<!-- 当数据为无的时候，hidden加到此元素中 -->
+							<div class="scroller hidden">
+								<div class="pull-el pull-refresh">
+								   <div class="arrow-wrapper pull-wrapper show">
+								     <label>下拉可以刷新</label>
+								   </div>
+								   <div class="loading-wrapper pull-wrapper">
+								     <label>加载中...</label>
+								   </div>
+								</div>
+
+								<ul class="my-list">
+								 	<li class="my-item">
+								 		<span>03-14</span>
+								 		<span>200</span>
+								 		<span>0</span>
+								 		<!-- 涨为up -->
+								 		<span >等待开奖</span>
+								 		<span >-</span>
+								 	</li>
+								 	<li class="my-item">
+								 		<span>03-14</span>
+								 		<span>200</span>
+								 		<span>0</span>
+								 		<!-- 涨为up -->
+								 		<span >等待开奖</span>
+								 		<span >-</span>
+								 	</li>
+								 	<li class="my-item">
+								 		<span>03-14</span>
+								 		<span>200</span>
+								 		<span>0</span>
+								 		<!-- 涨为up -->
+								 		<span >等待开奖</span>
+								 		<span >-</span>
+								 	</li>
+								 	<li class="my-item">
+								 		<span>03-14</span>
+								 		<span>200</span>
+								 		<span>0</span>
+								 		<!-- 涨为up -->
+								 		<span >等待开奖</span>
+								 		<span >-</span>
+								 	</li>
+								 	<li class="my-item">
+								 		<span>02-24</span>
+								 		<span>200</span>
+								 		<span>0</span>
+								 		<!-- 涨为up -->
+								 		<span class="up">涨</span>
+								 		<span >+200</span>
+								 		<span class="win">赢</span>
+								 	</li>
+								 	<li class="my-item">
+								 		<span>02-23</span>
+								 		<span>500</span>
+								 		<span>0</span>
+								 		<!-- 跌为down -->
+								 		<span class="down">跌</span>
+								 		<span >-500</span>
+								 		<span ></span>
+								 	</li>
+								</ul>
+								<div class="pull-el pull-down">
+									<!-- 如果还有加载更多数据 则在此类加上show -->
+								   	<div class="loading-wrapper pull-wrapper">
+								     	<label>加载中...</label>
+								   	</div>
+								   	<!-- 否则则在此类加上show -->
+								   	<div class="pull-wrapper show-all">
+								   		<label>已经加载全部数据</label>
+								   	</div>
+								</div>
+							</div>
+							<!-- 当数据为无的时候，show加到此元素中 -->
+							<div class="no-data show">
+								<div class="no-data-wrapper">
+									<div class="icon-dot"></div>
+									<div class="icon-pai"></div>
+									<div class="icon-dialog">
+										  咦~<br/>还未参与挑战？<br/>快去竞猜<br/>成为全民股神吧~ 
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<!-- 我的团币明细 -->
+			<a href="" class="footer">
+				<span>我的团币明细</span>
+				<span>></span>
+			</a>
+		</div>
+	</div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/Util.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/iscroll-probe_my.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/list.js" type="text/javascript" charset="utf-8"></script>
+</html>
