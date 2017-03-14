@@ -14,8 +14,8 @@
                 value: 值
                 content: 内容
                 btns: [{
-					name: 按钮名称
-					callback: function() {}
+                    name: 按钮名称
+                    callback: function() {}
                 }]
             }
         */
@@ -93,11 +93,11 @@
             '<ul class="chance-ul">' +
             '<li>' +
             '<p>通过分享朋友圈可多获得一次游戏机会（最多一次）</p>' +
-            '<div class="btn-rect toshare" data-type="2">马上分享</div>' +
+            '<div class="btn-rect toshare" data-type="4">马上分享</div>' +
             '</li>' +
             '<li>' +
-            '<p>分享给好友，好友成功注册团贷网即可1次游戏机会，上不封顶</p>' +
-            '<div class="btn-rect toshare" data-type="1">马上分享</div>' +
+            '<p>邀请人可以任意选择出一手势PK好友，好友打开链接摇一摇，遥出随机手势PK赢者可获得1次游戏机会（最多10次）</p>' +
+            '<div class="btn-rect topk" data-type="3">马上PK</div>' +
             '</li>' +
             '<li>' +
             '<p>消耗100团币可兑换1次游戏机会，每月最多兑换5次</p>' +
@@ -111,13 +111,23 @@
         //显示分享提示
         _pop_chance.on("click", ".toshare", function(e) {
             /* todo 先判断是否登录了 
-	        -- if（!登录） { 跳去登录}
-	        -- else 进行以下操作
-	        */
+            -- if（!登录） { 跳去登录}
+            -- else 进行以下操作
+            */
 
             _pop_chance.hide();
             var $target = $(e.currentTarget);
             showPopShare($target.attr("data-type"));
+        });
+        _pop_chance.on("click", ".topk", function(e) {
+            /* todo 先判断是否登录了 
+            -- if（!登录） { 跳去登录}
+            -- else 进行以下操作
+            */
+
+            _pop_chance.hide();
+            var $target = $(e.currentTarget);
+            showPopPk();
         });
         _pop_chance.on("click", "#toexchange", function(e) {
             _pop_chance.hide();
@@ -129,9 +139,50 @@
             }, null);
 
         });
+
         _pop_chance.on("click", ".popup-btn-close", function(e) {
             _pop_chance.hide();
         });
+    }
+    // 去pk 弹窗
+    function showPopPk(selected) {
+        var _selected = selected || 1;
+        var _pop_pk = $('<div/>').addClass('popup').addClass('popup-pk');
+        _temp = '<div class="masker"></div>' +
+            '<div class="popup-wrapper">' +
+            '<div class="popup-close popup-btn-close"></div>' +
+            '<div class="popup-title">' +
+            '<i class="icon-txt17"></i>' +
+            '</div>' +
+            '<ul class="ul-gesture" data-selected="' + _selected + '">' +
+            '<li><i class="icon-rock"></i></li>' +
+            '<li><i class="icon-scissors"></i></li>' +
+            '<li><i class="icon-paper"></i></li>' +
+            '</ul>' +
+            '<div class="btn-common">' +
+            '<i class="icon-txt18"></i>' +
+            '</div>' +
+            '</div>';
+        _pop_pk.html(_temp);
+        $("body").append(_pop_pk);
+        _pop_pk.on("click", ".ul-gesture li", function (e) {
+            _selected = $(this).index() + 1
+            $(".ul-gesture").attr("data-selected", _selected);
+        });
+        _pop_pk.on("click", ".btn-common", function (e) {
+            // todo ajax 上传做过的选择 1-- 石头 2-- 剪刀 3-- 布
+            // ajax 成功后回调以下代码
+            // todo 配置分享的icon和文案
+            hide(_pop_pk);
+            showPopShare(3);
+        });
+        _pop_pk.on("click", ".popup-btn-close", function(e) {
+
+            hide(_pop_pk);
+        });
+        function hide(target) {
+            target.remove();
+        }
     }
     // 分享弹窗
     function showPopShare(type) {
@@ -156,7 +207,7 @@
     }
     //显示时间到，loader弹窗
     function showLoader() {
-    	var _pop_loader = $("#pop_chance");
+        var _pop_loader = $("#pop_chance");
         if (_pop_loader.length > 0) {
             _pop_loader.show();
             return;
@@ -165,13 +216,13 @@
         _temp = '<div class="masker"></div>' +
             '<i class="icon-timeout"></i>' +
             '<i class="icon-loader"></i>';
-           _pop_loader.html(_temp);
-           $("body").append(_pop_loader);
+        _pop_loader.html(_temp);
+        $("body").append(_pop_loader);
     }
 
     //hide loader 弹窗
     function hideLoader() {
-    	$("#pop_timeout").hide();
+        $("#pop_timeout").hide();
     }
 
     var util = {
@@ -271,7 +322,7 @@
         //获奖提示
         //type:0--团币 1--红包 value--数值 hasChance--是否还有游戏机会 0:没有 1:有    callback0--第一个按钮回调，callback1--第二个按钮回调
         rewardTip: function(type, value, hasChance, callback0, callback1, closeFun) {
-        	$("#gift")[0].play();
+            $("#gift")[0].play();
             var _icon = "icon",
                 _msg = "",
                 _btn_name = hasChance === 0 ? "txt14" : "txt8";

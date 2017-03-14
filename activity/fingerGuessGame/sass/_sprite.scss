@@ -128,7 +128,12 @@
 .icon-share2 {
     @include background("../images/share2.png", 549px, 662px);
 }
-
+.icon-share3 {
+    @include background("../images/share3.png", 524px, 673px);
+}
+.icon-share4 {
+    @include background("../images/share4.png", 568px, 675px);
+}
 //dialog
 .icon-icon1 {
     @include background("../images/icon1.png", 470px, 146px);
@@ -564,5 +569,20 @@
   @extend .sprite-txt;
   background-position: pxToRem(0px) pxToRem(-339px);
   width: pxToRem(98px);
+  height: pxToRem(48px);
+}
+
+// 选择一个跟好友PK
+.icon-txt17 {
+  @extend .icon;
+  background-image: url(../images/txt17.png);
+  width: pxToRem(312px);
+  height: pxToRem(35px);
+}
+// 去Pk
+.icon-txt18 {
+  @extend .icon;
+  background-image: url(../images/txt18.png);
+  width: pxToRem(132px);
   height: pxToRem(48px);
 }

@@ -159,7 +159,7 @@ a {
     overflow: hidden;
     .top-sec {
         &>div {
-        z-index: 19;
+            z-index: 19;
             position: absolute;
         }
         @at-root .icon-clock {
@@ -769,7 +769,8 @@ a {
         }
     }
     @at-root .chance-wrapper {
-        height: pxToRem(720px) !important;
+        // height: pxToRem(720px) !important;
+        height: auto !important;
         padding-top: pxToRem(84px);
         .chance-ul {
             padding: 0 pxToRem(22px);
@@ -786,7 +787,9 @@ a {
             .btn-rect {
                 position: absolute;
                 right: pxToRem(18px);
-                top: pxToRem(54px);
+                // top: pxToRem(54px);
+                top: 50%;
+                transform: translate(0, -50%);
             }
         }
     }
@@ -872,6 +875,58 @@ a {
     }
 }
 
+.popup-pk {
+    display: block;
+    .popup-wrapper {
+        height: pxToRem(590px);
+    }
+    .icon-txt17 {
+        margin: pxToRem(52px) auto !important;
+    }
+    @at-root .ul-gesture {
+        padding: pxToRem(180px) 0 pxToRem(80px) pxToRem(52px);
+        font-size: 0;
+        &[data-selected='1']>li:nth-child(1), &[data-selected='2']>li:nth-child(2), &[data-selected='3']>li:nth-child(3) {
+            border: pxToRem(8px) solid #ffcc00;
+            border-radius: pxToRem(144px);
+            box-shadow: 0 0 pxToRem(50px) 0 #ffcc00;
+        }
+        li {
+            position: relative;
+            display: inline-block;
+            background: url(../images/pk_circle.png) no-repeat center;
+            background-size: contain;
+            width: pxToRem(144px);
+            height: pxToRem(144px);
+            margin-right: pxToRem(38px);
+            border: pxToRem(8px) solid transparent;
+            &.selected {
+                border: pxToRem(8px) solid #ffcc00;
+                border-radius: pxToRem(144px);
+                box-shadow: 0 0 pxToRem(50px) 0 #ffcc00;
+            }
+        }
+        i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .icon-rock {
+        width: pxToRem(85px);
+        height: pxToRem(82px);
+    }
+    .icon-scissors {
+        width: pxToRem(77px);
+        height: pxToRem(108px);
+    }
+    .icon-paper {
+        width: pxToRem(107px);
+        height: pxToRem(96px);
+    }
+}
+
 .popup-share {
     i {
         position: absolute;
@@ -889,6 +944,21 @@ a {
     .icon-share1 {
         .popup-btn-close {
             left: pxToRem(58px);
+        }
+    }
+    .icon-share3 {
+        right: pxToRem(60px);
+        .popup-btn-close {
+            left: pxToRem(116px);
+            width: pxToRem(286px);
+        }
+    }
+    .icon-share4 {
+        right: pxToRem(60px);
+        .popup-btn-close {
+            left: pxToRem(72px);
+            width: pxToRem(286px);
+            bottom: pxToRem(4px);
         }
     }
 }

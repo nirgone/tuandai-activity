@@ -160,7 +160,7 @@
     }
     // 0 :lose 1: win 2: tie
     function showResultEffect(type) {
-        _score = type === 1 ? _score + 2 : _score;
+        // _score = type === 1 ? _score + 2 : _score;
         $("#score").html(_score);
         switch (type) {
             case 0:
@@ -200,20 +200,22 @@
             case 1:
             case -2:
                 _result = 1;
+                _score += 2;
                 break;
             case -1:
             case 2:
                 _result = 0;
+                _score = _score - 2  <=0 ? 0 : _score - 2;
                 break;
             default:
                 _result = 2;
                 break;
         }
         showResultEffect(_result);
-        if (_result === 1 && _dom_current.attr('data-move') == 1) {
+        // if (_result === 1 && _dom_current.attr('data-move') == 1) {
             _dom_current.remove();
             _dom_index = _dom_index.slice(1);
-        }
+        // }
 
         _canclick = true;
 
