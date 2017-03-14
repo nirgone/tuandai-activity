@@ -1,0 +1,81 @@
+.icon-module-ceo {
+  display: block;
+  background-image: url(../images/modules/modules.png);
+  background-size:pxToRem(278px) pxToRem(278px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(86px);
+  height: pxToRem(86px);
+}
+.icon-module-hot {
+  display: block;
+  background-image: url(../images/modules/modules.png);
+  background-size:pxToRem(278px) pxToRem(278px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-96px) pxToRem(0px);
+  width: pxToRem(86px);
+  height: pxToRem(86px);
+}
+.icon-module-invest {
+  display: block;
+  background-image: url(../images/modules/modules.png);
+  background-size:pxToRem(278px) pxToRem(278px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-96px);
+  width: pxToRem(86px);
+  height: pxToRem(86px);
+}
+.icon-module-news {
+  display: block;
+  background-image: url(../images/modules/modules.png);
+  background-size:pxToRem(278px) pxToRem(278px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-96px) pxToRem(-96px);
+  width: pxToRem(86px);
+  height: pxToRem(86px);
+}
+.icon-module-question {
+  display: block;
+  background-image: url(../images/modules/modules.png);
+  background-size:pxToRem(278px) pxToRem(278px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-192px) pxToRem(0px);
+  width: pxToRem(86px);
+  height: pxToRem(86px);
+}
+.icon-module-speak {
+  display: block;
+  background-image: url(../images/modules/modules.png);
+  background-size:pxToRem(278px) pxToRem(278px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-192px) pxToRem(-96px);
+  width: pxToRem(86px);
+  height: pxToRem(86px);
+}
+.icon-module-suggest {
+  display: block;
+  background-image: url(../images/modules/modules.png);
+  background-size:pxToRem(278px) pxToRem(278px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-192px);
+  width: pxToRem(86px);
+  height: pxToRem(86px);
+}
+.icon-module-td-news {
+  display: block;
+  background-image: url(../images/modules/modules.png);
+  background-size:pxToRem(278px) pxToRem(278px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-96px) pxToRem(-192px);
+  width: pxToRem(86px);
+  height: pxToRem(86px);
+}
+.icon-module-video {
+  display: block;
+  background-image: url(../images/modules/modules.png);
+  background-size:pxToRem(278px) pxToRem(278px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-192px) pxToRem(-192px);
+  width: pxToRem(86px);
+  height: pxToRem(86px);
+}

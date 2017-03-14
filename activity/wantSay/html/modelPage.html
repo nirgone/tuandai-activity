@@ -9,7 +9,7 @@
     <title>我想对家说</title>
     <!-- build:css(dist) ../css/main.css -->
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/media.css">
+    <!-- <link rel="stylesheet" href="../css/media.css"> -->
     <link rel="stylesheet" href="../css/animation.css">
     <!-- endbuild -->
     <link rel="stylesheet" href="../css/modelPage.css">
@@ -32,7 +32,6 @@
                     </div> -->
                 </div>
             </div>
-            
         </div>
         <i class="icon-pointer"></i>
         <div class="b-popup">
@@ -46,7 +45,6 @@
             </div>
         </div>
     </div>
-    
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
@@ -60,6 +58,7 @@
     FastClick.attach(document.body);
 
     var indexArr = [];
+    var isLastSlide = false;
 
     function init() {
         getRandomIndex();
@@ -71,24 +70,31 @@
         $(".swiper-wrapper").append(temp);
         var mySwiper = new Swiper('.swiper-container', {
             onTransitionEnd: function(swiper) {
-                if(swiper.activeIndex === 2) {
+                // console.info('onTransitionEnd-----');
+                if (swiper.activeIndex === 2) {
                     // $(".b-popup").show();
-                    $(".b-popup").addClass('to-show');
+                    if (isLastSlide) {
+                        $(".b-popup").addClass('to-show');
+                    } else {
+                        isLastSlide = true
+                    }
                 }
             },
             onSlideChangeStart: function(swiper) {
                 // console.info('start---', swiper.activeIndex);
-                if(swiper.activeIndex === 0) {
+                if (swiper.activeIndex === 0) {
                     $(".icon-pointer").show();
-                }else{
+                } else {
                     $(".icon-pointer").hide();
                 }
-                if(swiper.activeIndex === 1) {
+                if (swiper.activeIndex === 1) {
                     // $(".b-popup").hide();
                     $(".b-popup").removeClass('to-show');
+                    isLastSlide = false;
                 }
 
             }
+
         });
     }
     init();
@@ -111,7 +117,7 @@
             getRandomIndex();
         }
     }
-    
+
 })();
 </script>
 

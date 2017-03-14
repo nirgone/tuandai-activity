@@ -1,0 +1,81 @@
+.icon-arrow-txt {
+  display: block;
+  background-image: url(../images/icons/icons.png);
+  background-size:pxToRem(156px) pxToRem(113px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-102px) pxToRem(-64px);
+  width: pxToRem(22px);
+  height: pxToRem(13px);
+}
+.icon-arrow {
+  display: block;
+  background-image: url(../images/icons/icons.png);
+  background-size:pxToRem(156px) pxToRem(113px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-48px);
+  width: pxToRem(40px);
+  height: pxToRem(34px);
+}
+.icon-icon-plus {
+  display: block;
+  background-image: url(../images/icons/icons.png);
+  background-size:pxToRem(156px) pxToRem(113px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-50px) pxToRem(-48px);
+  width: pxToRem(26px);
+  height: pxToRem(26px);
+}
+.icon-icon1-p1 {
+  display: block;
+  background-image: url(../images/icons/icons.png);
+  background-size:pxToRem(156px) pxToRem(113px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-102px) pxToRem(-33px);
+  width: pxToRem(22px);
+  height: pxToRem(21px);
+}
+.icon-icon2-p1 {
+  display: block;
+  background-image: url(../images/icons/icons.png);
+  background-size:pxToRem(156px) pxToRem(113px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-92px);
+  width: pxToRem(22px);
+  height: pxToRem(21px);
+}
+.icon-icon3-p1 {
+  display: block;
+  background-image: url(../images/icons/icons.png);
+  background-size:pxToRem(156px) pxToRem(113px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-136px) pxToRem(0px);
+  width: pxToRem(20px);
+  height: pxToRem(23px);
+}
+.icon-icon4-p1 {
+  display: block;
+  background-image: url(../images/icons/icons.png);
+  background-size:pxToRem(156px) pxToRem(113px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-102px) pxToRem(0px);
+  width: pxToRem(24px);
+  height: pxToRem(23px);
+}
+.icon-title-card {
+  display: block;
+  background-image: url(../images/icons/icons.png);
+  background-size:pxToRem(156px) pxToRem(113px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-48px) pxToRem(0px);
+  width: pxToRem(44px);
+  height: pxToRem(32px);
+}
+.icon-title-house {
+  display: block;
+  background-image: url(../images/icons/icons.png);
+  background-size:pxToRem(156px) pxToRem(113px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(38px);
+  height: pxToRem(38px);
+}

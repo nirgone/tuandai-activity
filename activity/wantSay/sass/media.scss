@@ -12,7 +12,18 @@
 
 @media screen and (max-height: 540px) and (min-width:321px) {
     $ratio: 0.85;
+    .txt-container {
+    	padding-top: pxToRem(130px) !important;
+    }
+    .u-phone {
+    	margin-top: pxToRem(60px) !important;
+    }
 
+}
+@media screen and (max-height: 600px) and (min-width: 360px) {
+    .txt-container {
+        padding-top: pxToRem(150px) !important;
+    }
 }
 //* -----------meizu  mx3----------------- */
 @media screen and (min-height: 589px) and (min-width:430px) {

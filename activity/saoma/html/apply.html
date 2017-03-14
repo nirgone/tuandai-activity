@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>扫码申请</title>
+    <link rel="stylesheet" href="../css/apply.css">
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="content">
+        <div class="page p2-bg">
+            <div class="form-container">
+                <span class="form-title">团贷网信贷中心借款申请</span>
+                <ul class="apply-form">
+                    <li name="name">
+                        <div class="icon-row n-row need">
+                            <input type="text" name="name" placeholder="请输入您的姓名" data-type="name" maxLength="20">
+                        </div>
+                    </li>
+                    <li name="phone">
+                        <div class="icon-row p-row need">
+                            <input type="tel" name="phone" placeholder="请输入您的有效手机号码" data-type="phone">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-row m-row">
+                            <label class="opt" for="house">
+                                <input type="radio" name="type" id="house" value="1" class="r-type">
+                                <label class="icon-radio" for="house"></label>
+                                <label>房速贷</label>
+                            </label>
+                            <label class="opt" for="card">
+                                <input type="radio" name="type" id="card" value="2" class="r-type">
+                                <label class="icon-radio" for="card"></label>
+                                <label>车易贷</label>
+                            </label>
+                        </div>
+                    </li>
+                    <li data-type="num">
+                        <div class="icon-row r-row">
+                            <input type="number" name="num" placeholder="请输入您的借款金额" data-type="num">
+                        </div>
+                    </li>
+                </ul>
+                <div class="form-btn btn">提交</div>
+            </div>
+        </div>
+    </div>
+    <div class="mask">
+        <div class="pop-up">
+            <i class="pop-icon"></i>
+            <div class="pop-content">您已成功提交申请 ，1个工作日内信贷顾问会联系您！ </div>
+            <span class="pop-tip">
+                如有疑问，请拨打客服热线：<br/>400-6410-888
+            </span>
+            <div class="pop-btn btn go-main">返回首页</div>
+        </div>
+        <div class="masker"></div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<!-- build:js({dist}) ../js/lib/vendor/jsbridge-3.1.1.js -->
+<!-- <script src="../js/vendor/jsbridge-3.1.1.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- endbuild -->
+<script src="../js/apply.js" type="text/javascript" charset="utf-8"></script>
+
+
+</html>

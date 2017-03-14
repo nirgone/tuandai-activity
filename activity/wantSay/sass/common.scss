@@ -73,17 +73,18 @@ span {
     display: none;
     .pop-cont {
         width: pxToRem(620px);
-        max-height: 90%;
+        height: 90%;
         background-image: url('../images/pop-bg.png');
         background-size: pxToRem(63px) pxToRem(42px);
         background-repeat: repeat;
         padding-bottom: pxToRem(50px);
+        padding-top: pxToRem(105px);
         border-radius: pxToRem(10px);
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        overflow: auto;
+        // overflow: auto;
         font-size: 0;
     }
 }
@@ -98,12 +99,17 @@ span {
     background-size: pxToRem(230px) pxToRem(55px);
     background-position: center;
     background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .rule-cont {
     width: 100%;
+    height: 100%;
     padding: pxToRem(30px) 0;
     font-size: 0;
+    overflow: auto;
     &>li {
         width: 100%;
         padding: pxToRem(20px) pxToRem(60px);
@@ -114,7 +120,7 @@ span {
             content: "";
             width: 100%;
             height: pxToRem(3px);
-            background-image: url('../images/line.png');
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAikAAAADCAMAAABh5W9VAAAAPFBMVEXc3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d3c3d1M608ZAAAAFHRSTlNfXGVVUUxHKS5YDEIjND0UOBwGYhhUYOEAAAEASURBVDjL1dRBEoMgDEBRrFCtKKi9/12bQCCJ6LhqZ/qSdq/+idmLaYIlEVbY2AwrDPNQjcUyLtm6rCRknj0F93SFZb3wIl0HW5mv6S69Gn3L9vbIwbbSwyteCj5o+CpXtmjw5g+Ggxmngq9JYoRN4NuzfdorQ5nIUCIO2XBwqRNZSRvJVSI+lD48tYGTWKfasDIMkYUp3uTxA2/F4DQOHeWR2oyYSz/uJg9LL0xkA1vpZHB0NDfJVFvGqXAtKQtVCsVycVQwOMK5tDdlPLkpBJ6qFsPJEKdvCpeD1dh/vCk2/WkOR+EqOA6PUwX84bAVR7i9KWN7VNhWxNObgpmwDxgAMt+jybr6AAAAAElFTkSuQmCC');
             background-size: pxToRem(553px) pxToRem(3px);
             background-repeat: no-repeat;
             background-position: center bottom;
@@ -148,6 +154,9 @@ span {
     77px);
     margin: auto;
 }
+.rule-submit {
+    margin-top: pxToRem(30px);
+}
 
 .b-wave {
     @include adapBackground('../images/icon-wave.png',
@@ -180,7 +189,7 @@ span {
         transform: scale(-1, 1);
     }
     .icon-arrow {
-        @include background('../images/icon-arrow.png',
+        @include background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAKCAMAAABcxfTLAAAAbFBMVEUAAADTyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq7Tyq4mlSxRAAAAJHRSTlMA+ePOKBPy6pJuRQ8IBd7Wu7SroYt7dF1LQTAZC7yqhGRUOjR1J3xnAAAAaElEQVQI10WMWQ6AIBQD+1AQBdx3cb//HSUYwvy1aQc/Uzkhwls2iJaHWLCDY6uz2SctxQU1WuTUKWCtkhQLE+WDNGELqDe6p9FKOo0ZCIWrq9Vb3PCFu0ntRaqjHNidNnBnNRqOyNZ8ZowEfFeaGEYAAAAASUVORK5CYII=',
         15px,
         10px);
         position: absolute;
@@ -203,6 +212,10 @@ span {
 
 .black-bg {
     background-image: url('../images/bg.png');
-    background-size: pxToRem(87px) pxToRem(85px);
+    background-size: pxToRem(72px) pxToRem(37px);
     background-repeat: repeat;
+    padding-bottom: pxToRem(40px);
+}
+.hide {
+    display: none;
 }
