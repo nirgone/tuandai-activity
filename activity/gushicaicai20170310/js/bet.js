@@ -56,7 +56,6 @@
         Util.disableScrolling();
     });
 
-
     // 关闭弹窗
     dialogEl.on('click', '.btn-confirm, .btn-close, .mask', function() {
         dialogEl.removeClass('show');
@@ -68,6 +67,106 @@
         window.location.href = './list.html';
     });
 
+    // 点击押注
+    pageEl.on('click', '.btn-bet', function(e) {
+        var currentTarget = $(e.currentTarget);
+        var tbNums = 50; //已押团币数量
+        var isBetTime = true; //是否为押注时间
+        if (!isBetTime) { //未到押注时间
+            //UI提示未到押注时间
+            dialogEl.find('.dialog-item').removeClass('show');
+            dialogEl.find('.dialog-bet-tips').addClass('show');
+            dialogEl.addClass('show');
+            Util.disableScrolling();
+            return;
+        }
+
+        if (tbNums >= 500) {
+            Util.toast('您今天已投注500团币，剩余0团币可投（一天最高投注500团币）');
+            return;
+        } else if (tbNums < 50) {
+            Util.toast('啊哦~您的团币不足啦，凑够50团币再来挑战吧！');
+            return;
+        }
+
+        if (currentTarget.hasClass('bet-up')) { //押上涨
+            dialogEl.find('.dialog-item').removeClass('show');
+            dialogEl.find('.dialog-bet-up').addClass('show');
+            dialogEl.addClass('show');
+            Util.disableScrolling();
+            dialogEl.find('.up-range').rangeslider({ //注册滚动条，只会初始化一次
+                polyfill: false,
+
+                // Default CSS classes
+                rangeClass: 'my-rangeslider',
+                disabledClass: 'rangeslider--disabled',
+                horizontalClass: 'rangeslider--horizontal',
+                verticalClass: '',
+                fillClass: 'up-rangeslider__fill',
+                handleClass: 'rangeslider__handle',
+
+                onInit: function() {},
+
+                // Callback function
+                onSlide: function(position, value) {},
+
+                // Callback function
+                onSlideEnd: function(position, value) { //押的团币数
+                    dialogEl.find('.tb-num').text(value)
+                }
+            });
+        } else if (currentTarget.hasClass('bet-down')) { //押下跌
+            dialogEl.find('.dialog-item').removeClass('show');
+            dialogEl.find('.dialog-bet-down').addClass('show');
+            dialogEl.addClass('show');
+            Util.disableScrolling();
+            dialogEl.find('.down-range').rangeslider({ //注册滚动条，只会初始化一次
+                polyfill: false,
+
+                // Default CSS classes
+                rangeClass: 'my-rangeslider',
+                disabledClass: 'rangeslider--disabled',
+                horizontalClass: 'rangeslider--horizontal',
+                verticalClass: '',
+                fillClass: 'down-rangeslider__fill',
+                handleClass: 'rangeslider__handle',
+
+                onInit: function() {},
+
+                // Callback function
+                onSlide: function(position, value) {},
+
+                // Callback function
+                onSlideEnd: function(position, value) { //押的团币数
+                    dialogEl.find('.tb-num').text(value)
+                }
+            });
+        }
+    });
+
+    // 点击提交押注
+    dialogEl.on('click', '.btn-submit', function(e) {
+        var currentTarget = $(e.currentTarget);
+        var parentTarget = currentTarget.parents('.dialog-item');
+        var tbNum = parentTarget.find('.tb-num').text();
+        // debugger
+        if (parentTarget.hasClass('dialog-bet-up')) { //押上涨
+            console.log('您押涨' + tbNum + '团币')
+        } else if (parentTarget.hasClass('dialog-bet-down')) { //押下跌
+            console.log('您押跌' + tbNum + '团币')
+        }
+        
+        var canSubmit = false;  //是否能提交
+        if(!canSubmit) {    
+            // TODO:xxx为变化值
+            Util.toast('您今天已投注XXX团币，剩余XXX团币可投（一天最高投注500团币）');
+            return;
+        }
+        
+        // 关闭弹窗
+        dialogEl.removeClass('show');
+        Util.enableScrolling();
+    });
 
 
     initCountDonw('2017-03-13 11:40:00');

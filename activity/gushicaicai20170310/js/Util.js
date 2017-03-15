@@ -51,11 +51,15 @@
 
         //冒泡提示
         toast: function(msg, duration) {
-            duration = isNaN(duration) ? 1000 : duration;
+            duration = isNaN(duration) ? 3000 : duration;
             var m = document.createElement('div');
             $(m).addClass("toast-content");
             m.innerHTML = msg;
-            m.style.cssText = "width:70%; min-width:150px; background:#000; opacity:0.6;  color:#fff; padding:10px 10px; text-align:center; border-radius:5px; position:fixed; bottom:18%; left:15%; margin-left:-10px; z-index:999999; font-weight:bold;font-size:16px;";
+            var cssText = "width:70%; min-width:150px; background:#000; opacity:0.6; color:#fff; padding: " 
+            + this.pxToRem(20) + "rem " +  this.pxToRem(20)+ "rem; text-align:center; border-radius:" + this.pxToRem(6) 
+            + "rem; position:fixed; bottom:18%; left:50%; z-index:999999; -webkit-transform: translateX(-50%);transform: translateX(-50%); font-weight:bold;font-size:" 
+            + this.pxToRem(30) + "rem;" + "line-height: " + this.pxToRem(42) + "rem;";
+            m.style.cssText = cssText;
             document.body.appendChild(m);
             setTimeout(function() {
                 var d = 0.5;

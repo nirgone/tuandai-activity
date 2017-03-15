@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="../css/media.css">
 	<link rel="stylesheet" href="../css/animation.css">
 	<!-- endbuild -->
+	<link rel="stylesheet" href="../css/rangeslider.css">
  <!-- build:js({dist}) ../js/lib/adapt.js -->
 <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
@@ -183,11 +184,68 @@
 			</div>
 			<div class="btn-close"></div>
 		</div>
+		<div class="dialog-bet-up dialog-item bet-item">
+			<div class="title">
+				<span>我看涨</span><span class="icon-arrow icon-arrow-up"></span>
+			</div>
+			<div class="dialog-content">
+				<input class="up-range" type="range" min="50" max="500" step="50" value="50"/>
+				<div class="range-nums">
+					<span>50</span>
+					<span>100</span>
+					<span>200</span>
+					<span>300</span>
+					<span>400</span>
+					<span>500</span>
+				</div>
+				<div class="tb-num-wrapper">
+					<span class="tb-num">50</span>
+					<span>团币</span>
+				</div>
+				<div class="btn-submit">提交</div>
+			</div>
+			<div class="btn-close"></div>
+		</div>
+		<div class="dialog-bet-down dialog-item bet-item">
+			<div class="title">
+				<span>我看跌</span><span class="icon-arrow icon-arrow-down"></span>
+			</div>
+			<div class="dialog-content">
+				<input class="down-range" type="range" min="50" max="500" step="50" value="50"/>
+				<div class="range-nums">
+					<span>50</span>
+					<span>100</span>
+					<span>200</span>
+					<span>300</span>
+					<span>400</span>
+					<span>500</span>
+				</div>
+				<div class="tb-num-wrapper">
+					<span class="tb-num">50</span>
+					<span>团币</span>
+				</div>
+				<div class="btn-submit">提交</div>
+			</div>
+			<div class="btn-close"></div>
+		</div>
+		<div class="dialog-bet-tips dialog-item">
+			<div class="dialog-content">
+				<div class="tips-wrapper">
+					<div class="icon-pai"></div>
+					<div class="icon-dialog">
+						未到押注时间哟, <br/>周日再来吧~
+					</div>
+				</div>
+				<div class="btn-confirm">确定</div>
+			</div>
+			<div class="btn-close"></div>
+		</div>
 	</div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
 <script src="../js/Util.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/rangeslider.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="../js/bet.js" type="text/javascript" charset="utf-8"></script>
 </html>

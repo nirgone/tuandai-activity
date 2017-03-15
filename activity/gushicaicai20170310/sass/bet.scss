@@ -13,6 +13,7 @@ body {
     margin: 0;
     padding: 0;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    // background-color:#fc7834;
 }
 
 a {
@@ -32,6 +33,8 @@ a {
     width: 100%;
     height: 100%;
     overflow: auto;
+    /* max-width: 414px;
+    margin: auto; */
     @at-root .content-wrapper {
         position: relative;
         z-index: 99;
@@ -556,12 +559,197 @@ a {
         padding-bottom: pxToRem(52px);
         color: #5f5f5f;
         font-size: pxToRem(22px);
+        display: none;
         &.dialog-rule {
             .dialog-content {
                 height: pxToRem(620px);
                 overflow: auto;
             }
-            
+        }
+        &.dialog-bet-tips {
+            .dialog-content {
+                .tips-wrapper {
+                    position: relative;
+                    height: pxToRem(320px);
+                    .icon-pai {
+                        position: absolute;
+                        top: pxToRem(34px);
+                        left: pxToRem(84px);
+                        width: pxToRem(190px);
+                        height: pxToRem(285px);
+                        background-image: url("../images/icon-pai.png");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: 50% 50%;
+                        z-index: 999;
+                    }
+                    .icon-dialog {
+                        position: absolute;
+                        top: pxToRem(96px);
+                        left: pxToRem(242px);
+                        width: pxToRem(247px);
+                        height: pxToRem(193px);
+                        background-image: url("../images/icon-dialog.png");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: 50% 50%;
+                        z-index: 99;
+                        font-size: pxToRem(24px);
+                        line-height: pxToRem(34px);
+                        color: #5f5f5f;
+                        text-align: center;
+                        padding-top: pxToRem(66px);
+                    }
+                }
+            }
+        }
+        &.bet-item {
+            &.dialog-bet-down {
+                .title {
+                    background-color: rgb(87, 152, 215);
+                }
+                .dialog-content {
+                    .my-rangeslider {
+                        background-color: rgb(220, 236, 247);
+                    }
+                    .down-rangeslider__fill {
+                        background-color: rgb(154, 195, 236);
+                        border-radius: pxToRem(4px);
+                        border-radius: pxToRem(4px);
+                        height: pxToRem(19px);
+                    }
+                    .rangeslider__handle {
+                        background-image: url("../images/icon-handle-down.png");
+                    }
+                }
+            }
+            .title {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: rgb(249, 114, 89);
+                height: pxToRem(98px);
+                line-height: pxToRem(98px);
+                color: #fff;
+                font-size: 0;
+                z-index: 99;
+                margin-bottom: 0;
+                span {
+                    display: inline-block;
+                    vertical-align: middle;
+                    color: #fff;
+                    font-family: 微软雅黑;
+                    font-size: pxToRem(36px);
+                    line-height: initial;
+                    &.icon-arrow {
+                        width: pxToRem(21px);
+                        height: pxToRem(30px);
+                        background-image: url("../images/icon-arrow.png");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: 50% 50%;
+                        margin-left: pxToRem(10px);
+                        &.icon-arrow-down {
+                            transform: rotate(-180deg);
+                        }
+                    }
+                }
+            }
+            .dialog-content {
+                margin-top: pxToRem(52px);
+                padding-top: pxToRem(56px);
+                .my-rangeslider {
+                    border-radius: pxToRem(4px);
+                    background-color: rgb(255, 239, 234);
+                    width: pxToRem(544px);
+                    height: pxToRem(14px);
+                    margin-bottom: pxToRem(30px);
+                    position: relative;
+                }
+                .up-rangeslider__fill {
+                    border-radius: pxToRem(4px);
+                    border-radius: pxToRem(4px);
+                    background-color: rgb(255, 156, 117);
+                    height: pxToRem(19px);
+                }
+                .rangeslider__handle {
+                    width: pxToRem(48px);
+                    height: pxToRem(48px);
+                    background-image: url("../images/icon-handle-up.png");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: 50% 50%;
+                    top: 50%;
+                    margin-top: pxToRem(-22px);
+                    box-shadow:none;
+                    border:none;
+                    &:after {
+                        content: initial;
+                    }
+                }
+                .range-nums {
+                    font-size: 0;
+                    white-space: nowrap;
+                    margin-bottom: pxToRem(40px);
+                    span {
+                        display: inline-block;
+                        vertical-align: middle;
+                        font-size: pxToRem(24px);
+                        margin-right: pxToRem(60px);
+                        &:first-child {
+                            margin-right: pxToRem(30px);
+                        }
+                        &:nth-child(2) {
+                            margin-right: pxToRem(72px);
+                        }
+                        &:nth-child(3) {
+                            margin-right: pxToRem(68px);
+                        }
+                        &:nth-child(4) {
+                            margin-right: pxToRem(70px);
+                        }
+                        &:nth-child(5) {
+                            margin-right: pxToRem(70px);
+                        }
+                    }
+                }
+                .tb-num-wrapper {
+                    font-size: 0;
+                    margin: auto;
+                    text-align: center;
+                    margin-bottom: pxToRem(46px);
+                    span {
+                        display: inline-block;
+                        vertical-align: middle;
+                        color: #686868;
+                        font-size: pxToRem(24px);
+                        &.tb-num {
+                            width: pxToRem(170px);
+                            height: pxToRem(55px);
+                            background-color: rgba(233, 233, 233, .4);
+                            border: 1px solid rgb(180, 180, 180);
+                            padding: pxToRem(12px) pxToRem(24px);
+                            line-height: pxToRem(31px);
+                            margin-right: pxToRem(16px);
+                            border-radius: pxToRem(10px);
+                            text-align: left;
+                        }
+                    }
+                }
+                .btn-submit {
+                    width: pxToRem(532px);
+                    height: pxToRem(80px);
+                    line-height: pxToRem(80px);
+                    margin: auto;
+                    background-color: rgb(255, 228, 0);
+                    border-radius: pxToRem(10px);
+                    color: #aa7400;
+                    text-align: center;
+                    font-size: pxToRem(36px);
+                    margin-top: pxToRem(32px);
+                }
+            }
         }
         .title {
             color: #3e3e3e;
@@ -572,6 +760,7 @@ a {
         .dialog-content {
             line-height: pxToRem(40px);
             text-align: justify;
+            position: relative;
             div {
                 margin-bottom: pxToRem(12px);
             }
