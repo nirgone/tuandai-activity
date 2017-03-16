@@ -1,0 +1,186 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/func";
+$designHeight: 1206;
+.question-page {
+    background-image: url('../images/bg2.png');
+}
+
+.question-container {
+    // @include background('../images/question-bg.png', 701px, 916px);
+    // height: percent(916, $designHeight);
+    // top: pxToRem(40px);
+    position: absolute;
+    left: 50%;
+    transform: translate(-49%, -50%);
+    @include background('../images/qbg.png',
+    701px,
+    795px);
+    height: percent(795, $designHeight);
+    background-size: 100% 100%;
+    top: 50%;
+    padding: pxToRem(90px) pxToRem(66px) pxToRem(60px) pxToRem(60px);
+    text-align: justify;
+    &:after {
+        content: "";
+        @include background('../images/icon-pai2.png',
+        148px,
+        139px);
+        height: percent(139, 795);
+        position: absolute;
+        right: pxToRem(20px);
+        top: 0;
+        transform: translate(0, -85%);
+    }
+}
+
+.icon-seri {
+    @include background('../images/icon-seri.png',
+    104px,
+    100px);
+    height: percent(100, 795);
+    position: absolute;
+    // right: pxToRem(160px);
+    top: 0;
+    right: 0;
+    transform: translate(-150%, -130%);
+    text-align: center;
+    font-size: pxToRem(34px);
+    color: #000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.q-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-size: 0;
+    color: #000;
+    display: none;
+    .q-txt {
+        width: 100%;
+        font-size: pxToRem(34px);
+        line-height: pxToRem(42px);
+    }
+    .opt-list {
+        width: 100%;
+        height: 90%;
+        overflow: auto;
+        padding-bottom: pxToRem(30px);
+        .opt-row {
+            width: 100%;
+            margin-top: pxToRem(30px);
+            &>div {
+                display: inline-block;
+                vertical-align: top;
+            }
+        }
+        .opt-check {
+            width: 13%;
+            line-height: pxToRem(42px);
+        }
+        .opt-txt {
+            font-size: pxToRem(26px);
+            line-height: pxToRem(42px);
+            width: 86.5%;
+            // &>label {
+            //     width: 100%;
+            // }
+        }
+        // .opt-row {
+        //     width: 100%;
+        //     display: block;
+        //     
+        // }
+        // label {
+        //     vertical-align: middle;
+        // }
+    }
+    input[type='radio'],
+    input[type='checkbox'] {
+        display: none;
+    }
+    .icon-radio {
+        width: pxToRem(34px);
+        height: pxToRem(34px);
+        border-radius: pxToRem(33px);
+        border: 1px solid rgb(0, 1, 5);
+        display: inline-block;
+        vertical-align: middle;
+        // margin-right: pxToRem(40px);
+    }
+    input[type='radio']:checked+.icon-radio {
+        border: 0;
+        @include inline-background('../images/selected-radio.png',
+        34px,
+        34px);
+    }
+    input[type='checkbox']:checked+.icon-radio {
+        border: 0;
+        @include inline-background('../images/selected-checkbox.png',
+        34px,
+        34px);
+    }
+    input[type='text'] {
+        border: none;
+        border-bottom: 1px solid #767676;
+        background-color: transparent;
+        outline: 0;
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+        color: #000;
+    }
+    .opt-other {
+        padding-left: pxToRem(20px);
+        &>input {
+            font-size: pxToRem(26px);
+            line-height: pxToRem(42px);
+        }
+    }
+    .input-row {
+        padding-left: pxToRem(36px);
+        position: relative;
+        &:before {
+            content: '';
+            width: pxToRem(16px);
+            height: pxToRem(16px);
+            border-radius: pxToRem(16px);
+            background-color: #b7b7b7;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: pxToRem(-8px);
+        }
+        .sub-input {
+            font-size: pxToRem(34px);
+            line-height: pxToRem(46px);
+            padding: pxToRem(20px) 0;
+        }
+    }
+    .q-main,
+    .q-sub {
+        width: 100%;
+        height: 100%;
+    }
+    .q-sub {
+        display: none;
+    }
+}
+
+.q-btns {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: percent(70, $designHeight);
+    // display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0 pxToRem(10px);
+    display: none;
+}

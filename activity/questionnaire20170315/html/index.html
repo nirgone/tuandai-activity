@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>为自己发声，抽88元红包</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/index.css">
+    <!-- build:js({dist}) ../js/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="scroll scroll-active">
+        <div class="index-page content">
+            <i class="icon-logo"></i>
+            <i class="icon-title-p1">
+			<i class="icon-rule"></i>
+            </i>
+            <i class="icon-txt-p1"></i>
+            <i class="icon-pai-p1"></i>
+            <div class="btn-yellow btn-start">开始填写</div>
+        </div>
+    </div>
+    <div class="mask rule-mask">
+        <div class="rule-wrapper pop-container">
+            <span class="r-title">活动规则</span>
+            <div class="rule-content">
+                <ul class="r-list">
+                    <li data-content="1、">活动时间：2017年3月**日-2017年3月**日；</li>
+                    <li data-content="2、">活动期间，用户登录团贷网账户，完整填写调查问卷并成功提交，即可获得1次抽奖机会。活动期间，同一用户最多可获得1次奖励；</li>
+                    <li data-content="3、">现金红包奖励，中奖后2小时内发放至团宝箱；团币奖励，中奖后直接发放至用户账户，可登录团贷网APP-【我】-【我的会员】或电脑版团贷网会员中心查看；</li>
+                    <li data-content="4、">我们将会对您的信息进行严格保密处理，结果仅用于团贷网了解用户需求及优化产品设计；</li>
+                    <li data-content="5、">团贷网可根据活动举办的实际情况，在法律允许的范围内，对本活动规则进行变动及调整，相关变动或调整将公布在活动规则页面上，公布后依法生效；</li>
+                    <li class="r-recomment">*本活动与苹果公司无关</li>
+                </ul>
+            </div>
+            <div class="btn-pop btn-rule">知道了</div>
+        </div>
+        <div class="masker"></div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<!-- build:js({dist}) ../js/lib/vendor/jsbridge-3.1.1.js -->
+<script src="../js/vendor/jsbridge-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
+<!-- <script src="../js/index.js" type="text/javascript" charset="utf-8"></script> -->
+<script type="text/javascript">
+(function() {
+    FastClick.attach(document.body);
+    var isLogin = true;
+    var hasDone = false; //是否完成问卷调查
+    var hasLot = false; //是否抽过奖
+    $('.btn-start').on('click', function() {
+        if (!isLogin) {
+            Util.message({
+                content: '为确保您的奖励顺利发放，<br/>请先登录！',
+                callback: function() {
+                    if (Jsbridge.isNewVersion()) {
+                        Jsbridge.toAppLogin();
+                    } else {
+                        //web版打开登录页面
+                    }
+                }
+            });
+            return;
+        }
+        if (hasDone) {
+            if (hasLot) {
+                Util.message('您已经填写过该问卷了');
+            } else {
+                window.location.href = './lottery.html';
+            }
+            return;
+        }
+        window.location.href = './questions.html';
+
+    });
+    $(".icon-rule").on('click', function() {
+        $('.rule-mask').show();
+    });
+    $(".masker, .btn-rule").on('click', function() {
+        $('.rule-mask').hide();
+    });
+})();
+</script>
+
+</html>

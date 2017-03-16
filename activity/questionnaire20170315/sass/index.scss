@@ -1,0 +1,118 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/func";
+$designHeight: 1206;
+.index-page {
+    background-image: url('../images/bg1.png');
+    padding-top: pxToRem(200px);
+}
+
+
+
+.icon-title-p1 {
+    @include background('../images/title-p1.png',
+    682px,
+    241px);
+    // height: percent(241, 1206);
+    margin: auto;
+    position: relative;
+}
+
+.icon-rule {
+    @include background('../images/icon-rule.png',
+    140px,
+    135px);
+    // height: percent(135, 241);
+    position: absolute;
+    top: pxToRem(-30px);
+    right: pxToRem(24px);
+    // transform: translate(-40%, -14%);
+}
+
+.icon-txt-p1 {
+    @include background('../images/txt1-p1.png',
+    632px,
+    80px);
+    height: percent(80, $designHeight);
+    margin: auto;
+    margin-top: pxToRem(24px);
+}
+
+.icon-pai-p1 {
+    @include background('../images/icon-pai.png',
+    521px,
+    335px);
+    height: percent(335, $designHeight);
+    position: absolute;
+    bottom: percent(270, $designHeight);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn-start {
+    // width: pxToRem(690px);
+    // height: pxToRem(90px);
+    font-size: pxToRem(48px);
+    position: absolute;
+    left: 50%;
+    bottom: percent(70, $designHeight);
+    margin-left: pxToRem(-345px);
+}
+.rule-mask {
+	display: none;
+}
+
+.rule-wrapper {
+    width: pxToRem(640px);
+    height: pxToRem(913px);
+    background-color: #fff;
+    overflow: hidden;
+    padding: pxToRem(120px) pxToRem(70px) pxToRem(160px) pxToRem(70px);
+    font-size: 0;
+    color: #000;
+    .r-title {
+        width: 100%;
+        text-align: center;
+        font-size: pxToRem(36px);
+        line-height: pxToRem(48px);
+        position: absolute;
+        top: pxToRem(40px);
+        left: 0;
+    }
+    .rule-content {
+    	width: 100%;
+    	height: 100%;
+    	overflow: auto;
+    }
+    .r-list {
+        width: 100%;
+        font-size: 0;
+        &>li:not(:last-child) {
+            font-size: pxToRem(22px);
+            line-height: pxToRem(38px);
+            margin-bottom: pxToRem(10px);
+            padding-left: pxToRem(40px);
+            position: relative;
+            &:before {
+            	content: attr(data-content);
+            	position: absolute;
+            	height: pxToRem(38px);
+            	line-height: pxToRem(38px);
+            	left: 0;
+            	top: 0;
+            }
+        }
+        .r-recomment {
+            width: 100%;
+            font-size: pxToRem(22px);
+            color: #9c9b9b;
+        }
+    }
+    .btn-rule {
+    	position: absolute;
+    	left: 50%;
+    	bottom: pxToRem(50px);
+    	transform: translateX(-50%);
+    }
+}
