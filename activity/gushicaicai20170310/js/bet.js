@@ -67,6 +67,342 @@
         window.location.href = './list.html';
     });
 
+    //每日交易额排名情况
+    function loadDayInvest(DayInvestDate, DayInvestData1, DayInvestData2) {
+        var dayCharts = echarts.init(pageEl.find('.k-line-day')[0]);
+        option = {
+            // tooltip: {
+            //     triggerOn: 'click',
+            //     trigger: 'axis',
+            //     formatter: '{c}'
+            // },
+            tooltip: {
+                show: true,
+                trigger: 'axis',
+                triggerOn: 'mousemove',
+                backgroundColor: 'rgba( 255, 255, 255, 0.8 )',
+                extraCssText: 'box-shadow:0px 0px 20px 0px rgb( 234, 234, 234 );',
+                axisPointer: {
+                    lineStyle: {
+                        color: 'rgba(248,87,57,0.4)'
+                    },
+                    animation: false
+                },
+                padding: [5, 5, 5, 5],
+                formatter: '{b0}<br>收盘值:&nbsp;&nbsp;{c0}<br>出盘值:&nbsp;&nbsp;{c1}',
+                textStyle: {
+                    fontSize: 11,
+                    color: '#212121'
+                }
+            },
+            grid: {
+                left: '-8%',
+                right: '7%',
+                top: '16px',
+                bottom: '16px',
+                containLabel: true
+            },
+            calculable: true,
+            xAxis: [{
+                name: '（时间）',
+                axisTick: {
+                    show: false
+                },
+                nameTextStyle: {
+                    color: '#fff',
+                    fontSize: 10,
+                    fontFamily: 'Microsoft YaHei'
+                },
+                nameGap: 1,
+                boundaryGap: false,
+                splitLine: { //坐标网格样式设置
+                    show: true,
+                    lineStyle: {
+                        color: '#ffead5'
+                    }
+                },
+                axisLabel: { //坐标文字样式设置
+                    margin: 10,
+                    textStyle: {
+                        fontSize: 12,
+                        color: '#8e8e8e'
+                    }
+                },
+                axisLine: { //坐标刻度样式设置
+                    show: false,
+                    lineStyle: {
+                        width: 1,
+                        color: '#ffead5'
+                    }
+                },
+                type: 'category',
+                data: DayInvestDate
+            }],
+            yAxis: [{
+                splitNumber: 3,
+                axisTick: {
+                    show: false
+                },
+                nameTextStyle: {
+                    color: '#2691ff',
+                    fontSize: 14,
+                    fontFamily: 'Microsoft YaHei'
+                },
+                axisLabel: { //坐标文字样式设置
+                    margin: 10,
+                    textStyle: {
+                        fontSize: 14,
+                        color: 'rgba(225,225,225,0)'
+                    }
+                },
+                axisLine: { //坐标刻度样式设置
+                    lineStyle: {
+                        width: 1,
+                        color: '#ffead5'
+                    }
+                },
+
+                splitLine: { //坐标网格样式设置
+                    lineStyle: {
+                        color: '#ffead5'
+                    }
+                }
+            }],
+            series: [{
+                symbol: 'circle',
+                symbolSize: 6,
+                name: '2016年',
+                type: 'line',
+                smooth: true,
+                areaStyle: {
+                    normal: {
+                        opacity: 0.72,
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(254, 246, 231,1)'
+                        }, {
+                            offset: 1,
+                            color: 'rgba(255, 255, 255,1)'
+                        }])
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        lineStyle: {
+                            color: '#f85739',
+                            width: '1'
+                        }
+                    }
+                },
+                data: DayInvestData1
+            }, {
+                symbol: 'image://images/dian.png',
+                name: '2016年',
+                type: 'line',
+                smooth: true,
+                areaStyle: {
+                    normal: {
+                        opacity: 0
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        lineStyle: {
+                            color: '#c9b3a1',
+                            width: '1'
+                        }
+                    }
+                },
+                data: DayInvestData2
+            }]
+        }
+        dayCharts.setOption(option);
+
+    }
+    var DayInvestDate = ["03-11", "03-12", "03-13", "03-14", "03-15", "03-16", "03-17"];
+    var DayInvestData1 = [20768.01, 22872.77, 18496.2, 18496.0, 18496.93, 20008.18, 18496.0];
+    var DayInvestData2 = [19628.01, 17452.77, 18326.2, 13406.0, 16496.93, 18008.18, 18496.0];
+    loadDayInvest(DayInvestDate, DayInvestData1, DayInvestData2);
+
+
+    // 每月图表
+    function loadMonthInvest(MonthInvestDate, MonthInvestData1, MonthInvestData2) {
+        var MonthCharts = echarts.init(pageEl.find('.k-line-month')[0]);
+        option = {
+            // tooltip: {
+            //     triggerOn: 'click',
+            //     trigger: 'axis',
+            //     formatter: '{c}'
+            // },
+            tooltip: {
+                show: true,
+                trigger: 'axis',
+                triggerOn: 'mousemove',
+                backgroundColor: 'rgba( 255, 255, 255, 0.8 )',
+                extraCssText: 'box-shadow:0px 0px 20px 0px rgb( 234, 234, 234 );',
+                axisPointer: {
+                    lineStyle: {
+                        color: 'rgba(248,87,57,0.4)'
+                    },
+                    animation: false
+                },
+                padding: [5, 5, 5, 5],
+                formatter: '{b0}<br>收盘值:&nbsp;&nbsp;{c0}<br>出盘值:&nbsp;&nbsp;{c1}',
+                textStyle: {
+                    fontSize: 11,
+                    color: '#212121'
+                }
+            },
+            grid: {
+
+                left: '-8%',
+                right: '7%',
+                top: '16px',
+                bottom: '16px',
+                containLabel: true
+            },
+
+            calculable: true,
+            xAxis: [{
+                name: '（时间）',
+                axisTick: {
+                    show: false
+                },
+                nameTextStyle: {
+                    color: '#fff',
+                    fontSize: 10,
+                    fontFamily: 'Microsoft YaHei'
+                },
+                nameGap: 1,
+                boundaryGap: false,
+                splitLine: { //坐标网格样式设置
+                    show: true,
+                    lineStyle: {
+                        color: '#ffead5'
+                    }
+                },
+                axisLabel: { //坐标文字样式设置
+                    margin: 10,
+                    textStyle: {
+                        fontSize: 12,
+                        color: '#8e8e8e'
+                    }
+                },
+                axisLine: { //坐标刻度样式设置
+                    show: false,
+                    lineStyle: {
+                        width: 1,
+                        color: '#ffead5'
+                    }
+                },
+                type: 'category',
+                data: MonthInvestDate
+            }],
+            yAxis: [{
+                splitNumber: 3,
+                axisTick: {
+                    show: false
+                },
+                nameTextStyle: {
+                    color: '#2691ff',
+                    fontSize: 14,
+                    fontFamily: 'Microsoft YaHei'
+                },
+                axisLabel: { //坐标文字样式设置
+                    margin: 10,
+                    textStyle: {
+                        fontSize: 14,
+                        color: 'rgba(225,225,225,0)'
+                    }
+                },
+                axisLine: { //坐标刻度样式设置
+                    lineStyle: {
+                        width: 1,
+                        color: '#ffead5'
+                    }
+                },
+
+                splitLine: { //坐标网格样式设置
+                    lineStyle: {
+                        color: '#ffead5'
+                    }
+                }
+            }],
+            series: [{
+                symbol: 'circle',
+                symbolSize: 6,
+                name: '2016年',
+                type: 'line',
+                smooth: true,
+                areaStyle: {
+                    normal: {
+                        opacity: 0.72,
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(254, 246, 231,1)'
+                        }, {
+                            offset: 1,
+                            color: 'rgba(255, 255, 255,1)'
+                        }])
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        lineStyle: {
+                            color: '#f85739',
+                            width: '1'
+                        }
+                    }
+                },
+                data: MonthInvestData1
+            }, {
+                symbol: 'image://images/dian.png',
+                name: '2016年',
+                type: 'line',
+                smooth: true,
+                areaStyle: {
+                    normal: {
+                        opacity: 0
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        lineStyle: {
+                            color: '#c9b3a1',
+                            width: '1'
+                        }
+                    }
+                },
+                data: MonthInvestData2
+            }]
+        }
+        MonthCharts.setOption(option);
+
+    }
+    var MonthInvestDate = ["1月", "2月", "3月", "4月", "5月", "6月", "7月"];
+    var MonthInvestData1 = [20768.01, 22872.77, 18496.2, 18496.0, 18496.93, 20008.18, 18496.0];
+    var MonthInvestData2 = [19628.01, 17452.77, 18326.2, 13406.0, 16496.93, 18008.18, 18496.0];
+    loadMonthInvest(MonthInvestDate, MonthInvestData1, MonthInvestData2);
+
+    // 切换k线图
+    pageEl.on('click', '.k-line-wrapper .btn', function(e) {
+        var currentTarget = $(e.currentTarget);
+        if (currentTarget.hasClass('active')) { //如果已经显示该k线图
+            return;
+        }
+
+        pageEl.find('.k-line-wrapper .btn').removeClass('active');
+        currentTarget.addClass('active');
+        if (currentTarget.hasClass('btn-day')) { //日k图
+            pageEl.find('.k-line-month').removeClass('show');
+            pageEl.find('.k-line-day').addClass('show');
+
+        } else if (currentTarget.hasClass('btn-month')) {
+            pageEl.find('.k-line-day').removeClass('show');
+            pageEl.find('.k-line-month').addClass('show');
+        }
+    });
+
     // 点击押注
     pageEl.on('click', '.btn-bet', function(e) {
         var currentTarget = $(e.currentTarget);
@@ -112,7 +448,7 @@
 
                 // Callback function
                 onSlideEnd: function(position, value) { //押的团币数
-                    dialogEl.find('.tb-num').text(value)
+                    dialogEl.find('.up-range').parents('.dialog-item').find('.tb-num').text(value)
                 }
             });
         } else if (currentTarget.hasClass('bet-down')) { //押下跌
@@ -138,7 +474,7 @@
 
                 // Callback function
                 onSlideEnd: function(position, value) { //押的团币数
-                    dialogEl.find('.tb-num').text(value)
+                    dialogEl.find('.down-range').parents('.dialog-item').find('.tb-num').text(value)
                 }
             });
         }
@@ -149,25 +485,30 @@
         var currentTarget = $(e.currentTarget);
         var parentTarget = currentTarget.parents('.dialog-item');
         var tbNum = parentTarget.find('.tb-num').text();
-        // debugger
+
+        if (+tbNum < 50) { //最低押注50个团币
+            Util.toast('亲，最低要押注50个团币哦~');
+            return;
+        }
+
         if (parentTarget.hasClass('dialog-bet-up')) { //押上涨
             console.log('您押涨' + tbNum + '团币')
         } else if (parentTarget.hasClass('dialog-bet-down')) { //押下跌
             console.log('您押跌' + tbNum + '团币')
         }
-        
-        var canSubmit = false;  //是否能提交
-        if(!canSubmit) {    
+
+        var canSubmit = false; //是否能提交
+        if (!canSubmit) {
             // TODO:xxx为变化值
             Util.toast('您今天已投注XXX团币，剩余XXX团币可投（一天最高投注500团币）');
             return;
         }
-        
+
         // 关闭弹窗
         dialogEl.removeClass('show');
         Util.enableScrolling();
     });
 
 
-    initCountDonw('2017-03-13 11:40:00');
+    initCountDonw('2017-03-16 15:40:00');
 })();

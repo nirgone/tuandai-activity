@@ -43,7 +43,7 @@
 					<!-- 日期 -->
 					<span class="date">02月23日</span>
 					<span class="symbol">></span>
-					<span class="">上证指数是升还是跌？ </span>
+					<span class="">上证指数是升还是跌？</span>
 					<!-- 倒计时 -->
 					<span class="countdown-wrapper">
 						<span class='icon-time'></span>
@@ -51,7 +51,23 @@
 					</span>
 				</div>
 				<div class="md-content">
-					<div class="k-line-wrapper"></div>
+					<div class="k-line-wrapper">
+						<!-- 日k线 -->
+						<div class="k-line-day show"></div>
+						<!-- 月k线 -->
+						<div class="k-line-month"></div>
+
+						<!-- 值可变化 -->
+						<div class="max-value">3266.48</div>
+						<div class="middle-value">3216.75</div>
+						<div class="min-value">3167.01</div>
+
+						<div class="btn-wrapper">
+							<div class="btn-day btn active">周</div>
+							<div class="btn-month btn">月</div>
+						</div>
+					</div>
+
 					<div class="bet-show">
 						<div class="up-show"></div>
 						<div class="down-show"></div>
@@ -136,13 +152,13 @@
 							<span>98%</span>
 						</li>
 						<li class="list-item">
-							<span>#4</span>
+							<span>第4名</span>
 							<span><img src="" /></span>
 							<span>人**何</span>
 							<span>98%</span>
 						</li>
 						<li class="list-item">
-							<span>#5</span>
+							<span>第5名</span>
 							<span><img src="" /></span>
 							<span>人**何</span>
 							<span>98%</span>
@@ -150,7 +166,11 @@
 					</ul>
 				</div>
 			</div>
+			<div class="copyright">
+				2010- 2017 版权所有 © 团贷网 粤ICP备12043601号-1<br/>东莞团贷网互联网科技服务有限公司  
+			</div>
 		</div>
+
 	</div>
 	<div class="dialog">
 		<div class="mask"></div>
@@ -171,7 +191,7 @@
 				<div>
 2.竞猜结果公布后，平台将返还胜出玩家在竞猜时投注的团币；若出现股市盘整（不涨也不跌），平台将返还该轮竞猜中所有玩家在竞猜时投注的团币；</div>
 				<div>3、竞猜结果公布后，胜出玩家将按投注比例获得另一方玩家投注的团币总额的80%；</div>
-				<div>4、游戏押注时间为周日00：00-周四23：59，当天竞猜次日股市涨跌；周末因股市休市，周五00：00-周六23：59将暂停竞猜；</div>
+				<div>4、游戏押注时间为周日00:00-周四23:59，当天竞猜次日股市涨跌；周末因股市休市，周五00:00-周六23:59将暂停竞猜；</div>
 				<div>5、竞猜结果公布后，胜出玩家在竞猜时投注的团币和赢得的团币将于一个工作日内发放至账户中（查看团币位置见APP【我-我的会员-我的团币】）；</div>
 				<div>6、胜出玩家若所获奖励团币为非整数则将采取向下取整原则，例如奖励团币为80.75团币则实际发放80团币；</div>
 				<div>7、凡以不正当手段（包括不限于作弊、扰乱系统、实施网络攻击等）参与本次活动的用户，团贷网有权终止其参与，取消参与资格；</div>
@@ -189,9 +209,9 @@
 				<span>我看涨</span><span class="icon-arrow icon-arrow-up"></span>
 			</div>
 			<div class="dialog-content">
-				<input class="up-range" type="range" min="50" max="500" step="50" value="50"/>
+				<input class="up-range" type="range" min="0" max="500" step="50" value="50"/>
 				<div class="range-nums">
-					<span>50</span>
+					<span>0</span>
 					<span>100</span>
 					<span>200</span>
 					<span>300</span>
@@ -211,9 +231,9 @@
 				<span>我看跌</span><span class="icon-arrow icon-arrow-down"></span>
 			</div>
 			<div class="dialog-content">
-				<input class="down-range" type="range" min="50" max="500" step="50" value="50"/>
+				<input class="down-range" type="range" min="0" max="500" step="50" value="50"/>
 				<div class="range-nums">
-					<span>50</span>
+					<span>0</span>
 					<span>100</span>
 					<span>200</span>
 					<span>300</span>
@@ -246,6 +266,7 @@
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
 <script src="../js/Util.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="../js/rangeslider.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="../js/bet.js" type="text/javascript" charset="utf-8"></script>
 </html>
