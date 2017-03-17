@@ -4,28 +4,28 @@
     // var _indexs = [0, 1, 2, 3, 4, 5, 6, 7]; //抽奖奖品图标下标
     var _prizes = [{
         "title": "谢谢参与",
-        "icon": "icon-smile",
+        "icon": "face",
     }, {
         "title": "88元现金红包",
-        "icon": "icon-rp88",
+        "icon": "rp88",
     }, {
         "title": "10团币",
-        "icon": "icon-coin",
+        "icon": "coin",
     }, {
         "title": "88团币",
-        "icon": "icon-coins",
+        "icon": "coins",
     }, {
         "title": "谢谢参与",
-        "icon": "icon-smile",
+        "icon": "face",
     }, {
         "title": "8.8元现金红包",
-        "icon": "icon-rp808",
+        "icon": "rp808",
     }, {
         "title": "10团币",
-        "icon": "icon-coin",
+        "icon": "coin",
     }, {
         "title": "0.88元现金红包",
-        "icon": "icon-rp088",
+        "icon": "rp088",
     }];
     $("#btn_lottery").on("click", function(e) {
         lottery.init({
@@ -34,8 +34,28 @@
         });
         //settimeout 之后可以替换成ajax,ajax成功回调后，设置获取的奖品
         setTimeout(function(e) {
-            lottery.stop(7, function(index) {
-                alert(_prizes[index].title + ":" + _prizes[index].icon);
+            lottery.stop(6, function(index) {
+                // alert(_prizes[index].title + ":" + _prizes[index].icon);
+                var _icon = _prizes[index].icon;
+                var _title = '恭喜你，中奖了！', _text = _prizes[index].title;
+                if (index == 0 || index == 4) {
+                	_title = '很遗憾，没中奖!';
+                	_text = '';
+                }
+                Util.showPrize({
+                    title: _title,
+                    icon: {
+                        iconStyle: _icon,
+                        iconText: _text
+                    },
+                    btn: {
+                        style: '',
+                        text: '查看奖品',
+                        callback: function() {
+                            console.info('查看奖品');
+                        }
+                    }
+                });
             }); //设置获取的奖品
         }, 2000);
     });
@@ -118,18 +138,4 @@
             this.lotteryCallback = callback;
         }
     };
-    Util.showPrize({
-        title: '恭喜你，中奖了！',
-        icon: {
-            iconStyle: 'rp88',
-            iconText: '88个团币'
-        },
-        btn: {
-            style: '',
-            text: '查看奖品',
-            callback: function() {
-                console.info('查看奖品');
-            }
-        }
-    });
 })();
