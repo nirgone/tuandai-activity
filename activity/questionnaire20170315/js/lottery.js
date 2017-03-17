@@ -27,8 +27,11 @@
         "title": "0.88元现金红包",
         "icon": "icon-rp088",
     }];
-    $("#btn_lottery").on("click", function (e) {
-    	lottery.init({ id: 'lottery', speed: 60 });
+    $("#btn_lottery").on("click", function(e) {
+        lottery.init({
+            id: 'lottery',
+            speed: 60
+        });
         //settimeout 之后可以替换成ajax,ajax成功回调后，设置获取的奖品
         setTimeout(function(e) {
             lottery.stop(7, function(index) {
@@ -53,10 +56,10 @@
             this.config = $.extend(this.config, config || {});
             var _config = this.config;
             if (_config.index < -1) {
-            	_config.index = -1
+                _config.index = -1
             }
             if (_config.index > 7) {
-            	_config.index = 7
+                _config.index = 7
             }
             if ($("#" + _config.id).find(".item").length > 0) {
                 $lottery = $("#" + _config.id);
@@ -86,7 +89,7 @@
         lottery: function(lo) {
             lo.times += 1;
             var _config = lo.config;
-            if (_config.prize != -1 && lo.times > _config.cycle + 9 && (_config.prize - _config.index === 1 || _config.prize - _config.index === -7 )) {
+            if (_config.prize != -1 && lo.times > _config.cycle + 9 && (_config.prize - _config.index === 1 || _config.prize - _config.index === -7)) {
                 clearTimeout(lo.timer);
                 lo.roll(_config.prize);
                 setTimeout(function() {
@@ -120,4 +123,18 @@
             this.lotteryCallback = callback;
         }
     };
+    Util.showPrize({
+        title: '恭喜你，中奖了！',
+        icon: {
+            iconStyle: 'rp88',
+            iconText: '88个团币'
+        },
+        btn: {
+            style: '',
+            text: '查看奖品',
+            callback: function() {
+                console.info('查看奖品');
+            }
+        }
+    });
 })();

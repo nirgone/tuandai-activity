@@ -51,9 +51,11 @@ ul,
 li {
     display: inline-block;
 }
+
 .common-page {
     background-image: url('../images/bg2.png');
 }
+
 .icon-logo {
     @include background('../images/logo.png',
     330px,
@@ -80,13 +82,15 @@ li {
     background-image: url('../images/btn-yellow.png');
     color: #9f4c02;
 }
+
 .btn-small {
-	width: pxToRem(330px) !important;
+    width: pxToRem(330px) !important;
 }
+
 .btn-blue {
-	@extend .btn;
-	background-image: url('../images/btn-blue.png');
-	color: #2a3785;
+    @extend .btn;
+    background-image: url('../images/btn-blue.png');
+    color: #2a3785;
 }
 
 .mask {
@@ -116,6 +120,13 @@ li {
         width: pxToRem(580px);
         padding: pxToRem(60px);
     }
+    .pop-title {
+        font-size: pxToRem(36px);
+        color: #000;
+        width: 100%;
+        text-align: center;
+        line-height: pxToRem(48px);
+    }
     .pop-content {
         width: 100%;
         text-align: center;
@@ -138,28 +149,70 @@ li {
         margin: auto;
         margin-top: pxToRem(40px);
     }
+    // .msg-btn {
+    // 	margin-top: pxToRem(40px);
+    // }
+    .pop-icon-container {
+    	width: 100%;
+    	font-size: 0;
+    	margin-top: pxToRem(30px);
+    }
+    .pop-icon {
+        position: relative;
+        width: 100%;
+        height: pxToRem(120px);
+        font-size: 0;
+        display: block;
+        &:before {
+            content: '';
+            background-repeat: no-repeat;
+            background-position: bottom;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, 0);
+            background-size: cover;
+            width: pxToRem(156px);
+            height: pxToRem(121px);
+            z-index: 10000;
+        }
+        &:after {
+        	content: '';
+        	// background-repeat: no-repeat;
+        	position: absolute;
+        	left: 50%;
+        	bottom: 0;
+        	transform: translate(-50%,0);
+        	// background-size: contain;
+        	z-index: 9999;
+        }
+    }
+    .pop-icon-text {
+    	width: 100%;
+    	text-align: center;
+    	font-size: pxToRem(26px);
+    	// line-height: pxToRem(48px);
+    	color: #7c7c7c;
+    }
 }
-
 
 ::-webkit-scrollbar {
     //滚动条不可见
     display: none;
 }
+
 .toast {
-	width: 100%;
-	background-color: rgba(0, 0, 0, .5);
-	text-align: center;
-	min-height: pxToRem(80px);
-	font-size: pxToRem(30px);
-	line-height: pxToRem(36px);
-	color: #fff;
-	position: absolute;
-	left: 0;
-	top: 50%;
-	transform: translateY(-50%);
-	z-index: 100;
-	padding: pxToRem(22px) 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    text-align: center;
+    min-height: pxToRem(80px);
+    font-size: pxToRem(30px);
+    line-height: pxToRem(36px);
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    padding: pxToRem(22px) 0;
 }
-
-
-

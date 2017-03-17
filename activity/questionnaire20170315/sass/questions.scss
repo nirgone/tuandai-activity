@@ -20,7 +20,7 @@ $designHeight: 1206;
     height: percent(795, $designHeight);
     background-size: 100% 100%;
     top: 50%;
-    padding: pxToRem(90px) pxToRem(66px) pxToRem(60px) pxToRem(60px);
+    padding: pxToRem(70px) pxToRem(66px) pxToRem(60px) pxToRem(60px);
     text-align: justify;
     &:after {
         content: "";

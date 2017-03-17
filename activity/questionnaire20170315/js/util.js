@@ -20,6 +20,7 @@
     function popup(options) {
         var that = this;
         var _options = {
+            title: '',
             message: '',
             contentStyle: '',
             icon: {
@@ -38,14 +39,30 @@
             popWrapper = $('<div/>').addClass('pop-wrapper').addClass('pop-container'),
             popContent = $('<div/>').addClass('pop-content').html(_options.message);
 
+        if (_options.title) {
+            var title = $('<span/>').addClass('pop-title').html(_options.title);
+            popWrapper.append(title);
+        }
         if (_options.contentStyle) {
             popContent.addClass(_options.contentStyle);
         }
-        // if (_options.btn.style) {
-        //     btn.addClass(_options.btn.style);
-        // }
+
+        if (_options.icon.iconStyle) {
+            //添加图标
+            var iconWrapper = $('<div/>').addClass('pop-icon-container');
+            var icon = $('<i/>').addClass('pop-icon').addClass(_options.icon.iconStyle);
+            iconWrapper.append(icon);
+            if (_options.icon.iconText) {
+                var iconText = $('<span/>').addClass('pop-icon-text').html(_options.icon.iconText);
+                iconWrapper.append(iconText);
+
+            }
+            popContent.append(iconWrapper);
+        }
         popWrapper.append(popContent);
+
         if (_options.btn.text) {
+            //添加按钮
             _options.btn.style && btn.addClass(_options.btn.style);
             var btn = $('<div/>').addClass('btn-pop').html(_options.btn.text);
             //弹窗按钮点击事件
@@ -85,6 +102,7 @@
                 contentStyle: 'toast-content',
                 btn: {
                     text: '确定',
+                    // style: 'msg-btn',
                     callback: options.callback
                 }
             });
@@ -96,6 +114,23 @@
             setTimeout(function() {
                 _toast.remove();
             }, duration);
+        },
+        showPrize: function(options) {
+            /* {
+                 title: '',
+                 icon: {
+                     iconStyle: '',
+                     iconText: ''
+                 },
+                 btn: {
+                     style: '',
+                     text: '',
+                     callback: null
+                 }
+             }*/
+            options.icon.iconStyle = 'pop-' + options.icon.iconStyle;
+
+            popup(options);
         }
     }
 
