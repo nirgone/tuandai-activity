@@ -76,11 +76,6 @@
             var count = _config.count;
             var lottery = _config.obj;
             $(lottery).find("#item" + _index).removeClass("active");
-            // if (!index) {
-            //     _index = _index + 1 > 7 ? 0 : _index + 1
-            // } else {
-            // 	_index 
-            // }
             _index = _index + 1 > 7 ? 0 : _index + 1
             $(lottery).find("#item" + _index).addClass("active");
             this.config.index = _index;
