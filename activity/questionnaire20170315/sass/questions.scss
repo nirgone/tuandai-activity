@@ -33,6 +33,21 @@ $designHeight: 1206;
         top: 0;
         transform: translate(0, -85%);
     }
+    .q-shadow {
+    	// width: 100%;
+    	height: pxToRem(80px);
+    	position: absolute;
+    	left: pxToRem(60px);
+    	right: pxToRem(66px);
+    	bottom: pxToRem(30px);
+    	// border-bottom-left-radius: pxToRem(20px);
+    	// border-bottom-right-radius: pxToRem(20px);
+    	// background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 50%,rgba(255, 255, 255, 0) 100%);
+    	background-image: url('../images/bg-gradient.png');
+    	background-repeat: no-repeat;
+    	background-size: 100% 100%;
+    	z-index: 10;
+    }
 }
 
 .icon-seri {
@@ -70,7 +85,7 @@ $designHeight: 1206;
         width: 100%;
         height: 90%;
         overflow: auto;
-        padding-bottom: pxToRem(30px);
+        padding-bottom: pxToRem(60px);
         .opt-row {
             width: 100%;
             margin-top: pxToRem(30px);
@@ -184,3 +199,7 @@ $designHeight: 1206;
     padding: 0 pxToRem(10px);
     display: none;
 }
+.q-rec {
+	color: #969696;
+}
+

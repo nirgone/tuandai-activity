@@ -34,28 +34,59 @@
         });
         //settimeout 之后可以替换成ajax,ajax成功回调后，设置获取的奖品
         setTimeout(function(e) {
-            lottery.stop(6, function(index) {
+            lottery.stop(1, function(index) {
                 // alert(_prizes[index].title + ":" + _prizes[index].icon);
                 var _icon = _prizes[index].icon;
-                var _title = '恭喜你，中奖了！', _text = _prizes[index].title;
+                // var _title = '恭喜你，中奖了！',
+                //     _text = _prizes[index].title,
+                //     _btnText = '查看奖品',
+                //     hasPrize = true;
+                var params;
                 if (index == 0 || index == 4) {
-                	_title = '很遗憾，没中奖!';
-                	_text = '';
-                }
-                Util.showPrize({
-                    title: _title,
-                    icon: {
-                        iconStyle: _icon,
-                        iconText: _text
-                    },
-                    btn: {
-                        style: '',
-                        text: '查看奖品',
-                        callback: function() {
-                            console.info('查看奖品');
+                    params = {
+                        title: '很遗憾，没中奖!',
+                        icon: {
+                            iconStyle: _icon
+                        },
+                        btn: {
+                            text: '返回首页',
+                            callback: function() {
+                                if (Jsbridge.isNewVersion()) {
+                                    Jsbridge.toAppMainPage();
+                                } else {
+                                    //web版跳转到首页
+                                }
+                            }
                         }
-                    }
-                });
+                    };
+                } else {
+                    params = {
+                        title: '恭喜你，中奖了！',
+                        icon: {
+                            iconStyle: _icon,
+                            iconText: _prizes[index].title
+                        },
+                        btn: {
+                            text: '查看奖品',
+                            callback: function() {
+                                console.info('index---', index);
+                                if (index == 2 || index == 3 || index == 6) {
+                                    //团币跳会员中心 app跟web版都跳转到web版会员中心
+
+                                } else {
+                                    //现金红包跳团宝箱
+                                    if (Jsbridge.isNewVersion()) {
+                                        Jsbridge.toAppTBX();
+                                    } else {
+                                        //web版跳转到团宝箱
+                                    }
+                                }
+
+                            }
+                        }
+                    };
+                }
+                Util.showPrize(params);
             }); //设置获取的奖品
         }, 2000);
     });

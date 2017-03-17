@@ -19,7 +19,7 @@
 		}],
 		id: 0,
 		limit: 1,
-		type: 'single'
+		recomment: ''
 	}, {
 		question: '您对理财的认识是？',
 		options: [{
@@ -40,7 +40,7 @@
 		}],
 		id: 1,
 		limit: 1,
-		type: 'single'
+		recomment: ''
 	}, {
 		question: '您期望理财的年度回报率的是？',
 		options: [{
@@ -61,7 +61,7 @@
 		}],
 		id: 2,
 		limit: 1,
-		type: 'single'
+		recomment: ''
 	}, {
 		question: '一般您从哪里获得关于理财的信息？',
 		options: [{
@@ -88,7 +88,7 @@
 		}],
 		id: 3,
 		limit: 7,
-		type: ''
+		recomment: '(不定项选择)'
 	}, {
 		question: '当您准备投资一款理财产品，你会找谁问？',
 		options: [{
@@ -118,7 +118,7 @@
 		}],
 		id: 4,
 		limit: 8,
-		type: ''
+		recomment: '(不定项选择)'
 	}, {
 		question: '各方询问后，你更会相信谁的建议？',
 		options: [{
@@ -148,7 +148,7 @@
 		}],
 		id: 5,
 		limit: 2,
-		type: ''
+		recomment: '(可选1-2项)'
 	}, {
 		question: '当您进行投资时，是否倾向自己做最后决策？',
 		options: [{
@@ -160,7 +160,7 @@
 		}],
 		id: 6,
 		limit: 1,
-		type: ''
+		recomment: ''
 	}, {
 		question: '您是否有关注投资理财微博大V或微信公众号？',
 		options: [{
@@ -174,7 +174,7 @@
 		}],
 		id: 7,
 		limit: 1,
-		type: '',
+		recomment: '',
 		subQuestion: '请列举1-3个您最为认可的投资理财微博大V或微信公众号',
 		subLimit: 3
 	}, {
@@ -190,7 +190,7 @@
 		}],
 		id: 8,
 		limit: 1,
-		type: '',
+		recomment: '',
 		subQuestion: '请列举1-3个您认为最有公信力的投资理财网站及社区',
 		subLimit: 3
 	}, {
@@ -206,7 +206,7 @@
 		}],
 		id: 9,
 		limit: 1,
-		type: '',
+		recomment: '',
 		subQuestion: '请列举出1-3个你熟悉或信任的基金公司？',
 		subLimit: 3
 	}, {
@@ -229,7 +229,7 @@
 		}],
 		id: 10,
 		limit: 2,
-		type: ''
+		recomment: '(可选1-2项)'
 	}, {
 		question: '投资收益率至少达到多少时，您会愿意选择通过P2P平台投资。',
 		options: [{
@@ -250,7 +250,7 @@
 		}],
 		id: 11,
 		limit: 1,
-		type: ''
+		recomment: ''
 	}, {
 		question: '以下哪一种投资期限，您更愿意通过p2p平台进行投资。',
 		options: [{
@@ -271,7 +271,7 @@
 		}],
 		id: 12,
 		limit: 1,
-		type: ''
+		recomment: ''
 	}, {
 		question: '通过p2p进行投资，您最多愿意投入多少资金？',
 		options: [{
@@ -295,7 +295,7 @@
 		}],
 		id: 13,
 		limit: 1,
-		type: ''
+		recomment: ''
 	}, {
 		question: '请根据您的情况，选择最符合的项。',
 		options: [{
@@ -316,7 +316,7 @@
 		}],
 		id: 14,
 		limit: 1,
-		type: ''
+		recomment: ''
 	}, {
 		question: '关于您性格的描述，哪一项更符合：',
 		options: [{
@@ -331,7 +331,7 @@
 		}],
 		id: 15,
 		limit: 1,
-		type: ''
+		recomment: ''
 	}, {
 		question: '您现在的职业是：',
 		options: [{
@@ -370,7 +370,7 @@
 		}],
 		id: 16,
 		limit: 1,
-		type: ''
+		recomment: ''
 	}, {
 		question: '您未来的职业规划：',
 		options: [{
@@ -388,7 +388,7 @@
 		}],
 		id: 17,
 		limit: 1,
-		type: ''
+		recomment: ''
 	}];
 	window.list = list;
 })();

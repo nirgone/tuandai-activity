@@ -6,7 +6,8 @@
 	function init() {
 		var temp = '';
 		list.forEach(function(item, index) {
-			temp += '<div class="q-wrapper" data-name="' + index + '"><div class="q-main"><span class="q-txt">' + item.question + '</span><ul class="opt-list">';
+			item.recomment = item.recomment || '';
+			temp += '<div class="q-wrapper" data-name="' + index + '"><div class="q-main"><span class="q-txt">' + item.question + '<i class="q-rec">' + item.recomment + '</i></span><ul class="opt-list">';
 			var inputType = item.limit > 1 ? 'checkbox' : 'radio';
 			item.options.forEach(function(opt, i) {
 				var _id = '' + index + i;
@@ -132,18 +133,13 @@
 			$("#" + id)[0].checked = false;
 		}
 		//是否显示分支
-		if (arrSelected.attr('data-sub') == 1) {
-			// var _obj = $('.q-wrapper[data-name="' + name + '"]');
-			// _obj.find('.q-main').hide();
-			// _obj.find('.q-sub').show();
-			// list[activeIndex].showBrench = true;
-			// $(".icon-seri").html('Q' + (activeIndex + 1) + '-A');
-			triggerBrench(name, 'sub');
-		}
+		// if (arrSelected.attr('data-sub') == 1) {
+		// 	triggerBrench(name, 'sub');
+		// }
 	});
 	//提交答卷
 	$(".btn-submit").on('click', function() {
-		var questionArr = $(".q-wrapper"); 
+		var questionArr = $(".q-wrapper");
 		/*
 			answerList数据结构
 			[{
@@ -176,7 +172,7 @@
 					"subContent": "请列举1-3个您最为认可的投资理财微博大V或微信公众号", //分支问题内容
 					"subAnswers": [{
 						"subSeri": "A", //分支答案编号
-						"text": "wwwww" //分支答案输入内容
+						"describe": "wwwww" //分支答案输入内容
 					}]
 				}
 			}]
@@ -222,7 +218,8 @@
 						if (subValue.length > 0) {
 							var subAnswer = {
 								subSeri: seriArr[m % 26],
-								text: subValue
+								// text: '',
+								describe: subValue
 							};
 							questionAnswers.subQA.subAnswers.push(subAnswer);
 						}
@@ -236,7 +233,7 @@
 		}
 		console.info(answerList);
 		if (isCompleted) {
-			// window.location.href = './loterry.html';
+			window.location.href = './lottery.html';
 		} else {
 			Util.toast('请完成答卷再提交');
 		}

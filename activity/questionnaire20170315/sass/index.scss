@@ -65,7 +65,8 @@ $designHeight: 1206;
 
 .rule-wrapper {
     width: pxToRem(640px);
-    height: pxToRem(913px);
+    // height: pxToRem(913px);
+    height: 76%;
     background-color: #fff;
     overflow: hidden;
     padding: pxToRem(120px) pxToRem(70px) pxToRem(160px) pxToRem(70px);
