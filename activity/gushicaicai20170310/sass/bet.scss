@@ -623,6 +623,57 @@ a {
                 }
             }
         }
+        &.dialog-bet-rest {
+            .dialog-content {
+                .tips-wrapper {
+                    position: relative;
+                    height: pxToRem(266px);
+                    .icon-pai {
+                        position: absolute;
+                        top: pxToRem(16px);
+                        left: pxToRem(70px);
+                        width: pxToRem(164px);
+                        height: pxToRem(247px);
+                        background-image: url("../images/icon-pai-rest.png");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: 50% 50%;
+                        z-index: 999;
+                    }
+                    .icon-dialog {
+                        position: absolute;
+                        top: pxToRem(40px);
+                        left: pxToRem(214px);
+                        width: pxToRem(247px);
+                        height: pxToRem(193px);
+                        background-image: url("../images/icon-dialog.png");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: 50% 50%;
+                        z-index: 99;
+                        font-size: pxToRem(24px);
+                        line-height: pxToRem(34px);
+                        color: #5f5f5f;
+                        text-align: center;
+                        padding-top: pxToRem(46px);
+                    }
+                }
+                .text-tips {
+                    font-size: pxToRem(18px);
+                    font-family: 微软雅黑;
+                    color: #797979;
+                    text-align: center;
+                    line-height: initial;
+                    margin-top: pxToRem(16px);
+                    margin-bottom: 0;
+                    font {
+                        color: #f97259;
+                    }
+
+                }
+            }
+        }
+        
         &.bet-item {
             &.dialog-bet-down {
                 .title {
