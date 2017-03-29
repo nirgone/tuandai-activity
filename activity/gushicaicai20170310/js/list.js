@@ -21,6 +21,11 @@
             disableMouse: true,
             disablePointer: true
         });
+        
+        that.awardRecordScroller.scroller.style.minHeight = (that.awardRecordScroller.wrapperHeight + 1) +'px' ;
+        setTimeout(function() {
+            that.awardRecordScroller.refresh();
+        }, 200)
 
         that.awardRecordScroller.on('scroll', function() {
             if (that.isAwardLoadMore || that.isAwardRefresh) { //数据加载中状态，不修改任何状态
@@ -130,6 +135,11 @@
             disablePointer: true
         });
 
+        that.myRecordScroller.scroller.style.minHeight = (that.myRecordScroller.wrapperHeight + 1) +'px' ;
+        setTimeout(function() {
+            that.myRecordScroller.refresh();
+        }, 200)
+        
         that.myRecordScroller.on('scroll', function() {
             if (that.isMyRecordLoadMore || that.isMyRecordRefresh) { //数据加载中状态，不修改任何状态
                 return;
@@ -159,7 +169,7 @@
         });
     }
 
-    function onAwardListTouchEnd() {
+    function onMyListTouchEnd() {
         pageEl.on('touchend', '#myListWrapper', function() {
             if (that.awardRicon) { //在可以刷新状态
                 // 修改界面上状态
@@ -212,7 +222,7 @@
         // 回复状态
         myListWrapperEl.removeClass('refreshing');
         setTimeout(function() {
-            that.isMyRecordLoadMore = false; //去除数据加载中状态
+            that.isMyRecordRefresh = false; //去除数据加载中状态
             that.isMyRecordLoadMore = false; //去除数据加载中状态
             myListWrapperEl.find('.pull-refresh .pull-wrapper').removeClass('show');
             myListWrapperEl.find('.pull-refresh .arrow-wrapper').addClass('show');
@@ -240,9 +250,14 @@
 
         pageEl.find('.list').removeClass('show');
         pageEl.find('.' + target).addClass('show');
+
+        that.awardRecordScroller || initAwardScroller();
+        that.myRecordScroller || initMyRecordScroller();
+
     })
 
 
     initAwardScroller();
+    
     onAwardListTouchEnd();
 })();
