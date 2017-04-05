@@ -6,7 +6,7 @@
     var countDownEl = pageEl.find('.countdown'); //倒计时DOM元素
     var startTime = 0; //倒计时开始时间
     var endTime = 0; //倒计时结束时间 
-    var offset = 0; //倒计时修正数
+    // var offset = 0; //倒计时修正数
     var count = 0; //倒计秒数
     var leftTime = 0; //倒计时剩余时间
     function initCountDonw(time) { //time为倒计时时间
@@ -17,8 +17,8 @@
     }
 
     function countDown() {
-        offset = +new Date() - (startTime + count * 1000);
-        var newTime = 1000 - offset; //修正后的倒计时间隔
+        // offset = +new Date() - (startTime + count * 1000);
+        var newTime = 1000 /*- offset*/; //修正后的倒计时间隔
         newTime = newTime < 0 ? 0 : newTime
         if (leftTime >= 0) {
             countDownEl.text(timeFormate(leftTime))
@@ -517,6 +517,6 @@
     });
 
         
-    initCountDonw('2017-03-16 15:40:00');
+    initCountDonw('2017/04/16 15:40:00');
     initKLine();
 })();
