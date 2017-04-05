@@ -30,7 +30,9 @@
 	});
 	var applyData = {};
 	//提交申请
+	var requesting = false;
 	$(".form-btn").on('click', function() {
+		if(requesting) return;
 		var flag = check('name') && check('phone') && check('num');
 		if (!flag) {
 			return;
@@ -63,6 +65,9 @@
 			data: reqParam,
 			dataType: 'json',
 			type: 'post',
+			beforeSend: function() {
+				requesting = true;
+			},
 			success: function(result) {
 				if (result.ReturnCode == 1) {
 					showPopUp(1, '您已成功提交申请 ，1个工作日内信贷顾问会联系您！');
@@ -74,6 +79,9 @@
 			},
 			error: function(e) {
 				console.info('apply fail--', e);
+			},
+			complete: function() {
+				requesting = false;
 			}
 		})
 	}

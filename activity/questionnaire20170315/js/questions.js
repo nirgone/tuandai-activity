@@ -75,7 +75,22 @@
 		if (curArr.length === 0) {
 			Util.toast('你的答案不能为空')
 			return;
+		} 
+		// 其他选项需要输入内容
+		for (var i = 0; i < curArr.length; i++) {
+			var optIndex = curArr.eq(i).val();
+			if (!curQuestion.options[optIndex].text) {
+				console.info(curArr.eq(i).attr('id'));
+				var id = curArr.eq(i).attr('id');
+				var other = $(".opt-row[data-id='" + id + "']").find("input[name='other']");
+				var otherValue = other ? other.val().trim() : "";
+				if (otherValue.length === 0) {
+					Util.toast('请输入其他选项内容');
+					return;
+				}
+			}
 		}
+
 		//如果有分支并且主支选为是
 		if (curQuestion.subQuestion && curArr.attr('data-sub') == 1) {
 			//当前显示为分支

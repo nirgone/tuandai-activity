@@ -1,92 +1,121 @@
 (function() {
 	FastClick.attach(document.body);
-	var pageSwiper, metalSwiper;
+	var pageSwiper, mhSwiper;
 	var isLogin = true; //是否已登录
 	// var isAppOpen = true; //是否是app打开
 	var hasInit = {};
 	var curMonth = new Date().getMonth() + 1; //当前月份
-	var lastMonth = curMonth == 12 ? 1 : curMonth - 1; //上月
-	var month = getParam('month'); //url地址带的参数
+	var lastMonth = curMonth == 1 ? 12 : curMonth - 1; //上月
+	var month = Util.getSessionStorage('month'); //缓存的参数
+	var showMonth = curMonth; //当前显示月份
 
 	var listData = {
-			userInfo: {
-				ranking: 10,
-				invest: '88888',
-				onList: true,
-				isNew: false,
-				signDay: 7
-			},
-			list: [{
-				ranking: 1,
-				name: '文***签',
-				amount: '88888',
-				avator: '../images/avator.png',
-				text: '300元投资红包'
-			}, {
-				ranking: 2,
-				name: '文***签',
-				amount: '88888',
-				avator: '../images/avator.png',
-				text: '300元投资红包'
-			}, {
-				ranking: 3,
-				name: '文***签',
-				amount: '88888',
-				avator: '../images/avator.png',
-				text: '300元投资红包'
-			}, {
-				ranking: 4,
-				name: '文***签',
-				amount: '88888',
-				avator: '../images/avator.png',
-				text: '300元投资红包'
-			}, {
-				ranking: 5,
-				name: '文***签',
-				amount: '88888',
-				avator: '../images/avator.png',
-				text: '300元投资红包'
-			}, {
-				ranking: 6,
-				name: '文***签',
-				amount: '88888',
-				avator: '../images/avator.png',
-				text: '300元投资红包'
-			}, {
-				ranking: 7,
-				name: '文***签',
-				amount: '88888',
-				avator: '../images/avator.png',
-				text: '300元投资红包'
-			}, {
-				ranking: 8,
-				name: '文***签',
-				amount: '88888',
-				avator: '../images/avator.png',
-				text: '300元投资红包'
-			}, {
-				ranking: 9,
-				name: '文***签',
-				amount: '88888',
-				avator: '../images/avator.png',
-				text: '300元投资红包'
-			}]
-		}
-		// listData = {
-		// 	userInfo: {},
-		// 	list: []
-		// }
+		userInfo: {
+			ranking: 10,
+			invest: '88888',
+			onList: true,
+			isNew: false,
+			signDay: 7
+		},
+		list: [{
+			ranking: 1,
+			name: '文***签',
+			amount: '88888',
+			avator: '../images/avator.png',
+			text: '300元投资红包'
+		}, {
+			ranking: 2,
+			name: '文***签',
+			amount: '88888',
+			avator: '../images/avator.png',
+			text: '300元投资红包'
+		}, {
+			ranking: 3,
+			name: '文***签',
+			amount: '88888',
+			avator: '../images/avator.png',
+			text: '300元投资红包'
+		}, {
+			ranking: 4,
+			name: '文***签',
+			amount: '88888',
+			avator: '../images/avator.png',
+			text: '300元投资红包'
+		}, {
+			ranking: 5,
+			name: '文***签',
+			amount: '88888',
+			avator: '../images/avator.png',
+			text: '300元投资红包'
+		}, {
+			ranking: 6,
+			name: '文***签',
+			amount: '88888',
+			avator: '../images/avator.png',
+			text: '300元投资红包'
+		}, {
+			ranking: 7,
+			name: '文***签',
+			amount: '88888',
+			avator: '../images/avator.png',
+			text: '300元投资红包'
+		}, {
+			ranking: 8,
+			name: '文***签',
+			amount: '88888',
+			avator: '../images/avator.png',
+			text: '300元投资红包'
+		}, {
+			ranking: 9,
+			name: '文***签',
+			amount: '88888',
+			avator: '../images/avator.png',
+			text: '300元投资红包'
+		}]
+	};
+	// listData = {
+	// 	userInfo: {},
+	// 	list: []
+	// }
+	var myHonor = [{
+		name: '龙虎榜',
+		time: '2017年3月份',
+		ranking: '33',
+		icon: 'icon-lh'
+	}, {
+		name: '壕友榜',
+		time: '2017年3月份',
+		ranking: '10',
+		icon: 'icon-hy'
+	}, {
+		name: '新锐榜',
+		time: '2017年3月份',
+		ranking: '10',
+		icon: 'icon-new'
+	}, {
+		name: '人缘榜',
+		time: '2017年3月份',
+		ranking: '10',
+		icon: 'icon-ry'
+	}, {
+		name: '签到榜',
+		time: '2017年3月份',
+		ranking: '10',
+		icon: 'icon-sign'
+	}];
+	var honorJson = {};
+	// $(".mask-honor").show();
 
 	function init() {
 		pageSwiper = new Swiper('#pageSwiper', {
 			direction: 'vertical',
-			initialSlide: 6,
+			initialSlide: 0,
 			onTransitionStart: function(swiper) {
 				console.info('activeIndex--', swiper.activeIndex, hasInit);
-				if (swiper.activeIndex < 6) {
-					$(".next-page").show();
-				} else {
+				if (swiper.isEnd) {
 					$(".next-page").hide();
+				} else {
+					$(".next-page").show();
 				}
 				var nextIndex = swiper.activeIndex;
 				var prevIndex = swiper.activeIndex - 1;
@@ -100,45 +129,22 @@
 				}
 			}
 		});
-		/*metalSwiper = new Swiper('#metalSwiper', {
-			onInit: function(swiper) {
-				$(".m-txt").html('风云际会，巅峰PK!<br>龙争虎斗，等你夺魁!');
-				$(".icon-prev").hide();
-			},
-			onTransitionStart: function(swiper) {
-				var str = '';
-				switch (swiper.activeIndex) {
-					case 0:
-						str = '风云际会，巅峰PK!<br>龙争虎斗，等你夺魁!';
-						$(".icon-prev").hide();
-						break;
-					case 1:
-						str = '青出于蓝而胜于蓝!<br>看好你，新晋达人!';
-						$(".icon-prev").show();
-						break;
-					case 2:
-						str = '呼朋唤友聚团贷!<br>志同道合更有爱! ';
-						break;
-					case 3:
-						str = '四海之内皆兄弟!<br>有福同享赚收益!';
-						$(".icon-next").show();
-						break;
-					case 4:
-						str = '锲而不舍，金石可镂!<br>持之以恒，签到达人!'
-						$(".icon-next").hide();
-						break;
-				}
-				$(".m-txt").html(str);
-			}
-		});*/
-		if (month && month == lastMonth) {
-			$(".month-txt").html(month);
-			$(".btn-cl").html('本月榜单');
-		} else {
-			$(".month-txt").html(curMonth);
-			$(".btn-cl").html('上月榜单');
-		}
 
+
+		var btnStr = '上月榜单',
+			type = 'last';
+		// showMonth = curMonth;
+
+		if (month && month == lastMonth) {
+			btnStr = '本月榜单';
+			type = 'cur';
+			showMonth = lastMonth;
+		} else {
+			initMyHonor();
+		}
+		$(".month-txt").html(showMonth);
+		$(".btn-cl").html(btnStr);
+		$(".btn-cl").attr('data-type', type);
 		getList(1);
 	}
 	init();
@@ -155,23 +161,19 @@
 		$("#" + id).show();
 	});
 	//关闭弹窗
-	$(".masker, .rule-close").on('click', function() {
+	$(".masker, .icon-close").on('click', function() {
 		$(".mask").hide();
 	});
 
 	function showRule() {
 		$(".rule-mask").show();
-		// $(".rule-list").hide();
-		// $("#rule0").show();
 		$(".rule-tag").removeClass('active-tag');
 		$(".rule-tag").eq(0).trigger('click');
 	}
 
 	//获取榜单数据
 	function getList(type) {
-		// console.info('getList---', type);
-
-
+		Util.setSessionStorage('month', ''); //获取数据后清除缓存中的数据
 		var selector;
 		switch (type) {
 			case 1:
@@ -345,18 +347,7 @@
 			_wrapper.find('.ranking-txt').html('<span>快登录查看我的成绩吧，<font class="txt-yellow txt-underline go-login">点击登录</font></span>');
 		}
 		hasInit[type] = true;
-		// $.ajax({
-		// 	url: url,
-		// 	data: param,
-		// 	dataType: 'json',
-		// 	type: 'post',
-		// 	success: function(result) {
 
-		// 	},
-		// 	complete: function(e) {
-		// 		// console.info('complete------', e);
-		// 	}
-		// });
 	}
 	//跳转到相应榜单
 	$(".btn-main").on('click', function() {
@@ -386,38 +377,85 @@
 			$(".share-mask").show();
 		}
 	});
-	// $(".icon-prev").on('click', function() {
-	// 	metalSwiper.slidePrev();
-	// });
-	// $(".icon-next").on('click', function() {
-	// 	metalSwiper.slideNext();
-	// });
+	$(".icon-prev").on('click', function() {
+		mhSwiper.slidePrev();
+	});
+	$(".icon-next").on('click', function() {
+		mhSwiper.slideNext();
+	});
 	//查看上月或者当月月榜单
 	$(".btn-cl").on('click', function() {
-
+		var type = $(this).attr('data-type');
+		var _month = type === 'last' ? lastMonth : curMonth;
+		Util.setSessionStorage('month', _month);
+		window.location.reload();
 	});
+	//显示我获得的荣誉
+	function initMyHonor() {
+		if (myHonor && myHonor.length > 0) {
+			var temp = '';
+			myHonor.forEach(function(item, index) {
+				var styleStr = 'mh-metal ' + item.icon;
+				temp += '<div class="swiper-slide" data-type="' + item.type + '"><i class="' + styleStr + '"></i></div>';
+				honorJson[index] = {
+					time: item.time,
+					ranking: item.ranking,
+					name: item.name
+				};
+			});
+			$(".mh-time").html(myHonor[0].time);
+			$(".mh-desc").html('荣登' + myHonor[0].name + '第<font>' + myHonor[0].ranking + '</font>名');
+			$("#mhSwiper").find('.swiper-wrapper').html(temp);
+			$(".mask-honor").show();
+			mhSwiper = new Swiper("#mhSwiper", {
+				onInit: function(swiper) {
+					Util.triggerSlideArrow(".mask-honor", swiper);
+				},
+				onTransitionStart: function(swiper) {
+					// console.info('index---', swiper.activeIndex, swiper.isBeginning);
+					var data = honorJson[swiper.activeIndex];
+					$(".mh-time").html(data.time);
+					$(".mh-desc").html('荣登' + data.name + '第<font>' + data.ranking + '</font>名');
+					Util.triggerSlideArrow(".mask-honor", swiper);
 
-	function getParam(name, url) {
-		if (!url) {
-			url = location.href;
-		}
-		var paraString = url.substring(url.indexOf("?") + 1, url.length).split("&");
-		var returnValue;
-		for (var i = 0; i < paraString.length; i++) {
-			var tempParas = paraString[i].split('=')[0];
-			var parasValue = paraString[i].split('=')[1];
-			if (tempParas === name)
-				returnValue = parasValue;
-		}
-
-		if (!returnValue) {
-			return "";
-		} else {
-			if (returnValue.indexOf("#") != -1) {
-				returnValue = returnValue.split("#")[0];
-			}
-			return returnValue;
+				}
+			});
 		}
 	}
+	//跳转到我的荣誉
+	$(".btn-mh, .mh-check").on('click', function() {
+		window.location.href = './myHonor.html';
+	});
+
+	// function triggerSlideArrow(selector, swiper) {
+	// 	var prevObj = $(selector).find('.icon-prev');
+	// 	var nextObj = $(selector).find('.icon-next');
+	// 	if (swiper.isBeginning) {
+	// 		prevObj.hide();
+	// 	} else {
+	// 		prevObj.show();
+	// 	}
+	// 	if (swiper.isEnd) {
+	// 		nextObj.hide();
+	// 	} else {
+	// 		nextObj.show();
+	// 	}
+	// }
+
+	// function setSessionStorage(key, param) {
+	// 	if (window.sessionStorage) {
+	// 		window.sessionStorage[key] = param
+	// 	} else {
+	// 		window.mySessionStorage[key] = param
+	// 	}
+	// }
+
+	// function getSessionStorage(key) {
+	// 	if (window.sessionStorage) {
+	// 		return window.sessionStorage[key]
+	// 	} else {
+	// 		return window.mySessionStorage[key]
+	// 	}
+	// }
 
 })();

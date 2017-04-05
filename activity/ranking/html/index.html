@@ -8,10 +8,11 @@
     <meta name="format-detection" content="telephone=no">
     <title>团粉风云榜</title>
     <!-- build:css(dist) ../css/main.css -->
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/media.css">
     <link rel="stylesheet" href="../css/animation.css">
     <!-- endbuild -->
+    <link rel="stylesheet" href="../css/index.css">
     <!-- build:css(dist)  ../js/lib/vendor/swiper/swiper.min.css-->
     <link rel="stylesheet" href="../css/vendor/swiper/swiper.min.css">
     <!-- endbuild -->
@@ -19,6 +20,8 @@
     <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
     <!-- endbuild -->
 </head>
+<body>
+
 <div class="content">
     <div class="swiper-container" id="pageSwiper">
         <div class="swiper-wrapper">
@@ -62,7 +65,8 @@
                             </li>
                         </ul>
                         <div class="r-list">
-                            <div class="no-data">今日排行榜数据将于次日04:00更新<br>敬请期待....</div>
+                            <div class="no-data">今日排行榜数据将于次日04:00更新
+                                <br>敬请期待....</div>
                             <!-- <div class="swiper-container" id="listSwiper1">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
@@ -159,7 +163,7 @@
                     </div>
                     <div class="ranking-txt">
                         <!-- <span>您当月累计年化投资金额：<font class="txt-yellow">¥666</font></span>
-                    	<span>好厉害，您已荣登龙虎榜第 <font class="txt-yellow">XX</font> 名</span> -->
+                        <span>好厉害，您已荣登龙虎榜第 <font class="txt-yellow">XX</font> 名</span> -->
                         <!-- <span>快登录查看我的成绩吧，<font class="txt-yellow txt-underline go-login">点击登录</font></span> -->
                     </div>
                 </div>
@@ -207,31 +211,32 @@
                 <div class="page sign-page ranking-page">
                     <div class="ranking-title rt-gold"><i class="icon-sign"></i><span><font class="ranking-name">签到榜</font><br><font class="ranking-rec">月App签到签满(需分享)</font></span></div>
                     <ul class="sign-list">
-                        <div class="no-data">今日排行榜数据将于次日04:00更新<br>敬请期待....</div>
+                        <div class="no-data">今日排行榜数据将于次日04:00更新
+                            <br>敬请期待....</div>
                         <!-- <li class="sign-item">
-                    		<i class="sign-avator" style="background-image:url(../images/avator.png);"></i>
-                    		<span class="sign-name">文***签</span>
-                    	</li>
-                    	<li class="sign-item">
-                    		<i class="sign-avator" style="background-image:url(../images/avator.png);"></i>
-                    		<span class="sign-name">文***签</span>
-                    	</li>
-                    	<li class="sign-item">
-                    		<i class="sign-avator" style="background-image:url(../images/avator.png);"></i>
-                    		<span class="sign-name">文***签</span>
-                    	</li>
-                    	<li class="sign-item">
-                    		<i class="sign-avator" style="background-image:url(../images/avator.png);"></i>
-                    		<span class="sign-name">文***签</span>
-                    	</li>
-                    	<li class="sign-item">
-                    		<i class="sign-avator" style="background-image:url(../images/avator.png);"></i>
-                    		<span class="sign-name">文***签</span>
-                    	</li>
-                    	<li class="sign-item">
-                    		<i class="sign-avator" style="background-image:url(../images/avator.png);"></i>
-                    		<span class="sign-name">文***签</span>
-                    	</li> -->
+                            <i class="sign-avator" style="background-image:url(../images/avator.png);"></i>
+                            <span class="sign-name">文***签</span>
+                        </li>
+                        <li class="sign-item">
+                            <i class="sign-avator" style="background-image:url(../images/avator.png);"></i>
+                            <span class="sign-name">文***签</span>
+                        </li>
+                        <li class="sign-item">
+                            <i class="sign-avator" style="background-image:url(../images/avator.png);"></i>
+                            <span class="sign-name">文***签</span>
+                        </li>
+                        <li class="sign-item">
+                            <i class="sign-avator" style="background-image:url(../images/avator.png);"></i>
+                            <span class="sign-name">文***签</span>
+                        </li>
+                        <li class="sign-item">
+                            <i class="sign-avator" style="background-image:url(../images/avator.png);"></i>
+                            <span class="sign-name">文***签</span>
+                        </li>
+                        <li class="sign-item">
+                            <i class="sign-avator" style="background-image:url(../images/avator.png);"></i>
+                            <span class="sign-name">文***签</span>
+                        </li> -->
                     </ul>
                     <div class="ranking-txt">
                     </div>
@@ -374,7 +379,7 @@
             <span class="rule-tag" data-id="rule4">签到榜</span>
         </div>
         <div class="rule-rec">本活动规则最终解释权归团贷网所有 </div>
-        <i class="rule-close"></i>
+        <i class="rule-close icon-close"></i>
     </div>
     <div class="masker"></div>
 </div>
@@ -382,19 +387,52 @@
     <i class="icon-share"></i>
     <div class="masker"></div>
 </div>
+<div class="mask mask-blue mask-honor">
+    <div class="pop-container honor-container">
+        <span class="ph-title">恭喜您获得徽章！</span>
+        <div class="mh-container">
+            <div class="swiper-container" id="mhSwiper">
+                <div class="swiper-wrapper">
+                    <!-- <div class="swiper-slide">
+                        <i class="mh-metal icon-lh"></i>
+                    </div>
+                    <div class="swiper-slide">
+                        <i class="mh-metal icon-new"></i>
+                    </div>
+                    <div class="swiper-slide">
+                        <i class="mh-metal icon-ry"></i>
+                    </div>
+                    <div class="swiper-slide">
+                        <i class="mh-metal icon-hy"></i>
+                    </div>
+                    <div class="swiper-slide">
+                        <i class="mh-metal icon-sign"></i>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <span class="mh-txt1 mh-time">2017年2月份</span>
+        <span class="mh-txt2 mh-desc">荣登龙虎榜第<font>33</font>名</span>
+        <div class="btn-yellow mh-check">查看徽章</div>
+        <i class="icon-prev icon-slide"></i>
+        <i class="icon-next icon-slide"></i>
+        <i class="icon-close"></i>
+    </div>
+    <div class="masker"></div>
+</div>
 <i class="next-page"></i>
 
-<body>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
-<!-- build:js({dist}) ../js/lib/vendor/jsbridge-3.1.1.js -->
-<script src="../js/vendor/jsbridge-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+<!-- build:js({dist}) ../js/lib/vendor/jsbridge-3.1.2.js -->
+<script src="../js/vendor/jsbridge-3.1.2.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
 <!-- build:js({dist}) ../js/lib/vendor/swiper/swiper.jquery.min.js -->
 <script src="../js/vendor/swiper/swiper.jquery.min.js"></script>
 <!-- endbuild -->
+<script src="../js/util.js" type="text/javascript"></script>
 <script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
 
 </html>

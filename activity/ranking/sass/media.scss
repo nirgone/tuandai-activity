@@ -78,6 +78,15 @@
     .ranking-txt {
     	bottom: pxToRem(30px);
     }
+    .lm-container {
+        margin-top: pxToRem(40px) !important;
+    }
+    .share-page {
+        padding-top: pxToRem(130px) !important;
+    }
+    .btn-mh-container {
+        bottom: pxToRem(60px) !important;
+    }
 }
 
 @media screen and (max-width: 320px) {
