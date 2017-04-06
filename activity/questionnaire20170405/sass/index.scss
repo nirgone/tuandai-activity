@@ -15,7 +15,6 @@
 //     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 //     -webkit-overflow-scrolling: touch !important;
 // }
-
 // a {
 //     text-decoration: none;
 // }
@@ -29,46 +28,52 @@
 //     width: 100%;
 //     height: 100%;
 // }
-.page {
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    position: relative;
-}
+// .page {
+//     width: 100%;
+//     height: 100%;
+//     background-repeat: no-repeat;
+//     background-size: 100% 100%;
+//     position: relative;
+// }
 .m-page {
     background-image: url('../images/bg-main.png');
 }
-.icon-logo {
-    @include background('../images/icon-logo.png', 212px, 90px);
-    position: absolute;
-    left: pxToRem(20px);
-    top: 0;
-}
+
+
+
 .icon-title-m {
-    @include background('../images/title-m.png', 661px, 119px);
+    @include background('../images/title-m.png',
+    661px,
+    119px);
     position: absolute;
     height: percent(119, $designHeight);
     left: 50%;
     top: percent(120, $designHeight);
     transform: translateX(-50%);
 }
+
 .icon-mainbox {
-    @include background('../images/icon-mainbox.png', 664px, 683px);
+    @include background('../images/icon-mainbox.png',
+    664px,
+    683px);
     height: percent(683, $designHeight);
     position: absolute;
     right: pxToRem(16px);
     bottom: percent(220, $designHeight);
     z-index: 20;
 }
+
 .icon-pai {
-    @include background('../images/icon-pai.png', 213px, 299px);
+    @include background('../images/icon-pai.png',
+    213px,
+    299px);
     height: percent(299, $designHeight);
     position: absolute;
     left: pxToRem(-4px);
     bottom: percent(230, $designHeight);
     z-index: 10;
 }
+
 .icon-envelope-m {
     background-image: url('../images/icon-envelope-m.png');
     background-repeat: no-repeat;
@@ -76,6 +81,7 @@
     background-position: center;
     position: absolute;
 }
+
 .icon-envelope1 {
     @extend .icon-envelope-m;
     width: pxToRem(95px);
@@ -85,6 +91,7 @@
     right: pxToRem(200px);
     top: percent(56, $designHeight);
 }
+
 .icon-envelope2 {
     @extend .icon-envelope-m;
     width: pxToRem(99px);
@@ -94,6 +101,7 @@
     left: pxToRem(-10px);
     top: percent(370, $designHeight);
 }
+
 .icon-envelope3 {
     @extend .icon-envelope-m;
     width: pxToRem(119px);
@@ -102,8 +110,11 @@
     top: percent(500, $designHeight);
     right: 0;
 }
+
 .icon-envelope-bottom {
-    @include background('../images/icon-envelope4.png', 720px, 226px);
+    @include background('../images/icon-envelope4.png',
+    720px,
+    226px);
     height: percent(226, $designHeight);
     position: absolute;
     left: 50%;
@@ -111,27 +122,71 @@
     transform: translateX(-50%);
     background-position: bottom;
     .icon-env-start {
-        @include background('../images/icon-env-start.png', 177px, 192px);
+        @include background('../images/icon-env-start.png',
+        177px,
+        192px);
         height: percent(192, 226);
         position: absolute;
-        left: 50%;;
+        left: 50%;
+        ;
         top: 50%;
         transform: translate(-50%, -50%);
     }
 }
+
 .icon-rule {
-    @include background('../images/icon-rule.png', 53px, 125px);
+    @include background('../images/icon-rule.png',
+    53px,
+    125px);
     height: percent(125, $designHeight);
     position: absolute;
     left: 0;
     top: 40%;
     // transform: translateY(-50%);
 }
+
 .rule-content {
-    @include background('../images/bg-rule.png', 634px, 949px);
+    @include background('../images/bg-rule.png',
+    634px,
+    949px);
     height: percent(949, $designHeight);
+    background-size: 100% 100%;
     position: absolute;
     left: 50%;
     top: percent(85, $designHeight);
     transform: translateX(-50%);
+    padding: pxToRem(80px) pxToRem(40px);
+    .rule-title {
+        @include background('../images/title-rule.png',
+        498px,
+        47px);
+        height: percent(47, 949);
+        margin: auto;
+    }
+    .r-list {
+        width: 100%;
+        height: 88%;
+        overflow: auto;
+        font-size: 0;
+        margin-top: pxToRem(40px);
+        color: #ffeb7d;
+        text-align: justify;
+        &>li {
+            width: 100%;
+            font-size: pxToRem(28px);
+            line-height: pxToRem(42px);
+        }
+        &>li:not(:last-child) {
+            margin-bottom: pxToRem(10px);
+        }
+    }
+    .icon-close {
+        @include background('../images/icon-close.png',
+        69px,
+        69px);
+        position: absolute;
+        left: 50%;
+        bottom: pxToRem(-110px);
+        transform: translateX(-50%);
+    }
 }

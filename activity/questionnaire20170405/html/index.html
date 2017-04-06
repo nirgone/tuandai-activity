@@ -35,14 +35,37 @@
         </div>
     </div>
     <div class="mask">
-    	<div class="pop-content rule-content">
-    		
-    	</div>
+        <div class="pop-content rule-content">
+            <i class="rule-title"></i>
+            <ul class="r-list">
+                <li>1、活动时间：2017年4月11日-2017年4月17日；</li>
+                <li>2、活动期间，用户登录团贷网账户，完整填写调查问卷成功提交后，即可获得1次抽奖机会。活动期间，同一用户最多可获得1次奖励；</li>
+                <li>3、投资红包奖励，中奖后发放至团宝箱，得奖用户可在30天内领取；</li>
+                <li>4、我们将会对您的信息进行严格保密处理，结果仅用于团贷网了解用户需求及优化产品设计；</li>
+                <li>5、团贷网可根据活动举办的实际情况，在法律允许的范围内，对本活动规则进行变动及调整，相关变动或调整将公布在活动规则页面上，公布后依法生效。</li>
+                <li>*本活动与苹果公司无关</li>
+            </ul>
+            <i class="icon-close rule-close"></i>
+        </div>
+        <div class="masker"></div>
     </div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
-<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+<!-- <script src="../js/index.js" type="text/javascript" charset="utf-8"></script> -->
+<script type="text/javascript">
+(function() {
+    $(".icon-rule").on('click', function() {
+        $(".mask").show();
+    });
+    $(".rule-close, .masker").on('click', function() {
+        $(".mask").hide();
+    });
+    $(".icon-env-start").on('click', function() {
+    	window.location.href = './questions.html';
+    })
+})();
+</script>
 
 </html>

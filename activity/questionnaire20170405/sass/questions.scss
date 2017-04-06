@@ -1,0 +1,8 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+.q-page {
+    background-image: url('../images/bg-ques.png');
+}
