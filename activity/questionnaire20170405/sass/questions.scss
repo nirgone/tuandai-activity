@@ -6,3 +6,68 @@
 .q-page {
     background-image: url('../images/bg-ques.png');
 }
+
+.bg-abso {
+    background-repeat: no-repeat;
+    // background-position: bottom;
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.envelope-back {
+    @extend .bg-abso;
+    background-image: url('../images/icon-envelope-back.png');
+    width: 100%;
+    height: percent(360, $designHeight);
+    z-index: 1;
+    bottom: 0;
+}
+
+.envelope-front {
+    @extend .bg-abso;
+    background-image: url('../images/icon-envelope-front.png');
+    width: 100%;
+    height: percent(328, $designHeight);
+    z-index: 30;
+    bottom: 0;
+}
+
+.ques-container {
+    @extend .bg-abso;
+    background-image: url('../images/icon-letter.png');
+    width: pxToRem(660px);
+    height: percent(1021, $designHeight);
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: percent(50, $designHeight);
+    z-index: 20;
+    font-size: 0;
+    padding: pxToRem(90px) pxToRem(80px);
+    .ques-seri {
+        @include background('../images/bg-seri.png',
+        120px,
+        120px);
+        height: percent(120, 1021);
+        background-position: center;
+        position: absolute;
+        // left: pxToRem(-8px);
+        // top: pxToRem(-60px);
+        left: 0;
+        top: 0;
+        transform: translate(-7%, -50%);
+        font-size: pxToRem(32px);
+        color: #5a390e;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+    .q-wrapper {
+        width: 100%;
+        height: percent(660, 1021);
+    }
+}
