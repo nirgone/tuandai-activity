@@ -3,32 +3,32 @@
 @import "sprite";
 @import "../../../sass/reset";
 @import "../../../sass/func";
-html,
-body {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-    margin: 0;
-    padding: 0;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-overflow-scrolling: touch !important;
-}
+// html,
+// body {
+//     position: relative;
+//     height: 100%;
+//     width: 100%;
+//     overflow: hidden;
+//     font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+//     margin: 0;
+//     padding: 0;
+//     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+//     -webkit-overflow-scrolling: touch !important;
+// }
 
-a {
-    text-decoration: none;
-}
-* {
-    box-sizing: border-box;
-}
-i, span, ul, li {
-    display: inline-block;
-}
-.content {
-    width: 100%;
-    height: 100%;
-}
+// a {
+//     text-decoration: none;
+// }
+// * {
+//     box-sizing: border-box;
+// }
+// i, span, ul, li {
+//     display: inline-block;
+// }
+// .content {
+//     width: 100%;
+//     height: 100%;
+// }
 .page {
     width: 100%;
     height: 100%;
@@ -60,4 +60,78 @@ i, span, ul, li {
     right: pxToRem(16px);
     bottom: percent(220, $designHeight);
     z-index: 20;
+}
+.icon-pai {
+    @include background('../images/icon-pai.png', 213px, 299px);
+    height: percent(299, $designHeight);
+    position: absolute;
+    left: pxToRem(-4px);
+    bottom: percent(230, $designHeight);
+    z-index: 10;
+}
+.icon-envelope-m {
+    background-image: url('../images/icon-envelope-m.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    position: absolute;
+}
+.icon-envelope1 {
+    @extend .icon-envelope-m;
+    width: pxToRem(95px);
+    height: percent(53, $designHeight);
+    opacity: .4;
+    transform: rotate(180deg);
+    right: pxToRem(200px);
+    top: percent(56, $designHeight);
+}
+.icon-envelope2 {
+    @extend .icon-envelope-m;
+    width: pxToRem(99px);
+    height: percent(67, $designHeight);
+    opacity: .3;
+    transform: rotateY(180deg);
+    left: pxToRem(-10px);
+    top: percent(370, $designHeight);
+}
+.icon-envelope3 {
+    @extend .icon-envelope-m;
+    width: pxToRem(119px);
+    height: percent(81, $designHeight);
+    opacity: .6;
+    top: percent(500, $designHeight);
+    right: 0;
+}
+.icon-envelope-bottom {
+    @include background('../images/icon-envelope4.png', 720px, 226px);
+    height: percent(226, $designHeight);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background-position: bottom;
+    .icon-env-start {
+        @include background('../images/icon-env-start.png', 177px, 192px);
+        height: percent(192, 226);
+        position: absolute;
+        left: 50%;;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+.icon-rule {
+    @include background('../images/icon-rule.png', 53px, 125px);
+    height: percent(125, $designHeight);
+    position: absolute;
+    left: 0;
+    top: 40%;
+    // transform: translateY(-50%);
+}
+.rule-content {
+    @include background('../images/bg-rule.png', 634px, 949px);
+    height: percent(949, $designHeight);
+    position: absolute;
+    left: 50%;
+    top: percent(85, $designHeight);
+    transform: translateX(-50%);
 }
