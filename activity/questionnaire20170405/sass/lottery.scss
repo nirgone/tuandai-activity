@@ -1,0 +1,241 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../../sass/func";
+.lottery-page {
+    color: #fff;
+    background: url(../images/bg-lottery.png) no-repeat center;
+    background-size: 100% 100%;
+    @at-root .txts {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: percent(112, $designHeight);
+        text-align: center;
+        font-size: pxToRem(85px);
+        color: #fcd36a;
+        font-weight: bold;
+        .icon-envelope {
+            position: absolute;
+            background: url('../images/icon-envelope-m.png') no-repeat center;
+            background-size: contain;
+            width: pxToRem(86px);
+            height: pxToRem(60px);
+            transform: rotate(180deg);
+            bottom: pxToRem(8px);
+            right: pxToRem(-70px);
+        }
+        span, p {
+            position: relative;
+        }
+        @at-root .with-line {
+            &:before, &:after {
+                content: '';
+                position: absolute;
+                width: pxToRem(194px);
+                transform-origin: 0 0;
+                border-bottom: 1px solid #fcd36a;
+                top: pxToRem(26px);
+                transform: scaleY(.5);
+                left: pxToRem(20px);
+            }
+            &:after {
+                left: initial;
+                right: pxToRem(20px);
+            }
+        }
+        &>p:nth-child(2) {
+            font-size: pxToRem(36px);
+            padding-top: pxToRem(12px);
+            font-weight: normal;
+        }
+    }
+    @at-root .lottery-ul {
+        position: absolute;
+        top: percent(280, $designHeight);
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: pxToRem(749px);
+        height: percent(696, $designHeight);
+        background: url(../images/lottery-bg.png) no-repeat center;
+        background-size: 100% 100%;
+        padding: pxToRem(68px) pxToRem(42px) 0 pxToRem(52px);
+        box-sizing: border-box;
+        font-size: 0;
+        @at-root .lottery-item {
+            position: relative;
+            display: inline-block;
+            vertical-align: bottom;
+            width: pxToRem(210px);
+            height: percent(186, 696);
+            background-color: #fff;
+            margin: 0 pxToRem(6px) pxToRem(8px) 0;
+            border-radius: pxToRem(10px);
+            font-size: pxToRem(24px);
+            color: #4c4c4c;
+            text-align: center;
+            box-sizing: border-box;
+            &.active {
+                border: pxToRem(4px) solid #f03c3c;
+            }
+            @at-root .item-icon {
+                position: absolute;
+                display: block;
+                width: pxToRem(160px);
+                // height: percent(120, 186);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: bottom;
+                bottom: percent(60, 186);
+                left: 50%;
+                transform: translate(-50%, 0);
+                // margin: 0 auto;
+                // margin-bottom: pxToRem(6px);
+                &:before {
+                    content: attr(data-value);
+                    position: absolute;
+                    bottom: pxToRem(15px);
+                    width: 100%;
+                    text-align: center;
+                    left: 0;
+                    color: #fff;
+                    font-size: pxToRem(30px);
+                    box-sizing: border-box;
+                }
+            }
+            span {
+                position: absolute;
+                display: block;
+                bottom: percent(23, 186);
+                width: 100%;
+                text-align: center;
+            }
+            .icon-rp8 {
+                height: percent(98, 186);
+            }
+            .icon-rp18 {
+                height: percent(100, 186);
+                &:before {
+                    font-size: pxToRem(36px);
+                    transform: rotate(2deg);
+                    padding-left: pxToRem(16px);
+                }
+
+            }
+            .icon-rp28 {
+                height: percent(101, 186);
+                &:before {
+                    font-size: pxToRem(36px);
+                    transform: rotate(2deg);
+                    padding-left: pxToRem(34px);
+                }
+            }
+        }
+    }
+    .footer-info {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: percent(76, $designHeight);
+        text-align: center;
+        font-size: pxToRem(18px);
+        line-height: pxToRem(36px);
+    }
+}
+
+// lottery icons
+
+.icon-rp8 {
+    background-image: url(../images/rp8.png);
+}
+.icon-rp18 {
+    background-image: url(../images/rp18.png);
+}
+.icon-rp28 {
+    background-image: url(../images/rp28.png);
+}
+
+
+//btns
+.btn-lottery {
+    // background: url(../images/btn-lot.png) no-repeat center;
+    &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 0;
+        left: pxToRem(-7px);
+        background: url(../images/btn-lot.png) no-repeat center;
+        background-size: 100% 100%;
+        width: pxToRem(224px);
+        height: percent(197, 186);
+    }
+}
+
+.shadow {
+    content: "";
+    @include background('data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAWBAMAAAD6L4mmAAAAElBMVEVFRUUAAABFRUVFRUVFRUVFRUVJMWaaAAAABnRSTlMmAB8UDQeHzEYxAAAAmElEQVQ4y6XU0QnDIBSF4YN0AUl8v1wniNcBGkwH EJr9V2ltoYWaUJLzDfBDoh74XrgvZkkbPGkTzZZb9b2fwFpMBbucWl53A6EkAf5zMdc+EIriAH01 voEx4bA4fwIh4ZRY34FBcJKbWmAAYfIYBQQ34wrKBQKKowP0J9A/kT1G+iLxV5l/TPxz5geFn7R+ VMvWqObNUX0ATQUmuE51E4oAAAAASUVORK5CYII=', 128px, 22px);
+}
+
+.pop-rp088 {
+    &:before {
+        @extend .icon-rp088;
+        // width: pxToRem(156px);
+        // height: pxToRem(121px);
+    }
+    &:after {
+        @extend .shadow;
+    }
+}
+
+.pop-rp88 {
+    &:before {
+        @extend .icon-rp88;
+        // width: pxToRem(156px);
+        // height: pxToRem(121px);
+    }
+    &:after {
+        @extend .shadow;
+    }
+}
+.pop-rp808 {
+    &:before {
+        @extend .icon-rp808;
+        // width: pxToRem(156px);
+        // height: pxToRem(121px);
+    }
+    &:after {
+        @extend .shadow;
+    }
+}
+
+.pop-coin {
+    &:before {
+        @extend .icon-coin;
+        width: pxToRem(160px) !important;
+        height: pxToRem(140px) !important;
+        bottom: pxToRem(-10px) !important;
+    }
+    &:after {
+        @extend .shadow;
+    }
+}
+.pop-coins {
+    &:before {
+        @extend .icon-coins;
+        width: pxToRem(160px) !important;
+        height: pxToRem(140px) !important;
+        bottom: pxToRem(-10px) !important;
+    }
+    &:after {
+        @extend .shadow;
+    }
+}
+.pop-face {
+	// margin-top: pxToRem(30px);
+	&:before {
+		background-image: url('../images/icon-face.png');
+		width: pxToRem(142px) !important;
+		height: pxToRem(117px) !important;
+	}
+}
+

@@ -4,12 +4,8 @@
     /* ==================弹出框==popup================= */
     /*
             options : {
+                type: 0 -- 普通弹窗， 1: 奖品弹窗
                 message: 提示内容,
-                contentStyle: 提示内容样式,
-                icon: {
-                    iconStyle: 图标样式,
-                    iconText: 图标描述,
-                },
                 btn: {
                     style: 按钮样式,
                     text: 按钮文字,
@@ -20,13 +16,8 @@
     function popup(options) {
         var that = this;
         var _options = {
-            title: '',
+            type: 0,
             message: '',
-            contentStyle: '',
-            icon: {
-                iconStyle: '',
-                iconText: '',
-            },
             btn: {
                 style: '',
                 text: '',
@@ -34,51 +25,34 @@
             }
         };
         _options = $.extend(_options, options || {});
-        var mask = $('<div/>').addClass('mask'),
+        // var pop_type = type == 0 ? 'alert-wrapper' : 'prize-wrapper';
+        var popWrapper = $('<div/>').addClass('mask').addClass('pop-wrapper'),
             masker = $('<div/>').addClass('masker'),
-            popWrapper = $('<div/>').addClass('pop-wrapper').addClass('pop-container'),
-            popContent = $('<div/>').addClass('pop-content').html(_options.message);
+            // popWrapper = $('<div/>').addClass('pop-wrapper'),
+            popContent = $('<div/>').addClass('pop-content');
+            p = $('<p/>').html(_options.message);
+            btn = $('<div/>').addClass(_options.btn.style).html(_options.btn.text);
 
-        if (_options.title) {
-            var title = $('<span/>').addClass('pop-title').html(_options.title);
-            popWrapper.append(title);
-        }
-        if (_options.contentStyle) {
-            popContent.addClass(_options.contentStyle);
+        if (_options.type === 0) {
+            popWrapper.addClass('alert-wrapper');
+        } else {
+            popWrapper.addClass('prize-wrapper');
+            icon_contain = $('<div/>').addClass('icon-contain').html('<i class="icon-prize"></i>');
+            popContent.append(icon_contain);
         }
 
-        if (_options.icon.iconStyle) {
-            //添加图标
-            var iconWrapper = $('<div/>').addClass('pop-icon-container');
-            var icon = $('<i/>').addClass('pop-icon').addClass(_options.icon.iconStyle);
-            iconWrapper.append(icon);
-            if (_options.icon.iconText) {
-                var iconText = $('<span/>').addClass('pop-icon-text').html(_options.icon.iconText);
-                iconWrapper.append(iconText);
-
-            }
-            popContent.append(iconWrapper);
-        }
+        popContent.append(p).append(btn);
         popWrapper.append(popContent);
 
-        if (_options.btn.text) {
-            //添加按钮
-            _options.btn.style && btn.addClass(_options.btn.style);
-            var btn = $('<div/>').addClass('btn-pop').html(_options.btn.text);
-            //弹窗按钮点击事件
-            btn.on('click', function(e) {
-                var _callback = _options.btn.callback;
-                typeof _callback === 'function' && _callback();
-                hide(mask);
-            });
-            popWrapper.append(btn);
-        }
-        mask.append(masker);
-        mask.append(popWrapper);
-        $('body').append(mask);
+        
+        $('body').append(popWrapper);
 
         masker.on("click", function(e) {
-            hide(mask);
+            hide(popWrapper);
+        });
+        btn.on("click", function(e) {
+            _options.btn.callback && _options.btn.callback();
+            hide(popWrapper);
         });
 
         function hide(target) {
@@ -95,14 +69,19 @@
     }
 
     var util = {
+        // 普通弹窗 
+        // options = {
+            // content: 信息
+            // callback: 按钮回调
+        // }
         message: function(options) {
             var msg = typeof options === 'string' ? options : options.content;
             popup({
                 message: msg,
-                contentStyle: 'toast-content',
+                type: 0,
                 btn: {
                     text: '确定',
-                    // style: 'msg-btn',
+                    style: 'btn-common-y',
                     callback: options.callback
                 }
             });
@@ -115,22 +94,22 @@
                 _toast.remove();
             }, duration);
         },
+        // 奖品弹窗 
+        // options = {
+            // content: 奖品
+            // callback: 按钮回调
+        // }
         showPrize: function(options) {
-            /* {
-                 title: '',
-                 icon: {
-                     iconStyle: '',
-                     iconText: ''
-                 },
-                 btn: {
-                     style: '',
-                     text: '',
-                     callback: null
-                 }
-             }*/
-            options.icon.iconStyle = 'pop-' + options.icon.iconStyle;
-
-            popup(options);
+            var msg = typeof options === 'string' ? options : options.content;
+            popup({
+                message: '恭喜获得<font class="font-red">' + msg + '</font>',
+                type: 1,
+                btn: {
+                    text: '查看奖品',
+                    style: 'btn-common-r',
+                    callback: options.callback
+                }
+            });
         }
     }
 
