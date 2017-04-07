@@ -1,264 +1,12 @@
 (function() {
 	var list = [{
-		question: '您认为投资理财在生活中重要程度是？',
+		question: '您在团贷网已经投资了多久？',
 		options: [{
 			id: 0,
-			text: '非常不重要'
+			text: '1个月以内'
 		}, {
 			id: 1,
-			text: '不太重要'
-		}, {
-			id: 2,
-			text: '比较重要'
-		}, {
-			id: 3,
-			text: '十分重要'
-		}, {
-			id: 4,
-			text: '没太想这个问题'
-		}],
-		id: 0,
-		limit: 1,
-		recomment: ''
-	}, {
-		question: '您对理财的认识是？',
-		options: [{
-			id: 0,
-			text: '理财能致富'
-		}, {
-			id: 1,
-			text: '理财能使闲钱收益最大化'
-		}, {
-			id: 2,
-			text: '理财应该有用，但是钱不多，也不知道如何入手'
-		}, {
-			id: 3,
-			text: '理财没什么用，因为没什么钱'
-		}, {
-			id: 4,
-			text: '钱不多，理财也没什么收益，还不如做别的'
-		}],
-		id: 1,
-		limit: 1,
-		recomment: ''
-	}, {
-		question: '您期望理财的年度回报率的是？',
-		options: [{
-			id: 0,
-			text: '6%以下'
-		}, {
-			id: 1,
-			text: '6-8%'
-		}, {
-			id: 2,
-			text: '8-12%'
-		}, {
-			id: 3,
-			text: '12-15%'
-		}, {
-			id: 4,
-			text: '15%以上'
-		}],
-		id: 2,
-		limit: 1,
-		recomment: ''
-	}, {
-		question: '一般您从哪里获得关于理财的信息？',
-		options: [{
-			id: 0,
-			text: '传统媒体（电视、广播、期刊、杂志）'
-		}, {
-			id: 1,
-			text: '新媒体（微信、微博、今日头条、知乎等）'
-		}, {
-			id: 2,
-			text: '理财达人（知乎、天涯等社区理财达人）'
-		}, {
-			id: 3,
-			text: '朋友、同事、同学、亲戚推荐'
-		}, {
-			id: 4,
-			text: '常联系的银行理财经理（或者金融机构从业人员）的推荐'
-		}, {
-			id: 5,
-			text: '其他理财机构的推荐'
-		}, {
-			id: 6,
-			text: '自己看书自己研究'
-		}],
-		id: 3,
-		limit: 7,
-		recomment: '(不定项选择)'
-	}, {
-		question: '当您准备投资一款理财产品，你会找谁问？',
-		options: [{
-			id: 0,
-			text: '网上搜索（百度、知道、媒体报道、社区讨论等）',
-		}, {
-			id: 1,
-			text: '咨询理财有方的周边亲戚、朋友、同事、同学'
-		}, {
-			id: 2,
-			text: '咨询从事金融行业的朋友（或让朋友介绍）'
-		}, {
-			id: 3,
-			text: '咨询自己常联系的银行客户经理'
-		}, {
-			id: 4,
-			text: '咨询关系不错的基金公司理财经理'
-		}, {
-			id: 5,
-			text: '致电证监会、银监会等'
-		}, {
-			id: 6,
-			text: '以上各种渠道都会咨询',
-		}, {
-			id: 7,
-			text: ''
-		}],
-		id: 4,
-		limit: 8,
-		recomment: '(不定项选择)'
-	}, {
-		question: '各方询问后，你更会相信谁的建议？',
-		options: [{
-			id: 0,
-			text: '网上搜索（百度、知道、媒体报道、社区讨论等）'
-		}, {
-			id: 1,
-			text: '咨询理财有方的周边亲戚、朋友、同事、同学'
-		}, {
-			id: 2,
-			text: '咨询从事金融行业的朋友（或让朋友介绍）'
-		}, {
-			id: 3,
-			text: '咨询自己常联系的银行客户经理'
-		}, {
-			id: 4,
-			text: '咨询关系不错的基金公司理财经理'
-		}, {
-			id: 5,
-			text: '致电证监会、银监会等'
-		}, {
-			id: 6,
-			text: '以上各种渠道都会咨询'
-		}, {
-			id: 7,
-			text: ''
-		}],
-		id: 5,
-		limit: 2,
-		recomment: '(可选1-2项)'
-	}, {
-		question: '当您进行投资时，是否倾向自己做最后决策？',
-		options: [{
-			id: 0,
-			text: '是，咨询后自己思考后自己决定。'
-		}, {
-			id: 1,
-			text: '否，主要参考别人的建议决定。'
-		}],
-		id: 6,
-		limit: 1,
-		recomment: ''
-	}, {
-		question: '您是否有关注投资理财微博大V或微信公众号？',
-		options: [{
-			id: 0,
-			text: '是',
-			showSub: 1
-		}, {
-			id: 1,
-			text: '否',
-			showSub: 0
-		}],
-		id: 7,
-		limit: 1,
-		recomment: '',
-		subQuestion: '请列举1-3个您最为认可的投资理财微博大V或微信公众号',
-		subLimit: 3
-	}, {
-		question: '您是否有关注投资理财网站、社区或社群？',
-		options: [{
-			id: 0,
-			text: '是',
-			showSub: 1
-		}, {
-			id: 1,
-			text: '否',
-			showSub: 0
-		}],
-		id: 8,
-		limit: 1,
-		recomment: '',
-		subQuestion: '请列举1-3个您认为最有公信力的投资理财网站及社区',
-		subLimit: 3
-	}, {
-		question: '您是否有通过基金公司进行投资的经历？',
-		options: [{
-			id: 0,
-			text: '是',
-			showSub: 1
-		}, {
-			id: 1,
-			text: '否',
-			showSub: 0
-		}],
-		id: 9,
-		limit: 1,
-		recomment: '',
-		subQuestion: '请列举出1-3个你熟悉或信任的基金公司？',
-		subLimit: 3
-	}, {
-		question: '您选择在 P2P平台上投资最重要的原因是？',
-		options: [{
-			id: 0,
-			text: '收益高'
-		}, {
-			id: 1,
-			text: '门槛低'
-		}, {
-			id: 2,
-			text: '信息透明'
-		}, {
-			id: 3,
-			text: '风险得到最大程度的分散'
-		}, {
-			id: 4,
-			text: ''
-		}],
-		id: 10,
-		limit: 2,
-		recomment: '(可选1-2项)'
-	}, {
-		question: '投资收益率至少达到多少时，您会愿意选择通过P2P平台投资。',
-		options: [{
-			id: 0,
-			text: '5%-8%'
-		}, {
-			id: 1,
-			text: '8%-10%'
-		}, {
-			id: 2,
-			text: '10%-13%'
-		}, {
-			id: 3,
-			text: '13%-15%'
-		}, {
-			id: 4,
-			text: '15%以上'
-		}],
-		id: 11,
-		limit: 1,
-		recomment: ''
-	}, {
-		question: '以下哪一种投资期限，您更愿意通过p2p平台进行投资。',
-		options: [{
-			id: 0,
-			text: ' 1个月以下'
-		}, {
-			id: 1,
-			text: ' 1-3个月'
+			text: '1-3个月'
 		}, {
 			id: 2,
 			text: '3-6个月'
@@ -267,128 +15,223 @@
 			text: '6-12个月'
 		}, {
 			id: 4,
-			text: '1年以上'
+			text: '12个月以上'
 		}],
-		id: 12,
+		id: 0,
 		limit: 1,
 		recomment: ''
 	}, {
-		question: '通过p2p进行投资，您最多愿意投入多少资金？',
+		question: '银行存管上线前，您对团贷网投资过程中的整体体验是否满意？',
 		options: [{
 			id: 0,
-			text: '1万及以下'
+			text: '非常满意'
 		}, {
 			id: 1,
-			text: ' 1万-5万'
+			text: '比较满意'
 		}, {
 			id: 2,
-			text: '5万-10万'
+			text: '不是很满意'
 		}, {
 			id: 3,
-			text: '10万-50万'
+			text: '十分不满意'
 		}, {
 			id: 4,
-			text: '50万-100万'
-		}, {
-			id: 5,
-			text: '100万以上'
+			text: '尚未体验完毕，不确定'
 		}],
-		id: 13,
+		id: 1,
 		limit: 1,
 		recomment: ''
 	}, {
-		question: '请根据您的情况，选择最符合的项。',
+		question: '您在开通银行存管账户过程中，是否出现过困难？',
 		options: [{
 			id: 0,
-			text: '周围的人鼓励我投资P2P产品'
+			text: '是',
+			showSub: 1
 		}, {
 			id: 1,
-			text: '周围不少人都投资P2P产品，对我产生了影响'
+			text: '否',
+			showSub: 0
+		}],
+		id: 2,
+		limit: 1,
+		recomment: '',
+		hasBrench: true,
+		subQuestion: [{
+			id: 0,
+			question: '您在开通银行存管账户过程中出现问题后，是否能及时联系客服？',
+			subOptions: [{
+				id: 0,
+				text: '是，联系客服后，在客服协助下顺利解决问题'
+			}, {
+				id: 1,
+				text: '是，但等候人数很多，等候时间在1小时以上'
+			}, {
+				id: 2,
+				text: '否，前面等候人数太多，等候时间需要1天以上，当天没法及时联系上'
+			}, {
+				id: 3,
+				text: '否，不知道如何联系客服'
+			}, {
+				id: 4,
+				text: '否，原因',
+				hasInput: true
+			}],
+			limit: 1
+		}, {
+			id: 1,
+			question: '您对客服的服务态度是否满意？',
+			subOptions: [{
+				id: 0,
+				text: '非常满意'
+			}, {
+				id: 1,
+				text: '比较满意'
+			}, {
+				id: 2,
+				text: '不是很满意'
+			}, {
+				id: 3,
+				text: '十分不满意'
+			}],
+			limit: 1
 		}, {
 			id: 2,
-			text: '媒体广告宣传，促使我投资P2P产品'
+			question: '您在开通银行存管账户过程中出现问题后，多久得到解决？',
+			subOptions: [{
+				id: 0,
+				text: '1天内'
+			}, {
+				id: 1,
+				text: '1-3天'
+			}, {
+				id: 2,
+				text: '3-7天'
+			}, {
+				id: 3,
+				text: '7天以上'
+			}, {
+				id: 4,
+				text: '至今尚未解决'
+			}]
 		}, {
 			id: 3,
-			text: '周围不少人反对我投资P2P产品，对我没有产生影响'
+			question: '您对于银行存管对接期间，平台解决问题的速度是否满意？',
+			subOptions: [{
+				id: 0,
+				text: '非常满意'
+			}, {
+				id: 1,
+				text: '比较满意'
+			}, {
+				id: 2,
+				text: '不是很满意'
+			}, {
+				id: 3,
+				text: '十分不满意'
+			}]
+		}]
+	}, {
+		question: '银行存管上线后，您体验过以下哪些流程？',
+		options: [{
+			id: 0,
+			text: '充值'
+		}, {
+			id: 1,
+			text: '提现'
+		}, {
+			id: 2,
+			text: '还款'
+		}, {
+			id: 3,
+			text: '借款'
 		}, {
 			id: 4,
-			text: '周围不少人反对我投资P2P产品，我因此减少了P2P产品的资金投入'
+			text: '以上流程都还没体验'
 		}],
-		id: 14,
+		id: 3,
+		limit: 7,
+		recomment: '(不定项选择)'
+	}, {
+		question: '您是否了解银行存管上线后提现时间的变化？',
+		options: [{
+			id: 0,
+			text: '了解',
+		}, {
+			id: 1,
+			text: '不了解'
+		}],
+		id: 4,
 		limit: 1,
 		recomment: ''
 	}, {
-		question: '关于您性格的描述，哪一项更符合：',
+		question: '您是否了解银行存管上线后用户资金有什么有变化？',
 		options: [{
 			id: 0,
-			text: '内敛稳健，做事深思熟虑'
+			text: '是'
 		}, {
 			id: 1,
-			text: '果敢积极，性格外向，喜欢向高难度挑战'
-		}, {
-			id: 2,
-			text: '追求平衡，喜欢在平衡线上处理事情'
+			text: '否'
 		}],
-		id: 15,
+		id: 5,
 		limit: 1,
 		recomment: ''
 	}, {
-		question: '您现在的职业是：',
+		question: '对于银行存管对接过程中所出现的问题，您的态度是？',
 		options: [{
 			id: 0,
-			text: '互联网（包括互联网金融）从业人员'
+			text: '十分理解，相信平台会尽快处理好'
 		}, {
 			id: 1,
-			text: '银行、保险、证券、信托等传统金融从业人员'
+			text: '可以理解，但感觉处理问题速度比较慢'
 		}, {
 			id: 2,
-			text: '国有企业职员、机关事业单位职员、公务员等'
+			text: '不能理解，对平台处理问题的速度不满意'
 		}, {
 			id: 3,
-			text: '老师、医生、律师等专业人士'
-		}, {
-			id: 4,
-			text: '有限公司股份公司老板'
-		}, {
-			id: 5,
-			text: '公司中高层管理等'
-		}, {
-			id: 6,
-			text: '私企、民营企业职员'
-		}, {
-			id: 7,
-			text: '个体工商户'
-		}, {
-			id: 8,
-			text: '自由职业者'
-		}, {
-			id: 9,
-			text: '学生'
-		}, {
-			id: 10,
-			text: ''
+			text: '完全无法理解，对于在团贷网投资的信心有一定影响'
 		}],
-		id: 16,
+		id: 6,
 		limit: 1,
 		recomment: ''
 	}, {
-		question: '您未来的职业规划：',
+		question: '实现银行存管后，对于您在团贷网投资产生了什么影响？',
 		options: [{
 			id: 0,
-			text: '在现有的职业轨道中继续发展'
+			text: '没有任何影响，一切如常地进行投资'
 		}, {
 			id: 1,
-			text: '创业'
+			text: '投资更有信心，打算加大在团贷网的投资额度'
 		}, {
 			id: 2,
-			text: '自由职业者'
+			text: '存管过程中出现的技术问题，对投资信心有一定影响'
 		}, {
 			id: 3,
-			text: ''
+			text: '现在还不确定'
 		}],
-		id: 17,
+		id: 7,
 		limit: 1,
-		recomment: ''
+		recomment: '',
+	}, {
+		question: '体来说，您对团贷网银行存管上线期间的服务是否满意？',
+		options: [{
+			id: 0,
+			text: '满意'
+		}, {
+			id: 1,
+			text: '还行'
+		}, {
+			id: 2,
+			text: '不满意'
+		}],
+		id: 8,
+		limit: 1,
+		recomment: '',
+	}, {
+		question: '分享一下您在团贷网实现银行存管期间的感受及建议',
+		options: [],
+		id: 9,
+		limit: 1,
+		recomment: '（选填）',
 	}];
 	window.list = list;
 })();
