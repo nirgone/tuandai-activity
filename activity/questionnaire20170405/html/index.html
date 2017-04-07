@@ -22,15 +22,19 @@
     <div class="content">
         <div class="page m-page">
             <i class="icon-logo"></i>
-            <i class="icon-title-m"></i>
-            <i class="icon-mainbox"></i>
-            <i class="icon-pai"></i>
-            <i class="icon-envelope1"></i>
-            <i class="icon-envelope2"></i>
-            <i class="icon-envelope3"></i>
-            <i class="icon-envelope-bottom">
-				<i class="icon-env-start"></i>
-            </i>
+            <div class="icon-container">
+                <i class="icon-title-m zoomIn"></i>
+                <i class="icon-mainbox zoomIn">
+                    <i class="icon-m-icon1"></i>
+                </i>
+                <i class="icon-pai slideInRight"></i>
+                <i class="icon-envelope1 rotateIn1"></i>
+                <i class="icon-envelope2 rotateIn2"></i>
+                <i class="icon-envelope3 rotateIn3"></i>
+                <i class="icon-envelope-bottom slideInUp">
+                <i class="icon-env-start"></i>
+                </i>
+            </div>
             <i class="icon-rule"></i>
         </div>
     </div>
@@ -63,7 +67,7 @@
         $(".mask").hide();
     });
     $(".icon-env-start").on('click', function() {
-    	window.location.href = './questions.html';
+        window.location.href = './questions.html';
     })
 })();
 </script>
