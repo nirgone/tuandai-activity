@@ -178,9 +178,9 @@
         }
     };
     Util.message({
-        content: '您已经填写过改问卷了',
+        content: '您已经填写过该问卷了',
         callback: function() {
             console.log('alert-pop')
         }
-    })
+    });
 })();

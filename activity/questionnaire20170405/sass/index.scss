@@ -76,7 +76,7 @@ $duration : 0.5s;
     height: percent(144, 683);
     transform-origin: 0% 100%;
     // animation-delay: $duration * 2;
-    animation: zoomIn $duration linear $duration * 2 1 both, swing $duration linear $duration * 3.5 2 forwards;
+    animation: zoomIn $duration linear $duration * 2 1 both, swing $duration*2 linear $duration * 3.5 2 forwards;
 }
 .icon-pai {
     @include background('../images/icon-pai.png',
@@ -167,7 +167,6 @@ $duration : 0.5s;
     bottom: 0;
     margin-left: pxToRem(-720px / 2);
     background-position: bottom;
-    animation-delay: $duration * 5.5;
     .icon-env-start {
         @include background('../images/icon-env-start.png',
         177px,
@@ -182,7 +181,7 @@ $duration : 0.5s;
 }
 
 .icon-rule {
-    @include background('../images/icon-rule.png',
+    @include background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAB9CAMAAAA1M9tDAAAASFBMVEX////61n/73Zf86Lz++Or84qf603H61Xr72Yr97Mn61Hb98df725D85bEAAAD602/72IT72H/7357602/602/602/602/6024I35hbAAAAF3RSTlNN0qZ6V5D13bxv6WOxhQDPx8qbbgbHG1HYzskAAAIBSURBVFjD7dnrkqIwEAXgdOdGAoyOM+55/zddGsSGXSkIcymnhvPHS+WzY1tKlzEoS7i+vb+8mMI4+3r6I6o0fHo3O/L6tkfZ6x7lgtkTHOpQv1159jsUgT6iGP+EvlRVrNmurNF8siJMMipPlAqVllxWnrtkZJZM1fb39duVs5KI2N/WG5XFNHxbToDbpcz6DoFqtsOMvKg0AM+6AdC6qoFmqvraaU1ZAH6iGnShNcXoUqnKQFxXESEOzDLXUppI1y8o1wknTL9yfl1d5F25MLIWyGZU9twuqIzgjEk3JtyrAvih8rciLaQVLkLAqC5A+1BloB5aKe2vgFCrkqY+Uqxt6CpVfUFVDVA/UAn6fL89KSgquOFDgVE1XdfcX6FHY43IzAScH39TshvbEu7I1BhjVWnOSPdSAaG9v1zsTRzRXDmv91NMz3o1P9ShSpX8PJYrBuyCwjy0X3nmVZX/m+0IWFPTTX2LsgAf6ucoD/hyJQueWzVAKleyrlzFPcoBVK7aUkXU9IMQyPUPtikdL7IOEdZuUGegiUDwW39Fx0HS9ZMXb1cpDFOgsGpdKZIeDCy6TeoyqcAz5vKSqknQdJwNSeZT6hKAYFTNC8n2lAmSng7hudJNZDuf7if/IkS/cK1M7J7junyoQx3qe84C7PXrzzj0PGXn2Q3KEk5yTvQXdApUbF0yGc8AAAAASUVORK5CYII=',
     53px,
     125px);
     height: percent(125, $designHeight);
@@ -203,6 +202,7 @@ $duration : 0.5s;
     top: percent(85, $designHeight);
     transform: translateX(-50%);
     padding: pxToRem(80px) pxToRem(40px);
+    z-index: 9999;
     .rule-title {
         @include background('../images/title-rule.png',
         498px,
@@ -244,34 +244,13 @@ $duration : 0.5s;
     animation-fill-mode: both;
 }
 
-@-webkit-keyframes slideInUp {
-    from {
-        -webkit-transform: translate3d(0, 100%, 0);
-        transform: translate3d(0, 100%, 0);
-        visibility: visible;
-    }
-    to {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-}
 
-@keyframes slideInUp {
-    from {
-        -webkit-transform: translate3d(0, 100%, 0);
-        transform: translate3d(0, 100%, 0);
-        visibility: visible;
-    }
-    to {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-}
 
 .slideInUp {
     @extend .animated;
     -webkit-animation-name: slideInUp;
     animation-name: slideInUp;
+    animation-delay: $duration * 5.5;
 }
 
 @-webkit-keyframes slideOutDown {
@@ -412,7 +391,7 @@ $duration : 0.5s;
         transform: scale(1.0) translate(-50%, -43%);
     }
     50% {
-        transform: scale(1.08) translate(-50%, -43%);
+        transform: scale(1.1) translate(-50%, -43%);
     }
     100% {
         transform: scale(1.0) translate(-50%, -43%);
@@ -424,7 +403,7 @@ $duration : 0.5s;
         transform: scale(1.0) translate(-50%, -43%);
     }
     50% {
-        transform: scale(1.08) translate(-50%, -43%);
+        transform: scale(1.1) translate(-50%, -43%);
     }
     100% {
         transform: scale(1.0) translate(-50%, -43%);

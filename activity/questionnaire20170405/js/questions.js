@@ -30,15 +30,19 @@
 					var subInputType = subItem.limit > 1 ? 'checkbox' : 'radio';
 					var subId = '' + index + j;
 					subItem.subOptions.forEach(function(subOpt, k) {
+						var inputStr = '';
 						var subOptId = '' + index + j + k;
+						if (subOpt.hasInput) {
+							inputStr = '<input type="text" name="other" class="other-input" data-id="' + subOptId + '">';
+						}
 						temp += '<li class="opt-row" data-name="' + subId + '" data-limit="' + subItem.limit + '" data-id="' + subOptId + '">' +
 							'<div class="opt-check"><input type="' + subInputType + '" id="' + subOptId + '" value="' + k + '" name="' + subId + '">' +
 							'<label class="icon-radio" for="' + subOptId + '"></label></div>' +
-							'<div class="opt-txt"><label for="' + subOptId + '">' + subOpt.text + '</label> </div></li>';
+							'<div class="opt-txt"><label for="' + subOptId + '">' + subOpt.text + '</label>' + inputStr + '</div></li>';
 					});
 					temp += '</ul></div>'
 				});
-				
+
 				temp += '</div></div>';
 			} else {
 				temp += '</ul></div></div>'
@@ -48,7 +52,8 @@
 		$(".ques-container").append(temp);
 		// $(".q-wrapper").eq(0).show();
 		// $(".ques-seri").html('Q1');
-		initShow();
+		initShow(0, 'init');
+
 
 	}
 	// Util.toast('你的答案不能为空', 2000);
@@ -56,7 +61,7 @@
 	init();
 
 
-	function initShow(index) {
+	function initShow(index, type) {
 		index = index ? index : activeIndex;
 		var _wrapper = $(".q-wrapper");
 		_wrapper.hide();
@@ -76,8 +81,14 @@
 			$(".btn-next").hide();
 			$(".btn-submit").show();
 		} else {
+			if (type === 'init') {
+				setTimeout(function() {
+					$(".btn-next").show();
+				}, 1000);
+			} else {
+				$(".btn-next").show();
+			}
 			$(".btn-submit").hide();
-			$(".btn-next").show();
 		}
 
 	}
@@ -147,6 +158,25 @@
 		// 	triggerBrench(name, 'sub');
 		// }
 	});*/
+	//打开输入弹窗
+	$("body").on('click', '.other-input', function() {
+		var id = $(this).attr('data-id');
+		var text = $(this).val();
+		$(".p-input").val(text);
+		$(".input-mask").find('.i-btn').attr('data-id', id);
+		$(".input-mask").show();
+	});
+	//关闭输入弹窗
+	$(".i-btn").on('click', function() {
+		var id = $(this).attr('data-id');
+		var text = $(".p-input").val();
+		$(".other-input[data-id='" + id + "']").val(text);
+		// $(".p-input").val('');
+		$(".input-mask").hide();
+	});
+	$(".masker").on('click', function() {
+		$(".mask").hide();
+	});
 	//提交答卷
 	$(".btn-submit").on('click', function() {
 		var questionArr = $(".q-wrapper");
@@ -162,29 +192,23 @@
 			}, {
 				"question": "Q6",
 				"content": "各方询问后，你更会相信谁的建议？",
-				"answers": [{
-					"serial": "A",
-					"text": "网上搜索（百度、知道、媒体报道、社区讨论等）"
-				}, {
-					"serial": "H",
-					"text": "",
-					"describe": "eeee" //其他选项
-				}]
+				"answers": [],
+				"describe": "kkkkkk"
 			}, {
-				"question": "Q8",
+				"question": "Q3",
 				"content": "您是否有关注投资理财微博大V或微信公众号？",
 				"answers": [{
 					"serial": "A",
 					"text": "是"
 				}],
-				"subQA": {
-					"subQuestion": "Q8-A", //分支问题编号
-					"subContent": "请列举1-3个您最为认可的投资理财微博大V或微信公众号", //分支问题内容
-					"subAnswers": [{
-						"subSeri": "A", //分支答案编号
-						"describe": "wwwww" //分支答案输入内容
+				"subQuestions": [{
+					"question": 'Q3-A',
+					"answers": [{
+						"serial": 'E',
+						"text": "否，原因",
+						"describe": "dddd"
 					}]
-				}
+				}]
 			}]
 		*/
 		var answerList = [];
@@ -196,49 +220,64 @@
 				// content: questionObj.question,
 				answers: []
 			}
-			answArr = $("input[name='" + i + "']:checked"); //选中的答案
-			if (answArr.length > 0) {
-				for (var k = 0; k < answArr.length; k++) {
-					var index = answArr.eq(k).val();
-					var answer = {
-							serial: seriArr[index % 26],
-							text: questionObj.options[+index].text
-						}
-						//如果选中其他选项
-					if (!answer.text) {
-						answer.describe = questionArr.eq(i).find("input[name='other']").val();
+			if (questionObj.options.length > 0) {
+				var answArr = $("input[name='" + i + "']:checked"); //选中的答案
+				if (answArr.length > 0) {
+					for (var k = 0; k < answArr.length; k++) {
+						var index = answArr.eq(k).val();
+						var answer = {
+								serial: seriArr[index % 26],
+								text: questionObj.options[+index].text
+							}
+							//如果选中其他选项
+							// if (!answer.text) {
+							// 	answer.describe = questionArr.eq(i).find("input[name='other']").val();
+							// }
+						questionAnswers.answers.push(answer);
 					}
-					questionAnswers.answers.push(answer);
+				} else {
+					isCompleted = false;
 				}
 			} else {
-				isCompleted = false;
+				var desc = questionArr.eq(i).find(".opt-input").val();
+				questionAnswers.describe = desc;
 			}
+
 			//如果有分支
-			if (questionObj.subQuestion) {
-				// console.info('sub---', answArr, answArr.attr('data-sub'));
+			if (questionObj.hasBrench) {
 				if (answArr.attr('data-sub') == 1) {
-					questionAnswers.subQA = {
-						subQuestion: 'Q' + (i + 1) + '-A',
-						// subContent: questionObj.subQuestion,
-						subAnswers: []
-					};
-					var subAnswArr = $("input[name='sub" + i + "']");
-					for (var m = 0; m < subAnswArr.length; m++) {
-						var subValue = subAnswArr.eq(m).val().trim();
-						if (subValue.length > 0) {
-							var subAnswer = {
-								subSeri: seriArr[m % 26],
-								// text: '',
-								describe: subValue
-							};
-							questionAnswers.subQA.subAnswers.push(subAnswer);
+					var subList = [];
+					var subQuestions = questionObj.subQuestion;
+					subQuestions.forEach(function(item, m) {
+						var subQA = {
+							question: 'Q' + (i + 1) + '-' + seriArr[m % 26],
+							answers: []
+						};
+						var subId = '' + i + m;
+						var subAnswArr = $("input[name='" + subId + "']:checked");
+						if (subAnswArr.length > 0) {
+							for (var n = 0; n < subAnswArr.length; n++) {
+								var subIndex = subAnswArr.eq(n).val();
+								var subAnswer = {
+									serial: seriArr[subIndex % 26],
+									text: item.subOptions[subIndex].text
+								}
+								if (item.subOptions[subIndex].hasInput) {
+									var inputId = '' + i + m + subIndex;
+									console.info(inputId, $("input[data-id='" + inputId + "']"));
+									subAnswer.describe = $("input[data-id='" + inputId + "']").val();
+								}
+								subQA.answers.push(subAnswer);
+							}
+						} else {
+							isCompleted = false;
 						}
-					}
-					if (questionAnswers.subQA.subAnswers.length === 0) {
-						isCompleted = false;
-					}
+						subList.push(subQA);
+					});
+					questionAnswers.subQuestions = subList;
 				}
 			}
+
 			answerList.push(questionAnswers);
 		}
 		console.info(answerList);
