@@ -24,6 +24,19 @@
     bottom: 0;
 }
 
+.q-mask {
+    &:before {
+        content: "";
+        @include background('../images/q-mask.png',
+        594px,
+        65px);
+        position: absolute;
+        left: 50%;
+        top: pxToRem(-65px);
+        transform: translateX(-50%);
+    }
+}
+
 .envelope-front {
     @extend .bg-abso;
     background-image: url('../images/icon-envelope-front.png');
@@ -83,19 +96,21 @@
             line-height: pxToRem(48px);
         }
     }
-    .q-mask {
-        @include background('../images/q-mask.png',
-        594px,
-        220px);
-        position: absolute;
-        left: 50%;
-        bottom: 20%;
-        transform: translateX(-50%);
-        z-index: 20;
-    }
+    // .q-mask {
+    //     // @include background('../images/q-mask.png',
+    //     // 594px,
+    //     // 220px);
+    //     @include background('../images/q-mask.png', 594px, 65px);
+    //     position: absolute;
+    //     left: 50%;
+    //     // bottom: 20%;
+    //     bottom: 31%;
+    //     transform: translateX(-50%);
+    //     z-index: 20;
+    // }
     .opt-list {
         width: 100%;
-        padding-bottom: pxToRem(120px);
+        padding-bottom: pxToRem(50px);
         &>li {
             margin-top: pxToRem(30px);
         }
@@ -236,6 +251,7 @@
     resize: none;
     margin-top: pxToRem(30px);
 }
+
 .i-wrapper {
     position: absolute;
     // left: 0;
@@ -276,7 +292,7 @@
         margin-top: pxToRem(60px);
     }
 }
+
 .btn-next {
     display: none;
 }
-

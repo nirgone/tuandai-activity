@@ -13,8 +13,10 @@
 			if (item.options && item.options.length > 1) {
 				item.options.forEach(function(opt, i) {
 					var _id = '' + index + i;
+					var isOnly = opt.only ? '1' : '0';
+
 					temp += '<li class="opt-row" data-name="' + index + '" data-limit="' + item.limit + '" data-id="' + _id + '"><div class="opt-check">' +
-						'<input type="' + inputType + '" id="' + _id + '" value="' + i + '" name="' + index + '" data-sub="' + opt.showSub + '">' +
+						'<input type="' + inputType + '" id="' + _id + '" value="' + i + '" name="' + index + '" data-sub="' + opt.showSub + '" data-isonly="' + isOnly + '">' +
 						'<label class="icon-radio" for="' + _id + '"></label></div>' +
 						'<div class="opt-txt"><label for="' + _id + '">' + opt.text + '</label> </div></li>';
 				});
@@ -32,11 +34,13 @@
 					subItem.subOptions.forEach(function(subOpt, k) {
 						var inputStr = '';
 						var subOptId = '' + index + j + k;
+						var hasInput = '0';
 						if (subOpt.hasInput) {
 							inputStr = '<input type="text" name="other" class="other-input" data-id="' + subOptId + '">';
+							hasInput = '1';
 						}
 						temp += '<li class="opt-row" data-name="' + subId + '" data-limit="' + subItem.limit + '" data-id="' + subOptId + '">' +
-							'<div class="opt-check"><input type="' + subInputType + '" id="' + subOptId + '" value="' + k + '" name="' + subId + '">' +
+							'<div class="opt-check"><input type="' + subInputType + '" id="' + subOptId + '" value="' + k + '" name="' + subId + '" data-hasinput="' + hasInput + '">' +
 							'<label class="icon-radio" for="' + subOptId + '"></label></div>' +
 							'<div class="opt-txt"><label for="' + subOptId + '">' + subOpt.text + '</label>' + inputStr + '</div></li>';
 					});
@@ -84,6 +88,7 @@
 			if (type === 'init') {
 				setTimeout(function() {
 					$(".btn-next").show();
+					$(".envelope-front").addClass('q-mask');
 				}, 1000);
 			} else {
 				$(".btn-next").show();
@@ -107,10 +112,27 @@
 			var subLenght = curQuestion.subQuestion.length;
 			if (curQuestion.showBrench) {
 				var subId = '' + activeIndex + subAcitve[activeIndex];
+				console.info(activeIndex, subIndex, subId);
 				subArr = $("input[name='" + subId + "']:checked");
 				if (subArr.length === 0) {
 					Util.toast('你的答案不能为空')
 					return;
+				} else {
+					//所选答案有输入时不能为空
+					var isCorrect = true;
+					for (var i = 0; i < subArr.length; i++) {
+						var hasInput = subArr.eq(i).attr('data-hasinput');
+						var id = subArr.eq(i).attr('id');
+						var inputStr = $(".other-input[data-id='" + id + "']").val();
+						inputStr = inputStr ? inputStr.trim() : '';
+						if (hasInput == 1 && inputStr.length === 0) {
+							isCorrect = false;
+						}
+					}
+					if (!isCorrect) {
+						Util.toast('你的答案不能为空')
+						return;
+					}
 				}
 			}
 			if (subIndex < subLenght) {
@@ -158,6 +180,28 @@
 		// 	triggerBrench(name, 'sub');
 		// }
 	});*/
+	//多选中有一项跟其他项是互斥关系时
+	$("body").on('change', 'input[type="checkbox"]', function(e) {
+		var isOnly = $(this).attr('data-isonly');
+		var name = $(this).attr('name');
+		var arr = $("input[name='" + name + "']:checked");
+		if (arr.length > 1) {
+			if (isOnly == 1) {
+				for (i = 0; i < arr.length; i++) {
+					if (arr.eq(i).attr('data-isonly') != 1) {
+						arr[i].checked = false;
+					}
+				}
+			} else {
+				for (i = 0; i < arr.length; i++) {
+					if (arr.eq(i).attr('data-isonly') == 1) {
+						arr[i].checked = false;
+					}
+				}
+			}
+		}
+
+	});
 	//打开输入弹窗
 	$("body").on('click', '.other-input', function() {
 		var id = $(this).attr('data-id');

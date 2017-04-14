@@ -1,0 +1,551 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-overflow-scrolling: touch !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    background-color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+i,
+ul,
+li,
+span {
+    display: inline-block;
+}
+
+.t-cont {
+    @include background('../images/t-bg.jpg', 750px, 425px);
+    position: relative;
+}
+
+.icon-ticon1 {
+    @include background('../images/t-icon6.png', 78px, 80px);
+    position: absolute;
+    right: pxToRem(60px);
+    bottom: pxToRem(8px);
+}
+
+.icon-ticon2 {
+    @include background('../images/t-icon2.png', 313px, 221px);
+    position: absolute;
+    right: 0;
+    bottom: pxToRem(10px);
+}
+
+.icon-ticon3 {
+    @include background('../images/t-icon5.png', 81px, 84px);
+    position: absolute;
+    right: pxToRem(300px);
+    bottom: pxToRem(24px);
+}
+
+.icon-hover {
+    @include background('../images/hover.png', 750px, 36px);
+    position: absolute;
+    background-size: 100% 100%;
+    left: 0;
+    // bottom: pxToRem(-24px);
+    bottom: 0;
+    z-index: 2;
+}
+
+.icon-title1 {
+    @include background('../images/title.png', 462px, 217px);
+    position: absolute;
+    top: pxToRem(60px);
+    left: pxToRem(60px);
+    animation: zoomIn .5s linear both;
+}
+
+.icon-title2 {
+    @include background('../images/title2.png', 336px, 31px);
+    position: absolute;
+    top: pxToRem(280px);
+    left: pxToRem(100px);
+    animation: fadeIn .8s linear .7s both;
+}
+
+.txt1 {
+    width: 100%;
+    text-align: center;
+    color: #292929;
+    font-size: pxToRem(24px);
+    line-height: pxToRem(30px);
+    margin-top: pxToRem(30px);
+}
+
+.t-orange {
+    color: #f75700;
+}
+
+.cont-gray {
+    width: pxToRem(680px);
+    height: pxToRem(240px);
+    // margin: auto;
+    background-color: #f2f2f2;
+    margin-bottom: pxToRem(50px);
+    margin-top: pxToRem(70px);
+    margin-left: pxToRem(40px);
+    position: relative;
+    &:before {
+        content: "";
+        width: pxToRem(240px);
+        height: pxToRem(240px);
+        border-radius: pxToRem(240px);
+        background-color: #f2f2f2;
+        position: absolute;
+        top: pxToRem(-50px);
+        right: pxToRem(20px);
+    }
+    .icon-p1 {
+        @include background('../images/t-icon11.png', 231px, 237px);
+        position: absolute;
+        right: pxToRem(30px);
+        bottom: pxToRem(20px);
+    }
+    .o-title {
+        width: pxToRem(340px);
+        height: pxToRem(60px);
+        line-height: pxToRem(60px);
+        text-align: center;
+        background-color: #f7ab00;
+        font-size: pxToRem(30px);
+        color: #fff;
+        position: absolute;
+        top: pxToRem(40px);
+        left: pxToRem(-20px);
+    }
+    .tf-desc {
+        width: 55%;
+        position: absolute;
+        left: pxToRem(30px);
+        top: pxToRem(130px);
+        text-indent: 2em;
+        font-size: pxToRem(18px);
+        line-height: pxToRem(30px);
+        color: #424242;
+    }
+}
+
+.cont-blue {
+    background-color: #2356a9;
+}
+
+.module {
+    padding: pxToRem(80px) 0;
+    width: 100%;
+}
+
+.m-title1 {
+    @include background('../images/m-title1.png', 630px, 98px);
+    margin: auto;
+}
+
+.m-title2 {
+    @include background('../images/m-title2.png', 661px, 110px);
+    margin: auto;
+}
+
+.m-title3 {
+    @include background('../images/m-title3.png', 510px, 84px);
+    margin: auto;
+}
+
+.m-title4 {
+    @include background('../images/m-title4.png', 658px, 98px);
+    margin: auto;
+}
+
+.b-list {
+    width: 100%;
+    font-size: 0;
+    text-align: center;
+    margin-top: pxToRem(65px);
+    .b-item {
+        width: pxToRem(216px);
+        height: pxToRem(216px);
+        border-radius: pxToRem(216px);
+        background-color: #fff;
+        border: pxToRem(12px) solid #79a8f4;
+        position: relative;
+        display: inline-block;
+        margin-left: pxToRem(20px);
+        i {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+    }
+    &>li {
+        width: 33.3%;
+        span {
+            width: 100%;
+            font-size: pxToRem(20px);
+            color: #fff;
+            line-height: pxToRem(30px);
+            margin-top: pxToRem(30px);
+        }
+    }
+    .b-num {
+        width: pxToRem(58px);
+        height: pxToRem(58px);
+        border-radius: pxToRem(58px);
+        background-color: #f7ab00;
+        border: pxToRem(4px) solid #fff;
+        font-size: pxToRem(36px);
+        color: #fff;
+        line-height: pxToRem(50px);
+        position: absolute;
+        top: 0;
+        left: pxToRem(-29px);
+    }
+    .icon-b1 {
+        @include background('../images/t-icon1.png', 213px, 209px);
+        margin-left: pxToRem(-106px);
+        margin-top: pxToRem(-105px);
+    }
+    .icon-b2 {
+        @include background('../images/t-icon3.png', 202px, 213px);
+        margin-left: pxToRem(-101px);
+        margin-top: pxToRem(-106px);
+    }
+    .icon-b3 {
+        @include background('../images/t-icon4.png', 198px, 213px);
+        margin-left: pxToRem(-99px);
+        margin-top: pxToRem(-106px);
+    }
+}
+
+.p-list {
+    width: 100%;
+    padding: 0 pxToRem(50px);
+    margin-top: pxToRem(60px);
+    .p-row {
+        width: 100%;
+        font-size: 0;
+    }
+    .p-item {
+        width: 49.9%;
+        display: inline-block;
+        text-align: center;
+        padding: 0 pxToRem(20px);
+        i {
+            width: pxToRem(288px);
+            height: pxToRem(288px);
+            background-size: contain;
+        }
+    }
+    .icon-p1 {
+        background: url('../images/t-icon7.png') no-repeat center;
+    }
+    .icon-p2 {
+        background: url('../images/t-icon8.png') no-repeat center;
+    }
+    .icon-p3 {
+        background: url('../images/t-icon9.png') no-repeat center;
+    }
+    .icon-p4 {
+        background: url('../images/t-icon10.png') no-repeat center;
+    }
+    .p-title {
+        width: 100%;
+        font-size: pxToRem(28px);
+        color: #2356a9;
+        margin-bottom: pxToRem(10px);
+    }
+    .p-desc {
+        width: 100%;
+        font-size: pxToRem(18px);
+        line-height: pxToRem(20px);
+        color: #424242;
+        text-align: justify;
+    }
+}
+
+.mb-list {
+    width: 100%;
+    font-size: 0;
+    text-align: center;
+    margin-top: pxToRem(80px);
+    li {
+        width: 33.3%;
+        font-size: pxToRem(20px);
+        color: #fff;
+    }
+    font {
+        color: #fee000;
+    }
+    .mb-item {
+        width: pxToRem(226px);
+        height: pxToRem(226px);
+        border-radius: pxToRem(226px);
+        background-color: #12489f;
+        position: relative;
+        margin-bottom: pxToRem(60px);
+        display: inline-block;
+        i {
+            width: pxToRem(208px);
+            height: pxToRem(208px);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: pxToRem(-104px);
+            margin-top: pxToRem(-104px);
+            background-size: contain;
+        }
+    }
+    .icon-mb1 {
+        background: url('../images/b1.png') no-repeat center;
+    }
+    .icon-mb2 {
+        background: url('../images/b2.png') no-repeat center;
+    }
+    .icon-mb3 {
+        background: url('../images/b3.png') no-repeat center;
+    }
+}
+
+.b-bg {
+    @include background('../images/benefit.png',
+    745px,
+    469px);
+    margin: auto;
+    margin-top: pxToRem(100px);
+    position: relative;
+}
+
+.signb-list {
+    width: 100%;
+    font-size: 0;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: pxToRem(-48px);
+    &>li {
+        width: 33.3%;
+        font-size: pxToRem(30px);
+    }
+    .signb-item {
+        width: pxToRem(128px);
+        height: pxToRem(128px);
+        border-radius: pxToRem(128px);
+        background-color: #f7ab00;
+        display: inline-block;
+        line-height: pxToRem(50px);
+        padding-top: pxToRem(16px);
+        position: relative;
+        &:before {
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            left: 50%;
+            bottom: pxToRem(-22px);
+            border-width: pxToRem(12px);
+            border-style: solid;
+            border-color: #f7ab00 transparent transparent transparent;
+            margin-left: pxToRem(-12px);
+        }
+        font {
+            font-size: pxToRem(52px);
+            font-weight: bold;
+        }
+    }
+}
+
+.m-title5 {
+    width: 100%;
+    text-align: center;
+    font-size: pxToRem(56px);
+    color: #2d62b8;
+}
+
+.module-bottom {
+    padding-bottom: pxToRem(200px);
+}
+
+.map-cont {
+    width: pxToRem(720px);
+    height: pxToRem(300px);
+    margin: auto;
+    font-size: 0;
+    margin-top: pxToRem(60px);
+    .map {
+        width: pxToRem(470px);
+        height: 100%;
+        display: inline-block;
+        margin-right: pxToRem(10px);
+    }
+    .pic-cont {
+        width: pxToRem(240px);
+        height: 100%;
+        display: inline-block;
+    }
+    .icon-pic1 {
+        @include background('../images/pic1.jpg',
+        240px,
+        146px);
+    }
+    .icon-pic2 {
+        @include background('../images/pic2.jpg',
+        240px,
+        142px);
+        margin-top: pxToRem(12px);
+    }
+}
+
+.amap-logo {
+    display: none;
+}
+
+.addr-txt {
+    width: 80px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 10px;
+    color: #fff;
+    background-color: #3880f3;
+}
+
+.addr-txt1 {
+    font-size: pxToRem(20px);
+    color: #5b3d33;
+    width: pxToRem(100px);
+}
+
+.addr-remark {
+    width: 100%;
+    padding: pxToRem(30px);
+    font-size: pxToRem(18px);
+    color: #5b3d33;
+    font {
+        color: #f54336;
+    }
+}
+
+.float-cont {
+    width: 100%;
+    height: pxToRem(150px);
+    background-color: #2f75e5;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    // font-size: 0;
+    z-index: 10;
+    display: flex;
+    display: -webkit-box;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    &>li:not(:last-child) {
+    	position: relative;
+    	&:before {
+    		@include border('right', #2667d0);
+    	}
+    }
+    .f-item {
+        // width: 24.99%;
+        width: pxToRem(187px);
+        height: 100%;
+        color: #fff;
+        font-size: pxToRem(34px);
+        text-align: center;
+        display: block;
+        // display: inline-block;
+    }
+    .m-item {
+    	line-height: pxToRem(50px);
+    	&>span:first-child {
+    		padding-top: pxToRem(30px);
+    	}
+    	span {
+    		width: 100%;
+    		height: 50%;
+    	}
+    }
+    .s-item {
+    	line-height: pxToRem(150px);
+    }
+    .btn-signup {
+    	background-color: #f7ab00;
+    	color: #e23a2d;
+    }
+}
+.m-comment {
+    width: pxToRem(670px);
+    height: pxToRem(140px);
+    margin: auto;
+    background-color: #f2f2f2;
+    text-align: center;
+    font-size: pxToRem(20px);
+    color: #424242;
+    margin-top: pxToRem(40px);
+    padding: pxToRem(40px);
+    line-height: pxToRem(30px);
+    font {
+        color: #f75700;
+    }
+}
+.m-title6 {
+    @include background('../images/m-title5.png', 658px, 95px);
+    margin: auto;
+    margin-top: pxToRem(50px);
+}
+.icon-progress {
+    @include background('../images/icon-progress.png', 692px, 323px);
+    margin: auto;
+}
+.m-cont {
+    padding-bottom: pxToRem(40px) !important;
+}
+.b-module {
+    padding-top: pxToRem(0px) !important;
+}
+.btn-share {
+    width: pxToRem(160px);
+    height: pxToRem(160px);
+    position: absolute;
+    left: pxToRem(20px);
+    bottom: pxToRem(560px);
+    // display: none;
+    z-index: 100;
+    opacity: .5;
+    .icon-share {
+       @include background('../images/icon-share.png', 123px, 117px);
+    }
+}

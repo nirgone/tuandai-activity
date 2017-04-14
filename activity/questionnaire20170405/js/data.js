@@ -146,7 +146,8 @@
 			text: '借款'
 		}, {
 			id: 4,
-			text: '以上流程都还没体验'
+			text: '以上流程都还没体验',
+			only: true
 		}],
 		id: 3,
 		limit: 7,
@@ -212,7 +213,7 @@
 		limit: 1,
 		recomment: '',
 	}, {
-		question: '体来说，您对团贷网银行存管上线期间的服务是否满意？',
+		question: '总体来说，您对团贷网银行存管上线期间的服务是否满意？',
 		options: [{
 			id: 0,
 			text: '满意'
