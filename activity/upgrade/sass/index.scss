@@ -41,7 +41,7 @@ li {
 }
 
 .m-title {
-    @include background('../images/bg.png', 750px, 558px);
+    @include background('../images/bg.png?v=17011401', 750px, 558px);
 }
 
 .m-list {
