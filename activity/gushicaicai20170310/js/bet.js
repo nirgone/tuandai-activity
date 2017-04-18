@@ -9,9 +9,17 @@
     // var offset = 0; //倒计时修正数
     var count = 0; //倒计秒数
     var leftTime = 0; //倒计时剩余时间
-    function initCountDonw(time) { //time为倒计时时间
-        startTime = +new Date();
-        endTime = +new Date(time);
+    function initCountDonw(sTime, eTime) { //sTime为倒计时开始时间，eTime为倒计时结束时间
+        var now = +new Date();
+        startTime = +new Date(sTime);
+        endTime = +new Date(eTime);
+
+        if(startTime > now) {  //还没开始
+            return;
+        } else {
+            startTime = now;
+        }
+
         leftTime = Math.round((endTime - startTime) / 1000);
         leftTime > 0 && setTimeout(countDown, 0); //倒计时 大于0
     }
@@ -517,6 +525,6 @@
     });
 
         
-    initCountDonw('2017/04/16 15:40:00');
+    initCountDonw('2017/04/05 14:40:00','2017/04/05 15:00:00');
     initKLine();
 })();
