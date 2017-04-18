@@ -1,0 +1,60 @@
+@charset "UTF-8";
+@import "../../../sass/func";
+.input-popup {
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: #fff;
+    animation-duration: 0.4s !important;
+    padding: pxToRem(106px) pxToRem(90px) 0;
+    // display: none;
+    .close-part {
+        position: absolute;
+        bottom: pxToRem(44px);
+        left: 0;
+        right: 0;
+        .icon-close-b {
+            margin: 0 auto;
+        }
+
+        // width: pxToRem(100px);
+        
+    }
+    .input-wrapper {
+        position: relative;
+        margin: 0 auto;
+        height: pxToRem(92px);
+        box-sizing: border-box;
+        border: none;
+        &:after {
+            @include border(bottom, #a7a7a7);
+        }
+        &>input {
+            border: none;
+            width: 100%;
+            padding: pxToRem(26px);
+            padding-left: pxToRem(30px);
+            height: pxToRem(90px);
+            // line-height: pxToRem(90px);
+            font-size: pxToRem(34px);
+            color: #333;
+            box-sizing: border-box;
+        }
+    }
+    .btn {
+        margin: 0 auto;
+        margin-top: pxToRem(90px);
+        width: 100%;
+        border-radius: 5px;
+        height: pxToRem(98px);
+        line-height: pxToRem(98px);
+        text-align: center;
+        color: #ff4931;
+        font-size: pxToRem(36px);
+        border: 1px solid #ff4931;
+    }
+    
+}
