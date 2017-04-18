@@ -1,0 +1,81 @@
+.icon-circular {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size: pxToRem(245px)  pxToRem(191px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-202px) pxToRem(-108px);
+  width: pxToRem(32px);
+  height: pxToRem(32px);
+}
+.icon-download {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size: pxToRem(245px)  pxToRem(191px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-202px) pxToRem(-150px);
+  width: pxToRem(26px);
+  height: pxToRem(29px);
+}
+.icon-icon1 {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size: pxToRem(245px)  pxToRem(191px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-110px);
+  width: pxToRem(99px);
+  height: pxToRem(81px);
+}
+.icon-icon2 {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size: pxToRem(245px)  pxToRem(191px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-110px) pxToRem(0px);
+  width: pxToRem(82px);
+  height: pxToRem(100px);
+}
+.icon-icon3 {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size: pxToRem(245px)  pxToRem(191px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(100px);
+  height: pxToRem(100px);
+}
+.icon-line {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size: pxToRem(245px)  pxToRem(191px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-109px) pxToRem(-178px);
+  width: pxToRem(50px);
+  height: pxToRem(1px);
+}
+.icon-star-white {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size: pxToRem(245px)  pxToRem(191px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-202px) pxToRem(0px);
+  width: pxToRem(43px);
+  height: pxToRem(44px);
+}
+.icon-star-yellow {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size: pxToRem(245px)  pxToRem(191px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-202px) pxToRem(-54px);
+  width: pxToRem(43px);
+  height: pxToRem(44px);
+}
+.icon-star {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size: pxToRem(245px)  pxToRem(191px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-109px) pxToRem(-110px);
+  width: pxToRem(55px);
+  height: pxToRem(58px);
+}
