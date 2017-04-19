@@ -23,7 +23,7 @@
         $("#welfare-cons .welfare-con").eq(index).removeClass('hide').siblings().addClass('hide');
     })
 
-//规则遮罩事件绑定
+    //规则遮罩事件绑定
     $("#rule_sec").on("click", ".masker, .icon-close", function(e) {
         $("#rule_sec").hide();
         $("#rule_sec").find('.rule-scroll').addClass('zoomIn')

@@ -30,6 +30,22 @@ $grayColor:#808080;
     }
 }
 
+.title-line {
+    font-size: pxToRem(34px);
+    text-align: center;
+    color: #ff7f0d;
+    &:before,
+    &:after {
+        content: '';
+        @extend .icon-line-yellow;
+        margin: 0 pxToRem(14px);
+        vertical-align: pxToRem(15px);
+    }
+    &:after {
+        transform: scale(-1, 1);
+    }
+}
+
 .cat {
     @include background("../images/index/cat_head.png",279px,264px);
     margin: 0 auto;
@@ -87,14 +103,14 @@ $grayColor:#808080;
     &:before {
         content: '';
         // @include background("../images/little_pack.png", 62px, 58px);
-        // @extend .icon-redpack;
+        @extend .icon-redpack;
         display: inline-block;
         vertical-align: middle;
         animation: swing 5.0s linear 0s infinite both;
     }
     &:after {
         content: '';
-        // @extend .icon-arrow;
+        @extend .icon-arrow;
         display: inline-block !important;
         margin-left: pxToRem(8px);
         vertical-align: pxToRem(-4px);
@@ -105,8 +121,8 @@ $grayColor:#808080;
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff2d55), to(#ff5a3f));
     margin: pxToRem(-14px) auto 0;
     font-size: pxToRem(28px);
-    color:$defaultColor;
-    padding-bottom:pxToRem(110px);
+    color: $defaultColor;
+    padding-bottom: pxToRem(110px);
     .content {
         width: pxToRem(710px);
         margin: 0 auto;
@@ -136,25 +152,28 @@ $grayColor:#808080;
     .tab.on {
         background-color: $defaultColor;
         font-size: pxToRem(32px);
-        font-weight:bold;
+        font-weight: bold;
         height: 100%;
         line-height: pxToRem(110px);
         // margin-top:pxToRem(-21px);
     }
 }
+
 .tab-welfare2 {
     left: pxToRem(238px);
 }
+
 .tab-welfare3 {
     left: pxToRem(476px);
 }
 
 // 福利内容
-.welfare-cons{
+.welfare-cons {
     border-radius: 0 0 pxToRem(10px) pxToRem(10px);
-    height:pxToRem(1017px);
-    background-color:$defaultColor;
+    height: pxToRem(1017px);
+    background-color: $defaultColor;
 }
+
 // 福利公共样式
 .welfare-con.hide{
     display:none;
@@ -172,17 +191,24 @@ $grayColor:#808080;
     .btn-detail{
         margin:pxToRem(34px) 0 pxToRem(80px);
         color:$orangeColor;
-        line-height
         &:after{
             width:pxToRem(12px);
             height:pxToRem(23px);
             content: '';
             // @extend .icon-arrow;
-            background:url(../images/index/enter.png);
-            background-size:100%;
+            // background: url(../images/index/enter.png);
+            background-size: 100%;
             display: inline-block !important;
             margin-left: (8px);
             vertical-align: pxToRem(-4px);
+        }
+    }
+    &.welfare-con3 {
+        .title {
+            padding-top: pxToRem(50px);
+        }
+        .btn-detail {
+            margin: pxToRem(26px) 0 pxToRem(22px);
         }
     }
 }
@@ -193,7 +219,6 @@ $grayColor:#808080;
     position:relative;
     text-align:center;
     @include background("../images/index/turntable_whole.png",638px,638px);
-
     margin:0 auto;
 }
 .white-light{
@@ -213,7 +238,10 @@ $grayColor:#808080;
     }
     p{line-height:pxToRem(40px);font-size:pxToRem(25px);}
 }
-.lottery-num{color:$yellowColor;}
+
+.lottery-num {
+    color: $yellowColor;
+}
 
 // 福利二
 .ivitation{
@@ -258,26 +286,164 @@ $grayColor:#808080;
 }
 
 // 福利三
-.welfare-con3{
-
+.btn-red-pack {
+    position: fixed;
+    width: pxToRem(710px);
+    color: $defaultColor;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    height: pxToRem(110px);
+    text-align: center;
+    font-size: pxToRem(40px);
+    font-weight: bold;
+    line-height: pxToRem(110px);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffd40c), to(#ff7f0d));
+    border-radius: pxToRem(50px);
+    box-shadow: 0px 0px pxToRem(90px) rgba(168, 0, 0, 0.3);
 }
 
-.btn-red-pack{
-    position: fixed;
-    width:pxToRem(710px);
-    color:$defaultColor;
-    bottom: 0;
-    margin:auto; 
-    left:0; 
-    right:0; 
-    height: pxToRem(110px);
-    text-align:center;
-    font-size:pxToRem(40px);
-    font-weight:bold;
-    line-height:pxToRem(110px);
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffd40c), to(#ff7f0d));
-    border-radius:pxToRem(50px);
-    box-shadow: 0px 0px pxToRem(90px) rgba(168,0,0,0.3);
+.table {
+    /*width: 94.77%;*/
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    // height: 100%;
+    // margin-top: 16px;
+    // margin-bottom: 12px;
+    margin-top: pxToRem(32px);
+    margin-bottom: pxToRem(24px);
+    &>div,
+    &>div>span {
+        position: relative;
+    }
+    &:before,
+    &:after,
+    &>div:after,
+    &>div>span:after {
+        content: "";
+        position: absolute;
+        transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-top: 1px solid #a7a7a7;
+        transform: scaleY(0.5);
+        -webkit-transform: scaleY(0.5);
+        z-index: 1
+    }
+    &:after {
+        bottom: 0;
+        right: initial;
+        border-top: none;
+        border-left: 1px solid #a7a7a7;
+        transform: scaleX(0.5);
+        -webkit-transform: scaleX(0.5);
+    }
+    &>div>span:after {
+        bottom: 0;
+        left: initial;
+        border-top: none;
+        border-right: 1px solid #a7a7a7;
+        transform: scaleX(0.5);
+        -webkit-transform: scaleX(0.5);
+        z-index: 99;
+    }
+    &>div:after {
+        top: initial;
+        bottom: 0;
+        border-top: none;
+        border-bottom: 1px solid #a7a7a7;
+    }
+    .th,
+    .tr {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+    }
+    .th {
+        // height: 45px;
+        height: pxToRem(90px);
+        background-color: #fcfaf8;
+        // font-size: 15px;
+        font-size: pxToRem(28px);
+        color: #765454;
+    }
+    .th>span,
+    .tr>span {
+        display: block;
+    }
+    .th>span:first-child,
+    .tr>span:first-child {
+        // width: 31.40%;
+        width: 36%;
+    }
+    .th>span:nth-of-type(2),
+    .tr>span:nth-of-type(2) {
+        // width: 68.60%;
+        width: 64%;
+    }
+    .tr>span:nth-of-type(2) {
+        color: #333;
+    }
+    .th>span {
+        text-align: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .tr>span {
+        padding: pxToRem(20px) 0;
+    }
+    .tr>span,
+    .tr>span>p {
+        text-align: center;
+        // font-size: 12px;
+        // line-height: 18px;
+        font-size: pxToRem(26px);
+        line-height: pxToRem(40px);
+        color: #999;
+        box-sizing: border-box;
+    }
+    .tr>span.center {
+        text-align: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .tr>span.left {
+        text-align: left;
+        padding-left: pxToRem(20px);
+        padding-right: pxToRem(20px);
+    }
+    .bottom10 {
+        padding-bottom: pxToRem(10px);
+    }
+}
+// fonts
+.font-red {
+    color: $redColor;
 }
 // .btn-red-pack1{
 //     color:$defaultColor;
@@ -294,7 +460,6 @@ $grayColor:#808080;
 //     box-shadow: 0px 0px pxToRem(90px) rgba(168,0,0,0.3);
 // }
 @import 'rule';
-@import 'components';
 .redpack-rule {
     // display: block;
     .rule-content {
@@ -313,4 +478,26 @@ $grayColor:#808080;
             padding-bottom: 0;
         }
     }
+}
+
+// icons
+.icon-redpack {
+    @extend .icon-inline-block;
+    @include icon-background('../images/index/redpack.png', 50px, 46px);
+}
+
+.icon-arrow {
+    @extend .icon-inline-block;
+    @include icon-background('../images/index/arrow.png', 16px, 28px);
+}
+
+.icon-line-yellow {
+    @extend .icon-inline-block;
+    @include icon-background('../images/index/line-yellow.png', 50px, 2px);
+}
+
+// black close
+.icon-close {
+    @extend .icon-block;
+    @include icon-background('../images/index/close-black.png', 80px, 80px);
 }
