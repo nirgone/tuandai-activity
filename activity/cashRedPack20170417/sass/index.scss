@@ -435,10 +435,12 @@ $grayColor:#808080;
         padding-bottom: pxToRem(10px);
     }
 }
+
 // fonts
 .font-red {
     color: $redColor;
 }
+
 // .btn-red-pack1{
 //     color:$defaultColor;
 //     bottom: 0;
@@ -471,6 +473,63 @@ $grayColor:#808080;
             line-height: pxToRem(48px);
             padding-bottom: 0;
         }
+    }
+}
+
+// 奖品弹窗
+.prize-wrapper {
+    min-height: pxToRem(442px);
+    width: pxToRem(610px) !important;
+    &:before {
+        content: '';
+        display: block;
+        background: url(../images/index/bg-prize.png) no-repeat top;
+        background-size: 100% 100%;
+        position: absolute;
+        width: pxToRem(610px);
+        height: pxToRem(267px);
+        top: pxToRem(-100px);
+    }
+    .prize-content {
+        z-index: 1000;
+        &:after {
+            border-bottom: 0 !important;
+        }
+    }
+    .icon {
+        display: block;
+        width: pxToRem(290px);
+        height: pxToRem(314px);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        top: pxToRem(-280px);
+    }
+    // 奖品icon
+    .icon-coin {
+        background-image: url(../images/index/coin.png);
+    }
+    .icon-cash-red {
+        background-image: url(../images/index/cash-red.png);
+    }
+    .icon-invest-red {
+        background-image: url(../images/index/invest-red.png);
+    }
+    .title {
+        color: $redColor;
+        font-size: pxToRem(48px);
+        margin-bottom: pxToRem(30px);
+    }
+    .prize-txt {
+        @extend .title;
+        font-size: pxToRem(34px);
+    }
+    .info {
+        color: #666;
+        font-size: pxToRem(28px);
     }
 }
 
