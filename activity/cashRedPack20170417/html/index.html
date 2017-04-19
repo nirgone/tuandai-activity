@@ -39,14 +39,14 @@
             </div>
             <div class="welfare">
                 <div class="content">
-                    <div class="tab-welfare">
-                        <div class="tab on tab-welfare1">福利一</div>
-                        <div class="tab tab-welfare2">福利二</div>
-                        <div class="tab tab-welfare3" >福利三</div>
+                    <div id="tab-welfare" class="tab-welfare">
+                        <div data-index="1" class="tab tab-welfare1 on">福利一</div>
+                        <div data-index="2" class="tab tab-welfare2">福利二</div>
+                        <div data-index="3" class="tab tab-welfare3" >福利三</div>
                     </div>
-                    <div class="welfare-cons">
+                    <div id="welfare-cons" class="welfare-cons">
                         <!-- 福利一 -->
-                        <!-- <div class="welfare-con">
+                        <div class="welfare-con">
                             <p class="title">邀请好友注册成功可玩『转盘抽奖』</p>
                             <div class="btn-detail">查看详情</div>
                             <div class="lottery-turntable">
@@ -57,17 +57,24 @@
                                     <p>抽奖<span class="lottery-num">3</span>次</p>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                         <!-- 福利二 -->
-                        <div class="welfare-con">
+                        <div class="welfare-con hide">
                             <p class="title">邀请好友注册或投资成功可『获得返现』</p>
                             <div class="btn-detail">查看详情</div>
                             <div class="ivitation">
-                                <ul>
-                                    <li>成功邀请注册好友：</li>
-                                    <li>成功邀请好友投资：</li>
-                                </ul>
+                                <div class="ivitation-con">
+                                    <ul>
+                                        <li>成功邀请注册好友：<span class="invite-num">6</span>人</li>
+                                        <li>成功邀请好友投资：<span class="invite-num">2</span>人</li>
+                                    </ul>
+                                    <div class="btn-detail">查看</div>
+                                </div>
                             </div>
+                            <p class="get-money-info">
+                                共获得<span class="get-money-num">32.16</span>元返现，已领取<span class="get-money-num">10.25</span>元
+                            </p>
+                            <div class="btn-detail">查看</div>
                         </div>
                         <div class="welfare-con"></div>
 
