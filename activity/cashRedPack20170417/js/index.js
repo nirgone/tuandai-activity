@@ -145,4 +145,8 @@
         $(".scroll").addClass("scroll-active");
     }
     /* ==================禁止滚动=====end=================== */
+    Util.showPrize({
+        "type": 2,
+        "num": 10
+    })
 })();

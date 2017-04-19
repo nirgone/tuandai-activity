@@ -152,18 +152,50 @@
             }
 
         },
-
         showPrize: function(options) {
-            var msg = typeof options === 'string' ? options : options.content;
-            popup({
-                message: '恭喜获得<font class="font-red">' + msg + '</font>',
-                type: 1,
-                btn: {
-                    text: '查看奖品',
-                    style: 'btn-common-r',
-                    callback: options.callback
-                }
+            var _options = {
+                "type": 0, // 0 -- 团币， 1 -- 投资红包 2 -- 现金红包
+                "num": 0 // 数量
+            };
+            _options = $.extend(_options, options || {});
+            var _icon = '',
+                _prize = '';
+            switch (_options.type) {
+                case 0:
+                    _icon = "coin";
+                    _prize = "团币";
+                    break;
+                case 1:
+                    _icon = "invest-red";
+                    _prize = "投资红包";
+                    break;
+                case 2:
+                    _icon = "cash-red";
+                    _prize = "现金红包";
+                    break;
+
+            }
+            var dialog_component = $("<div/>").addClass("component-dialog"),
+                masker = $("<div/>").addClass("masker"),
+                prize_wrapper = $("<div/>").addClass("prize-wrapper"),
+                prize_content = $("<div/>").addClass("prize-content"),
+                icon = $("<i/>").addClass("icon").addClass("icon-" + _icon).attr("data-value", _options.num),
+                p = $("<p/>").addClass('prize-txt').html("获得" + _options.num + _prize + "～"),
+                btn = $("<div/>").addClass('btn').html("我知道了");
+
+            prize_content.append(icon).append(' <p class="title">恭喜！</p>').append(p).append('<p class="info">请前往“我-团宝箱”进行查看</p>');
+            prize_wrapper.append(prize_content).append(btn);
+            dialog_component.append(masker).append(prize_wrapper);
+
+            $("body").append(dialog_component);
+            btn.on('click', function() {
+                hide(dialog_component);
             });
+            function hide(target) {
+                target.remove();
+                // enableScrolling();
+                enableScroll();
+            }
         }
     }
 

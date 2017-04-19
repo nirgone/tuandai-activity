@@ -507,10 +507,24 @@ $grayColor:#808080;
         left: 50%;
         transform: translate(-50%, 0);
         top: pxToRem(-280px);
+        &:after {
+            content: attr(data-value);
+            position: absolute;
+            font-size: pxToRem(42px);
+            font-weight: bold;
+            color: #d48320;
+            transform: translate(-50%, 0);
+             top: pxToRem(100px);
+        }
     }
     // 奖品icon
     .icon-coin {
         background-image: url(../images/index/coin.png);
+        &:after {
+            font-size: pxToRem(60px);
+            color: #ffee30;
+            top: pxToRem(70px);
+        }
     }
     .icon-cash-red {
         background-image: url(../images/index/cash-red.png);
@@ -530,6 +544,18 @@ $grayColor:#808080;
     .info {
         color: #666;
         font-size: pxToRem(28px);
+    }
+    .btn {
+        width: pxToRem(500px);
+        height: pxToRem(80px);
+        line-height: pxToRem(80px);
+        font-size: pxToRem(34px);
+        background: linear-gradient(to bottom, #ff4178 , #ff3c5c);
+        color: #fff !important;
+        border-radius: pxToRem(80px);
+        text-align: center;
+        margin: 0 auto;
+        box-shadow: 0 pxToRem(14px) pxToRem(14px) -1px rgba(255, 101, 134, .3);
     }
 }
 
