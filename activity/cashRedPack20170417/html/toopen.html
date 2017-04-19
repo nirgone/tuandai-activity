@@ -45,7 +45,7 @@
                     <div class="money">
                         38.18
                     </div>
-                    <a class="input-wrapper" id="to_input" href="">
+                    <a class="input-wrapper" id="to_input">
                     请输入手机号领取
                 </a>
                    <!--  <div class="check-part">
@@ -90,25 +90,7 @@
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
-<script>
-(function() {
-    FastClick.attach(document.body);
-    $('#btn_open').on('click', function(e) {
-        $('.page-toopen').removeClass('not-open');
-        setTimeout(function() {
-            $('.page-toopen').removeClass('close');
-            $(".redface").hide();
-        }, 1000 * 1.65);
-    });
-    $("#protocal").on("click", function(e) {
-        $("#redpack_rule").show();
-        $('.scroll').removeClass("scroll-active");
-    })
-    $("#redpack_rule").on("click", ".masker, .icon-close", function(e) {
-        $("#redpack_rule").hide();
-        $(".scroll").addClass("scroll-active");
-    })
-})()
-</script>
+<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/toopen.js" type="text/javascript" charset="utf-8"></script>
 
 </html>
