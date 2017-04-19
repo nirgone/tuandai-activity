@@ -13,7 +13,6 @@ body {
     margin: 0;
     padding: 0;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-overflow-scrolling: touch !important;
 }
 
 a {
@@ -22,6 +21,10 @@ a {
 
 * {
     box-sizing: border-box;
+}
+
+.scroll-active {
+    -webkit-overflow-scrolling: touch !important;
 }
 
 .page {
@@ -175,66 +178,68 @@ a {
             }
         }
     }
-    @at-root .dialog-success {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 999;
-        background-image: url("../images/bg02.png");
+}
+
+.dialog-success {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-image: url("../images/bg02.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: pxToRem(96px);
+    padding-bottom: pxToRem(60px);
+    height: 100%;
+    overflow: auto;
+    display: none;
+    .icon-success {
+        background-image: url("../images/icon_success.png");
         background-repeat: no-repeat;
-        background-size: cover;
-        padding-top: pxToRem(96px);
-        padding-bottom: pxToRem(60px);
-        min-height: 100%;
-        display: none;
-        .icon-success {
-            background-image: url("../images/icon_success.png");
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: 50% 50%;
-            width: pxToRem(419px);
-            height: pxToRem(419px);
-            margin: auto;
-        }
-        .text-success {
-            background-image: url("../images/text_success.png");
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: 50% 50%;
-            width: pxToRem(461px);
-            height: pxToRem(49px);
-            margin: auto;
-            margin-top: pxToRem(-8px);
-            margin-bottom: pxToRem(140px);
-        }
-        .icon-arrow {
-            background-image: url("../images/icon_arrow.png");
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: 50% 50%;
-            width: pxToRem(127px);
-            height: pxToRem(105px);
-            margin: auto;
-            margin-bottom: pxToRem(120px);
-        }
-        .btn-get-welfare {
-            background: url("../images/btn_big.png");
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-            width: pxToRem(590px);
-            height: pxToRem(88px);
-            line-height: pxToRem(88px);
-            margin: auto;
-            margin-top: pxToRem(90px);
-            text-align: center;
-            color: #fff;
-            font-size: pxToRem(38px);
-            font-weight: bold;
-            text-shadow: 0px 0px 5px rgba(117, 31, 31, 0.27);
-            display: block;
-        }
+        background-size: contain;
+        background-position: 50% 50%;
+        width: pxToRem(419px);
+        height: pxToRem(419px);
+        margin: auto;
+    }
+    .text-success {
+        background-image: url("../images/text_success.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50% 50%;
+        width: pxToRem(461px);
+        height: pxToRem(49px);
+        margin: auto;
+        margin-top: pxToRem(-8px);
+        margin-bottom: pxToRem(140px);
+    }
+    .icon-arrow {
+        background-image: url("../images/icon_arrow.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50% 50%;
+        width: pxToRem(127px);
+        height: pxToRem(105px);
+        margin: auto;
+        margin-bottom: pxToRem(120px);
+    }
+    .btn-get-welfare {
+        background: url("../images/btn_big.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        width: pxToRem(590px);
+        height: pxToRem(88px);
+        line-height: pxToRem(88px);
+        margin: auto;
+        margin-top: pxToRem(90px);
+        text-align: center;
+        color: #fff;
+        font-size: pxToRem(38px);
+        font-weight: bold;
+        text-shadow: 0px 0px 5px rgba(117, 31, 31, 0.27);
+        display: block;
     }
 }
 

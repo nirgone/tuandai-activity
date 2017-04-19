@@ -47,6 +47,7 @@
 		if (canSubmitFlag) {
 
 			// TODO: 提交成功之后 页面注册成功
+			pageEl.removeClass("scroll-active");
 			dialogEl.addClass("show");
 		}
 	});
