@@ -15,10 +15,7 @@ $grayColor:#808080;
 }
 
 .index-title {
-    width: pxToRem(543px);
-    height: pxToRem(184px);
-    background: url(../images/index/start_title.png) no-repeat;
-    background-size: 100%;
+    @include background("../images/index/start_title.png",543px,184px);
     margin: 0 auto pxToRem(102px);
     font-size: pxToRem(32px);
     color: $redColor;
@@ -50,26 +47,17 @@ $grayColor:#808080;
 }
 
 .cat {
-    width: pxToRem(279px);
-    height: pxToRem(264px);
+    @include background("../images/index/cat_head.png",279px,264px);
     margin: 0 auto;
-    background: url(../images/index/cat_head.png) no-repeat;
-    background-size: 100%;
 }
 
 .cat-hand {
-    width: pxToRem(333px);
-    height: pxToRem(44px);
+    @include background("../images/index/cat_hand.png",333px,44px);
     margin: 0 auto;
-    background: url(../images/index/cat_hand.png) no-repeat;
-    background-size: 100%;
 }
 
 .red-pack {
-    width: pxToRem(750px);
-    height: pxToRem(722px);
-    background: url(../images/index/red_top_bg.png) no-repeat;
-    background-size: 100%;
+    @include background("../images/index/red_top_bg.png",750px,722px);
     margin-top: pxToRem(-100px);
     text-align: center;
     font-size: pxToRem(28px);
@@ -152,16 +140,13 @@ $grayColor:#808080;
         bottom: 0;
         display: inline-block;
         color: $darkRedColor;
-        width: pxToRem(234px);
-        height: pxToRem(90px);
         text-align: center;
         // background-color: $defaultColor;
         line-height: pxToRem(90px);
         float: left;
         // margin-right:pxToRem(4px);
         border-radius: pxToRem(10px) pxToRem(10px) 0 0;
-        background: url(../images/index/button_unchecked.png);
-        background-size: 100%;
+        @include background("../images/index/button_unchecked.png",234px,90px);
         // background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, 255)), to(rgba(255, 255, 255, 0.75)));
     }
     .tab.on {
@@ -190,24 +175,28 @@ $grayColor:#808080;
 }
 
 // 福利公共样式
-.welfare-con {
-    padding: 0 pxToRem(20px);
-    text-align: center;
-    .title {
-        padding-top: pxToRem(87px);
-        font-size: pxToRem(32px);
-        color: $darkRedColor;
-        font-weight: bold;
+.welfare-con.hide{
+    display:none;
+}
+.welfare-con{
+    padding:0 pxToRem(20px);
+    text-align:center;
+    font-size:pxToRem(28px);
+    .title{
+        padding-top:pxToRem(87px);
+        font-size:pxToRem(32px);
+        color:$darkRedColor;
+        font-weight:bold;
     }
-    .btn-detail {
-        margin: pxToRem(34px) 0 pxToRem(80px);
-        color: $orangeColor;
-        &:after {
-            width: pxToRem(12px);
-            height: pxToRem(23px);
+    .btn-detail{
+        margin:pxToRem(34px) 0 pxToRem(80px);
+        color:$orangeColor;
+        &:after{
+            width:pxToRem(12px);
+            height:pxToRem(23px);
             content: '';
             // @extend .icon-arrow;
-            background: url(../images/index/enter.png);
+            // background: url(../images/index/enter.png);
             background-size: 100%;
             display: inline-block !important;
             margin-left: (8px);
@@ -226,44 +215,28 @@ $grayColor:#808080;
 
 // 福利一
 // 转盘
-.lottery-turntable {
-    position: relative;
-    text-align: center;
-    width: pxToRem(638px);
-    height: pxToRem(638px);
-    background: url(../images/index/turntable_whole.png);
-    background-size: 100%;
-    margin: 0 auto;
+.lottery-turntable{
+    position:relative;
+    text-align:center;
+    @include background("../images/index/turntable_whole.png",638px,638px);
+    margin:0 auto;
 }
-
-.white-light {
-    width: pxToRem(613px);
-    height: pxToRem(622px);
-    background: url(../images/index/turntable_light_white.png) no-repeat;
-    background-size: 100%;
+.white-light{
+    @include background("../images/index/turntable_light_white.png",613px,622px);
+    
 }
-
-.red-light {
-    width: pxToRem(622px);
-    height: pxToRem(613px);
-    background: url(../images/index/turntable_light_red.png) no-repeat;
-    background-size: 100%;
+.red-light{
+    @include background("../images/index/turntable_light_red.png",622px,613px);
 }
+.turntable-finger{
+    top:pxToRem(-30px);
+    @include background("../images/index/won_light.png",194px,218px);
 
-.turntable-finger {
-    top: pxToRem(-30px);
-    width: pxToRem(194px);
-    height: pxToRem(218px);
-    background: url(../images/index/won_light.png) no-repeat;
-    background-size: 100%;
-    .finger-con {
-        font-size: pxToRem(30px);
-        margin-top: pxToRem(85px);
+    .finger-con{
+        font-size:pxToRem(30px);
+        margin-top:pxToRem(85px);
     }
-    p {
-        line-height: pxToRem(40px);
-        font-size: pxToRem(25px);
-    }
+    p{line-height:pxToRem(40px);font-size:pxToRem(25px);}
 }
 
 .lottery-num {
@@ -271,15 +244,48 @@ $grayColor:#808080;
 }
 
 // 福利二
-.ivitation {
-    width: pxToRem(650px);
-    height: pxToRem(200px);
-    color: $grayColor;
+.ivitation{
+    margin:0 pxToRem(14px) pxToRem(60px);
+}
+.ivitation-con{
+    position:relative;
+    color:$grayColor;
+    background:rgba(251,248,245,0.65);
+    border-radius:pxToRem(20px);
+    margin:0 auto;
+    text-align:left;
+    padding:pxToRem(32px) 0 pxToRem(32px) pxToRem(30px);
+    ul,li{
+       width:pxToRem(480px);
+    }
+    ul{
+        display:inline-block;
+        vertical-align: middle;
+    }
+    li{
+       line-height:pxToRem(64px);
+    }
+    .invite-num{
+        color:$darkRedColor;
+        font-size:pxToRem(40px);
+    }
+    .btn-detail{
+        vertical-align: middle;
+        display: inline-block;
+        margin: auto 0;
+    }
+}
+.get-money-info{
+    color:$grayColor;
+    font-size:pxToRem(28px);
+    margin-bottom:pxToRem(34px);
+}
+.get-money-num{
+    color:$redColor;
+    font-size:pxToRem(40px);
 }
 
 // 福利三
-.welfare-con3 {}
-
 .btn-red-pack {
     position: fixed;
     width: pxToRem(710px);
