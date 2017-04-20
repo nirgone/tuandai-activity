@@ -54,7 +54,7 @@
         $('#lottery-turntable').stopRotate();
         $('#lottery-turntable').rotate({
             angle: 0,
-            animateTo: angles + 1740,
+            animateTo: angles + (1860 - 120*type),
             duration: 5000,
             callback: function() {
                 var _num = 0;
@@ -127,7 +127,7 @@
         //     // showPopup(6, money);
         //     return;
         // }
-        var type = 1;
+        var type = 2; 
         var angles = 60 * type;
         rotateFn(type, angles);
         qmCount -= 1;
