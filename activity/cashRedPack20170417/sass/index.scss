@@ -75,6 +75,21 @@ $grayColor:#808080;
     }
 }
 
+// 星星
+.star{
+    display: inline-block;
+    width: pxToRem(33px);
+    height: pxToRem(33px);
+    @extend .icon-index-star;
+    &.little{
+        width: pxToRem(33px);
+        height: pxToRem(33px);
+        transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+
+    }
+}
+
 // 猫
 .cat {
     @include background("../images/index/cat_head.png",279px,264px);
@@ -389,7 +404,7 @@ $grayColor:#808080;
     font-weight: bold;
     line-height: pxToRem(110px);
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffd40c), to(#ff7f0d));
-    border-radius: pxToRem(50px);
+    border-radius: pxToRem(60px);
     box-shadow: 0px 0px pxToRem(90px) rgba(168, 0, 0, 0.3);
     z-index: 99;
 }
@@ -573,6 +588,9 @@ $grayColor:#808080;
 }
 
 // 奖品弹窗
+.component-dialog .prize-wrapper{
+    transform: translate(-50%, -27%);
+}
 .prize-wrapper {
     min-height: pxToRem(442px);
     width: pxToRem(610px) !important;
@@ -660,6 +678,7 @@ $grayColor:#808080;
     display:none;
 }
 .component-dialog .rule-wrapper{
+    transform: translate(-50%, -58%);
     // margin:0 auto pxToRem(59px);
     min-height: pxToRem(627px);
     width: pxToRem(610px) !important;
