@@ -115,7 +115,7 @@
 
 .page-result-fail {
     min-height: 100%;
-    height: pxToRem(1206px);
+    // height: pxToRem(1206px);
     @extend .page-result-success;
     .red-top {
         height: pxToRem(280px);
@@ -454,7 +454,6 @@
     text-align: center;
     font-size: pxToRem(30px);
     color: #ff4931;
-    padding-bottom: pxToRem(24px);
     &:before {
         content: '';
         @extend .icon-download;
