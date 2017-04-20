@@ -111,6 +111,9 @@
                         break;
                 }
                 $(".lottery-num").html(qmCount);
+                if(qmCount < 1){
+                    $(".turntable-finger").addClass("gray");
+                }
                 showPopup(_type,_num);
             }
         });
@@ -138,7 +141,6 @@
                     "cb": function() {}
                 }]
             });
-            $(".turntable-finger").addClass("gray");
             return;
         }
         // if (!qmInvest) {
