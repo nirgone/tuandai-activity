@@ -18,6 +18,7 @@ $grayColor:#808080;
 // 标题
 .index-title {
     @include background("../images/index/start_title.png",543px,184px);
+    width: 100%;
     margin: 0 auto pxToRem(102px);
     font-size: pxToRem(32px);
     color: $redColor;
@@ -25,20 +26,36 @@ $grayColor:#808080;
     line-height: 0;
     position: relative;
     p {
-        position: absolute;
-        top: pxToRem(216px);
-        right: 0;
-        left: 0;
+        width: 100%;
+        display: inline-block;
+        margin-top: pxToRem(220px);
         opacity: 0;
         transform:translateY(pxToRem(38px));
         transition:transform 1s,opacity 1s;
+        font-size: pxToRem(32px);
+        line-height: pxToRem(32px);
         &.transform{
             opacity: 1;
             transform:translateY(0);
         }
+        &:before,
+        &:after,i,span{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        &:before,
+        &:after {
+            content: '';
+            height: pxToRem(14px);
+            border-left:pxToRem(8px) solid $redColor;
+            margin:0 pxToRem(-10px);
+        }
         i{
-
+            height: pxToRem(20px);
+            border-left:pxToRem(12px) solid $redColor;
+            margin:0 pxToRem(17px);
         }   
+
     }
 }
 
@@ -176,7 +193,7 @@ $grayColor:#808080;
     margin: pxToRem(-14px) auto 0;
     font-size: pxToRem(28px);
     color: $defaultColor;
-    padding-bottom: pxToRem(110px);
+    padding-bottom: pxToRem(150px);
     .content {
         width: pxToRem(710px);
         margin: 0 auto;
@@ -345,6 +362,12 @@ $grayColor:#808080;
     color:$grayColor;
     font-size:pxToRem(28px);
     margin-bottom:pxToRem(34px);
+    .btn-detail,p{
+        display: inline-block;
+    }
+    .btn-detail{
+        margin-left: pxToRem(20px);
+    }
 }
 .get-money-num{
     color:$redColor;
@@ -356,7 +379,7 @@ $grayColor:#808080;
     position: fixed;
     width: pxToRem(710px);
     color: $defaultColor;
-    bottom: 0;
+    bottom: pxToRem(40px);
     margin: auto;
     left: 0;
     right: 0;
@@ -636,24 +659,40 @@ $grayColor:#808080;
 .rule-wrapper.hide{
     display:none;
 }
-.rule-wrapper{
+.component-dialog .rule-wrapper{
     // margin:0 auto pxToRem(59px);
     min-height: pxToRem(627px);
     width: pxToRem(610px) !important;
     background-color:rgba(0,0,0,0);
     color:#333;
-    &:before {
-        content: '规则说明';
+    .title {
         display: block;
         background: url(../images/index/rules_tit.png) no-repeat top;
         background-size: 100% 100%;
-        position: absolute;
+        // position: absolute;
         width: pxToRem(610px);
         height: pxToRem(135px);
-        top: pxToRem(-128px);
+        // top: pxToRem(-128px);
         color:#fff;
         font-size:pxToRem(34px);
         line-height:pxToRem(170px);
+        &:before,
+        &:after,i,span{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        &:before,
+        &:after {
+            content: '';
+            height: pxToRem(14px);
+            border-left:pxToRem(8px) solid $defaultColor;
+            margin:0 pxToRem(-4px);
+        }
+        i{
+            height: pxToRem(20px);
+            border-left:pxToRem(10px) solid $defaultColor;
+            margin:0 pxToRem(12px);
+        } 
     }
     .btn-rules_cls {
         display: block;
@@ -668,8 +707,10 @@ $grayColor:#808080;
         right: 0;
     }
     .rules{
+        background-color:#fff;
+        border-radius: 0 0 5px 5px;
         text-align:left;
-        margin:pxToRem(48px) pxToRem(40px);
+        padding:pxToRem(48px) pxToRem(40px);
         line-height:pxToRem(50px);
         font-size:pxToRem(28px);
         p{
