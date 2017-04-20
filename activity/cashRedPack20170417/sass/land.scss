@@ -13,7 +13,7 @@
     text-align: center;
     .redtop-title {
         font-size: pxToRem(40px);
-        padding: pxToRem(60px) 0 pxToRem(26px);
+        padding: pxToRem(52px) 0 pxToRem(26px);
         color: #ffe1a2;
     }
     p {
@@ -26,19 +26,19 @@
     }
     .icon-star-yellow {
         left: pxToRem(282px);
-        top: percent(50, 551);
+        top: percent(50, 569);
     }
     .icon-star-white {
         right: pxToRem(240px);
-        bottom: percent(138, 551);
+        bottom: percent(138, 569);
     }
     .icon-star-w-s {
         right: pxToRem(226px);
-        bottom: percent(115, 551);
+        bottom: percent(115, 569);
     }
     .icon-star-w-m {
         left: pxToRem(206px);
-        bottom: percent(80, 551);
+        bottom: percent(80, 569);
     }
     .avatar {
         position: absolute;
@@ -228,7 +228,7 @@
         position: absolute;
         left: pxToRem(60px);
         right: pxToRem(60px);
-        top: percent(267, 551);
+        top: percent(267, 569);
         color: #ffe1a2;
         font-size: pxToRem(30px);
         text-align: center;
@@ -242,8 +242,8 @@
         position: absolute;
         left: 50%;
         margin-left: pxToRem(-210px);
-        bottom: percent(-150, 551);
-        height: percent(420, 551);
+        bottom: percent(-150, 569);
+        height: percent(420, 569);
         perspective: 1500px;
         animation: openAni $open-step1 linear 0s 1 both;
     }
@@ -256,25 +256,25 @@
     }
     // .icon-star {
     //     right: pxToRem(196px);
-    //     bottom: percent(42, 551);
+    //     bottom: percent(42, 569);
     // }
     // .icon-star-small {
     //     left: pxToRem(218px);
-    //     bottom: percent(-60, 551);
+    //     bottom: percent(-60, 569);
     // }
     &.not-open {
         .red-content {
             opacity: 0;
         }
         .red-top {
-            // height: pxToRem(551px);
+            // height: pxToRem(569px);
             * {
                 z-index: 4;
             }
-            height: percent(551);
+            height: percent(569);
         }
         .avatar {
-            top: percent(58, 551);
+            top: percent(58, 569);
         }
         .redtop-txt {
             opacity: 1;
@@ -292,7 +292,7 @@
     }
     .red-top {
         position: absolute;
-        // height: pxToRem(551px);
+        // height: pxToRem(569px);
         z-index: 3;
         // transition
     }
