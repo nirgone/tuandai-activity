@@ -77,13 +77,16 @@ $grayColor:#808080;
 
 // 星星
 .star{
+    position: absolute;
+    left: pxToRem(502px);
+    top: pxToRem(374px);
     display: inline-block;
     width: pxToRem(33px);
     height: pxToRem(33px);
     @extend .icon-index-star;
     &.little{
-        width: pxToRem(33px);
-        height: pxToRem(33px);
+        left: pxToRem(536px);
+        top: pxToRem(359px);
         transform: scale(0.8);
         -webkit-transform: scale(0.8);
 
@@ -326,10 +329,14 @@ $grayColor:#808080;
 .red-light{
     @include background("../images/index/turntable_light_red.png",622px,613px);
 }
+// 指针
 .turntable-finger{
     top:pxToRem(-30px);
     @include background("../images/index/won_light.png",194px,218px);
     pointer-events:none;
+    &.gray{
+        @include background("../images/index/won_gray.png",194px,218px);
+    }
     .finger-con{
         font-size:pxToRem(30px);
         margin-top:pxToRem(85px);

@@ -55,7 +55,7 @@
         $('#lottery-turntable').rotate({
             angle: 0,
             animateTo: angles + 1740,
-            duration: 8000,
+            duration: 5000,
             callback: function() {
                 var _num = 0;
                 var _type = 0;
@@ -119,6 +119,7 @@
                     "cb": function() {}
                 }]
             });
+            $(".turntable-finger").addClass("gray");
             return;
         }
         // if (!qmInvest) {

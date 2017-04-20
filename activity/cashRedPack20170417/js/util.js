@@ -142,7 +142,7 @@
             input_popup.on('click', '#close', function() {
                 hide(input_popup);
             })
-
+          
             function hide(target) {
                 target.removeClass("slideInUp").addClass("slideOutDown");
                 // enableScrolling();
@@ -151,6 +151,7 @@
 
         },
         showPrize: function(options) {
+            var that = this;
             var _options = {
                 "type": 0, // 0 -- 团币， 1 -- 投资红包 2 -- 现金红包
                 "num": 0 // 数量
