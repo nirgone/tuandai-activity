@@ -39,7 +39,7 @@
     })
 
     // 查看详情弹窗
-    $("#welfare-cons .btn-detail").on('click',function(e){
+    $("#welfare-cons .welfare-con>.btn-detail").on('click',function(e){
         var index = $(this).attr('data-index') - 1;
         $("#detail-dialog").show();
         $("#detail-dialog .rule-wrapper").eq(index).removeClass('hide');
