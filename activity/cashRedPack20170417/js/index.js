@@ -49,6 +49,25 @@
         $("#detail-dialog").hide();
         $("#detail-dialog .rule-wrapper").addClass('hide');
     })
+
+    // 现金红包按钮
+    $("#btn-red-pack").on('click',function() {
+        Util.tip({
+            'content': '暂时没有红包可送，去投资赚利息？',
+            "btns": [{
+                "name": "取消",
+                "cb": function() {
+                    console.log('cancel')
+                }
+            },{
+                "name": "我要投资",
+                "cb": function() {
+                    console.log('confirm')
+                }
+            }]
+        });
+
+    })
     function rotateFn(type, angles) {
         // flag = !flag;
         $('#lottery-turntable').stopRotate();
