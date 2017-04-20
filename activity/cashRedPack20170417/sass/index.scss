@@ -130,28 +130,17 @@ $grayColor:#808080;
     .title {
         margin-top: pxToRem(80px);
         color: $darkRedColor;
-        &:before {
-            width:pxToRem(50px);
-            height:pxToRem(2px);
+        &:before,&:after{
             content: '';
             @extend .icon-index-line;
-            // background: url(../images/index/enter.png);
             background-size: 100%;
             display: inline-block !important;
-            margin-right: (10px);
-            vertical-align: pxToRem(10px);
+            margin-right: pxToRem(10px);
+            vertical-align: pxToRem(8px);
         }
         &:after {
-            width:pxToRem(50px);
-            height:pxToRem(2px);
-            content: '';
-            @extend .icon-index-line;
-            // background: url(../images/index/enter.png);
-            background-size: 100%;
-            display: inline-block !important;
-            margin-left: (10px);
-            vertical-align: pxToRem(10px);
-            transform:rotate(180deg)
+            transform:rotate(180deg);
+            margin-left: pxToRem(10px);
         }
     }
     .money {
@@ -770,9 +759,9 @@ $grayColor:#808080;
 // 主页icon
 .sprite {
     display: block;
-  background-image: url(../images/index-sprite.png);
-  background-size:pxToRem(167px) pxToRem(127px);
-  background-repeat:no-repeat;
+    background-image: url(../images/index-sprite.png);
+    background-size:pxToRem(167px) pxToRem(127px);
+    background-repeat:no-repeat;
 }
 .icon-enter {
  @extend .sprite;
@@ -782,9 +771,9 @@ $grayColor:#808080;
 }
 .icon-index-line {
  @extend .sprite;
-  background-position: pxToRem(0px) pxToRem(-126px);
+  background-position: pxToRem(0px) pxToRem(-123px);
   width: pxToRem(50px);
-  height: pxToRem(1px);
+  height: pxToRem(4px);
 }
 .icon-index-star {
  @extend .sprite;
