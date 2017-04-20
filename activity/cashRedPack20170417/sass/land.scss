@@ -107,6 +107,7 @@
     background: url(../images/bg-result.jpg) no-repeat top;
     background-size: pxToRem(750px) pxToRem(1206px);
     background-color: #ffeee1;
+    padding-bottom: pxToRem(48px);
     .red-top {
         height: pxToRem(230px);
     }
@@ -446,13 +447,14 @@
 }
 .download {
     display: block;
-    width: pxToRem(250px);
+    width: pxToRem(300px);
     height: pxToRem(63px);
     line-height: pxToRem(63px);
     margin: pxToRem(28px) auto 0;
     text-align: center;
     font-size: pxToRem(30px);
     color: #ff4931;
+    padding-bottom: pxToRem(24px);
     &:before {
         content: '';
         @extend .icon-download;
