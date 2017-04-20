@@ -82,19 +82,11 @@
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
-<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
+<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
 <script>
 (function() {
     FastClick.attach(document.body);
-    $("#protocal").on("click", function(e) {
-        $("#redpack_rule").show();
-        $('.scroll').removeClass("scroll-active");
-    })
-    $("#redpack_rule").on("click", ".masker, .icon-close", function(e) {
-        $("#redpack_rule").hide();
-        $(".scroll").addClass("scroll-active");
-    })
 
     //拉起输入碳层
     $("#to_input").click(function(e) {

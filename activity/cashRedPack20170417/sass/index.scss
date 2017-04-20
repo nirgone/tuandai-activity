@@ -9,11 +9,13 @@ $yellowColor:#fffe61;
 $orangeColor:#ff7f0d;
 $grayColor:#808080;
 .page-index {
+    position: relative;
     background: url(../images/index/top_bg.png) no-repeat;
     background-size: 100% auto;
     padding-top: pxToRem(56px);
+    color:$defaultColor;
 }
-
+// 标题
 .index-title {
     @include background("../images/index/start_title.png",543px,184px);
     margin: 0 auto pxToRem(102px);
@@ -27,6 +29,16 @@ $grayColor:#808080;
         top: pxToRem(216px);
         right: 0;
         left: 0;
+        opacity: 0;
+        transform:translateY(pxToRem(38px));
+        transition:transform 1s,opacity 1s;
+        &.transform{
+            opacity: 1;
+            transform:translateY(0);
+        }
+        i{
+
+        }   
     }
 }
 
@@ -46,24 +58,65 @@ $grayColor:#808080;
     }
 }
 
+// 猫
 .cat {
     @include background("../images/index/cat_head.png",279px,264px);
     margin: 0 auto;
 }
-
 .cat-hand {
     @include background("../images/index/cat_hand.png",333px,44px);
     margin: 0 auto;
 }
 
+// 福利按钮
+.btn-welfare{
+    position:absolute;
+    right:0;
+    top:pxToRem(320px);
+    width:pxToRem(124px);
+    height:pxToRem(116px);
+    @extend .icon-welfare_button;
+    line-height:pxToRem(110px);
+    font-size:pxToRem(32px);
+    font-weight:bold;
+    span{
+        padding-left:pxToRem(50px)
+    }
+}
+
+// 分享红包
 .red-pack {
     @include background("../images/index/red_top_bg.png",750px,722px);
     margin-top: pxToRem(-100px);
     text-align: center;
     font-size: pxToRem(28px);
+    background-size: 100%;
     .title {
         margin-top: pxToRem(80px);
         color: $darkRedColor;
+        &:before {
+            width:pxToRem(50px);
+            height:pxToRem(2px);
+            content: '';
+            @extend .icon-index-line;
+            // background: url(../images/index/enter.png);
+            background-size: 100%;
+            display: inline-block !important;
+            margin-right: (10px);
+            vertical-align: pxToRem(10px);
+        }
+        &:after {
+            width:pxToRem(50px);
+            height:pxToRem(2px);
+            content: '';
+            @extend .icon-index-line;
+            // background: url(../images/index/enter.png);
+            background-size: 100%;
+            display: inline-block !important;
+            margin-left: (10px);
+            vertical-align: pxToRem(10px);
+            transform:rotate(180deg)
+        }
     }
     .money {
         color: $redColor;
@@ -170,7 +223,6 @@ $grayColor:#808080;
 // 福利内容
 .welfare-cons {
     border-radius: 0 0 pxToRem(10px) pxToRem(10px);
-    height: pxToRem(1017px);
     background-color: $defaultColor;
 }
 
@@ -182,6 +234,7 @@ $grayColor:#808080;
     padding:0 pxToRem(20px);
     text-align:center;
     font-size:pxToRem(28px);
+    height: pxToRem(1017px);
     .title{
         padding-top:pxToRem(87px);
         font-size:pxToRem(32px);
@@ -195,12 +248,13 @@ $grayColor:#808080;
             width:pxToRem(12px);
             height:pxToRem(23px);
             content: '';
-            // @extend .icon-arrow;
+            @extend .icon-enter;
             // background: url(../images/index/enter.png);
-            background-size: 100%;
+            // background-size: 100%;
             display: inline-block !important;
-            margin-left: (8px);
-            vertical-align: pxToRem(-4px);
+            margin-left: (6px);
+            vertical-align: pxToRem(-2px);
+            
         }
     }
     &.welfare-con3 {
@@ -212,18 +266,25 @@ $grayColor:#808080;
         }
     }
 }
+.welfare-con3{
+    height:pxToRem(1100px);
+}
 
 // 福利一
 // 转盘
-.lottery-turntable{
+.turntable{
     position:relative;
     text-align:center;
+}
+.lottery-turntable{
     @include background("../images/index/turntable_whole.png",638px,638px);
     margin:0 auto;
 }
+.white-light,.red-light{
+    pointer-events:none;
+}
 .white-light{
     @include background("../images/index/turntable_light_white.png",613px,622px);
-    
 }
 .red-light{
     @include background("../images/index/turntable_light_red.png",622px,613px);
@@ -231,7 +292,7 @@ $grayColor:#808080;
 .turntable-finger{
     top:pxToRem(-30px);
     @include background("../images/index/won_light.png",194px,218px);
-
+    pointer-events:none;
     .finger-con{
         font-size:pxToRem(30px);
         margin-top:pxToRem(85px);
@@ -379,7 +440,7 @@ $grayColor:#808080;
     .th>span:first-child,
     .tr>span:first-child {
         // width: 31.40%;
-        width: 36%;
+        width: 40%;
     }
     .th>span:nth-of-type(2),
     .tr>span:nth-of-type(2) {
@@ -565,6 +626,52 @@ $grayColor:#808080;
     }
 }
 
+// 查看详情弹窗
+.rule-wrapper.hide{
+    display:none;
+}
+.rule-wrapper{
+    // margin:0 auto pxToRem(59px);
+    min-height: pxToRem(627px);
+    width: pxToRem(610px) !important;
+    background-color:rgba(0,0,0,0);
+    color:#333;
+    &:before {
+        content: '规则说明';
+        display: block;
+        background: url(../images/index/rules_tit.png) no-repeat top;
+        background-size: 100% 100%;
+        position: absolute;
+        width: pxToRem(610px);
+        height: pxToRem(135px);
+        top: pxToRem(-128px);
+        color:#fff;
+        font-size:pxToRem(34px);
+        line-height:pxToRem(170px);
+    }
+    .btn-rules_cls {
+        display: block;
+        background: url(../images/index/rules_cls.png) no-repeat top;
+        background-size: 100% 100%;
+        position: absolute;
+        width: pxToRem(80px);
+        height: pxToRem(80px);
+        bottom: pxToRem(-140px);
+        margin:0 auto;
+        left: 0;
+        right: 0;
+    }
+    .rules{
+        text-align:left;
+        margin:pxToRem(48px) pxToRem(40px);
+        line-height:pxToRem(50px);
+        font-size:pxToRem(28px);
+        p{
+            margin-bottom:pxToRem(20px);
+        }
+    }
+}
+
 // icons
 .icon-redpack {
     @extend .icon-inline-block;
@@ -585,4 +692,42 @@ $grayColor:#808080;
 .icon-close {
     @extend .icon-block;
     @include icon-background('../images/index/close-black.png', 80px, 80px);
+}
+
+// 主页icon
+.sprite {
+    display: block;
+  background-image: url(../images/index-sprite.png);
+  background-size:pxToRem(167px) pxToRem(127px);
+  background-repeat:no-repeat;
+}
+.icon-enter {
+ @extend .sprite;
+  background-position: pxToRem(-134px) pxToRem(-43px);
+  width: pxToRem(12px);
+  height: pxToRem(23px);
+}
+.icon-index-line {
+ @extend .sprite;
+  background-position: pxToRem(0px) pxToRem(-126px);
+  width: pxToRem(50px);
+  height: pxToRem(1px);
+}
+.icon-index-star {
+ @extend .sprite;
+  background-position: pxToRem(-134px) pxToRem(0px);
+  width: pxToRem(33px);
+  height: pxToRem(33px);
+}
+.icon-welfare_button {
+ @extend .sprite;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(124px);
+  height: pxToRem(116px);
+}
+
+.scroll {
+    >.content {
+      background-color: #ff5a3f;
+    }
 }

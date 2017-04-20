@@ -21,10 +21,15 @@
 <body>
     <div class="scroll scroll-active">
         <div class="content page-index">
-            <div class="index-title">
-                <p>劳动月分享红包，拿千元现金奖励</p>
+            <!-- 标题 -->
+            <div id="index-title" class="index-title bounceInDown">
+                <p><i></i>劳动月分享红包，拿千元现金奖励<i></i></p>
             </div>
+            <!-- 猫 -->
             <div class="cat"></div>
+            <!-- 福利按钮 -->
+            <div id="btn-welfare" class="btn-welfare"><span>福利</span></div>
+            <!-- 分享红包 -->
             <div class="red-pack">
                 <div class="cat-hand"></div>
                 <p class="title">投资获赠分享红包</p>
@@ -37,19 +42,21 @@
                     如何获得“分享红包”
                 </div>
             </div>
-            <div class="welfare">
+            <!-- 福利 -->
+            <div id="welfare" class="welfare">
                 <div class="content">
                     <div id="tab-welfare" class="tab-welfare">
                         <div data-index="1" class="tab tab-welfare1 on">福利一</div>
                         <div data-index="2" class="tab tab-welfare2">福利二</div>
-                        <div data-index="3" class="tab tab-welfare3" >福利三</div>
+                        <div data-index="3" class="tab tab-welfare3">福利三</div>
                     </div>
                     <div id="welfare-cons" class="welfare-cons">
-                        <!-- 福利一 -->
+                        <!-- 福利一转盘 -->
                         <div class="welfare-con">
                             <p class="title">邀请好友注册成功可玩『转盘抽奖』</p>
-                            <div class="btn-detail">查看详情</div>
-                            <div class="lottery-turntable">
+                            <div data-index="1" class="btn-detail">查看详情</div>
+                            <div class="turntable">
+                                <div id="lottery-turntable" class="lottery-turntable"> </div>
                                 <div class="white-light center"></div>
                                 <div class="red-light center"></div>
                                 <div class="turntable-finger center">
@@ -58,10 +65,10 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- 福利二 -->
+                        <!-- 福利二邀请好友 -->
                         <div class="welfare-con hide">
                             <p class="title">邀请好友注册或投资成功可『获得返现』</p>
-                            <div class="btn-detail">查看详情</div>
+                            <div data-index="2" class="btn-detail">查看详情</div>
                             <div class="ivitation">
                                 <div class="ivitation-con">
                                     <ul>
@@ -71,17 +78,15 @@
                                     <div class="btn-detail">查看</div>
                                 </div>
                             </div>
-
                             <p class="get-money-info">
                                 共获得<span class="get-money-num">32.16</span>元返现，已领取<span class="get-money-num">10.25</span>元
                             </p>
                             <div class="btn-detail">查看</div>
                         </div>
-                        <!-- 福利三 -->
-
+                        <!-- 福利三邀请好友享好礼 -->
                         <div class="welfare-con welfare-con3 hide">
-                         <p class="title">邀请好友注册可享『三重好礼』</p>
-                            <div class="btn-detail">查看详情</div>
+                            <p class="title">邀请好友注册可享『三重好礼』</p>
+                            <div data-index="3" class="btn-detail">查看详情</div>
                             <div class="table">
                                 <div class="th">
                                     <span>好友行为</span>
@@ -114,6 +119,7 @@
             <div class="btn-red-pack">发现金红包</div>
         </div>
     </div>
+    <!-- 规则弹窗 -->
     <div class="rule-sec" id="rule_sec">
         <!-- <div class="masker"></div> -->
         <div class="rule-scroll zoomIn">
@@ -173,26 +179,46 @@
             </div>
         </div>
     </div>
-    <!-- 奖品弹窗 -->
-    <!-- <div class="component-alert">
+    <!-- 查看详情弹窗 -->
+    <div id="detail-dialog" class="component-dialog">
         <div class="masker"></div>
-        <div class="prize-wrapper">
-            <div class="prize-content">
-                <i class="icon icon-coin" data-value="3"></i>
-                <p class="title">恭喜！</p>
-                <p class="prize-txt">获得100团币～</p>
-                <p class="info">请前往“我-团宝箱”进行查看</p>
+        <div class="rule-wrapper hide">
+            <div class="rules">
+                <p>1、5月1日-31日，通过分享红包每邀请1个好友注册成功，即可获得1次转盘抽奖机会；</p>
+                <p>2、每个团贷网用户最多可获得3次转盘抽奖机会；</p>
+                <p>3、活动奖品团币发放至个人账户，红包发放至个人团宝箱，请按照规则使用；</p>
+                <p>4、活动最终解释权归团贷网所有。</p>
             </div>
-            <div class="btn">
-                知道了
-            </div>
+            <div class="btn-rules_cls"></div>
         </div>
-    </div> -->
+        <div class="rule-wrapper hide">
+            <div class="rules">
+                <p>1、5月1日-31日，给好友发分享红包；</p>
+                <p>2、好友5月1日-31日注册成功，你可获得好友领取红包金额（指通过本活动注册并领取的现金红包金额）的10%现金奖励；</p>
+                <p>3、好友5月1日-31日注册并投资成功，你可再额外获得好友领取红包金额（指通过本活动注册并领取的现金红包金额）的10%现金奖励；</p>
+                <p>4、活动最终解释权归团贷网所有。</p>
+            </div>
+            <div class="btn-rules_cls"></div>
+        </div>
+        <div class="rule-wrapper hide">
+            <div class="rules">
+                <p>1、5月1日-31日，你邀请的好友在注册10天内（自注册之日起）完成充值、投资，即可享受邀请有礼三重礼遇；</p>
+                <p>2、充值奖励及投资佣金均为T+1日发放，详情请前往查看“邀请有礼”活动</p>
+                <p>3、红包使用规则请查看个人团宝箱，请按照规则提示尽快使用；</p>
+                <p>4、活动最终解释权归团贷网所有。</p>
+            </div>
+            <div class="btn-rules_cls"></div>
+        </div>
+    </div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
 <script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
+<!-- build:js({dist}) ../js/lib/vendor/awardRotate.js -->
+<script src="../js/vendor/awardRotate.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<!-- <script src="../../../lib/vendor/awardRotate.js" type="text/javascript" charset="utf-8"></script> -->
 <script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
 
 </html>

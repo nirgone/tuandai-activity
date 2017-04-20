@@ -1,0 +1,36 @@
+.icon-enter {
+  display: block;
+  background-image: url(../images/index-sprite.png);
+  background-size:pxToRem(167px) pxToRem(127px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-134px) pxToRem(-43px);
+  width: pxToRem(12px);
+  height: pxToRem(23px);
+}
+.icon-index-line {
+  display: block;
+  background-image: url(../images/index-sprite.png);
+  background-size:pxToRem(167px) pxToRem(127px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-126px);
+  width: pxToRem(50px);
+  height: pxToRem(1px);
+}
+.icon-index-star {
+  display: block;
+  background-image: url(../images/index-sprite.png);
+  background-size:pxToRem(167px) pxToRem(127px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-134px) pxToRem(0px);
+  width: pxToRem(33px);
+  height: pxToRem(33px);
+}
+.icon-welfare_button {
+  display: block;
+  background-image: url(../images/index-sprite.png);
+  background-size:pxToRem(167px) pxToRem(127px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(124px);
+  height: pxToRem(116px);
+}

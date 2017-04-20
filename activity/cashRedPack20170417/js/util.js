@@ -53,7 +53,7 @@
 
         $("body").append(dialog_component);
         // disableScrolling();
-        disableScroll();
+        that.disableScroll();
         //事件绑定
         masker.bind("click", function(e) {
             hide(dialog_component);
@@ -72,18 +72,16 @@
         function hide(target) {
             target.remove();
             // enableScrolling();
-            enableScroll();
+            Util.enableScroll();
         }
     }
 
     /* ==================禁止滚动======================== */
-    function disableScroll() {
-        $(".scroll").removeClass("scroll-active");
-    }
+    // function disableScroll() {
+    //     $(".scroll").removeClass("scroll-active");
+    // }
 
-    function enableScroll() {
-        $(".scroll").addClass("scroll-active");
-    }
+
     /* ==================禁止滚动=====end=================== */
 
 
@@ -112,7 +110,7 @@
                 $("body").append(input_popup);
             }
             // disableScrolling();
-            disableScroll();
+            that.disableScroll();
             input_popup.on('click', '#get_btn', function(e) {
                 var _phone = input_popup.find("#telNo").val();
                 // 判断号码是否合法
@@ -148,7 +146,7 @@
             function hide(target) {
                 target.removeClass("slideInUp").addClass("slideOutDown");
                 // enableScrolling();
-                enableScroll();
+                that.enableScroll();
             }
 
         },
@@ -167,11 +165,11 @@
                     break;
                 case 1:
                     _icon = "invest-red";
-                    _prize = "投资红包";
+                    _prize = "元投资红包";
                     break;
                 case 2:
                     _icon = "cash-red";
-                    _prize = "现金红包";
+                    _prize = "元现金红包";
                     break;
 
             }
@@ -191,12 +189,21 @@
             btn.on('click', function() {
                 hide(dialog_component);
             });
+
             function hide(target) {
                 target.remove();
                 // enableScrolling();
-                enableScroll();
+                that.enableScroll();
             }
+        },
+        /* ==================禁止滚动======================== */
+        disableScroll: function() {
+            $(".scroll").removeClass("scroll-active");
+        },
+        enableScroll: function() {
+            $(".scroll").addClass("scroll-active");
         }
+
     }
 
     window.Util = util;
