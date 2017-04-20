@@ -733,7 +733,7 @@ $grayColor:#808080;
 }
 
 .scroll {
-    >.content {
+    &>.content {
       background-color: #ff5a3f;
     }
 }
