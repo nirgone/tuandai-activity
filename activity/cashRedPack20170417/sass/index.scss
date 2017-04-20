@@ -86,6 +86,7 @@ $grayColor:#808080;
 
 // 分享红包
 .red-pack {
+    position: relative;
     @include background("../images/index/red_top_bg.png",750px,722px);
     margin-top: pxToRem(-100px);
     text-align: center;
@@ -286,6 +287,10 @@ $grayColor:#808080;
 .white-light{
     @include background("../images/index/turntable_light_white.png",613px,622px);
 }
+.red-light.bling{
+    animation-delay: 0.25s;
+    -webkit-animation-delay: 0.25s;
+}
 .red-light{
     @include background("../images/index/turntable_light_red.png",622px,613px);
 }
@@ -363,6 +368,7 @@ $grayColor:#808080;
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffd40c), to(#ff7f0d));
     border-radius: pxToRem(50px);
     box-shadow: 0px 0px pxToRem(90px) rgba(168, 0, 0, 0.3);
+    z-index: 99;
 }
 
 .table {

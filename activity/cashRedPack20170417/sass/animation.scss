@@ -299,18 +299,12 @@
 
 @-webkit-keyframes bling {
     0% {
-        -webkit-transform: rotateY(0deg);
-        transform: rotateY(0deg);
         opacity: 1;
     }
     50% {
-        -webkit-transform: rotateY(270deg);
-        transform: rotateY(270deg);
         opacity: 0.5;
     }
     100% {
-        -webkit-transform: rotateY(540deg);
-        transform: rotateY(540deg);
         opacity: 1;
         
     }
@@ -330,8 +324,6 @@
 }
 
 .bling {
-    @extend .animated;
-    -webkit-animation-name: bling;
-    animation-name: bling;
-
+    -webkit-animation: bling 0.6s infinite;
+    animation: bling 0.6s infinite;
 }
