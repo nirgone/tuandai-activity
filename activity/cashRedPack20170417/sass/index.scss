@@ -110,6 +110,7 @@ $grayColor:#808080;
     top:pxToRem(320px);
     width:pxToRem(124px);
     height:pxToRem(116px);
+    color:#fff;
     @extend .icon-welfare_button;
     line-height:pxToRem(110px);
     font-size:pxToRem(32px);
@@ -300,10 +301,12 @@ $grayColor:#808080;
 .turntable{
     position:relative;
     text-align:center;
+     z-index: 111;
 }
 .lottery-turntable{
     @include background("../images/index/turntable_whole.png",638px,638px);
     margin:0 auto;
+
 }
 .white-light,.red-light{
     pointer-events:none;
@@ -402,7 +405,7 @@ $grayColor:#808080;
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffd40c), to(#ff7f0d));
     border-radius: pxToRem(60px);
     box-shadow: 0px 0px pxToRem(90px) rgba(168, 0, 0, 0.3);
-    z-index: 99;
+    z-index: 990;
 }
 
 .table {
