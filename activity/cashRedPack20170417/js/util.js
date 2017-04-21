@@ -111,7 +111,7 @@
             }
             // disableScrolling();
             that.disableScroll();
-            input_popup.on('click', '#get_btn', function(e) {
+            input_popup.off('click','#get_btn').on('click', '#get_btn', function(e) {
                 var _phone = input_popup.find("#telNo").val();
                 // 判断号码是否合法
                 if (!(/^1[34578]\d{9}$/.test(_phone))) {
@@ -139,7 +139,7 @@
                 cb && cb.call(this, arguments);
 
             });
-            input_popup.on('click', '#close', function() {
+            input_popup.off('click','#close').on('click', '#close', function() {
                 hide(input_popup);
             })
           
