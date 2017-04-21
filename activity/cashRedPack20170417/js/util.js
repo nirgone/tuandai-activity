@@ -111,7 +111,7 @@
             }
             // disableScrolling();
             that.disableScroll();
-            input_popup.on('click', '#get_btn', function(e) {
+            input_popup.off('click','#get_btn').on('click', '#get_btn', function(e) {
                 var _phone = input_popup.find("#telNo").val();
                 // 判断号码是否合法
                 if (!(/^1[34578]\d{9}$/.test(_phone))) {
@@ -139,7 +139,7 @@
                 cb && cb.call(this, arguments);
 
             });
-            input_popup.on('click', '#close', function() {
+            input_popup.off('click','#close').on('click', '#close', function() {
                 hide(input_popup);
             })
           
@@ -182,7 +182,7 @@
                 p = $("<p/>").addClass('prize-txt').html("获得" + _options.num + _prize + "～"),
                 btn = $("<div/>").addClass('btn').html("我知道了");
 
-            prize_content.append(icon).append(' <p class="title">恭喜！</p>').append(p).append('<p class="info">请前往“我-团宝箱”进行查看</p>');
+            prize_content.append(icon).append(' <p class="title">恭喜！</p>').append(p).append('<p class="info">请前往“我-'+ (_options.type == 0? '我的会员': '团宝箱')+'”进行查看</p>');
             prize_wrapper.append(prize_content).append(btn);
             dialog_component.append(masker).append(prize_wrapper);
 
