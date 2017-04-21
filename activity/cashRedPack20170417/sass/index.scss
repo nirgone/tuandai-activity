@@ -387,7 +387,7 @@ $grayColor:#808080;
 
 // 福利三
 .btn-red-pack {
-    position: fixed;
+    position: absolute;
     width: pxToRem(710px);
     color: $defaultColor;
     bottom: pxToRem(40px);
