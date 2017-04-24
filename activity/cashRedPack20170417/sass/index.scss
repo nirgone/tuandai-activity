@@ -111,6 +111,7 @@ $grayColor:#808080;
     width:pxToRem(124px);
     height:pxToRem(116px);
     color:#fff;
+    z-index: 111;
     @extend .icon-welfare_button;
     line-height:pxToRem(110px);
     font-size:pxToRem(32px);

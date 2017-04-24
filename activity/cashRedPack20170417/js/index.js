@@ -35,7 +35,9 @@
     });
     // 福利按钮
     $("#btn-welfare").on('click',function() {
-        $(".scroll").animate({scrollTop: $("#welfare").offset().top}, 700);
+        if($("#welfare").offset().top > 10){
+            $(".scroll").animate({scrollTop: -($(".page-index").offset().top-$("#welfare").offset().top)}, 700);
+        }
     })
 
     // 查看详情弹窗
@@ -143,11 +145,6 @@
             });
             return;
         }
-        // if (!qmInvest) {
-        //     // var money = 1000;
-        //     // showPopup(6, money);
-        //     return;
-        // }
         var type = 2; 
         var angles = 60 * type;
         rotateFn(type, angles);
