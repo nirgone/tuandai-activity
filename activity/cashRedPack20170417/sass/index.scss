@@ -322,11 +322,11 @@ $grayColor:#808080;
 .red-light{
     @include background("../images/index/turntable_light_red.png",622px,613px);
 }
-// 指针
+// 转盘指针
 .turntable-finger{
-    top:pxToRem(-30px);
+    top:pxToRem(-34px);
     @include background("../images/index/won_light.png",194px,218px);
-    pointer-events:none;
+    // pointer-events:none;
     &.gray{
         @include background("../images/index/won_gray.png",194px,218px);
     }

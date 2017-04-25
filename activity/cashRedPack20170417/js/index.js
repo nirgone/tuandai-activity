@@ -41,7 +41,7 @@
     })
 
     // 查看详情弹窗
-    $("#welfare-cons .welfare-con>.btn-detail").on('click',function(e){
+    $(".welfare-con>.btn-detail").on('click',function(e){
         var index = $(this).attr('data-index') - 1;
         $("#detail-dialog").show();
         $("#detail-dialog .rule-wrapper").eq(index).removeClass('hide');
@@ -68,51 +68,52 @@
                 }
             }]
         });
-
     })
+
+    // 转盘抽奖
     function rotateFn(type, angles) {
-        // flag = !flag;
         $('#lottery-turntable').stopRotate();
         $('#lottery-turntable').rotate({
             angle: 0,
-            animateTo: angles + (1860 - 120*type),
+            animateTo: angles + 1800,
             duration: 5000,
             callback: function() {
                 var _num = 0;
                 var _type = 0;
                 switch (type) {
                     case 1:
-                        //50元现金红包
-                        _num += 50;
-                        _type = 2;
-                        break;
-                    case 2:
-                        //3元投资红包
-                        _num += 3;
-                        _type = 1;
-                        break;
-                    case 3:
-                        //10元投资红包
-                        _num += 10;
-                        _type = 1;
-                        break;
-                    case 4:
-                        //288元现金红包
-                        _num += 288;
-                        _type = 2;
-                        break;
-                    case 5:
-                        //100团币
-                        _num += 100;
-                        _type = 0;
-                        break;
-                    case 6:
                         //588元现金红包
                         _num += 588;
                         _type = 2;
                         break;
+                    case 2:
+                        //100团币
+                        _num += 100;
+                        _type = 0;
+                        break;
+                    case 3:
+                        //288元现金红包
+                        _num += 288;
+                        _type = 2;
+                        break;
+                    case 4:
+                        //10元投资红包
+                        _num += 10;
+                        _type = 1;
+                        break;
+                    case 5:
+                        //3元投资红包
+                        _num += 3;
+                        _type = 1;
+                        break;
+                    case 6:
+                        //50元现金红包
+                        _num += 50;
+                        _type = 2;
+                        break;
                 }
                 $(".lottery-num").html(qmCount);
+                // 抽奖次数用完，转盘指针置灰
                 if(qmCount < 1){
                     $(".turntable-finger").addClass("gray");
                 }
@@ -133,7 +134,7 @@
     //开始抽奖
     var qmCount = 3;
     // var qmInvest = true;
-    $("#lottery-turntable").off('click').on('click', function() {
+    $("#turntable-finger").off('click').on('click', function() {
         if (qmCount < 1) {
             // 抽奖次数用完
             Util.tip({
@@ -145,7 +146,7 @@
             });
             return;
         }
-        var type = 2; 
+        var type = 4; 
         var angles = 60 * type;
         rotateFn(type, angles);
         qmCount -= 1;
