@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@import "../../../sass/func";
+
+.icon-block {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.icon-inline-block {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+.icon-close-b {
+  @extend .icon-block;
+  @include icon-background('../images/close-b.png', 80px, 80px);
+}

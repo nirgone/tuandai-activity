@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+	<meta name="format-detection" content="telephone=no">
+	<title>GMIC北京2017</title>
+	<!-- build:css(dist) ../css/main.css -->
+	<link rel="stylesheet" href="../css/index.css">
+	<link rel="stylesheet" href="../css/media.css">
+	<link rel="stylesheet" href="../css/animation.css">
+	<!-- endbuild -->
+ 	<script>
+	//动态算rem
+	(function(doc, win) {
+		var docEl = doc.documentElement,
+        	resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        	recalc = function() {
+            	// if (docEl.style.fontSize) return;
+            	clientWidth = docEl.clientWidth;
+            	if (!clientWidth) return;
+            	docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+            	if (document.body) {
+                	document.body.style.fontSize = docEl.style.fontSize;
+            	}
+        	};
+    	recalc();
+    	if (!doc.addEventListener) return;
+    	win.addEventListener(resizeEvt, recalc, false);
+    	doc.addEventListener("DOMContentLoaded", recalc, false);
+	})(document, window);
+	</script>
+
+</head>
+<body>
+	<div class="page scroll-active">
+		<div class="logo"></div>
+		<div class="content-wrapper">
+			<div class="banner"></div>
+			<div class="registe-area">
+				<div class="phone input-area">
+					<input class="phone-input" placeholder="请输入手机号码" type="text" pattern="[0-9]*" name="phone" maxlength="11"/>
+					<div class="tips-error">
+						您是我们的老用户了，可直接参与投资送好礼
+					</div>
+				</div>
+				<div class="message-code input-area">
+					<input class="message-code-input" placeholder="请输验证码" type="text" pattern="[0-9]*" name="phone" maxlength="6"/>
+					<div class="get-message-code">获取验证码</div>
+					<div class="tips-error">
+						请输入正确的短信验证码 
+					</div>
+				</div>
+				<div class="img-code input-area">
+					<input class="img-code-input" placeholder="请输验证码" type="text" name="imgCode" maxlength="6"/>
+					<img src="" class="img-code-img"/>
+					<div class="tips-error">
+						请输入正确的图片验证码  
+					</div>
+				</div>
+		    <div class="btn-registe">立即注册</div>
+			</div>
+			<div class="footer">
+				已有账号？<a href="https://m.tuandai.com/user/login.aspx">登录</a>团贷网
+			</div>
+		</div>
+		
+	</div>
+	<div class="dialog-success">
+		<div class="icon-success"></div>
+		<div class="text-success"></div>
+		<div class="icon-arrow"></div>
+		<!-- 福利链接 -->
+		<a class="btn-get-welfare" href="">查看新手福利</a>
+	</div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+</html>

@@ -1,0 +1,117 @@
+.icon-circular {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size:pxToRem(299px) pxToRem(226px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-201px) pxToRem(-126px);
+  width: pxToRem(32px);
+  height: pxToRem(32px);
+}
+.icon-download {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size:pxToRem(299px) pxToRem(226px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-201px) pxToRem(-168px);
+  width: pxToRem(26px);
+  height: pxToRem(29px);
+}
+.icon-enter {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size:pxToRem(299px) pxToRem(226px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-287px) pxToRem(-176px);
+  width: pxToRem(12px);
+  height: pxToRem(23px);
+}
+.icon-icon1 {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size:pxToRem(299px) pxToRem(226px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-92px) pxToRem(-126px);
+  width: pxToRem(99px);
+  height: pxToRem(81px);
+}
+.icon-icon2 {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size:pxToRem(299px) pxToRem(226px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-126px);
+  width: pxToRem(82px);
+  height: pxToRem(100px);
+}
+.icon-icon3 {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size:pxToRem(299px) pxToRem(226px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-134px) pxToRem(0px);
+  width: pxToRem(100px);
+  height: pxToRem(100px);
+}
+.icon-index-line {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size:pxToRem(299px) pxToRem(226px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-134px) pxToRem(-110px);
+  width: pxToRem(50px);
+  height: pxToRem(1px);
+}
+.icon-index-star {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size:pxToRem(299px) pxToRem(226px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-244px) pxToRem(-176px);
+  width: pxToRem(33px);
+  height: pxToRem(33px);
+}
+.icon-line {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size:pxToRem(299px) pxToRem(226px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-244px) pxToRem(-219px);
+  width: pxToRem(50px);
+  height: pxToRem(1px);
+}
+.icon-star-white {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size:pxToRem(299px) pxToRem(226px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-244px) pxToRem(-122px);
+  width: pxToRem(43px);
+  height: pxToRem(44px);
+}
+.icon-star-yellow {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size:pxToRem(299px) pxToRem(226px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-244px) pxToRem(-68px);
+  width: pxToRem(43px);
+  height: pxToRem(44px);
+}
+.icon-star {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size:pxToRem(299px) pxToRem(226px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-244px) pxToRem(0px);
+  width: pxToRem(55px);
+  height: pxToRem(58px);
+}
+.icon-welfare_button {
+  display: block;
+  background-image: url(../images/sprite_land.png);
+  background-size:pxToRem(299px) pxToRem(226px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(124px);
+  height: pxToRem(116px);
+}

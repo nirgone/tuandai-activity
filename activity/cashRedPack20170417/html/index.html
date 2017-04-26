@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>cashRedPack20170111</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="scroll scroll-active">
+        <div class="content page-index">
+            <!-- 标题 -->
+            <div id="index-title" class="index-title bounceInDown">
+                <p><i></i><span>劳动月分享红包，拿千元现金奖励</span><i></i></p>
+            </div>
+            <!-- 星星 -->
+            <div class="star-con">
+                <span class="star"></span>
+                <span class="star little"></span>
+            </div>
+            <!-- 猫 -->
+            <div class="cat slideInUp"></div>
+            <!-- 分享红包 -->
+            <div class="red-pack">
+                <div class="cat-hand"></div>
+                <p class="title">投资获赠分享红包</p>
+                <p class="money">388.18</p>
+                <div class="description">
+                    <p>共邀请 <span class="friend-num">1</span> 位好友，本月已发 <span class="total-money">0.00</span> 元</p>
+                    <p>每月最高可发 500 元</p>
+                </div>
+                <div class="btn-rule" id="go_rule">
+                    如何获得“分享红包”
+                </div>
+            </div>
+            <!-- 福利 -->
+            <div id="welfare" class="welfare">
+                <div class="content">
+                    <div id="tab-welfare" class="tab-welfare">
+                        <div data-index="1" class="tab tab-welfare1 on">福利一</div>
+                        <div data-index="2" class="tab tab-welfare2">福利二</div>
+                        <div data-index="3" class="tab tab-welfare3">福利三</div>
+                    </div>
+                    <div id="welfare-cons" class="welfare-cons">
+                        <!-- 福利一转盘 -->
+                        <div class="welfare-con">
+                            <p class="title">邀请好友注册成功可玩『转盘抽奖』</p>
+                            <div data-index="1" class="btn-detail">查看详情</div>
+                            <div class="turntable">
+                                <div id="lottery-turntable" class="lottery-turntable"> </div>
+                                <div class="white-light center bling"></div>
+                                <div class="red-light center bling"></div>
+                                <div id="turntable-finger" class="turntable-finger center">
+                                    <p class="finger-con">点击抽奖</p>
+                                    <p>抽奖<span class="lottery-num">3</span>次</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 福利二邀请好友 -->
+                        <div class="welfare-con hide">
+                            <p class="title">邀请好友注册或投资成功可『获得返现』</p>
+                            <div data-index="2" class="btn-detail">查看详情</div>
+                            <div class="ivitation">
+                                <div class="ivitation-con">
+                                    <ul>
+                                        <li>成功邀请注册好友：<span class="invite-num">6</span>人</li>
+                                        <li>成功邀请好友投资：<span class="invite-num">2</span>人</li>
+                                    </ul>
+                                    <div class="btn-detail">查看</div>
+                                </div>
+                            </div>
+                            <span class="get-money-info">
+                                <p>共获得<span class="get-money-num">32.16</span>元返现</p>
+                                <span class="btn-detail">查看</span>
+                            </span>
+                        </div>
+                        <!-- 福利三邀请好友享好礼 -->
+                        <div class="welfare-con welfare-con3 hide">
+                            <p class="title">邀请好友注册可享『三重好礼』</p>
+                            <div data-index="3" class="btn-detail">查看详情</div>
+                            <div class="table">
+                                <div class="th">
+                                    <span>好友行为</span>
+                                    <span>获得的奖励</span>
+                                </div>
+                                <div class="tr">
+                                    <span class="left">活动期间，您邀请的好友在10天内（自注册之日起）累计净充值金额X达到相应的金额</span>
+                                    <span>
+                            <div>1000元≤X＜5000元</div><p class="bottom10">（15元投资红包）</p>
+                            <div>5000元≤X＜10000元</div><p class="bottom10">（25元+15元投资红包）</p>
+                            <div>X≥10000元</div><p>（40元+25元+15元投资红包)</p>
+                        </span>
+                                </div>
+                                <div class="tr">
+                                    <span class="left">好友注册之日起1年内的有效投资</span>
+                                    <span>好友的净待收*0.5%/365</span>
+                                </div>
+                                <div class="tr">
+                                    <span class="left">好友注册投资</span>
+                                    <span class="left">
+                                    邀请<font class="font-red">2</font>位好友成功注册且每位好友在注册当月单笔投资金额≥3000元一个月及以上项目（额外赠送60元投资红包）；邀请<font class="font-red">3</font>位好友成功注册且每位好友在注册当月单笔投资金额≥3000元一个月及以上项目（额外赠送100元投资红包）。
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="btn-red-pack1">发现金红包</div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="btn-red-pack" class="btn-red-pack">发现金红包</div>
+    <!-- 福利按钮 -->
+    <div id="btn-welfare" class="btn-welfare"><span>福利</span></div>
+    <!-- 规则弹窗 -->
+    <div class="rule-sec" id="rule_sec">
+        <!-- <div class="masker"></div> -->
+        <div class="rule-scroll zoomIn">
+            <div class="rule-content">
+                <div class="title-line">
+                    如何获得“分享红包”
+                </div>
+                <div class="steps">
+                    <div class="step1">
+                        <div>步骤
+                            <font>1</font>
+                        </div>
+                        <div>
+                            <p style="text">投资获得“分享</p>
+                            <p>现金红包”</p>
+                        </div>
+                    </div>
+                    <div class="step2">
+                        <div>步骤
+                            <font>2</font>
+                        </div>
+                        <div>
+                            <p>将红包分享</p>
+                            <p>给您的好友</p>
+                        </div>
+                    </div>
+                    <div class="step3">
+                        <div>步骤
+                            <font>3</font>
+                        </div>
+                        <div>
+                            <p>好友注</p>
+                            <p>册领取</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="title-line">
+                    什么叫“分享红包”
+                </div>
+                <div class="sec">用户在活动期间内投资可随机获得“分享红包”，“分享红包”仅可用于分享给未注册好友领取，可同时分享给多个好友。</div>
+                <div class="title-line">
+                    活动规则
+                </div>
+                <p>1、活动时间：2017年5月1日-5月31日；</p>
+                <p>2、活动期间，用户投资可随机获得“分享红包”，此红包仅可用于分享给未注册好友领取，可同时分享多个好友，每月限额500元，发完即止；</p>
+                <p>3、未注册好友通过分享链接领取红包，金额随机；</p>
+                <p>4、转盘抽奖及返现奖励需在6月1日前使用或领取完毕；</p>
+                <p>5、所分享红包链接的有效期为8个小时；</p>
+                <p>6、好友领取红包后需在当天24:00前完成注册，红包才到个人账户中；</p>
+                <p>7、好友领取红包可用于团贷网投资或提现，使用有效期为3个月；</p>
+                <p>8、好友领取的红包可用于投资或提现；</p>
+                <p>9、本活动严禁作弊，一经发现，立即取消奖励；</p>
+                <p>10、本活动最终解释权归团贷网所有。</p>
+            </div>
+            <div class="masker-bottom">
+                <i class="icon-close"></i>
+            </div>
+        </div>
+    </div>
+    <!-- 查看详情弹窗 -->
+    <div id="detail-dialog" class="component-dialog">
+        <div class="masker"></div>
+        <div class="rule-wrapper hide">
+            <div class="title"><i></i><span>规则说明</span><i></i></div>
+            <div class="rules">
+                <p>1、5月1日-5月31日，通过分享红包每邀请1个好友注册成功，即可获得1次转盘抽奖机会；</p>
+                <p>2、每个团贷网用户最多可获得3次转盘抽奖机会；</p>
+                <p>3、活动奖品团币发放至个人账户，红包发放至个人团宝箱，请按照规则使用；</p>
+                <p>4、活动最终解释权归团贷网所有。</p>
+            </div>
+            <div class="btn-rules_cls"></div>
+        </div>
+        <div class="rule-wrapper hide">
+            <div class="title"><i></i><span>规则说明</span><i></i></div>
+            <div class="rules">
+                <p>1、5月1日-5月31日，给好友发分享红包；</p>
+                <p>2、好友5月1日-5月31日注册成功，你可获得好友领取红包金额（指通过本活动注册并领取的现金红包金额）的10%现金奖励；</p>
+                <p>3、好友5月1日-5月31日注册并投资成功，你可再额外获得好友领取红包金额（指通过本活动注册并领取的现金红包金额）的10%现金奖励；</p>
+                <p>4、活动最终解释权归团贷网所有。</p>
+            </div>
+            <div class="btn-rules_cls"></div>
+        </div>
+        <div class="rule-wrapper hide">
+            <div class="title"><i></i><span>规则说明</span><i></i></div>
+            <div class="rules">
+                <p>1、5月1日-5月31日，你邀请的好友在注册10天内（自注册之日起）完成充值、投资，即可享受邀请有礼三重礼遇；</p>
+                <p>2、充值奖励及投资佣金均为T+1日发放，详情请前往查看“邀请有礼”活动</p>
+                <p>3、红包使用规则请查看个人团宝箱，请按照规则提示尽快使用；</p>
+                <p>4、活动最终解释权归团贷网所有。</p>
+            </div>
+            <div class="btn-rules_cls"></div>
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
+<!-- build:js({dist}) ../js/lib/vendor/awardRotate.js -->
+<script src="../js/vendor/awardRotate.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<!-- <script src="../../../lib/vendor/awardRotate.js" type="text/javascript" charset="utf-8"></script> -->
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

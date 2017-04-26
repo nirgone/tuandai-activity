@@ -1,0 +1,163 @@
+@charset "UTF-8";
+@import "../../../sass/func";
+$color-text: #333;
+.rule-sec {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    .rule-scroll {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        // top: pxToRem(66px);
+        // left: pxToRem(66px);
+        // right: pxToRem(66px);
+        // bottom: pxToRem(66px);
+        // border-radius: 5px;
+        background-color: #fff;
+        z-index: 1000;
+    }
+    .masker-bottom {
+        // &:before {
+        //     content: '';
+        //     display: block;
+        //     background: url(../images/index/masker-bottom.png) no-repeat top;
+        //     background-size: 100% 100%;
+        //     width: pxToRem(750px);
+        //     height: pxToRem(45px);
+        //     position: absolute;
+        //     top: pxToRem(-45px);
+        //     left: 0;
+        // }
+        position: absolute;
+        background: url(../images/index/masker-bottom.png) no-repeat bottom;
+            background-size: 100% 100%;
+            height: pxToRem(176px);
+            width: pxToRem(750px);
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: transparent;
+    }
+    .icon-close {
+        position: absolute;
+        left: 50%;
+        bottom: pxToRem(44px);
+        transform: translate(-50%, 0);
+    }
+}
+
+.rule-content {
+    position: absolute;
+    overflow: auto !important;
+    top: pxToRem(60px);
+    // left: pxToRem(40px);
+    // right: pxToRem(40px);
+    left: 0;
+    right: 0;
+    bottom: pxToRem(145px);
+    padding: 0 pxToRem(40px);
+    // border-radius: 5px;
+    color: #41454d;
+    font-size: pxToRem(30px);
+    line-height: pxToRem(48px);
+    .title-line {
+        margin-bottom: pxToRem(50px);
+    }
+    .steps {
+        color: #959595;
+        font-size: pxToRem(34px);
+        padding: pxToRem(60px) 0 pxToRem(150px);
+        font {
+            font-size: pxToRem(100px);
+            padding-left: pxToRem(4px);
+            padding-right: pxToRem(12px);
+        }
+        p {
+            font-size: pxToRem(30px);
+            color: $color-text;
+            line-height: pxToRem(48px);
+        }
+        // &>div {
+        //     display: inline-block;
+        // }
+        &>div>div {
+            display: inline-block;
+        }
+    }
+    .step1 {
+        position: relative;
+        padding-left: pxToRem(22px);
+        padding-bottom: pxToRem(8px);
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: pxToRem(22px);
+            width: pxToRem(372px);
+            height: 1px;
+            background-color: #959595;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: pxToRem(-42px);
+            left: pxToRem(392px);
+            width: 1px;
+            height: pxToRem(42px);
+            background-color: #959595;
+        }
+    }
+    .step2 {
+        @extend .step1;
+        padding-top: pxToRem(50px);
+        padding-right: pxToRem(12px);
+        text-align: right;
+        &:before {
+            left: initial;
+            right: pxToRem(12px);
+            width: pxToRem(300px);
+        }
+        &:after {
+            left: initial;
+            right: pxToRem(310px);
+        }
+    }
+    .step3 {
+        @extend .step1;
+        padding-top: pxToRem(50px);
+        padding-left: pxToRem(12px);
+        &:before {
+            left: pxToRem(12px);
+            width: pxToRem(242px);
+        }
+        &:after {
+            height: 0;
+        }
+    }
+    .sec {
+        margin-bottom: pxToRem(80px);
+    }
+}
+
+.rule-content>p {
+    font-size: pxToRem(30px);
+    line-height: pxToRem(52px);
+    text-align: justify;
+    color: #41454d;
+    padding-bottom: pxToRem(20px);
+}
+
+.font-red {
+    color: #fd6040;
+}
+
+.font-yellow {
+    color: #fab600;
+}

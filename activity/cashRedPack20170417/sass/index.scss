@@ -1,0 +1,799 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/func";
+$defaultColor: #fff;
+$redColor: #ff4b3a;
+$darkRedColor: #765454;
+$yellowColor:#fffe61;
+$orangeColor:#ff7f0d;
+$grayColor:#808080;
+.page-index {
+    position: relative;
+    background: url(../images/index/top_bg.png) no-repeat;
+    background-size: 100% auto;
+    padding-top: pxToRem(56px);
+    color:$defaultColor;
+}
+// 标题
+.index-title {
+    @include background("../images/index/start_title.png",543px,184px);
+    width: 100%;
+    margin: 0 auto pxToRem(102px);
+    font-size: pxToRem(32px);
+    color: $redColor;
+    text-align: center;
+    line-height: 0;
+    position: relative;
+    p {
+        width: 100%;
+        display: inline-block;
+        margin-top: pxToRem(220px);
+        opacity: 0;
+        transform:translateY(pxToRem(38px));
+        transition:transform 1s,opacity 1s;
+        font-size: pxToRem(32px);
+        line-height: pxToRem(32px);
+        &.transform{
+            opacity: 1;
+            transform:translateY(0);
+        }
+        &:before,
+        &:after,i,span{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        &:before,
+        &:after {
+            content: '';
+            height: pxToRem(14px);
+            border-left:pxToRem(8px) solid $redColor;
+            margin:0 pxToRem(-10px);
+        }
+        i{
+            height: pxToRem(20px);
+            border-left:pxToRem(12px) solid $redColor;
+            margin:0 pxToRem(17px);
+        }   
+
+    }
+}
+
+.title-line {
+    font-size: pxToRem(34px);
+    text-align: center;
+    color: #ff7f0d;
+    &:before,
+    &:after {
+        content: '';
+        @extend .icon-line-yellow;
+        margin: 0 pxToRem(14px);
+        vertical-align: pxToRem(15px);
+    }
+    &:after {
+        transform: scale(-1, 1);
+    }
+}
+
+// 星星
+.star{
+    position: absolute;
+    left: pxToRem(502px);
+    top: pxToRem(374px);
+    display: inline-block;
+    width: pxToRem(33px);
+    height: pxToRem(33px);
+    @extend .icon-index-star;
+    &.little{
+        left: pxToRem(536px);
+        top: pxToRem(359px);
+        transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+
+    }
+}
+
+// 猫
+.cat {
+    @include background("../images/index/cat_head.png",279px,264px);
+    margin: 0 auto;
+}
+.cat-hand {
+    @include background("../images/index/cat_hand.png",333px,44px);
+    margin: 0 auto;
+}
+
+// 福利按钮
+.btn-welfare{
+    position:absolute;
+    right:0;
+    top:pxToRem(320px);
+    width:pxToRem(124px);
+    height:pxToRem(116px);
+    color:#fff;
+    z-index: 111;
+    @extend .icon-welfare_button;
+    line-height:pxToRem(110px);
+    font-size:pxToRem(32px);
+    font-weight:bold;
+    span{
+        padding-left:pxToRem(50px)
+    }
+}
+
+// 分享红包
+.red-pack {
+    position: relative;
+    @include background("../images/index/red_top_bg.png",750px,722px);
+    margin-top: pxToRem(-100px);
+    text-align: center;
+    font-size: pxToRem(28px);
+    background-size: 100%;
+    .title {
+        margin-top: pxToRem(80px);
+        color: $darkRedColor;
+        &:before,&:after{
+            content: '';
+            @extend .icon-index-line;
+            background-size: 100%;
+            display: inline-block !important;
+            margin-right: pxToRem(10px);
+            vertical-align: pxToRem(8px);
+        }
+        &:after {
+            transform:rotate(180deg);
+            margin-left: pxToRem(10px);
+        }
+    }
+    .money {
+        color: $redColor;
+        font-size: pxToRem(105px);
+        font-weight: bold;
+        margin-top: pxToRem(22px);
+        &:before {
+            content: '￥';
+            display: inline-block;
+            font-size: pxToRem(76px);
+            font-weight: normal;
+            margin-right: pxToRem(-12px);
+        }
+    }
+    .description {
+        color: $defaultColor;
+        margin: pxToRem(150px) 0 pxToRem(50px) 0;
+        .friend-num,
+        .total-money {
+            color: $yellowColor;
+        }
+        p {
+            line-height: pxToRem(45px);
+        }
+    }
+}
+
+.btn-rule {
+    // width: pxToRem(462px);
+    height: pxToRem(72px);
+    line-height: pxToRem(72px);
+    font-size: pxToRem(30px);
+    color: #f9f8df;
+    margin: 0 auto;
+    // margin-bottom: pxToRem(32px);
+    text-align: center;
+    &:before {
+        content: '';
+        // @include background("../images/little_pack.png", 62px, 58px);
+        @extend .icon-redpack;
+        display: inline-block;
+        vertical-align: middle;
+        animation: swing 5.0s linear 0s infinite both;
+    }
+    &:after {
+        content: '';
+        @extend .icon-arrow;
+        display: inline-block !important;
+        margin-left: pxToRem(8px);
+        vertical-align: pxToRem(-4px);
+    }
+}
+
+.welfare {
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff2d55), to(#ff5a3f));
+    margin: pxToRem(-14px) auto 0;
+    font-size: pxToRem(28px);
+    color: $defaultColor;
+    padding-bottom: pxToRem(150px);
+    .content {
+        width: pxToRem(710px);
+        margin: 0 auto;
+        background: rgba(0, 0, 0, 0);
+        padding-bottom: 0;
+    }
+}
+
+// 福利tab
+.tab-welfare {
+    height: pxToRem(111px);
+    position: relative;
+    .tab {
+        position: absolute;
+        bottom: 0;
+        display: inline-block;
+        color: $darkRedColor;
+        text-align: center;
+        // background-color: $defaultColor;
+        line-height: pxToRem(90px);
+        float: left;
+        // margin-right:pxToRem(4px);
+        border-radius: pxToRem(10px) pxToRem(10px) 0 0;
+        @include background("../images/index/button_unchecked.png",234px,90px);
+        // background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, 255)), to(rgba(255, 255, 255, 0.75)));
+    }
+    .tab.on {
+        background-color: $defaultColor;
+        font-size: pxToRem(32px);
+        font-weight: bold;
+        height: 100%;
+        line-height: pxToRem(110px);
+        // margin-top:pxToRem(-21px);
+    }
+}
+
+.tab-welfare2 {
+    left: pxToRem(238px);
+}
+
+.tab-welfare3 {
+    left: pxToRem(476px);
+}
+
+// 福利内容
+.welfare-cons {
+    border-radius: 0 0 pxToRem(10px) pxToRem(10px);
+    background-color: $defaultColor;
+}
+
+// 福利公共样式
+.welfare-con.hide{
+    display:none;
+}
+.welfare-con{
+    padding:0 pxToRem(20px);
+    text-align:center;
+    font-size:pxToRem(28px);
+    height: pxToRem(1017px);
+    .title{
+        padding-top:pxToRem(87px);
+        font-size:pxToRem(32px);
+        color:$darkRedColor;
+        font-weight:bold;
+    }
+    .btn-detail{
+        margin:pxToRem(34px) 0 pxToRem(80px);
+        color:$orangeColor;
+        &:after{
+            width:pxToRem(12px);
+            height:pxToRem(23px);
+            content: '';
+            @extend .icon-enter;
+            // background: url(../images/index/enter.png);
+            // background-size: 100%;
+            display: inline-block !important;
+            margin-left: (6px);
+            vertical-align: pxToRem(-2px);
+            
+        }
+    }
+    &.welfare-con3 {
+        .title {
+            padding-top: pxToRem(50px);
+        }
+        .btn-detail {
+            margin: pxToRem(26px) 0 pxToRem(22px);
+        }
+    }
+}
+.welfare-con3{
+    height:pxToRem(1100px);
+}
+
+// 福利一
+// 转盘
+.turntable{
+    position:relative;
+    text-align:center;
+     z-index: 111;
+}
+.lottery-turntable{
+    @include background("../images/index/turntable_whole.png",638px,638px);
+    margin:0 auto;
+
+}
+.white-light,.red-light{
+    pointer-events:none;
+}
+.white-light{
+    @include background("../images/index/turntable_light_white.png",613px,622px);
+}
+.red-light.bling{
+    animation-delay: 0.25s;
+    -webkit-animation-delay: 0.25s;
+}
+.red-light{
+    @include background("../images/index/turntable_light_red.png",622px,613px);
+}
+// 转盘指针
+.turntable-finger{
+    top:pxToRem(-34px);
+    @include background("../images/index/won_light.png",194px,218px);
+    // pointer-events:none;
+    &.gray{
+        @include background("../images/index/won_gray.png",194px,218px);
+    }
+    .finger-con{
+        font-size:pxToRem(30px);
+        margin-top:pxToRem(85px);
+    }
+    p{line-height:pxToRem(40px);font-size:pxToRem(25px);}
+}
+
+.lottery-num {
+    color: $yellowColor;
+}
+
+// 福利二
+.ivitation{
+    margin:0 pxToRem(14px) pxToRem(60px);
+}
+.ivitation-con{
+    position:relative;
+    color:$grayColor;
+    background:rgba(251,248,245,0.65);
+    border-radius:pxToRem(20px);
+    margin:0 auto;
+    text-align:left;
+    padding:pxToRem(32px) 0 pxToRem(32px) pxToRem(30px);
+    ul,li{
+       width:pxToRem(480px);
+    }
+    ul{
+        display:inline-block;
+        vertical-align: middle;
+    }
+    li{
+       line-height:pxToRem(64px);
+    }
+    .invite-num{
+        color:$darkRedColor;
+        font-size:pxToRem(40px);
+    }
+    .btn-detail{
+        vertical-align: middle;
+        display: inline-block;
+        margin: auto 0;
+    }
+}
+.get-money-info{
+    color:$grayColor;
+    font-size:pxToRem(28px);
+    margin-bottom:pxToRem(34px);
+    .btn-detail,p{
+        display: inline-block;
+    }
+    .btn-detail{
+        margin-left: pxToRem(20px);
+    }
+}
+.get-money-num{
+    color:$redColor;
+    font-size:pxToRem(40px);
+}
+
+// 福利三
+.btn-red-pack {
+    position: absolute;
+    width: pxToRem(710px);
+    color: $defaultColor;
+    bottom: pxToRem(40px);
+    margin: auto;
+    left: 0;
+    right: 0;
+    height: pxToRem(110px);
+    text-align: center;
+    font-size: pxToRem(40px);
+    font-weight: bold;
+    line-height: pxToRem(110px);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffd40c), to(#ff7f0d));
+    border-radius: pxToRem(60px);
+    box-shadow: 0px 0px pxToRem(90px) rgba(168, 0, 0, 0.3);
+    z-index: 990;
+}
+
+.table {
+    /*width: 94.77%;*/
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    // height: 100%;
+    // margin-top: 16px;
+    // margin-bottom: 12px;
+    margin-top: pxToRem(32px);
+    margin-bottom: pxToRem(24px);
+    &>div,
+    &>div>span {
+        position: relative;
+    }
+    &:before,
+    &:after,
+    &>div:after,
+    &>div>span:after {
+        content: "";
+        position: absolute;
+        transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-top: 1px solid #a7a7a7;
+        transform: scaleY(0.5);
+        -webkit-transform: scaleY(0.5);
+        z-index: 1
+    }
+    &:after {
+        bottom: 0;
+        right: initial;
+        border-top: none;
+        border-left: 1px solid #a7a7a7;
+        transform: scaleX(0.5);
+        -webkit-transform: scaleX(0.5);
+    }
+    &>div>span:after {
+        bottom: 0;
+        left: initial;
+        border-top: none;
+        border-right: 1px solid #a7a7a7;
+        transform: scaleX(0.5);
+        -webkit-transform: scaleX(0.5);
+        z-index: 99;
+    }
+    &>div:after {
+        top: initial;
+        bottom: 0;
+        border-top: none;
+        border-bottom: 1px solid #a7a7a7;
+    }
+    .th,
+    .tr {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+    }
+    .th {
+        // height: 45px;
+        height: pxToRem(90px);
+        background-color: #fcfaf8;
+        // font-size: 15px;
+        font-size: pxToRem(28px);
+        color: #765454;
+    }
+    .th>span,
+    .tr>span {
+        display: block;
+    }
+    .th>span:first-child,
+    .tr>span:first-child {
+        // width: 31.40%;
+        width: 40%;
+    }
+    .th>span:nth-of-type(2),
+    .tr>span:nth-of-type(2) {
+        // width: 68.60%;
+        width: 64%;
+    }
+    .tr>span:nth-of-type(2) {
+        color: #333;
+    }
+    .th>span {
+        text-align: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .tr>span {
+        padding: pxToRem(20px) 0;
+    }
+    .tr>span,
+    .tr>span>p {
+        text-align: center;
+        // font-size: 12px;
+        // line-height: 18px;
+        font-size: pxToRem(26px);
+        line-height: pxToRem(40px);
+        color: #999;
+        box-sizing: border-box;
+    }
+    .tr>span.center {
+        text-align: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .tr>span.left {
+        text-align: left;
+        padding-left: pxToRem(20px);
+        padding-right: pxToRem(20px);
+    }
+    .bottom10 {
+        padding-bottom: pxToRem(10px);
+    }
+}
+
+// fonts
+.font-red {
+    color: $redColor;
+}
+
+// .btn-red-pack1{
+//     color:$defaultColor;
+//     bottom: 0;
+//     margin:pxToRem(40px); 
+//     left:0; 
+//     right:0; 
+//     height: pxToRem(110px);
+//     text-align:center;
+//     font-size:pxToRem(40px);
+//     line-height:pxToRem(110px);
+//     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffd40c), to(#ff7f0d));
+//     border-radius:pxToRem(50px);
+//     box-shadow: 0px 0px pxToRem(90px) rgba(168,0,0,0.3);
+// }
+@import 'rule';
+.redpack-rule {
+    // display: block;
+    .rule-content {
+        border-radius: 5px;
+        background-color: #fff;
+        left: pxToRem(70px);
+        right: pxToRem(70px);
+        top: 50%;
+        bottom: auto;
+        transform: translate(0, -45%);
+        padding: pxToRem(60px) pxToRem(40px);
+        z-index: 1000;
+        overflow: visible !important;
+        p {
+            line-height: pxToRem(48px);
+            padding-bottom: 0;
+        }
+    }
+}
+
+// 奖品弹窗
+.component-dialog .prize-wrapper{
+    transform: translate(-50%, -27%);
+}
+.prize-wrapper {
+    min-height: pxToRem(442px);
+    width: pxToRem(610px) !important;
+    &:before {
+        content: '';
+        display: block;
+        background: url(../images/index/bg-prize.png) no-repeat top;
+        background-size: 100% 100%;
+        position: absolute;
+        width: pxToRem(610px);
+        height: pxToRem(267px);
+        top: pxToRem(-100px);
+    }
+    .prize-content {
+        z-index: 1000;
+        &:after {
+            border-bottom: 0 !important;
+        }
+    }
+    .icon {
+        display: block;
+        width: pxToRem(290px);
+        height: pxToRem(314px);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        top: pxToRem(-280px);
+        &:after {
+            content: attr(data-value);
+            position: absolute;
+            font-size: pxToRem(42px);
+            font-weight: bold;
+            color: #d48320;
+            transform: translate(-50%, 0);
+             top: pxToRem(100px);
+        }
+    }
+    // 奖品icon
+    .icon-coin {
+        background-image: url(../images/index/coin.png);
+        &:after {
+            font-size: pxToRem(60px);
+            color: #ffee30;
+            top: pxToRem(70px);
+        }
+    }
+    .icon-cash-red {
+        background-image: url(../images/index/cash-red.png);
+    }
+    .icon-invest-red {
+        background-image: url(../images/index/invest-red.png);
+    }
+    .title {
+        color: $redColor;
+        font-size: pxToRem(48px);
+        margin-bottom: pxToRem(30px);
+    }
+    .prize-txt {
+        @extend .title;
+        font-size: pxToRem(34px);
+    }
+    .info {
+        color: #666;
+        font-size: pxToRem(28px);
+    }
+    .btn {
+        width: pxToRem(500px);
+        height: pxToRem(80px);
+        line-height: pxToRem(80px);
+        font-size: pxToRem(34px);
+        background: linear-gradient(to bottom, #ff4178 , #ff3c5c);
+        color: #fff !important;
+        border-radius: pxToRem(80px);
+        text-align: center;
+        margin: 0 auto;
+        box-shadow: 0 pxToRem(14px) pxToRem(14px) -1px rgba(255, 101, 134, .3);
+    }
+}
+
+// 查看详情弹窗
+.rule-wrapper.hide{
+    display:none;
+}
+.component-dialog .rule-wrapper{
+    transform: translate(-50%, -58%);
+    // margin:0 auto pxToRem(59px);
+    min-height: pxToRem(627px);
+    width: pxToRem(610px) !important;
+    background-color:rgba(0,0,0,0);
+    color:#333;
+    .title {
+        display: block;
+        background: url(../images/index/rules_tit.png) no-repeat top;
+        background-size: 100% 100%;
+        // position: absolute;
+        width: pxToRem(610px);
+        height: pxToRem(135px);
+        // top: pxToRem(-128px);
+        color:#fff;
+        font-size:pxToRem(34px);
+        line-height:pxToRem(170px);
+        &:before,
+        &:after,i,span{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        &:before,
+        &:after {
+            content: '';
+            height: pxToRem(14px);
+            border-left:pxToRem(8px) solid $defaultColor;
+            margin:0 pxToRem(-4px);
+        }
+        i{
+            height: pxToRem(20px);
+            border-left:pxToRem(10px) solid $defaultColor;
+            margin:0 pxToRem(12px);
+        } 
+    }
+    .btn-rules_cls {
+        display: block;
+        background: url(../images/index/rules_cls.png) no-repeat top;
+        background-size: 100% 100%;
+        position: absolute;
+        width: pxToRem(80px);
+        height: pxToRem(80px);
+        bottom: pxToRem(-140px);
+        margin:0 auto;
+        left: 0;
+        right: 0;
+    }
+    .rules{
+        background-color:#fff;
+        border-radius: 0 0 5px 5px;
+        text-align:left;
+        padding:pxToRem(48px) pxToRem(40px);
+        line-height:pxToRem(50px);
+        font-size:pxToRem(28px);
+        p{
+            margin-bottom:pxToRem(20px);
+        }
+    }
+}
+
+// icons
+.icon-redpack {
+    @extend .icon-inline-block;
+    @include icon-background('../images/index/redpack.png', 50px, 46px);
+}
+
+.icon-arrow {
+    @extend .icon-inline-block;
+    @include icon-background('../images/index/arrow.png', 16px, 28px);
+}
+
+.icon-line-yellow {
+    @extend .icon-inline-block;
+    @include icon-background('../images/index/line-yellow.png', 50px, 2px);
+}
+
+// black close
+.icon-close {
+    @extend .icon-block;
+    @include icon-background('../images/index/close-black.png', 80px, 80px);
+}
+
+// 主页icon
+.sprite {
+    display: block;
+    background-image: url(../images/index-sprite.png);
+    background-size:pxToRem(167px) pxToRem(127px);
+    background-repeat:no-repeat;
+}
+.icon-enter {
+ @extend .sprite;
+  background-position: pxToRem(-134px) pxToRem(-43px);
+  width: pxToRem(12px);
+  height: pxToRem(23px);
+}
+.icon-index-line {
+ @extend .sprite;
+  background-position: pxToRem(0px) pxToRem(-123px);
+  width: pxToRem(50px);
+  height: pxToRem(4px);
+}
+.icon-index-star {
+ @extend .sprite;
+  background-position: pxToRem(-134px) pxToRem(0px);
+  width: pxToRem(33px);
+  height: pxToRem(33px);
+}
+.icon-welfare_button {
+ @extend .sprite;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(124px);
+  height: pxToRem(116px);
+}
+
+.scroll {
+    &>.content {
+      background-color: #ff5a3f;
+    }
+}
