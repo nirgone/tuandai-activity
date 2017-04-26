@@ -68,7 +68,7 @@ $grayColor:#808080;
         content: '';
         @extend .icon-line-yellow;
         margin: 0 pxToRem(14px);
-        vertical-align: pxToRem(15px);
+        vertical-align: pxToRem(8px);
     }
     &:after {
         transform: scale(-1, 1);
@@ -97,6 +97,7 @@ $grayColor:#808080;
 .cat {
     @include background("../images/index/cat_head.png",279px,264px);
     margin: 0 auto;
+    z-index: 99;
 }
 .cat-hand {
     @include background("../images/index/cat_hand.png",333px,44px);
@@ -129,6 +130,7 @@ $grayColor:#808080;
     text-align: center;
     font-size: pxToRem(28px);
     background-size: 100%;
+    z-index: 100;
     .title {
         margin-top: pxToRem(80px);
         color: $darkRedColor;
@@ -227,6 +229,7 @@ $grayColor:#808080;
         // margin-right:pxToRem(4px);
         border-radius: pxToRem(10px) pxToRem(10px) 0 0;
         @include background("../images/index/button_unchecked.png",234px,90px);
+        // background-size:100% 100%;
         // background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, 255)), to(rgba(255, 255, 255, 0.75)));
     }
     .tab.on {
@@ -251,6 +254,7 @@ $grayColor:#808080;
 .welfare-cons {
     border-radius: 0 0 pxToRem(10px) pxToRem(10px);
     background-color: $defaultColor;
+    margin-top: pxToRem(-0.8px);
 }
 
 // 福利公共样式
@@ -267,6 +271,10 @@ $grayColor:#808080;
         font-size:pxToRem(32px);
         color:$darkRedColor;
         font-weight:bold;
+    }
+    .second-title{
+        @extend .title;
+        padding-top:pxToRem(26px);;
     }
     .btn-detail{
         margin:pxToRem(34px) 0 pxToRem(80px);
@@ -302,15 +310,20 @@ $grayColor:#808080;
 .turntable{
     position:relative;
     text-align:center;
-     z-index: 111;
+    z-index: 111;
+    width: pxToRem(638px);
+    height: pxToRem(638px);
+    margin:0 auto;
+    
 }
 .lottery-turntable{
     @include background("../images/index/turntable_whole.png",638px,638px);
-    margin:0 auto;
+    z-index: 111;
+    // margin:0 auto;
 
 }
 .white-light,.red-light{
-    pointer-events:none;
+    // pointer-events:none;
 }
 .white-light{
     @include background("../images/index/turntable_light_white.png",613px,622px);
@@ -414,6 +427,7 @@ $grayColor:#808080;
     box-sizing: border-box;
     position: relative;
     width: 100%;
+    z-index: 9;
     // height: 100%;
     // margin-top: 16px;
     // margin-bottom: 12px;
@@ -729,7 +743,7 @@ $grayColor:#808080;
         background-color:#fff;
         border-radius: 0 0 5px 5px;
         text-align:left;
-        padding:pxToRem(48px) pxToRem(40px);
+        padding:pxToRem(48px) pxToRem(40px) pxToRem(28px);
         line-height:pxToRem(50px);
         font-size:pxToRem(28px);
         p{

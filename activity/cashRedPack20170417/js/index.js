@@ -2,7 +2,6 @@
     FastClick.attach(document.body);
 	    //do your thing.
 	window.onload = function() {
-        $(".icon-title").addClass('bounceInDown');
         setTimeout(function() {
             // body...
     		$("#index-title p").addClass('transform');
@@ -35,7 +34,7 @@
     });
     // 福利按钮
     $("#btn-welfare").on('click',function() {
-        if($("#welfare").offset().top > 10){
+        if($("#welfare").offset().top > 10 || $("#welfare").offset().top < 0){
             $(".scroll").animate({scrollTop: -($(".page-index").offset().top-$("#welfare").offset().top)}, 700);
         }
     })

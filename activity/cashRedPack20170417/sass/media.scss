@@ -28,10 +28,21 @@
 
 /* -------------------------iphone4---------------------------- */
 
-@media screen and (max-width:320px) and (max-height:416px) {
+@media screen and (max-width:320px) and (max-height:459px) {
    	$ratio: 0.85;
-	.component-dialog .rule-wrapper .btn-rules_cls {
-	 bottom: pxToRem(-110px);
+	.component-dialog .rule-wrapper{
+	    transform: translate(-50%, -57%) !important;
+		.rules{
+	        padding:pxToRem(21px) pxToRem(40px) pxToRem(5px) !important;
+	        line-height:pxToRem(48px) !important;
+	        p{
+	            margin-bottom:pxToRem(16px) !important;
+	        }
+
+		}
+		.btn-rules_cls {
+			bottom: pxToRem(-110px) !important;
+		}
 	}
 }
 

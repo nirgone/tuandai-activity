@@ -67,13 +67,17 @@ $color-text: #333;
     color: #41454d;
     font-size: pxToRem(30px);
     line-height: pxToRem(48px);
+    text-align: justify;
     .title-line {
         margin-bottom: pxToRem(50px);
     }
     .steps {
         color: #959595;
         font-size: pxToRem(34px);
-        padding: pxToRem(60px) 0 pxToRem(150px);
+        padding: pxToRem(60px) pxToRem(56px);
+        margin-bottom: pxToRem(90px);
+        background-color:#fcfaf8;
+        border-radius:pxToRem(10px);
         font {
             font-size: pxToRem(100px);
             padding-left: pxToRem(4px);
@@ -100,23 +104,23 @@ $color-text: #333;
             position: absolute;
             bottom: 0;
             left: pxToRem(22px);
-            width: pxToRem(372px);
+            width: pxToRem(390px);
             height: 1px;
             background-color: #959595;
         }
         &:after {
             content: '';
             position: absolute;
-            bottom: pxToRem(-42px);
-            left: pxToRem(392px);
+            bottom: pxToRem(-50px);
+            left: pxToRem(410px);
             width: 1px;
-            height: pxToRem(42px);
+            height: pxToRem(50px);
             background-color: #959595;
         }
     }
     .step2 {
         @extend .step1;
-        padding-top: pxToRem(50px);
+        padding-top: pxToRem(72px);
         padding-right: pxToRem(12px);
         text-align: right;
         &:before {
@@ -131,7 +135,7 @@ $color-text: #333;
     }
     .step3 {
         @extend .step1;
-        padding-top: pxToRem(50px);
+        padding-top: pxToRem(72px);
         padding-left: pxToRem(12px);
         &:before {
             left: pxToRem(12px);
