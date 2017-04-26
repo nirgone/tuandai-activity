@@ -1,0 +1,54 @@
+.icon-p2-txt {
+  display: block;
+  background-image: url(../images/p2/text.png);
+  background-size:pxToRem(223px) pxToRem(170px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-135px);
+  width: pxToRem(109px);
+  height: pxToRem(35px);
+}
+.icon-p2-txt2 {
+  display: block;
+  background-image: url(../images/p2/text.png);
+  background-size:pxToRem(223px) pxToRem(170px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-45px);
+  width: pxToRem(146px);
+  height: pxToRem(35px);
+}
+.icon-p2-txt3 {
+  display: block;
+  background-image: url(../images/p2/text.png);
+  background-size:pxToRem(223px) pxToRem(170px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(182px);
+  height: pxToRem(35px);
+}
+.icon-p2-txt4 {
+  display: block;
+  background-image: url(../images/p2/text.png);
+  background-size:pxToRem(223px) pxToRem(170px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-90px);
+  width: pxToRem(146px);
+  height: pxToRem(35px);
+}
+.icon-txt-age {
+  display: block;
+  background-image: url(../images/p2/text.png);
+  background-size:pxToRem(223px) pxToRem(170px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-192px) pxToRem(0px);
+  width: pxToRem(31px);
+  height: pxToRem(34px);
+}
+.icon-txt-year {
+  display: block;
+  background-image: url(../images/p2/text.png);
+  background-size:pxToRem(223px) pxToRem(170px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-119px) pxToRem(-135px);
+  width: pxToRem(35px);
+  height: pxToRem(35px);
+}

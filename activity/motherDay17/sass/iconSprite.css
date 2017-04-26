@@ -1,0 +1,99 @@
+.icon-icon-close {
+  display: block;
+  background-image: url(../images/icons/icon.png);
+  background-size:pxToRem(311px) pxToRem(212px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-171px) pxToRem(0px);
+  width: pxToRem(69px);
+  height: pxToRem(69px);
+}
+.icon-icon-paused {
+  display: block;
+  background-image: url(../images/icons/icon.png);
+  background-size:pxToRem(311px) pxToRem(212px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-78px) pxToRem(-96px);
+  width: pxToRem(68px);
+  height: pxToRem(68px);
+}
+.icon-icon-play {
+  display: block;
+  background-image: url(../images/icons/icon.png);
+  background-size:pxToRem(311px) pxToRem(212px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-96px);
+  width: pxToRem(68px);
+  height: pxToRem(68px);
+}
+.icon-p4-txt4 {
+  display: block;
+  background-image: url(../images/icons/icon.png);
+  background-size:pxToRem(311px) pxToRem(212px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(161px);
+  height: pxToRem(38px);
+}
+.icon-p5-txt2 {
+  display: block;
+  background-image: url(../images/icons/icon.png);
+  background-size:pxToRem(311px) pxToRem(212px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-174px);
+  width: pxToRem(78px);
+  height: pxToRem(38px);
+}
+.icon-p5-txt3 {
+  display: block;
+  background-image: url(../images/icons/icon.png);
+  background-size:pxToRem(311px) pxToRem(212px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-250px) pxToRem(0px);
+  width: pxToRem(61px);
+  height: pxToRem(39px);
+}
+.icon-p5-txt4 {
+  display: block;
+  background-image: url(../images/icons/icon.png);
+  background-size:pxToRem(311px) pxToRem(212px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-48px);
+  width: pxToRem(159px);
+  height: pxToRem(38px);
+}
+.icon-p5-txt5 {
+  display: block;
+  background-image: url(../images/icons/icon.png);
+  background-size:pxToRem(311px) pxToRem(212px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-250px) pxToRem(-49px);
+  width: pxToRem(56px);
+  height: pxToRem(38px);
+}
+.icon-txt-ci {
+  display: block;
+  background-image: url(../images/icons/icon.png);
+  background-size:pxToRem(311px) pxToRem(212px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-250px) pxToRem(-144px);
+  width: pxToRem(34px);
+  height: pxToRem(34px);
+}
+.icon-txt-day {
+  display: block;
+  background-image: url(../images/icons/icon.png);
+  background-size:pxToRem(311px) pxToRem(212px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-250px) pxToRem(-97px);
+  width: pxToRem(38px);
+  height: pxToRem(37px);
+}
+.icon-txt-mom {
+  display: block;
+  background-image: url(../images/icons/icon.png);
+  background-size:pxToRem(311px) pxToRem(212px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-156px) pxToRem(-96px);
+  width: pxToRem(80px);
+  height: pxToRem(38px);
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>母亲节特辑</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/index.css">
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="content">
+        <div class="page page-main">
+            <i class="icon-title-p1 title-p2"></i>
+            <!-- <div class="i-wrapper-p2">
+                <p>
+                    <span>我今年</span><i class="icon-arrow icon-arrow-left" data-type="0" data-name="mine"></i><i class="i-cont"><input type="number" pattern="[0-9]*" name="mine"></i><i class="icon-arrow icon-arrow-right" data-type="1" data-name="mine"></i><span>岁</span>
+                </p>
+                <p>
+                    <span>妈妈今年</span><i class="icon-arrow icon-arrow-left" data-type="0" data-name="mother"></i><i class="i-cont"><input type="number" pattern="[0-9]*" name="mother"></i><i class="icon-arrow icon-arrow-right" data-type="1" data-name="mother"></i><span>岁</span>
+                </p>
+                <p>
+                    <span>我离家在外</span><i class="icon-arrow icon-arrow-left" data-type="0" data-name="leave"></i><i class="i-cont"><input type="number" pattern="[0-9]*" name="leave"></i><i class="icon-arrow icon-arrow-right" data-type="1" data-name="leave"></i><span>年</span>
+                </p>
+                <p>
+                    <span>每年回家</span><i class="icon-arrow icon-arrow-left" data-type="0" data-name="back"></i><i class="i-cont"><input type="number" pattern="[0-9]*" name="back"></i><i class="icon-arrow icon-arrow-right" data-type="1" data-name="back"></i><span>次</span>
+                </p>
+            </div> -->
+            <div class="i-wrapper-p2">
+                <p>
+                    <i class="txt-p2"></i>
+                    <i class="i-cont" data-name="mine">
+                        <span class="stxt" data-name="mine" id="myAge">0</span>
+                        <select class="itxt" name="mine">
+                        </select>
+                    </i>
+                    <i class="txt-age"></i>
+                </p>
+                <p>
+                    <i class="txt2-p2"></i>
+                    <i class="i-cont" data-name="mother">
+                        <span class="stxt" data-name="mother" id="mother">0</span>
+                        <select class="itxt" name="mother">
+                            
+                        </select>
+                    </i>
+                    <i class="txt-age"></i>
+                </p>
+                <p>
+                    <i class="txt3-p2"></i>
+                    <i class="i-cont" data-name="leave">
+                        <span class="stxt" data-name="leave" id="leave">0</span>
+                        <select class="itxt" name="leave">
+                        </select>
+                    </i>
+                    <i class="txt-year"></i>
+                </p>
+                <p>
+                    <i class="txt4-p2"></i>
+                    <i class="i-cont" data-name="back">
+                        <span class="stxt" data-name="back" id="back">0</span>
+                        <select class="itxt" name="back">
+                        </select>
+                    </i>
+                    <i class="txt-ci"></i>
+                </p>
+            </div>
+            <div class="container-bottom">
+                <i class="icon-train"></i>
+                <div class="btn-p1 btn-start breath-anit">开始计算</div>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<!-- <script src="../js/index.js" type="text/javascript" charset="utf-8"></script> -->
+<script type="text/javascript">
+(function() {
+    FastClick.attach(document.body);
+    /* $(".icon-arrow").on('click', function() {
+         var name = $(this).attr('data-name');
+         var type = $(this).attr('data-type');
+         var _input = $('input[name="' + name + '"]');
+         var value = _input ? +_input.val() : 0;
+         if (type === '0') {
+             value = value > 0 ? value - 1 : 0;
+         } else {
+             value += 1;
+         }
+         _input.val(value);
+     });*/
+    var jsonData = {
+        'mine': {
+            'min': 0,
+            'max': 100
+        },
+        'mother': {
+            'min': 10,
+            'max': 100
+        },
+        'leave': {
+            'min': 0,
+            'max': 9
+        },
+        'back': {
+            'min': 0,
+            'max': 30
+        }
+    }
+
+    function init() {
+        initOptions('mine');
+        initOptions('mother');
+        initOptions('leave');
+        initOptions('back');
+
+    }
+    init();
+
+    function initOptions(name) {
+        var data = jsonData[name];
+        var start = data.min,
+            end = data.max;
+        var temp = '';
+        if (start > 0) {
+            // $(".stxt[data-name='" + name + "']").html(0);
+            temp += '<option value="0" selected>0</option>'
+        }
+
+        // $(".stxt[data-name='" + name + "']").html(start);
+        for (var i = start; i <= end; i++) {
+            // if (i == start && type) {
+            //     temp += '<option value="' + i + '" selected>' + i + '</option>';
+            // } else {
+            //     temp += '<option value="' + i + '">' + i + '</option>'
+            // }
+            temp += '<option value="' + i + '">' + i + '</option>'
+        }
+        $("select[name='" + name + "']").html(temp);
+    }
+    $("select").on('change', function(e) {
+        console.info($(this).parent(), $(this).val());
+        var _obj = $(this).parent().find('.stxt');
+        // var name = $(this).attr('data-name');
+        var name = _obj.attr('data-name');
+        var value = $(this).val();
+        _obj.html(value);
+        if (name === 'mine') {
+            jsonData['mother'].min = +value + 10;
+            jsonData['leave'].max = +value;
+            initOptions('mother');
+            initOptions('leave');
+        } else if (name === 'mother') {
+            jsonData['mine'].max = +value - 10;
+            initOptions('mine');
+        } else if (name === 'leave') {
+            jsonData['mine'].min = +value;
+            initOptions('mine');
+        }
+    });
+
+    $(".btn-start").on('click', function() {
+        var data = {};
+        data.myAge = $("#myAge").html();
+        data.mother = $("#mother").html();
+        data.leave = $("#leave").html();
+        data.back = $("#back").html();
+        console.info(data);
+        if (window.sessionStorage) {
+            window.sessionStorage['data'] = JSON.stringify(data);
+        } else {
+            window.mySessionStorage['data'] = JSON.stringify(data);
+        }
+        window.location.href = './page3.html';
+    });
+})();
+</script>
+
+</html>

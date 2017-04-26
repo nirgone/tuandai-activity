@@ -1,0 +1,818 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+.det-container {
+    width: 100%;
+    height: 100%;
+}
+
+.page-det {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: none;
+}
+
+.icon-music {
+    // width: pxToRem(68px);
+    // height: pxToRem(68px);
+    // background-repeat: no-repeat;
+    // background-size: 100% 100%;
+    position: absolute;
+    right: pxToRem(50px);
+    top: pxToRem(50px);
+    z-index: 90;
+}
+
+.icon-play {
+    // background-image: url('../images/icon-play.png');
+    @extend .sprite-icon-play;
+    animation: rotateIcon $duration * 4 linear both infinite;
+}
+
+.icon-paused {
+    // background-image: url('../images/icon-paused.png');
+    @extend .sprite-icon-paused;
+}
+
+.icon-next {
+    @include background('../images/arrow-up.png', 94px, 86px);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin-left: pxToRem(-47px);
+    z-index: 10;
+    animation: arrowUp $duration * 3 linear both infinite;
+    display: none;
+}
+
+// .icon-txt-p3 {
+//     @include background('../images/txt-p3.png',
+//     533px,
+//     124px);
+//     height: percent(124, $designHeight);
+//     position: absolute;
+//     left: 50%;
+//     top: percent(120, $designHeight);
+//     transform: translate(-50%, 0);
+// }
+.pt-container {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    font-size: 0;
+    text-align: center;
+    * {
+        vertical-align: middle;
+    }
+    .txt-red {
+        font-size: pxToRem(60px);
+        color: #f93535;
+        // text-decoration: underline;
+        margin: 0 pxToRem(10px);
+        // background-color: #fff;
+        line-height: pxToRem(60px);
+        animation: zoomText $duration * 6 linear both;
+    }
+    span {
+        margin-bottom: pxToRem(10px);
+        height: pxToRem(60px);
+        line-height: pxToRem(60px);
+        width: 100%;
+        // i {
+        //     vertical-align: middle;
+        // }
+    }
+    .txt-day {
+        // @include inline-background('../images/text/txt-day.png',
+        // 38px,
+        // 37px);
+        @extend .sprite-txt-day;
+    }
+}
+
+.pt3 {
+    top: percent(120, $designHeight);
+    .txt-p3 {
+        // @include inline-background('../images/text/txt-mom.png',
+        // 80px,
+        // 38px);
+        @extend .sprite-txt-mom;
+    }
+    .txt2-p3 {
+        @include inline-background('../images/text/p3-txt.png', 359px, 39px);
+    }
+    .txt3-p3 {
+        @include inline-background('../images/text/p3-txt2.png', 324px, 39px);
+    }
+}
+
+.pt4 {
+    top: percent(100, $designHeight);
+    .txt-p4 {
+        @include inline-background('../images/text/p4-txt.png', 482px, 37px);
+    }
+    .txt2-p4 {
+        @include inline-background('../images/text/p4-txt2.png', 242px, 39px);
+    }
+    .txt3-p4 {
+        @include inline-background('../images/text/p4-txt3.png', 487px, 39px);
+        // margin-top: pxToRem(20px);
+    }
+    .txt4-p4 {
+        // @include inline-background('../images/text/p4-txt4.png',
+        // 161px,
+        // 38px);
+        @extend .sprite-p4-txt4;
+    }
+    .txt5-p4 {
+        @include inline-background('../images/text/p4-txt5.png', 297px, 37px);
+    }
+}
+
+.pt5 {
+    top: percent(90, $designHeight);
+    .txt-p5 {
+        @include inline-background('../images/text/p5-txt.png', 177px, 37px);
+    }
+    .txt2-p5 {
+        // @include inline-background('../images/text/p5-txt2.png',
+        // 79px,
+        // 39px);
+        @extend .sprite-p5-txt2;
+    }
+    .txt3-p5 {
+        // @include inline-background('../images/text/p5-txt3.png',
+        // 61px,
+        // 39px);
+        @extend .sprite-p5-txt3;
+    }
+    .txt4-p5 {
+        // @include inline-background('../images/text/p5-txt4.png',
+        // 159px,
+        // 38px);
+        @extend .sprite-p5-txt4;
+    }
+    .txt5-p5 {
+        // @include inline-background('../images/text/p5-txt5.png',
+        // 56px,
+        // 38px);
+        @extend .sprite-p5-txt5;
+    }
+    .txt6-p5 {
+        @include inline-background('../images/text/p5-txt6.png', 445px, 37px);
+    }
+    .txt7-p5 {
+        @include inline-background('../images/text/p5-txt7.png', 528px, 37px);
+    }
+}
+
+.pt6 {
+    top: percent(125, $designHeight);
+    .txt-p6 {
+        @include inline-background('../images/text/p6-txt.png', 486px, 39px);
+    }
+    .txt2-p6 {
+        @include inline-background('../images/text/p6-txt2.png', 443px, 39px);
+    }
+    .txt3-p6 {
+        @include inline-background('../images/text/p6-txt3.png', 365px, 39px);
+    }
+    .txt4-p6 {
+        @include inline-background('../images/text/p6-txt4.png', 283px, 39px);
+    }
+    .txt5-p6 {
+        @include inline-background('../images/text/p6-txt5.png', 687px, 39px);
+    }
+}
+
+.pt7 {
+    top: percent(180, $designHeight);
+    .txt-p7 {
+        @include inline-background('../images/text/p7-txt.png', 607px, 39px);
+    }
+    .txt2-p7 {
+        @include inline-background('../images/text/p7-txt2.png', 566px, 39px);
+    }
+    .txt3-p7 {
+        @include inline-background('../images/text/p7-txt3.png', 445px, 39px);
+    }
+}
+
+.pt8 {
+    top: percent(180, $designHeight);
+    .txt-p8 {
+        @include inline-background('../images/text/p8-txt.png', 526px, 39px);
+    }
+    .txt2-p8 {
+        @include inline-background('../images/text/p8-txt2.png', 461px, 39px);
+    }
+}
+
+.icon-people {
+    height: percent(913, $designHeight) !important;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0);
+    background-position: bottom !important;
+}
+
+.icon-p3 {
+    @include background('../images/icon1-p3.png', 389px, 913px);
+    @extend .icon-people;
+}
+
+.abso-bg {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.pop-p3 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    display: none;
+    .mask-p3 {
+        background-color: rgba(0, 0, 0, .3);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 100;
+        animation: fadeOut $duration*3 linear both $duration * 3;
+    }
+    .icon-blur {
+        @include background('../images/icon2-p3.png', 389px, 913px);
+        @extend .icon-people;
+        opacity: .3;
+    }
+    .icon-photo-p3 {
+        @include background('../images/icon-photo-p3.png', 665px, 487px);
+        height: percent(487, $designHeight);
+        position: absolute;
+        left: 50%;
+        bottom: 27%;
+        background-position: bottom;
+        margin-left: pxToRem(-333px);
+        // transform: translate(-50%, 0);
+        z-index: 200;
+        animation: takePhoto $duration * 4 both $duration * 2;
+    }
+}
+
+// .icon-txt-p4 {
+//     background-image: url('../images/txt-p4.png');
+//     width: pxToRem(487px);
+//     height: percent(327, $designHeight);
+//     background-position: top;
+//     top: percent(100, $designHeight);
+//     @extend .abso-bg;
+// }
+.icon-floor-p4 {
+    @include background('../images/icon3-p4.png', 675px, 273px);
+    height: percent(273, $designHeight);
+    position: absolute;
+    left: 0;
+    bottom: percent(40, $designHeight);
+    background-position: bottom;
+}
+
+.icon-table-p4 {
+    @include background('../images/icon1-p4.png', 642px, 635px);
+    height: percent(635, $designHeight);
+    position: absolute;
+    left: pxToRem(10px);
+    bottom: percent(80, $designHeight);
+    background-position: bottom;
+    animation-delay: $duration;
+}
+
+.icon-mom-p4 {
+    @include background('../images/icon2-p4.png', 412px, 804px);
+    height: percent(804, $designHeight);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-position: right bottom;
+    animation-delay: $duration * 4;
+}
+
+// .icon-txt-p5 {
+//     @extend .abso-bg;
+//     background-image: url('../images/txt-p5.png');
+//     width: pxToRem(528px);
+//     height: percent(327, $designHeight);
+//     top: percent(90, $designHeight);
+//     background-position: top;
+// }
+.icon-photo-p5 {
+    @include background('../images/icon-photo-p5.png', 110px, 81px);
+    height: percent(81, $designHeight);
+    position: absolute;
+    top: percent(300, $designHeight);
+    right: pxToRem(50px);
+}
+
+.icon-tv-p5 {
+    // @extend .abso-bg;
+    // background-image: url('../images/icon-tv.png');
+    // width: pxToRem(703px);
+    @include background('../images/icon-tv.png', 703px, 399px);
+    position: absolute;
+    left: 50%;
+    margin-left: pxToRem(-351px);
+    height: percent(399, $designHeight);
+    top: percent(450, $designHeight);
+    background-position: top;
+    animation-duration: $duration*2;
+}
+
+.icon-sofa-p5 {
+    @extend .abso-bg;
+    background-image: url('../images/icon3-p5.png');
+    width: 100%;
+    height: percent(230, $designHeight);
+    background-position: bottom;
+    bottom: 0;
+    z-index: 20;
+}
+
+.icon-mom-p5 {
+    @include background('../images/icon1-p5.png',
+    260px,
+    286px);
+    height: percent(286, $designHeight);
+    background-position: bottom;
+    position: absolute;
+    left: pxToRem(180px);
+    bottom: percent(156, $designHeight);
+    z-index: 10;
+    animation-delay: $duration * 2;
+}
+
+.icon-child-p5 {
+    @include background('../images/icon2-p5.png',
+    263px,
+    246px);
+    height: percent(246, $designHeight);
+    background-position: bottom;
+    position: absolute;
+    right: pxToRem(120px);
+    bottom: percent(184, $designHeight);
+    z-index: 10;
+    animation-delay: $duration * 4;
+}
+
+// .icon-txt-p6 {
+//     @extend .abso-bg;
+//     background-image: url('../images/txt-p6.png');
+//     width: pxToRem(687px);
+//     height: percent(279, $designHeight);
+//     top: percent(125, $designHeight);
+//     animation-duration: $duration * 5;
+// }
+.icon-floor-p6 {
+    @include background('../images/icon2-p6.png',
+    297px,
+    249px);
+    height: percent(249, $designHeight);
+    position: absolute;
+    left: 0;
+    bottom: percent(30, $designHeight);
+    background-position: bottom;
+}
+
+.icon-table-p6 {
+    @include background('../images/icon3-p6.png',
+    245px,
+    591px);
+    height: percent(591, $designHeight);
+    position: absolute;
+    left: 0;
+    bottom: percent(70, $designHeight);
+    background-position: left bottom;
+}
+
+.icon-mom-p6 {
+    @include background('../images/icon1-p6.png',
+    511px,
+    749px);
+    height: percent(749, $designHeight);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-position: right bottom;
+    animation-delay: $duration;
+}
+
+// .icon-txt-p7 {
+//     @extend .abso-bg;
+//     background-image: url('../images/txt-p7.png');
+//     width: pxToRem(607px);
+//     height: percent(183, $designHeight);
+//     top: percent(180, $designHeight);
+//     background-position: top;
+//     animation-duration: $duration * 5;
+// }
+.icon-stair-p7 {
+    @include background('../images/icon2-p7.png',
+    558px,
+    519px);
+    height: percent(519, $designHeight);
+    background-position: left bottom;
+    position: absolute;
+    left: 0;
+    bottom: percent(100, $designHeight);
+}
+
+.icon-mom-p7 {
+    @include background('../images/icon1-p7.png',
+    417px,
+    742px);
+    height: percent(742, $designHeight);
+    background-position: right bottom;
+    position: absolute;
+    right: pxToRem(40px);
+    bottom: 0;
+    animation-delay: $duration;
+}
+
+// .icon-txt-p8 {
+//     @extend .abso-bg;
+//     background-image: url('../images/txt-p8.png');
+//     width: pxToRem(526px);
+//     height: percent(109, $designHeight);
+//     top: percent(160, $designHeight);
+//     background-position: top;
+//     animation-duration: $duration * 5;
+// }
+.icon-peo-p8 {
+    @extend .abso-bg;
+    background-image: url('../images/icon-p8.png');
+    width: pxToRem(587px);
+    height: percent(883, $designHeight);
+    bottom: 0;
+    background-position: bottom;
+    animation-delay: $duration;
+}
+
+.btns-p8 {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    bottom: percent(60, $designHeight);
+    &>.btn-red-light:last-child {
+        margin-top: pxToRem(-60px);
+    }
+}
+
+.btn-red-light {
+    @include background('../images/icon-btn.png',
+    485px,
+    189px);
+    text-align: center;
+    line-height: pxToRem(189px);
+    color: #fff;
+    font-size: pxToRem(36px);
+    margin: auto;
+}
+
+.i-container-p8 {
+    width: 100%;
+    position: absolute;
+    top: 47%;
+    font-size: 0;
+    .i-tips {
+        background-color: rgba(0, 0, 0, .52);
+        text-align: center;
+        width: pxToRem(550px);
+        height: pxToRem(64px);
+        line-height: pxToRem(64px);
+        font-size: pxToRem(30px);
+        color: #ffed78;
+        display: block;
+        margin: auto;
+        border-radius: pxToRem(60px);
+        position: relative;
+        margin-top: pxToRem(20px);
+        &:before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-width: pxToRem(16px);
+            border-style: solid;
+            border-color: transparent transparent rgba(0, 0, 0, .52) transparent;
+            // border: pxToRem(16px) solid rgba(0, 0, 0, .52);
+            position: absolute;
+            left: 50%;
+            top: pxToRem(-32px);
+            margin-left: pxToRem(-8px);
+        }
+    }
+}
+
+.tel-container {
+    width: pxToRem(520px);
+    height: pxToRem(86px);
+    background-color: #fff;
+    position: relative;
+    margin: auto;
+    // margin-top: pxToRem(20px);
+    &:before {
+        @include border('top',
+        $borderColor);
+    }
+    &:after {
+        @include border('bottom',
+        $borderColor);
+    }
+    .tel-inner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        &:before {
+            @include border('left',
+            $borderColor);
+        }
+        &:after {
+            @include border('right',
+            $borderColor);
+        }
+    }
+    .tel-p8 {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background-color: transparent;
+        color: #aaaaaa;
+        font-size: pxToRem(36px);
+        padding: 0 pxToRem(20px);
+        font-weight: 500;
+        line-height: pxToRem(86px);
+    }
+    
+}
+
+.loading-container {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 0;
+    .icon-loading {
+        @include background('../images/loading1.png',
+        87px,
+        137px);
+        // @extend .icon-loading;
+        // @extend .icon-loading1;
+        margin: auto;
+        animation: loading steps(8, start) $duration * 3 infinite;
+    }
+    .loading-txt {
+        width: 100%;
+        text-align: center;
+        font-size: pxToRem(36px);
+        line-height: pxToRem(36px);
+        color: #c15b22;
+        margin-top: pxToRem(20px);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.delay1 {
+    animation-delay: $duration;
+}
+
+.delay2 {
+    animation-delay: $duration * 2 !important;
+}
+
+.delay3 {
+    animation-delay: $duration * 3 !important;
+}
+
+.delay4 {
+    animation-delay: $duration * 4 !important;
+}
+
+.delay5 {
+    animation-delay: $duration * 5 !important;
+}
+
+.delay6 {
+    animation-delay: $duration * 6 !important;
+}
+.delay7 {
+    animation-delay: $duration * 7 !important;
+}
+
+.delay8 {
+    animation-delay: $duration * 8 !important;
+}
+
+
+@-webkit-keyframes loading {
+    0% {
+        background-image: url('../images/loading1.png');
+        transform: rotate(0);
+        -webkit-transfrom: rotate(0);
+    }
+    25% {
+        background-image: url('../images/loading2.png');
+        transform: rotate(0);
+        -webkit-transfrom: rotate(0);
+    }
+    50% {
+        background-image: url('../images/loading3.png');
+        transform: rotate(0);
+        -webkit-transfrom: rotate(0);
+    }
+    75% {
+        background-image: url('../images/loading4.png');
+        transform: rotate(0);
+        -webkit-transfrom: rotate(0);
+    }
+    100% {
+        background-image: url('../images/loading4.png');
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+    }
+}
+
+@keyframes loading {
+    0% {
+        background-image: url('../images/loading1.png');
+        transform: rotate(0);
+        -webkit-transfrom: rotate(0);
+    }
+    25% {
+        background-image: url('../images/loading2.png');
+        transform: rotate(0);
+        -webkit-transfrom: rotate(0);
+    }
+    50% {
+        background-image: url('../images/loading3.png');
+        transform: rotate(0);
+        -webkit-transfrom: rotate(0);
+    }
+    75% {
+        background-image: url('../images/loading4.png');
+        transform: rotate(0);
+        -webkit-transfrom: rotate(0);
+    }
+    100% {
+        background-image: url('../images/loading4.png');
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+    }
+}
+
+@-webkit-keyframes arrowUp {
+    from {
+        transform: translate(0, 0);
+        -webkit-transfrom: translate(0, 0);
+        opacity: 1;
+    }
+    to {
+        transform: translate(0, -100%);
+        -webkit-transfrom: translate(0, -100%);
+        opacity: 0;
+    }
+}
+
+@keyframes arrowUp {
+    from {
+        transform: translate(0, 0);
+        -webkit-transfrom: translate(0, 0);
+        opacity: 1;
+    }
+    to {
+        transform: translate(0, -100%);
+        -webkit-transfrom: translate(0, -100%);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes takePhoto {
+    // 0% {
+    //  opacity: 0;
+    //  transform: scale(1);
+    //  -webkit-transform: scale(1);
+    // }
+    40% {
+        opacity: 1;
+        -webkit-transform: scale(.8) translate(0, 60px);
+        transform: scale(.8) translate(0, 60px);
+        -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+        animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    }
+    to {
+        opacity: 0;
+        -webkit-transform: scale(.1) translate(1300px, -2000px);
+        transform: scale(.1) translate(1300px, -2000px);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+    }
+}
+
+@keyframes takePhoto {
+    // 0% {
+    //  opacity: 0;
+    //  transform: scale(1);
+    //  -webkit-transform: scale(1);
+    // }
+    40% {
+        opacity: 1;
+        -webkit-transform: scale(.8) translate(0, 60px);
+        transform: scale(.8) translate(0, 60px);
+        -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+        animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    }
+    to {
+        opacity: 0;
+        -webkit-transform: scale(.1) translate(1300px, -2000px);
+        transform: scale(.1) translate(1300px, -2000px);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+    }
+}
+
+@-webkit-keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes rotateIcon {
+    from {
+        transform: rotate(0);
+        -webkit-transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes zoomText {
+    0% {
+        opacity: 0
+    }
+    50% {
+        opacity: 1;
+    }
+    80% {
+        transform: scale(1.15);
+        -webkit-transform: scale(1.15);
+    }
+    100% {
+        transform: scale(.95);
+        -webkit-transform: scale(.95);
+    }
+}
+@keyframes zoomText {
+    0% {
+        opacity: 0
+    }
+    50% {
+        opacity: 1;
+    }
+    80% {
+        transform: scale(1.15);
+        -webkit-transform: scale(1.15);
+    }
+    100% {
+        transform: scale(.95);
+        -webkit-transform: scale(.95);
+    }
+}

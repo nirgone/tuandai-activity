@@ -1,0 +1,256 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+.icon-txt-lot {
+    @include background('../images/txt-p9.png', 526px, 179px);
+    height: percent(179, $designHeight);
+    background-position: top;
+    position: absolute;
+    left: 50%;
+    top: percent(90, $designHeight);
+    transform: translate(-50%, 0);
+}
+
+.icon-hand-lot {
+    @include background('../images/icon1-p9.png', 750px, 228px);
+    height: percent(228, $designHeight);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-position: bottom;
+    animation-origin: 50% 100%;
+    animation: slideInUp $duration linear both;
+}
+
+.icon-gift-lot {
+    @include background('../images/icon2-p9.png', 435px, 339px);
+    height: percent(339, $designHeight);
+    position: absolute;
+    left: 50%;
+    bottom: percent(270, $designHeight);
+    transform: translate(-50%, 0);
+    background-position: bottom;
+    animation-delay: $duration;
+}
+
+.bg-rose {
+    background-image: url('../images/icon3-p9.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    text-align: center;
+    color: #fff;
+}
+
+.rose-small {
+    width: pxToRem(128px);
+    height: pxToRem(128px);
+    bottom: percent(500, $designHeight);
+    font-size: pxToRem(26px);
+    line-height: pxToRem(128px);
+}
+
+.rose-big {
+    width: pxToRem(154px);
+    height: pxToRem(154px);
+    line-height: pxToRem(154px);
+    font-size: pxToRem(30px);
+    bottom: percent(630, $designHeight);
+}
+
+.icon-redpacket {
+    @extend .rose-small;
+    left: pxToRem(50px);
+    animation-delay: $duration * 2;
+}
+
+.icon-jd {
+    @extend .rose-small;
+    right: pxToRem(50px);
+    animation-delay: $duration * 5;
+}
+
+.icon-zl {
+    @extend .rose-big;
+    left: pxToRem(188px);
+    animation-delay: $duration * 3;
+}
+
+.icon-anmo {
+    @extend .rose-big;
+    right: pxToRem(188px);
+    animation-delay: $duration * 4;
+}
+
+.btn-lot {
+    @include background('../images/btn-lot.png',
+    457px,
+    135px);
+    line-height: pxToRem(110px);
+    position: absolute;
+    left: 50%;
+    bottom: percent(60, $designHeight);
+    transform: translate(-50%, 0);
+    font-size: pxToRem(48px);
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    background-size: 100% 100%;
+}
+.g-share {
+	width: pxToRem(537px);
+	height: pxToRem(149px);
+	bottom: percent(90, $designHeight);
+	line-height: pxToRem(124px);
+}
+.page-gift {
+    padding-top: pxToRem(120px);
+    text-align: center;
+    color: #7f4726;
+    font-size: 0;
+}
+
+.g-title {
+    width: 100%;
+    font-size: pxToRem(60px);
+    line-height: pxToRem(60px);
+    // color: #7f4726;
+    font-weight: bold;
+}
+
+.gift-container {
+    @include background('../images/icon-light.png',
+    720px,
+    597px);
+    height: percent(597, $designHeight);
+    margin: auto;
+    margin-top: pxToRem(50px);
+    position: relative;
+    font-size: 0;
+    .icon-gift {
+        position: absolute;
+        left: 50%;
+        // bottom: 26%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+    }
+    .g-zuliao {
+        background-image: url('../images/icon-zuliao.png');
+        width: pxToRem(442px);
+        height: percent(233, 597);
+    }
+    .g-jd {
+        background-image: url('../images/icon-jd.png');
+        width: pxToRem(433px);
+        height: percent(293, 597);
+    }
+    .g-youku {
+        background-image: url('../images/icon-youku.png');
+        width: pxToRem(421px);
+        height: percent(246, 597);
+    }
+    .g-anmo {
+        background-image: url('../images/icon-anmo.png');
+        width: pxToRem(447px);
+        height: percent(315, 597);
+    }
+    .g-tuanbi {
+        background-image: url('../images/icon-tuanbi.png');
+        width: pxToRem(262px);
+        height: percent(287, 597);
+    }
+    .g-redpacket {
+        background-image: url('../images/icon-redpacket.png');
+        width: pxToRem(521px);
+        height: percent(346, 597);
+    }
+    .g-txt {
+        width: 100%;
+        font-size: pxToRem(40px);
+        // margin-top: pxToRem(50px);
+    }
+    .g-txt-red {
+        color: $colorRed;
+    }
+    .g-txt2 {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        font-size: pxToRem(30px);
+        line-height: pxToRem(48px);
+    }
+}
+.g-check {
+	// width: 100%;
+	color: $colorRed;
+	text-decoration: underline;
+	font-size: pxToRem(36px);
+	margin-top: pxToRem(40px);
+}
+.g-wx-share {
+	width: pxToRem(260px);
+	height: pxToRem(260px);
+	border-radius: pxToRem(260px);
+	opacity: .75;
+	background-color: #f9b186;
+	position: absolute;
+	right: pxToRem(-130px);
+	top: pxToRem(-130px);
+	z-index: 10;
+	animation-duration: $duration * 3 !important;
+	display: none;
+	&:before {
+		content: '';
+		width: pxToRem(190px);
+		height: pxToRem(190px);
+		border-radius: pxToRem(190px);
+		opacity: .75;
+		background-color: #f48a64;
+		position: absolute;
+		right: pxToRem(35px);
+		top: pxToRem(35px);
+		z-index: 11;
+	}
+	&:after {
+		content: '';
+		width: pxToRem(140px);
+		height: pxToRem(140px);
+		border-radius: pxToRem(140px);
+		background-color: #f1693e;
+		position: absolute;
+		right: pxToRem(60px);
+		top: pxToRem(60px);
+		z-index: 12;
+		opacity: .75;
+	}
+}
+
+@-webkit-keyframes slideInUp {
+    from {
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+        visibility: visible;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+        visibility: visible;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>母亲节特辑</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/index.css">
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="content">
+        <div class="page page-main">
+            <i class="icon-logo"></i>
+            <i class="icon-rule"></i>
+            <i class="icon-title-p1 fadeIn"></i>
+            <i class="icon-hourglass anit-hg">
+                <i class="txt-p1 fadeIn"></i>
+            </i>
+            <div class="container-bottom">
+                <i class="icon-train run"></i>
+                <div class="btn-p1 btn-start breath-anit">启动时间计算器</div>
+                <i class="txt-check">查看奖品</i>
+            </div>
+        </div>
+    </div>
+    <div class="mask">
+        <div class="rule-content">
+            <span class="rule-title">活动规则</span>
+            <span>【活动时间】5月12日-5月14日</span>
+            <span>【参与对象】团贷网新老用户</span>
+            <span>【活动规则】活动期间，每位用户均有一次抽奖机会为妈妈赢取一份节日礼物！</span>
+            <span>【奖品类型】足疗机、按摩椅垫、京东卡、优酷卡、红包及团币等</span>
+            <!-- <span>母亲节（Mother's Day），是一个感谢母亲的节日，这个节日最早出现在古希腊；而现代的母亲节起源于美国，是每年5月的第二个星期日。母亲们在这一天通常会收到礼物，康乃馨被视为献给母亲的花，而中国的母亲花是萱草花，又叫忘忧草</span> -->
+            <i class="icon-close"></i>
+        </div>
+        <div class="masker"></div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<!-- <script src="../js/index.js" type="text/javascript" charset="utf-8"></script> -->
+<script type="text/javascript">
+(function() {
+    FastClick.attach(document.body);
+    $(".icon-rule").on('click', function() {
+        $(".mask").show();
+    });
+    $(".masker, .icon-close").on('click', function() {
+        $(".mask").hide();
+    });
+    $(".btn-start").on('click', function() {
+        window.location.href = './page2.html';
+    });
+    //查看奖品
+    var getGift = false; //是否已领过奖品
+    $("body").on('click', '.txt-check', function() {
+        if (getGift) {
+            location.href = './gift.html';
+        } else {
+            location.href = './lottery.html';
+        }
+    });
+})();
+</script>
+
+</html>

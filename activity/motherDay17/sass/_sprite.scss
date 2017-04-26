@@ -1,0 +1,140 @@
+@charset "UTF-8";
+@import "../../../sass/func";
+
+/* 小图标 */
+
+.sprite-icons {
+    display: inline-block;
+    background-image: url(../images/icons/icon.png);
+    background-size: pxToRem(311px) pxToRem(212px);
+    background-repeat: no-repeat;
+}
+
+.sprite-icon-close {
+    @extend .sprite-icons;
+    background-position: pxToRem(-171px) pxToRem(0px);
+    width: pxToRem(69px);
+    height: pxToRem(69px);
+}
+
+.sprite-icon-paused {
+    @extend .sprite-icons;
+    background-position: pxToRem(-78px) pxToRem(-96px);
+    width: pxToRem(68px);
+    height: pxToRem(68px);
+}
+
+.sprite-icon-play {
+    @extend .sprite-icons;
+    background-position: pxToRem(0px) pxToRem(-96px);
+    width: pxToRem(68px);
+    height: pxToRem(68px);
+}
+
+.sprite-p4-txt4 {
+    @extend .sprite-icons;
+    background-position: pxToRem(0px) pxToRem(0px);
+    width: pxToRem(161px);
+    height: pxToRem(38px);
+}
+
+.sprite-p5-txt2 {
+    @extend .sprite-icons;
+    background-position: pxToRem(0px) pxToRem(-174px);
+    width: pxToRem(78px);
+    height: pxToRem(38px);
+}
+
+.sprite-p5-txt3 {
+    @extend .sprite-icons;
+    background-position: pxToRem(-250px) pxToRem(0px);
+    width: pxToRem(61px);
+    height: pxToRem(39px);
+}
+
+.sprite-p5-txt4 {
+    @extend .sprite-icons;
+    background-position: pxToRem(0px) pxToRem(-48px);
+    width: pxToRem(159px);
+    height: pxToRem(38px);
+}
+
+.sprite-p5-txt5 {
+    @extend .sprite-icons;
+    background-position: pxToRem(-250px) pxToRem(-49px);
+    width: pxToRem(56px);
+    height: pxToRem(38px);
+}
+
+.sprite-txt-ci {
+    @extend .sprite-icons;
+    background-position: pxToRem(-250px) pxToRem(-144px);
+    width: pxToRem(35px);
+    height: pxToRem(34px);
+}
+
+.sprite-txt-day {
+    @extend .sprite-icons;
+    background-position: pxToRem(-250px) pxToRem(-97px);
+    width: pxToRem(38px);
+    height: pxToRem(37px);
+}
+
+.sprite-txt-mom {
+    @extend .sprite-icons;
+    background-position: pxToRem(-156px) pxToRem(-96px);
+    width: pxToRem(80px);
+    height: pxToRem(38px);
+}
+
+
+/* page2 text sprite */
+
+.sprite-text {
+    display: inline-block;
+    background-image: url(../images/text.png);
+    background-size: pxToRem(223px) pxToRem(170px);
+    background-repeat: no-repeat;
+}
+
+.sprite-p2-txt {
+    @extend .sprite-text;
+    background-position: pxToRem(0px) pxToRem(-135px);
+    width: pxToRem(109px);
+    height: pxToRem(35px);
+}
+
+.sprite-p2-txt2 {
+    @extend .sprite-text;
+    background-position: pxToRem(0px) pxToRem(-45px);
+    width: pxToRem(146px);
+    height: pxToRem(35px);
+}
+
+.sprite-p2-txt3 {
+    @extend .sprite-text;
+    background-position: pxToRem(0px) pxToRem(0px);
+    width: pxToRem(182px);
+    height: pxToRem(35px);
+}
+
+.sprite-p2-txt4 {
+    @extend .sprite-text;
+    background-position: pxToRem(0px) pxToRem(-90px);
+    width: pxToRem(146px);
+    height: pxToRem(35px);
+}
+
+.sprite-txt-age {
+    @extend .sprite-text;
+    background-position: pxToRem(-192px) pxToRem(0px);
+    width: pxToRem(35px);
+    height: pxToRem(34px);
+}
+
+.sprite-txt-year {
+    @extend .sprite-text;
+    background-position: pxToRem(-119px) pxToRem(-135px);
+    width: pxToRem(35px);
+    height: pxToRem(35px);
+}
