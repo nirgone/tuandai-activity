@@ -12,6 +12,28 @@
 
 @media screen and (max-height: 540px) and (min-width:321px) {
     $ratio: 0.85;
+    .i-wrapper-p2 {
+    &>p {
+      margin-top: pxToRem(30px) !important;
+    }
+   }
+   .pt-container {
+    &>span {
+      margin-bottom: 0 !important;
+    }
+   }
+   .pt5 {
+    top: pxToRem(30px) !important;
+   }
+   .pt6 {
+    top: pxToRem(80px) !important;
+   }
+   .pt7 {
+    top: pxToRem(100px) !important;
+   }
+   .pt8 {
+    top: pxToRem(90px) !important;
+   }
 
 }
 //* -----------meizu  mx3----------------- */
@@ -30,6 +52,28 @@
 
 @media screen and (max-width:320px) and (max-height:416px) {
    $ratio: 0.85;
+   .i-wrapper-p2 {
+   	&>p {
+   		margin-top: pxToRem(30px) !important;
+   	}
+   }
+   .pt-container {
+   	&>span {
+   		margin-bottom: 0 !important;
+   	}
+   }
+   .pt5 {
+   	top: pxToRem(30px) !important;
+   }
+   .pt6 {
+    top: pxToRem(80px) !important;
+   }
+   .pt7 {
+    top: pxToRem(100px) !important;
+   }
+   .pt8 {
+    top: pxToRem(90px) !important;
+   }
 
 }
 

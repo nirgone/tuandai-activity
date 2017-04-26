@@ -1,0 +1,36 @@
+.icon-loading1 {
+  display: block;
+  background-image: url(../images/loading/loading.png);
+  background-size:pxToRem(378px) pxToRem(137px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(87px);
+  height: pxToRem(137px);
+}
+.icon-loading2 {
+  display: block;
+  background-image: url(../images/loading/loading.png);
+  background-size:pxToRem(378px) pxToRem(137px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-97px) pxToRem(0px);
+  width: pxToRem(87px);
+  height: pxToRem(137px);
+}
+.icon-loading3 {
+  display: block;
+  background-image: url(../images/loading/loading.png);
+  background-size:pxToRem(378px) pxToRem(137px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-194px) pxToRem(0px);
+  width: pxToRem(87px);
+  height: pxToRem(137px);
+}
+.icon-loading4 {
+  display: block;
+  background-image: url(../images/loading/loading.png);
+  background-size:pxToRem(378px) pxToRem(137px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-291px) pxToRem(0px);
+  width: pxToRem(87px);
+  height: pxToRem(137px);
+}
