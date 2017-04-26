@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>我要报名</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/join.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="content ">
+        <div class="page">
+            <ul class="signup">
+                <span class="j-txt1">团粉会报名截至11月16日24:00，参与名额<br>有限，被选中的团粉我们会尽快联系您！</span>
+                <li class="s-row">
+                    <div class="r-txt1">活动名称：</div>
+                    <div class="r-txt2">
+                        团粉会启动仪式暨小π周边首发会
+                    </div>
+                </li>
+                <li class="s-row">
+                    <div class="r-txt1">活动地点：</div>
+                    <div class="r-txt2">
+                        东莞市南城巴洛克咖啡
+                    </div>
+                </li>
+                <li class="s-row">
+                    <div class="r-txt1">活动时间：</div>
+                    <div class="r-txt2">
+                        2016年11月19日13:00
+                    </div>
+                </li>
+                <li class="s-row">
+                    <div class="r-txt1">报名须知：</div>
+                    <div class="r-txt2">
+                        仅供报名用户参加，不支持携带亲友
+                    </div>
+                </li>
+                <li class="s-row w-row">
+                    <div>姓名</div>
+                    <div>
+                        <input type="text" name="name" id="myName" placeholder="请输入您的真实姓名">
+                    </div>
+                </li>
+                <li class="s-row w-row">
+                    <div>手机号码</div>
+                    <div>
+                        <input type="tel" name="phone" id="myPhone" placeholder="请输入您在团贷网的注册手机号">
+                    </div>
+                </li>
+                <li class="s-row w-row">
+                    <div>竞选职位</div>
+                    <div>
+                        <select name="size" id="position" class="needsClick">
+                            <option value="职位1" selected>职位1</option>
+                            <option value="职位2">职位2</option>
+                            <option value="职位3">职位3</option>
+                            <option value="职位4">职位4</option>
+                        </select>
+                    </div>
+                </li>
+                <li class="s-row l-row">
+                    <div class="l-txt1">报名微马活动</div>
+                    <div class="l-txt2">
+                        <div>
+                            <input type="radio" name="radiobutton" value="yes" checked> 是</div>
+                        <div>
+                            <input type="radio" name="radiobutton" value="no"> 否</div>
+                    </div>
+                </li>
+                <span class="j-txt2">温馨提示：微马活动报名截至11月13日24:00哦~</span>
+                <div class="wm-list">
+                    <li class="s-row w-row">
+                        <div>身份证号</div>
+                        <div>
+                            <input type="text" name="idNo" id="myId" placeholder="请输入您的身份证号码">
+                        </div>
+                    </li>
+                    <li class="s-row w-row">
+                        <div>衣服尺码</div>
+                        <div>
+                            <select name="size" id="mySize" class="needsClick">
+                                <option value="XS码">XS码</option>
+                                <option value="S码">S码</option>
+                                <option value="M码">M码</option>
+                                <option value="L码">L码</option>
+                                <option value="XL码">XL码</option>
+                                <option value="XXL码">XXL码</option>
+                                <option value="XXXL码" selected="">XXXL码</option>
+                            </select>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+            <div class="wm-list">
+                <div class="btn-add btn">可再添加
+                    <font id="num">2</font>人</div>
+                <div class="add-cont">
+                </div>
+            </div>
+            <div class="d-btn btn" id="submit">提交</div>
+            <div class="wm-list">
+                <span class="c-txt"><i class="icon-chedked"></i>我已阅读报名须知并了解参加微马相关注意事项</span>
+                <div class="module-cont background-bottom">
+                    <div class="title"><span>报名须知</span></div>
+                    <div class="txt-green">
+                        <span>1、活动名额有限，先到先得；请填写完整、准确信息；</span>
+                        <span>2、报名信息一经提交则无法更改，请确认无误后再提交；</span>
+                        <span>3、报名规则解释权归团贷网所有。</span>
+                        <!-- <span>5、报名规则解释权归团贷网所有。</span> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mask">
+        <div class="popup">
+            <div class="pop-title">
+                提交成功
+            </div>
+            <div class="pop-msg">
+                报名信息提交成功后，请保持手机信息畅通，确保工作人员能够第一时间联系您领取装备包！
+            </div>
+            <div class="pop-btn">我知道了</div>
+            <i class="icon-close"></i>
+        </div>
+        <div class="masker"></div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/join.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+</script>
+
+</html>
