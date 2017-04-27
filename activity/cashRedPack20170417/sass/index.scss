@@ -280,7 +280,7 @@ $grayColor:#808080;
         margin:pxToRem(34px) 0 pxToRem(80px);
         color:$orangeColor;
         &:after{
-            width:pxToRem(12px);
+            width:pxToRem(16px);
             height:pxToRem(23px);
             content: '';
             @extend .icon-enter;
@@ -486,6 +486,7 @@ $grayColor:#808080;
     .th {
         // height: 45px;
         height: pxToRem(90px);
+        line-height: pxToRem(90px);
         background-color: #fcfaf8;
         // font-size: 15px;
         font-size: pxToRem(28px);
@@ -784,7 +785,7 @@ $grayColor:#808080;
 .icon-enter {
  @extend .sprite;
   background-position: pxToRem(-134px) pxToRem(-43px);
-  width: pxToRem(12px);
+  width: pxToRem(16px);
   height: pxToRem(23px);
 }
 .icon-index-line {

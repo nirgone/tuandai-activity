@@ -232,10 +232,12 @@
         color: #ffe1a2;
         font-size: pxToRem(30px);
         text-align: center;
+        line-height: normal;
         @at-root .username {
             @include ellipsis();
             display: inline-block;
             max-width: pxToRem(250px);
+            line-height: normal;
         }
     }
     .btn-open {
@@ -307,6 +309,7 @@
     p {
         font-size: pxToRem(30px);
         color: #765454;
+        line-height: normal;
     }
     .money {
         &:before {
