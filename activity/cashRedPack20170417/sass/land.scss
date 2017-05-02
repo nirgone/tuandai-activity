@@ -73,11 +73,12 @@
     left: 0;
     bottom: 0;
     // @extend .icon-redface;
-    background: url(../images/bg-redface.png) repeat center, linear-gradient(to bottom, #ff1c67 , #e52841);
+    // background: url(../images/bg-redface.png) repeat center, linear-gradient(to bottom, #f41e46 , #fc1f4e);
+    background: linear-gradient(to bottom, #f41e46 , #fc1f4e);
     width: pxToRem(750px);
     height: pxToRem(758px);
     min-height: percent(758);
-    background-size: pxToRem(64px) pxToRem(64px), 100% 100%;
+    background-size: 100% 100%;
     z-index: 2;
     .icon-text,
     .icon-logo {
@@ -232,12 +233,12 @@
         color: #ffe1a2;
         font-size: pxToRem(30px);
         text-align: center;
-        line-height: normal;
+        line-height: pxToRem(50px);
         @at-root .username {
             @include ellipsis();
             display: inline-block;
             max-width: pxToRem(250px);
-            line-height: normal;
+            line-height: pxToRem(50px);
         }
     }
     .btn-open {
@@ -309,7 +310,7 @@
     p {
         font-size: pxToRem(30px);
         color: #765454;
-        line-height: normal;
+        line-height: pxToRem(50px);
     }
     .money {
         &:before {
