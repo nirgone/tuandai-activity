@@ -58,7 +58,7 @@
     FastClick.attach(document.body);
     var isTimeOut = false;//是否调查已结束
     var isFinished = false; //是否已填写问卷
-    var isLogin = false; //是否已登录
+    var isLogin = true; //是否已登录
     $("#btn-rules").on('click', function() {
         $("#rule_sec").show();
     });
@@ -87,7 +87,6 @@
                 return;
             }
         }
-        // $(".icon-envelope-bottom").removeClass('slideInUp').addClass('slideOutDown');
         setTimeout(function() {
             window.location.href = './questions.html';
 
