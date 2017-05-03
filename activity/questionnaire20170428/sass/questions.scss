@@ -1,0 +1,138 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+// 公共样式
+$defaultColor:#fff;
+$darkRedColor:#330508;
+.abs{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.page-questions{
+    background: url('../images/questions/bg.png') no-repeat bottom, url('../images/questions/bg-line.png') no-repeat top,#544aab;
+    background-size: 100%;
+}
+.questions-con.hide,.get-con.hide{
+    display: none;
+}
+.btn-common{
+    @include background('../images/btn-bg.png', 532px, 94px);
+    text-align: center;
+    line-height: pxToRem(94px);
+    color:$defaultColor;
+    font-size: pxToRem(53px);
+}
+
+// 调查问卷页面
+.questions-con{
+    padding-top: pxToRem(41px);
+
+}
+.questions-sec{
+    position: relative;
+    @include background('../images/cat-bg.png', 695px, 913px);
+    margin: 0 auto;
+    padding:pxToRem(250px) pxToRem(81px) 0;
+    overflow: hidden;
+}
+.questions-scroll{
+    height: pxToRem(612px);
+    overflow: auto;
+    color:$darkRedColor;
+    font-size: 0;
+}
+.questions-num,.question{
+    display: inline-block;
+    font-size: pxToRem(30px);
+    font-weight: bold;
+    line-height: pxToRem(50px);
+}
+.questions-num{
+    // width: 14%;
+    font-size: pxToRem(40px);
+    color:#ff4753;
+    // margin-right: pxToRem(16px);
+    vertical-align: top;
+}
+.question{
+    // width: 85%;
+    margin-bottom: pxToRem(48px);
+}
+.option-list{
+    display: block;
+    font-size: pxToRem(30px);
+    li{
+        display: block;
+        line-height: pxToRem(40px);
+        margin-bottom: pxToRem(48px);
+        div{
+            display: inline-block;
+        }
+    }
+    .option-radio{
+        width: 10%;
+    }
+    input[type='radio']{
+        display: none;
+    }
+    .icon-radio{
+        display: inline-block;
+        width: pxToRem(30px);
+        height: pxToRem(30px);
+        border: pxToRem(4px) solid $darkRedColor;
+        border-radius: 50%;
+        vertical-align: middle;
+    }
+    input[type='radio']:checked+.icon-radio {
+        // border:none;
+        background:url(../images/questions/radio-checked.png) center no-repeat;
+        background-size: 100%;
+    }
+    .option-txt{
+        width: 88%;
+        vertical-align: text-top;
+        display: inline-block;
+    }
+}
+
+.btn-next{
+    @extend .btn-common;
+    margin: pxToRem(47px) auto pxToRem(34px);
+}
+
+.btn-pre{
+    text-align: center;
+    font-size: pxToRem(30px)
+}
+
+// 查收团币页面
+.get-con{
+    padding-top: pxToRem(59px)
+}
+.get-sec{
+    @include background('../images/questions/get-bg.png', 695px, 857px);
+    margin: 0 auto;
+    padding-top: pxToRem(583px);
+}
+.get-info{
+    color:$darkRedColor;
+    text-align: center;
+    line-height: pxToRem(70px);
+    font-size: pxToRem(40px);
+    .title{
+        line-height: pxToRem(80px);
+        font-size: pxToRem(47px);
+    }
+    .coin-num{
+        color:#ff4753;
+    }
+}
+.btn-coin{
+    @extend .btn-common;
+    margin: pxToRem(82px) auto 0;
+}
