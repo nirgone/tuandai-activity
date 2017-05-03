@@ -13,7 +13,6 @@
 @media screen and (max-height: 560px) and (min-width:320px) {
     $ratio: 0.9;
 	.questions-con,.get-con,.index-title,.cat,.btn-join{
-		// padding-top: 0 !important; 
         transform: scale($ratio);
         transform-origin:center 0;
 	}

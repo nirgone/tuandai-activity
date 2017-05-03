@@ -56,8 +56,9 @@
 <script type="text/javascript">
 (function() {
     FastClick.attach(document.body);
+    var isTimeOut = false;//是否调查已结束
     var isFinished = false; //是否已填写问卷
-    var isLogin = true; //是否已登录
+    var isLogin = false; //是否已登录
     $("#btn-rules").on('click', function() {
         $("#rule_sec").show();
     });
@@ -65,22 +66,26 @@
         $("#rule_sec").hide();
     });
     $("#btn-join").on('click', function() {
-        if (isFinished) {
-            Util.message('您已经填写过该问卷了');
+        if (isTimeOut){
+            Util.message('调查已结束，<br>感谢您的支持！');
             return;
-        }
-        if (!isLogin) {
-            Util.message({
-                content: '为确保您的奖励顺利发放<br>请先登录您的团贷网账户！',
-                callback: function() {
-                    if (Jsbridge.isNewVersion()) {
-                        Jsbridge.toAppLogin();
-                    } else {
-                        //web版登录
+        }else {
+            if (isFinished) {
+                Util.message('您已经填写过该问卷了');
+                return;
+            }else if (!isLogin) {
+                Util.message({
+                    content: '为确保您的奖励顺利发放,<br>请先登录！',
+                    callback: function() {
+                        if (Jsbridge.isNewVersion()) {
+                            Jsbridge.toAppLogin();
+                        } else {
+                            //web版登录
+                        }
                     }
-                }
-            });
-            return;
+                });
+                return;
+            }
         }
         // $(".icon-envelope-bottom").removeClass('slideInUp').addClass('slideOutDown');
         setTimeout(function() {

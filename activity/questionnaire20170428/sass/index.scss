@@ -124,4 +124,21 @@ $darkRedColor:#582d19;
     }
 }
 
-
+// 弹窗
+.alert-wrapper .pop-content{
+    @include background('../images/pop/pop-bg.png', 508px, 467px);
+    padding: pxToRem(143px) 0;
+    color:#330508;
+    p{
+        font-size: pxToRem(40px);
+    }
+}
+.btn-common-y{
+    @include background('../images/pop/confirm-bg.png', 397px, 94px);
+    position: absolute;
+    bottom: pxToRem(68px);
+    left: 0;
+    right: 0;
+    color: $defaultColor;
+    line-height: pxToRem(94px);
+}
