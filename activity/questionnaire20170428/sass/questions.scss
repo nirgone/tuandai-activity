@@ -68,14 +68,13 @@ $darkRedColor:#330508;
     font-size: pxToRem(30px);
     li{
         display: block;
-        line-height: pxToRem(40px);
         margin-bottom: pxToRem(48px);
         div{
             display: inline-block;
         }
     }
     .option-radio{
-        width: 10%;
+        width: 8%;
     }
     input[type='radio']{
         display: none;
@@ -85,18 +84,30 @@ $darkRedColor:#330508;
         width: pxToRem(30px);
         height: pxToRem(30px);
         border: pxToRem(4px) solid $darkRedColor;
+        // line-height: pxToRem(38px);
         border-radius: 50%;
         vertical-align: middle;
     }
     input[type='radio']:checked+.icon-radio {
-        // border:none;
         background:url(../images/questions/radio-checked.png) center no-repeat;
         background-size: 100%;
     }
     .option-txt{
-        width: 88%;
-        vertical-align: text-top;
         display: inline-block;
+        width: 88%;
+        vertical-align: top;
+        font-size: pxToRem(26px);
+        line-height: pxToRem(38px);
+        input[type="text"]{
+            width: pxToRem(96px);
+            height: 100%;
+            border:none;
+            border-bottom: 1px solid $darkRedColor;
+            margin-left: pxToRem(5px);
+            font-size: pxToRem(26px);
+            color:$darkRedColor;
+            line-height: pxToRem(38px);
+        }
     }
 }
 

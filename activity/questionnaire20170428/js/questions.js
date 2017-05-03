@@ -4,25 +4,29 @@
 
 	// 调查问卷问题初始化
 	function questionInit(){
-		var dom = '';
+		var questions_scroll = '';
 		questionList.forEach(function(item,index){
-			var optionsDom = '';
+			var options_li = '';
 			item.options.forEach(function(opt, i) {
 				var _id = '' + index + i;
-				optionsDom += '<li>'+
+				var txt_input = '';
+				if (opt.hasInput) {
+					txt_input = '<input type="text" />'
+				}
+				options_li += '<li>'+
                                 '<div class="option-radio">'+
                                     '<input id="'+ _id +'" type="radio" name="'+ index +'">'+
                                     '<label class="icon-radio" for="'+ _id +'"></label>'+
                                 '</div>'+
-                                '<label class="option-txt" for="'+ _id +'">'+ opt.text +'</label>'+
+                                '<label class="option-txt" for="'+ _id +'">'+ opt.text + txt_input +'</label>'+
                             '</li>';
 			})
-			dom += '<div class="questions-scroll">'+
+			questions_scroll += '<div class="questions-scroll">'+
                         '<p class="question"><span class="questions-num">0'+ (index+1) +'.</span> '+ item.question +'</p>'+
-                        '<ul class="option-list">'+ optionsDom +'</ul>'+
+                        '<ul class="option-list">'+ options_li +'</ul>'+
                     '</div>';
 		})
-		$("#questions-sec").append(dom);
+		$("#questions-sec").append(questions_scroll);
 		questionShow(0);
 	}
 	// 显示第n题

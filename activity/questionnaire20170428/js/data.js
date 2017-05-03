@@ -42,7 +42,7 @@
 		limit: 1,
 		recomment: ''
 	},  {
-		question: '03. 目前你在团贷网投资的资金范围：',
+		question: '目前你在团贷网投资的资金范围：',
 		options: [{
 			id: 0,
 			text: '5万元以下'
@@ -67,7 +67,7 @@
 		id: 2,
 		recomment: ''
 	}, {
-		question: '04. 您是否了解或关注团贷网5月6日降息的消息？',
+		question: '您是否了解或关注团贷网5月6日降息的消息？',
 		options: [{
 			id: 0,
 			text: '了解，在降息前已经知道',
@@ -193,7 +193,8 @@
 			text: '学生'
 		}, {
 			id: 10,
-			text: '其他________'
+			text: '其他',
+			hasInput: true
 		}],
 		id: 8,
 		limit: 1,
