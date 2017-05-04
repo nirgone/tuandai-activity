@@ -72,7 +72,7 @@
 			var bAge = +data.mother - (+data.myAge) - 1;
 			var day = (+data.myAge - (+data.leave)) * 365;
 			var comDay = (80 - (+data.mother)) * (+data.back);
-			var times = (80 - (data.mother)) * 3;
+			var times = comDay * 3;
 			var leftTimes = 80 - (data.mother);
 			$("#bAge").html(bAge);
 			$("#day").html(day);
