@@ -53,9 +53,9 @@
 
 .txt-p1 {
     @include background('../images/txt-p1.png',
-    625px,
-    306px);
-    height: percent(306, 573);
+    657px,
+    308px);
+    height: percent(308, 573);
     position: absolute;
     left: 50%;
     top: 50%;
@@ -278,6 +278,7 @@
     // @include inline-background('../images/text/p2-txt4.png', 146px, 35px);
     @extend .sprite-p2-txt4;
 }
+
 
 @-webkit-keyframes runTrain {
     0% {

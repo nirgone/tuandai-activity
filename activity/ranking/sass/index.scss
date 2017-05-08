@@ -575,7 +575,7 @@
 }
 
 
-/* .lm-container {
+.lm-container {
     width: 100%;
     height: percent(640, $designHeight);
     position: relative;
@@ -603,8 +603,19 @@
         transform: translateX(-50%);
         z-index: 20;
     }
+    .icon-slide {
+        position: absolute;
+        top: 20%;
+    }
+    .icon-prev {
+        left: pxToRem(40px);
+    }
+    .icon-next {
+        right: pxToRem(40px);
+        transform: rotate(180deg);
+    }
     
-} */
+}
 
 
 .m-txt {

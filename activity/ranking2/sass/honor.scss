@@ -1,0 +1,201 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+.mh-page {
+    padding-top: pxToRem(66px);
+    .lm-container {
+        margin-top: pxToRem(80px);
+    }
+}
+
+.share-page {
+    padding-top: pxToRem(165px);
+    .lm-container {
+        margin-top: pxToRem(50px);
+    }
+}
+
+.mh-txt {
+    width: 100%;
+    font-size: 0;
+    text-align: center;
+    i {
+        vertical-align: middle;
+        margin-right: pxToRem(16px);
+    }
+    span {
+        vertical-align: middle;
+        line-height: 120%;
+    }
+}
+
+.h-title {
+    height: pxToRem(80px);
+    line-height: pxToRem(80px);
+    .u-avator {
+        width: pxToRem(80px);
+        height: pxToRem(80px);
+        border-radius: pxToRem(80px);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .ht-txt {
+        font-size: pxToRem(36px);
+        color: #ffb700;
+    }
+}
+
+.h-txt {
+    margin-top: pxToRem(40px);
+    i {
+        @include inline-background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAMAAAC+oj0CAAAAZlBMVEUAAAD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twD/twCICl5FAAAAIXRSTlMA9/HVaxjbwGZJDArr5uC8tZeTfHdiXFNBLyMRBQF9WCj7ZeseAAAAjUlEQVQY023P2Q7CIBCF4QOVbrTV7rs67/+SEgQUne/q5E+GBBj7NIwKli7yQsO6SCIS/elnNdlKby3QuTkCSpAzz34JhZ68NA3zjowYGWou15Bclmi43KDlcoeVqWJz34k9YOQijlUBa02+61XBOYZwIPMTH093kGyIlDf7QIkfh+mZxp8ySXcwlgXBC+ZmIqb0ZytEAAAAAElFTkSuQmCC', 22px, 20px);
+    }
+    span {
+        font-size: pxToRem(30px);
+        vertical-align: middle;
+        color: #fff;
+    }
+}
+
+.lm-container {
+    width: 100%;
+    height: percent(640, $designHeight);
+    position: relative;
+    // margin-top: pxToRem(80px);
+    padding: 0 pxToRem(90px);
+    &:before {
+        content: "";
+        width: pxToRem(463px);
+        height: percent(376, 640);
+        background-image: url('../images/bg-metal.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        background-position: center;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        z-index: 10;
+    }
+    .icon-metal {
+        position: absolute;
+        left: 50%;
+        // top: 0;
+        bottom: percent(220, 640);
+        transform: translateX(-50%);
+        z-index: 20;
+    }
+    .icon-slide {
+        position: absolute;
+        top: 20%;
+        z-index: 20;
+    }
+    .icon-prev {
+        left: pxToRem(90px);
+    }
+    .icon-next {
+        right: pxToRem(90px);
+        transform: scale(-1);
+    }
+    .icon-lh {
+        width: pxToRem(317px);
+        height: percent(399, 640);
+    }
+    .icon-new {
+        width: pxToRem(304px);
+        height: percent(368, 640);
+    }
+    .icon-hy {
+        width: pxToRem(326px);
+        height: percent(400, 640);
+    }
+    .icon-ry {
+        width: pxToRem(317px);
+        height: percent(387, 640);
+    }
+    .icon-sign {
+        width: pxToRem(317px);
+        height: percent(387, 640);
+    }
+    .icon-lh-grey,
+    .icon-new-grey,
+    .icon-ry-grey,
+    .icon-hy-grey,
+    .icon-sign-grey {
+        height: percent(407, 640);
+    }
+}
+
+.lm-txt {
+    width: 100%;
+    font-size: pxToRem(30px);
+    text-align: center;
+    line-height: pxToRem(43px);
+    color: #ffb700;
+    position: absolute;
+    left: 0;
+    top: 84%;
+}
+
+.mh-active {
+    color: #dddce1 !important;
+    font {
+        color: #febe03;
+    }
+}
+
+// .mh-share {
+//     position: absolute;
+//     left: 50%;
+//     bottom: percent(90, $designHeight);
+//     transform: translateX(-50%);
+//     display: none;
+// }
+.btn-mh-container {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: percent(90, $designHeight);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0 pxToRem(40px);
+}
+
+.icon-logo {
+    @include background('../images/icon-logo.png',
+    205px,
+    72px);
+    position: absolute;
+    left: pxToRem(46px);
+    top: pxToRem(40px);
+}
+
+.mask-pop {
+    text-align: center;
+    .pop-container {
+        padding: pxToRem(30px);
+    }
+    .pop-content {
+        width: 100%;
+        padding: pxToRem(70px) pxToRem(30px);
+        font-size: 0;
+        color: #f2f5ff;
+        span {
+            width: 100%;
+            font-size: pxToRem(32px);
+            line-height: 120%;
+        }
+        .p-txt-big {
+            font-size: pxToRem(40px);
+        }
+    }
+    .pop-btn {
+        width: pxToRem(350px);
+        height: pxToRem(75px);
+        line-height: pxToRem(75px);
+    }
+}

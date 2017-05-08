@@ -72,7 +72,7 @@
                         <select class="itxt" name="back">
                         </select>
                     </i>
-                    <i class="txt-ci"></i>
+                    <i class="txt-day"></i>
                 </p>
             </div>
             <div class="container-bottom">
@@ -81,111 +81,13 @@
             </div>
         </div>
     </div>
+    <!-- <div class="toast">请输入正确数值</div> -->
 </body>
-<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
-<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
-<!-- <script src="../js/index.js" type="text/javascript" charset="utf-8"></script> -->
-<script type="text/javascript">
-(function() {
-    FastClick.attach(document.body);
-    /* $(".icon-arrow").on('click', function() {
-         var name = $(this).attr('data-name');
-         var type = $(this).attr('data-type');
-         var _input = $('input[name="' + name + '"]');
-         var value = _input ? +_input.val() : 0;
-         if (type === '0') {
-             value = value > 0 ? value - 1 : 0;
-         } else {
-             value += 1;
-         }
-         _input.val(value);
-     });*/
-    var jsonData = {
-        'mine': {
-            'min': 0,
-            'max': 100
-        },
-        'mother': {
-            'min': 10,
-            'max': 100
-        },
-        'leave': {
-            'min': 0,
-            'max': 9
-        },
-        'back': {
-            'min': 0,
-            'max': 30
-        }
-    }
+<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/page2.js" type="text/javascript" charset="utf-8"></script>
 
-    function init() {
-        initOptions('mine');
-        initOptions('mother');
-        initOptions('leave');
-        initOptions('back');
-
-    }
-    init();
-
-    function initOptions(name) {
-        var data = jsonData[name];
-        var start = data.min,
-            end = data.max;
-        var temp = '';
-        if (start > 0) {
-            // $(".stxt[data-name='" + name + "']").html(0);
-            temp += '<option value="0" selected>0</option>'
-        }
-
-        // $(".stxt[data-name='" + name + "']").html(start);
-        for (var i = start; i <= end; i++) {
-            // if (i == start && type) {
-            //     temp += '<option value="' + i + '" selected>' + i + '</option>';
-            // } else {
-            //     temp += '<option value="' + i + '">' + i + '</option>'
-            // }
-            temp += '<option value="' + i + '">' + i + '</option>'
-        }
-        $("select[name='" + name + "']").html(temp);
-    }
-    $("select").on('change', function(e) {
-        console.info($(this).parent(), $(this).val());
-        var _obj = $(this).parent().find('.stxt');
-        // var name = $(this).attr('data-name');
-        var name = _obj.attr('data-name');
-        var value = $(this).val();
-        _obj.html(value);
-        if (name === 'mine') {
-            jsonData['mother'].min = +value + 10;
-            jsonData['leave'].max = +value;
-            initOptions('mother');
-            initOptions('leave');
-        } else if (name === 'mother') {
-            jsonData['mine'].max = +value - 10;
-            initOptions('mine');
-        } else if (name === 'leave') {
-            jsonData['mine'].min = +value;
-            initOptions('mine');
-        }
-    });
-
-    $(".btn-start").on('click', function() {
-        var data = {};
-        data.myAge = $("#myAge").html();
-        data.mother = $("#mother").html();
-        data.leave = $("#leave").html();
-        data.back = $("#back").html();
-        console.info(data);
-        if (window.sessionStorage) {
-            window.sessionStorage['data'] = JSON.stringify(data);
-        } else {
-            window.mySessionStorage['data'] = JSON.stringify(data);
-        }
-        window.location.href = './page3.html';
-    });
-})();
-</script>
 
 </html>

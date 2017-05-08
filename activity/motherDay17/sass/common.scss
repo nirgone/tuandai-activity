@@ -19,16 +19,23 @@ body {
 a {
     text-decoration: none;
 }
+
 * {
     box-sizing: border-box;
 }
-i, span, ul, li {
+
+i,
+span,
+ul,
+li {
     display: inline-block;
 }
+
 .content {
     width: 100%;
     height: 100%;
 }
+
 .page {
     width: 100%;
     height: 100%;
@@ -36,9 +43,11 @@ i, span, ul, li {
     background-repeat: no-repeat;
     position: relative;
 }
+
 .page-slide {
     background-image: url('../images/bg.png');
 }
+
 .mask {
     background-color: rgba(0, 0, 0, .7);
     position: absolute;
@@ -57,13 +66,20 @@ i, span, ul, li {
         z-index: 1000;
     }
 }
+
 .txt-ci {
     // @include inline-background('../images/text/txt-ci.png', 34px, 34px);
     @extend .sprite-txt-ci;
 }
+
+.txt-day {
+    @extend .sprite-txt-day;
+}
+
 .breath-anit {
     animation: breath $duration * 4 linear both infinite;
 }
+
 .icon-share {
     @include background('../images/wx-share.png',
     620px,
@@ -72,6 +88,29 @@ i, span, ul, li {
     right: pxToRem(30px);
     top: pxToRem(30px);
 }
+.toast {
+    width: pxToRem(600px);
+    background-color: rgba(0, 0, 0, .5);
+    text-align: center;
+    color: #fff;
+    font-size: pxToRem(30px);
+    padding: pxToRem(20px) pxToRem(30px);
+    line-height: pxToRem(40px);
+    border-radius: 30px;
+    position: absolute;
+    left: 50%;
+    // top: 50%;
+    z-index: 999;
+}
+.toast-middle {
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.toast-bottom{ 
+    bottom: 18%;
+    transform: translate(-50%,0);
+}
+
 @-webkit-keyframes breath {
     0% {
         transform: scale(1.0);

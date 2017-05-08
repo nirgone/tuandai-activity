@@ -1,6 +1,6 @@
 (function() {
 	FastClick.attach(document.body);
-	var pageSwiper, mhSwiper;
+	var pageSwiper, mhSwiper, metalSwiper;
 	var isLogin = true; //是否已登录
 	// var isAppOpen = true; //是否是app打开
 	var hasInit = {};
@@ -146,6 +146,73 @@
 		$(".btn-cl").html(btnStr);
 		$(".btn-cl").attr('data-type', type);
 		getList(1);
+		metalSwiper = new Swiper('#metalSwiper', {
+			onInit: function(swiper) {
+				var txt = '';
+				if (myHonor.length > 0) {
+					if (myHonor[0].name == "签到榜") {
+						txt = myHonor[0].time + '<br />荣登' + myHonor[0].name;
+					} else {
+						txt = myHonor[0].time + '<br />荣登' + myHonor[0].name + '第<font>' + myHonor[0].ranking + '</font>名';
+					}
+
+					$(".m-txt").html(txt);
+					// $(".icon-prev[data-type='1']").hide();
+				} else {
+					$(".m-txt").html('风云际会，巅峰PK！<br>龙争虎斗，等你夺魁！');
+					// $(".icon-prev[data-type='1']").hide();
+				}
+				Util.triggerSlideArrow('.lm-container', swiper);
+			},
+			onTransitionStart: function(swiper) {
+				var str = '';
+
+				if (myHonor.length > 0) {
+					var data = myHonor[swiper.activeIndex];
+
+					if (data.name == "签到榜") {
+						str = data.time + '<br />荣登' + data.name;
+					} else {
+						str = data.time + '<br />荣登' + data.name + '第<font>' + data.ranking + '</font>名';
+					}
+					$(".m-txt").html(str);
+
+					// if (swiper.activeIndex == 0) {
+					// 	$(".icon-prev[data-type='1']").hide();
+					// 	$(".icon-next[data-type='1']").show();
+					// }
+
+					// if (myHonor.length == (swiper.activeIndex + 1)) {
+					// 	$(".icon-prev[data-type='1']").show();
+					// 	$(".icon-next[data-type='1']").hide();
+					// }
+				} else {
+					switch (swiper.activeIndex) {
+						case 0:
+							str = '风云际会，巅峰PK！<br>龙争虎斗，等你夺魁！';
+							$(".icon-prev[data-type='1']").hide();
+							break;
+						case 1:
+							str = '青出于蓝而胜于蓝！<br>看好你，新晋达人！';
+							$(".icon-prev[data-type='1']").show();
+							break;
+						case 2:
+							str = '呼朋唤友聚团贷！<br>志同道合更有爱！ ';
+							break;
+						case 3:
+							str = '四海之内皆兄弟！<br>有福同享赚收益！';
+							$(".icon-next[data-type='1']").show();
+							break;
+						case 4:
+							str = '锲而不舍，金石可镂！<br>持之以恒，签到达人！'
+							$(".icon-next[data-type='1']").hide();
+							break;
+					}
+					$(".m-txt").html(str);
+				}
+				Util.triggerSlideArrow('.lm-container', swiper);
+			}
+		});
 	}
 	init();
 	//查看规则
@@ -378,10 +445,20 @@
 		}
 	});
 	$(".icon-prev").on('click', function() {
-		mhSwiper.slidePrev();
+		var type = $(this).attr('data-type');
+		if (type == 0) {
+			mhSwiper.slidePrev();
+		} else {
+			metalSwiper.slidePrev();
+		}
 	});
 	$(".icon-next").on('click', function() {
-		mhSwiper.slideNext();
+		var type = $(this).attr('data-type');
+		if (type == 0) {
+			mhSwiper.slideNext();
+		} else {
+			metalSwiper.slideNext();
+		}
 	});
 	//查看上月或者当月月榜单
 	$(".btn-cl").on('click', function() {
