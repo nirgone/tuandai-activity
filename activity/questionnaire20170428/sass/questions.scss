@@ -4,7 +4,6 @@
 @import "../../../sass/reset";
 @import "../../../sass/func";
 // 公共样式
-$defaultColor:#fff;
 $darkRedColor:#330508;
 .abs{
     position: absolute;
@@ -94,20 +93,20 @@ $darkRedColor:#330508;
     }
     .option-txt{
         display: inline-block;
-        width: 88%;
+        width: 91.9%;
         vertical-align: top;
         font-size: pxToRem(26px);
         line-height: pxToRem(38px);
-        input[type="text"]{
-            width: pxToRem(96px);
-            height: 100%;
-            border:none;
-            border-bottom: 1px solid $darkRedColor;
-            margin-left: pxToRem(5px);
-            font-size: pxToRem(26px);
-            color:$darkRedColor;
-            line-height: pxToRem(38px);
-        }
+    }
+    .option-input{
+        width: 30%;
+        height: 100%;
+        border:none;
+        border-bottom: 1px solid $darkRedColor;
+        margin-left: pxToRem(5px);
+        font-size: pxToRem(26px);
+        color:$darkRedColor;
+        line-height: pxToRem(38px);
     }
 }
 
