@@ -14,10 +14,7 @@ module.exports = function(grunt) {
     // Configurable paths
     var config = {
         activity: 'activity',
-        actName: 'cashRedPack20170417',
-        // actName: 'questionnaire20170428',
-
-        // actName: 'wuyi',
+        actName: 'cardGame',
         dist: 'dist'
     };
 
@@ -29,30 +26,30 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         sprite: {
-            // icon: {
-            //     src: "<%= config.activity %>/<%= config.actName %>/images/sprites/*.png",
-            //     dest: "<%= config.activity %>/<%= config.actName %>/images/sprites/sprite.png",
-            //     destCss: "<%= config.activity %>/<%= config.actName %>/sass/sprite_temp.css",
-            //     cssTemplate: "handlebars/sprite-icon.handlebars",
-            //     padding: 10
-            // },
-            // icon2: {
-            //     src: ["<%= config.activity %>/<%= config.actName %>/images/sprites/text2.png", "<%= config.activity %>/<%= config.actName %>/images/sprites/text3.png"],
-            //     dest: "<%= config.activity %>/<%= config.actName %>/images/sprites/sprite2.png",
-            //     destCss: "<%= config.activity %>/<%= config.actName %>/sass/sprite_temp2.css",
-            //     cssTemplate: "handlebars/sprite-icon.handlebars",
-            //     padding: 10
-            // },
-            // icon3: {
-            //     src: ["<%= config.activity %>/<%= config.actName %>/images/sprites/btn1.png",
-            //         "<%= config.activity %>/<%= config.actName %>/images/sprites/btn2.png",
-            //         "<%= config.activity %>/<%= config.actName %>/images/sprites/btn3.png"
-            //     ],
-            //     dest: "<%= config.activity %>/<%= config.actName %>/images/sprites/sprite3.png",
-            //     destCss: "<%= config.activity %>/<%= config.actName %>/sass/sprite_temp3.css",
-            //     cssTemplate: "handlebars/sprite-icon.handlebars",
-            //     padding: 10
-            // }
+            icon: {
+                src: "<%= config.activity %>/<%= config.actName %>/images/sprites/*.png",
+                dest: "<%= config.activity %>/<%= config.actName %>/images/sprites/sprite.png",
+                destCss: "<%= config.activity %>/<%= config.actName %>/sass/sprite_temp.css",
+                cssTemplate: "handlebars/sprite-icon.handlebars",
+                padding: 10
+            },
+            icon2: {
+                src: ["<%= config.activity %>/<%= config.actName %>/images/sprites/text2.png", "<%= config.activity %>/<%= config.actName %>/images/sprites/text3.png"],
+                dest: "<%= config.activity %>/<%= config.actName %>/images/sprites/sprite2.png",
+                destCss: "<%= config.activity %>/<%= config.actName %>/sass/sprite_temp2.css",
+                cssTemplate: "handlebars/sprite-icon.handlebars",
+                padding: 10
+            },
+            icon3: {
+                src: ["<%= config.activity %>/<%= config.actName %>/images/sprites/btn1.png",
+                    "<%= config.activity %>/<%= config.actName %>/images/sprites/btn2.png",
+                    "<%= config.activity %>/<%= config.actName %>/images/sprites/btn3.png"
+                ],
+                dest: "<%= config.activity %>/<%= config.actName %>/images/sprites/sprite3.png",
+                destCss: "<%= config.activity %>/<%= config.actName %>/sass/sprite_temp3.css",
+                cssTemplate: "handlebars/sprite-icon.handlebars",
+                padding: 10
+            }
         },
 
         // Compiles Sass to CSS and generates necessary files if requested
@@ -80,7 +77,7 @@ module.exports = function(grunt) {
                 processors: [
                     // Add vendor prefixed styles
                     require('autoprefixer')({
-                        browsers: ['last 7 versions']
+                        browsers: ['Android > 20', 'iOS 5', 'Chrome > 5%', 'Safari > 5%']
                     })
                 ]
             },
@@ -97,12 +94,12 @@ module.exports = function(grunt) {
         // Watches files for changes and runs tasks based on the changed files
         watch: {
             // bower: {
-            // 	files: ['bower.json'],
-            // 	tasks: ['wiredep']
+            //  files: ['bower.json'],
+            //  tasks: ['wiredep']
             // },
             // babel: {
-            // 	files: ['<%= config.app %>/scripts/{,*/}*.js'],
-            // 	tasks: ['babel:dist']
+            //  files: ['<%= config.app %>/scripts/{,*/}*.js'],
+            //  tasks: ['babel:dist']
             // },
             gruntfile: {
                 files: ['Gruntfile.js']
@@ -144,7 +141,7 @@ module.exports = function(grunt) {
                     server: {
                         baseDir: ['<%= config.activity %>/<%= config.actName %>/.tmp', '<%= config.activity %>/<%= config.actName %>'],
                         // routes: {
-                        // 	'/bower_components': './bower_components'
+                        //  '/bower_components': './bower_components'
                         // }
                     }
                 }
@@ -158,7 +155,7 @@ module.exports = function(grunt) {
                     server: {
                         baseDir: ['<%= config.activity %>/<%= config.actName %>/.tmp', './test', './'],
                         // routes: {
-                        // 	'/bower_components': './bower_components'
+                        //  '/bower_components': './bower_components'
                         // }
                     }
                 }
@@ -196,12 +193,12 @@ module.exports = function(grunt) {
 
         // Make sure code styles are up to par and there are no obvious mistakes
         // eslint: {
-        // 	target: [
-        // 		'Gruntfile.js',
-        // 		'lib/{,*/}*.js',
-        // 		'<%= config.activity %>/<%= config.actName %>/js/{,*/}*.js',
-        // 		'test/spec/{,*/}*.js'
-        // 	]
+        //  target: [
+        //      'Gruntfile.js',
+        //      'lib/{,*/}*.js',
+        //      '<%= config.activity %>/<%= config.actName %>/js/{,*/}*.js',
+        //      'test/spec/{,*/}*.js'
+        //  ]
         // },
 
         // Compiles ES6 with Babel
@@ -220,13 +217,13 @@ module.exports = function(grunt) {
                 }]
             },
             // test: {
-            // 	files: [{
-            // 		expand: true,
-            // 		cwd: 'test/spec',
-            // 		src: '{,*/}*.js',
-            // 		dest: '.tmp/spec',
-            // 		ext: '.js'
-            // 	}]
+            //  files: [{
+            //      expand: true,
+            //      cwd: 'test/spec',
+            //      src: '{,*/}*.js',
+            //      dest: '.tmp/spec',
+            //      ext: '.js'
+            //  }]
             // }
         },
 
@@ -359,42 +356,10 @@ module.exports = function(grunt) {
         },
         cssmin: {
             dist: {
-                // files: {
-                //     '<%= config.activity %>/<%= config.actName %>/<%= config.dist %>/css/main.css': [
-                //         '<%= config.activity %>/<%= config.actName %>/.tmp/css/{,*/}*.css',
-                //         '<%= config.activity %>/<%= config.actName %>/css/{,*/}*.css'
-                //     ]
-                // }
-                // 五一活动
-                // files: {
-                //     '<%= config.activity %>/<%= config.actName %>/<%= config.dist %>/css/main.css': [
-                //         // '<%= config.activity %>/<%= config.actName %>/.tmp/css/{,*/}*.css',
-                //         '<%= config.activity %>/<%= config.actName %>/.tmp/css/common.css',
-                //         '<%= config.activity %>/<%= config.actName %>/.tmp/css/animation.css',
-                //         '<%= config.activity %>/<%= config.actName %>/.tmp/css/media.css',
-                //         // '<%= config.activity %>/<%= config.actName %>/.tmp/css/index.css',
-                //     ],
-                //     '<%= config.activity %>/<%= config.actName %>/<%= config.dist %>/css/index.css': [
-                //     '<%= config.activity %>/<%= config.actName %>/.tmp/css/index.css'
-                //     ],
-                //     '<%= config.activity %>/<%= config.actName %>/<%= config.dist %>/css/land.css': [
-                //     '<%= config.activity %>/<%= config.actName %>/.tmp/css/land.css'
-                //     ]
-                // }
-                // 降息调查问卷
                 files: {
                     '<%= config.activity %>/<%= config.actName %>/<%= config.dist %>/css/main.css': [
-                        // '<%= config.activity %>/<%= config.actName %>/.tmp/css/{,*/}*.css',
-                        '<%= config.activity %>/<%= config.actName %>/.tmp/css/common.css',
-                        '<%= config.activity %>/<%= config.actName %>/.tmp/css/media.css',
-                        '<%= config.activity %>/<%= config.actName %>/.tmp/css/animation.css'
-                        // '<%= config.activity %>/<%= config.actName %>/.tmp/css/index.css',
-                    ],
-                    '<%= config.activity %>/<%= config.actName %>/<%= config.dist %>/css/index.css': [
-                    '<%= config.activity %>/<%= config.actName %>/.tmp/css/index.css'
-                    ],
-                    '<%= config.activity %>/<%= config.actName %>/<%= config.dist %>/css/questions.css': [
-                    '<%= config.activity %>/<%= config.actName %>/.tmp/css/questions.css'
+                        '<%= config.activity %>/<%= config.actName %>/.tmp/css/{,*/}*.css',
+                        '<%= config.activity %>/<%= config.actName %>/css/{,*/}*.css'
                     ]
                 }
             }
@@ -419,18 +384,18 @@ module.exports = function(grunt) {
         },
 
         // concat: {
-        // 	options: {
-        // 		separator: ';',
-        // 		stripBanners: true
-        // 	},
-        // 	dist: {
-        // 	  src: [
-        // 	    "./lib/vendor/jquery.min.js",
-        // 	    "./lib/vendor/fastclick.js",
-        // 	    // "js/index.js",
-        // 	  ],
-        // 	  dest: "./lib/fastclick-jquery.js"
-        // 	}
+        //  options: {
+        //      separator: ';',
+        //      stripBanners: true
+        //  },
+        //  dist: {
+        //    src: [
+        //      "./lib/vendor/jquery.min.js",
+        //      "./lib/vendor/fastclick.js",
+        //      // "js/index.js",
+        //    ],
+        //    dest: "./lib/fastclick-jquery.js"
+        //  }
         // },
         uglify: {
             options: {},
@@ -450,7 +415,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('serve', 'start the server and preview your app', function(target) {
         // if(projectname) {
-        // 	config.actName = projectname;
+        //  config.actName = projectname;
         // }
 
         if (target === 'dist') {
