@@ -14,7 +14,10 @@ module.exports = function(grunt) {
     // Configurable paths
     var config = {
         activity: 'activity',
-        actName: 'cardGame',
+        actName: 'cashRedPack20170417',
+        // actName: 'questionnaire20170428',
+
+        // actName: 'wuyi',
         dist: 'dist'
     };
 
@@ -26,30 +29,30 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         sprite: {
-            icon: {
-                src: "<%= config.activity %>/<%= config.actName %>/images/sprites/*.png",
-                dest: "<%= config.activity %>/<%= config.actName %>/images/sprites/sprite.png",
-                destCss: "<%= config.activity %>/<%= config.actName %>/sass/sprite_temp.css",
-                cssTemplate: "handlebars/sprite-icon.handlebars",
-                padding: 10
-            },
-            icon2: {
-                src: ["<%= config.activity %>/<%= config.actName %>/images/sprites/text2.png", "<%= config.activity %>/<%= config.actName %>/images/sprites/text3.png"],
-                dest: "<%= config.activity %>/<%= config.actName %>/images/sprites/sprite2.png",
-                destCss: "<%= config.activity %>/<%= config.actName %>/sass/sprite_temp2.css",
-                cssTemplate: "handlebars/sprite-icon.handlebars",
-                padding: 10
-            },
-            icon3: {
-                src: ["<%= config.activity %>/<%= config.actName %>/images/sprites/btn1.png",
-                    "<%= config.activity %>/<%= config.actName %>/images/sprites/btn2.png",
-                    "<%= config.activity %>/<%= config.actName %>/images/sprites/btn3.png"
-                ],
-                dest: "<%= config.activity %>/<%= config.actName %>/images/sprites/sprite3.png",
-                destCss: "<%= config.activity %>/<%= config.actName %>/sass/sprite_temp3.css",
-                cssTemplate: "handlebars/sprite-icon.handlebars",
-                padding: 10
-            }
+            // icon: {
+            //     src: "<%= config.activity %>/<%= config.actName %>/images/sprites/*.png",
+            //     dest: "<%= config.activity %>/<%= config.actName %>/images/sprites/sprite.png",
+            //     destCss: "<%= config.activity %>/<%= config.actName %>/sass/sprite_temp.css",
+            //     cssTemplate: "handlebars/sprite-icon.handlebars",
+            //     padding: 10
+            // },
+            // icon2: {
+            //     src: ["<%= config.activity %>/<%= config.actName %>/images/sprites/text2.png", "<%= config.activity %>/<%= config.actName %>/images/sprites/text3.png"],
+            //     dest: "<%= config.activity %>/<%= config.actName %>/images/sprites/sprite2.png",
+            //     destCss: "<%= config.activity %>/<%= config.actName %>/sass/sprite_temp2.css",
+            //     cssTemplate: "handlebars/sprite-icon.handlebars",
+            //     padding: 10
+            // },
+            // icon3: {
+            //     src: ["<%= config.activity %>/<%= config.actName %>/images/sprites/btn1.png",
+            //         "<%= config.activity %>/<%= config.actName %>/images/sprites/btn2.png",
+            //         "<%= config.activity %>/<%= config.actName %>/images/sprites/btn3.png"
+            //     ],
+            //     dest: "<%= config.activity %>/<%= config.actName %>/images/sprites/sprite3.png",
+            //     destCss: "<%= config.activity %>/<%= config.actName %>/sass/sprite_temp3.css",
+            //     cssTemplate: "handlebars/sprite-icon.handlebars",
+            //     padding: 10
+            // }
         },
 
         // Compiles Sass to CSS and generates necessary files if requested
@@ -77,7 +80,7 @@ module.exports = function(grunt) {
                 processors: [
                     // Add vendor prefixed styles
                     require('autoprefixer')({
-                        browsers: ['Android > 20', 'iOS 5', 'Chrome > 5%', 'Safari > 5%']
+                        browsers: ['last 7 versions']
                     })
                 ]
             },
@@ -356,10 +359,42 @@ module.exports = function(grunt) {
         },
         cssmin: {
             dist: {
+                // files: {
+                //     '<%= config.activity %>/<%= config.actName %>/<%= config.dist %>/css/main.css': [
+                //         '<%= config.activity %>/<%= config.actName %>/.tmp/css/{,*/}*.css',
+                //         '<%= config.activity %>/<%= config.actName %>/css/{,*/}*.css'
+                //     ]
+                // }
+                // 五一活动
+                // files: {
+                //     '<%= config.activity %>/<%= config.actName %>/<%= config.dist %>/css/main.css': [
+                //         // '<%= config.activity %>/<%= config.actName %>/.tmp/css/{,*/}*.css',
+                //         '<%= config.activity %>/<%= config.actName %>/.tmp/css/common.css',
+                //         '<%= config.activity %>/<%= config.actName %>/.tmp/css/animation.css',
+                //         '<%= config.activity %>/<%= config.actName %>/.tmp/css/media.css',
+                //         // '<%= config.activity %>/<%= config.actName %>/.tmp/css/index.css',
+                //     ],
+                //     '<%= config.activity %>/<%= config.actName %>/<%= config.dist %>/css/index.css': [
+                //     '<%= config.activity %>/<%= config.actName %>/.tmp/css/index.css'
+                //     ],
+                //     '<%= config.activity %>/<%= config.actName %>/<%= config.dist %>/css/land.css': [
+                //     '<%= config.activity %>/<%= config.actName %>/.tmp/css/land.css'
+                //     ]
+                // }
+                // 降息调查问卷
                 files: {
                     '<%= config.activity %>/<%= config.actName %>/<%= config.dist %>/css/main.css': [
-                        '<%= config.activity %>/<%= config.actName %>/.tmp/css/{,*/}*.css',
-                        '<%= config.activity %>/<%= config.actName %>/css/{,*/}*.css'
+                        // '<%= config.activity %>/<%= config.actName %>/.tmp/css/{,*/}*.css',
+                        '<%= config.activity %>/<%= config.actName %>/.tmp/css/common.css',
+                        '<%= config.activity %>/<%= config.actName %>/.tmp/css/media.css',
+                        '<%= config.activity %>/<%= config.actName %>/.tmp/css/animation.css'
+                        // '<%= config.activity %>/<%= config.actName %>/.tmp/css/index.css',
+                    ],
+                    '<%= config.activity %>/<%= config.actName %>/<%= config.dist %>/css/index.css': [
+                    '<%= config.activity %>/<%= config.actName %>/.tmp/css/index.css'
+                    ],
+                    '<%= config.activity %>/<%= config.actName %>/<%= config.dist %>/css/questions.css': [
+                    '<%= config.activity %>/<%= config.actName %>/.tmp/css/questions.css'
                     ]
                 }
             }

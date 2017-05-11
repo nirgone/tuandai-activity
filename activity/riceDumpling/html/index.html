@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>questionnaire20170428</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/index.css">
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="content">
+        <div class="page page-index">
+            <div class="index-con"></div>
+            <div class="logo"></div>
+            <div class="index-title"></div>
+            <div class="cat"></div>
+            <div id="btn-rules" class="btn-rules">活动规则</div>
+            <div id="btn-join" class="btn-join"></div>
+        </div>
+    </div>
+    <!-- 活动规则 -->
+    <div class="rule-sec" id="rule_sec">
+        <div class="masker"></div>
+        <div class="rule-content">
+            <div class="rule-scroll">
+                <div class="title"></div>
+                <p><span class="mark">01</span>活动时间：2017年5月9日</p>
+                <p><span class="mark">02</span>活动期间，用户登录团贷网账户，完整填写调查问卷成功提交后，即可获得50团币奖励。活动期间，同一用户最多可获得1次奖励；</p>
+                <p><span class="mark">03</span>团币奖励在成功提交问卷后自动发放至账户，可登录团贷网APP-【我】-【我的会员】或PC端会员中心查看；</p>
+                <p><span class="mark">04</span>我们将会对您的信息进行严格保密处理，结果仅用于团贷网了解用户需求及优化产品设计；</p>
+                <p><span class="mark">05</span>团贷网可根据活动举办的实际情况，在法律允许的范围内，对本活动规则进行变动及调整，相关变动或调整将公布在活动规则页面上，公布后依法生效；</p>
+                <p><span class="mark">06</span>本活动与苹果公司无关。</p>
+            </div>
+            <div id="btn-rule-cls" class="btn-rule-cls"></div>
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<!-- build:js({dist}) ../js/lib/vendor/jsbridge-3.1.2.js -->
+<script src="../js/vendor/jsbridge-3.1.2.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+(function() {
+    FastClick.attach(document.body);
+    var isTimeOut = false;//是否调查已结束
+    var isFinished = false; //是否已填写问卷
+    var isLogin = true; //是否已登录
+    $("#btn-rules").on('click', function() {
+        $("#rule_sec").show();
+    });
+    $("#btn-rule-cls").on('click', function() {
+        $("#rule_sec").hide();
+    });
+    $("#btn-join").on('click', function() {
+        if (isTimeOut){
+            Util.message('调查已结束，<br>感谢您的支持！');
+            return;
+        }else {
+            if (isFinished) {
+                Util.message('您已经填写过该问卷了');
+                return;
+            }else if (!isLogin) {
+                Util.message({
+                    content: '为确保您的奖励顺利发放,<br>请先登录！',
+                    callback: function() {
+                        if (Jsbridge.isNewVersion()) {
+                            Jsbridge.toAppLogin();
+                        } else {
+                            //web版登录
+                        }
+                    }
+                });
+                return;
+            }
+        }
+        setTimeout(function() {
+            window.location.href = './questions.html';
+
+        }, 500);
+    });
+})();
+</script>
+
+</html>
