@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="../css/media.css">
 	<link rel="stylesheet" href="../css/animation.css">
 	<!-- endbuild -->
-	<link rel="stylesheet" href="../css/swiper.min.css">
+	<link rel="stylesheet" href="../css/swipe.css">
  	<script>
 	//动态算rem
 	(function(doc, win) {
@@ -38,28 +38,25 @@
 	<div class="page">
 		<div class="mask"></div>
 		<div class="content">
-			<div class="swiper-container" id='slider'>
-			  <div class='swiper-wrapper'>
-			    <div class="item swiper-slide">
+			<span class="arrow arrow-left"></span>
+			<span class="arrow arrow-right"></span>
+			<div class="swipe" id='slider'>
+			  <div class='swipe-wrap'>
+			    <div class="item">
 			    	<div class="item-bg item-bg01">
-			    		<div class="item-mask"></div>
-			    		<div class="item-dialog item-dialog01"></div>
-			    		<div class="item-dialog item-dialog02"></div>
+			    		<!-- <div class="item-dialog item-dialog01"></div>
+			    		<div class="item-dialog item-dialog02"></div> -->
 			    	</div>
 			    </div>
-			    <div class="item swiper-slide">
+			    <div class="item">
 			    	<div class="item-bg item-bg02">
-			    	<div class="item-mask"></div>
-			    		<div class="item-dialog item-dialog03"></div>
+			    		<!-- <div class="item-dialog item-dialog03"></div> -->
 			    	</div>
-			    	<!-- <img class="item-bg item-bg02" src="../images/bg02.png" /> -->
-			    	<!-- <div class="item-bg item-bg02"></div> -->
-			    	<!-- <div class="item-dialog item-dialog03"></div> -->
+			    	
 			    </div>
-			    <div class="item swiper-slide">
+			    <div class="item">
 			    	<div class="item-bg item-bg03">
-			    		<div class="item-mask"></div>
-			    		<div class="item-dialog item-dialog04"></div>
+			    		<!-- <div class="item-dialog item-dialog04"></div> -->
 			    	</div>
 			    	<!-- <div class="item-bg item-bg03"></div> -->
 			    	<!-- <img class="item-bg item-bg03" src="../images/bg03.png" />
@@ -68,12 +65,12 @@
 			  </div>
 			</div>
 		</div>
-		<div class="close-icon"></div>
+		<div class="close-icon close-btn"></div>
 	</div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
-<script src="../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/swipe.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
 </html>
