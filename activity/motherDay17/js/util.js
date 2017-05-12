@@ -39,6 +39,9 @@
 			var _toast = $("<div/>").addClass('toast').html(msg);
 			_toast.addClass(posClass);
 			$('body').append(_toast);
+			if(options.type && options.type === 'always') {
+				return;
+			}
 			setTimeout(function() {
 				_toast.remove();
 			}, duration);
