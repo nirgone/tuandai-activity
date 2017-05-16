@@ -1,0 +1,71 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    // overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    // -webkit-overflow-scrolling: touch !important;
+}
+
+.scroll-active {
+    -webkit-overflow-scrolling: touch !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.scroll {
+    max-width: 414px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    position: relative;
+    overflow: hidden;
+    // background-color: $bg-orange;
+    .content {
+        width: 100%;
+    }
+}
+* {
+    box-sizing: border-box;
+}
+ul, li, span, i {
+    display: inline-block;
+}
+.toast {
+    background-color: rgba(0, 0, 0, .5);
+    min-width: pxToRem(430px);
+    border-radius: pxToRem(16px);
+    text-align: center;
+    color: $color-white;
+    font-size: pxToRem($font-size-normal);
+    padding: pxToRem(40px) pxToRem(30px);
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+}
+.txt-yellow {
+    color: $color-yellow;
+}
+.txt-grey {
+    color: $color-grey;
+}
+.txt-orange {
+    color: $color-orange;
+}
+.page {
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,262 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/func";
+.page-tp {
+    width: 100%;
+    height: 100%;
+    background-color: $background-color-grey-light;
+}
+
+.top-txt-container {
+    width: 100%;
+    white-space: nowrap;
+    margin-top: pxToRem(20px);
+    &>span {
+        width: 50%;
+        font-size: pxToRem($font-size-normal);
+        line-height: pxToRem($font-size-normal);
+    }
+    .tp-txt1 {
+        color: $color-black;
+        font {
+            font-size: pxToRem($font-size-larger);
+        }
+    }
+    .tp-txt2 {
+        text-align: right;
+    }
+}
+
+.tp-top {
+    width: 100%;
+    height: pxToRem(180px);
+    background-color: $color-white;
+    font-size: 0;
+    padding: pxToRem(30px);
+    * {
+        vertical-align: middle;
+    }
+    .tp-txt3 {
+        font-size: pxToRem($font-size-small);
+        line-height: pxToRem($font-size-small);
+        color: $color-grey;
+        margin-top: pxToRem(30px);
+    }
+}
+
+.icon-arrow-yellow {
+    @include inline-background('../images/arrow-yellow.png', 11px, 20px);
+    margin-left: pxToRem(10px);
+}
+
+.tp-container {
+    width: 100%;
+    font-size: 0;
+    padding: 0 pxToRem(30px);
+    margin-top: pxToRem(60px);
+    .tp-title {
+        width: 100%;
+        font-size: pxToRem($font-size-small);
+        color: $color-black;
+    }
+}
+
+.tp-list {
+    width: 100%;
+    font-size: 0;
+    margin-top: pxToRem(20px);
+    text-align: center;
+    .tp-item {
+        width: pxToRem(210px);
+        height: pxToRem(150px);
+        border-radius: pxToRem(10px);
+        background-color: $color-white;
+        border: 1px solid $border-color-grey;
+        margin-top: pxToRem(40px);
+        margin-right: pxToRem(30px);
+        padding-top: pxToRem(6px);
+        &>span {
+            margin-top: pxToRem(30px);
+            width: 100%;
+        }
+        &>span:first-child {
+            font-size: pxToRem($font-size-normal);
+            color: $color-black;
+        }
+        &>span:last-child {
+            font-size: pxToRem($font-size-tiny);
+            color: $color-grey;
+        }
+    }
+    .active {
+        border-color: $color-yellow;
+        span {
+            color: $color-yellow !important;
+        }
+    }
+    li:nth-of-type(3n) {
+        margin-right: 0;
+    }
+}
+
+.tp-input {
+    width: pxToRem(690px);
+    height: pxToRem(90px);
+    line-height: pxToRem(90px);
+    border: 0;
+    background-color: $color-white;
+    border-radius: pxToRem(10px);
+    margin-top: pxToRem(60px);
+    font-size: pxToRem($font-size-normal);
+    padding: 0 pxToRem(30px);
+    color: $color-black;
+}
+
+input::-webkit-input-placeholder {
+    color: $color-grey-light;
+}
+
+.btn-yellow {
+    width: pxToRem(690px);
+    height: pxToRem(86px);
+    line-height: pxToRem(86px);
+    text-align: center;
+    border-radius: pxToRem(8px);
+    color: $color-white;
+    margin-top: pxToRem(60px);
+    font-size: pxToRem(34px);
+    background-color: $color-yellow-light;
+}
+
+.tp-det {
+    height: pxToRem(130px);
+    line-height: pxToRem(130px);
+    background-color: $color-white;
+    font-size: 0;
+    margin-top: 0;
+    padding: 0 pxToRem(30px);
+    &>span {
+        vertical-align: middle;
+    }
+}
+
+.select-container {
+    width: 100%;
+    background-color: $color-white;
+    padding-left: pxToRem(30px);
+    margin-top: pxToRem(20px);
+    height: pxToRem(70px);
+    line-height: pxToRem(70px);
+    position: relative;
+    .det-select {
+        width: 100%;
+        // width: pxToRem(720px);
+        // margin-left: pxToRem(30px);
+        border-bottom: 1px solid $border-color-grey;
+        span {
+            font-size: pxToRem($font-size-normal);
+            line-height: pxToRem($font-size-normal);
+            color: $color-grey-light;
+            position: relative;
+            vertical-align: middle;
+            &:before {
+                content: '';
+                @include background('../images/icon-triangle.png', 20px, 12px);
+                position: absolute;
+                right: pxToRem(-30px);
+                top: 50%;
+                margin-top: pxToRem(-6px);
+            }
+        }
+    }
+    
+    .show-opt {
+        span {
+            &:before {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    .det-mask {
+        position: absolute;
+        top: pxToRem(70px);
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, .3);
+        z-index: 99;
+        display: none;
+        .det-masker {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 100;
+        }
+    }
+    .opt-list {
+        width: 100%;
+        background-color: $color-white;
+        border-top: 1px solid $border-color-grey;
+        font-size: 0;
+        padding-left: pxToRem(30px);
+        display: block;
+        z-index: 999;
+        &>li:not(:last-child) {
+            border-bottom: 1px solid $border-color-grey;
+        }
+        .opt {
+            width: 100%;
+            height: pxToRem(86px);
+            line-height: pxToRem(86px);
+            font-size: pxToRem($font-size-normal);
+            color: $color-black;
+        }
+        .active {
+            position: relative;
+            color: $color-yellow;
+            &:before {
+                content: '';
+                @include background('../images/icon-check.png', 27px, 18px);
+                position: absolute;
+                right: pxToRem(30px);
+                top: 50%;
+                margin-top: pxToRem(-9px);
+            }
+        }
+    }
+}
+
+.det-list {
+    width: 100%;
+    padding-left: pxToRem(30px);
+    background-color: $color-white;
+    font-size: 0;
+    .dt-item {
+        width: 100%;
+        white-space: nowrap;
+        &>span {
+            width: 50%;
+        }
+        &>span:last-child {
+            text-align: right;
+        }
+    }
+    .det-row {
+        width: 100%;
+        padding: pxToRem(30px) pxToRem(30px) pxToRem(30px) 0;
+        border-bottom: 1px solid $border-color-grey;
+        height: pxToRem(140px);
+        font-size: 0;
+    }
+    .dt-first {
+        font-size: pxToRem($font-size-normal);
+        line-height: pxToRem($font-size-normal);
+        color: $color-black;
+    }
+    .dt-second {
+        font-size: pxToRem($font-size-small);
+        line-height: pxToRem($font-size-small);
+        color: $color-grey;
+        margin-top: pxToRem(20px);
+    }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>直播频道</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/tuanpiao.css">
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="scroll scroll-active">
+        <div class="content page-tp">
+            <div class="top-txt-container tp-det">
+                <span class="tp-txt1">团票余额：<font class="txt-yellow">899</font></span>
+                <span class="tp-txt2 txt-yellow" id="goDetail"><span>团票明细</span><i class="icon-arrow-yellow"></i></span>
+            </div>
+            <div class="select-container">
+                <div class="det-select"><span>最近1个月</span></div>
+                <div class="det-mask">
+                    <!-- <div class="det-masker"></div> -->
+                    <ul class="opt-list">
+                        <li class="opt active" data-value="1">最近1个月</li>
+                        <li class="opt" data-value="3">最近3个月</li>
+                        <li class="opt" data-value="12">最近12个月</li>
+                        <li class="opt" data-value="all">全部</li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="det-list">
+                <li class="det-row">
+                    <div class="dt-first dt-item">
+                        <span>团币充值团票</span>
+                        <span class="txt-orange">+30</span>
+                    </div>
+                    <div class="dt-second dt-item">
+                        <span>2017.04.05  12:38</span>
+                        <span>剩余团票：770</span>
+                    </div>
+                </li>
+                <li class="det-row">
+                    <div class="dt-first dt-item">
+                        <span>团币充值团票</span>
+                        <span>-30</span>
+                    </div>
+                    <div class="dt-second dt-item">
+                        <span>2017.04.05  12:38</span>
+                        <span>剩余团票：770</span>
+                    </div>
+                </li>
+                <li class="det-row">
+                    <div class="dt-first dt-item">
+                        <span>团币充值团票</span>
+                        <span>-30</span>
+                    </div>
+                    <div class="dt-second dt-item">
+                        <span>2017.04.05  12:38</span>
+                        <span>剩余团票：770</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
+<!-- <script src="../js/index.js" type="text/javascript" charset="utf-8"></script> -->
+<script type="text/javascript">
+(function() {
+    FastClick.attach(document.body);
+    $('body').on('click', '.tp-item', function() {
+        $('.tp-item').removeClass('active');
+        $(this).addClass('active');
+    });
+    var maskHeight = $(window).height() - $(".det-list").offset().top;
+    $('.det-mask').height(maskHeight);
+    $('.det-select').on('click', function() {
+        if($(this).hasClass('show-opt')) {
+            $(this).removeClass('show-opt');
+            $('.det-mask').hide();
+        }else{
+            $(this).addClass('show-opt');
+            $('.det-mask').show();
+        }
+    });
+    $('body').on('click', '.opt', function() {
+        var value = $(this).attr('data-value');
+        var text = $(this).html();
+        $('.opt').removeClass('active');
+        $(this).addClass('active');
+        $('.det-select').find('span').html(text);
+        $('.det-select').removeClass('show-opt');
+        $('.det-mask').hide();
+    });
+})();
+</script>
+
+</html>
