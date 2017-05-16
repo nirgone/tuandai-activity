@@ -107,13 +107,15 @@ $grayColor:#808080;
 // 福利按钮
 .btn-welfare{
     position:absolute;
-    right:0;
-    top:pxToRem(320px);
-    width:pxToRem(124px);
-    height:pxToRem(116px);
+    right:pxToRem(20px);
+    top:pxToRem(306px);
+    width:pxToRem(175px);
+    height:pxToRem(175px);
     color:#fff;
     z-index: 111;
-    @extend .icon-welfare_button;
+    // @extend .icon-welfare_button;
+    background: url('../images/button.png');
+    background-size: 100%;
     line-height:pxToRem(110px);
     font-size:pxToRem(32px);
     font-weight:bold;
