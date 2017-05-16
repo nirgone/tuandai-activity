@@ -1,0 +1,36 @@
+.icon-btn-cls {
+  display: block;
+  background-image: url(../images/index-sprite.png);
+  background-size:pxToRem(242px) pxToRem(242px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-125px) pxToRem(-126px);
+  width: pxToRem(68px);
+  height: pxToRem(68px);
+}
+.icon-coin-exchange {
+  display: block;
+  background-image: url(../images/index-sprite.png);
+  background-size:pxToRem(242px) pxToRem(242px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(116px);
+  height: pxToRem(116px);
+}
+.icon-invite {
+  display: block;
+  background-image: url(../images/index-sprite.png);
+  background-size:pxToRem(242px) pxToRem(242px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-126px);
+  width: pxToRem(115px);
+  height: pxToRem(116px);
+}
+.icon-invest {
+  display: block;
+  background-image: url(../images/index-sprite.png);
+  background-size:pxToRem(242px) pxToRem(242px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-126px) pxToRem(0px);
+  width: pxToRem(116px);
+  height: pxToRem(116px);
+}

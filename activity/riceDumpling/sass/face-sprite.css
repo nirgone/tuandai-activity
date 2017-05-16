@@ -1,0 +1,63 @@
+.icon-face-left {
+  display: block;
+  background-image: url(../images/face-sprite.png);
+  background-size:pxToRem(175px) pxToRem(171px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-140px);
+  width: pxToRem(71px);
+  height: pxToRem(31px);
+}
+.icon-left {
+  display: block;
+  background-image: url(../images/face-sprite.png);
+  background-size:pxToRem(175px) pxToRem(171px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-90px) pxToRem(0px);
+  width: pxToRem(85px);
+  height: pxToRem(38px);
+}
+.icon-left1 {
+  display: block;
+  background-image: url(../images/face-sprite.png);
+  background-size:pxToRem(175px) pxToRem(171px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-56px);
+  width: pxToRem(85px);
+  height: pxToRem(35px);
+}
+.icon-middle {
+  display: block;
+  background-image: url(../images/face-sprite.png);
+  background-size:pxToRem(175px) pxToRem(171px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-86px) pxToRem(-101px);
+  width: pxToRem(80px);
+  height: pxToRem(26px);
+}
+.icon-middle1 {
+  display: block;
+  background-image: url(../images/face-sprite.png);
+  background-size:pxToRem(175px) pxToRem(171px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(80px);
+  height: pxToRem(46px);
+}
+.icon-right {
+  display: block;
+  background-image: url(../images/face-sprite.png);
+  background-size:pxToRem(175px) pxToRem(171px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-101px);
+  width: pxToRem(76px);
+  height: pxToRem(29px);
+}
+.icon-right1 {
+  display: block;
+  background-image: url(../images/face-sprite.png);
+  background-size:pxToRem(175px) pxToRem(171px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-95px) pxToRem(-56px);
+  width: pxToRem(76px);
+  height: pxToRem(33px);
+}

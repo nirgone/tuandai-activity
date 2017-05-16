@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
     <meta name="format-detection" content="telephone=no">
-    <title>questionnaire20170428</title>
+    <title>riceDumpling</title>
     <!-- build:css(dist) ../css/main.css -->
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/media.css">
@@ -21,28 +21,143 @@
 <body>
     <div class="content">
         <div class="page page-index">
-            <div class="index-con"></div>
             <div class="logo"></div>
+            <div id="btn-rules" class="btn-rules"><span>规则</span></div>
             <div class="index-title"></div>
-            <div class="cat"></div>
-            <div id="btn-rules" class="btn-rules">活动规则</div>
-            <div id="btn-join" class="btn-join"></div>
+            <div class="subtitle">活动时间：5月26日-5月30日</div>
+
+            <!-- 从左到右粽子顺序依次是1 2 3 -->
+            <div id="dumpling-sec" class="dumpling-sec">
+                <div data-index="1" class="btn-dumpling dumpling-left"> 
+                    <div class="face face1"></div>
+                    <div class="hand left-hand"></div>
+                    <div class="hand right-hand"></div>
+                    <div class="dialogue"></div>
+                </div>
+                <div data-index="2" class="btn-dumpling dumpling-middle">
+                    <div class="face face1"></div>
+                    <div class="hand left-hand"></div>
+                    <div class="hand right-hand"></div>
+                    <div class="dialogue"></div>
+                </div>
+                <div data-index="3" class="btn-dumpling dumpling-right">
+                    <div class="face face1"></div>
+                    <!-- rotate1 -->
+                    <div class="hand left-hand"></div>
+                    <div class="hand right-hand"></div>
+                    <div class="dialogue"></div>
+                </div>
+                <!-- <img class="dumpling-bg" src="../images/rice-dumpling/bg.png"> -->
+
+            </div>
+            <!-- 更多机会 -->
+            <div class="more-chance">
+                <p class="more-chance-text">您有<span id="more-chance-num" class="more-chance-num"></span>次拆粽机会</p>
+                <p id="more-chance-btn" class="more-chance-btn">获取更多机会</p>
+            </div>
         </div>
     </div>
     <!-- 活动规则 -->
-    <div class="rule-sec" id="rule_sec">
-        <div class="masker"></div>
+    <div id="rule_sec" class="rule-sec">
+        <div class="mask"></div>
         <div class="rule-content">
-            <div class="rule-scroll">
-                <div class="title"></div>
-                <p><span class="mark">01</span>活动时间：2017年5月9日</p>
-                <p><span class="mark">02</span>活动期间，用户登录团贷网账户，完整填写调查问卷成功提交后，即可获得50团币奖励。活动期间，同一用户最多可获得1次奖励；</p>
-                <p><span class="mark">03</span>团币奖励在成功提交问卷后自动发放至账户，可登录团贷网APP-【我】-【我的会员】或PC端会员中心查看；</p>
-                <p><span class="mark">04</span>我们将会对您的信息进行严格保密处理，结果仅用于团贷网了解用户需求及优化产品设计；</p>
-                <p><span class="mark">05</span>团贷网可根据活动举办的实际情况，在法律允许的范围内，对本活动规则进行变动及调整，相关变动或调整将公布在活动规则页面上，公布后依法生效；</p>
-                <p><span class="mark">06</span>本活动与苹果公司无关。</p>
+            <div class="title">
+                <span id="btn-rules-detail" class="on">规则详情</span>
+                <span id="btn-award" style="float:right">拆棕奖励</span>
             </div>
-            <div id="btn-rule-cls" class="btn-rule-cls"></div>
+            <!-- 规则详情  -->
+            <div id="rule-scroll" class="rule-scroll">
+                <div class="rules" >
+                    <p class="time"><span class="subhead">活动时间：</span>5月26日-5月30日</p>
+                    <p class="subhead">活动规则</p>
+                    <p><span class="mark">•</span><span class="text">活动期间，团贷网新老用户均可享有1次拆粽机会赢取iPad、拍立得、红包等奖品；</span></p>
+                    <p><span class="mark">•</span><span class="text">活动期间，用户可通过团币兑换、投资以及指定页面邀请好友注册投资等方式，获得更多拆粽机会；</span></p>
+                    <p><span class="mark">•</span><span class="text">实物奖品将于用户获得并领取后15个工作日内安排发放，虚拟奖品直接发至用户账户；</span></p>
+                    <p><span class="mark">•</span><span class="text">本活动申诉有效期截至2017年6月10日，逾期将不予受理。</span></p>
+                </div>
+                <!-- 拆棕奖励 -->
+                <div class="award" style="display:none;">
+                    <div class="award-side left-side">
+                        <div class="award-title">时间</div>
+                        <ul>
+                            <li>
+                                <span>5月28日</span>
+                                <span>10:12:21</span>
+                            </li>
+                            <li>
+                                <span>5月28日</span>
+                                <span>10:12:21</span>
+                            </li>
+                            <li>
+                                <span>5月28日</span>
+                                <span>10:12:21</span>
+                            </li>
+                            <li>
+                                <span>5月28日</span>
+                                <span>10:12:21</span>
+                            </li>
+                            <li>
+                                <span>5月28日</span>
+                                <span>10:12:21</span>
+                            </li>
+                            <li>
+                                <span>5月28日</span>
+                                <span>10:12:21</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="award-side right-side">
+                        <div class="award-title">奖品</div>
+                        <ul>
+                            <li>
+                                <span class="award-name">iPad Air2/128G</span>
+                                <span class="award-link">查看</span>
+                            </li>
+                            <li>
+                                <span class="award-name">24小时VIP</span>
+                                <span class="award-link">查看</span>
+                            </li>
+                            <li>
+                                <span class="award-name">8元投资红包</span>
+                                <span class="award-link">查看</span>
+                            </li>
+                            <li>
+                                <span class="award-name">10元团币</span>
+                                <span class="award-link">查看</span>
+                            </li>
+                            <li>
+                                <span class="award-name">20元团币</span>
+                                <span class="award-link">查看</span>
+                            </li>
+                            <li>
+                                <span class="award-name">5元投资红包</span>
+                                <span class="award-link">查看</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="btn-rule-cls" class="btn-cls"></div>
+        </div>
+    </div>
+    <!-- 底部弹出按钮 -->
+    <div id="btn-bottom-sec" class="btn-bottom-sec">
+        <div class="masker"></div>
+        <div class="btn-bottom-bg">
+            <ul class="btn-bottom-con">
+                <li data-type="coin-exchange" class="btn-bottom btn-coin-exchange">
+                    <div class="btn-icon"></div>
+                    <p>团币兑换</p>
+                </li>
+                <li data-type="invite" class="btn-bottom btn-invest">
+                    <div class="btn-icon"></div>
+                    <p>马上投资</p>
+                </li>
+                <li data-type="invest" class="btn-bottom btn-invite">
+                    <div class="btn-icon"></div>
+                    <p>邀请好友</p>
+                </li>
+            </ul>  
         </div>
     </div>
 </body>
@@ -53,46 +168,8 @@
 <script src="../js/vendor/jsbridge-3.1.2.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
 <script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript">
-(function() {
-    FastClick.attach(document.body);
-    var isTimeOut = false;//是否调查已结束
-    var isFinished = false; //是否已填写问卷
-    var isLogin = true; //是否已登录
-    $("#btn-rules").on('click', function() {
-        $("#rule_sec").show();
-    });
-    $("#btn-rule-cls").on('click', function() {
-        $("#rule_sec").hide();
-    });
-    $("#btn-join").on('click', function() {
-        if (isTimeOut){
-            Util.message('调查已结束，<br>感谢您的支持！');
-            return;
-        }else {
-            if (isFinished) {
-                Util.message('您已经填写过该问卷了');
-                return;
-            }else if (!isLogin) {
-                Util.message({
-                    content: '为确保您的奖励顺利发放,<br>请先登录！',
-                    callback: function() {
-                        if (Jsbridge.isNewVersion()) {
-                            Jsbridge.toAppLogin();
-                        } else {
-                            //web版登录
-                        }
-                    }
-                });
-                return;
-            }
-        }
-        setTimeout(function() {
-            window.location.href = './questions.html';
-
-        }, 500);
-    });
-})();
-</script>
-
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+<!-- <script type="text/javascript">
+    $(".dumpling-sec").html("屏幕宽:"+$(window).width()+','+"屏幕高:"+$(window).height()+','+"文档高度:"+$(document).height());
+</script> -->
 </html>

@@ -3,140 +3,230 @@
 @import "sprite";
 @import "../../../sass/reset";
 @import "../../../sass/func";
-.abs{
+body{
+    color:$defaultColor;
+}
+
+// 更多机会
+.more-chance{
+    position: absolute;
+    width: 100%;
+    bottom: pxToRem(110px);
+    text-align: center;
+    font-size: pxToRem(34px);
+    .more-chance-text{
+        color:#046248;
+        margin-bottom: pxToRem(14px);
+    }
+    .more-chance-num{
+        color: $defaultColor;
+    }
+    .more-chance-btn{
+        text-decoration: underline;
+    }
+}
+
+// 底部弹出按钮
+.btn-bottom-sec{
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
+    transform: translate3d(0, 100%, 0);
+    z-index: 5;
 }
-.page-index {
-    background: url('../images/bg-title.png') no-repeat top,url('../images/bg-index.png') no-repeat bottom,-webkit-gradient(linear, 0% 0%, 0% 100%, from(#1887d7), to(#691dd4)) ;
-    background-size: 100%;
-    padding-top: pxToRem(106px);
-}
-
-// 首页样式
-.index-title{
-    @include background ('../images/title.png', 701px, 642px);
-    margin: 0 auto;
-}
-
-.logo{
+.btn-bottom-bg{
     position: absolute;
-    left: pxToRem(40px);
-    top: pxToRem(47px);
-    @include background ('../images/logo.png', 224px, 74px);
-}
-.cat{
-    position: absolute;
-    @include background('../images/cat.png',528px, 459px);
-    left: pxToRem(102px);
-    bottom: pxToRem(178px);
-}
-.btn-rules{
-    position: absolute;
-    right: pxToRem(40px);
-    top: pxToRem(76px);
-    width: pxToRem(168px);    
-    height: pxToRem(44px);
-    background: #ffd541;
-    color:#422c8d;
-    border:1px solid #3e43a9;
-    border-radius: pxToRem(20px);
-    font-size: pxToRem(24px);
-    text-align: center;
-    line-height: pxToRem(44px);
-}
-
-.btn-join{
-    @include background ('../images/btn-join.png', 538px, 99px);
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: pxToRem(66px);
-    margin: 0 auto;
-}
-
-// 活动规则
-.rule-sec {
-    display: none;
-    @extend .abs;
-    overflow: hidden;
-    .masker{
-        background: rgba(0,0,0,0.85);
-        z-index: 100;
+    bottom: 0;
+    width: 100%;
+    height: pxToRem(298px);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.9))) ;
+    padding-top: pxToRem(104px);
+    z-index: 10;
+    .btn-icon{
+        margin: 0 auto;  
+        margin-bottom: pxToRem(17px);
+    }
+    .btn-coin-exchange{
+        div{
+            @extend .icon-coin-exchange;
+        }
+    }
+    .btn-invest{
+        div{
+            @extend .icon-invest;  
+        }
+    }
+    .btn-invite{
+        div{
+            @extend .icon-invite;  
+        }
     }
 }
-.rule-content{
-    @extend .abs;
-    @include background('../images/cat-bg.png', 695px, 913px);
-    z-index: 110;
-    margin:auto;
-    transform: translate(0, pxToRem(-78px));
+.btn-bottom-con{
+    width: 100%;
+    text-align: center;
+    font-size: 0;
 }
-.btn-rule-cls{
-        @include background('../images/btn-rule-cls.png', 73px, 73px);
-        content: '';
+.btn-bottom{
+    position: relative;
+    display: inline-block;
+    width: 33%;
+    font-size: pxToRem(22px);
+    text-align: center;
+}
+// 弹窗
+.pop-wrap{
+    @include background('../images/bg-pop.png', 628px, 612px);
+    padding: pxToRem(147px) pxToRem(70px) 0;
+    text-align: center;
+    p{
+        color:$mainColor;
+        font-size: pxToRem(32px);
+        line-height: pxToRem(52px);
+    }
+    .em{
+        color:#ffa87e;
+        font-size: pxToRem(45px);
+        font-weight: bold;
+    }
+    .em.big{
+        font-size: pxToRem(51px);
+    }
+    .light{
+        color:#ffa87e;
+    }
+    .btn-message{
         position: absolute;
-        bottom: pxToRem(-78px);
+        left: 0;
+        right: 0;
+        bottom: pxToRem(94px);
+        width: pxToRem(227px);
+        height: pxToRem(80px);
+        line-height: pxToRem(80px);
+        margin: 0 auto;
+        font-size: pxToRem(28px);
+        text-align: center;
+        background-color: $mainColor;
+        border-radius: pxToRem(8px);
+    }
+    .btn-message.off{
+        background-color: #a0a0a0;
+    }
+    .tip{
+        position: absolute;
         left: 0;
         right: 0;
         margin: 0 auto;
-}
-.rule-scroll{
-    @extend .abs;
-    // z-index: 110;
-    top: pxToRem(226px);
-    bottom: pxToRem(62px);
-    overflow: auto;
-    padding:0 pxToRem(52px);
-    color:$darkRedColor;
-    text-align: justify;
-    .title{
-        width: pxToRem(558px);
-        height: pxToRem(49px);
-        @include background('../images/title-rule.png', 558px, 49px);
-        margin: 0 auto pxToRem(34px);
-        &:before,&:after{
-            display: inline-block;
-            content:'';
-        }
-    }
-    p{
-        font-size: pxToRem(24px);
-        line-height: pxToRem(40px);
-        margin-bottom: pxToRem(48px);
-    }
-    .mark{
-        width: pxToRem(34px);
-        height: pxToRem(34px);
-        border-radius: 50%;
-        background-color: #ff4753;
-        color:$defaultColor;
-        text-align: center;
-        font-size: pxToRem(12px);
-        line-height: pxToRem(34px);
-        vertical-align: pxToRem(1px);
-        margin-right: pxToRem(18px);
+        bottom: pxToRem(46px);
+        font-size: pxToRem(20px);
+
     }
 }
 
-// 弹窗
-.alert-wrapper .pop-content{
-    @include background('../images/pop/pop-bg.png', 508px, 467px);
-    padding: pxToRem(143px) 0;
-    color:#330508;
+
+// 奖品弹窗
+.prize-wrap{
+    font-size: 0;
+    text-align: center;
+    .btn{
+        display: inline-block;
+        width: pxToRem(227px);
+        height: pxToRem(79px);
+        text-align: center;
+        border:1px solid #149561;
+        line-height: pxToRem(79px);
+        font-size: pxToRem(28px);
+    }
+    .btn-open{
+        background:#149561;
+        margin-right: pxToRem(98px);
+    }
     p{
-        font-size: pxToRem(40px);
+        font-size: pxToRem(36px);
+        font-weight: bold;
+    }
+    .prize-name{
+        color:#eb3b09;
+        font-size: pxToRem(48px);
+        margin-bottom: pxToRem(112px);
     }
 }
-.btn-common-y{
-    @include background('../images/pop/confirm-bg.png', 397px, 94px);
-    position: absolute;
-    bottom: pxToRem(68px);
-    left: 0;
-    right: 0;
-    color: $defaultColor;
-    line-height: pxToRem(94px);
+.prize-content{
+    position: relative;
+    @include background('../images/prize/prize-bg.png', 750px, 840px);
+    background-size: 100%;
+    background-position: top center;
+    padding-top: pxToRem(600px);
+    .dumpling{
+        position: absolute;
+        left: pxToRem(106px);
+        top: pxToRem(180px);
+        width: pxToRem(515px);
+        height: pxToRem(312px);
+        background-size: 100%;
+    }
+    .prize{
+        position: absolute;
+        right: pxToRem(120px);
+        top: pxToRem(120px);
+        width: pxToRem(255px);
+        height: pxToRem(300px);
+        background-size: 100%;
+    }
+}
+// 奖品弹窗icon
+.icon-dumpling1{
+    background-image:url('../images/prize/1.png');
+}
+.icon-dumpling2{
+    background-image:url('../images/prize/2.png');
+}
+.icon-dumpling3{
+    background-image:url('../images/prize/3.png');
+}
+.icon-camera{
+    background-image:url('../images/prize/camera.png');
+}
+.icon-coin{
+    background-image:url('../images/prize/coin.png');
+}
+.icon-ipadair2{
+    background-image:url('../images/prize/iPadAir2.png');
+}
+.icon-red-pack{
+    background-image:url('../images/prize/red-pack.png');
+}
+.icon-vip{
+    background-image:url('../images/prize/vip.png');
+}
+
+// 底部弹出按钮icon
+.icon-coin-exchange {
+  display: block;
+  background-image: url(../images/index-sprite.png);
+  background-size:pxToRem(242px) pxToRem(242px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(116px);
+  height: pxToRem(116px);
+}
+.icon-invite {
+  display: block;
+  background-image: url(../images/index-sprite.png);
+  background-size:pxToRem(242px) pxToRem(242px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-126px);
+  width: pxToRem(116px);
+  height: pxToRem(116px);
+}
+.icon-invest {
+  display: block;
+  background-image: url(../images/index-sprite.png);
+  background-size:pxToRem(242px) pxToRem(242px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-126px) pxToRem(0px);
+  width: pxToRem(116px);
+  height: pxToRem(116px);
 }
