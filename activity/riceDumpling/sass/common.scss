@@ -53,7 +53,7 @@ li {
     top: 0;
     right: 0;
     bottom: 0;
-    z-index: 9;
+    z-index: 30;
     background-color: rgba(0, 0, 0, .8);
 }
 
@@ -322,13 +322,13 @@ li {
     @include background('../images/bg-rules.png', 704px, 729px);
     z-index: 110;
     margin:auto;
-    transform: translate(0, pxToRem(-58px));
+    transform: translate(0, pxToRem(-46px));
 }
 .btn-cls{
         @extend .icon-btn-cls;
         content: '';
         position: absolute;
-        bottom: pxToRem(-58px);
+        bottom: pxToRem(-93px);
         left: 0;
         right: 0;
         margin: 0 auto;
@@ -526,11 +526,11 @@ li {
 .icon-btn-cls {
   display: block;
   background-image: url(../images/index-sprite.png);
-  background-size:pxToRem(242px) pxToRem(242px);
+  background-size:pxToRem(334px) pxToRem(242px);
   background-repeat:no-repeat;
-  background-position: pxToRem(-124px) pxToRem(-124px);
-  width: pxToRem(70px);
-  height: pxToRem(72px);
+  background-position: pxToRem(-252px) pxToRem(-100px);
+  width: pxToRem(74px);
+  height: pxToRem(74px);
 }
 
 @import 'components';

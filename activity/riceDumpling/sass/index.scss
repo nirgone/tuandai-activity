@@ -7,6 +7,25 @@ body{
     color:$defaultColor;
 }
 
+// 手势提示
+.gesture-tip-con{
+    display: inline-block;
+    width: pxToRem(91px);
+    position: absolute;
+    bottom: pxToRem(228px);
+    left: 50%;
+    transform:translate(-50%,0);
+    z-index: 20;
+    .gesture{
+        @extend .icon-gesture;
+    }
+    .gesture-circle{
+        @extend .icon-gesture-circle;
+        margin-left: pxToRem(-10px);
+        margin-bottom: pxToRem(10px);
+    }
+}
+
 // 更多机会
 .more-chance{
     position: absolute;
@@ -43,7 +62,7 @@ body{
     height: pxToRem(298px);
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.9))) ;
     padding-top: pxToRem(104px);
-    z-index: 10;
+    z-index: 40;
     .btn-icon{
         margin: 0 auto;  
         margin-bottom: pxToRem(17px);
@@ -79,12 +98,13 @@ body{
 // 弹窗
 .pop-wrap{
     @include background('../images/bg-pop.png', 628px, 612px);
-    padding: pxToRem(147px) pxToRem(70px) 0;
+    padding: pxToRem(102px) pxToRem(70px) 0;
     text-align: center;
+    transform:translate(0,pxToRem(-45px));
     p{
         color:$mainColor;
         font-size: pxToRem(32px);
-        line-height: pxToRem(52px);
+        line-height: pxToRem(45px);
     }
     .em{
         color:#ffa87e;
@@ -138,6 +158,7 @@ body{
         border:1px solid #149561;
         line-height: pxToRem(79px);
         font-size: pxToRem(28px);
+        border-radius: pxToRem(8px);
     }
     .btn-open{
         background:#149561;
@@ -159,6 +180,7 @@ body{
     background-size: 100%;
     background-position: top center;
     padding-top: pxToRem(600px);
+    transform:translate(0,25%);
     .dumpling{
         position: absolute;
         left: pxToRem(106px);
@@ -206,27 +228,47 @@ body{
 .icon-coin-exchange {
   display: block;
   background-image: url(../images/index-sprite.png);
-  background-size:pxToRem(242px) pxToRem(242px);
+  background-size:pxToRem(334px) pxToRem(242px);
   background-repeat:no-repeat;
   background-position: pxToRem(0px) pxToRem(0px);
-  width: pxToRem(116px);
-  height: pxToRem(116px);
-}
-.icon-invite {
-  display: block;
-  background-image: url(../images/index-sprite.png);
-  background-size:pxToRem(242px) pxToRem(242px);
-  background-repeat:no-repeat;
-  background-position: pxToRem(0px) pxToRem(-126px);
   width: pxToRem(116px);
   height: pxToRem(116px);
 }
 .icon-invest {
   display: block;
   background-image: url(../images/index-sprite.png);
-  background-size:pxToRem(242px) pxToRem(242px);
+  background-size:pxToRem(334px) pxToRem(242px);
   background-repeat:no-repeat;
   background-position: pxToRem(-126px) pxToRem(0px);
   width: pxToRem(116px);
   height: pxToRem(116px);
+}
+.icon-invite {
+  display: block;
+  background-image: url(../images/index-sprite.png);
+  background-size:pxToRem(334px) pxToRem(242px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-126px);
+  width: pxToRem(115px);
+  height: pxToRem(116px);
+}
+
+// 手势图标
+.icon-gesture-circle {
+  display: block;
+  background-image: url(../images/index-sprite.png);
+  background-size:pxToRem(334px) pxToRem(242px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-125px) pxToRem(-126px);
+  width: pxToRem(91px);
+  height: pxToRem(91px);
+}
+.icon-gesture {
+  display: block;
+  background-image: url(../images/index-sprite.png);
+  background-size:pxToRem(334px) pxToRem(242px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-252px) pxToRem(0px);
+  width: pxToRem(82px);
+  height: pxToRem(93px);
 }
