@@ -46,7 +46,7 @@
 		options: [{
 			id: 0,
 			text: '是',
-			showSub: 1
+			showSub: 1 //是否显示分支
 		}, {
 			id: 1,
 			text: '否',
@@ -55,7 +55,7 @@
 		id: 2,
 		limit: 1,
 		recomment: '',
-		hasBrench: true,
+		hasBrench: true, //是否有分支
 		subQuestion: [{
 			id: 0,
 			question: '您在开通银行存管账户过程中出现问题后，是否能及时联系客服？',
@@ -74,7 +74,7 @@
 			}, {
 				id: 4,
 				text: '否，原因',
-				hasInput: true
+				hasInput: true //是否有输入
 			}],
 			limit: 1
 		}, {
@@ -147,7 +147,7 @@
 		}, {
 			id: 4,
 			text: '以上流程都还没体验',
-			only: true
+			only: true //是否与其他选项互斥
 		}],
 		id: 3,
 		limit: 7,

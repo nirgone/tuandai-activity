@@ -58,6 +58,7 @@
 			}
 		}, 500);
 		initData();
+		autoPlayAudio();
 
 	}
 	function initData () {
@@ -72,7 +73,7 @@
 			var bAge = +data.mother - (+data.myAge) - 1;
 			var day = (+data.myAge - (+data.leave)) * 365;
 			var comDay = (80 - (+data.mother)) * (+data.back);
-			var times = (80 - (data.mother)) * 3;
+			var times = comDay * 3;
 			var leftTimes = 80 - (data.mother);
 			$("#bAge").html(bAge);
 			$("#day").html(day);
@@ -104,12 +105,27 @@
 
 	//音乐自动播放
 
-	$('body').on('touchstart', function() {
+	$('body').on('touchend', function() {
 		if ($(".icon-music").hasClass('icon-play')) {
 			bgMusic.play();
 		}
 	});
-	$(".icon-music").on('touchstart', function() {
+	//微信自动播放
+	 function autoPlayAudio() {
+        wx.config({
+            // 配置信息, 即使不正确也能使用 wx.ready
+            debug: false,
+            appId: '',
+            timestamp: 1,
+            nonceStr: '',
+            signature: '',
+            jsApiList: []
+        });
+        wx.ready(function() {
+            document.getElementById('bgMusic').play();
+        });
+    }
+	$(".icon-music").on('click', function() {
 		if (bgMusic.paused) {
 			bgMusic.play();
 			$(this).removeClass('icon-paused').addClass('icon-play');

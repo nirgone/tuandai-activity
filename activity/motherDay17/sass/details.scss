@@ -85,12 +85,7 @@
         //     vertical-align: middle;
         // }
     }
-    .txt-day {
-        // @include inline-background('../images/text/txt-day.png',
-        // 38px,
-        // 37px);
-        @extend .sprite-txt-day;
-    }
+   
 }
 
 .pt3 {
@@ -165,7 +160,7 @@
         @include inline-background('../images/text/p5-txt6.png', 445px, 37px);
     }
     .txt7-p5 {
-        @include inline-background('../images/text/p5-txt7.png', 528px, 37px);
+        @include inline-background('../images/text/p5-txt7.png', 527px, 37px);
     }
 }
 
@@ -556,9 +551,9 @@
         background-color: transparent;
         color: #aaaaaa;
         font-size: pxToRem(36px);
-        padding: 0 pxToRem(20px);
+        padding: pxToRem(25px) pxToRem(20px);
         font-weight: 500;
-        line-height: pxToRem(86px);
+        // line-height: pxToRem(86px);
     }
     
 }

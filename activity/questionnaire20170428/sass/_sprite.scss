@@ -1,0 +1,6 @@
+@charset "UTF-8";
+@import "../../../sass/func";
+
+.icon-prize {
+	@include background('../images/prize.png', 240px, 235px);
+}

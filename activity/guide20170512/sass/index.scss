@@ -1,0 +1,197 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-overflow-scrolling: touch !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    // overflow: hidden;
+    .mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        z-index: 9;
+    }
+    .content {
+        position: relative;
+        z-index: 99;
+        padding-bottom: pxToRem(118px);
+        height: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        .arrow {
+            background-position: 50% 50%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: pxToRem(16px);
+            height: pxToRem(30px);
+            background-image: url(../images/icon_arrow_left.png);
+            position: absolute;
+            top: 50%;
+            margin-top: pxToRem(-15px);
+            z-index: 1003;
+            &.arrow-left {
+                left: pxToRem(20px);
+                display: none;
+            }
+            &.arrow-right {
+                right: pxToRem(20px);
+                transform: rotateZ(180deg);
+            }
+        }
+    }
+    @at-root #slider {
+        position: relative;
+        z-index: 99;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        .swipe-wrap {
+            height: 100%;
+        }
+        .item {
+            position: relative;
+            height: 100%;
+            display: inline-block;
+            margin-right: 0;
+            .item-bg {
+                position: relative;
+                z-index: 99;
+                background-position: 50% 50%;
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: pxToRem(716px);
+                height: 100%;
+                margin: auto;
+                border-radius: pxToRem(30px);
+                &.item-bg01 {
+                    width: pxToRem(717px);
+                    background-image: url('../images/bg01.png');
+                }
+                &.item-bg02 {
+                    background-image: url('../images/bg02.png');
+                }
+                &.item-bg03 {
+                    background-image: url('../images/bg03.png');
+                }
+                /* .item-dialog {
+                    background-position: 50% 50%;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    z-index: 999;
+                    // visibility: hidden;
+                    &.item-dialog01 {
+                        background-image: url('../images/dialog01.png');
+                        width: pxToRem(391px);
+                        height: pxToRem(131px);
+                        top: pxToRem(224px);
+                        right: pxToRem(-14px);
+                    }
+                    &.item-dialog02 {
+                        background-image: url('../images/dialog02.png');
+                        width: pxToRem(391px);
+                        height: pxToRem(111px);
+                        top: pxToRem(714px);
+                        left: pxToRem(-42px);
+                    }
+                    &.item-dialog03 {
+                        background-image: url('../images/dialog03.png');
+                        width: pxToRem(291px);
+                        height: pxToRem(131px);
+                        top: pxToRem(392px);
+                        right: pxToRem(-16px);
+                    }
+                    &.item-dialog04 {
+                        background-image: url('../images/dialog04.png');
+                        width: pxToRem(471px);
+                        height: pxToRem(131px);
+                        top: pxToRem(350px);
+                        right: pxToRem(-46px);
+                    }
+                } */
+            }
+        }
+    }
+    .close-icon {
+        position: absolute;
+        left: 50%;
+        bottom: pxToRem(40px);
+        margin-left: pxToRem(-44px);
+        width: pxToRem(88px);
+        height: pxToRem(88px);
+        background-image: url('../images/icon_close.png');
+        background-position: 50% 50%;
+        background-size: contain;
+        z-index: 999;
+    }
+}
+
+.swipe {
+    overflow: hidden;
+    visibility: hidden;
+    position: relative;
+}
+
+.swipe-wrap {
+    overflow: hidden;
+    position: relative;
+}
+
+.swipe-wrap > div {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+/* @-webkit-keyframes slideInUp {
+    from {
+        transform: translate3d(0, 100%, 0);
+        visibility: visible;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+         visibility: visible;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translate3d(0, 100%, 0);
+        visibility: visible;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+         visibility: visible;
+    }
+}
+
+.slideInUp {
+    animation-name: slideInUp;
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+} */

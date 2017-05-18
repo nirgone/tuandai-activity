@@ -77,12 +77,12 @@ module.exports = function(grunt) {
         // Watches files for changes and runs tasks based on the changed files
         watch: {
             // bower: {
-            // 	files: ['bower.json'],
-            // 	tasks: ['wiredep']
+            //  files: ['bower.json'],
+            //  tasks: ['wiredep']
             // },
             // babel: {
-            // 	files: ['<%= config.app %>/scripts/{,*/}*.js'],
-            // 	tasks: ['babel:dist']
+            //  files: ['<%= config.app %>/scripts/{,*/}*.js'],
+            //  tasks: ['babel:dist']
             // },
             gruntfile: {
                 files: ['Gruntfile.js']
@@ -124,7 +124,7 @@ module.exports = function(grunt) {
                     server: {
                         baseDir: ['<%= config.activity %>/<%= config.actName %>/.tmp', '<%= config.activity %>/<%= config.actName %>'],
                         // routes: {
-                        // 	'/bower_components': './bower_components'
+                        //  '/bower_components': './bower_components'
                         // }
                     }
                 }
@@ -138,7 +138,7 @@ module.exports = function(grunt) {
                     server: {
                         baseDir: ['<%= config.activity %>/<%= config.actName %>/.tmp', './test', './'],
                         // routes: {
-                        // 	'/bower_components': './bower_components'
+                        //  '/bower_components': './bower_components'
                         // }
                     }
                 }
@@ -176,12 +176,12 @@ module.exports = function(grunt) {
 
         // Make sure code styles are up to par and there are no obvious mistakes
         // eslint: {
-        // 	target: [
-        // 		'Gruntfile.js',
-        // 		'lib/{,*/}*.js',
-        // 		'<%= config.activity %>/<%= config.actName %>/js/{,*/}*.js',
-        // 		'test/spec/{,*/}*.js'
-        // 	]
+        //  target: [
+        //      'Gruntfile.js',
+        //      'lib/{,*/}*.js',
+        //      '<%= config.activity %>/<%= config.actName %>/js/{,*/}*.js',
+        //      'test/spec/{,*/}*.js'
+        //  ]
         // },
 
         // Compiles ES6 with Babel
@@ -200,13 +200,13 @@ module.exports = function(grunt) {
                 }]
             },
             // test: {
-            // 	files: [{
-            // 		expand: true,
-            // 		cwd: 'test/spec',
-            // 		src: '{,*/}*.js',
-            // 		dest: '.tmp/spec',
-            // 		ext: '.js'
-            // 	}]
+            //  files: [{
+            //      expand: true,
+            //      cwd: 'test/spec',
+            //      src: '{,*/}*.js',
+            //      dest: '.tmp/spec',
+            //      ext: '.js'
+            //  }]
             // }
         },
 
@@ -367,18 +367,18 @@ module.exports = function(grunt) {
         },
 
         // concat: {
-        // 	options: {
-        // 		separator: ';',
-        // 		stripBanners: true
-        // 	},
-        // 	dist: {
-        // 	  src: [
-        // 	    "./lib/vendor/jquery.min.js",
-        // 	    "./lib/vendor/fastclick.js",
-        // 	    // "js/index.js",
-        // 	  ],
-        // 	  dest: "./lib/fastclick-jquery.js"
-        // 	}
+        //  options: {
+        //      separator: ';',
+        //      stripBanners: true
+        //  },
+        //  dist: {
+        //    src: [
+        //      "./lib/vendor/jquery.min.js",
+        //      "./lib/vendor/fastclick.js",
+        //      // "js/index.js",
+        //    ],
+        //    dest: "./lib/fastclick-jquery.js"
+        //  }
         // },
         uglify: {
             options: {},
@@ -398,7 +398,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('serve', 'start the server and preview your app', function(target) {
         // if(projectname) {
-        // 	config.actName = projectname;
+        //  config.actName = projectname;
         // }
 
         if (target === 'dist') {

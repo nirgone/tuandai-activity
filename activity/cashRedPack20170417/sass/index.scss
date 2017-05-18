@@ -107,13 +107,15 @@ $grayColor:#808080;
 // 福利按钮
 .btn-welfare{
     position:absolute;
-    right:0;
-    top:pxToRem(320px);
-    width:pxToRem(124px);
-    height:pxToRem(116px);
+    right:pxToRem(20px);
+    top:pxToRem(306px);
+    width:pxToRem(175px);
+    height:pxToRem(175px);
     color:#fff;
     z-index: 111;
-    @extend .icon-welfare_button;
+    // @extend .icon-welfare_button;
+    background: url('../images/button.png');
+    background-size: 100%;
     line-height:pxToRem(110px);
     font-size:pxToRem(32px);
     font-weight:bold;
@@ -280,7 +282,7 @@ $grayColor:#808080;
         margin:pxToRem(34px) 0 pxToRem(80px);
         color:$orangeColor;
         &:after{
-            width:pxToRem(12px);
+            width:pxToRem(16px);
             height:pxToRem(23px);
             content: '';
             @extend .icon-enter;
@@ -486,6 +488,7 @@ $grayColor:#808080;
     .th {
         // height: 45px;
         height: pxToRem(90px);
+        line-height: pxToRem(90px);
         background-color: #fcfaf8;
         // font-size: 15px;
         font-size: pxToRem(28px);
@@ -784,7 +787,7 @@ $grayColor:#808080;
 .icon-enter {
  @extend .sprite;
   background-position: pxToRem(-134px) pxToRem(-43px);
-  width: pxToRem(12px);
+  width: pxToRem(16px);
   height: pxToRem(23px);
 }
 .icon-index-line {

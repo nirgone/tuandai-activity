@@ -47,13 +47,26 @@
         <div class="masker"></div>
     </div>
 </body>
-<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
-<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
-<!-- <script src="../js/index.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- build:js({dist}) ../js/lib/vendor/jsbridge-3.1.2.js -->
+<script src="../js/vendor/jsbridge-3.1.2.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 (function() {
     FastClick.attach(document.body);
+    var isLegal = Util.isWeiXin() || Util.getParam('type') == 'mobileapp'; //是否是在微信及app中打开
+    if (!isLegal) {
+        Util.toast({
+            message: '请通过微信端或团贷网APP参与',
+            position: 'middle',
+            type: 'always'
+        });
+    }
+
+
     $(".icon-rule").on('click', function() {
         $(".mask").show();
     });
@@ -61,17 +74,33 @@
         $(".mask").hide();
     });
     $(".btn-start").on('click', function() {
-        window.location.href = './page2.html';
+        if (isLegal) {
+            window.location.href = './page2.html';
+        }
     });
     //查看奖品
     var getGift = false; //是否已领过奖品
     $("body").on('click', '.txt-check', function() {
-        if (getGift) {
-            location.href = './gift.html';
-        } else {
-            location.href = './lottery.html';
+        if (isLegal) {
+            if (getGift) {
+                location.href = './gift.html';
+            } else {
+                location.href = './lottery.html';
+            }
         }
+
     });
+    console.info(Util.getParam('type'));
+    var isLogin = false;
+    if (!isLogin) {
+        if (Jsbridge.isNewVersion()) {
+            Jsbridge.appLifeHook(null, function() {
+                Jsbridge.toAppLogin();
+            }, null, null, null);
+        } else {
+
+        }
+    }
 })();
 </script>
 

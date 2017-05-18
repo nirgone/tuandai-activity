@@ -1,0 +1,54 @@
+.icon-hand-left1 {
+  display: block;
+  background-image: url(../images/hand-sprite.png);
+  background-size:pxToRem(217px) pxToRem(114px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(53px);
+  height: pxToRem(50px);
+}
+.icon-hand-left2 {
+  display: block;
+  background-image: url(../images/hand-sprite.png);
+  background-size:pxToRem(217px) pxToRem(114px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-105px) pxToRem(0px);
+  width: pxToRem(43px);
+  height: pxToRem(49px);
+}
+.icon-hand-middle1 {
+  display: block;
+  background-image: url(../images/hand-sprite.png);
+  background-size:pxToRem(217px) pxToRem(114px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-195px) pxToRem(0px);
+  width: pxToRem(22px);
+  height: pxToRem(63px);
+}
+.icon-hand-middle2 {
+  display: block;
+  background-image: url(../images/hand-sprite.png);
+  background-size:pxToRem(217px) pxToRem(114px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-158px) pxToRem(0px);
+  width: pxToRem(27px);
+  height: pxToRem(65px);
+}
+.icon-hand-right1 {
+  display: block;
+  background-image: url(../images/hand-sprite.png);
+  background-size:pxToRem(217px) pxToRem(114px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-63px) pxToRem(0px);
+  width: pxToRem(32px);
+  height: pxToRem(71px);
+}
+.icon-hand-right2 {
+  display: block;
+  background-image: url(../images/hand-sprite.png);
+  background-size:pxToRem(217px) pxToRem(114px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-60px);
+  width: pxToRem(48px);
+  height: pxToRem(54px);
+}

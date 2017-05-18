@@ -9,8 +9,8 @@
 
 .icon-logo {
     @include background('../images/icon-logo.png',
-    169px,
-    55px);
+    163px,
+    54px);
     position: absolute;
     left: pxToRem(30px);
     top: pxToRem(30px);
@@ -53,9 +53,9 @@
 
 .txt-p1 {
     @include background('../images/txt-p1.png',
-    625px,
-    306px);
-    height: percent(306, 573);
+    657px,
+    308px);
+    height: percent(308, 573);
     position: absolute;
     left: 50%;
     top: 50%;
@@ -277,6 +277,110 @@
 .txt4-p2 {
     // @include inline-background('../images/text/p2-txt4.png', 146px, 35px);
     @extend .sprite-p2-txt4;
+}
+
+.picker-mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    display: none;
+    .p-masker {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1000;
+    }
+    // .hide {
+    //     height: 0
+    // }
+    .picker-wrapper {
+        width: 100%;
+        // height: pxToRem(280px);
+        height: 0;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        // overflow: hidden;
+        // background-color: #e5b666;
+        z-index: 9999;
+        transition-property: height;
+        transition-duration: .5s;
+        // .check-bg {
+        //     width: 100%;
+        //     height: pxToRem(70px);
+        //     background-color: #fff0d4;
+        //     position: absolute;
+        //     left: 0;
+        //     top: 0;
+        //     border-top: 1px solid #cf7b3c;
+        //     border-bottom: 1px solid #cf7b3c;
+        //     display: block;
+        // }
+        .btn-reset {
+            width: pxToRem(100px);
+            height: pxToRem(48px);
+            line-height: pxToRem(42px);
+            text-align: center;
+            background-color: #e5b666;
+            font-size: pxToRem(36px);
+            color: #7f4726;
+            border: pxToRem(3px) solid #7f4726;
+            position: absolute;
+            right: pxToRem(10px);
+            top: pxToRem(-4px);
+            display: inline-block;
+        }
+        .opt-list {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            font-size: 0;
+            text-align: center;
+            position: absolute;
+            left: 0;
+            background-color: #e5b666;
+            top: pxToRem(48px);
+            padding-bottom: pxToRem(70px);
+            &>li {
+                width: 100%;
+                font-size: pxToRem(36px);
+                color: #c7943e;
+                height: pxToRem(70px);
+                line-height: pxToRem(70px);
+                position: relative;
+                border-bottom: 1px solid #c7943e;
+                // &:before {
+                //     @include border('bottom',
+                //     #c7943e);
+                //     // border-bottom: 1px solid #dedede;
+                // }
+            }
+        }
+        .active {
+            background-color: #cf7b3c !important;
+            // border-top: 1px solid #cf7b3c;
+            // border-bottom: 1px solid #cf7b3c;
+            color: #ecdebe !important;
+        }
+    }
+    .show {
+        height: pxToRem(288px);
+    }
+}
+
+::-webkit-scrollbar {
+    //滚动条不可见
+    display: none;
+}
+
+.h-opt {
+    width: 100%;
+    height: pxToRem(70px);
+    position: absolute;
+    top: 0;
 }
 
 @-webkit-keyframes runTrain {
