@@ -8,11 +8,10 @@
     <meta name="format-detection" content="telephone=no">
     <title>cashRedPack20170111</title>
     <!-- build:css(dist) ../css/main.css -->
-    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/media.css">
     <link rel="stylesheet" href="../css/animation.css">
     <!-- endbuild -->
-    <link rel="stylesheet" href="../css/land.css">
     <!-- build:js({dist}) ../js/lib/adapt.js -->
     <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
     <!-- endbuild -->
@@ -20,27 +19,18 @@
 
 <body>
     <div class="scroll scroll-active">
-        <div class="content page-result-success">
+        <div class="content page-result-fail">
             <section class="red-top">
                 <div class="redtop-content">
-                    <div class="avatar">
-                        <div class="avatar-cont">
-                            <img src="../images/icon1.png" alt="">
-                        </div>
+                    <div class="redtop-title">
+                        红包失效
                     </div>
+                    <p>该红包已超过8小时的领取时间可以让朋友给您重新发红包</p>
+                    <!-- <p>您还可以领取团贷网新手518红包</p> -->
                 </div>
-            </section>
-            <section class="opened-money-sec">
-                <p>莫小萌的红包</p>
-                <div class="money">
-                    38.18
-                </div>
-                <a class="input-wrapper" id="to_input">
-                    请输入手机号领取
-                </a>
             </section>
             <section class="welfare-sec">
-                <div class="title-line">
+                <div class="title-cloud">
                     团贷网新手福利
                 </div>
                 <ul>
@@ -63,65 +53,20 @@
             </section>
             <section class="txt-sec">
                 <div>
-                    团贷网-让金融更简单
+                    网络理财，就上团贷网
                 </div>
                 <p>互联网金融行业领军平台—团贷网，团贷网已累计获得九鼎投资、久奕投资、巨人投资等商界巨鳄的6.75亿元投资，投资机构涵括了国资系、风投系、上市系、创业系，并得到史玉柱、王利芬、江南春等大咖的支持。</p>
             </section>
+            <a class="input-wrapper" id="to_input" href="">
+                请输入手机号领取
+            </a>
+            <a href="" title="" class="download">下载APP</a>
         </div>
     </div>
-    <!-- 输入弹出层 -->
-    <!-- <div class="input-popup slideInUp" id="input_popup">
-        <div class="input-wrapper">
-            <input type="tel" name="" value="" placeholder="请输入手机号码" id="telNo">
-        </div>
-        <div class="btn" id="get_btn">
-            马上领取
-        </div>
-        <div class="close-part"><i class="icon-close-b" id="close"></i></div>
-    </div> -->
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
-<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
-<script>
-(function() {
-    FastClick.attach(document.body);
 
-    //拉起输入碳层
-    $("#to_input").click(function(e) {
-        Util.showInputPopup();
-        // setTimeout(function() {
-        //     $("#telNo").focus();
-        // }, 500);
-    });
-    // $("#input_popup").on("click", "#close", function(e) {
-    //     $("#input_popup").removeClass("slideInUp").addClass("slideOutDown");
-    // });
-    // Util.tip({
-    //     'content': '提示内容',
-    //     "btns": [{
-    //         "name": "确定",
-    //         "cb": function() {
-    //             console.log('alert')
-    //         }
-    //     }]
-    // });
-    Util.tip({
-        'content': '提示内容',
-        "btns": [{
-            "name": "取消",
-            "cb": function() {
-                console.log('cancel')
-            }
-        },{
-            "name": "确定",
-            "cb": function() {
-                console.log('confirm')
-            }
-        }]
-    });
-})()
-</script>
 
 </html>

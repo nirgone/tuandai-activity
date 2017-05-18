@@ -8,11 +8,10 @@
     <meta name="format-detection" content="telephone=no">
     <title>cashRedPack20170111</title>
     <!-- build:css(dist) ../css/main.css -->
-    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/media.css">
     <link rel="stylesheet" href="../css/animation.css">
     <!-- endbuild -->
-    <link rel="stylesheet" href="../css/land.css">
     <!-- build:js({dist}) ../js/lib/adapt.js -->
     <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
     <!-- endbuild -->
@@ -35,12 +34,18 @@
                 <div class="money">
                     38.18
                 </div>
-                <a class="input-wrapper" id="to_input">
+                <a class="input-wrapper" id="to_input" href="">
                     请输入手机号领取
                 </a>
+                <div class="check-part">
+                    <label class="label" for="read">
+                        <input class="radio" type="checkbox" id="read" checked>
+                        <label class="heckbox radio-input" for="read"></label>注册领取红包即表示您已同意<a id="protocal">《红包使用协议》</a>
+                    </label>
+                </div>
             </section>
             <section class="welfare-sec">
-                <div class="title-line">
+                <div class="title-cloud">
                     团贷网新手福利
                 </div>
                 <ul>
@@ -63,64 +68,44 @@
             </section>
             <section class="txt-sec">
                 <div>
-                    团贷网-让金融更简单
+                    网络理财，就上团贷网
                 </div>
                 <p>互联网金融行业领军平台—团贷网，团贷网已累计获得九鼎投资、久奕投资、巨人投资等商界巨鳄的6.75亿元投资，投资机构涵括了国资系、风投系、上市系、创业系，并得到史玉柱、王利芬、江南春等大咖的支持。</p>
             </section>
         </div>
     </div>
-    <!-- 输入弹出层 -->
-    <!-- <div class="input-popup slideInUp" id="input_popup">
-        <div class="input-wrapper">
-            <input type="tel" name="" value="" placeholder="请输入手机号码" id="telNo">
+    <!-- 红包规则 -->
+    <div class="rule-sec redpack-rule" id="redpack_rule">
+        <div class="masker"></div>
+        <div class="rule-content">
+            <i class="icon-close"></i>
+            <div class="sub-title">
+                红包使用规则
+            </div>
+            <p>1、红包领取后需要当天成功注册团贷网才能到账，逾期作废；</p>
+            <p>2、红包可在个人账户-团宝箱内查看；</p>
+            <p>3、红包使用有效期为3个月（自领取之日起计算）；</p>
+            <p>4、红包可用于提现活着在团贷网投资；</p>
+            <p>5、红包不可用于转让和出售；</p>
+            <p>6、严谨通过作弊手段恶意获取红包，一经发现，立即回收；</p>
+            <p>7、本活动最终解释权归团贷网所有。</p>
         </div>
-        <div class="btn" id="get_btn">
-            马上领取
-        </div>
-        <div class="close-part"><i class="icon-close-b" id="close"></i></div>
-    </div> -->
+    </div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
-<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
 <script>
 (function() {
-    FastClick.attach(document.body);
-
-    //拉起输入碳层
-    $("#to_input").click(function(e) {
-        Util.showInputPopup();
-        // setTimeout(function() {
-        //     $("#telNo").focus();
-        // }, 500);
-    });
-    // $("#input_popup").on("click", "#close", function(e) {
-    //     $("#input_popup").removeClass("slideInUp").addClass("slideOutDown");
-    // });
-    // Util.tip({
-    //     'content': '提示内容',
-    //     "btns": [{
-    //         "name": "确定",
-    //         "cb": function() {
-    //             console.log('alert')
-    //         }
-    //     }]
-    // });
-    Util.tip({
-        'content': '提示内容',
-        "btns": [{
-            "name": "取消",
-            "cb": function() {
-                console.log('cancel')
-            }
-        },{
-            "name": "确定",
-            "cb": function() {
-                console.log('confirm')
-            }
-        }]
-    });
+FastClick.attach(document.body);
+    $("#protocal").on("click", function(e) {
+        $("#redpack_rule").show();
+        $('.scroll').removeClass("scroll-active");
+    })
+    $("#redpack_rule").on("click", ".masker, .icon-close", function(e) {
+        $("#redpack_rule").hide();
+        $(".scroll").addClass("scroll-active");
+    })
 })()
 </script>
 
