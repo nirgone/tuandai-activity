@@ -14,7 +14,7 @@ module.exports = function(grunt) {
     // Configurable paths
     var config = {
         activity: 'activity',
-        actName: 'cardGame',
+        actName: 'demo',
         dist: 'dist'
     };
 
@@ -27,26 +27,9 @@ module.exports = function(grunt) {
 
         sprite: {
             icon: {
-                src: "<%= config.activity %>/<%= config.actName %>/images/sprites/*.png",
-                dest: "<%= config.activity %>/<%= config.actName %>/images/sprites/sprite.png",
-                destCss: "<%= config.activity %>/<%= config.actName %>/sass/sprite_temp.css",
-                cssTemplate: "handlebars/sprite-icon.handlebars",
-                padding: 10
-            },
-            icon2: {
-                src: ["<%= config.activity %>/<%= config.actName %>/images/sprites/text2.png", "<%= config.activity %>/<%= config.actName %>/images/sprites/text3.png"],
-                dest: "<%= config.activity %>/<%= config.actName %>/images/sprites/sprite2.png",
-                destCss: "<%= config.activity %>/<%= config.actName %>/sass/sprite_temp2.css",
-                cssTemplate: "handlebars/sprite-icon.handlebars",
-                padding: 10
-            },
-            icon3: {
-                src: ["<%= config.activity %>/<%= config.actName %>/images/sprites/btn1.png",
-                    "<%= config.activity %>/<%= config.actName %>/images/sprites/btn2.png",
-                    "<%= config.activity %>/<%= config.actName %>/images/sprites/btn3.png"
-                ],
-                dest: "<%= config.activity %>/<%= config.actName %>/images/sprites/sprite3.png",
-                destCss: "<%= config.activity %>/<%= config.actName %>/sass/sprite_temp3.css",
+                src: "<%= config.activity %>/<%= config.actName %>/images/images-land/*.png",
+                dest: "<%= config.activity %>/<%= config.actName %>/images/sprite_land.png",
+                destCss: "<%= config.activity %>/<%= config.actName %>/sass/sprite_land.css",
                 cssTemplate: "handlebars/sprite-icon.handlebars",
                 padding: 10
             }
