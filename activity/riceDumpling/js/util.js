@@ -35,25 +35,21 @@
             btn_cls =  $('<div/>').addClass('btn-cls');
             popWrap.append(p).append(btn_message).append(btn_cls);
             pop_dialog.append(mask).append(popWrap);
-            
 
         if (_options.type === 1) { //团币兑换
             if(_options.tips_text){
                 var tip = $('<p/>').addClass('tip').html(_options.tips_text);
                 popWrap.append(tip);
-                
             }
 
         }
 
-
-        
         $('body').append(pop_dialog);
 
         mask.on("click", function(e) {
         });
         btn_message.on("click", function(e) {
-            _options.btn.callback && _options.btn.callback();
+            _options.btn.callback && _options.btn.callback(e);
             hide(pop_dialog);
         });
         btn_cls.on("click", function(e) {
@@ -119,7 +115,9 @@
             var _options = {
                 "dumplingIndex": 1, // 1 -- 左边的棕子，2 -- 中间的棕子 3 -- 右边的棕子
                 "prizeIndex": 1, // 1 -- 团币 2-ipadair2 3 -- 现金红包 4 -- 超级会员 5 -- 相机
-                "num": '' //数量
+                "num": '', //数量
+                "btnOpenCb": null, //openbtn方法回调
+                "btnPrizeCb": null //prizebtn方法回调
             };
             _options = $.extend(_options, options || {});
             var _icon = '',
@@ -151,18 +149,21 @@
             var dialog_component = $("<div/>").addClass('component-dialog');
             var mask = $("<div/>").addClass('mask');
             var prize_wrap = '<div class="prize-wrap">'+
-                                '<div class="prize-content">'+
-                                    '<div class="prize icon-'+ _icon +'"></div>'+
-                                    '<div class="dumpling icon-dumpling'+ _options.dumplingIndex +'"></div>'+
-                                    '<p>恭喜获得<span class="prize-name">'+ _options.num + _prize + '</span></p>'+
-                                    '<div class="btn btn-open">继续拆</div>'+
-                                    '<div class="btn btn-prize">去看看</div>'+
-                                '</div>'+
+                                '<div class="prize icon-'+ _icon +'"></div>'+
+                                '<div class="dumpling icon-dumpling'+ _options.dumplingIndex +'"></div>'+
+                                '<p>恭喜获得<span class="prize-name">'+ _options.num + _prize + '</span></p>'+
+                                '<div class="btn btn-open">继续拆</div>'+
+                                '<div class="btn btn-prize">去看看</div>'+
                             '</div>';
             dialog_component.append(mask).append(prize_wrap);
             $("body").append(dialog_component);
             dialog_component.find('.btn-open').on('click', function() {
-                that.hide(dialog_component)
+                that.hide(dialog_component);
+                _options.btnOpenCb && _options.btnOpenCb();
+            })
+            dialog_component.find('.btn-prize').on('click', function() {
+                that.hide(dialog_component);
+                _options.btnPrizeCb && _options.btnPrizeCb();
             })
         }
         

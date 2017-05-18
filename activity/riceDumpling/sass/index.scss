@@ -12,17 +12,24 @@ body{
     display: inline-block;
     width: pxToRem(91px);
     position: absolute;
-    bottom: pxToRem(228px);
+    // bottom: pxToRem(238px);
+    bottom: pxToRem(234px);
     left: 50%;
-    transform:translate(-50%,0);
+    // transform:translate(-30%,0);
+    transform:translate(-42%,0);
     z-index: 20;
     .gesture{
         @extend .icon-gesture;
     }
     .gesture-circle{
         @extend .icon-gesture-circle;
-        margin-left: pxToRem(-10px);
-        margin-bottom: pxToRem(10px);
+        margin-left: pxToRem(-16px);
+        margin-bottom: pxToRem(6px);
+    }
+    .gesture-tip{
+        @extend .icon-gesture-tip;
+        margin-left: pxToRem(-16px);
+        margin-bottom: pxToRem(6px);
     }
 }
 
@@ -95,6 +102,26 @@ body{
     font-size: pxToRem(22px);
     text-align: center;
 }
+
+// 分享
+.share{
+    display: none;
+}
+.share-con{
+    @include background('../images/share.png', 576px, 784px)
+    position: absolute;
+    z-index: 99;
+    right: pxToRem(49px);
+    top: pxToRem(43px);
+}
+.share-btn-cls{
+    width: pxToRem(222px);
+    height: pxToRem(86px);
+    position: absolute;
+    bottom: 0;
+    right: pxToRem(216px);
+}
+
 // 弹窗
 .pop-wrap{
     @include background('../images/bg-pop.png', 628px, 612px);
@@ -150,6 +177,26 @@ body{
 .prize-wrap{
     font-size: 0;
     text-align: center;
+     @include background('../images/prize/prize-bg.png', 750px, 900px);
+    background-size: 100%;
+    background-position: top center;
+    padding-top: pxToRem(600px);
+    .dumpling{
+        position: absolute;
+        left: pxToRem(106px);
+        top: pxToRem(180px);
+        width: pxToRem(515px);
+        height: pxToRem(312px);
+        background-size: 100%;
+    }
+    .prize{
+        position: absolute;
+        right: pxToRem(120px);
+        top: pxToRem(120px);
+        width: pxToRem(255px);
+        height: pxToRem(300px);
+        background-size: 100%;
+    }
     .btn{
         display: inline-block;
         width: pxToRem(227px);
@@ -174,30 +221,7 @@ body{
         margin-bottom: pxToRem(112px);
     }
 }
-.prize-content{
-    position: relative;
-    @include background('../images/prize/prize-bg.png', 750px, 840px);
-    background-size: 100%;
-    background-position: top center;
-    padding-top: pxToRem(600px);
-    transform:translate(0,25%);
-    .dumpling{
-        position: absolute;
-        left: pxToRem(106px);
-        top: pxToRem(180px);
-        width: pxToRem(515px);
-        height: pxToRem(312px);
-        background-size: 100%;
-    }
-    .prize{
-        position: absolute;
-        right: pxToRem(120px);
-        top: pxToRem(120px);
-        width: pxToRem(255px);
-        height: pxToRem(300px);
-        background-size: 100%;
-    }
-}
+
 // 奖品弹窗icon
 .icon-dumpling1{
     background-image:url('../images/prize/1.png');
@@ -260,15 +284,28 @@ body{
   background-size:pxToRem(334px) pxToRem(242px);
   background-repeat:no-repeat;
   background-position: pxToRem(-125px) pxToRem(-126px);
-  width: pxToRem(91px);
-  height: pxToRem(91px);
+  width: pxToRem(92px);
+  height: pxToRem(92px);
 }
 .icon-gesture {
   display: block;
-  background-image: url(../images/index-sprite.png);
-  background-size:pxToRem(334px) pxToRem(242px);
+  // background-image: url(../images/index-sprite.png);
+  // background-size:pxToRem(334px) pxToRem(242px);
+  // background-repeat:no-repeat;
+  // background-position: pxToRem(-252px) pxToRem(0px);
+  // width: pxToRem(82px);
+  // height: pxToRem(93px);
+  background-image: url(../images/gesture.png);
+  background-size:100%;
   background-repeat:no-repeat;
-  background-position: pxToRem(-252px) pxToRem(0px);
-  width: pxToRem(82px);
-  height: pxToRem(93px);
+  width: pxToRem(94px);
+  height: pxToRem(106px);
+}
+.icon-gesture-tip {
+  display: block;
+  background-image: url(../images/gesture-tip.png);
+  background-size:100%;
+  background-repeat:no-repeat;
+  width: pxToRem(122px);
+  height: pxToRem(38px);
 }
