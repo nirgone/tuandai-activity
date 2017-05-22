@@ -86,10 +86,15 @@
 }
 
 .rl-container {
-    width: 100%;
+    width: 200%;
     white-space: nowrap;
     transition-property: transform;
     transition-duration: .5s;
+    overflow-y: hidden;
+    .ranking-wrapper {
+        width: pxToRem(750px);
+        display: inline-block;
+    }
     .ranking-list {
         width: 100%;
         padding: 0 pxToRem(30px);

@@ -23,7 +23,7 @@
         <div class="content page-tp">
             <div class="top-txt-container tp-det">
                 <span class="tp-txt1">团票余额：<font class="txt-yellow">899</font></span>
-                <span class="tp-txt2 txt-yellow" id="goDetail"><span>团票明细</span><i class="icon-arrow-yellow"></i></span>
+                <span class="tp-txt2 txt-yellow" id="goRecharge"><span>团票充值</span><i class="icon-arrow-yellow"></i></span>
             </div>
             <div class="select-container">
                 <div class="det-select"><span>最近1个月</span></div>
@@ -31,51 +31,57 @@
                     <!-- <div class="det-masker"></div> -->
                     <ul class="opt-list">
                         <li class="opt active" data-value="1">最近1个月</li>
-                        <li class="opt" data-value="3">最近3个月</li>
-                        <li class="opt" data-value="12">最近12个月</li>
-                        <li class="opt" data-value="all">全部</li>
+                        <li class="opt" data-value="2">最近3个月</li>
+                        <li class="opt" data-value="3">最近12个月</li>
+                        <li class="opt" data-value="0">全部</li>
                     </ul>
                 </div>
             </div>
-            <ul class="det-list">
-                <li class="det-row">
-                    <div class="dt-first dt-item">
-                        <span>团币充值团票</span>
-                        <span class="txt-orange">+30</span>
-                    </div>
-                    <div class="dt-second dt-item">
-                        <span>2017.04.05  12:38</span>
-                        <span>剩余团票：770</span>
-                    </div>
-                </li>
-                <li class="det-row">
-                    <div class="dt-first dt-item">
-                        <span>团币充值团票</span>
-                        <span>-30</span>
-                    </div>
-                    <div class="dt-second dt-item">
-                        <span>2017.04.05  12:38</span>
-                        <span>剩余团票：770</span>
-                    </div>
-                </li>
-                <li class="det-row">
-                    <div class="dt-first dt-item">
-                        <span>团币充值团票</span>
-                        <span>-30</span>
-                    </div>
-                    <div class="dt-second dt-item">
-                        <span>2017.04.05  12:38</span>
-                        <span>剩余团票：770</span>
-                    </div>
-                </li>
-            </ul>
+            <div class="list-wrapper" id="list">
+                <ul class="det-list">
+                    <!-- <li class="det-row">
+                        <div class="dt-first dt-item">
+                            <span>团币充值团票</span>
+                            <span class="txt-orange">+30</span>
+                        </div>
+                        <div class="dt-second dt-item">
+                            <span>2017.04.05  12:38</span>
+                            <span>剩余团票：770</span>
+                        </div>
+                    </li>
+                    <li class="det-row">
+                        <div class="dt-first dt-item">
+                            <span>团币充值团票</span>
+                            <span>-30</span>
+                        </div>
+                        <div class="dt-second dt-item">
+                            <span>2017.04.05  12:38</span>
+                            <span>剩余团票：770</span>
+                        </div>
+                    </li>
+                    <li class="det-row">
+                        <div class="dt-first dt-item">
+                            <span>团币充值团票</span>
+                            <span>-30</span>
+                        </div>
+                        <div class="dt-second dt-item">
+                            <span>2017.04.05  12:38</span>
+                            <span>剩余团票：770</span>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
         </div>
     </div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
-<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
+<!-- build:js({dist}) ../js/lib/vendor/iscroll/iscroll-probe.js -->
+<script src="../js/vendor/iscroll/iscroll-probe.js"></script>
+<!-- endbuild -->
+<script src="../js/common/list.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/common/util.js" type="text/javascript" charset="utf-8"></script>
 <script src="../js/tpdetail.js" type="text/javascript" charset="utf-8"></script>
 
 </html>

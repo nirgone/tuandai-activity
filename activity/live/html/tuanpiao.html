@@ -56,7 +56,10 @@
                         <span>10000000团币</span>
                     </li>
                 </ul>
-                <input type="number" pattern="[0-9]*" name="other" class="tp-input" placeholder="其他团票数量请在此输入">
+                <div class="tp-input-container">
+                    <input type="number" pattern="[0-9]*" name="other" class="tp-input" placeholder="其他团票数量请在此输入" id="count">
+                    <label class="tp-input-tips" for="count"></label>
+                </div>
                 <div class="btn-yellow btn-recharge">立即充值</div>
             </div>
         </div>
@@ -65,8 +68,7 @@
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
-<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/common/util.js" type="text/javascript" charset="utf-8"></script>
 <script src="../js/tuanpiao.js" type="text/javascript" charset="utf-8"></script>
-
 
 </html>
