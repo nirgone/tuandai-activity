@@ -1,7 +1,6 @@
 @charset "UTF-8";
 @import "variables";
-@import "sprite";
-@import "../../../sass/func";
+@import "func";
 .page {
     font-size: 0;
 }
@@ -9,7 +8,7 @@
 .rt-container {
     width: 100%;
     height: pxToRem(100px);
-    padding: pxToRem(30px) 0;
+    // padding: pxToRem(30px) 0;
     text-align: center;
     font-size: 0;
     border-bottom: 1px solid $border-color-grey;
@@ -17,16 +16,27 @@
     color: $color-grey-dark;
     &>span {
         width: 50%;
-        height: pxToRem(40px);
-        line-height: pxToRem(40px);
+        height: pxToRem(100px);
+        line-height: pxToRem(100px);
         font-size: pxToRem($font-size-big);
+        position: relative;
+
     }
     &>span:first-child {
-        border-right: 1px solid $border-color-grey;
+        &:after {
+            content: '';
+            width: 0;
+            height: pxToRem(30px);
+            position: absolute;
+            right: 0;
+            top: 50%;
+            border-right: 1px solid $border-color-grey;
+            transform: translate(0, -50%);
+        }
+        // border-right: 1px solid $border-color-grey;
     }
     .active {
         color: $color-yellow-lighter;
-        position: relative;
         &:before {
             content: '';
             width: pxToRem(62px);
@@ -34,7 +44,7 @@
             border-bottom: pxToRem(3px) solid $color-yellow-lighter;
             position: absolute;
             left: 50%;
-            bottom: pxToRem(-30px);
+            bottom: 0;
             transform: translate(-50%, 0);
         }
     }
@@ -68,10 +78,18 @@
         transform: rotate(180deg);
     }
 }
+.total-list {
+    transform: translateX(pxToRem(-750px));
+}
+.day-list {
+    transform: translateX(0);
+}
 
 .rl-container {
     width: 100%;
     white-space: nowrap;
+    transition-property: transform;
+    transition-duration: .5s;
     .ranking-list {
         width: 100%;
         padding: 0 pxToRem(30px);

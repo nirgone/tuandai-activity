@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="../css/animation.css">
     <!-- endbuild -->
     <link rel="stylesheet" href="../css/tuanpiao.css">
-    <!-- build:js({dist}) ../js/lib/adapt.js -->
-    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- build:js({dist}) ../js/lib/adaptScale.js -->
+    <script src="../js/adaptScale.js" type="text/javascript" charset="utf-8"></script>
     <!-- endbuild -->
 </head>
 
@@ -66,18 +66,7 @@
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
 <script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
-<!-- <script src="../js/index.js" type="text/javascript" charset="utf-8"></script> -->
-<script type="text/javascript">
-(function() {
-    FastClick.attach(document.body);
-    $('body').on('click', '.tp-item', function() {
-        $('.tp-item').removeClass('active');
-        $(this).addClass('active');
-    });
-    $("#goDetail").on('click', function() {
-        location.href = './tpDetail.html';
-    });
-})();
-</script>
+<script src="../js/tuanpiao.js" type="text/javascript" charset="utf-8"></script>
+
 
 </html>

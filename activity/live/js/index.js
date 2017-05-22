@@ -1,4 +1,4 @@
 (function() {
-    FastClick.attach(document.body);
-	    //do your thing.
+	FastClick.attach(document.body);
+	Util.toast('嘘！主播休息中...');
 })();

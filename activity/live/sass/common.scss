@@ -1,8 +1,8 @@
 @charset "UTF-8";
 @import "variables";
 @import "sprite";
-@import "../../../sass/reset";
-@import "../../../sass/func";
+@import "reset";
+@import "func";
 html,
 body {
     position: relative;
@@ -25,7 +25,6 @@ a {
 }
 
 .scroll {
-    max-width: 414px;
     margin: 0 auto;
     width: 100%;
     height: 100%;
@@ -37,12 +36,18 @@ a {
         width: 100%;
     }
 }
+
 * {
     box-sizing: border-box;
 }
-ul, li, span, i {
+
+ul,
+li,
+span,
+i {
     display: inline-block;
 }
+
 .toast {
     background-color: rgba(0, 0, 0, .5);
     min-width: pxToRem(430px);
@@ -56,16 +61,81 @@ ul, li, span, i {
     top: 40%;
     transform: translate(-50%, -50%);
 }
+
 .txt-yellow {
     color: $color-yellow;
 }
+
 .txt-grey {
     color: $color-grey;
 }
+
 .txt-orange {
     color: $color-orange;
 }
+
+.txt-glaucous {
+    color: $color-glaucous;
+}
+
+.txt-green {
+    color: $color-green-light !important;
+}
+
 .page {
     width: 100%;
     height: 100%;
 }
+
+.pop-up-wraper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    font-size: 0;
+    display: none;
+}
+
+.masker {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.share-masker {
+    z-index: 9999;
+    display: none;
+}
+
+.btn-yellow {
+    width: pxToRem(690px);
+    height: pxToRem(86px);
+    line-height: pxToRem(86px);
+    text-align: center;
+    border-radius: pxToRem(8px);
+    color: $color-white;
+    margin: 0 auto;
+    margin-top: pxToRem(60px);
+    font-size: pxToRem(34px);
+    background-color: $color-yellow-light;
+}
+
+.btn-yellow-small {
+    @extend .btn-yellow;
+    width: pxToRem(124px);
+    height: pxToRem(50px);
+    line-height: pxToRem(50px);
+    font-size: pxToRem($font-size-small);
+}
+
+.btn-disable {
+    background-color: #e6e6e6;
+    color: $color-grey;
+}
+
+@import "components";

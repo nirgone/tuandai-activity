@@ -1,13 +1,13 @@
 @charset "UTF-8";
 @import "variables";
-@import "sprite";
-@import "../../../sass/funcAdapt";
+@import "func";
 .page-p1 {
     height: 100%;
     background-image: url('../images/icon-top2.png');
     background-size: pxToRem(750px) pxToRem(399px);
     background-position: top;
     background-repeat: no-repeat;
+    font-size: 0;
 }
 
 .txt-top {
@@ -52,7 +52,6 @@
     }
     .r-det {
         height: pxToRem(80px);
-
         &>div {
             display: inline-block;
         }
@@ -141,3 +140,9 @@
         }
     }
 }
+
+
+
+
+
+

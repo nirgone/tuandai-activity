@@ -1,13 +1,13 @@
 @charset "UTF-8";
 @import "variables";
-@import "sprite";
-@import "../../../sass/funcAdapt";
+@import "func";
 .page-p1 {
     height: 100%;
     background-image: url('../images/icon-top2.png');
     background-size: pxToRem(750px) pxToRem(399px);
     background-position: top;
     background-repeat: no-repeat;
+    font-size: 0;
 }
 
 .txt-top {
@@ -139,5 +139,25 @@
                 background-color: $color-grey;
             }
         }
+    }
+}
+.icon-share {
+    @include background('../images/icon-share-pai.png', 572px, 281px);
+    position: absolute;
+    right: pxToRem(50px);
+    top: pxToRem(120px);
+    .share-txt {
+        position: absolute;
+        left: pxToRem(150px);
+        bottom: pxToRem(36px);
+    }
+    .icon-share-txt1 {
+        @include background('../images/share-txt1.png', 298px, 107px);
+        @extend .share-txt;
+    }
+    .icon-share-txt2 {
+        @include background('../images/share-txt2.png', 319px, 104px);
+        @extend .share-txt;
+        
     }
 }
