@@ -179,6 +179,139 @@
         document.write('<script src="http://sdklog.isd.com/js/vconsole.min.js"></scr' + 'ipt>');
     }
 
+    // 发送类型 0 -- 留言 1--弹幕 2--礼物
+    function sendMsg(type, msg, cb) {
+        switch (type) {
+            case "0":
+                msg = "common|" + msg;
+                break;
+            case "1":
+                msg = "danmu|" + msg;
+                break;
+            case "2":
+                msg = "gift|" + msg;
+                break;
+        }
+        if (!loginInfo.identifier) { //未登录
+            Util.toast('未登录！！！');
+            return;
+        }
+
+        // 基础判断
+        // 输入内容
+        // let msgtosend = ;
+        if (!selToID) {
+            Util.toast("您还没有进入房间，暂不能聊天");
+            $("#popup-input-wrapper").val('');
+            return;
+        }
+
+        // var msgtosend = $("#send_msg_text").val();
+
+        if (msg.length < 1) {
+            Util.toast("发送的消息不能为空!");
+            return;
+        }
+
+        selSess = Base.onSendMsg(msg, loginInfo, {
+            "selToID": selToID,
+            "selType": selType,
+            "selSess": selSess,
+            "selSessHeadUrl": selSessHeadUrl
+        }, cb);
+    }
+    //初始化礼物列表
+    function initGift() {
+        //action Sheet礼物数据
+        let giftList = [{
+            id: 0,
+            type: 0,
+            name: '赞赞赞',
+            price: '1团票',
+            iconUrl: "../images/gift-zan.png"
+        }, {
+            id: 1,
+            type: 0,
+            name: '爱的小心心',
+            price: '5团票',
+            iconUrl: '../images/gift-love.png'
+        }, {
+            id: 2,
+            type: 0,
+            name: '红包打赏',
+            price: '10团票',
+            iconUrl: '../images/gift-redpacket.png'
+        }, {
+            id: 3,
+            type: 0,
+            name: '小π公仔',
+            price: '100团票',
+            iconUrl: '../images/gift-pai.png'
+        }, {
+            id: 4,
+            type: 0,
+            name: '幸运福袋',
+            price: '200团票',
+            iconUrl: '../images/gift-pocket.png'
+        }, {
+            id: 5,
+            type: 0,
+            name: '鲜花攻势',
+            price: '300团票',
+            iconUrl: '../images/gift-flower.png'
+        }, {
+            id: 6,
+            type: 1,
+            name: '浪漫约会',
+            price: '500团票',
+            iconUrl: '../images/gift-wine.png'
+        }, {
+            id: 7,
+            type: 1,
+            name: '闪闪钻石',
+            price: '800团票',
+            iconUrl: '../images/gift-diamon.png'
+        }, {
+            id: 8,
+            type: 0,
+            name: '赞赞赞',
+            price: '1团票',
+            iconUrl: "../images/gift-zan.png"
+        }, {
+            id: 9,
+            type: 0,
+            name: '爱的小心心',
+            price: '5团票',
+            iconUrl: '../images/gift-love.png'
+        }];
+        // giftSheet = new GiftSheet(giftList);
+
+        // let temp = '';
+        // let _pageStart = `<div><ul class="g-list">`;
+        // let _pageEnd = `</ul></div>`;
+        // let len = giftList.length;
+
+        // giftList.forEach((item, index) => {
+        //     let _gift = `<li class="g-item" data-type="${item.type}" data-id="${item.id}">
+        //                     <div class="g-icon-container"><i class="g-icon" style="background-image: url(${item.iconUrl});"></i></div>
+        //                     <span class="txt-green g-txt g-name">${item.name}</span>
+        //                     <span class="g-txt g-tp">${item.price}</span>
+        //                </li>`;
+        //     if (index % 8 === 0) {
+        //         temp = temp + _pageStart + _gift
+        //     } else if (index % 8 === 7 || index === (len - 1)) {
+        //         temp = temp + _gift + _pageEnd;
+        //     } else {
+        //         temp += _gift
+        //     }
+        // });
+        // $('.g-swipe').append(temp);
+        // giftSwipe = Swipe(document.getElementById('giftSlider'), {
+        //  continuous: false
+        // });
+
+    }
+
 
     /* ----------事件绑定------------ */
 
@@ -341,139 +474,6 @@
         $(this).prop('comStart', false);
         // console.log('中文输入：结束');
     });
-    /* ----------事件绑定--end---------- */
-    // 发送类型 0 -- 留言 1--弹幕 2--礼物
-    function sendMsg(type, msg, cb) {
-        switch (type) {
-            case "0":
-                msg = "common|" + msg;
-                break;
-            case "1":
-                msg = "danmu|" + msg;
-                break;
-            case "2":
-                msg = "gift|" + msg;
-                break;
-        }
-        if (!loginInfo.identifier) { //未登录
-            Util.toast('未登录！！！');
-            return;
-        }
-
-        // 基础判断
-        // 输入内容
-        // let msgtosend = ;
-        if (!selToID) {
-            Util.toast("您还没有进入房间，暂不能聊天");
-            $("#popup-input-wrapper").val('');
-            return;
-        }
-
-        // var msgtosend = $("#send_msg_text").val();
-
-        if (msg.length < 1) {
-            Util.toast("发送的消息不能为空!");
-            return;
-        }
-
-        selSess = Base.onSendMsg(msg, loginInfo, {
-            "selToID": selToID,
-            "selType": selType,
-            "selSess": selSess,
-            "selSessHeadUrl": selSessHeadUrl
-        }, cb);
-    }
-    //初始化礼物列表
-    function initGift() {
-        //action Sheet礼物数据
-        let giftList = [{
-            id: 0,
-            type: 0,
-            name: '赞赞赞',
-            price: '1团票',
-            iconUrl: "../images/gift-zan.png"
-        }, {
-            id: 1,
-            type: 0,
-            name: '爱的小心心',
-            price: '5团票',
-            iconUrl: '../images/gift-love.png'
-        }, {
-            id: 2,
-            type: 0,
-            name: '红包打赏',
-            price: '10团票',
-            iconUrl: '../images/gift-redpacket.png'
-        }, {
-            id: 3,
-            type: 0,
-            name: '小π公仔',
-            price: '100团票',
-            iconUrl: '../images/gift-pai.png'
-        }, {
-            id: 4,
-            type: 0,
-            name: '幸运福袋',
-            price: '200团票',
-            iconUrl: '../images/gift-pocket.png'
-        }, {
-            id: 5,
-            type: 0,
-            name: '鲜花攻势',
-            price: '300团票',
-            iconUrl: '../images/gift-flower.png'
-        }, {
-            id: 6,
-            type: 1,
-            name: '浪漫约会',
-            price: '500团票',
-            iconUrl: '../images/gift-wine.png'
-        }, {
-            id: 7,
-            type: 1,
-            name: '闪闪钻石',
-            price: '800团票',
-            iconUrl: '../images/gift-diamon.png'
-        }, {
-            id: 8,
-            type: 0,
-            name: '赞赞赞',
-            price: '1团票',
-            iconUrl: "../images/gift-zan.png"
-        }, {
-            id: 9,
-            type: 0,
-            name: '爱的小心心',
-            price: '5团票',
-            iconUrl: '../images/gift-love.png'
-        }];
-        // giftSheet = new GiftSheet(giftList);
-
-        // let temp = '';
-        // let _pageStart = `<div><ul class="g-list">`;
-        // let _pageEnd = `</ul></div>`;
-        // let len = giftList.length;
-
-        // giftList.forEach((item, index) => {
-        //     let _gift = `<li class="g-item" data-type="${item.type}" data-id="${item.id}">
-        //                     <div class="g-icon-container"><i class="g-icon" style="background-image: url(${item.iconUrl});"></i></div>
-        //                     <span class="txt-green g-txt g-name">${item.name}</span>
-        //                     <span class="g-txt g-tp">${item.price}</span>
-        //                </li>`;
-        //     if (index % 8 === 0) {
-        //         temp = temp + _pageStart + _gift
-        //     } else if (index % 8 === 7 || index === (len - 1)) {
-        //         temp = temp + _gift + _pageEnd;
-        //     } else {
-        //         temp += _gift
-        //     }
-        // });
-        // $('.g-swipe').append(temp);
-        // giftSwipe = Swipe(document.getElementById('giftSlider'), {
-        //  continuous: false
-        // });
-
-    }
 
     //主播信息
     $('.video-info').on('click', function() {
@@ -482,5 +482,6 @@
     $('.ai-close, .ai-masker').on('click', function() {
         $('.anchor-info-wrapper').hide();
     });
+    /* ----------事件绑定--end---------- */
 
 })();
