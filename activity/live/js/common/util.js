@@ -2,6 +2,7 @@
     /* ==================弹出框==dialog================= */
     /*
             options : {
+                title: 提示标题,
                 content: 提示内容,
                 btns: [{
                     name: 按钮名称
@@ -11,6 +12,7 @@
         */
     function popup(options) {
         var _options = {
+            "title": "",
             "content": "",
             "btns": [{
                 "name": "",
@@ -30,6 +32,10 @@
             positive_btn = '',
             ne_cb = null,
             po_cb = null;
+        if(_options.title) {
+            var _title = $("<div/>").addClass("dialog-title").html(_options.title);
+            dialog_wrapper.append(_title);
+        }
         dialog_wrapper.append(dialog_content);
         if (_options.btns.length > 1) {
             negative_btn = $("<div/>").addClass("btn").addClass("negative-btn").html(_options.btns[0].name);
@@ -50,7 +56,7 @@
 
         $("body").append(dialog_component);
         // disableScrolling();
-        util.disableScroll();
+        Util.disableScroll();
         //事件绑定
         masker.bind("click", function(e) {
             hide(dialog_component);
@@ -69,7 +75,7 @@
         function hide(target) {
             target.remove();
             // enableScrolling();
-            util.enableScroll();
+            Util.enableScroll();
         }
     }
 

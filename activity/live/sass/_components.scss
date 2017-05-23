@@ -55,4 +55,14 @@
             }
         }
     }
+    .dialog-title {
+        width: pxToRem(550px);
+        height: pxToRem(80px);
+        line-height: pxToRem(80px);
+        margin: auto;
+        border-bottom: 1px dashed $border-color-grey;
+        font-size: pxToRem($font-size-normal);
+        color: $color-grey;
+        text-align: center;
+    }
 }
