@@ -7,11 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
     <meta name="format-detection" content="telephone=no">
-     <title>直播频道</title>
+    <title>直播频道</title>
+    <style type="text/css" media="screen" id="init_style"></style>
     <!-- build:css(dist) ../css/main.css -->
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/media.css">
     <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <!-- build:css(dist) ../js/lib/vendor/swiper/swiper.min.css -->
+    <link rel="stylesheet" href="../css/vendor/swiper/swiper.min.css">
     <!-- endbuild -->
     <link rel="stylesheet" href="../css/broadcastRoom.css">
     <!-- build:js({dist}) ../js/lib/adaptScale.js -->
@@ -65,6 +69,34 @@
                 </div>
                 <div class="video-pane-body">
                     <div class="video-gift">
+                        <div class="gift-anit">
+                            <div class="user-msg-info user-msg-gift">
+                                <img src="../images/avator.png">
+                                <div>今晚约定你</div>
+                                <div>
+                                    送出闪闪钻石
+                                </div>
+                            </div>
+                            <img src="../images/diamon.gif" class="img-anit">
+                        </div>
+                        <div class="gift-normal">
+                            <!-- <div class="user-msg-info user-msg-gift">
+                                <img src="${require('../images/avator.png')}">
+                                <div>今晚约定你</div>
+                                <div>
+                                    送出闪闪钻石
+                                </div>
+                                <i class="img-normal" style="background-image: url(${require('../images/sgift-love.png')})"><i class="g-num">X3</i></i>
+                            </div>
+                            <div class="user-msg-info user-msg-gift">
+                                <img src="${require('../images/avator.png')}">
+                                <div>今晚约定你</div>
+                                <div>
+                                    送出闪闪钻石
+                                </div>
+                                <i class="img-normal" style="background-image: url(${require('../images/sgift-redpacket.png')})"><i class="g-num">X3</i></i>
+                            </div> -->
+                        </div>
                     </div>
                     <div class="video-discuss">
                         <!-- <canvas class="video-barrage-pane" id="video_barrage_pane" style="width: 100%;"></canvas> -->
@@ -102,7 +134,7 @@
                         <i class="icon-i-question"></i>
                     </div>
                     <div class="item bg-circle" data-value="3">
-                        <i class="icon-i-msg"></i>
+                        <i class="icon-i-msg redcode"></i>
                     </div>
                     <div class="item icon-gift" data-value="4">
                     </div>
@@ -146,8 +178,8 @@
         <div class="masker g-masker"></div>
         <div class="g-content">
             <div class="g-container">
-                <div id='giftSlider' class='swipe'>
-                    <div class='swipe-wrap g-swipe'>
+                <div class="swiper-container" id="giftSwiper">
+                    <div class="swiper-wrapper">
                     </div>
                 </div>
             </div>
@@ -155,6 +187,89 @@
                 <span class="g-tp-txt"><font class="txt-green">团票：</font><font>9999</font><i class="icon-arrow-grey"></i></span>
                 <div class="gift-send btn-disable">发送</div>
                 <!-- <div class="gift-send btn-series">连送(5.1S)</div> -->
+            </div>
+        </div>
+    </div>
+    <!-- 系统消息和热门活动 tab -->
+    <div class="msg-act-wrapper" id="msg_tab">
+        <div class="masker"></div>
+        <div class="msg-tabs slideInUp">
+            <div class="tabs-header" id="tab_header">
+                <span class="nav active" data-panel="1">系统消息</span>
+                <span class="nav" data-panel="2">热门活动</span>
+            </div>
+            <div class="panel" id="panel1">
+                <ul id="list_msg">
+                    <li class="msg-item redcode">
+                        <p>您已经成功兑换1团票，花费1000团币。</p>
+                        <span>2016-04-28 13:59</span></li>
+                    <li class="msg-item">
+                        <p>您已经成功兑换2团票，花费1000团币。</p>
+                        <span>2016-04-28 13:59</span></li>
+                    <li class="msg-item">
+                        <p>您已经成功兑换3团票，花费1000团币。</p>
+                        <span>2016-04-2 13:59</span></li>
+                    <li class="msg-item ">
+                        <p>您已经成功兑换4团票，花费1000团币。</p>
+                        <span>2016-04-28 13:59</span></li>
+                    <li class="msg-item">
+                        <p>您已经成功兑换5团票，花费1000团币。</p>
+                        <span>2016-04-28 13:59</span></li>
+                    <li class="msg-item">
+                        <p>您已经成功兑换6团票，花费1000团币。</p>
+                        <span>2016-04-28 13:59</span></li>
+                    <li class="msg-item">
+                        <p>您已经成功兑换7团票，花费1000团币。</p>
+                        <span>2016-04-28 13:59</span></li>
+                    <li class="msg-item">
+                        <p>您已经成功兑换8团票，花费1000团币。</p>
+                        <span>2016-04-28 13:59</span></li>
+                    <li class="msg-item">
+                        <p>您已经成功兑换9团票，花费1000团币。</p>
+                        <span>2016-04-28 13:59</span></li>
+                    <li class="msg-item">
+                        <p>您已经成功兑换10团票，花费1000团币。</p>
+                        <span>2016-04-28 13:59</span></li>
+                </ul>
+                <!-- <div class="msg-item redcode">
+                    <p>您已经成功兑换1000团票，花费1000团币。</p>
+                    <span>2016-04-28 13:59</span>
+                </div>
+                 <div class="msg-item">
+                    <p>您已经成功兑换1000团票，花费1000团币。</p>
+                    <span>2016-04-28 13:59</span>
+                </div>
+                 <div class="msg-item">
+                    <p>您已经成功兑换1000团票，花费1000团币。</p>
+                    <span>2016-04-28 13:59</span>
+                </div>
+                 <div class="msg-item">
+                    <p>您已经成功兑换1000团票，花费1000团币。</p>
+                    <span>2016-04-28 13:59</span>
+                </div>
+                 <div class="msg-item">
+                    <p>您已经成功兑换1000团票，花费1000团币。</p>
+                    <span>2016-04-28 13:59</span>
+                </div> -->
+            </div>
+            <div class="panel" id="panel2">
+                <div class="swiper-container" id="swiper_act">
+                    <div class='swiper-wrapper'>
+                        <div class="swiper-slide">
+                            <a href="http://baidu.com" title=""> <img src="../images/pic.png"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="http://baidu.com" title=""> <img src="../images/pic.png"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="http://baidu.com" title=""> <img src="../images/pic.png"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="http://baidu.com" title=""> <img src="../images/pic.png"></a>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -174,6 +289,9 @@
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<!-- build:js({dist}) ../js/lib/vendor/swiper/swiper.jquery.min.js -->
+<script src="../js/vendor/swiper/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
 <script src="../js/im/sdk/webim_no_emotion.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="../js/im/sdk/json2.js" type="text/javascript" charset="utf-8"></script>
