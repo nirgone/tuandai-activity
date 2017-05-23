@@ -1,0 +1,102 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../../sass/func";
+* {
+    box-sizing: border-box;
+}
+
+@at-root .square {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    border-radius: pxToRem(4px);
+    box-sizing: border-box;
+    z-index: 99;
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        @extend .icon-corner;
+        top: pxToRem(16px);
+    }
+    &:before {
+        left: pxToRem(16px);
+    }
+    &:after {
+        transform: scale3d(-1, 1, 1);
+        right: pxToRem(16px);
+    }
+    .square-content {
+        position: relative;
+        padding: pxToRem(56px) pxToRem(40px) pxToRem(36px) pxToRem(40px);
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            @extend .icon-corner;
+            bottom: pxToRem(16px);
+        }
+        &:before {
+            transform: scale3d(1, -1, 1);
+            left: pxToRem(16px);
+        }
+        &:after {
+            transform: scale3d(-1, -1, 1);
+            right: pxToRem(16px);
+        }
+    }
+}
+
+@at-root .border-square {
+    border: 1px solid $bg-color-brown;
+    position: relative;
+    width: 100%;
+    z-index: 99;
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        @extend .icon-corner-brown;
+        top: 0;
+    }
+    &:before {
+        left: 0;
+        background-position: 0% 0% !important;
+    }
+    &:after {
+        transform: scale3d(-1, 1, 1);
+        right: 0;
+        background-position: 100% 0% !important;
+    }
+    .square-content {
+        position: relative;
+        padding: pxToRem(50px) 0;
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            @extend .icon-corner-brown;
+            bottom: 0;
+        }
+        &:before {
+            transform: scale3d(1, -1, 1);
+            left: 0;
+            background-position: 0% 100% !important;
+        }
+        &:after {
+            transform: scale3d(-1, -1, 1);
+            right: 0;
+            background-position: 100% 100% !important;
+        }
+    }
+}
+
+.icon-corner {
+    @include background("../images/icon_decorate.png", 36px, 32px);
+    z-index: 99;
+}
+
+.icon-corner-brown {
+    @include background("../images/icon_decorate_brown.png", 20px, 20px);
+    z-index: 99;
+}

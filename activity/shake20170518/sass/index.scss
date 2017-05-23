@@ -1,0 +1,359 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    // background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-image: url("../images/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.scroll-active {
+    -webkit-overflow-scrolling: touch !important;
+}
+
+.scroll {
+    max-width: pxToRem(818px);
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    .content {
+        width: 100%;
+    }
+}
+
+.index-header {
+    margin: auto;
+    margin-top: pxToRem(60px);
+    margin-bottom: pxToRem(66px);
+    position: relative;
+    .index-header-title {
+        @include background("../images/index_title.png",
+        399px,
+        137px);
+        margin: auto;
+        margin-bottom: pxToRem(30px);
+    }
+    .btn-rule {
+        @include background("../images/index_btn_rule.png",
+        239px,
+        137px);
+        margin: auto;
+    }
+}
+
+.index-md {
+    position: relative;
+    margin: auto;
+    @include background("../images/icon_god_body.png",
+    432px,
+    519px);
+    .icon-god-hand {
+        position: absolute;
+        @include background("../images/icon_god_hand.png",
+        136px,
+        239px);
+        top: pxToRem(160px);
+        left: pxToRem(16px);
+         animation: swing 3.2s linear both infinite;
+        transform-origin: 90% 90%;
+    }
+}
+
+.index-footer {
+    position: relative;
+    @include background("../images/index_border.png",
+    706px,
+    298px);
+    float: right;
+    margin-top: pxToRem(-3px);
+    margin-bottom: pxToRem(60px);
+    .index-footer-title {
+        color: $txt-color-yellow;
+        font-size: pxToRem(34px);
+        position: absolute;
+        left: pxToRem(170px);
+        top: pxToRem(70px);
+        width: pxToRem(322px);
+        text-align: center;
+    }
+    .index-footer-content {
+        color: $txt-color-yellow;
+        font-size: pxToRem(34px);
+        position: absolute;
+        left: pxToRem(40px);
+        top: pxToRem(140px);
+        width: pxToRem(580px);
+        text-align: center;
+        span {
+            color: $txt-color-red;
+        }
+    }
+}
+
+.mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.dialog-rule {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+    .square {
+        position: absolute;
+        width: pxToRem(580px);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+        .square-content {
+            padding: pxToRem(50px) pxToRem(50px) pxToRem(78px) pxToRem(50px);
+        }
+        @at-root .rule-title {
+            margin-bottom: pxToRem(40px);
+            font-size: 0;
+            text-align: center;
+            white-space: nowrap;
+            position: relative;
+            font {
+                font-size: pxToRem(32px);
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 pxToRem(20px);
+                color: $txt-color-yellow;
+            }
+            .line {
+                vertical-align: middle;
+                @include background("../images/icon_line.png",
+                77px,
+                18px);
+                display: inline-block;
+                &.right-line {
+                    transform: scale3d(-1, 1, 1);
+                }
+            }
+        }
+        @at-root .rule-content {
+            color: $txt-color-grey;
+            .rule-item {
+                font-size: pxToRem(26px);
+                line-height: pxToRem(46px);
+                text-align: justify;
+                margin-bottom: pxToRem(10px);
+            }
+        }
+        .icon-close {
+            @include background("../images/icon_close.png",
+            70px,
+            70px);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: pxToRem(-120px);
+        }
+    }
+}
+
+.loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, .9);
+    display: none;
+    .loading-content {
+        position: absolute;
+        top: pxToRem(246px);
+        left: 50%;
+        margin-left: pxToRem(-172px);
+        .label {
+            font-size: pxToRem(32px);
+            line-height: pxToRem(48px);
+            color: $txt-color-yellow;
+            text-align: center;
+        }
+    }
+    .icon-wrapper {
+        width: pxToRem(344px);
+        height: pxToRem(344px);
+        background-color: #bc954b;
+        border-radius: 50%;
+        position: relative;
+        margin-bottom: pxToRem(48px);
+    }
+    .loading-bg {
+        width: pxToRem(88px);
+        height: pxToRem(288px);
+        background-image: url("../images/loading_bg.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        animation: shake 2s linear infinite;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: pxToRem(-144px);
+        margin-left: pxToRem(-44px);
+        transform-origin: center;
+    }
+    .loading-icon-wrapper {
+        width: pxToRem(60px);
+        height: pxToRem(60px);
+        line-height: pxToRem(60px);
+        font-size: pxToRem(16px);
+        position: absolute;
+        bottom: pxToRem(32px);
+        left: 50%;
+        margin-left: pxToRem(-30px);
+        color: #fff;
+        text-align: center;
+        white-space: nowrap;
+        .loading-icon {
+            width: 100%;
+            height: 100%;
+            background-image: url("../images/loading.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 9;
+            animation: rotate .8s linear both infinite;
+        }
+    }
+}
+
+@-webkit-keyframes shake {
+    from,
+    to {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translate(0, pxToRem(-16px));
+        transform: translate(0, pxToRem(-16px));
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translate(0, pxToRem(16px));
+        transform: translate(0, pxToRem(16px));
+    }
+}
+
+@keyframes shake {
+    from,
+    to {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translate(0, pxToRem(-16px));
+        transform: translate(0, pxToRem(-16px));
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translate(0, pxToRem(16px));
+        transform: translate(0, pxToRem(16px));
+    }
+}
+
+@-webkit-keyframes swing {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    7.5% {
+        -webkit-transform: rotate(10deg);
+        transform: rotate(10deg);
+    }
+    15% {
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+    }
+    22.5% {
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg);
+    }
+    30% {
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    }
+    37.5% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+@-webkit-keyframes rotate {
+    to {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    from {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    to {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    from {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@import 'common.scss';

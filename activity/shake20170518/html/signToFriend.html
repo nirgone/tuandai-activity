@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>shake20170110</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="scroll scroll-active">
+        <div class="content">
+            <section class="date-sec">
+               <!--  运势4-5颗星：XXX运势爆表啦！   
+                运势2-3颗星：XXX好运将至！
+                运势1颗星：XXX相信否极泰来！ -->
+                <p><font class="font-orange">莫小萌</font>相信否极泰来</p>
+                <div class="icon-cloud2 day">
+                    5
+                </div>
+                <p class="sub-font">2017年1月</p>
+            </section>
+            <section class="sign-sec">
+                <div class="square">
+                    <div class="sign-border-wrapper">
+                        <div class="sign-border"></div>
+                        <span class="border-masker masker01"></span>
+                        <span class="border-masker masker02"></span>
+                        <span class="border-masker masker03"></span>
+                        <span class="border-masker masker04"></span>
+                    </div>
+                    <div class="square-content">
+                        <p class="sign-txt">你之所以觉得一年比一年过得快，是因为时间对你一年比一年重要。</p>
+                        <i class="sign-status">宜</i>
+                        <div class="cutoff-title">联络旧友</div>
+                        <p>参加<a href="" class="font-orange">团粉故事有奖征文></a></p>
+                    </div>
+                </div>
+            </section>
+            <div class="frame luck-frame">
+                <div class="frame-title">
+                    今日运程指数
+                </div>
+                <!-- data-value: 运程指数 -->
+                <div class="frame-content" data-value="3">
+                    <i class="icon-face"></i>
+                    <i class="icon-face"></i>
+                    <i class="icon-face"></i>
+                    <i class="icon-face"></i>
+                    <i class="icon-face"></i>
+                </div>
+            </div>
+            <div class="btn-common" id="btn_test">
+                和我PK运势
+            </div>
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script>
+(function() {
+    FastClick.attach(document.body);
+    $("#btn_test").on("click", function(e) {
+        window.location.href = './index.html'
+    });
+})()
+</script>
+
+</html>

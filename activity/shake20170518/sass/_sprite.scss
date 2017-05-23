@@ -1,0 +1,55 @@
+@charset "UTF-8";
+@import "../../../sass/func";
+
+.icon-block {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.icon-inline-block {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+.icon-cloud2 {
+	@extend .icon-block;
+	@include icon-background('../images/cloud2.png', 314px, 90px);
+}
+.icon-shadow {
+	@extend .icon-block;
+	@include icon-background('../images/shadow.png', 602px, 70px);
+}
+.icon-corner {
+	@extend .icon-block;
+	@include icon-background("../images/corner.png", 76px, 76px);
+}
+.icon-corner-red {
+	@extend .icon-block;
+	@include icon-background("../images/corner-red.png", 60px, 62px);
+}
+.icon-quotation {
+	@extend .icon-inline-block;
+	@include icon-background("../images/quotation.png", 18px, 18px);
+}
+.icon-coins {
+	@extend .icon-inline-block;
+	@include icon-background("../images/coins.png", 106px, 62px);
+}
+.icon-face-smile {
+	@extend .icon-inline-block;
+	@include icon-background('../images/face-smile.png', 47px, 47px);
+}
+.icon-face-cry {
+	@extend .icon-inline-block;
+	@include icon-background('../images/face-cry.png', 47px, 47px);
+}
+.icon-arrow-brown {
+	@extend .icon-block;
+	@include icon-background('data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAUCAMAAABh7EcdAAAAOVBMVEUAAABAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiZAJiaHpjz4AAAAEnRSTlMAzxAa2u2+sjwl5y6ckHpvWVAkNBGdAAAARklEQVQY073NtwHAMAzEQFI5OGL/YV0+JzC6q2A2WjbllCllpw4xdepj6oQr8IYj8K20JI6FZ3E6a4sburYFTz/AWoTNLnywCQLPsJ3I3AAAAABJRU5ErkJggg==', 13px, 20px);
+}
+
