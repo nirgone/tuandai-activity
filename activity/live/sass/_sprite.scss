@@ -1,2 +1,17 @@
-@charset "UTF-8";
-@import "../../../sass/func";
+@charset 'utf-8';
+@import "func";
+@import "variables";
+
+.icon-block {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.icon-inline-block {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}

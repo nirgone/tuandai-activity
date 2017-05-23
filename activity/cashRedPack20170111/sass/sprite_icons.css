@@ -1,0 +1,45 @@
+.icon-arrow {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size: pxToRem(180px)  pxToRem(118px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-130px) pxToRem(-56px);
+  width: pxToRem(16px);
+  height: pxToRem(28px);
+}
+.icon-banger {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size: pxToRem(180px)  pxToRem(118px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(49px);
+  height: pxToRem(86px);
+}
+.icon-cloud0 {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size: pxToRem(180px)  pxToRem(118px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-96px);
+  width: pxToRem(86px);
+  height: pxToRem(22px);
+}
+.icon-corner0 {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size: pxToRem(180px)  pxToRem(118px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-59px) pxToRem(0px);
+  width: pxToRem(61px);
+  height: pxToRem(61px);
+}
+.icon-redpack {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size: pxToRem(180px)  pxToRem(118px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-130px) pxToRem(0px);
+  width: pxToRem(50px);
+  height: pxToRem(46px);
+}

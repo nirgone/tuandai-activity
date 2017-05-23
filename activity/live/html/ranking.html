@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="../css/animation.css">
     <!-- endbuild -->
     <link rel="stylesheet" href="../css/ranking.css">
-    <!-- build:js({dist}) ../js/lib/adapt.js -->
-    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- build:js({dist}) ../js/lib/adaptScale.js -->
+    <script src="../js/adaptScale.js" type="text/javascript" charset="utf-8"></script>
     <!-- endbuild -->
 </head>
 
@@ -25,100 +25,113 @@
                 <span class="active rt-type" data-type="0">日榜</span>
                 <span class="rt-type" data-type="1">总榜</span>
             </div>
-            <span class="r-num">6280团票</span>
             <div class="rl-container">
-                <ul class="ranking-list" data-index="0">
-                    <li class="ranking-row">
-                        <div>
-                            <i class="icon-gold"></i>
-                        </div>
-                        <div class="top-three">
-                            <i class="r-avator r-gold">
+                <div class="ranking-wrapper list-wrapper" id="dayList">
+                    <ul class="ranking-list" data-index="0">
+                        <span class="r-num">6280团票</span>
+                        <!-- <li class="ranking-row">
+                            <div>
+                                <i class="icon-gold"></i>
+                            </div>
+                            <div class="top-three">
+                                <i class="r-avator r-gold">
+                                    <img src="../images/avator.png">
+                                </i>
+                                <span>团小π</span>
+                            </div>
+                            <div>贡献
+                                <font class="txt-yellow">908</font>团票</div>
+                        </li>
+                        <li class="ranking-row">
+                            <div>
+                                <i class="icon-sliver"></i>
+                            </div>
+                            <div class="top-three">
+                                <i class="r-avator r-sliver">
+                                    <img src="../images/avator.png">
+                                </i>
+                                <span>团小π</span>
+                            </div>
+                            <div>贡献
+                                <font class="txt-yellow">908</font>团票</div>
+                        </li>
+                        <li class="ranking-row">
+                            <div>
+                                <i class="icon-bonze"></i>
+                            </div>
+                            <div class="top-three">
+                                <i class="r-avator r-bonze">
+                                    <img src="../images/avator.png">
+                                </i>
+                                <span>团小π</span>
+                            </div>
+                            <div>贡献
+                                <font class="txt-yellow">908</font>团票</div>
+                        </li>
+                        <li class="ranking-row">
+                            <div>4</div>
+                            <div class="r-normal">
+                                <i class="r-avator"><img src="../images/avator.png"></i>
+                                <span>团小π</span>
+                            </div>
+                            <div>贡献
+                                <font class="txt-yellow">908</font>团票</div>
+                        </li> -->
+                    </ul>
+                </div>
+                <div class="ranking-wrapper list-wrapper" id="totalList">
+                    <ul class="ranking-list" data-index="1">
+                        <span class="r-num">6280团票</span>
+                        <!-- <li class="ranking-row">
+                            <div>
+                                <i class="icon-gold"></i>
+                            </div>
+                            <div class="top-three">
+                                <i class="r-avator r-gold">
                         <img src="../images/avator.png">
                         </i>
-                            <span>团小π</span>
-                        </div>
-                        <div>贡献<font class="txt-yellow">908</font>团票</div>
-                    </li>
-                    <li class="ranking-row">
-                        <div>
-                            <i class="icon-sliver"></i>
-                        </div>
-                        <div class="top-three">
-                            <i class="r-avator r-sliver">
+                                <span>团小π</span>
+                            </div>
+                            <div>贡献
+                                <font class="txt-yellow">908</font>团票</div>
+                        </li>
+                        <li class="ranking-row">
+                            <div>
+                                <i class="icon-sliver"></i>
+                            </div>
+                            <div class="top-three">
+                                <i class="r-avator r-sliver">
                         <img src="../images/avator.png">
                         </i>
-                            <span>团小π</span>
-                        </div>
-                        <div>贡献<font class="txt-yellow">908</font>团票</div>
-                    </li>
-                    <li class="ranking-row">
-                        <div>
-                            <i class="icon-bonze"></i>
-                        </div>
-                        <div class="top-three">
-                            <i class="r-avator r-bonze">
+                                <span>团小π</span>
+                            </div>
+                            <div>贡献
+                                <font class="txt-yellow">908</font>团票</div>
+                        </li>
+                        <li class="ranking-row">
+                            <div>
+                                <i class="icon-bonze"></i>
+                            </div>
+                            <div class="top-three">
+                                <i class="r-avator r-bonze">
                         <img src="../images/avator.png">
                         </i>
-                            <span>团小π</span>
-                        </div>
-                        <div>贡献<font class="txt-yellow">908</font>团票</div>
-                    </li>
-                    <li class="ranking-row">
-                        <div>4</div>
-                        <div class="r-normal">
-                            <i class="r-avator"><img src="../images/avator.png"></i>
-                            <span>团小π</span>
-                        </div>
-                        <div>贡献<font class="txt-yellow">908</font>团票</div>
-                    </li>
-                </ul>
-                <ul class="ranking-list" data-index="1">
-                    <li class="ranking-row">
-                        <div>
-                            <i class="icon-gold"></i>
-                        </div>
-                        <div class="top-three">
-                            <i class="r-avator r-gold">
-                        <img src="../images/avator.png">
-                        </i>
-                            <span>团小π</span>
-                        </div>
-                        <div>贡献<font class="txt-yellow">908</font>团票</div>
-                    </li>
-                    <li class="ranking-row">
-                        <div>
-                            <i class="icon-sliver"></i>
-                        </div>
-                        <div class="top-three">
-                            <i class="r-avator r-sliver">
-                        <img src="../images/avator.png">
-                        </i>
-                            <span>团小π</span>
-                        </div>
-                        <div>贡献<font class="txt-yellow">908</font>团票</div>
-                    </li>
-                    <li class="ranking-row">
-                        <div>
-                            <i class="icon-bonze"></i>
-                        </div>
-                        <div class="top-three">
-                            <i class="r-avator r-bonze">
-                        <img src="../images/avator.png">
-                        </i>
-                            <span>团小π</span>
-                        </div>
-                        <div>贡献<font class="txt-yellow">908</font>团票</div>
-                    </li>
-                    <li class="ranking-row">
-                        <div>4</div>
-                        <div class="r-normal">
-                            <i class="r-avator"><img src="../images/avator.png"></i>
-                            <span>团小π</span>
-                        </div>
-                        <div>贡献<font class="txt-yellow">908</font>团票</div>
-                    </li>
-                </ul>
+                                <span>团小π</span>
+                            </div>
+                            <div>贡献
+                                <font class="txt-yellow">908</font>团票</div>
+                        </li>
+                        <li class="ranking-row">
+                            <div>4</div>
+                            <div class="r-normal">
+                                <i class="r-avator"><img src="../images/avator.png"></i>
+                                <span>团小π</span>
+                            </div>
+                            <div>贡献
+                                <font class="txt-yellow">908</font>团票</div>
+                        </li> -->
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -126,12 +139,11 @@
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
-<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
-<!-- <script src="../js/index.js" type="text/javascript" charset="utf-8"></script> -->
-<script type="text/javascript">
-(function() {
-    FastClick.attach(document.body);
-})();
-</script>
+<!-- build:js({dist}) ../js/lib/vendor/iscroll/iscroll-probe.js -->
+<script src="../js/vendor/iscroll/iscroll-probe.js"></script>
+<!-- endbuild -->
+<script src="../js/common/list.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/common/util.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/ranking.js" type="text/javascript" charset="utf-8"></script>
 
 </html>

@@ -1,0 +1,68 @@
+@charset "UTF-8";
+@import "func";
+
+.component-alert {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    [class$='-wrapper'] {
+        position: absolute;
+        width: pxToRem(610px);
+        // height: pxToRem(292px);
+        top: 50%;
+        left: 50%;
+        // margin-left: pxToRem(-300px);
+        transform: translate(-50%, -70%);
+        background-color: #fff;
+        border-radius: pxToRem(16px);
+        text-align: center;
+        font-size: pxToRem(34px);
+        z-index: 1000;
+        [class$='-content'] {
+            position: relative;
+            padding: pxToRem(50px) pxToRem(36px);
+            line-height: pxToRem(48px);
+            color: #333;
+            border-bottom: 1px solid $border-color-grey;
+        }
+        .btn {
+            height: pxToRem(90px);
+            line-height: pxToRem(90px);
+            font-size: pxToRem(34px);
+            color: #ffb432;
+        }
+    }
+}
+
+.component-dialog {
+    @extend .component-alert;
+    position: fixed;
+    .dialog-content {
+        padding: pxToRem(50px) pxToRem(68px) !important;
+    }
+    .btns {
+        font-size: 0;
+        .btn {
+            display: inline-block;
+            width: 50%;
+            &.negative-btn {
+                position: relative;
+                color: #999;
+                border-right: 1px solid $border-color-grey;
+            }
+        }
+    }
+    .dialog-title {
+        width: pxToRem(550px);
+        height: pxToRem(80px);
+        line-height: pxToRem(80px);
+        margin: auto;
+        border-bottom: 1px dashed $border-color-grey;
+        font-size: pxToRem($font-size-normal);
+        color: $color-grey;
+        text-align: center;
+    }
+}
