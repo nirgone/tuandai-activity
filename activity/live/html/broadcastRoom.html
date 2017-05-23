@@ -8,6 +8,7 @@
     <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
     <meta name="format-detection" content="telephone=no">
     <title>直播频道</title>
+    <style type="text/css" media="screen" id="init_style"></style>
     <!-- build:css(dist) ../css/main.css -->
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/media.css">
@@ -69,6 +70,34 @@
                 </div>
                 <div class="video-pane-body">
                     <div class="video-gift">
+                        <div class="gift-anit">
+                            <div class="user-msg-info user-msg-gift">
+                                <img src="../images/avator.png">
+                                <div>今晚约定你</div>
+                                <div>
+                                    送出闪闪钻石
+                                </div>
+                            </div>
+                            <img src="../images/diamon.gif" class="img-anit">
+                        </div>
+                        <div class="gift-normal">
+                            <!-- <div class="user-msg-info user-msg-gift">
+                                <img src="${require('../images/avator.png')}">
+                                <div>今晚约定你</div>
+                                <div>
+                                    送出闪闪钻石
+                                </div>
+                                <i class="img-normal" style="background-image: url(${require('../images/sgift-love.png')})"><i class="g-num">X3</i></i>
+                            </div>
+                            <div class="user-msg-info user-msg-gift">
+                                <img src="${require('../images/avator.png')}">
+                                <div>今晚约定你</div>
+                                <div>
+                                    送出闪闪钻石
+                                </div>
+                                <i class="img-normal" style="background-image: url(${require('../images/sgift-redpacket.png')})"><i class="g-num">X3</i></i>
+                            </div> -->
+                        </div>
                     </div>
                     <div class="video-discuss">
                         <!-- <canvas class="video-barrage-pane" id="video_barrage_pane" style="width: 100%;"></canvas> -->
@@ -150,8 +179,8 @@
         <div class="masker g-masker"></div>
         <div class="g-content">
             <div class="g-container">
-                <div id='giftSlider' class='swipe'>
-                    <div class='swipe-wrap g-swipe'>
+                <div class="swiper-container" id="giftSwiper">
+                    <div class="swiper-wrapper">
                     </div>
                 </div>
             </div>

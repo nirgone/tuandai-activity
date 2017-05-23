@@ -13,7 +13,18 @@
         var _delay_origin = [850, 0];
         var _line_index = 1;
         // 第一第二行的弹幕数据，延时时间，延时时间相对的起始点
-        var _delay_obj = { "line1": { "delay": _delay_origin[0], "ostime": 0, "time": 0 }, "line2": { "delay": _delay_origin[1], "ostime": 0, "time": 0 } };
+        var _delay_obj = {
+            "line1": {
+                "delay": _delay_origin[0],
+                "ostime": 0,
+                "time": 0
+            },
+            "line2": {
+                "delay": _delay_origin[1],
+                "ostime": 0,
+                "time": 0
+            }
+        };
 
         var _queue_run = [];
         var _queue = [];
@@ -220,6 +231,20 @@
 
                             break;
                         case 'gift':
+                            getProfile([fromAccount], function(data) {
+                                // console.error('get gift data-----', text, fromAccount, data);
+                                let msgArr = text.split('-');
+                                let _gift = {
+                                    'id': msgArr[0],
+                                    'giftType': msgArr[1],
+                                    'status': msgArr[2],
+                                    'fromAccount': fromAccount,
+                                    'avator': data[0].Image,
+                                    'username': fromAccountNick,
+                                };
+                                showGift(_gift);
+
+                            });
 
                             break;
                     }
@@ -227,6 +252,163 @@
                 }
             }
         }
+    }
+    //显示礼物
+    let giftJson = sessionStorage['giftJson'];
+    giftJson = giftJson && JSON.parse(giftJson);
+    let anitQueue = [], //动画礼物队列
+        anitInterval = null, //动画礼物轮询对象
+        curAnitIndex = 0; //动画礼物当前显示内容索引
+
+    let curQueue = {}, //当前显示礼物队列
+        normalQueue = [], //普通礼物队列
+        normalInterval = null, //普通礼物轮询对象
+        normalJson = {}, //普通礼物队列（用于计算连送次数）
+        curNormalIndex = 0; //普通礼物当前显示内容索引
+
+    function showGift(_gift) {
+        let giftData = giftJson[_gift.id];
+        giftData = Object.assign(giftData, _gift);
+        if (_gift.giftType == 2) {
+            //动画礼物
+            anitQueue.push(giftData);
+            // console.info('curAnitIndex------', curAnitIndex);
+            if (anitQueue.length == 1) {
+                replaceAnitGift(curAnitIndex, 1);
+                anitInterval = setInterval(function() {
+                    curAnitIndex++;
+                    if (curAnitIndex === anitQueue.length) {
+                        // console.info('interval end----------------');
+                        clearInterval(anitInterval);
+                        curAnitIndex = 0;
+                        anitQueue = [];
+                        replaceAnitGift(curAnitIndex, 0);
+                    } else {
+                        replaceAnitGift(curAnitIndex, 1);
+                    }
+                }, 5000);
+            }
+
+        } else {
+            let key = giftData.fromAccount + giftData.id;
+            // console.info('kkkkkkkkkkk', giftData.status);
+            if (giftData.status == 0) {
+                //连送开始或者单单次礼物
+                normalJson[key] = {
+                    times: 1,
+                    index: normalQueue.length
+                };
+                normalQueue.push(giftData);
+                // console.error('queue-------------', Object.keys(curQueue));
+                if (Object.keys(curQueue).length < 2) {
+                    replaceNormalGift(curNormalIndex, giftData.fromAccount, 1);
+                }
+                //从数组第三个数据开始排队
+                if (normalQueue.length == 2) {
+                    normalInterval = setInterval(function() {
+                        // console.error('setInterval--------', curNormalIndex, normalQueue.length);
+                        if (curNormalIndex >= (normalQueue.length + 2)) {
+                            //结束轮询
+                            clearInterval(normalInterval);
+                            curNormalIndex = 0;
+                            normalQueue = [];
+                        } else {
+                            replaceNormalGift(curNormalIndex, giftData.fromAccount, 1);
+                        }
+
+                    }, 5000);
+                }
+
+            } else {
+                //连送礼物
+                if (curQueue[key]) {
+                    //当前正在显示该礼物则直接在礼物上修改连送次数
+                    curQueue[key].times += 1;
+                    $("#" + giftData.id).html('X' + curQueue[key].times);
+                } else {
+                    //修改正在排队的连送礼物的连送次数
+                    if (normalJson[key]) {
+                        normalJson[key].times += 1;
+                    } else {
+                        normalJson[key] = {
+                            times: 1,
+                            index: normalQueue.length
+                        };
+                    }
+                }
+            }
+        }
+    }
+
+    function replaceAnitGift(index, type) {
+        // console.info('replace============', curAnitIndex, anitQueue.length, anitQueue[curAnitIndex]);
+        let temp = '';
+        if (type === 1) {
+            let item = anitQueue[curAnitIndex];
+            if (!item) return;
+            temp = `<div><div class="user-msg-info user-msg-gift">
+                    <img src="${item.avator}">
+                    <div>${item.username}</div>
+                    <div>送出${item.presentName}</div>
+                 </div>
+                <img src="${item.gifInfo}" class="img-anit"></div>`;
+        }
+        $('.gift-anit').removeClass('fadeIn').addClass('fadeOut');
+        setTimeout(function() {
+            $('.gift-anit').html(temp);
+            $('.gift-anit').removeClass('fadeOut').addClass('fadeIn')
+        }, 500);
+    }
+
+    function replaceNormalGift(index, fromAccount, type) {
+        let temp = '';
+        let item = index < normalQueue.length && normalQueue[index];
+        let _removeObj = $('.gift-normal').find('.user-msg-info').eq(0);
+        let removeId = fromAccount + _removeObj.attr('data-id');
+        let key = '';
+        // console.error('replace-----', index, item);
+        if (item) {
+            //显示新的礼物
+            temp = `<div class="user-msg-info user-msg-gift" data-id="${item.id}">
+                        <img src="${item.avator}">
+                        <div>${item.username}</div>
+                        <div>送出${item.presentName}</div>
+                        <i class="img-normal" style="background-image: url(${item.coverUrl})"><i class="g-num" id="${item.id}">X1</i></i>
+                    </div>`;
+            key = fromAccount + item.id;
+            // console.error('key-----', key, curQueue);
+            curQueue[key] = {
+                times: 1
+            };
+            //如果当前正在显示的礼物有两个，则删除第一个
+            // console.error('curQueue---', Object.keys(curQueue));
+            var curQueueLength = Object.keys(curQueue).length;
+            if (curQueueLength > 2) {
+                _removeObj.remove();
+                delete curQueue[removeId]; //删除当前显示队列的旧数据
+            }
+            $('.gift-normal').append(temp);
+            //当前礼物数量大于1，从1开始递加
+            if (normalJson[key] && normalJson[key].times > 1) {
+                let timesInterval = setInterval(() => {
+                    // console.info(onList, normalJson[key]);
+                    if (!curQueue[key] || (curQueue[key].times == normalJson[key].times)) {
+                        clearInterval(timesInterval);
+                    } else {
+                        $("#" + item.id).html('X' + curQueue[key].times);
+                        curQueue[key].times += 1;
+
+                    }
+                }, 500);
+            }
+        } else {
+            //队列轮询结束，删除当前显示的礼物
+            _removeObj.remove();
+            delete curQueue[removeId]; //删除当前显示队列的旧数据
+        }
+
+        curNormalIndex++;
+
     }
 
     function convertMsgCommon(nickname, text) {
@@ -325,7 +507,6 @@
             }
         );
     }
-
 
 
 
