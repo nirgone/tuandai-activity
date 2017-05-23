@@ -1,15 +1,3 @@
-/*--- 引入直播，即时通信相关的js ---*/
-// 引入webim sdk
-// import webim from './im/sdk/webim';
-// import './im/sdk/json2';
-// // webim demo js
-// import * as base from './im/base';
-// import * as groupNotice from './im/group_notice';
-
-// import GiftSheet from './giftSheet';
-
-// 弹幕
-// import BarrageConstructor from './barrage';
 (function() {
     FastClick.attach(document.body);
 
@@ -219,98 +207,87 @@
     }
     // ---------直播代码 ---- end--------------
 
+    /******************礼物*************/
+
     //初始化礼物列表
+    var giftSwiper; //礼物swiper对象
     function initGift() {
-        //action Sheet礼物数据
-        var giftList = [{
-            id: 0,
-            type: 0,
-            name: '赞赞赞',
-            price: '1团票',
-            iconUrl: "../images/gift-zan.png"
-        }, {
-            id: 1,
-            type: 0,
-            name: '爱的小心心',
-            price: '5团票',
-            iconUrl: '../images/gift-love.png'
-        }, {
-            id: 2,
-            type: 0,
-            name: '红包打赏',
-            price: '10团票',
-            iconUrl: '../images/gift-redpacket.png'
-        }, {
-            id: 3,
-            type: 0,
-            name: '小π公仔',
-            price: '100团票',
-            iconUrl: '../images/gift-pai.png'
-        }, {
-            id: 4,
-            type: 0,
-            name: '幸运福袋',
-            price: '200团票',
-            iconUrl: '../images/gift-pocket.png'
-        }, {
-            id: 5,
-            type: 0,
-            name: '鲜花攻势',
-            price: '300团票',
-            iconUrl: '../images/gift-flower.png'
-        }, {
-            id: 6,
-            type: 1,
-            name: '浪漫约会',
-            price: '500团票',
-            iconUrl: '../images/gift-wine.png'
-        }, {
-            id: 7,
-            type: 1,
-            name: '闪闪钻石',
-            price: '800团票',
-            iconUrl: '../images/gift-diamon.png'
-        }, {
-            id: 8,
-            type: 0,
-            name: '赞赞赞',
-            price: '1团票',
-            iconUrl: "../images/gift-zan.png"
-        }, {
-            id: 9,
-            type: 0,
-            name: '爱的小心心',
-            price: '5团票',
-            iconUrl: '../images/gift-love.png'
-        }];
-        // giftSheet = new GiftSheet(giftList);
+        Util.Ajax({
+            url: 'http://10.103.8.188:1022/v1/live/get-present-list',
+            type: 'post',
+            dataType: 'json',
+            success: function(result) {
+                // console.info('giftList-----', result);
+                if (result.ResultCode && result.ResultCode == 1) {
+                    var giftList = result.Data;
+                    if (giftList && giftList.length > 0) {
+                        var that = this;
+                        var temp = '';
+                        var _pageStart = ' <div class="swiper-slide"><ul class="g-list">';
+                        var _pageEnd = '</ul></div>';
+                        var len = giftList.length;
+                        var giftJson = {};
 
-        // let temp = '';
-        // let _pageStart = `<div><ul class="g-list">`;
-        // let _pageEnd = `</ul></div>`;
-        // let len = giftList.length;
+                        giftList.forEach(function(item, index) {
+                            var type;
+                            if (item.gif_info) {
+                                type = 2; //动画礼物
+                            } else if (item.continue_times > 1) {
+                                type = 0; //连送礼物
+                            } else {
+                                type = 1; //普通礼物
+                            }
+                            // type = 0;
+                            if (!giftJson[item.id]) {
+                                giftJson[item.id] = {
+                                    coverUrl: item.cover_url,
+                                    gifInfo: item.gif_info,
+                                    presentName: item.present_name
+                                };
+                            }
+                            var _gift = '<li class="g-item" data-type="' + type + '" data-id="' + item.id + '" data-times="' + item.continue_times + '">' +
+                                '<div class="g-icon-container"><i class="g-icon" style="background-image: url(' + item.cover_url + ');"></i></div>' +
+                                '<span class="txt-green g-txt g-name">' + item.present_name + '</span>' +
+                                '<span class="g-txt g-tp">' + item.present_value + '团票</span></li>';
+                            if (index % 8 === 0) {
+                                temp = temp + _pageStart + _gift
+                            } else if (index % 8 === 7 || index === (len - 1)) {
+                                temp = temp + _gift + _pageEnd;
+                            } else {
+                                temp += _gift
+                            }
+                        });
+                        //保存礼物数据，用于显示礼物
+                        window.sessionStorage['giftJson'] = JSON.stringify(giftJson);
+                        $("#giftSwiper").find('.swiper-wrapper').html(temp);
+                        // giftSwiper = new Swiper("#giftSwiper");
+                    }
+                }
+            }
+        });
+    }
+    //显示礼物列表
+    function showGiftActionSheet() {
+        $('.g-item').removeClass('item-active');
+        $('.gift-send').removeClass('btn-active btn-series').addClass('btn-disable');
+        $('.g-wrapper').show();
+        if (!giftSwiper) {
+            giftSwiper = new Swiper("#giftSwiper");
+        }
+        setTimeout(function() {
+            $('.g-content').addClass('show-gifts');
+        }, 0);
+    }
+    //隐藏礼物列表
+    function hideGiftActionSheet() {
+        $('.g-content').removeClass('show-gifts');
+        setTimeout(function() {
+            $('.g-wrapper').hide();
 
-        // giftList.forEach((item, index) => {
-        //     let _gift = `<li class="g-item" data-type="${item.type}" data-id="${item.id}">
-        //                     <div class="g-icon-container"><i class="g-icon" style="background-image: url(${item.iconUrl});"></i></div>
-        //                     <span class="txt-green g-txt g-name">${item.name}</span>
-        //                     <span class="g-txt g-tp">${item.price}</span>
-        //                </li>`;
-        //     if (index % 8 === 0) {
-        //         temp = temp + _pageStart + _gift
-        //     } else if (index % 8 === 7 || index === (len - 1)) {
-        //         temp = temp + _gift + _pageEnd;
-        //     } else {
-        //         temp += _gift
-        //     }
-        // });
-        // $('.g-swipe').append(temp);
-        // giftSwipe = Swipe(document.getElementById('giftSlider'), {
-        //  continuous: false
-        // });
-
+        }, 500);
     }
 
+    /******************礼物*************/
 
     //===============逻辑事件区==================
     // 站内信方法 type 1: 系统消息 2: 热门活动
@@ -387,7 +364,6 @@
     var $tab = $('#msg_tab'); // 站内信的tab
     var loading = false; // 是否正在加载站内信，系统消息
     // 礼物初始化
-    var giftSheet;
     initGift();
     // 绑定切换按钮事件
     $('#msg_type').on('click', function(e) {
@@ -429,7 +405,7 @@
                 roomMsgInit(_panel)
                 break;
             case '4':
-                giftSheet.show();
+                showGiftActionSheet();
                 break;
         }
     });
@@ -574,7 +550,78 @@
                 loading = false;
             }, 2000);
         }
-    })
+    });
+    var isSeri = false; //按钮是否是连送状态
+    var btnInterval; //按钮连送倒计时轮询
+    //选中礼物
+    $('.g-container').on('click', '.g-item', function() {
+        $('.g-item').removeClass('item-active');
+        var _target = $(this);
+        var _sendBtn = $('.gift-send');
+        _target.addClass('item-active');
+        var type = _target.attr('data-type');
+        var id = _target.attr('data-id');
+        //如果正在连送倒计时则停止连送
+        if (btnInterval) {
+            clearInterval(btnInterval);
+            isSeri = false;
+        }
+        _sendBtn.removeClass('btn-disable btn-series').addClass('btn-active');
+        _sendBtn.html('发送');
+        _sendBtn.attr('data-type', type);
+        _sendBtn.attr('data-id', id);
+
+    });
+    //发送礼物
+    $('.gift-send').on('click', function() {
+        var _target = $(this);
+        var type = _target.attr('data-type');
+        var id = _target.attr('data-id');
+        var giftStr = id + '-' + type;
+        // console.error('id++++++', new Date().getTime(), giftStr);
+
+        if (type == 0) {
+            //连送礼物
+            var _sendBtn = $('.gift-send');
+            if (!isSeri) {
+                var seriTime = 5000;
+                isSeri = true;
+                //连送倒计时
+                btnInterval = setInterval(() => {
+                    if (seriTime === 0) {
+                        _sendBtn.removeClass('btn-series').addClass('btn-active');
+                        clearInterval(btnInterval);
+
+                        _sendBtn.html('发送');
+                        isSeri = false;
+                    } else {
+                        _sendBtn.removeClass('btn-disable btn-active').addClass('btn-series');
+                        var sec = (seriTime / 1000).toFixed(1);
+
+                        _sendBtn.html('连送(' + sec + 'S)');
+                        seriTime -= 100;
+                    }
+                }, 100);
+                // console.info('send seri start ----');
+                giftStr += '-' + '0' //连送开始
+            } else {
+                // console.info('send seri----');
+                giftStr += '-' + '1'; //正在连送
+            }
+
+        } else {
+            //不可连送礼物
+            // console.info('send  gift once---', id);
+            giftStr += '-' + '0'; //不可连送
+
+        }
+        //发送礼物，扣除团票成功后发送礼物信息到im
+        sendMsg('2', giftStr, function(data) {});
+
+    });
+    $('.g-masker').on('click', function() {
+        hideGiftActionSheet();
+    });
 
     /* ----------事件绑定--end---------- */
 

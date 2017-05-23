@@ -6,7 +6,7 @@
         if ($(this).hasClass('r-live')) {
             location.href = './broadcastRoom.html';
         } else {
-            util.toast('嘘！主播休息中...');
+            Util.toast('嘘！主播休息中...');
         }
     })
 
@@ -21,11 +21,11 @@
         },
         "type": "get",
         "dataType": "json",
-        cbOk: function(data, textStatus, jqXHR) {
+        success: function(data, textStatus, jqXHR) {
             console.log(data);
             window.sessionStorage['LOGIN_INFO'] = JSON.stringify(data);
         },
-        cbErr: function(e, xhr, type) {
+        error: function(e, xhr, type) {
 
         }
     })

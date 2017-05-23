@@ -8,6 +8,7 @@
     <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
     <meta name="format-detection" content="telephone=no">
     <title>直播频道</title>
+    <style type="text/css" media="screen" id="init_style"></style>
     <!-- build:css(dist) ../css/main.css -->
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/media.css">
@@ -68,6 +69,34 @@
                 </div>
                 <div class="video-pane-body">
                     <div class="video-gift">
+                        <div class="gift-anit">
+                            <div class="user-msg-info user-msg-gift">
+                                <img src="../images/avator.png">
+                                <div>今晚约定你</div>
+                                <div>
+                                    送出闪闪钻石
+                                </div>
+                            </div>
+                            <img src="../images/diamon.gif" class="img-anit">
+                        </div>
+                        <div class="gift-normal">
+                            <!-- <div class="user-msg-info user-msg-gift">
+                                <img src="${require('../images/avator.png')}">
+                                <div>今晚约定你</div>
+                                <div>
+                                    送出闪闪钻石
+                                </div>
+                                <i class="img-normal" style="background-image: url(${require('../images/sgift-love.png')})"><i class="g-num">X3</i></i>
+                            </div>
+                            <div class="user-msg-info user-msg-gift">
+                                <img src="${require('../images/avator.png')}">
+                                <div>今晚约定你</div>
+                                <div>
+                                    送出闪闪钻石
+                                </div>
+                                <i class="img-normal" style="background-image: url(${require('../images/sgift-redpacket.png')})"><i class="g-num">X3</i></i>
+                            </div> -->
+                        </div>
                     </div>
                     <div class="video-discuss">
                         <!-- <canvas class="video-barrage-pane" id="video_barrage_pane" style="width: 100%;"></canvas> -->
@@ -149,8 +178,8 @@
         <div class="masker g-masker"></div>
         <div class="g-content">
             <div class="g-container">
-                <div id='giftSlider' class='swipe'>
-                    <div class='swipe-wrap g-swipe'>
+                <div class="swiper-container" id="giftSwiper">
+                    <div class="swiper-wrapper">
                     </div>
                 </div>
             </div>
@@ -189,16 +218,16 @@
                     <li class="msg-item">
                         <p>您已经成功兑换6团票，花费1000团币。</p>
                         <span>2016-04-28 13:59</span></li>
-                         <li class="msg-item">
+                    <li class="msg-item">
                         <p>您已经成功兑换7团票，花费1000团币。</p>
                         <span>2016-04-28 13:59</span></li>
-                         <li class="msg-item">
+                    <li class="msg-item">
                         <p>您已经成功兑换8团票，花费1000团币。</p>
                         <span>2016-04-28 13:59</span></li>
-                         <li class="msg-item">
+                    <li class="msg-item">
                         <p>您已经成功兑换9团票，花费1000团币。</p>
                         <span>2016-04-28 13:59</span></li>
-                         <li class="msg-item">
+                    <li class="msg-item">
                         <p>您已经成功兑换10团票，花费1000团币。</p>
                         <span>2016-04-28 13:59</span></li>
                 </ul>
@@ -229,16 +258,15 @@
                         <div class="swiper-slide">
                             <a href="http://baidu.com" title=""> <img src="../images/pic.png"></a>
                         </div>
-                         <div class="swiper-slide">
+                        <div class="swiper-slide">
                             <a href="http://baidu.com" title=""> <img src="../images/pic.png"></a>
                         </div>
-                         <div class="swiper-slide">
+                        <div class="swiper-slide">
                             <a href="http://baidu.com" title=""> <img src="../images/pic.png"></a>
                         </div>
-                         <div class="swiper-slide">
+                        <div class="swiper-slide">
                             <a href="http://baidu.com" title=""> <img src="../images/pic.png"></a>
                         </div>
-                        
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>

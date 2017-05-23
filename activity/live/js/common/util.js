@@ -171,13 +171,13 @@
                     xhr.setRequestHeader("If-Modified-Since", "0");
                 },
                 success: function(data, textStatus, jqXHR) {
-                    config.cbOk && config.cbOk(data, textStatus, jqXHR);
+                    config.success && config.success(data, textStatus, jqXHR);
                 },
                 error: function(e, xhr, type) {
-                    config.cbErr && config.cbErr(e, xhr, type);
+                    config.error && config.error(e, xhr, type);
                 },
                 complete: function(xhr, status) {
-                    config.cbCp && config.cbCp(xhr, status);
+                    config.complete && config.complete(xhr, status);
                 }
             });
         },
