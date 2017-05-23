@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../css/vendor/swiper/swiper.min.css">
     <!-- endbuild -->
     <link rel="stylesheet" href="../css/broadcastRoom.css">
+    <style type="text/css" media="screen" id="init_style"></style>
     <!-- build:js({dist}) ../js/lib/adaptScale.js -->
     <script src="../js/adaptScale.js" type="text/javascript" charset="utf-8"></script>
     <!-- endbuild -->
@@ -189,16 +190,16 @@
                     <li class="msg-item">
                         <p>您已经成功兑换6团票，花费1000团币。</p>
                         <span>2016-04-28 13:59</span></li>
-                         <li class="msg-item">
+                    <li class="msg-item">
                         <p>您已经成功兑换7团票，花费1000团币。</p>
                         <span>2016-04-28 13:59</span></li>
-                         <li class="msg-item">
+                    <li class="msg-item">
                         <p>您已经成功兑换8团票，花费1000团币。</p>
                         <span>2016-04-28 13:59</span></li>
-                         <li class="msg-item">
+                    <li class="msg-item">
                         <p>您已经成功兑换9团票，花费1000团币。</p>
                         <span>2016-04-28 13:59</span></li>
-                         <li class="msg-item">
+                    <li class="msg-item">
                         <p>您已经成功兑换10团票，花费1000团币。</p>
                         <span>2016-04-28 13:59</span></li>
                 </ul>
@@ -229,16 +230,15 @@
                         <div class="swiper-slide">
                             <a href="http://baidu.com" title=""> <img src="../images/pic.png"></a>
                         </div>
-                         <div class="swiper-slide">
+                        <div class="swiper-slide">
                             <a href="http://baidu.com" title=""> <img src="../images/pic.png"></a>
                         </div>
-                         <div class="swiper-slide">
+                        <div class="swiper-slide">
                             <a href="http://baidu.com" title=""> <img src="../images/pic.png"></a>
                         </div>
-                         <div class="swiper-slide">
+                        <div class="swiper-slide">
                             <a href="http://baidu.com" title=""> <img src="../images/pic.png"></a>
                         </div>
-                        
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
@@ -256,6 +256,27 @@
             <div class="ai-desc"><i class="icon-gender icon-female"></i><span class="ai-age">21岁</span><span class="ai-constellation">天蝎座</span><i class="icon-position"></i><span class="ai-province">河南</span><span class="ai-city">长沙</span></div>
             <section class="ai-introduction">我是集美貌与才华于一身的小派，每天早八点晚八点约定你哦！</section>
             <i class="ai-close"></i>
+        </div>
+    </div>
+
+    <div class="component-dialog dialog-nickname" id="dialog_nickname">
+        <div class="masker"></div>
+        <div class="dialog-wrapper">
+            <div class="dialog-title">
+                设置昵称
+            </div>
+            <div class="dialog-content">
+                <p>您未设置昵称</p>
+                <p>为保护您的隐私，建议您先设置昵称</p>
+                <input type="text" name="" value="" placeholder="请输入您的昵称" maxlength="15" id="input_nickname">
+                <div class="tip" id="tip_nickname">
+                昵称长度为2-12个字符，且不包括特殊字符
+                </div>
+            </div>
+            <div class="btns">
+                <div class="btn negative-btn">暂不设置</div>
+                <div class="btn positive-btn" id="set_nickname">确认设置</div>
+            </div>
         </div>
     </div>
 </body>
