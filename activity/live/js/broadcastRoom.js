@@ -140,9 +140,49 @@
                 webim.Log.info('webim登录成功');
                 applyJoinBigGroup(avChatRoomId); //加入大群
 
+                // todo 登录成功后设置对应的头像
                 Base.setProfilePortrait({
                     headerUrl: 'http://www.w3school.com.cn/i/eg_bg_04.gif'
                 });
+
+                // todo 如果没有设置昵称，那么设置昵称
+                $('#dialog_nickname').show().on('click', '.btn', function(e) {
+                    var $target = $(e.currentTarget);
+                    if ($target.hasClass('negative-btn')) {
+                        $('#dialog_nickname').hide();
+                        return;
+                    }
+                    if ($target.hasClass('positive-btn')) {
+                        var _nickname = $('#input_nickname').val();
+                        var $tip = $('#tip_nickname');
+                        if (_nickname.length < 2 || _nickname.length > 15) {
+                            $tip.show();
+                            return
+                        }
+                        if (/[\?\*\:\"\<\>\\\/\|\s]/.test(_nickname)) {
+                            console.log(111)
+                            $tip.show();
+                            return
+                        }
+                        // todo ajax 修改昵称成功后操作回调函数 setTimeout模拟ajax的成功回调
+                        setTimeout(function() {
+                            $tip.hide();
+                            $('#dialog_nickname').hide();
+                            // 成功后设置 im的昵称
+                            // todo 登录成功后设置对应的头像
+                            Base.setProfilePortrait({
+                                nickname: _nickname
+                            }, function () {
+                                Util.toast('设置成功！')
+                            });
+
+                        }, 1000)
+                    }
+
+                });
+
+
+
             },
             function(err) {
                 alert(err.ErrorInfo);
@@ -370,6 +410,7 @@
             $btn.addClass('btn-disable');
         }
     }
+
     //===============逻辑事件区=end=================
 
 
@@ -575,6 +616,7 @@
             }, 2000);
         }
     })
+
 
     /* ----------事件绑定--end---------- */
 

@@ -458,99 +458,6 @@
     }
 }
 
-.redcode {
-    // position: relative;
-    &:after {
-        content: '';
-        position: absolute;
-        width: pxToRem(20px);
-        height: pxToRem(20px);
-        border-radius: pxToRem(20px);
-        background-color: #ff5f3b;
-        top: pxToRem(-10px);
-        right: pxToRem(-10px);
-        box-shadow: 0px pxToRem(4px) pxToRem(8px) 0px rgba( 255, 95, 59, .4);
-    }
-}
-
-// icons
-.icon-block {
-    display: block;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-
-.icon-inline-block {
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-
-.icon-crown1 {
-    @extend .icon-block;
-    background-image: url(../images/crown1.png);
-}
-
-.icon-crown2 {
-    @extend .icon-block;
-    background-image: url(../images/crown2.png);
-}
-
-.icon-crown3 {
-    @extend .icon-block;
-    background-image: url(../images/crown3.png);
-}
-
-.icon-arrow {
-    @extend .icon-inline-block;
-    background-image: url(../images/arrow.png);
-    width: pxToRem(8px);
-    height: pxToRem(13px);
-}
-
-.icon-i-lmsg {
-    @extend .icon-block;
-    background-image: url(../images/i-lmsg.png);
-    width: pxToRem(38px);
-    height: pxToRem(38px);
-}
-
-.icon-i-msg {
-    @extend .icon-block;
-    background-image: url(../images/i-msg.png);
-    width: pxToRem(38px);
-    height: pxToRem(30px);
-}
-
-.icon-i-question {
-    @extend .icon-block;
-    background-image: url(../images/i-question.png);
-    width: pxToRem(38px);
-    height: pxToRem(38px);
-}
-
-.icon-i-share {
-    @extend .icon-block;
-    background-image: url(../images/i-share.png);
-    width: pxToRem(27px);
-    height: pxToRem(33px);
-}
-
-.icon-gift {
-    @extend .icon-inline-block;
-    background-image: url(../images/i-gift.png);
-    width: pxToRem(70px);
-    height: pxToRem(70px);
-}
-
-// animation
-.animated {
-    animation-duration: 0.6s;
-    animation-fill-mode: both;
-}
-
 //礼物actionsheet
 .show-gifts {
     height: pxToRem(560px) !important;
@@ -748,14 +655,20 @@
     }
 }
 
-.fadeIn {
-    animation: fadeIn .5s linear both;
+.redcode {
+    // position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        width: pxToRem(20px);
+        height: pxToRem(20px);
+        border-radius: pxToRem(20px);
+        background-color: #ff5f3b;
+        top: pxToRem(-10px);
+        right: pxToRem(-10px);
+        box-shadow: 0px pxToRem(4px) pxToRem(8px) 0px rgba( 255, 95, 59, .4);
+    }
 }
-
-.fadeOut {
-    animation: fadeOut .5s linear both;
-}
-
 //主播信息
 .ai-content {
     width: pxToRem(570px);
@@ -887,6 +800,115 @@
     }
 }
 
+// 设置昵称
+.dialog-nickname {
+    display: none;
+    .dialog-wrapper {
+        width: pxToRem(600px);
+        font-size: pxToRem(30px);
+        .dialog-content {
+            padding: pxToRem(40px) pxToRem(36px) !important;
+        }
+        input {
+            width: pxToRem(520px);
+            height: pxToRem(80px);
+            font-size: pxToRem(30px);
+            border-radius: pxToRem(8px);
+            border: 1px solid #f9cf1f;
+            padding: 0 pxToRem(20px);
+            margin: pxToRem(28px) 0 pxToRem(16px);
+            &::-webkit-input-placeholder {
+                color: #ccc;
+            }
+        }
+        .tip {
+            font-size: pxToRem(24px);
+            text-align: left;
+            color: #fa7d00;
+            display: none;
+        }
+    }
+}
+
+// icons
+.icon-block {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.icon-inline-block {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.icon-crown1 {
+    @extend .icon-block;
+    background-image: url(../images/crown1.png);
+}
+
+.icon-crown2 {
+    @extend .icon-block;
+    background-image: url(../images/crown2.png);
+}
+
+.icon-crown3 {
+    @extend .icon-block;
+    background-image: url(../images/crown3.png);
+}
+
+.icon-arrow {
+    @extend .icon-inline-block;
+    background-image: url(../images/arrow.png);
+    width: pxToRem(8px);
+    height: pxToRem(13px);
+}
+
+.icon-i-lmsg {
+    @extend .icon-block;
+    background-image: url(../images/i-lmsg.png);
+    width: pxToRem(38px);
+    height: pxToRem(38px);
+}
+
+.icon-i-msg {
+    @extend .icon-block;
+    background-image: url(../images/i-msg.png);
+    width: pxToRem(38px);
+    height: pxToRem(30px);
+}
+
+.icon-i-question {
+    @extend .icon-block;
+    background-image: url(../images/i-question.png);
+    width: pxToRem(38px);
+    height: pxToRem(38px);
+}
+
+.icon-i-share {
+    @extend .icon-block;
+    background-image: url(../images/i-share.png);
+    width: pxToRem(27px);
+    height: pxToRem(33px);
+}
+
+.icon-gift {
+    @extend .icon-inline-block;
+    background-image: url(../images/i-gift.png);
+    width: pxToRem(70px);
+    height: pxToRem(70px);
+}
+
+// animation
+.animated {
+    animation-duration: 0.6s;
+    animation-fill-mode: both;
+}
+
+
 @-webkit-keyframes fadeIn {
     from {
         opacity: 0;
@@ -922,6 +944,15 @@
         opacity: 0;
     }
 }
+
+.fadeIn {
+    animation: fadeIn .5s linear both;
+}
+
+.fadeOut {
+    animation: fadeOut .5s linear both;
+}
+
 
 @-webkit-keyframes barrage {
     from {
