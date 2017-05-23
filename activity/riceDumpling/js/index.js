@@ -1,12 +1,12 @@
 (function() {
     FastClick.attach(document.body);
-    var animationCurIndex = 0; //当前动画粽子索引
-    var animationFaceCurIndex = [1, 1, 1]; //当前脸部表情索引
-    var animationFacePreIndex = [1, 1, 1]; //上一个脸部表情索引
-    var t;
+    var animationCurIndex = 0, //当前动画粽子索引
+    	animationFaceCurIndex = [1, 1, 1], //当前脸部表情索引
+    	animationFacePreIndex = [1, 1, 1], //上一个脸部表情索引
+    	t;
     var isLogin = true; //是否登录
     var chanceNum = 2; //多少次拆棕子的机会
-    var coinNum = 100; //拥有团币数量
+    var coinNum = 500; //拥有团币数量
     var exchangeCoinChance = true; //是否有团币兑换拆棕机会
     function isWeiXin() {
         var ua = navigator.userAgent.toLowerCase();
@@ -59,11 +59,8 @@
             // console.log(curFaceAni);
         }, 200)
 
-        if (index >= 2) {
-            index = animationCurIndex = 0;
-        } else {
-            animationCurIndex++;
-        }
+        animationCurIndex = index < 2 ? index+1 : 0;
+
     }
     // 拆棕子抽奖
     function showPrize(index) {
@@ -84,6 +81,7 @@
         } else if (chanceNum <= 0) {
             Util.message({
                 "message": '拆粽机会已用完<br />获取更多不用慌',
+                "btn_text": '获取更多机会',
                 callback: function() {
                     // 获取更多机会
                     $("#btn-bottom-sec").addClass("slideInDown");
@@ -103,6 +101,14 @@
     }
 
     function bindEvent() {
+    	if(isLogin){
+        	$("#more-chance-num").html(chanceNum);
+        	$("#more-chance-btn").html('获取更多机会');
+        }else{
+        	$("#more-chance-num").html('?');
+        	$("#more-chance-btn").html('马上查看');
+        }
+
         // 粽子抽奖按钮
         $("#dumpling-sec .btn-dumpling").on('click', function() {
                 var index = $(this).attr('data-index');
@@ -122,15 +128,22 @@
 
         })
         $("#btn-award").on('click', function() {
-                $(this).addClass('on').siblings().removeClass('on')
-                $("#rule-scroll .rules").hide();
-                $("#rule-scroll .award").show();
-            })
+            $(this).addClass('on').siblings().removeClass('on')
+            $("#rule-scroll .rules").hide();
+            $("#rule-scroll .award").show();
+        })
         // 更多机会
         $("#more-chance-btn").on('click', function(e) {
-            $("#btn-bottom-sec").addClass("slideInDown");
-            // e.stopPropagation();
-            // e.stopPropagation();
+            if (isLogin) {
+                $("#btn-bottom-sec").addClass("slideInDown");
+            } else {
+                if (Jsbridge.isNewVersion()) {
+                    Jsbridge.toAppLogin();
+                } else {
+                    //web版登录
+                    MobileRedirector.go_login();
+                }
+            }
         });
 
         //分享遮罩关闭按钮
@@ -148,25 +161,14 @@
                 case 'btn-coin-exchange': //团币兑换
                     if (coinNum < 200 || !exchangeCoinChance) {
                         if (!exchangeCoinChance) { //没有兑换机会
-                            Util.message({
-                                "message": '您已用团币兑换过<span class="light">1</span>次拆粽机会<br />试试别的方法吧',
-                                "btn_text": '确认',
-                                callback: function() {
-                                    console.log('没有兑换机会');
-                                }
-                            })
+                            Util.message('您已用团币兑换过<span class="light">1</span>次拆粽机会<br />试试别的方法吧')
 
                         } else { //团币不够
                             Util.message({
-                                "type": 1,
                                 "message": '花<span class="light">200</span>团币<br />即可兑换<span class="light">1</span>次拆粽机会赢iPad',
                                 "btn_style": 'btn-message off',
                                 "btn_text": '确认兑换',
-                                "tips_text": '您当前共有团币 <span class="light">' + coinNum + '</span> 未达到兑换要求',
-                                callback: function() {
-                                    console.log('团币不够');
-                                    // coinNum = 500;
-                                }
+                                "tips_text": '您当前共有团币 <span class="light">' + coinNum + '</span> 未达到兑换要求'
                             })
 
                         }
@@ -174,7 +176,6 @@
                     }
                     // 有足够团币且有兑换机会
                     Util.message({
-                        "type": 1,
                         "message": '花<span class="light">200</span>团币<br />即可兑换<span class="light">1</span>次拆粽机会赢iPad',
                         "btn_text": '确认兑换',
                         "tips_text": '您当前共有团币：<span class="light">' + coinNum + '</span>',
@@ -182,7 +183,6 @@
                             console.log('确认兑换');
                             Util.message({
                                 "message": '<span class="em big">恭喜,兑换成功</span>',
-                                "btn_text": '确认',
                                 callback: function() {
                                     console.log('确认兑换成功');
                                     chanceNum++;
@@ -222,7 +222,6 @@
             ani(animationCurIndex);
         }, 2000)
 
-        $("#more-chance-num").html(chanceNum);
         bindEvent();
     }
     init();

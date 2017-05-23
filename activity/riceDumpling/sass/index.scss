@@ -75,17 +75,17 @@ body{
         margin-bottom: pxToRem(17px);
     }
     .btn-coin-exchange{
-        div{
+        i{
             @extend .icon-coin-exchange;
         }
     }
     .btn-invest{
-        div{
+        i{
             @extend .icon-invest;  
         }
     }
     .btn-invite{
-        div{
+        i{
             @extend .icon-invite;  
         }
     }
@@ -137,9 +137,9 @@ body{
         color:#ffa87e;
         font-size: pxToRem(45px);
         font-weight: bold;
-    }
-    .em.big{
-        font-size: pxToRem(51px);
+        &.big{
+            font-size: pxToRem(51px);
+        }
     }
     .light{
         color:#ffa87e;
@@ -157,9 +157,9 @@ body{
         text-align: center;
         background-color: $mainColor;
         border-radius: pxToRem(8px);
-    }
-    .btn-message.off{
-        background-color: #a0a0a0;
+        &.off{
+            background-color: #a0a0a0;
+        }
     }
     .tip{
         position: absolute;

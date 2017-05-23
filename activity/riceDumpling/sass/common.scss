@@ -31,9 +31,6 @@ li {
     display: inline-block;
 }
 
-.transform{
-    transform: scale(1);
-}
 .abs{
     position: absolute;
     left: 0;
@@ -45,6 +42,8 @@ li {
 .content {
     width: 100%;
     height: 100%;
+    margin:0 auto;
+    max-width: 414px;
 }
 
 .mask {
@@ -310,10 +309,10 @@ li {
             text-align: center;
             font-size: pxToRem(32px);
             line-height: pxToRem(52px);
-        }
-        span.on{
-            color:$defaultColor;
-            background-color: $mainColor;
+            &.on{
+                color:$defaultColor;
+                background-color: $mainColor;
+            }
         }
     }
 }
@@ -325,13 +324,13 @@ li {
     transform: translate(0, pxToRem(-46px));
 }
 .btn-cls{
-        @extend .icon-btn-cls;
-        content: '';
-        position: absolute;
-        bottom: pxToRem(-93px);
-        left: 0;
-        right: 0;
-        margin: 0 auto;
+    @extend .icon-btn-cls;
+    content: '';
+    position: absolute;
+    bottom: pxToRem(-93px);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }
 .rule-scroll{
     @extend .abs;
@@ -345,7 +344,6 @@ li {
     p{
         font-size: pxToRem(22px);
         line-height: pxToRem(35px);
-        // margin-bottom: pxToRem(48px);
     }
     .subhead{
         color:$secondColor;
@@ -528,7 +526,7 @@ li {
   background-image: url(../images/index-sprite.png);
   background-size:pxToRem(334px) pxToRem(242px);
   background-repeat:no-repeat;
-  background-position: pxToRem(-252px) pxToRem(-100px);
+  background-position: pxToRem(-250px) pxToRem(-100px);
   width: pxToRem(74px);
   height: pxToRem(74px);
 }

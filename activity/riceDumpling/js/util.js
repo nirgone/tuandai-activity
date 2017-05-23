@@ -22,7 +22,8 @@
                 style: '',
                 text: '',
                 callback: null
-            }
+            },
+            tips_text: ''
         };
         _options = $.extend(_options, options || {});
         // var pop_type = type == 0 ? 'alert-wrapper' : 'prize-wrapper';
@@ -36,12 +37,9 @@
             popWrap.append(p).append(btn_message).append(btn_cls);
             pop_dialog.append(mask).append(popWrap);
 
-        if (_options.type === 1) { //团币兑换
-            if(_options.tips_text){
-                var tip = $('<p/>').addClass('tip').html(_options.tips_text);
-                popWrap.append(tip);
-            }
-
+        if(_options.tips_text){ //弹窗底部提示
+            var tip = $('<p/>').addClass('tip').html(_options.tips_text);
+            popWrap.append(tip);
         }
 
         $('body').append(pop_dialog);
@@ -77,18 +75,16 @@
         // }
         
         message: function(options) {
-            var _options = {
-                "type": options.type || 0,
-                "message": options.message || '',
+            var msg = typeof options === 'string' ? options : options.message;
+            popup({
+                "message": msg,
                 "btn": {
                     style: options.btn_style || 'btn-message',
-                    text: options.btn_text || '获取更多机会',
+                    text: options.btn_text || '确认',
                     callback: options.callback
                 },
                 "tips_text": options.tips_text
-            };
-            // _options = $.extend(_options, options || {});
-            popup(_options);
+            });
         },
         toast: function(msg, duration) {
             duration = duration ? duration : 1500;
