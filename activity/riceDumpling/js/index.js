@@ -4,7 +4,7 @@
     	animationFaceCurIndex = [1, 1, 1], //当前脸部表情索引
     	animationFacePreIndex = [1, 1, 1], //上一个脸部表情索引
     	t;
-    var isLogin = true; //是否登录
+    var isLogin = false; //是否登录
     var chanceNum = 2; //多少次拆棕子的机会
     var coinNum = 500; //拥有团币数量
     var exchangeCoinChance = true; //是否有团币兑换拆棕机会
@@ -21,6 +21,14 @@
         var r = window.location.search.substr(1).match(reg);
         if (r != null) return unescape(r[2]);
         return null;
+    }
+    // 登录
+    function login() {
+    	if (Jsbridge.isNewVersion()) {
+    	    Jsbridge.toAppLogin();
+    	} else {
+    	    //web版登录
+    	}
     }
     // 微信点击右上角分享
     function share(value, e) {
@@ -69,12 +77,7 @@
                 "message": '想要拆粽子？<br /> 先<span class="em">登录</span>吧！',
                 "btn_text": '前往登录',
                 callback: function() {
-                    console.log('登录');
-                    if (Jsbridge.isNewVersion()) {
-                        Jsbridge.toAppLogin();
-                    } else {
-                        //web版登录
-                    }
+                    login();
                 }
             })
             return;
@@ -116,7 +119,11 @@
             })
         // 活动规则
         $("#btn-rules").on('click', function() {
-            $("#rule_sec").show();
+            if (isLogin) {
+                $("#rule_sec").show();
+            } else {
+                login();
+            }
         });
         $("#btn-rule-cls").on('click', function() {
             $("#rule_sec").hide();
@@ -137,12 +144,7 @@
             if (isLogin) {
                 $("#btn-bottom-sec").addClass("slideInDown");
             } else {
-                if (Jsbridge.isNewVersion()) {
-                    Jsbridge.toAppLogin();
-                } else {
-                    //web版登录
-                    MobileRedirector.go_login();
-                }
+                login();
             }
         });
 
