@@ -457,46 +457,52 @@
             $("#popup-input-wrapper").hide();
             return;
         }
-        sendMsg(_type, _msg, function() {
-            $('#textarea_msg').val('');
-            $('.popup-input-wrapper').hide();
-        })
 
-        // if (_type === '1') {
-        //     Util.Ajax({
-        //         "url": API.SEND_BARRAGE,
-        //         "data": {
-        //             "room_id": avChatRoomId,
-        //             "user_id": _user_info.id
-        //         },
-        //         "type": "post",
-        //         "dataType": "json",
-        //         cbOk: function(data, textStatus, jqXHR) {
-        //          console.log("===========")
-        //             console.log(data);
-        //             // window.sessionStorage['loginInfo'] = JSON.stringify(data);
-        //         },
-        //         cbErr: function(e, xhr, type) {
+        // 如果是弹幕那么需要消耗团票才能发送
+        if (_type === '1') {
+            // todo 消耗团票，在成功回调中发送消息 settimeout 模拟ajax
+            setTimeout(function(e) {
+                // 发送消息
+                sendMsg(_type, _msg, function() {
+                    $('#textarea_msg').val('');
+                    $('.popup-input-wrapper').hide();
+                })
+            }, 1000);
 
-        //         }
-        //     })
-        // } else {
-        //     sendMsg(_type, _msg, function() {
-        //         $('#textarea_msg').val('');
-        //         $('.popup-input-wrapper').hide();
-        //     })
-
-        // }
+        } else {
+            // 发送消息
+            sendMsg(_type, _msg, function() {
+                $('#textarea_msg').val('');
+                $('.popup-input-wrapper').hide();
+            })
+        }
 
     });
 
+    // 绑定发送问题按钮
+    $('.popup-input-wrapper').on('click', '#send_question', function(e) {
+        // sendMsg(, )
+        var $target = $(e.currentTarget);
+        var _msg = $('#textarea_question').val();
+
+        if ($target.hasClass('btn-disable')) {
+            return;
+        }
+
+        // todo 发送提问 setTimeou 模拟ajax请求后回调
+        setTimeout(function() {
+            $('#textarea_question').val('');
+            $('.popup-input-wrapper').hide();
+        }, 1000)
+
+    });
 
     // 监听留言/弹幕，提问的输入框
     $('.popup-input-wrapper').on('input', 'textarea', function() {
         if ($(this).prop('comStart')) return; // 中文输入过程中不截断
         var _id = $(this).attr('id');
         var _value = $(this).val();
-        var _type = _id === "textarea_msg" ? $msgType.attr('data-type') : 2;
+        var _type = _id === "textarea_msg" ? $msgType.attr('data-type') : '2';
         tip(_type, _value);
 
     }).on('compositionstart', function() {
