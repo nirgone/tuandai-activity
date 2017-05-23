@@ -50,6 +50,15 @@
         </div>
         <div class="icon-shadow"></div>
       </div>
+      <!-- 如果没有pk战绩就隐藏 -->
+      <div class="pk-sec">
+        <!-- pk战绩 -->
+        <div class="pk-title"><font>1</font>人与我比拼运势</div>
+        <!-- pk战绩 -->
+        <div class="pk-record">本周战绩： <font>1胜0负</font></div>
+        <div class="icon-arrow"></div>
+      </div>
+
       <div class="sign-footer">
         <div class="draw-wrapper frame">
           <div class="frame-title">每日抽奖</div>
@@ -68,15 +77,67 @@
       </div>
     </div>
   </div>
-    
+  <!-- 我的战绩 -->
+  <div class="dialog-score" id="score">
+    <div class="mask"></div>
+    <div class="square">
+      <div class="square-content">
+        <div class="title">
+          <span class="line left-line"></span>
+          <font>本周战绩</font>
+          <span class="line right-line"></span>
+        </div>
+        <div class="score-text">
+          <font>6胜</font>
+          <font>2负</font>
+          <font>1平</font>
+        </div>
+        <div class="list-sec">
+          <div class="list-win">
+            <i class="icon-win"></i>
+            <div class="avatar">
+              <img src="../images/avatar.png" alt="头像">
+            </div>
+            <div class="avatar">
+              <img src="../images/avatar.png" alt="头像">
+            </div>
+            <div class="avatar">
+              <img src="../images/avatar.png" alt="头像">
+            </div>
+            <div class="avatar">
+              <img src="../images/avatar.png" alt="头像">
+            </div>
+            <div class="avatar">
+              <img src="../images/avatar.png" alt="头像">
+            </div>
+            <div class="avatar">
+              <img src="../images/avatar.png" alt="头像">
+            </div>
+          </div>
+          <div class="list-tie">
+            <i class="icon-tie"></i>
+              <div class="avatar">
+                <img src="../images/avatar.png" alt="头像">
+              </div>
+              <div class="avatar">
+                <img src="../images/avatar.png" alt="头像">
+              </div>
+          </div>
+          <div class="list-lose">
+            <i class="icon-lose"></i>
+            <div class="avatar">
+              <img src="../images/avatar.png" alt="头像">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="icon-close"></div>
+    </div>
+  </div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
-<script>
-(function() {
-    FastClick.attach(document.body);
-})()
-</script>
+<script src="../js/sign.js" type="text/javascript" charset="utf-8"></script>
 
 </html>

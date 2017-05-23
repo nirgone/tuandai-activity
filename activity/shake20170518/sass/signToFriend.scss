@@ -1,0 +1,36 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../../sass/func";
+.qrcode-wrapper {
+    position: relative;
+    margin-top: pxToRem(40px);
+    .label {
+        font-size: pxToRem(24px);
+        color: $txt-color-yellow;
+        text-align: center;
+        margin-bottom: pxToRem(18px);
+    }
+    .icon-arrow-down {
+        width: pxToRem(15px);
+        height: pxToRem(9px);
+        position: relative;
+        background-image: url("../images/icon_arrow_down.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50% 50%;
+        margin: auto;
+        margin-bottom: pxToRem(14px);
+    }
+     .icon-qrcode {
+        width: pxToRem(185px);
+        height: pxToRem(185px);
+        position: relative;
+        background-image: url("../images/icon_qrcode.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50% 50%;
+        margin: auto;
+    }
+}
+
+@import 'sign.scss';
