@@ -664,6 +664,10 @@
     $('.g-masker').on('click', function() {
         hideGiftActionSheet();
     });
+    //跳转到团票排行榜
+    $('.tp-info').on('click', function() {
+        location.href = './ranking.html';
+    });
 
 
     /* ----------事件绑定--end---------- */

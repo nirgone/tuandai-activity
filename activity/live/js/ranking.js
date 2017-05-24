@@ -48,9 +48,22 @@
 			end = pager.curPage * pageSize;
 
 		//模拟数据请求
+		//在ajax的beforeSend中修改显示loading
+		if (type === 0 && dayList) {
+			dayList.isLoading(true);
+		} else if (type === 1 && totalList) {
+			totalList.isLoading(true);
+		}
+
+		//数据请求结束，在ajax的complete中隐藏loading
+		if (type === 0 && dayList) {
+			dayList.isLoading(false);
+		} else if (type === 1 && totalList) {
+			totalList.isLoading(false);
+		}
 		for (var i = start; i <= end; i++) {
 			temp += ' <li class="ranking-row">';
-			var styleStr = i < 3 ? 'top-three' : 'r-normal';
+			var styleStr = i <= 3 ? 'top-three' : 'r-normal';
 			switch (i) {
 				case 1:
 					temp += '<div><i class="icon-gold"></i></div>'; //第一名
@@ -69,6 +82,9 @@
 				'<div>贡献<font class="txt-yellow">908</font>团票</div></li>';
 		}
 		$(el).find('.ranking-list').append(temp);
+		// var str = '<div class="load-more"><svg class="spinner show" viewBox="0 0 44 44"><circle class="path" fill="none" stroke-width="4" stroke-linecap="round" cx="22" cy="22" r="20"></circle></svg></div>';
+		// $(el).find('.ranking-list').append(str);
+
 		if (type === 0) {
 			if (dayList) {
 				dayList.refresh();

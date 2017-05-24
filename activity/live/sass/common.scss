@@ -137,4 +137,9 @@ i {
     color: $color-grey;
 }
 
+.load-more {
+    position: relative;
+    height: pxToRem(120px);
+}
+
 @import "components";
