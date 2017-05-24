@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- <meta name="mobile-web-app-capable" content="yes"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>直播频道</title>
+    <style type="text/css" media="screen" id="init_style"></style>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <!-- build:css(dist) ../js/lib/vendor/swiper/swiper.min.css -->
+    <link rel="stylesheet" href="../css/vendor/swiper/swiper.min.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/broadcastRoom.css">
+    <style type="text/css" media="screen" id="init_style"></style>
+    <!-- build:js({dist}) ../js/lib/adaptScale.js -->
+    <script src="../js/adaptScale.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="scroll scroll-active">
+        <div class="content page-video">
+            <!--视频部分 start-->
+            <div class="video-play">
+                <!--<video controls="controls" preload="auto" src="http://bmw2.thefront.com.cn/m2_2016/media/final.mp4" webkit-playsinline></video>-->
+            </div>
+            <!--视频部分 end-->
+            <!--聊天部分 start-->
+            <div class="video-pane">
+                <div class="video-pane-head">
+                    <div class="video-pane-info">
+                        <div class="video-info">
+                            <div class="user-img">
+                                <img src="../images/avator.png">
+                            </div>
+                            <div class="user-info-text">
+                                <div class="user-info-name">美女主播朴信惠</div>
+                                <div class="user-info-num">
+                                    ID:0001
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="list-audience">
+                            <li class="user-img"><img src="../images/avator.png"></li>
+                            <li class="user-img"><img src="../images/avator.png"></li>
+                            <li class="user-img"><img src="../images/avator.png"></li>
+                            <li class="user-img"><img src="../images/avator.png"></li>
+                            <li class="user-img"><img src="../images/avator.png"></li>
+                            <li class="user-img"><img src="../images/avator.png"></li>
+                            <li class="user-img"><img src="../images/avator.png"></li>
+                        </ul>
+                    </div>
+                    <div class="sub-info">
+                        <div class="txt-bg tp-info">
+                            <font class="txt-glaucous">团票：</font>
+                            <span>9999999999</span>
+                            <i class="icon-arrow"></i>
+                        </div>
+                        <div class="txt-bg num-info">
+                            222222299人在线
+                        </div>
+                    </div>
+                </div>
+                
+                <footer class="video-discuss-pane" id="video_discuss_pane">
+                    <div class="item bg-circle lmsg" data-value="1">
+                        <i class="icon-i-lmsg"></i>
+                    </div>
+                    <div class="item bg-circle" data-value="2">
+                        <i class="icon-i-question"></i>
+                    </div>
+                    <div class="item bg-circle" data-value="3">
+                        <i class="icon-i-msg redcode"></i>
+                    </div>
+                    <div class="item icon-gift" data-value="4">
+                    </div>
+                    <div class="item bg-circle" data-value="5">
+                        <i class="icon-i-share"></i>
+                    </div>
+                </footer>
+            </div>
+            <!--聊天部分 end-->
+        </div>
+    </div>
+   
+    <!-- 主播信息 -->
+    <div class="pop-up-wraper anchor-info-wrapper">
+        <div class="masker ai-masker"></div>
+        <div class="ai-content">
+            <div class="ai-avator-container">
+                <img src="../images/avator.png" class="anchor-avator">
+            </div>
+            <div class="ai-anchor"><span class="ai-name">小小派</span><span class="ai-id txt-grey">（ID:005）</span></div>
+            <div class="ai-desc"><i class="icon-gender icon-female"></i><span class="ai-age">21岁</span><span class="ai-constellation">天蝎座</span><i class="icon-position"></i><span class="ai-province">河南</span><span class="ai-city">长沙</span></div>
+            <section class="ai-introduction">我是集美貌与才华于一身的小派，每天早八点晚八点约定你哦！</section>
+            <i class="ai-close"></i>
+        </div>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/common/util.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/land.js" type="text/javascript" charset="utf-8"></script>
+
+</html>
