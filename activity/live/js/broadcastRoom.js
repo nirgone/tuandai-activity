@@ -448,6 +448,10 @@
             case '4':
                 showGiftActionSheet();
                 break;
+            case '5':
+                //分享需要后台管理系统配置，参数由产品提供
+                Jsbridge.toAppActivity(1);
+                break;
         }
     });
 
