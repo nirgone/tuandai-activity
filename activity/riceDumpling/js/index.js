@@ -4,7 +4,7 @@
     	animationFaceCurIndex = [1, 1, 1], //当前脸部表情索引
     	animationFacePreIndex = [1, 1, 1], //上一个脸部表情索引
     	t;
-    var isLogin = false; //是否登录
+    var isLogin = true; //是否登录
     var chanceNum = 2; //多少次拆棕子的机会
     var coinNum = 500; //拥有团币数量
     var exchangeCoinChance = true; //是否有团币兑换拆棕机会
@@ -30,16 +30,17 @@
     	    //web版登录
     	}
     }
-    // 微信点击右上角分享
+    // 分享
     function share(value, e) {
 	    e.preventDefault();
 	    if (GetQueryString('type') == 'mobileapp') {
 	        Jsbridge.toAppActivity(value);
+            $(".mask").show();
 	    } else {
 	        if (isWeiXin()) {
 	            $("#share").show();
 	        } else {
-	            alert('打开app即可分享');
+                Util.toast('打开app即可分享');
 	        }
 	    }
     }

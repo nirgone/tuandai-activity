@@ -45,6 +45,12 @@
         var temp = '';
 
         //模拟数据请求
+        //在ajax的beforeSend中修改显示loading
+        list && list.isLoading(true);
+
+        //数据请求结束，在ajax的complete中隐藏loading
+        list && list.isLoading(false);
+        
         for (var i = start; i < end; i++) {
             var type = Math.floor(Math.random() * 2); //明细类型 0-消费 1-充值
             temp += '<li class="det-row"><div class="dt-first dt-item"><span>团币充值团票</span>';

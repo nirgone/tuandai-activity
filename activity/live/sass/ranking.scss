@@ -84,6 +84,9 @@
 .day-list {
     transform: translateX(0);
 }
+.spinner {
+    top: 20%;
+}
 
 .rl-container {
     width: 200%;
@@ -104,8 +107,8 @@
         * {
             vertical-align: middle;
         }
-        &>li:not(:last-child) {
-            margin-bottom: pxToRem(60px);
+        &>li:nth-child(n+3) {
+            margin-top: pxToRem(60px);
         }
     }
     .ranking-row {
