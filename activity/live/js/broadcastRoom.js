@@ -568,9 +568,10 @@
     });
 
     // 站内信 系统消息 事件绑定 
+    var _loadmore_height = $('#loader_more').height();
     $('#panel1').on('scroll', function(e) {
         var $target = $(this);
-        if ($('#list_msg').height() - $target.height() - $target.scrollTop() < 120) {
+        if ($('#list_msg').height() + _loadmore_height - $target.height() - $target.scrollTop() < 120) {
             if (loading) {
                 return;
             }

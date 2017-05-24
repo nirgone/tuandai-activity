@@ -314,6 +314,7 @@
     bottom: 0;
     left: 0;
     z-index: 1100;
+    overflow: hidden;
     .msg-tabs {
         position: absolute;
         right: 0;
@@ -351,6 +352,10 @@
                 transform: translate(0, -50%);
             }
         }
+    }
+    .load-more {
+        position: relative;
+        height: pxToRem(120px);
     }
     .swiper-container {
         position: absolute;
