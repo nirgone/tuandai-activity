@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>每日一签</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/draw.css">
+    <link rel="stylesheet" href="../css/jquery.slotmachine.min.css">
+    <!-- endbuild -->
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adaptScale.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+  <div class="scroll scroll-active">
+    <div class="content">
+      <div class="draw-header">
+        <div class="draw-header-title"></div>
+        <div class="btn-rule">活动规则</div>
+      </div>
+      <div class="draw-md">
+        <div class="machine-wrapper">
+          <div class="machine machine01">
+              <div class="slot slot01"></div>
+              <div class="slot slot02"></div>
+              <div class="slot slot03"></div>
+              <div class="slot slot04"></div>
+          
+          </div>
+          <div class="machine machine02">
+              <div class="slot slot01"></div>
+              <div class="slot slot02"></div>
+              <div class="slot slot03"></div>
+              <div class="slot slot04"></div>
+          </div>
+          <div class="machine machine03">
+              <div class="slot slot01"></div>
+              <div class="slot slot02"></div>
+              <div class="slot slot03"></div>
+              <div class="slot slot04"></div>
+          </div>
+        </div>
+        <!-- 无法抽奖加上disable类 -->
+        <div class="btn-draw"></div>
+        <!-- 无抽奖机会修改为 明日再来~ -->
+        <div class="tips">你有一次抽奖机会~</div>
+      </div>
+      <div class="draw-footer">累计签到天数越多，抽到大奖概率越高哦~</div>
+    </div>
+  </div>
+  <div class="dialog-rule">
+    <div class="mask"></div>
+    <div class="square">
+      <div class="square-content">
+        <div class="rule-title">
+          <span class="line left-line"></span>
+          <font>活动规则</font>
+          <span class="line right-line"></span>
+        </div>
+        <div class="rule-content">
+          <div class="rule-item">1、活动时间：5月15日起；</div>
+          <div class="rule-item">2、每日奖励：每天摇签可免费抽一次奖，获得话费、流量、红包等奖励；</div>
+          <div class="rule-item">3、每周奖励：摇签后可获得运势，和好友PK运势后，每周累计获胜次数前5名的用户可获得15元现金红包（PK获胜次数相同则按照达到先后顺序排列）；</div>
+          <div class="rule-item">4、本活动奖品由团贷网提供，获得奖励后请根据页面提示领取；</div>
+          <div class="rule-item">5、一旦发现盗刷奖励、作弊等行为则取消活动奖</div>
+          <div class="rule-item">本活动规则最终解释权归走读财经公众号所有。</div>
+        </div>
+      </div>
+      <div class="icon-close"></div>
+    </div>
+  </div> 
+  <div class="dialog-award">
+    <div class="mask"></div>
+    <div class="square">
+      <div class="square-content">
+        <div class="icon-congratulations"></div>
+        <div class="award-md">
+          <div class="icon-award-bg"></div>
+          <div class="icon-award"></div>
+        </div>
+        <div class="text-wrapper">
+          <div>抽中了</div>
+          <!-- 抽中奖品 -->
+          <div class="award-text">500M流量</div>
+        </div>
+        <!-- 查看奖品路径 -->
+        <a href="" class="btn-check-award">查看奖品</a>
+      </div>
+      <div class="icon-close"></div>
+    </div>
+  </div> 
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/jquery.slotmachine.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/draw.js" type="text/javascript" charset="utf-8"></script>
+</html>

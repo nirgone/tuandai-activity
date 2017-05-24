@@ -85,6 +85,7 @@
     // 发送弹幕消息扣除团票
     var SEND_BARRAGE = IP_OPERA + 'live/send-bullet-screen';
     var Util = {
+        openApi: IP_OPERA,
         getElemetByTarget: function(target, cls, until) { //获取某个元素的父级或同级dom节点
             var result = target;
             if (!result) { //不存在target
@@ -168,16 +169,16 @@
                 dataType: config.dataType,
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 beforeSend: function(xhr, settings) {
-                    xhr.setRequestHeader("If-Modified-Since", "0");
+                    // xhr.setRequestHeader("If-Modified-Since", "0");
                 },
                 success: function(data, textStatus, jqXHR) {
-                    config.cbOk && config.cbOk(data, textStatus, jqXHR);
+                    config.success && config.success(data, textStatus, jqXHR);
                 },
                 error: function(e, xhr, type) {
-                    config.cbErr && config.cbErr(e, xhr, type);
+                    config.error && config.error(e, xhr, type);
                 },
                 complete: function(xhr, status) {
-                    config.cbCp && config.cbCp(xhr, status);
+                    config.complete && config.complete(xhr, status);
                 }
             });
         },

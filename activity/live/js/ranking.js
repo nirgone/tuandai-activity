@@ -69,24 +69,32 @@
 				'<div>贡献<font class="txt-yellow">908</font>团票</div></li>';
 		}
 		$(el).find('.ranking-list').append(temp);
-		if (type === 0 && !dayList) {
-			dayList = new List('#dayList', {
-				loadMore: function() {
-					console.info('dayList---loadmore--');
-					dayListPager.curPage += 1;
-					loadList('#dayList', 0);
-					dayList.refresh();
-				}
-			});
-		} else if (type === 1 && !totalList) {
-			totalList = new List('#totalList', {
-				loadMore: function() {
-					console.info('totalList---loadmore---');
-					totalListPager.curPage += 1;
-					loadList('#totalList', 1);
-					totalList.refresh();
-				}
-			})
+		if (type === 0) {
+			if (dayList) {
+				dayList.refresh();
+			} else {
+
+				dayList = new List('#dayList', {
+					loadMore: function() {
+						console.info('dayList---loadmore--');
+						dayListPager.curPage += 1;
+						loadList('#dayList', 0);
+					}
+				});
+			}
+		} else if (type === 1) {
+			if (totalList) {
+				totalList.refresh();
+			} else {
+				totalList = new List('#totalList', {
+					loadMore: function() {
+						console.info('totalList---loadmore---');
+						totalListPager.curPage += 1;
+						loadList('#totalList', 1);
+						totalList.refresh();
+					}
+				});
+			}
 		}
 
 	}

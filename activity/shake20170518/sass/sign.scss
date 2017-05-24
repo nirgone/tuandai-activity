@@ -1,0 +1,553 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    // background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    background-color: $bg-color-grey-light;
+}
+
+body {
+    background-image: url("../images/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.scroll-active {
+    -webkit-overflow-scrolling: touch !important;
+}
+
+.scroll {
+    max-width: pxToRem(818px);
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    padding-bottom: pxToRem(60px);
+    .content {
+        width: 100%;
+    }
+}
+
+.sign-header {
+    margin-top: pxToRem(20px);
+    margin-bottom: pxToRem(34px);
+    // padding: 0 pxToRem(40px);
+    .lunar-calendar {
+        font-size: pxToRem(18px);
+        letter-spacing: pxToRem(46px);
+        text-indent: pxToRem(46px);
+        text-align: center;
+        color: $txt-color-yellow;
+        white-space: nowrap;
+        width: pxToRem(750px);
+        margin: auto;
+        margin-bottom: pxToRem(30px);
+    }
+    .new-calendar {
+        font-size: pxToRem(26px);
+        color: $txt-color-yellow;
+        margin-bottom: pxToRem(40px);
+        text-align: center;
+    }
+    .fortune {
+        position: relative;
+        width: pxToRem(620px);
+        height: pxToRem(60px);
+        line-height: pxToRem(60px);
+        font-size: pxToRem(30px);
+        color: #fff;
+        text-align: center;
+        background-color: $bg-color-brown;
+        margin: auto;
+        &:before,
+        &:after {
+            content: "";
+            width: pxToRem(20px);
+            height: pxToRem(20px);
+            background-image: url("../images/icon_decorate_white.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 50% 50%;
+            position: absolute;
+        }
+        &:before {
+            left: 0;
+            bottom: 0;
+        }
+        &:after {
+            right: 0;
+            top: 0;
+            transform: scale3d(-1, -1, 1);
+        }
+    }
+}
+
+.sign-sec {
+    position: relative;
+    width: pxToRem(620px);
+    background-color: rgba(255, 255, 255, .6);
+    padding: pxToRem(20px);
+    margin: auto;
+    // margin-bottom: pxToRem(40px);
+    .icon-shadow {
+        position: absolute;
+        left: 50%;
+        margin-left: pxToRem(-320px);
+        bottom: pxToRem(-35px);
+        background-image: url("../images/icon_shadow.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0%;
+        background-size: contain;
+        width: pxToRem(640px);
+        height: pxToRem(35px);
+    }
+    .icon-snow {
+        position: absolute;
+        top: pxToRem(236px);
+        left: pxToRem(88px);
+        opacity: 0.6;
+        z-index: 9;
+        width: pxToRem(26px);
+        height: pxToRem(29px);
+        background-image: url("../images/icon_snow.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50% 50%;
+    }
+    .border-square {
+        @at-root .sign-wrapper {
+            position: relative;
+            padding-bottom: pxToRem(40px);
+            border-bottom: 1px dashed #d9c59f;
+            .sign-txt {
+                position: relative;
+                width: pxToRem(450px);
+                margin: auto;
+                font-size: pxToRem(30px);
+                line-height: pxToRem(60px);
+                color: $txt-color-yellow;
+                max-height: 100%;
+                &:before,
+                &:after {
+                    content: "";
+                    width: pxToRem(17px);
+                    height: pxToRem(18px);
+                    position: absolute;
+                    background-image: url("../images/icon_quotation.png");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: 50% 50%;
+                }
+                &:before {
+                    left: pxToRem(-34px);
+                    top: pxToRem(10px);
+                }
+                &:after {
+                    right: pxToRem(-34px);
+                    bottom: pxToRem(34px);
+                    transform: scale3d(-1, -1, 1);
+                }
+            }
+            .sign-status {
+                border: 1px solid $color-red;
+                color: $color-red;
+                width: pxToRem(60px);
+                height: pxToRem(60px);
+                line-height: pxToRem(60px);
+                border-radius: 50%;
+                margin: auto;
+                margin-top: pxToRem(15px);
+                margin-bottom: pxToRem(30px);
+                font-size: pxToRem(30px);
+                text-align: center;
+            }
+            .sign-action {
+                width: pxToRem(174px);
+                text-align: center;
+                font-size: pxToRem(30px);
+                position: relative;
+                color: $color-red;
+                margin: auto;
+                &:before,
+                &:after {
+                    content: "";
+                    position: absolute;
+                    width: pxToRem(6px);
+                    height: pxToRem(6px);
+                    border-radius: 50%;
+                    top: 50%;
+                    transform: translateX(-50%);
+                    background-color: $color-red;
+                }
+                &:before {
+                    left: 0;
+                }
+                &:after {
+                    right: 0;
+                }
+            }
+        }
+        .luck-wrapper {
+            padding-top: pxToRem(40px);
+            .luck-title {
+                font-size: pxToRem(30px);
+                text-align: center;
+                margin-bottom: pxToRem(30px);
+                color: $txt-color-yellow;
+            }
+            .luck-content {
+                white-space: nowrap;
+                font-size: 0;
+                text-align: center;
+                .icon-star {
+                    display: inline-block;
+                    background-image: url("../images/icon_star_full.png");
+                    width: pxToRem(46px);
+                    height: pxToRem(42px);
+                    margin-right: pxToRem(24px);
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+                &[data-value='0'] {
+                    &>i {
+                        background-image: url("../images/icon_star_empty.png");
+                    }
+                }
+                &[data-value='1'] {
+                    &>i:first-child {
+                        background-image: url("../images/icon_star_half.png");
+                    }
+                    &>i:nth-child(n+2) {
+                        background-image: url("../images/icon_star_empty.png");
+                    }
+                }
+                &[data-value='2'] {
+                    &>i:nth-child(n+2) {
+                        background-image: url("../images/icon_star_empty.png");
+                    }
+                }
+                &[data-value='3'] {
+                    &>i:nth-child(2) {
+                        background-image: url("../images/icon_star_half.png");
+                    }
+                    &>i:nth-child(n+3) {
+                        background-image: url("../images/icon_star_empty.png");
+                    }
+                }
+                &[data-value='4'] {
+                    &>i:nth-child(n+3) {
+                        background-image: url("../images/icon_star_empty.png");
+                    }
+                }
+                &[data-value='5'] {
+                    &>i:nth-child(3) {
+                        background-image: url("../images/icon_star_half.png");
+                    }
+                    &>i:nth-child(n+4) {
+                        background-image: url("../images/icon_star_empty.png");
+                    }
+                }
+                &[data-value='6'] {
+                    &>i:nth-child(n+4) {
+                        background-image: url("../images/icon_star_empty.png");
+                    }
+                }
+                &[data-value='7'] {
+                    &>i:nth-child(4) {
+                        background-image: url("../images/icon_star_half.png");
+                    }
+                    &>i:nth-child(n+5) {
+                        background-image: url("../images/icon_star_empty.png");
+                    }
+                }
+                &[data-value='8'] {
+                    &>i:nth-child(n+5) {
+                        background-image: url("../images/icon_star_empty.png");
+                    }
+                }
+                &[data-value='9'] {
+                    &>i:nth-child(5) {
+                        background-image: url("../images/icon_star_half.png");
+                    }
+                    &>i:nth-child(n+6) {
+                        background-image: url("../images/icon_star_empty.png");
+                    }
+                }
+                &[data-value='10'] {
+                    &>i:nth-child(n+6) {
+                        background-image: url("../images/icon_star_empty.png");
+                    }
+                }
+            }
+        }
+    }
+}
+
+.pk-sec {
+    width: pxToRem(620px);
+    // height: pxToRem(150px);
+    padding: pxToRem(32px) pxToRem(20px);
+    margin: auto;
+    margin-top: pxToRem(40px);
+    background-color: #e9e0d0;
+    color: $txt-color-yellow;
+    position: relative;
+    .pk-title {
+        font-size: pxToRem(30px);
+        margin-bottom: pxToRem(32px);
+    }
+    .pk-record {
+        font-size: pxToRem(24px);
+    }
+    .icon-arrow {
+        position: absolute;
+        width: pxToRem(13px);
+        height: pxToRem(20px);
+        right: pxToRem(20px);
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: url("../images/icon_arrow.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50% 50%;
+        z-index: 99;
+    }
+}
+
+.sign-footer {
+    width: pxToRem(620px);
+    height: pxToRem(329px);
+    margin: auto;
+    margin-top: pxToRem(52px);
+    position: relative;
+    .frame {
+        position: relative;
+        width: pxToRem(296px);
+        height: pxToRem(329px);
+        background-image: url("../images/icon_border.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50% 50%;
+        padding-top: pxToRem(56px);
+        &.draw-wrapper {
+            float: left;
+        }
+        &.pk-wrapper {
+            float: right;
+        }
+        .frame-title {
+            position: absolute;
+            top: 0;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            font-size: pxToRem(30px);
+            color: $txt-color-yellow;
+            text-align: center;
+        }
+        .icon {
+            width: pxToRem(164px);
+            height: pxToRem(164px);
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 50% 50%;
+            margin: auto;
+            margin-bottom: pxToRem(24px);
+            &.icon-draw {
+                background-image: url("../images/icon_draw.png");
+            }
+            &.icon-pk {
+                background-image: url("../images/icon_pk.png");
+            }
+        }
+        .btn {
+            width: pxToRem(182px);
+            height: pxToRem(56px);
+            line-height: pxToRem(56px);
+            text-align: center;
+            margin: auto;
+            border: 1px solid #c1444e;
+            color: #c1444e;
+            font-size: pxToRem(30px);
+            display: block;
+            border-radius: pxToRem(28px);
+        }
+    }
+}
+
+.mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.dialog-score {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+    .square {
+        z-index: 999;
+        position: absolute;
+        width: pxToRem(580px);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        .square-content {
+            padding: pxToRem(50px) 0;
+        }
+        @at-root .icon-close {
+            @include background("../images/icon_close.png",
+            70px,
+            70px);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: pxToRem(-120px);
+        }
+    }
+    .title {
+        margin-bottom: pxToRem(50px);
+        font-size: 0;
+        text-align: center;
+        white-space: nowrap;
+        position: relative;
+        font {
+            font-size: pxToRem(32px);
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 pxToRem(20px);
+            color: $txt-color-yellow;
+        }
+        .line {
+            vertical-align: middle;
+            @include background("../images/icon_line.png",
+            77px,
+            18px);
+            display: inline-block;
+            &.right-line {
+                transform: scale3d(-1, 1, 1);
+            }
+        }
+    }
+    .score-text {
+        position: relative;
+        width: pxToRem(510px);
+        height: pxToRem(60px);
+        line-height: pxToRem(60px);
+        font-size: pxToRem(28px);
+        color: #fff;
+        text-align: center;
+        background-color: $bg-color-brown;
+        margin: auto;
+        margin-bottom: pxToRem(50px);
+        font {
+            margin-right: pxToRem(50px);
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        &:before,
+        &:after {
+            content: "";
+            width: pxToRem(20px);
+            height: pxToRem(20px);
+            background-image: url("../images/icon_decorate_white.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 50% 50%;
+            position: absolute;
+        }
+        &:before {
+            left: 0;
+            bottom: 0;
+        }
+        &:after {
+            right: 0;
+            top: 0;
+            transform: scale3d(-1, -1, 1);
+        }
+    }
+    .list-sec {
+        max-height: pxToRem(520px);
+        overflow: auto;
+        padding-left: pxToRem(50px);
+        padding-right: pxToRem(10px);
+    }
+    .list-win {
+        position: relative;
+        padding-top: pxToRem(6px);
+        padding-left: pxToRem(110px);
+        font-size: 0;
+        min-height: pxToRem(92px);
+        // line-height: pxToRem(84px);
+        margin-bottom: pxToRem(22px);
+        .icon-win {
+            width: pxToRem(50px);
+            height: pxToRem(63px);
+            background-image: url("../images/icon_cup_win.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 50% 50%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        @at-root .avatar {
+            display: inline-block;
+            width: pxToRem(56px);
+            height: pxToRem(56px);
+            margin-right: pxToRem(26px);
+            margin-bottom: pxToRem(28px);
+            &:last-child {
+                margin-right: 0;
+            }
+            img {
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+    .list-lose {
+        @extend .list-win;
+        .icon-lose {
+            @extend .icon-win;
+            background-image: url("../images/icon_cup_lose.png");
+        }
+    }
+    .list-tie {
+        @extend .list-win;
+        .icon-tie {
+            @extend .icon-win;
+            background-image: url("../images/icon_cup_tie.png");
+        }
+    }
+}
+
+@import 'common.scss';

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>每日一签</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/signToFriend.css">
+    <!-- endbuild -->
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adaptScale.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+  <div class="scroll scroll-active">
+    <div class="content">
+      <div class="sign-header">
+        <div class="lunar-calendar">农历丁酉年十二月二十九</div>
+        <div class="new-calendar">2017年5月4日 (星期三）</div>
+        <!-- 不同运势对应不同文案 -->
+        <div class="fortune">小虾米运势爆表啦！</div>
+      </div>
+      <div class="sign-sec">
+        <div class="icon-snow"></div>
+        <div class="border-square">
+          <div class="square-content">
+            <div class="sign-wrapper">
+              <!-- 签文 -->
+              <div class="sign-txt">你之所以觉得一年比一年过得快，是因为时间对你一年比一年重要。</div>
+              
+              <div class="sign-status">宜</div>
+              <div class="sign-action">联络旧友</div>
+            </div>
+            <div class="luck-wrapper">
+              <div class="luck-title">今日运程指数</div>
+              <!-- data-value: 运程指数 -->
+              <div class="luck-content" data-value="3">
+                  <i class="icon-star"></i>
+                  <i class="icon-star"></i>
+                  <i class="icon-star"></i>
+                  <i class="icon-star"></i>
+                  <i class="icon-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="icon-shadow"></div>
+      </div>
+      <!-- 如果没有pk战绩就隐藏 -->
+      <div class="pk-sec">
+        <!-- pk战绩 -->
+        <div class="pk-title"><font>1</font>人与我比拼运势</div>
+        <!-- pk战绩 -->
+        <div class="pk-record">本周战绩： <font>1胜0负</font></div>
+        <div class="icon-arrow"></div>
+      </div>
+
+      <div class="sign-footer">
+        <div class="draw-wrapper frame">
+          <div class="frame-title">每日抽奖</div>
+          <div class="frame-content">
+            <div class="icon-draw icon"></div>
+            <a href="./draw.html" class="btn-draw btn">去抽奖</a>
+          </div>
+        </div>
+        <div class="pk-wrapper frame">
+          <div class="frame-title">PK排行榜</div>
+          <div class="frame-content">
+            <div class="icon-pk icon"></div>
+            <a class="btn-pk btn">去PK</a>
+          </div>
+        </div>
+      </div>
+      <div class="qrcode-wrapper">
+        <div class="label">明日运势怎样？长按二维码测试</div>
+        <div class="icon-arrow-down"></div>
+        <div class="icon-qrcode"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 我的战绩 -->
+  <div class="dialog-score" id="score">
+    <div class="mask"></div>
+    <div class="square">
+      <div class="square-content">
+        <div class="title">
+          <span class="line left-line"></span>
+          <font>本周战绩</font>
+          <span class="line right-line"></span>
+        </div>
+        <div class="score-text">
+          <font>6胜</font>
+          <font>2负</font>
+          <font>1平</font>
+        </div>
+        <div class="list-sec">
+          <div class="list-win">
+            <i class="icon-win"></i>
+            <div class="avatar">
+              <img src="../images/avatar.png" alt="头像">
+            </div>
+            <div class="avatar">
+              <img src="../images/avatar.png" alt="头像">
+            </div>
+            <div class="avatar">
+              <img src="../images/avatar.png" alt="头像">
+            </div>
+            <div class="avatar">
+              <img src="../images/avatar.png" alt="头像">
+            </div>
+            <div class="avatar">
+              <img src="../images/avatar.png" alt="头像">
+            </div>
+            <div class="avatar">
+              <img src="../images/avatar.png" alt="头像">
+            </div>
+          </div>
+          <div class="list-tie">
+            <i class="icon-tie"></i>
+              <div class="avatar">
+                <img src="../images/avatar.png" alt="头像">
+              </div>
+              <div class="avatar">
+                <img src="../images/avatar.png" alt="头像">
+              </div>
+          </div>
+          <div class="list-lose">
+            <i class="icon-lose"></i>
+            <div class="avatar">
+              <img src="../images/avatar.png" alt="头像">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="icon-close"></div>
+    </div>
+  </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/sign.js" type="text/javascript" charset="utf-8"></script>
+
+</html>
