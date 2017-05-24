@@ -160,7 +160,7 @@
                             // todo 登录成功后设置对应的头像
                             Base.setProfilePortrait({
                                 nickname: _nickname
-                            }, function () {
+                            }, function() {
                                 Util.toast('设置成功！')
                             });
 
@@ -253,7 +253,7 @@
     var giftSwiper; //礼物swiper对象
     function initGift() {
         Util.Ajax({
-            url: 'http://10.103.8.188:1022/v1/live/get-present-list',
+            url: Util.openApi + 'live/get-present-list',
             type: 'post',
             dataType: 'json',
             success: function(result) {
@@ -383,7 +383,7 @@
             $tip.html('');
             $btn.removeClass('btn-disable');
         } else {
-            $tip.html(`超过${_count}字，${_name}将无法发射哦`);
+            $tip.html('超过' + _count + '字，' + _name + '将无法发射哦');
             $btn.addClass('btn-disable');
         }
     }

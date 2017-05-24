@@ -85,6 +85,7 @@
     // 发送弹幕消息扣除团票
     var SEND_BARRAGE = IP_OPERA + 'live/send-bullet-screen';
     var Util = {
+        openApi: IP_OPERA,
         getElemetByTarget: function(target, cls, until) { //获取某个元素的父级或同级dom节点
             var result = target;
             if (!result) { //不存在target
