@@ -169,7 +169,7 @@
                 dataType: config.dataType,
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 beforeSend: function(xhr, settings) {
-                    xhr.setRequestHeader("If-Modified-Since", "0");
+                    // xhr.setRequestHeader("If-Modified-Since", "0");
                 },
                 success: function(data, textStatus, jqXHR) {
                     config.success && config.success(data, textStatus, jqXHR);
