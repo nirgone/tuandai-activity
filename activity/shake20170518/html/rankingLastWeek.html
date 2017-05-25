@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>每日一签</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/rankingLastWeek.css">
+    <!-- endbuild -->
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adaptScale.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+  <div class="scroll scroll-active">
+    <div class="content">
+      <div class="lastweek-header"></div>
+      <div class="ranking-md">
+        <div class="ranking-list border-square">
+          <div class="square-content">
+            <div class="list-header">                               
+              <span>名次</span>
+              <span>用户</span>
+              <span>PK战绩（次）</span>
+            </div>
+            <ul class="award-list">
+              <li class="award-item">
+                <span>1</span>
+                <span>
+                  <img class="icon-avatar" src="../images/avatar02.png"/>
+                  <font>J**K</font>
+                </span>
+                <span>
+                  <font>胜</font><font class="red">135</font>
+                </span>
+              </li>
+              <li class="award-item">
+                <span>2</span>
+                <span>
+                  <img class="icon-avatar" src="../images/avatar02.png"/>
+                  <font>J**K</font>
+                </span>
+                <span>
+                  <font>胜</font><font class="red">115</font>
+                </span>
+              </li>
+              <li class="award-item">
+                <span>3</span>
+                <span>
+                  <img class="icon-avatar" src="../images/avatar02.png"/>
+                  <font>J**K</font>
+                </span>
+                <span>
+                  <font>胜</font><font class="red">114</font>
+                </span>
+              </li>
+              <li class="award-item">
+                <span>4</span>
+                <span>
+                  <img class="icon-avatar" src="../images/avatar02.png"/>
+                  <font>J**K</font>
+                </span>
+                <span>
+                  <font>胜</font><font class="red">102</font>
+                </span>
+              </li>
+              <li class="award-item">
+                <span>5</span>
+                <span>
+                  <img class="icon-avatar" src="../images/avatar02.png"/>
+                  <font>J**K</font>
+                </span>
+                <span>
+                  <font>胜</font><font class="red">94</font>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="ranking-footer">
+         <div class="ranking-footer-title">
+          前<font>五</font>名获得上周奖品：<font>15元现金红包</font>
+        </div>
+        <!-- 
+1.点击领取要判断用户的登录状态，未登录跳转到登录页面。
+2.只有前五名的用户才会显示此按钮，其他用户隐藏此按钮。连同文案一起隐藏-->
+        <a href="" class="btn-get">领取</a>
+        <div class="label">请于本周日晚23:59前领取，逾期视作自动放弃奖励哦~</div>
+      </div>
+    </div>
+  </div>
+ 
+ 
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script>
+(function() {
+    FastClick.attach(document.body);
+})()
+</script>
+
+</html>

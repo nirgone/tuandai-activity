@@ -1,0 +1,396 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 苹方细体, "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    // background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    background-color: $bg-color-grey-light;
+}
+
+body {
+    background-image: url("../images/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.scroll-active {
+    -webkit-overflow-scrolling: touch !important;
+}
+
+.scroll {
+    max-width: pxToRem(818px);
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    padding-bottom: pxToRem(60px);
+    .content {
+        width: 100%;
+    }
+}
+
+.ranking-header {
+    position: relative;
+    margin-top: pxToRem(48px);
+    margin-bottom: pxToRem(80px);
+    .ranking-header-title {
+        width: pxToRem(518px);
+        height: pxToRem(166px);
+        margin: auto;
+        background-image: url("../images/ranking_title.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50% 50%;
+    }
+    .btn-rule {
+        position: absolute;
+        background-color: rgba(255, 255, 255, .5);
+        width: pxToRem(168px);
+        height: pxToRem(54px);
+        line-height: pxToRem(52px);
+        font-size: pxToRem(24px);
+        text-align: center;
+        right: pxToRem(-28px);
+        top: pxToRem(142px);
+        border: 1px solid #b79045;
+        border-radius: pxToRem(27px);
+        color: $txt-color-yellow;
+    }
+}
+
+.ranking-md {
+    position: relative;
+    width: pxToRem(690px);
+    margin: auto;
+    margin-bottom: pxToRem(40px);
+    .ranking-md-title {
+        position: relative;
+        padding: 0 pxToRem(70px);
+        font-size: pxToRem(32px);
+        color: $txt-color-yellow;
+        margin-bottom: pxToRem(38px);
+        font {
+            color: $color-red;
+        }
+        &:before,
+        &:after {
+            content: "";
+            width: pxToRem(46px);
+            height: pxToRem(16px);
+            top: 50%;
+            margin-top: pxToRem(-8px);
+            position: absolute;
+            background-image: url("../images/ranking_md_decorate.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 50% 50%;
+        }
+        &:before {
+            left: pxToRem(10px);
+        }
+        &:after {
+            right: pxToRem(10px);
+            transform: scale3d(-1, 1, 1);
+        }
+    }
+    .ranking-list {
+        background-color: rgba(255, 255, 255, .6);
+        .square-content {
+            padding: pxToRem(48px);
+            padding-top: pxToRem(32px);
+            // padding-bottom: 0;
+        }
+        .list-header {
+            margin-bottom: pxToRem(50px);
+            font-size: 0;
+            color: $txt-color-yellow;
+            border-bottom: 1px solid $txt-color-yellow;
+            padding-bottom: pxToRem(32px);
+            white-space: nowrap;
+            span {
+                display: inline-block;
+                vertical-align: middle;
+                text-align: center;
+                font-size: pxToRem(26px);
+                // white-space: nowrap;
+                &:first-child {
+                    width: pxToRem(54px);
+                    text-align: center;
+                    margin-right: pxToRem(130px);
+                }
+                &:nth-child(2) {
+                    width: pxToRem(154px);
+                    text-align: center;
+                    margin-right: pxToRem(100px);
+                }
+                &:last-child {
+                    width: pxToRem(170px);
+                    text-align: center;
+                    white-space: nowrap;
+                }
+            }
+        }
+        @at-root .award-list {
+            position: relative;
+            list-style: none;
+            .award-item {
+                font-size: 0;
+                white-space: nowrap;
+                color: $txt-color-yellow;
+                line-height: pxToRem(60px);
+                height: pxToRem(60px);
+                margin-bottom: pxToRem(50px);
+                &.my-item {
+                    .text-wrapper {
+                        display: inline-block;
+                        vertical-align: middle;
+                        text-align: left;
+                        font {
+                            display: block;
+                            line-height: pxToRem(42px);
+                            &.tips {
+                                overflow: visible;
+                            }
+                        }
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                span {
+                    display: inline-block;
+                    vertical-align: middle;
+                    text-align: center;
+                    font-size: pxToRem(28px);
+                    line-height: pxToRem(60px);
+                    height: pxToRem(60px);
+                    &:nth-child(n+2) {
+                        font-size: 0;
+                    }
+                    // white-space: nowrap;
+                    img {
+                        border-radius: 50%;
+                        border: 1px solid $txt-color-yellow;
+                        width: pxToRem(60px);
+                        height: pxToRem(60px);
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-right: pxToRem(20px);
+                    }
+                    font {
+                        display: inline-block;
+                        vertical-align: middle;
+                        max-width: pxToRem(170px);
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        font-size: pxToRem(28px);
+                    }
+                    .red {
+                        color: $color-red;
+                    }
+                    &:first-child {
+                        width: pxToRem(54px);
+                        text-align: center;
+                        margin-right: pxToRem(130px);
+                    }
+                    &:nth-child(2) {
+                        width: pxToRem(154px);
+                        text-align: center;
+                        margin-right: pxToRem(100px);
+                    }
+                    &:last-child {
+                        width: pxToRem(170px);
+                        text-align: center;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ranking-footer {
+    width: pxToRem(690px);
+    margin: auto;
+    position: relative;
+    .btn-share {
+        width: 100%;
+        height: pxToRem(92px);
+        line-height: pxToRem(92px);
+        border-radius: pxToRem(46px);
+        position: relative;
+        display: block;
+        background-color: $color-red;
+        text-align: center;
+        font-size: pxToRem(34px);
+        color: #fff;
+        margin-bottom: pxToRem(40px);
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            margin-top: pxToRem(-39px);
+            width: pxToRem(40px);
+            height: pxToRem(78px);
+            background-image: url("../images/btn_decorate.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 50% 50%;
+        }
+        &:before {
+            left: pxToRem(8px);
+            transform: scale3d(-1, 1, 1);
+        }
+        &:after {
+            right: pxToRem(8px);
+        }
+    }
+    .btn-check-last {
+        color: $txt-color-yellow;
+        font-size: pxToRem(26px);
+        text-align: center;
+        display: block;
+        width: pxToRem(134px);
+        position: relative;
+        margin: auto;
+        &:after {
+            content: "";
+            position: absolute;
+            width: pxToRem(13px);
+            height: pxToRem(20px);
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-image: url("../images/icon_arrow.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 50% 50%;
+            z-index: 99;
+        }
+    }
+}
+
+.mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.masker {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, .75);
+}
+
+.dialog-rule {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+    .square {
+        position: absolute;
+        width: pxToRem(580px);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+        .square-content {
+            padding: pxToRem(50px) pxToRem(50px) pxToRem(78px) pxToRem(50px);
+        }
+        @at-root .rule-title {
+            margin-bottom: pxToRem(40px);
+            font-size: 0;
+            text-align: center;
+            white-space: nowrap;
+            position: relative;
+            font {
+                font-size: pxToRem(32px);
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 pxToRem(20px);
+                color: $txt-color-yellow;
+            }
+            .line {
+                vertical-align: middle;
+                @include background("../images/icon_line.png",
+                77px,
+                18px);
+                display: inline-block;
+                &.right-line {
+                    transform: scale3d(-1, 1, 1);
+                }
+            }
+        }
+        @at-root .rule-content {
+            color: $txt-color-grey;
+            .rule-item {
+                font-size: pxToRem(26px);
+                line-height: pxToRem(46px);
+                text-align: justify;
+                margin-bottom: pxToRem(10px);
+            }
+        }
+        @at-root .icon-close {
+            @include background("../images/icon_close.png",
+            70px,
+            70px);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: pxToRem(-120px);
+        }
+    }
+}
+
+.dialog-share {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+    .icon-share {
+        position: absolute;
+        right: pxToRem(52px);
+        top: pxToRem(20px);
+        width: pxToRem(612px);
+        height: pxToRem(382px);
+        background-image: url("../images/icon_share.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50% 50%;
+        z-index: 1000;
+    }
+}
+
+@import 'common.scss';

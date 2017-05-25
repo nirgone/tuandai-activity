@@ -25,10 +25,11 @@
         width: pxToRem(185px);
         height: pxToRem(185px);
         position: relative;
-        background-image: url("../images/icon_qrcode.png");
+        display: block;
+        /* background-image: url("../images/icon_qrcode.png");
         background-repeat: no-repeat;
         background-size: contain;
-        background-position: 50% 50%;
+        background-position: 50% 50%; */
         margin: auto;
     }
 }
