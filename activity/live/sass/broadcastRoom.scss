@@ -89,7 +89,7 @@
         @at-root .list-audience {
             height: pxToRem(64px);
             width: pxToRem(452px);
-            overflow: hidden;
+            overflow-y: scroll;
             font-size: 0;
             white-space: nowrap;
             &>li.user-img {
