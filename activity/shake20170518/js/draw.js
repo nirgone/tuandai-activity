@@ -17,11 +17,12 @@
             return;
         }
         currentTarget.addClass("disable");
-
+        currentTarget.parent().find(".tips").text("明日再来~");
         onStartMachine();
 
         // 老虎机停止， TODO:删除setTimeout
         setTimeout(function() {
+            //  停止抽奖 停止位置 0-话费 1-流量 2-红包 3-团币
             onStopMachine(3, onShowAawrd);
         }, 3000)
 
@@ -32,19 +33,19 @@
     function onInitMachine() {
         machine1 = pageContentEl.find(".machine01").slotMachine({
             active: 1,
-            delay: 800,
+            delay: 500,
             direction: 'down'
         });
 
         machine2 = pageContentEl.find(".machine02").slotMachine({
             active: 2,
-            delay: 800,
+            delay: 500,
             direction: 'down'
         });
 
         machine3 = pageContentEl.find(".machine03").slotMachine({
             active: 0,
-            delay: 800,
+            delay: 500,
             direction: 'down'
         });
     }
@@ -74,9 +75,12 @@
             machine2.stop();
             setTimeout(function() {
                 machine3.stop();
+                setTimeout(function() {
+                    cb && cb.call(this, index);
+                }, 1200);
             }, 200);
         }, 200);
-        cb && cb.call(this, index);
+
     }
 
     //显示奖品 
@@ -101,7 +105,6 @@
     ruleEl.on("click", ".icon-close", function() {
         onHideRule();
     });
-
 
     // 显示规则
     function onShowRule() {

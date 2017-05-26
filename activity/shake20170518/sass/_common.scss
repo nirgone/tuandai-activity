@@ -3,6 +3,9 @@
 @import "../../../sass/func";
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 @at-root .square {

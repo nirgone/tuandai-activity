@@ -7,7 +7,7 @@ body {
     height: 100%;
     width: 100%;
     overflow: hidden;
-    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    font-family: 苹方细体, "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
     margin: 0;
     padding: 0;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -220,6 +220,9 @@ body {
                 .icon-star {
                     display: inline-block;
                     background-image: url("../images/icon_star_full.png");
+                    background-size: contain;
+                    background-position: 50% 50%;
+                    background-repeat: no-repeat;
                     width: pxToRem(46px);
                     height: pxToRem(42px);
                     margin-right: pxToRem(24px);
@@ -382,7 +385,7 @@ body {
         .btn {
             width: pxToRem(182px);
             height: pxToRem(56px);
-            line-height: pxToRem(56px);
+            line-height: pxToRem(54px);
             text-align: center;
             margin: auto;
             border: 1px solid #c1444e;
@@ -525,6 +528,8 @@ body {
             height: pxToRem(56px);
             margin-right: pxToRem(26px);
             margin-bottom: pxToRem(28px);
+            border-radius: 50%;
+            border: 1px solid $txt-color-yellow;
             &:last-child {
                 margin-right: 0;
             }

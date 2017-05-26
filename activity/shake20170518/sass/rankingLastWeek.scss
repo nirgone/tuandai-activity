@@ -1,0 +1,243 @@
+@charset "UTF-8";
+@import "variables";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 苹方细体, "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    background-color: $bg-color-grey-light;
+}
+
+body {
+    background-image: url("../images/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.scroll-active {
+    -webkit-overflow-scrolling: touch !important;
+}
+
+.scroll {
+    max-width: pxToRem(818px);
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    padding-bottom: pxToRem(60px);
+    .content {
+        width: 100%;
+    }
+}
+
+.lastweek-header {
+    position: relative;
+    width: pxToRem(298px);
+    height: pxToRem(64px);
+    margin: pxToRem(50px) auto;
+    background-image: url("../images/ranking_lw_title.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+}
+
+.ranking-md {
+    position: relative;
+    width: pxToRem(690px);
+    margin: auto;
+    margin-bottom: pxToRem(50px);
+    .ranking-list {
+        background-color: rgba(255, 255, 255, .6);
+        .square-content {
+            padding: pxToRem(48px);
+            padding-top: pxToRem(32px);
+            // padding-bottom: 0;
+        }
+        .list-header {
+            margin-bottom: pxToRem(50px);
+            font-size: 0;
+            color: $txt-color-yellow;
+            border-bottom: 1px solid $txt-color-yellow;
+            padding-bottom: pxToRem(32px);
+            white-space: nowrap;
+            span {
+                display: inline-block;
+                vertical-align: middle;
+                text-align: center;
+                font-size: pxToRem(26px);
+                // white-space: nowrap;
+                &:first-child {
+                    width: pxToRem(54px);
+                    text-align: center;
+                    margin-right: pxToRem(130px);
+                }
+                &:nth-child(2) {
+                    width: pxToRem(154px);
+                    text-align: center;
+                    margin-right: pxToRem(100px);
+                }
+                &:last-child {
+                    width: pxToRem(170px);
+                    text-align: center;
+                    white-space: nowrap;
+                }
+            }
+        }
+        @at-root .award-list {
+            position: relative;
+            list-style: none;
+            .award-item {
+                font-size: 0;
+                white-space: nowrap;
+                color: $txt-color-yellow;
+                line-height: pxToRem(60px);
+                height: pxToRem(60px);
+                margin-bottom: pxToRem(50px);
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                span {
+                    display: inline-block;
+                    vertical-align: middle;
+                    text-align: center;
+                    font-size: pxToRem(28px);
+                    line-height: pxToRem(60px);
+                    height: pxToRem(60px);
+                    &:nth-child(n+2) {
+                        font-size: 0;
+                    }
+                    img {
+                        border-radius: 50%;
+                        border: 1px solid $txt-color-yellow;
+                        width: pxToRem(60px);
+                        height: pxToRem(60px);
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-right: pxToRem(20px);
+                    }
+                    font {
+                        display: inline-block;
+                        vertical-align: middle;
+                        max-width: pxToRem(170px);
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        font-size: pxToRem(28px);
+                    }
+                    .red {
+                        color: $color-red;
+                    }
+                    &:first-child {
+                        width: pxToRem(54px);
+                        text-align: center;
+                        margin-right: pxToRem(130px);
+                    }
+                    &:nth-child(2) {
+                        width: pxToRem(154px);
+                        text-align: center;
+                        margin-right: pxToRem(100px);
+                    }
+                    &:last-child {
+                        width: pxToRem(170px);
+                        text-align: center;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ranking-footer {
+    width: pxToRem(690px);
+    margin: auto;
+    position: relative;
+    .ranking-footer-title {
+        position: relative;
+        padding: 0 pxToRem(70px);
+        font-size: pxToRem(32px);
+        color: $txt-color-yellow;
+        // margin-bottom: pxToRem(38px);
+        font {
+            color: $color-red;
+        }
+        &:before,
+        &:after {
+            content: "";
+            width: pxToRem(46px);
+            height: pxToRem(16px);
+            top: 50%;
+            margin-top: pxToRem(-8px);
+            position: absolute;
+            background-image: url("../images/ranking_md_decorate.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 50% 50%;
+        }
+        &:before {
+            left: pxToRem(10px);
+        }
+        &:after {
+            right: pxToRem(10px);
+            transform: scale3d(-1, 1, 1);
+        }
+    }
+    .btn-get {
+        width: 100%;
+        height: pxToRem(92px);
+        line-height: pxToRem(92px);
+        border-radius: pxToRem(46px);
+        position: relative;
+        display: block;
+        background-color: $color-red;
+        text-align: center;
+        font-size: pxToRem(34px);
+        color: #fff;
+        margin-bottom: pxToRem(40px);
+        margin-top: pxToRem(50px);
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            margin-top: pxToRem(-39px);
+            width: pxToRem(40px);
+            height: pxToRem(78px);
+            background-image: url("../images/btn_decorate.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 50% 50%;
+        }
+        &:before {
+            left: pxToRem(8px);
+            transform: scale3d(-1, 1, 1);
+        }
+        &:after {
+            right: pxToRem(8px);
+        }
+    }
+    .label {
+        color: $txt-color-yellow;
+        font-size: pxToRem(26px);
+        text-align: center;
+        display: block;
+        position: relative;
+        margin: auto;
+    }
+}
+
+@import 'common.scss';

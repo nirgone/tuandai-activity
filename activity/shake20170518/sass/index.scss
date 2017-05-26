@@ -9,7 +9,7 @@ body {
     height: 100%;
     width: 100%;
     overflow: hidden;
-    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    font-family: 苹方细体, "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
     margin: 0;
     padding: 0;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -46,7 +46,7 @@ body {
 .index-header {
     margin: auto;
     margin-top: pxToRem(60px);
-    margin-bottom: pxToRem(66px);
+    margin-bottom: pxToRem(64px);
     position: relative;
     .index-header-title {
         @include background("../images/index_title.png",
@@ -58,7 +58,7 @@ body {
     .btn-rule {
         @include background("../images/index_btn_rule.png",
         239px,
-        137px);
+        41px);
         margin: auto;
     }
 }
