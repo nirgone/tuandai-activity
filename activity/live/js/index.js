@@ -14,7 +14,7 @@
 
     // 获取im参数
     Util.Ajax({
-        "url": "http://10.103.8.188:1021/live/get-im-params.html",
+        "url": "http://10.103.8.188:1021/live/get-im-params",
         "data": {
             "id": "100033",
             "name": "test1"
