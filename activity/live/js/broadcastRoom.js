@@ -22,7 +22,7 @@
     var accountMode = 0;
 
     // 房间号
-    var avChatRoomId = '100006';
+    var avChatRoomId = '100008';
     // var avChatRoomId = '';
 
     if (webim.Tool.getQueryString("groupid")) {
@@ -45,7 +45,7 @@
     var _user_info = Util.getSessionStorage('USER_INFO');
     if (_login_info === null) {
         Util.toast("没登录哦！！！");
-        window.history.back();
+        // window.history.back();
     }
 
     console.log(_login_info);
@@ -298,7 +298,8 @@
                             }
                         });
                         //保存礼物数据，用于显示礼物
-                        window.sessionStorage['giftJson'] = JSON.stringify(giftJson);
+                        // window.sessionStorage['giftJson'] = JSON.stringify(giftJson);
+                        Util.setSessionStorage('giftJson', giftJson);
                         $("#giftSwiper").find('.swiper-wrapper').html(temp);
                         // giftSwiper = new Swiper("#giftSwiper");
                     }
@@ -633,11 +634,10 @@
                 var seriTime = 5000;
                 isSeri = true;
                 //连送倒计时
-                btnInterval = setInterval(() => {
+                btnInterval = setInterval(function(){
                     if (seriTime === 0) {
                         _sendBtn.removeClass('btn-series').addClass('btn-active');
                         clearInterval(btnInterval);
-
                         _sendBtn.html('发送');
                         isSeri = false;
                     } else {

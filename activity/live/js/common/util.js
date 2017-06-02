@@ -32,7 +32,7 @@
             positive_btn = '',
             ne_cb = null,
             po_cb = null;
-        if(_options.title) {
+        if (_options.title) {
             var _title = $("<div/>").addClass("dialog-title").html(_options.title);
             dialog_wrapper.append(_title);
         }
@@ -135,10 +135,21 @@
             }, duration);
         },
         setSessionStorage: function(key, obj) {
-            window.sessionStorage[key] = JSON.stringify(obj)
+            obj = obj || {};
+            if (window.sessionStorage) {
+                window.sessionStorage[key] = JSON.stringify(obj)
+            } else {
+                window.mySessionStorage[key] = JSON.stringify(obj)
+
+            }
         },
         getSessionStorage: function(key) {
-            var objStr = window.sessionStorage[key];
+            var objStr ;
+            if (window.sessionStorage) {
+                objStr = window.sessionStorage[key];
+            }else{
+                objStr = window.mySessionStorage[key];
+            }
             return objStr == null ? null : JSON.parse(objStr);
         },
         /* ==================禁止滚动======================== */
@@ -171,7 +182,7 @@
                 beforeSend: function(xhr, settings) {
                     // xhr.setRequestHeader("If-Modified-Since", "0");
                     config.beforeSend && config.beforeSend(xhr, settings);
-                    
+
                 },
                 success: function(data, textStatus, jqXHR) {
                     config.success && config.success(data, textStatus, jqXHR);

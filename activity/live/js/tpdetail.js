@@ -26,23 +26,24 @@
         $('.det-select').find('span').html(text);
         $('.det-select').removeClass('show-opt');
         $('.det-mask').hide();
-        loadData();
+        loadData(0);
     });
 
     function init() {
         //计算查询菜单mask高度
         var maskHeight = $(window).height() - $(".list-wrapper").offset().top;
         $('.det-mask').height(maskHeight);
-        loadData();
+        loadData(0);
     }
     init();
 
     //加载列表数据
-    function loadData(curPage) {
-        curPage = curPage || 1;
+    function loadData(status) {
+        curPage = status ? curPage + 1 : 1;
         var start = (curPage - 1) * pageSize,
             end = curPage * 10;
         var temp = '';
+        console.info('curPage------', curPage);
 
         //模拟数据请求
         //在ajax的beforeSend中修改显示loading
@@ -50,7 +51,7 @@
 
         //数据请求结束，在ajax的complete中隐藏loading
         list && list.isLoading(false);
-        
+
         for (var i = start; i < end; i++) {
             var type = Math.floor(Math.random() * 2); //明细类型 0-消费 1-充值
             temp += '<li class="det-row"><div class="dt-first dt-item"><span>团币充值团票</span>';
@@ -72,8 +73,8 @@
             list = new List('#list', {
                 loadMore: function() {
                     console.info('loadMore-----');
-                    curPage += 1;
-                    loadData(curPage);
+                    // curPage += 1;
+                    loadData(1);
                     // list.refresh();
                 }
             });

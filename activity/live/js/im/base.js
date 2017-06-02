@@ -56,14 +56,14 @@
             delayOrigin ：原始的延时时间
         */
         function createBarrageLine(barrages, className) {
-            // let _delay = delayOrigin;
+            // var _delay = delayOrigin;
             console.log("===append 弹幕啦！！！======");
             var _html = ''
             for (var i = 0; i < barrages.length; i++) {
                 // 获取较长字符串，用于计算宽度
-                let _content = getLongStr(barrages[i].name, barrages[i].content);
+                var _content = getLongStr(barrages[i].name, barrages[i].content);
                 // 计算运行了多少时间之后，能让下一个元素append上去
-                let _offset_time = getBarrageDelay(_content);
+                var _offset_time = getBarrageDelay(_content);
                 _line_index = _line_index === 2 ? 1 : 2;
                 // 记录对应的运行时间
                 barrages[i].ostime = _offset_time;
@@ -77,7 +77,7 @@
             }
             $brg.append(_html);
             setTimeout(function() {
-                let _doms = $brg.find('.' + className);
+                var _doms = $brg.find('.' + className);
                 _doms.remove();
                 if (_queue.length > 0) {
                     createBarrages()
@@ -95,7 +95,7 @@
         // 获取delay
         function getBarrageDelay(content) {
             var _width = content.length * _barrage_unit + _barrage_offset; // 弹幕宽度
-            return (_width + _barrage_gap) / _barrage_dis * 8000
+            return (_width + _barrage_gap) / _barrage_dis * 8000;
         }
         // 计算第二次创建弹幕的时间差
         function timegap(delayObj, delayOrigin) {
@@ -108,7 +108,7 @@
 
             } else {
                 if (delayObj.time !== 0) {
-                    delayObj.delay = delayObj.delay - _interval
+                    delayObj.delay = delayObj.delay - _interval;
                 }
             }
 
@@ -118,9 +118,9 @@
         function createBarrages() {
             timegap(_delay_obj.line1, _delay_origin[0]);
             timegap(_delay_obj.line2, _delay_origin[1]);
-            let _class = `class${(new Date()).getTime()}`;
+            var _class = 'class' + (new Date()).getTime();
 
-            let _l = $brg.children().length;
+            var _l = $brg.children().length;
             if (_l < 30) {
                 createBarrageLine(_queue.splice(0, 30 - _l > 10 ? 10 : 30 - _l), _class);
             }
@@ -140,11 +140,11 @@
                 _queue = _queue.concat(barrages);
                 _queue_run = _queue_run.concat(_queue.splice(0, 30));
 
-                for (let i = 0; i < 3; i++) {
+                for (var i = 0; i < 3; i++) {
                     if ($brg.children().length < 30) {
-                        let _brgs = barrages.slice(i * 10, 10 * (i + 1));
+                        var _brgs = barrages.slice(i * 10, 10 * (i + 1));
                         if (_brgs.length > 0) {
-                            createBarrageLine(_brgs, `class${(new Date()).getTime()}`);
+                            createBarrageLine(_brgs, 'class' + (new Date()).getTime());
 
                         }
                     }
@@ -233,8 +233,8 @@
                         case 'gift':
                             getProfile([fromAccount], function(data) {
                                 // console.error('get gift data-----', text, fromAccount, data);
-                                let msgArr = text.split('-');
-                                let _gift = {
+                                var msgArr = text.split('-');
+                                var _gift = {
                                     'id': msgArr[0],
                                     'giftType': msgArr[1],
                                     'status': msgArr[2],
@@ -254,24 +254,27 @@
         }
     }
     //显示礼物
-    let giftJson = sessionStorage['giftJson'];
-    giftJson = giftJson && JSON.parse(giftJson);
-    let anitQueue = [], //动画礼物队列
+    // var giftJson = sessionStorage['giftJson'];
+    // giftJson = giftJson && JSON.parse(giftJson);
+    var giftJson = Util.getSessionStorage('giftJson');
+    var anitQueue = [], //动画礼物队列
         anitInterval = null, //动画礼物轮询对象
         curAnitIndex = 0; //动画礼物当前显示内容索引
 
-    let curQueue = {}, //当前显示礼物队列
+    var curQueue = {}, //当前显示礼物队列
         normalQueue = [], //普通礼物队列
-        normalInterval = null, //普通礼物轮询对象
+        normalTimeout = null,
+        // normalInterval = null, //普通礼物轮询对象
         normalJson = {}, //普通礼物队列（用于计算连送次数）
         curNormalIndex = 0; //普通礼物当前显示内容索引
 
     function showGift(_gift) {
-        let giftData = giftJson[_gift.id];
-        giftData = Object.assign(giftData, _gift);
+        var giftData = giftJson[_gift.id];
+        // giftData = Object.assign(giftData, _gift);
+        _gift = Object.assign(_gift, giftData);
         if (_gift.giftType == 2) {
             //动画礼物
-            anitQueue.push(giftData);
+            anitQueue.push(_gift);
             // console.info('curAnitIndex------', curAnitIndex);
             if (anitQueue.length == 1) {
                 replaceAnitGift(curAnitIndex, 1);
@@ -290,41 +293,65 @@
             }
 
         } else {
-            let key = giftData.fromAccount + giftData.id;
-            // console.info('kkkkkkkkkkk', giftData.status);
-            if (giftData.status == 0) {
+            var key = _gift.fromAccount + _gift.id;
+            // console.error('kkkkkkkkkkk', _gift.status);
+            if (_gift.status == 0) {
                 //连送开始或者单单次礼物
-                normalJson[key] = {
-                    times: 1,
-                    index: normalQueue.length
-                };
-                normalQueue.push(giftData);
-                // console.error('queue-------------', Object.keys(curQueue));
-                if (Object.keys(curQueue).length < 2) {
-                    replaceNormalGift(curNormalIndex, giftData.fromAccount, 1);
-                }
-                //从数组第三个数据开始排队
-                if (normalQueue.length == 2) {
-                    normalInterval = setInterval(function() {
-                        // console.error('setInterval--------', curNormalIndex, normalQueue.length);
-                        if (curNormalIndex >= (normalQueue.length + 2)) {
-                            //结束轮询
-                            clearInterval(normalInterval);
-                            curNormalIndex = 0;
-                            normalQueue = [];
-                        } else {
-                            replaceNormalGift(curNormalIndex, giftData.fromAccount, 1);
-                        }
+                _gift.times = 1;
+                _gift.key = key;
+                normalQueue.push(_gift);
+                normalJson[key] = _gift;
 
-                    }, 5000);
+                if (Object.keys(curQueue).length < 2) {
+                    replaceNormalGift(_gift.fromAccount);
                 }
+                // normalJson[key] = {
+                //     times: 1,
+                //     index: normalQueue.length
+                // };
+                // normalQueue.push(giftData);
+                // // console.error('queue-------------', Object.keys(curQueue));
+                // if (Object.keys(curQueue).length < 2) {
+                //     replaceNormalGift(curNormalIndex, giftData.fromAccount, 1);
+                // }
+                // //从数组第三个数据开始排队
+                // if (normalQueue.length == 2) {
+                //     normalInterval = setInterval(function() {
+                //         console.error('setInterval--------', curNormalIndex, normalQueue.length);
+                //         if (curNormalIndex >= (normalQueue.length + 2)) {
+                //             //结束轮询
+                //             clearInterval(normalInterval);
+                //             curNormalIndex = 0;
+                //             normalQueue = [];
+                //         } else {
+                //             replaceNormalGift(curNormalIndex, giftData.fromAccount, 1);
+                //         }
+
+                //     }, 5000);
+                // }
 
             } else {
                 //连送礼物
                 if (curQueue[key]) {
                     //当前正在显示该礼物则直接在礼物上修改连送次数
                     curQueue[key].times += 1;
-                    $("#" + giftData.id).html('X' + curQueue[key].times);
+                    $('.cur').html('X' + curQueue[key].times);
+                    //连送重置5s倒计时
+                    clearTimeout(normalTimeout);
+                    normalTimeout = setTimeout(function() {
+                        replaceNormalGift(_gift.fromAccount);
+                    }, 5000);
+                } else {
+                    //修改正在排队的连送礼物的连送次数
+                    if (normalJson[key]) {
+                        normalJson[key].times += 1;
+                    }
+                }
+                // console.error(curQueue);
+                /*if (curQueue[key]) {
+                    //当前正在显示该礼物则直接在礼物上修改连送次数
+                    curQueue[key].times += 1;
+                    $('.cur').html('X' + curQueue[key].times);
                 } else {
                     //修改正在排队的连送礼物的连送次数
                     if (normalJson[key]) {
@@ -335,23 +362,22 @@
                             index: normalQueue.length
                         };
                     }
-                }
+                }*/
             }
         }
     }
 
     function replaceAnitGift(index, type) {
         // console.info('replace============', curAnitIndex, anitQueue.length, anitQueue[curAnitIndex]);
-        let temp = '';
+        var temp = '';
         if (type === 1) {
-            let item = anitQueue[curAnitIndex];
+            var item = anitQueue[curAnitIndex];
             if (!item) return;
-            temp = `<div><div class="user-msg-info user-msg-gift">
-                    <img src="${item.avator}">
-                    <div>${item.username}</div>
-                    <div>送出${item.presentName}</div>
-                 </div>
-                <img src="${item.gifInfo}" class="img-anit"></div>`;
+            temp = '<div><div class="user-msg-info user-msg-gift">' +
+                '<img src="' + item.avator + '">' +
+                '<div>' + item.username + '</div>' +
+                '<div>送出' + item.presentName + '</div></div>' +
+                '<img src="' + item.gifInfo + '" class="img-anit"></div>';
         }
         $('.gift-anit').removeClass('fadeIn').addClass('fadeOut');
         setTimeout(function() {
@@ -359,24 +385,68 @@
             $('.gift-anit').removeClass('fadeOut').addClass('fadeIn')
         }, 500);
     }
+    var startTime;
 
-    function replaceNormalGift(index, fromAccount, type) {
-        let temp = '';
-        let item = index < normalQueue.length && normalQueue[index];
-        let _removeObj = $('.gift-normal').find('.user-msg-info').eq(0);
-        let removeId = fromAccount + _removeObj.attr('data-id');
-        let key = '';
-        // console.error('replace-----', index, item);
+    function replaceNormalGift(fromAccount) {
+        var itemArr = normalQueue.splice(0, 1);
+        // console.error('itemArr---', itemArr);
+        var temp = '';
+        var _giftList = $('.gift-normal').find('.user-msg-info');
+        var _removeObj = _giftList.eq(0);
+        var removeId = fromAccount + _removeObj.attr('data-id');
+        if (itemArr.length > 0) {
+            var item = itemArr[0];
+            //显示新的礼物
+            temp = '<div class="user-msg-info user-msg-gift" data-id="' + item.id + '">' +
+                '<img src="' + item.avator + '">' +
+                '<div>' + item.username + '</div>' +
+                '<div>送出' + item.presentName + '</div>' +
+                '<i class="img-normal" style="background-image: url(' + item.coverUrl + ')">' +
+                '<i class="g-num cur" id="' + item.id + '">X' + item.times + '</i></i></div>';
+            $('.g-num').removeClass('cur');
+            curQueue[item.key] = item;
+            if (_giftList.length == 2) {
+                _removeObj.remove();
+                delete curQueue[removeId]; //删除当前显示队列的旧数据
+            }
+            normalTimeout = setTimeout(function() {
+                replaceNormalGift(fromAccount);
+            }, 5000);
+            startTime = new Date().getTime();
+            $('.gift-normal').append(temp);
+
+        } else {
+            // console.error('delete----', new Date().getTime() - startTime);
+            if (_giftList.length > 0) {
+                if (new Date().getTime() - startTime >= 5000) {
+                    _removeObj.remove();
+                    delete curQueue[removeId]; //删除当前显示队列的旧数据
+                    normalTimeout = setTimeout(function() {
+                        replaceNormalGift(fromAccount);
+                    }, 5000);
+                }
+            } else {
+                clearTimeout(normalTimeout);
+            }
+        }
+
+        /*var temp = '';
+        var item = index < normalQueue.length && normalQueue[index];
+        var _removeObj = $('.gift-normal').find('.user-msg-info').eq(0);
+        var removeId = fromAccount + _removeObj.attr('data-id');
+        var key = '';
+        console.error('replace-----', index, item);
         if (item) {
             //显示新的礼物
-            temp = `<div class="user-msg-info user-msg-gift" data-id="${item.id}">
-                        <img src="${item.avator}">
-                        <div>${item.username}</div>
-                        <div>送出${item.presentName}</div>
-                        <i class="img-normal" style="background-image: url(${item.coverUrl})"><i class="g-num" id="${item.id}">X1</i></i>
-                    </div>`;
+            temp = '<div class="user-msg-info user-msg-gift" data-id="' + item.id + '">' +
+                '<img src="' + item.avator + '">' +
+                '<div>' + item.username + '</div>' +
+                '<div>送出' + item.presentName + '</div>' +
+                '<i class="img-normal" style="background-image: url(' + item.coverUrl + ')">' +
+                '<i class="g-num cur" id="' + item.id + '">X1</i></i></div>';
             key = fromAccount + item.id;
             // console.error('key-----', key, curQueue);
+            $('.g-num').removeClass('cur');
             curQueue[key] = {
                 times: 1
             };
@@ -390,7 +460,7 @@
             $('.gift-normal').append(temp);
             //当前礼物数量大于1，从1开始递加
             if (normalJson[key] && normalJson[key].times > 1) {
-                let timesInterval = setInterval(() => {
+                var timesInterval = setInterval(function() {
                     // console.info(onList, normalJson[key]);
                     if (!curQueue[key] || (curQueue[key].times == normalJson[key].times)) {
                         clearInterval(timesInterval);
@@ -401,13 +471,13 @@
                     }
                 }, 500);
             }
+            curNormalIndex++;
         } else {
             //队列轮询结束，删除当前显示的礼物
             _removeObj.remove();
             delete curQueue[removeId]; //删除当前显示队列的旧数据
-        }
+        }*/
 
-        curNormalIndex++;
 
     }
 
@@ -626,7 +696,7 @@
         }
         */
         setProfilePortrait: function(user) {
-            let profile_item = [];
+            var profile_item = [];
             if (user.nickname) {
                 profile_item.push({
                     "Tag": "Tag_Profile_IM_Nick",
@@ -666,7 +736,7 @@
             }
 
             // 输入内容
-            // let msgtosend = ;
+            // var msgtosend = ;
             // if (!selConfig.selToID) {
             //     Util.toast("您还没有进入房间，暂不能聊天或者送礼物");
             //     return;
