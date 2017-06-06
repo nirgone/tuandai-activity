@@ -827,6 +827,36 @@
         }
     }
 }
+// 直播结束
+.live-end {
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+    text-align: center;
+    .popup-content {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 0;
+        height: pxToRem(404px);
+        transform: translate(0, -60%);
+    }
+    .icon-end {
+        margin: 0 auto;
+        margin-bottom: pxToRem(36px);
+    }
+    p {
+        margin-bottom: pxToRem(26px);
+    }
+    .btn {
+        display: inline-block;
+        border: 2px solid #fff;
+        border-radius: pxToRem(10px);
+        font-size: pxToRem(30px);
+        padding: pxToRem(20px) pxToRem(50px);
+        margin-top: pxToRem(30px);
+    }
+
+}
 
 //分享
 .share-masker {
@@ -931,7 +961,12 @@
     width: pxToRem(70px);
     height: pxToRem(70px);
 }
-
+.icon-end {
+    @extend .icon-block;
+    background-image: url(../images/end.png);
+    width: pxToRem(138px);
+    height: pxToRem(143px);
+}
 // animation
 .animated {
     animation-duration: 0.6s;

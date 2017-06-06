@@ -80,6 +80,12 @@ i {
 .txt-green {
     color: $color-green-light !important;
 }
+.font36 {
+    font-size: pxToRem(36px);
+}
+.font30 {
+    font-size: pxToRem(30px);
+}
 
 .page {
     width: 100%;

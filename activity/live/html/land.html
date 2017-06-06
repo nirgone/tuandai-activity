@@ -28,8 +28,9 @@
     <div class="scroll scroll-active">
         <div class="content page-video">
             <!--视频部分 start-->
-            <div class="video-play">
+            <div class="video-play" id="video_play">
                 <!--<video controls="controls" preload="auto" src="http://bmw2.thefront.com.cn/m2_2016/media/final.mp4" webkit-playsinline></video>-->
+                <!-- <div id="id_test_video" style="width:100%; height:auto;"></div> -->
             </div>
             <!--视频部分 end-->
             <!--聊天部分 start-->
@@ -68,7 +69,33 @@
                         </div>
                     </div>
                 </div>
-                
+                <div class="video-pane-body">
+                    <div class="video-gift">
+                        <div class="gift-anit">
+                            <div class="user-msg-info user-msg-gift">
+                                <img src="../images/avator.png">
+                                <div>今晚约定你</div>
+                                <div>
+                                    送出闪闪钻石
+                                </div>
+                            </div>
+                            <img src="../images/diamon.gif" class="img-anit">
+                        </div>
+                        <div class="gift-normal">
+                           
+                        </div>
+                    </div>
+                    <div class="video-discuss">
+                        <div class="video-barrage-pane" id="video_barrage_pane" style="width: 100%;">
+                            
+                        </div>
+                        <div class="video-sms-pane">
+                            <ul class="video-sms-list" id="video_sms_list">
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 <footer class="video-discuss-pane" id="video_discuss_pane">
                     <div class="item bg-circle lmsg" data-value="1">
                         <i class="icon-i-lmsg"></i>
@@ -109,11 +136,21 @@
             <!-- <i class="icon-share-txt2"></i> -->
         </div>
     </div>
+    <!-- 直播已结束 -->
+    <div class="pop-up-wraper live-end">
+        <div class="popup-content">
+            <i class="icon-end"></i>
+            <p class="font36">直播已结束</p>
+            <p class="font30">期待下次相约哦!!!</p>
+            <a class="btn">返回首页</a>
+        </div>
+    </div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
 <script src="../js/common/util.js" type="text/javascript" charset="utf-8"></script>
+<script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer.js" charset="utf-8"></script>
 <script src="../js/land.js" type="text/javascript" charset="utf-8"></script>
 
 </html>

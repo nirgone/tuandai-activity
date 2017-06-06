@@ -31,13 +31,18 @@
 		}
 	});
 
+	// 直播结束返回首页按钮时间绑定
+    $('.live-end').on('click', '.btn', function(e){
+        window.history.back();
+    });
+
 	function isWeiXin() {
 		var ua = navigator.userAgent.toLowerCase();
 		return ua.match(/MicroMessenger/i) == 'micromessenger';
 	}
 	/*
 	蒙层提示
-	type: 0-提示打开浏览器下载app 1-提示分享
+	type: 0-提示打开浏览器下载app 1-提示分享  
 	*/
 	function showTips(type) {
 		var temp = type ? '<i class="icon-share-txt1"></i>' : '<i class="icon-share-txt2"></i>';

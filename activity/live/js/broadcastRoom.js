@@ -673,6 +673,10 @@
         location.href = './ranking.html';
     });
 
+    // 直播结束返回首页按钮时间绑定
+    $('.live-end').on('click', '.btn', function(e){
+        window.history.back();
+    });
 
     /* ----------事件绑定--end---------- */
 
