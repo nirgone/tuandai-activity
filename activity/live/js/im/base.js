@@ -256,7 +256,7 @@
     //显示礼物
     // var giftJson = sessionStorage['giftJson'];
     // giftJson = giftJson && JSON.parse(giftJson);
-    var giftJson = Util.getSessionStorage('giftJson');
+    var giftJson;
     var anitQueue = [], //动画礼物队列
         anitInterval = null, //动画礼物轮询对象
         curAnitIndex = 0; //动画礼物当前显示内容索引
@@ -269,9 +269,13 @@
         curNormalIndex = 0; //普通礼物当前显示内容索引
 
     function showGift(_gift) {
+        if(!giftJson) {
+            giftJson = Util.getSessionStorage('giftJson');
+        }
         var giftData = giftJson[_gift.id];
         // giftData = Object.assign(giftData, _gift);
-        _gift = Object.assign(_gift, giftData);
+        _gift = $.extend(_gift, giftData);
+
         if (_gift.giftType == 2) {
             //动画礼物
             anitQueue.push(_gift);
@@ -373,11 +377,11 @@
         if (type === 1) {
             var item = anitQueue[curAnitIndex];
             if (!item) return;
-            temp = '<div><div class="user-msg-info user-msg-gift">' +
+            temp = '<div class="user-msg-info user-msg-gift">' +
                 '<img src="' + item.avator + '">' +
                 '<div>' + item.username + '</div>' +
                 '<div>送出' + item.presentName + '</div></div>' +
-                '<img src="' + item.gifInfo + '" class="img-anit"></div>';
+                '<img src="' + item.gifInfo + '" class="img-anit">';
         }
         $('.gift-anit').removeClass('fadeIn').addClass('fadeOut');
         setTimeout(function() {
