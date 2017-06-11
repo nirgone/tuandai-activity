@@ -1,0 +1,189 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+// @import "../../../sass/reset";
+@import "../../../sass/func";
+
+.input-con{
+    margin-bottom: pxToRem(30px);
+}
+
+.authorize-info-wrap{
+    .verification-code-con{
+        margin-bottom: pxToRem(40px);
+    }
+    .verification-code-img{
+        display: none; 
+    }
+    .verification-code-get{
+        display: none; 
+    }
+    .next-btn{
+        border-top: none;
+        &:before,&:after{
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            content:'';
+            width: 100%;
+            border-top: 1px solid $grayColor;
+        }
+        &:after{
+            width: 33.3%;
+            border-top: 1px solid $mainColor;
+        }
+        &.snd{
+           &:after{
+                width: 66.6%;
+            } 
+        }
+        &.thd{
+           &:after{
+                width: 100%;
+            } 
+        }
+    }
+}
+// 审核公共部分
+.authorizing-con{
+    .next-btn{
+        color:$mainColor;
+        &:after{
+            width: 100%;
+        }
+    }
+    i{
+        margin-top: pxToRem(1px);
+    }
+}
+// 初审通过
+.authorizing-success-con{
+    @include background('../images/success-bg.png', 748px, 1052px);
+    position: absolute;
+    top: pxToRem(-122px);
+    background-position: center bottom;
+    margin-left: pxToRem(-90px);
+    padding: pxToRem(122px) pxToRem(30px) 0;
+    // background-color: rgba(0,0,0,0.5);
+    .verify-description{
+        margin-bottom:pxToRem(62px); 
+    }
+    .next-btn{
+        position: relative;
+    }
+}
+// 首付款金额
+.money{
+    color:#454745;
+    font-size: pxToRem(100px);
+    line-height: pxToRem(80px);
+    text-align: center;
+    margin-bottom: pxToRem(75px);
+    &:before{
+        content: '￥';
+        font-size: pxToRem(64px);
+        line-height: pxToRem(64px);
+        vertical-align: middle;
+    }
+}
+// 初审步骤
+.steps{
+    width: 100%;
+    background-color: #f7f7f7;
+    border-top: 1px solid #e0e0e0;
+    color:#333;
+    font-size: 0;
+    padding: pxToRem(36px) 0;
+}
+.step-item{
+    display: block;
+    line-height: pxToRem(60px);
+    font-size: pxToRem(26px);
+    padding-left: pxToRem(160px);
+    &:first-child{
+        .mark{
+            &:before {
+                display: none;
+                top: pxToRem(25px);            
+            }
+        }
+    }
+    &:last-child{
+        .mark{
+            &:after {
+                display: none;
+                top: pxToRem(25px);            
+            }
+        }
+    }
+}
+.mark{
+    position: relative;
+    display: inline-block;
+    width: pxToRem(27px);
+    height: pxToRem(27px);
+    line-height: pxToRem(28px);
+    text-align: center;
+    font-size: pxToRem(20px);
+    color: #808080;
+    border:1px solid #808080;
+    border-radius: 50%;
+    // vertical-align: middle;
+    margin-right: pxToRem(30px);
+    &.on{
+        color: $mainColor;
+        border:1px solid $mainColor;
+        &:before,&:after{
+            background-color: $mainColor;
+        }
+    }
+    &:before,&:after{
+        position: absolute;
+        left:pxToRem(10px);
+        display: inline-block;
+        content: '';
+        width: 1px;
+        height: pxToRem(18px);
+        background-color: #808080;
+    }
+    &:before{
+        top: pxToRem(-18px);
+    }
+    &:after {
+        top: pxToRem(25px);            
+    }
+}
+
+// 初审失败
+.authorizing-fail-con{
+    padding-top: pxToRem(30px);
+    .fail-reason{
+        left:pxToRem(1px);
+    }
+}
+
+.rolling-con{
+    width: 120%;
+    margin-left: -10%;
+    margin-top: pxToRem(24px);
+    color:#b3b3b3;
+    font-size: pxToRem(24px);
+    ul{
+        width: 100%;
+    }
+}
+
+.rolling-item{
+    width: 100%;
+    text-align: center;
+    &.hide{
+        display: none;
+    }
+    &:before{
+        @extend .icon-tip-mark; 
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: pxToRem(20px);
+    }
+}
