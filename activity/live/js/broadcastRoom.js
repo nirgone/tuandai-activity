@@ -22,7 +22,7 @@
     var accountMode = 0;
 
     // 房间号
-    var avChatRoomId = '100008';
+    var avChatRoomId = '100058';
     // var avChatRoomId = '';
 
     if (webim.Tool.getQueryString("groupid")) {
@@ -634,7 +634,7 @@
                 var seriTime = 5000;
                 isSeri = true;
                 //连送倒计时
-                btnInterval = setInterval(function(){
+                btnInterval = setInterval(function() {
                     if (seriTime === 0) {
                         _sendBtn.removeClass('btn-series').addClass('btn-active');
                         clearInterval(btnInterval);
@@ -674,7 +674,12 @@
     });
 
     // 直播结束返回首页按钮时间绑定
-    $('.live-end').on('click', '.btn', function(e){
+    $('.pop-up-live').on('click', '.btn', function(e) {
+        window.history.back();
+    });
+
+    //退出直播
+    $('.video-close').on('click', function() {
         window.history.back();
     });
 
