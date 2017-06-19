@@ -158,6 +158,7 @@
             background-size: pxToRem(20px) pxToRem(20px);
             background-position: center;
             background-repeat: no-repeat;
+            z-index: 999;
         }
     }
 
@@ -854,40 +855,7 @@
     }
 }
 
-// 直播结束
-.pop-up-live {
-    background-color: rgba(0, 0, 0, .5);
-    // color: #fff;
-    color: rgba(255, 255, 255, .6);
-    text-align: center;
-    .popup-content {
-        position: absolute;
-        top: 50%;
-        right: 0;
-        left: 0;
-        height: pxToRem(404px);
-        transform: translate(0, -60%);
-    }
-    .pop-live-icon {
-        margin: 0 auto;
-        margin-bottom: pxToRem(36px);
-    }
-    p {
-        margin-bottom: pxToRem(26px);
-    }
-    .btn {
-        display: inline-block;
-        border: 2px solid rgba(255, 255, 255, .8);
-        border-radius: pxToRem(10px);
-        font-size: pxToRem(30px);
-        padding: pxToRem(20px) pxToRem(50px);
-        margin-top: pxToRem(30px);
-        color: rgba(255, 255, 255, .8);
-    }
-    .service-tel {
-        color: rgba(255, 183, 0, .6);
-    }
-}
+
 
 //分享
 .share-masker {
@@ -992,25 +960,13 @@
     width: pxToRem(70px);
     height: pxToRem(70px);
 }
+.vcp-error-tips {
+    color: #fff !important;
+    text-align: center;
+    font-size: pxToRem($font-size-normal) !important;
+}
 
-.icon-end {
-    @extend .icon-block;
-    background-image: url(../images/end.png);
-    width: pxToRem(138px);
-    height: pxToRem(143px);
-}
-.icon-unstart {
-    @extend .icon-block;
-    background-image: url(../images/icon-unstart.png);
-    width: pxToRem(138px);
-    height: pxToRem(143px);
-}
-.icon-fronze {
-    @extend .icon-block;
-    background-image: url(../images/icon-frozen.png);
-    width: pxToRem(140px);
-    height: pxToRem(140px);
-}
+
 
 // animation
 .animated {

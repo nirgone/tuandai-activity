@@ -1,5 +1,17 @@
 (function() {
     FastClick.attach(document.body);
+    Jsbridge.appLifeHook(null, function() {
+        Jsbridge.setTitleComponent({
+            titleContent: '直播',
+            rightbuttonVisible: false,
+            rightbuttonContent: '分享',
+            rightbuttonTyppe: 1,
+            showTitleComponent: false
+        });
+    }, null, null, null);
+    $('.list-audience').on('click', function() {
+        location.href = './ranking.html';
+    });
 
     // Util.popup({
     //         'content': '提示内容提示内容提示内容提示内容提示内容提示内容',
