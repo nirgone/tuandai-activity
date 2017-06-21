@@ -147,10 +147,16 @@ i {
     position: relative;
     height: pxToRem(120px);
 }
+//android隐藏loading图标
+.vcp-loading {
+    display: none !important;
+}
 //弹层
 // 直播结束
 .pop-up-live {
-    background-color: rgba(0, 0, 0, .5);
+    // background-color: rgba(0, 0, 0, .5);
+    background-image: url('../images/pop-bg.png');
+    background-size: 100% 100%;
     // color: #fff;
     color: rgba(255, 255, 255, .6);
     text-align: center;
