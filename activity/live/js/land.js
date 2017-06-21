@@ -56,7 +56,7 @@
     _tpPlayer = new TcPlayer('video-play', {
         // "rtmp": liveUrl.view_url_rmtp,
         // "flv": liveUrl.view_url_flv, //flv的播放地址，腾讯云Web播放器如果发现目前的浏览器是PC浏览器，会主动选择flv链路，因为可以实现更低的延迟
-        "m3u8": 'http://8895.liveplay.myqcloud.com/live/8895_100008_5935dda5.m3u8', //请替换成实际可用的播放地址
+        "m3u8": 'http://8895.liveplay.myqcloud.com/live/8895_100008_5935e4e3.m3u8', //请替换成实际可用的播放地址
         "autoplay": true, //iOS下safari浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
         "coverpic": "",
         "width": "100%", //视频的显示宽度，请尽量使用视频分辨率宽度

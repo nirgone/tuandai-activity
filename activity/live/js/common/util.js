@@ -1,4 +1,38 @@
 (function(global) {
+    (function() {
+        var pendingRequests = {};
+        function generatePendingRequestKey(options) {
+            var key = options.url + '?' + options.data;
+            return key;
+        }
+
+        function storePendingRequest(key, xhr) {
+            xhr.pendingRequestKey = key;
+            pendingRequests[key] = xhr;
+        }
+
+        $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+            console.log("----ajaxPrefilter-----")
+
+            // 不重复发送相同请求
+            var key = generatePendingRequestKey(options);
+            if (!pendingRequests[key]) {
+                storePendingRequest(key, jqXHR);
+            } else {
+                // or do other
+                jqXHR.abort();
+            }
+
+            var complete = options.complete;
+            options.complete = function(jqXHR, textStatus) {
+                // clear from pending requests
+                pendingRequests[jqXHR.pendingRequestKey] = null;
+                if ($.isFunction(complete)) {
+                    complete.apply(this, arguments);
+                }
+            };
+        });
+    })()
     /* ==================弹出框==dialog================= */
     /*
             options : {
@@ -144,10 +178,10 @@
             }
         },
         getSessionStorage: function(key) {
-            var objStr ;
+            var objStr;
             if (window.sessionStorage) {
                 objStr = window.sessionStorage[key];
-            }else{
+            } else {
                 objStr = window.mySessionStorage[key];
             }
             return objStr == null ? null : JSON.parse(objStr);
