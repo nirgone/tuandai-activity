@@ -151,6 +151,10 @@ i {
 .vcp-loading {
     display: none !important;
 }
+::-webkit-scrollbar {
+    //滚动条不可见
+    display: none;
+}
 //弹层
 // 直播结束
 .pop-up-live {
