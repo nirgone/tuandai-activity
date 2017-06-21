@@ -1,5 +1,17 @@
 (function() {
     FastClick.attach(document.body);
+    Jsbridge.appLifeHook(null, function() {
+        Jsbridge.setTitleComponent({
+            titleContent: '直播',
+            rightbuttonVisible: false,
+            rightbuttonContent: '分享',
+            rightbuttonTyppe: 1,
+            showTitleComponent: false
+        });
+    }, null, null, null);
+    $('.list-audience').on('click', function() {
+        location.href = './ranking.html';
+    });
 
     // Util.popup({
     //         'content': '提示内容提示内容提示内容提示内容提示内容提示内容',
@@ -22,7 +34,7 @@
     var accountMode = 0;
 
     // 房间号
-    var avChatRoomId = '100008';
+    var avChatRoomId = '100058';
     // var avChatRoomId = '';
 
     if (webim.Tool.getQueryString("groupid")) {
@@ -634,7 +646,7 @@
                 var seriTime = 5000;
                 isSeri = true;
                 //连送倒计时
-                btnInterval = setInterval(function(){
+                btnInterval = setInterval(function() {
                     if (seriTime === 0) {
                         _sendBtn.removeClass('btn-series').addClass('btn-active');
                         clearInterval(btnInterval);
@@ -674,7 +686,12 @@
     });
 
     // 直播结束返回首页按钮时间绑定
-    $('.live-end').on('click', '.btn', function(e){
+    $('.pop-up-live').on('click', '.btn', function(e) {
+        window.history.back();
+    });
+
+    //退出直播
+    $('.video-close').on('click', function() {
         window.history.back();
     });
 

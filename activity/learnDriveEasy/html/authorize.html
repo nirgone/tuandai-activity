@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>申请分期</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/authorize.css">
+    <!-- build:js({dist}) ../js/lib/adapt.js -->
+    <script src="../js/adapt.js" type="text/javascript" charset="utf-8"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="content">
+        <div class="page">
+            <div class="authorize-content">
+				<div class="authorize-info-wrap">
+					<h1>运营商授权认证<i id="info-btn" class="info-btn"></i></h1>
+                    <!-- 授权登录 -->
+                    <form id="authorize-info-form" class="authorize-info-form" action="">
+                        <input type="password" name="password" placeholder="填写手机运营商服务密码">
+                        <div class="input-con">
+                            <input type="text" name="verification-code" placeholder="填写验证码"> 
+                            <img id="verification-code-img" class="verification-code-img">
+
+                            <div id="verification-code-get" class="verification-code-get">获取验证码</div>
+                        </div>
+                        <div id="forget-btn" class="forget-btn">忘记服务密码？</div>
+                        <div id="submit-btn" class="next-btn">提交认证</div>
+                    </form>
+                    <!-- 二次认证 -->
+                    <form id="authorize-second-form" class="authorize-second-form" action="" style="display: none;">
+                        <div class="description">提交成功，输入验证码后开始认证...</div>
+                        <div class="input-con">
+                            <input type="text" name="verification-code" placeholder="填写验证码"> 
+                            <img class="verification-code-img">
+
+                            <div class="verification-code-get">获取验证码</div>
+                        </div>
+                        <div id="start-btn" class="next-btn">开始认证</div>
+                    </form>
+                    <!-- 认证中 -->
+                    <div id="authorizing-con" class="authorizing-con" style="display: none;">
+                        <i class="icon-going"></i>
+    					<div class="verify-description">认证需要1~2分钟时间，请耐心等候</div>
+                        <div id="rolling-con" class="rolling-con">
+                            <ul>
+                                <li class="rolling-item">科目一就是传说中的文考，考过90分才及格哦</li>
+                                <li class="rolling-item hide">科目二，又称小路考，一共有五个必考项目</li>
+                                <li class="rolling-item hide">倒车入库、侧方停车、定点爬坡、直角转弯、曲线行驶</li>
+                                <li class="rolling-item hide">科目三大路考，通常通过率要高一点，所以不必担心</li>
+                                <li class="rolling-item hide">科目三考完隔几天便是科目四的考试。</li>
+                                <li class="rolling-item hide">科目四考完通过，就可以拿到驾照了。</li>
+                                <li class="rolling-item hide">驾着你的爱车去兜风吧~祝一路顺风。</li>
+                            </ul>
+                        </div>
+                        <div class="next-btn">认证中...</div>
+                    </div>
+                    <!-- 认证成功 -->
+                    <div id="authorizing-success-con" class="authorizing-con"  style="display: none;">
+                        <i class="icon-success"></i>
+                        <div class="verify-description">您已完成手机运营商认证</div>
+                        <button id="next-btn" class="next-btn">下一步</button>
+                    </div>
+                    <!-- 认证失败 -->
+                    <div id="authorizing-fail-con" class="authorizing-con" style="display: none;">
+                        <i class="icon-fail"></i>
+                        <div class="verify-description">认证失败，请重试</div>
+                        <a id="retry-btn" class="next-btn" href="authorize.html">马上重试</a>
+                    </div>
+				</div>
+            </div>
+        </div>
+        <footer>
+            本服务由要分期提供
+        </footer>
+    </div>
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/util.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/authorize.js" type="text/javascript" charset="utf-8"></script>
+</html>

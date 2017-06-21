@@ -31,13 +31,15 @@
         .video-pane-info {
             padding: pxToRem(20px) 0 pxToRem(20px) pxToRem(20px);
             font-size: 0;
+            position: relative;
         }
         .video-info,
         .list-audience {
             display: inline-block;
         }
         .video-info {
-            margin-right: pxToRem(78px);
+            // margin-right: pxToRem(78px);
+            margin-right: pxToRem(116px);
             padding: pxToRem(2px);
             width: pxToRem(200px);
             height: pxToRem(64px);
@@ -94,7 +96,8 @@
         }
         @at-root .list-audience {
             height: pxToRem(64px);
-            width: pxToRem(452px);
+            // width: pxToRem(452px);
+            width: pxToRem(304px);
             overflow-y: scroll;
             font-size: 0;
             white-space: nowrap;
@@ -141,7 +144,25 @@
             }
             // width: pxToRem(78px);
         }
+        @at-root .video-close {
+            width: pxToRem(60px);
+            height: pxToRem(60px);
+            border-radius: pxToRem(60px);
+            background-color: rgba(0, 0, 0, .4);
+            display: inline-block;
+            // vertical-align: top;
+            position: absolute;
+            top: pxToRem(20px);
+            right: pxToRem(20px);
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUBAMAAAB/pwA+AAAAFVBMVEUAAAD///////////////////////9Iz20EAAAABnRSTlMAl82CTEvW1J21AAAAUUlEQVQI12NwMmAAA2ZVBrVECFMsicEsTQDEYkxLBuJEsCBQBEyABcAklA+mwFyIMFgQIgwShArDBBFMhAKENoRhqFYgLEY4B9mRCKcjPKQCACi+F6ZC/gHQAAAAAElFTkSuQmCC');
+            background-size: pxToRem(20px) pxToRem(20px);
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 999;
+        }
     }
+
+
     @at-root .video-pane-body {
         position: absolute;
         top: pxToRem(144px);
@@ -834,35 +855,7 @@
     }
 }
 
-// 直播结束
-.live-end {
-    background-color: rgba(0, 0, 0, .5);
-    color: #fff;
-    text-align: center;
-    .popup-content {
-        position: absolute;
-        top: 50%;
-        right: 0;
-        left: 0;
-        height: pxToRem(404px);
-        transform: translate(0, -60%);
-    }
-    .icon-end {
-        margin: 0 auto;
-        margin-bottom: pxToRem(36px);
-    }
-    p {
-        margin-bottom: pxToRem(26px);
-    }
-    .btn {
-        display: inline-block;
-        border: 2px solid #fff;
-        border-radius: pxToRem(10px);
-        font-size: pxToRem(30px);
-        padding: pxToRem(20px) pxToRem(50px);
-        margin-top: pxToRem(30px);
-    }
-}
+
 
 //分享
 .share-masker {
@@ -967,13 +960,38 @@
     width: pxToRem(70px);
     height: pxToRem(70px);
 }
-
-.icon-end {
-    @extend .icon-block;
-    background-image: url(../images/end.png);
-    width: pxToRem(138px);
-    height: pxToRem(143px);
+.vcp-error-tips {
+    color: #fff !important;
+    text-align: center;
+    font-size: pxToRem($font-size-normal) !important;
 }
+.pop-up-play {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+    // background-color: #000;
+    font-size: 0;
+    display: none;
+    .p-icon-play {
+        @extend .icon-block;
+        background-image: url(../images/icon-play.png);
+        width: pxToRem(138px);
+        height: pxToRem(143px);
+        margin: auto;
+    }
+    .p-txt {
+        width: 100%;
+        text-align: center;
+        font-size: pxToRem(36px);
+        color: rgba(255, 255, 255, .6);
+        margin-top: pxToRem(40px);
+    }
+}
+
+
 
 // animation
 .animated {

@@ -8,6 +8,15 @@
 		curPage: 1
 	};
 	FastClick.attach(document.body);
+	Jsbridge.appLifeHook(null, function() {
+		Jsbridge.setTitleComponent({
+			titleContent: '直播',
+			rightbuttonVisible: false,
+			rightbuttonContent: '分享',
+			rightbuttonTyppe: 1,
+			showTitleComponent: true
+		});
+	}, null, null, null);
 	//tab切换
 	$('.rt-type').on('click', function() {
 		$('.rt-type').removeClass('active');

@@ -1,0 +1,87 @@
+@charset "UTF-8";
+@import "../../../sass/func";
+
+.icon-delete-btn {
+  display: block;
+  background-image: url(../images/icon-sprite.png);
+  background-size: pxToRem(460px)  pxToRem(330px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-338px) pxToRem(-258px);
+  width: pxToRem(36px);
+  height: pxToRem(36px);
+}
+.icon-fail {
+	margin: pxToRem(60px) auto pxToRem(30px);
+  display: block;
+  background-image: url(../images/icon-sprite.png);
+  background-size: pxToRem(460px)  pxToRem(330px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-160px) pxToRem(-180px);
+  width: pxToRem(120px);
+  height: pxToRem(120px);
+}
+.icon-going {
+	margin: pxToRem(60px) auto pxToRem(30px);
+  display: block;
+  background-image: url(../images/icon-sprite.png);
+  background-size: pxToRem(460px)  pxToRem(330px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-340px) pxToRem(0px);
+  width: pxToRem(120px);
+  height: pxToRem(120px);
+}
+.icon-success {
+	margin: pxToRem(60px) auto pxToRem(30px);
+  display: block;
+  background-image: url(../images/icon-sprite.png);
+  background-size: pxToRem(460px)  pxToRem(330px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-340px) pxToRem(-130px);
+  width: pxToRem(120px);
+  height: pxToRem(120px);
+}
+.icon-job {
+  display: block;
+  background-image: url(../images/icon-sprite.png);
+  background-size: pxToRem(460px)  pxToRem(330px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-180px) pxToRem(0px);
+  width: pxToRem(150px);
+  height: pxToRem(150px);
+}
+.icon-security {
+  display: block;
+  background-image: url(../images/icon-sprite.png);
+  background-size: pxToRem(460px)  pxToRem(330px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-180px);
+  width: pxToRem(150px);
+  height: pxToRem(150px);
+}
+.icon-tip-mark {
+  display: block;
+  background-image: url(../images/icon-sprite.png);
+  background-size: pxToRem(460px)  pxToRem(330px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-420px) pxToRem(-260px);
+  width: pxToRem(28px);
+  height: pxToRem(24px);
+}
+.icon-tip {
+  display: block;
+  background-image: url(../images/icon-sprite.png);
+  background-size: pxToRem(460px)  pxToRem(330px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-380px) pxToRem(-260px);
+  width: pxToRem(30px);
+  height: pxToRem(30px);
+}
+.icon-upload-btn {
+  display: block;
+  background-image: url(../images/icon-sprite.png);
+  background-size: pxToRem(460px)  pxToRem(330px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(170px);
+  height: pxToRem(170px);
+}

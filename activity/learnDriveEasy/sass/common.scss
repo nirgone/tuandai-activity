@@ -1,0 +1,330 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-overflow-scrolling: touch !important;
+    color:$grayColor;
+}
+
+a {
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+i,
+span,
+ul,
+li {
+    display: inline-block;
+}
+button{
+    background-color: rgba(0,0,0,0);
+    border:none;
+    padding: 0;
+    margin: 0;
+}
+
+.abs{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    margin:0 auto;
+    max-width: 414px;
+}
+
+.mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 30;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.masker{
+    @extend .mask;
+    background: rgba(0,0,0,0);
+    // z-index: 100;
+}
+
+::-webkit-scrollbar {
+    //滚动条不可见
+    display: none;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    color:#333;
+    font-size: pxToRem(24px);
+}
+
+h1{
+    padding-top: pxToRem(80px);
+    color:#808080;
+    font-size: pxToRem(28px);
+    font-weight: bold;
+    margin-bottom: pxToRem(26px);
+    line-height: pxToRem(30px);
+    // height: pxToRem(30px);
+}
+h2{
+    font-size: pxToRem(28px);
+    margin-bottom: pxToRem(40px);
+}
+input {
+    width: 100%;
+    height: pxToRem(70px);
+    font-size: pxToRem(32px);
+    color:#333;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding-left: pxToRem(10px);
+    margin-bottom: pxToRem(34px);
+}
+
+input::-webkit-input-placeholder{ 
+    font-size: pxToRem(24px);
+    color: $grayColor;
+} 
+
+.input-con{
+    margin: 0 0 pxToRem(76px);
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 0;
+    // 验证码
+    input {
+        width: 77.9%;
+        border:none;
+        margin: pxToRem(-1px) 0 0;
+    }
+}
+.verification-code-get{
+    display: inline-block;
+    width: 22%;
+    color:$orangeColor;
+    font-size: pxToRem(24px);
+    text-align: center;
+}
+.verification-code-img{
+    display: inline-block;
+    width: 22%;
+}
+.description{
+    border-bottom: 1px solid #e0e0e0;
+    font-size: pxToRem(30px);
+    line-height: pxToRem(70px);
+    color:#333;
+    margin-bottom: pxToRem(34px);
+}
+.verify-description{
+    @extend .description;
+    border-bottom:none;
+    line-height: pxToRem(30px);
+    text-align: center;
+}
+// 下一步
+.next-btn{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: pxToRem(124px);
+    line-height: pxToRem(124px);
+    border-top: 1px solid $mainColor;
+    color:$grayColor;
+    font-size: pxToRem(38px);
+    text-align: center;
+}
+// 授权
+.authorize-content {
+    position: relative;
+    @include background('../images/authorize-bg.png', 748px, 650px);
+    margin: 0 auto 0;
+    padding:pxToRem(122px) pxToRem(30px) 0;
+    h1{
+        padding-top: 0;
+    }
+}
+
+.authorize-info-wrap{
+    position: relative;
+    height: pxToRem(492px);
+    padding: 0 pxToRem(60px);
+}
+
+// 上传
+.upload-content{
+    @extend .authorize-content;
+    @include background('../images/upload-form-bg.png', 748px, 725px)
+    h1{
+        margin-bottom: pxToRem(56px);
+    }
+}
+.upload-info-wrap{
+    @extend .authorize-info-wrap;
+    height: pxToRem(567px);
+}
+.upload-info-con{
+    font-size: 0;
+    li{
+        position: relative;
+        margin-right: pxToRem(30px);
+        &:nth-child(3n+2){
+            margin-right: pxToRem(0px);
+        }
+        .delete-btn{
+            @extend .icon-delete-btn;
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform: translate(50%,-50%);
+        }
+    }
+}
+.upload-btn{
+    @extend .icon-upload-btn;
+    position: relative;
+    width: pxToRem(168px);
+    height: pxToRem(168px);
+    border:pxToRem(1px) solid #e0e0e0;
+    margin-bottom: pxToRem(24px);
+    overflow: hidden;
+    .pic-bg{
+        width: 100%;
+        height: 100%;
+        background-color:rgba(0,0,0,0.8);
+        z-index: 99;
+    }
+    input[type='file']{
+        position: absolute;
+        height: 100%;
+        padding:0;
+        opacity: 0;
+    }
+    img{
+        width: 100%;
+        // height: 100%;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        top: 0;
+    }
+}
+.upload-dec{
+    font-size: pxToRem(24px);
+    color:#b3b3b3;
+    text-align: center;
+}
+
+.info-description{
+    color: #b2b2b2;
+    font-size: pxToRem(24px);
+    line-height: pxToRem(36px);
+}
+.em{
+    color:$orangeColor;
+}
+// 审核不通过
+.fail-reason{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: pxToRem(118px);
+    background-color: #f7f7f7;
+    line-height: pxToRem(118px);
+    text-align: center;
+    font-size: pxToRem(26px);
+    color: #808080;
+    border-top: 1px solid #e0e0e0;
+    border-radius: 0 0 pxToRem(10px);
+}
+
+.toast{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: $orangeColor;
+    color:$defaultColor;
+    font-size: pxToRem(28px);
+    line-height: pxToRem(88px);
+    text-align: center;
+}
+
+footer{
+    // position: static;
+    margin-top: pxToRem(-68px);
+    width: 100%;
+    text-align: center;
+    color: #b2b2b2;
+    font-size: pxToRem(28px);
+}
+@import "components";
+.pop-con{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    width: pxToRem(600px);
+    color:#333;
+    font-size:pxToRem(26px);
+    line-height: pxToRem(48px);
+    border-radius: pxToRem(10px);
+    background-color: $defaultColor;
+    margin:auto;
+    transform: translate(-50%,-50%);
+    padding-bottom: pxToRem(20px);
+    .title{
+        font-size: pxToRem(34px);
+        line-height:pxToRem(94px);
+        text-align: center;
+        border-bottom: 1px solid #e0e0e0;
+        margin-bottom: pxToRem(20px);
+    }
+    p{
+        padding: 0 pxToRem(40px);
+        margin-bottom: pxToRem(12px);
+    }
+}
+
+.icon-cls-btn{
+    @include background('../images/cls-btn.png', 28px, 28px)
+    background-size: pxToRem(28px);
+}
+
+.cls-btn{
+    @extend .icon-cls-btn;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: pxToRem(94px);
+    height: pxToRem(94px);
+}

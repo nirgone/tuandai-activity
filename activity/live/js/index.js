@@ -8,10 +8,21 @@
         } else {
             Util.toast('嘘！主播休息中...');
         }
-    })
+    });
+    Jsbridge.appLifeHook(null, function() {
+        Jsbridge.setTitleComponent({
+            titleContent: '直播',
+            rightbuttonVisible: false,
+            rightbuttonContent: '分享',
+            rightbuttonTyppe: 1
+        });
+    }, null, null, null);
 
 
-    Util.setSessionStorage('USER_INFO', { "id": "100033", "name": "test1" });
+    Util.setSessionStorage('USER_INFO', {
+        "id": "100033",
+        "name": "test1"
+    });
 
     // // 获取im参数
     // Util.Ajax({
