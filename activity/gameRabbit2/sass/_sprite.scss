@@ -1,0 +1,92 @@
+@charset "UTF-8";
+@import "../../../sass/func";
+.icon-block {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.icon-inline-block {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.icon-air {
+    @extend .icon-block;
+    background-image: url(../images/air.png);
+    width: pxToRem(128px);
+    height: pxToRem(155px);
+}
+
+// icons ----
+// .icon-titleline {
+//     @extend .icon-block;
+//     background-image: url(../images/title_line.png);
+//     width: pxToRem(235px);
+//     height: pxToRem(25px);
+// }
+
+.icon-clock {
+    @extend .icon-block;
+    background-image: url(../images/clock.png);
+    width: pxToRem(82px);
+    height: pxToRem(92px);
+}
+
+.icon-cover {
+    @extend .icon-block;
+    background-image: url(../images/cover.png);
+    width: pxToRem(108px);
+    height: pxToRem(82px);
+}
+
+// .icon-clock2 {
+//     @extend .icon-block;
+//     background-image: url(../images/clock2.png);
+//     width: pxToRem(61px);
+//     height: pxToRem(61px);
+// }
+
+// .icon-score {
+//     @extend .icon-block;
+//     background-image: url(../images/star.png);
+//     width: pxToRem(62px);
+//     height: pxToRem(59px);
+// }
+.sprite {
+    display: block;
+    background-image: url(../images/sprite_icons.png);
+    background-size: pxToRem(235px) pxToRem(105px);
+    background-repeat: no-repeat;
+}
+
+.icon-clock2 {
+    @extend .sprite;
+    background-position: pxToRem(-80px) pxToRem(-35px);
+    width: pxToRem(62px);
+    height: pxToRem(62px);
+}
+
+.icon-music {
+    @extend .sprite;
+    background-position: pxToRem(0px) pxToRem(-35px);
+    width: pxToRem(70px);
+    height: pxToRem(70px);
+}
+
+.icon-score {
+    @extend .sprite;
+    background-position: pxToRem(-151px) pxToRem(-35px);
+    width: pxToRem(62px);
+    height: pxToRem(59px);
+}
+
+.icon-titleline {
+    @extend .sprite;
+    background-position: pxToRem(0px) pxToRem(0px);
+    width: pxToRem(235px);
+    height: pxToRem(25px);
+}

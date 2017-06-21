@@ -1,0 +1,36 @@
+.icon-clock2 {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size: pxToRem(235px)  pxToRem(105px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-80px) pxToRem(-35px);
+  width: pxToRem(61px);
+  height: pxToRem(61px);
+}
+.icon-music {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size: pxToRem(235px)  pxToRem(105px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(-35px);
+  width: pxToRem(70px);
+  height: pxToRem(70px);
+}
+.icon-star {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size: pxToRem(235px)  pxToRem(105px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(-151px) pxToRem(-35px);
+  width: pxToRem(62px);
+  height: pxToRem(59px);
+}
+.icon-title_line {
+  display: block;
+  background-image: url(../images/sprite_icons.png);
+  background-size: pxToRem(235px)  pxToRem(105px);
+  background-repeat:no-repeat;
+  background-position: pxToRem(0px) pxToRem(0px);
+  width: pxToRem(235px);
+  height: pxToRem(25px);
+}

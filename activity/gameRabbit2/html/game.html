@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>势如破竹</title>
+    <!-- build:css(dist) ../css/main.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- endbuild -->
+    <script>
+    //动态算rem
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                // if (docEl.style.fontSize) return;
+                // clientWidth = docEl.clientWidth;
+                clientWidth = docEl.clientWidth > 414 ? 414 : docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                if (document.body) {
+                    document.body.style.fontSize = docEl.style.fontSize;
+                }
+            };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    
+    <!-- 规则弹层 -->
+    <div class="popup popup-rule" id="rule">
+        <div class="rule-title">
+            玩法介绍
+        </div>
+        <p>
+            游戏10秒，游戏开始后小π开始飞行，随着高度不断攀升，分值不断增加，通过左右按键避开障碍物，一旦碰触即扣除时间1S，时间截止则游戏结束。
+        </p>
+        <div class="sub-title">
+            积分获奖说明：
+        </div>
+        <div class="table-rule">
+            <div class="th-rule"><div>级别</div><div>分数</div><div>奖励</div></div>
+            <div class="tr-rule"><div>S级</div><div>(21分及以上)</div><div>10积分</div></div>
+            <div class="tr-rule"><div>A级</div><div>(16-20分)</div><div>7积分</div></div>
+            <div class="tr-rule"><div>B级</div><div>(11-15分)</div><div>5积分</div></div>
+            <div class="tr-rule"><div>C级</div><div>(0-10分)</div><div>3积分</div></div>
+        </div>
+        <div class="sub-title">
+            道具兑换：
+        </div>
+        <ul class="list-prop">
+            <li class="item-prop unactive" data-type="0" data-value="88团币">
+                <div class="left-part">
+                    <i class="icon-clock"></i>
+                    <p>延长游戏时间2秒</p>   
+                </div>
+                <div class="right-part">
+                    <!-- 已<br/>兑<br/>换 -->
+                    团币不足
+                </div>
+            </li>
+            <li class="item-prop" data-type="1" data-value="108团币">
+                <div class="left-part">
+                    <i class="icon-cover"></i>
+                    <p>无敌状态持续2秒</p>   
+                </div>
+                <div class="right-part">
+                    可兑换
+                </div>
+            </li>
+        </ul>
+        <div class="btn-long" id="btn_play">
+            开始游戏
+        </div>
+    </div>
+    <!-- 游戏页面 -->
+    <div class="content game-content">
+        <section class="top-sec">
+            <div class="progress-part">
+                <i class="icon-clock2"></i>
+                <div class="progress-bar" data-value="20s" id="progress_bar"><i class="progress" id="progress"></i></div>
+                <span>20s</span>
+            </div>
+            
+            <div class="score-bar" id="score">0</div>
+            <div class="audio-btn" id="audio_btn">
+            <div id="music" class="pause"></div>
+                <audio loop="" src="../music/bg_music.mp3" id="bg_music" preload=""></audio>
+            </div>
+        </section>
+        <div class="sky1">
+            <section class="sky">
+                <div class="stars">
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                </div>
+                <div class="stars">
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                </div>
+            </section>
+            <section class="overtime-sec" id="overtime_sec">
+            </section>
+            
+            <section class="balls-sec" id="ball_sec">
+                <!-- <i class="ball4 broken"></i> -->
+            </section>
+            <div class="pai-game-part" id="pai_fly">
+                <div id="pai_alive">
+                    <div class="pai-fly"></div>
+                    <i class="icon-air"></i>
+                </div>
+                <div class="pai-crashed" id="pai_crashed"></div>
+            </div>
+        </div>
+        <!-- <div class="sky0">
+            <div class="icon-star">
+            </div>
+            <div class="bottom-part">
+                <div class="rabbit-box">
+                    <i class="icon-rabbit1"></i>
+                    <div class="icon-box"><i class="icon-spring"></i></div>
+                </div>
+                <a class="btn-play" id="btn_play"></a>
+            </div>
+        </div> -->
+        <section class="control fadeIn" id="ctrl">
+            <i class="ctrl-left" data-value="0"></i>
+            <i class="ctrl-right" data-value="1"></i>
+               <div class="prop" data-type="0" data-txt="加时器"></div>
+               <div class="prop" data-type="1" data-txt="金钟罩"></div>
+        </section>
+    </div>
+
+    <!-- 弹窗 -->
+    <!-- <div class="popup popup-dialog">
+        <div class="dialog-wrapper">
+            <div class="dialog-title">
+                <p>本局评价：<font class="font46">S</font>&nbsp;&nbsp;级别<font class="font18"> ( 20积分 )</font></p>
+                <p class="font24">game over</p>
+            </div>
+            <i class="present invest"></i>
+            <div class="txt">
+                恭喜您，获得<font class="color-red"> 50个 </font>团币
+            </div>
+            <p>奖品可前往-我的团宝箱查看</p>
+            <div class="btns">
+                <a class="btn-shadow btn-blue" data-value="再玩一次"></a>
+                <a class="btn-shadow btn-yellow" data-value="玩玩别的"></a>
+            </div>
+        </div>
+    </div> -->
+</body>
+<!-- build:js({dist}) ../js/lib/fastclick-jquery-1.8.3.js -->
+<script src="../js/fastclick-jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<!-- endbuild -->
+<script src="../js/game.js" type="text/javascript" charset="utf-8"></script>
+
+</html>
