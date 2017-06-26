@@ -986,8 +986,10 @@
     .p-icon-play {
         @extend .icon-block;
         background-image: url(../images/icon-play.png);
-        width: pxToRem(138px);
-        height: pxToRem(143px);
+        // width: pxToRem(138px);
+        // height: pxToRem(143px);
+        width: pxToRem(330px);
+        height: pxToRem(230px);
         margin: auto;
     }
     .p-txt {

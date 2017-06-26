@@ -147,6 +147,10 @@ i {
     position: relative;
     height: pxToRem(120px);
 }
+.list-reload {
+    position: relative;
+    height: pxToRem(60px);
+}
 //android隐藏loading图标
 .vcp-loading {
     display: none !important;
