@@ -19,41 +19,61 @@
     }, null, null, null);
 
 
-    Util.setSessionStorage('USER_INFO', {
-        "id": "100033",
-        "name": "test1"
+    // Util.setSessionStorage('USER_INFO', {
+    //     "id": "100033",
+    //     "name": "test1"
+    // });
+    var url = 'http://live.tuandai.com/live/entry';
+
+    // 获取用户信息
+    Util.Ajax({
+        "url": url,
+        "data": {
+            "user_id": "100001",
+            "entry": "user/info"
+        },
+        "type": "post",
+        "dataType": "json",
+        success: function(data, textStatus, jqXHR) {
+            console.log('userInfo--------', data);
+            Util.setSessionStorage('USER_INFO', data.Data);
+        },
+        error: function(e, xhr, type) {
+
+        }
     });
+    // 获取im参数
+    Util.Ajax({
+        "url": url,
+        "data": {
+            "user_id": "100001",
+            "entry": "push/get-user-signature"
+        },
+        "type": "post",
+        "dataType": "json",
+        success: function(data, textStatus, jqXHR) {
+            console.log('-----im-----', data);
+            Util.setSessionStorage('LOGIN_INFO', data.Data);
+            // Util.setSessionStorage('USER_INFO', JSON.stringify(data.Data));
+        },
+        error: function(e, xhr, type) {
 
-    // // 获取im参数
-    // Util.Ajax({
-    //     "url": "http://10.103.8.188:1021/live/get-im-params",
-    //     "data": {
-    //         "id": "100033",
-    //         "name": "test1"
-    //     },
-    //     "type": "get",
-    //     "dataType": "json",
-    //     success: function(data, textStatus, jqXHR) {
-    //         console.log(data);
-    //         window.sessionStorage['LOGIN_INFO'] = JSON.stringify(data);
-    //     },
-    //     error: function(e, xhr, type) {
-
-    //     }
-    // })
+        }
+    })
 
     $("#test").click(function(e) {
+        var url = 'http://live.tuandai.com/live/entry';
         // 获取im参数
         Util.Ajax({
-            "url": "http://10.103.8.188:1021/live/get-im-params",
+            "url": url,
             "data": {
-                "id": "100033",
-                "name": "test1"
+                "user_id": "100001",
+                "entry": "user/info"
             },
-            "type": "get",
+            "type": "post",
             "dataType": "json",
             success: function(data, textStatus, jqXHR) {
-                console.log(data);
+                console.log('----------', data);
                 window.sessionStorage['LOGIN_INFO'] = JSON.stringify(data);
             },
             error: function(e, xhr, type) {
@@ -74,6 +94,19 @@
         //模拟数据请求
         //在ajax的beforeSend中修改显示loading
         roomList && roomList.isLoading(true);
+        Util.Ajax({
+            url: 'http://live.tuandai.com/live/entry',
+            type: 'post',
+            data: {
+                page_num: curPage,
+                page_size: pageSize,
+                entry: 'live/get-room-list'
+            },
+            dataType: 'json',
+            success: function(result) {
+                console.info('list----', result);
+            }
+        });
         setTimeout(function() {
             //数据请求结束，在ajax的complete中隐藏loading
             roomList && roomList.isLoading(false);
@@ -102,17 +135,17 @@
             }
             if (!roomList) {
                 roomList = new List('#roomList', {
+                    hasMore: false,
                     loadMore: function() {
-                        console.info('loadMore-----');
                         // curPage += 1;
                         loadData(1);
                         // list.refresh();
                     },
                     reload: function() {
-                        console.info('reload---------');
                         loadData(0);
                     }
                 });
+                console.info('roomList--------', roomList);
             } else {
                 var type = curPage > 1 ? '1' : '0';
                 roomList.refresh(type);

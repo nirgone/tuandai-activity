@@ -12,6 +12,83 @@
     $('.list-audience').on('click', function() {
         location.href = './ranking.html';
     });
+    $('#shareTest').on('click', function() {
+        var params = {
+            "shareTypeList": [{
+                "ShareToolType": 1,
+                "ShareToolName": "微信",
+                "IconUrl": "http://hd.tuandai.com//weixin/20160401/images/sharelog.png",
+                "Title": "我在团贷网理财好久啦，送你518红包，撸起袖子加油赚",
+                "ShareContent": "3轮风投融资累计6.75亿，5年安全运行，年化收益达12.6%！",
+                "ShareUrl": "https://hd.tuandai.com/weixin/20170105Invite/InviteMainM.aspx?shareVersion=versionA&shareToolType=1?extendkey=3BA8FFF78706DE10FB51F593B9C4180D",
+                "IsEnabled": true
+            }, {
+                "ShareToolType": 5,
+                "ShareToolName": "朋友圈",
+                "IconUrl": "http://hd.tuandai.com//weixin/20160401/images/sharelog.png",
+                "Title": "",
+                "ShareContent": "17年的小目标，从加入团贷网开始！安全运营5年，收益高达12.6%，杠杠滴！",
+                "ShareUrl": "https://hd.tuandai.com/weixin/20170105Invite/InviteMainM.aspx?shareVersion=versionB&shareToolType=5?extendkey=3BA8FFF78706DE10FB51F593B9C4180D",
+                "IsEnabled": true
+            }, {
+                "ShareToolType": 4,
+                "ShareToolName": "QQ",
+                "IconUrl": "http://hd.tuandai.com//weixin/20160401/images/sharelog.png",
+                "Title": "我在团贷网理财好久啦，送你518红包，撸起袖子加油赚",
+                "ShareContent": "17年的小目标，从加入团贷网开始！安全运营5年，收益高达12.6%，杠杠滴！",
+                "ShareUrl": "https://hd.tuandai.com/weixin/20170105Invite/InviteMainM.aspx?shareVersion=versionA&shareToolType=4?extendkey=3BA8FFF78706DE10FB51F593B9C4180D",
+                "IsEnabled": true
+            }, {
+                "ShareToolType": 6,
+                "ShareToolName": "QQ空间",
+                "IconUrl": "http://hd.tuandai.com//weixin/20160401/images/sharelog.png",
+                "Title": "我在团贷网理财好久啦，送你518红包，撸起袖子加油赚",
+                "ShareContent": "17年的小目标，从加入团贷网开始！安全运营5年，收益高达12.6%，杠杠滴！",
+                "ShareUrl": "https://hd.tuandai.com/weixin/20170105Invite/InviteMainM.aspx?shareVersion=versionB&shareToolType=6?extendkey=3BA8FFF78706DE10FB51F593B9C4180D",
+                "IsEnabled": true
+            }, {
+                "ShareToolType": 3,
+                "ShareToolName": "微博",
+                "IconUrl": "http://hd.tuandai.com//weixin/20160401/images/sharelog.png",
+                "Title": "",
+                "ShareContent": "17年的小目标，从加入团贷网开始！安全运营5年，收益高达12.6%，杠杠滴！",
+                "ShareUrl": "https://hd.tuandai.com/weixin/20170105Invite/InviteMainM.aspx?shareVersion=versionB&shareToolType=3?extendkey=3BA8FFF78706DE10FB51F593B9C4180D",
+                "IsEnabled": false
+            }, {
+                "ShareToolType": 2,
+                "ShareToolName": "短信",
+                "IconUrl": "http://hd.tuandai.com//weixin/20160401/images/sharelog.png",
+                "Title": "短信分享",
+                "ShareContent": "17年的小目标，从加入团贷网开始！安全运营5年，收益高达12.6%，杠杠滴！",
+                "ShareUrl": "http://m.tuandai.com/url.aspx/txJl5/2-2",
+                "IsEnabled": true
+            }, {
+                "ShareToolType": 7,
+                "ShareToolName": "二维码",
+                "IconUrl": "",
+                "Title": "面对面分享",
+                "ShareContent": "",
+                "ShareUrl": "https://m.tuandai.com/pages/APPCreateImage.aspx?extendkey=3BA8FFF78706DE10FB51F593B9C4180D&functionType=2",
+                "IsEnabled": true
+            }, {
+                "ShareToolType": 8,
+                "ShareToolName": "复制链接",
+                "IconUrl": "",
+                "Title": "复制链接分享",
+                "ShareContent": "",
+                "ShareUrl": "https://m.tuandai.com/pages/APPCreateImage.aspx?extendkey=3BA8FFF78706DE10FB51F593B9C4180D&functionType=2",
+                "IsEnabled": true
+            }]
+
+        };
+        Jsbridge.toAppWebViewShare(params, function(result) {
+            console.info('result------', result);
+            var str = result ? JSON.stringify(result) : '';
+            // var _show = $('<div/>').html('result---toAppWebViewShare---' + str);
+            // $('body').append(_show);
+        });
+    });
+
 
     // Util.popup({
     //         'content': '提示内容提示内容提示内容提示内容提示内容提示内容',
@@ -55,6 +132,7 @@
     //当前用户身份
     var _login_info = Util.getSessionStorage('LOGIN_INFO');
     var _user_info = Util.getSessionStorage('USER_INFO');
+    console.info('test---', _login_info, _user_info);
     if (_login_info === null) {
         Util.toast("没登录哦！！！");
         // window.history.back();
@@ -63,11 +141,11 @@
     console.log(_login_info);
     var loginInfo = {
         'sdkAppID': _login_info.sdkAppID, //用户所属应用id,必填
-        'appIDAt3rd': _login_info.appIDAt3rd, //用户所属应用id，必填
+        'appIDAt3rd': _login_info.sdkAppID, //用户所属应用id，必填
         'accountType': _login_info.accountType, //用户所属应用帐号类型，必填
-        'identifier': _login_info.identifier, //当前用户ID,必须是否字符串类型，选填
+        'identifier': _user_info.user_id, //当前用户ID,必须是否字符串类型，选填
         'identifierNick': _login_info.identifierNick, //当前用户昵称，选填
-        'userSig': _login_info.signature, //当前用户身份凭证，必须是字符串类型，选填
+        'userSig': _login_info.userSig, //当前用户身份凭证，必须是字符串类型，选填
         'headurl': selSessHeadUrl //当前用户默认头像，选填
     };
     //监听（多终端同步）群系统消息方法，方法都定义在demo_group_notice.js文件中
@@ -440,12 +518,12 @@
     $('#video_discuss_pane').on('click', '.item', function(e) {
         var $target = $(e.currentTarget);
         var _value = $target.attr('data-value');
-        if (_value != 3 && _value != 5) {
-            if (!loginInfo.identifier) { //未登录
-                Utile.Toast('未登录！！！');
-                return;
-            }
-        }
+        // if (_value != 3 && _value != 5) {
+        //     if (!loginInfo.identifier) { //未登录
+        //         Utile.Toast('未登录！！！');
+        //         return;
+        //     }
+        // }
         switch (_value) {
             case '1':
                 $('#input_msg').show();
@@ -463,7 +541,8 @@
                 break;
             case '5':
                 //分享需要后台管理系统配置，参数由产品提供
-                Jsbridge.toAppActivity(1);
+                // Jsbridge.toAppActivity(1);
+
                 break;
         }
     });
@@ -641,12 +720,12 @@
 
         if (type == 0) {
             //连送礼物
-            var _sendBtn = $('.gift-send');
+            // var _sendBtn = $('.gift-send');
+            var seriTime = 5000;
             if (!isSeri) {
-                var seriTime = 5000;
                 isSeri = true;
                 //连送倒计时
-                btnInterval = setInterval(function() {
+                /*btnInterval = setInterval(function() {
                     if (seriTime === 0) {
                         _sendBtn.removeClass('btn-series').addClass('btn-active');
                         clearInterval(btnInterval);
@@ -659,11 +738,13 @@
                         _sendBtn.html('连送(' + sec + 'S)');
                         seriTime -= 100;
                     }
-                }, 100);
+                }, 100);*/
                 // console.info('send seri start ----');
+                startInterval();
                 giftStr += '-' + '0' //连送开始
             } else {
                 // console.info('send seri----');
+                startInterval();
                 giftStr += '-' + '1'; //正在连送
             }
 
@@ -671,12 +752,36 @@
             //不可连送礼物
             // console.info('send  gift once---', id);
             giftStr += '-' + '0'; //不可连送
+            hideGiftActionSheet();
 
         }
         //发送礼物，扣除团票成功后发送礼物信息到im
         sendMsg('2', giftStr, function(data) {});
 
     });
+
+    function startInterval() {
+        if (btnInterval) {
+            clearInterval(btnInterval);
+        }
+        var _sendBtn = $('.gift-send');
+
+        var seriTime = 5000;
+        btnInterval = setInterval(function() {
+            if (seriTime === 0) {
+                _sendBtn.removeClass('btn-series').addClass('btn-active');
+                clearInterval(btnInterval);
+                _sendBtn.html('发送');
+                isSeri = false;
+            } else {
+                _sendBtn.removeClass('btn-disable btn-active').addClass('btn-series');
+                var sec = (seriTime / 1000).toFixed(1);
+
+                _sendBtn.html('连送(' + sec + 'S)');
+                seriTime -= 100;
+            }
+        }, 100);
+    }
     $('.g-masker').on('click', function() {
         hideGiftActionSheet();
     });
