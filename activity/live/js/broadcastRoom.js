@@ -427,12 +427,13 @@
         var _type = $target.attr('data-type');
         if (_type === '0') {
             $target.addClass('active').attr('data-type', 1);
+            $inputMsg.attr('placeholder', '采用留言弹幕，1团票／条');
             tip('1', _value);
 
         } else {
             $target.removeClass('active').attr('data-type', 0);
+            $inputMsg.attr('placeholder', '说点什么吧...');
             tip('0', _value);
-
         }
     });
 
