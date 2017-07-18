@@ -3,6 +3,7 @@
     var pageContentEl = $(".content");
     var ruleEl = $(".dialog-rule");
     var awardEl = $(".dialog-award");
+    var warnPopupEl = $("#popup_warn");
     // 查看规则
     pageContentEl.on("click", ".btn-rule", function() {
         onShowRule();
@@ -117,4 +118,9 @@
         ruleEl.hide();
         $(".scroll").addClass("scroll-active");
     }
+
+    // 异常弹窗按钮——去摇签按钮： 点击事件
+    warnPopupEl.on("click", "#btn_warn", function () {
+        console.log('to do')
+    });
 })();

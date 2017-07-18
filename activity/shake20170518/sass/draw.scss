@@ -324,4 +324,80 @@ body {
     }
 }
 
+.popup-warn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .4);
+    z-index: 999;
+    .warn-wrapper {
+        position: absolute;
+        width: pxToRem(610px);
+        // height: pxToRem(732px);
+        top: 50%;
+        left: 50%;
+        transform: translate( -50%, -50%);
+        background-color: #fff;
+        z-index: 1000;
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            top: pxToRem(34px);
+            @extend .icon-corner;
+        }
+        &:before {
+            left: pxToRem(18px);
+        }
+        &:after {
+            right: pxToRem(18px);
+            transform: scale3d( -1, 1, 1);
+        }
+
+    }
+    .warn-content {
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        padding: pxToRem(75px) 0 pxToRem(100px);
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            bottom: pxToRem(16px);
+            @extend .icon-corner;
+        }
+        &:before {
+            left: pxToRem(18px);
+            transform: scale3d( 1, -1, 1);
+        }
+        &:after {
+            right: pxToRem(18px);
+            transform: scale3d( -1, -1, 1);
+        }
+    }
+    .icon-warn {
+        @include background("../images/icon_warn.png", 354px, 324px);
+        display: block;
+        margin: 0 auto;
+    }
+    p {
+        font-size: pxToRem(30px);
+        color: #996f1f;
+        text-align: center;
+        margin-top: pxToRem(50px);
+    }
+    .btn {
+        width: pxToRem(520px);
+        height: pxToRem(80px);
+        line-height: pxToRem(80px);
+        font-size: pxToRem(26px);
+        color: #fff;
+        background-color: #b79045;
+        border-radius: pxToRem(80px);
+        text-align: center;
+        margin: pxToRem(58px) auto 0 auto;
+    }
+}
+
 @import 'common.scss';
