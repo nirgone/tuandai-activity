@@ -38,7 +38,7 @@
     width: 100%;
     padding: pxToRem(30px);
     font-size: 0;
-    &>li:not(:first-child) {
+    &>li:nth-of-type(n+2) {
         margin-top: pxToRem(30px);
     }
     .r-row {
@@ -141,5 +141,11 @@
                 background-color: $color-grey;
             }
         }
+    }
+}
+.room-wrapper {
+    overflow: auto;
+    .list {
+        min-height: 101%;
     }
 }

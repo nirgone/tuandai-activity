@@ -25,57 +25,64 @@
             <div class="txt-top">
                 <i class="icon-zhibo"></i><span>【直播时间】每天晚上 20:00-23:00</span>
             </div>
-            <ul class="r-list">
-                <li class="r-row r-live">
-                    <div class="r-det">
-                        <div class="avator-cont">
-                            <img src="../images/avator.png" class="icon-avator">
+            <div class="room-wrapper list-wrapper" id="roomList">
+                <ul class="r-list list">
+                    <!-- <div class="list-reload">
+                        <svg class="spinner show" viewBox="0 0 44 44">
+                            <circle class="path" fill="none" stroke-width="4" stroke-linecap="round" cx="22" cy="22" r="20"></circle>
+                        </svg>
+                    </div> -->
+                    <li class="r-row r-live">
+                        <div class="r-det">
+                            <div class="avator-cont">
+                                <img src="../images/avator.png" class="icon-avator">
+                            </div>
+                            <div class="r-txt-cont">
+                                <span class="r-txt1">小小派</span>
+                                <span class="r-txt2">我是集美貌与才华于一身的小派</span>
+                            </div>
+                            <div class="r-btn-cont">
+                                <i class="r-btn">直播中</i>
+                            </div>
                         </div>
-                        <div class="r-txt-cont">
-                            <span class="r-txt1">小小派</span>
-                            <span class="r-txt2">我是集美貌与才华于一身的小派</span>
+                        <div class="r-img">
+                            <img src="../images/pic.png">
                         </div>
-                        <div class="r-btn-cont">
-                            <i class="r-btn btn-live">直播中</i>
+                    </li>
+                    <li class="r-row r-rest">
+                        <div class="r-det">
+                            <div class="avator-cont">
+                                <img src="../images/avator.png" class="icon-avator">
+                            </div>
+                            <div class="r-txt-cont">
+                                <span class="r-txt1">小小派</span>
+                                <span class="r-txt2">我是集美貌与才华于一身的小派</span>
+                            </div>
+                            <div class="r-btn-cont">
+                                <i class="r-btn">直播中</i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="r-img">
-                        <img src="../images/pic.png">
-                    </div>
-                </li>
-                <li class="r-row r-rest">
-                    <div class="r-det">
-                        <div class="avator-cont">
-                            <img src="../images/avator.png" class="icon-avator">
+                    </li>
+                    <li class="r-row r-rest" id="test">
+                        <div class="r-det">
+                            <div class="avator-cont">
+                                <img src="../images/avator.png" class="icon-avator">
+                            </div>
+                            <div class="r-txt-cont">
+                                <span class="r-txt1">小小派</span>
+                                <span class="r-txt2">我是集美貌与才华于一身的小派</span>
+                            </div>
+                            <div class="r-btn-cont">
+                                <i class="r-btn">直播中</i>
+                            </div>
                         </div>
-                        <div class="r-txt-cont">
-                            <span class="r-txt1">小小派</span>
-                            <span class="r-txt2">我是集美貌与才华于一身的小派</span>
-                        </div>
-                        <div class="r-btn-cont">
-                            <i class="r-btn btn-rest">直播中</i>
-                        </div>
-                    </div>
-                </li>
-                <li class="r-row r-rest" id="test">
-                    <div class="r-det">
-                        <div class="avator-cont">
-                            <img src="../images/avator.png" class="icon-avator">
-                        </div>
-                        <div class="r-txt-cont">
-                            <span class="r-txt1">小小派</span>
-                            <span class="r-txt2">我是集美貌与才华于一身的小派</span>
-                        </div>
-                        <div class="r-btn-cont">
-                            <i class="r-btn btn-rest">直播中</i>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-        <!-- 直播已结束 -->
-    <div class="pop-up-wraper live-end pop-up-live" >
+    <!-- 直播已结束 -->
+    <div class="pop-up-wraper live-end pop-up-live">
         <div class="popup-content">
             <i class="icon-end pop-live-icon"></i>
             <p class="font36">直播已结束</p>
@@ -83,7 +90,7 @@
             <a class="btn">返回首页</a>
         </div>
     </div>
-     <!-- 直播未开始 -->
+    <!-- 直播未开始 -->
     <div class="pop-up-wraper live-unstart pop-up-live">
         <div class="popup-content">
             <i class="icon-unstart pop-live-icon"></i>
@@ -92,7 +99,7 @@
             <a class="btn">返回首页</a>
         </div>
     </div>
-     <!-- 账号已冻结 -->
+    <!-- 账号已冻结 -->
     <div class="pop-up-wraper live-frozen pop-up-live">
         <div class="popup-content">
             <i class="icon-fronze pop-live-icon"></i>
@@ -101,7 +108,6 @@
             <a class="btn">返回首页</a>
         </div>
     </div>
-    
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
@@ -109,6 +115,10 @@
 <!-- build:js({dist}) ../js/lib/vendor/jsbridge-3.1.2.js -->
 <script src="../js/vendor/jsbridge-3.1.2.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
+<!-- build:js({dist}) ../js/lib/vendor/iscroll/iscroll-probe.js -->
+<script src="../js/vendor/iscroll/iscroll-probe.js"></script>
+<!-- endbuild -->
+<script src="../js/common/list.js" type="text/javascript" charset="utf-8"></script>
 <script src="../js/common/util.js" type="text/javascript" charset="utf-8"></script>
 <script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
 

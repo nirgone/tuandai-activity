@@ -38,7 +38,7 @@
                     <div class="video-pane-info">
                         <div class="video-info">
                             <div class="user-img">
-                                <img src="../images/avator.png">
+                                <img src="../images/avator.png" onerror="this.src='../images/avator.png'">
                             </div>
                             <div class="user-info-text">
                                 <div class="user-info-name">美女主播朴信惠</div>
@@ -140,7 +140,7 @@
                     </div>
                     <div class="item icon-gift" data-value="4">
                     </div>
-                    <div class="item bg-circle" data-value="5">
+                    <div class="item bg-circle" data-value="5" id="shareTest">
                         <i class="icon-i-share"></i>
                     </div>
                 </footer>
@@ -315,7 +315,7 @@
         </div>
     </div>
     <!-- 直播已结束 -->
-    <div class="pop-up-wraper live-end pop-up-live" >
+    <div class="pop-up-wraper live-end pop-up-live">
         <div class="popup-content">
             <i class="icon-end pop-live-icon"></i>
             <p class="font36">直播已结束</p>
@@ -323,8 +323,8 @@
             <a class="btn">返回首页</a>
         </div>
     </div>
-     <!-- 直播未开始 -->
-    <div class="pop-up-wraper live-unstart pop-up-live" >
+    <!-- 直播未开始 -->
+    <div class="pop-up-wraper live-unstart pop-up-live">
         <div class="popup-content">
             <i class="icon-unstart pop-live-icon"></i>
             <p class="font36">直播还没开始噢！</p>
@@ -332,7 +332,7 @@
             <a class="btn">返回首页</a>
         </div>
     </div>
-     <!-- 账号已冻结 -->
+    <!-- 账号已冻结 -->
     <div class="pop-up-wraper live-frozen pop-up-live">
         <div class="popup-content">
             <i class="icon-fronze pop-live-icon"></i>
@@ -341,10 +341,11 @@
             <a class="btn">返回首页</a>
         </div>
     </div>
-
-    <div class="pop-up-play">
-        <i class="p-icon-play"></i>
-        <span class="p-txt">小手一戳，开始直播</span>
+    <div class="pop-up-play pop-up-wraper" >
+        <div class="p-wrapper">
+            <i class="p-icon-play"></i>
+            <!-- <span class="p-txt">小手一戳，开始直播</span> -->
+        </div>
     </div>
 </body>
 <!-- build:js({dist}) ../js/lib/fastclick-jquery.js -->
@@ -353,8 +354,8 @@
 <!-- build:js({dist}) ../js/lib/vendor/swiper/swiper.jquery.min.js -->
 <script src="../js/vendor/swiper/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
-<!-- build:js({dist}) ../js/lib/vendor/jsbridge-3.1.2.js -->
-<script src="../js/vendor/jsbridge-3.1.2.js" type="text/javascript" charset="utf-8"></script>
+<!-- build:js({dist}) ../js/lib/vendor/jsbridge-3.1.4.js -->
+<script src="../js/vendor/jsbridge-3.1.4.js" type="text/javascript" charset="utf-8"></script>
 <!-- endbuild -->
 <script src="../js/im/sdk/webim_no_emotion.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="../js/im/sdk/json2.js" type="text/javascript" charset="utf-8"></script>

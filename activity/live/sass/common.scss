@@ -147,9 +147,17 @@ i {
     position: relative;
     height: pxToRem(120px);
 }
+.list-reload {
+    position: relative;
+    height: pxToRem(60px);
+}
 //android隐藏loading图标
 .vcp-loading {
     display: none !important;
+}
+::-webkit-scrollbar {
+    //滚动条不可见
+    display: none;
 }
 //弹层
 // 直播结束

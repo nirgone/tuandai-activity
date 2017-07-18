@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+	<meta name="format-detection" content="telephone=no">
+	<title>入库申请</title>
+	<link rel="stylesheet" href="../css/index.css">
+ 	<script>
+	//动态算rem
+	(function(doc, win) {
+		var docEl = doc.documentElement,
+        	resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        	recalc = function() {
+            	// if (docEl.style.fontSize) return;
+            	clientWidth = docEl.clientWidth;
+            	if (!clientWidth) return;
+            	docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+            	if (document.body) {
+                	document.body.style.fontSize = docEl.style.fontSize;
+            	}
+        	};
+    	recalc();
+    	if (!doc.addEventListener) return;
+    	win.addEventListener(resizeEvt, recalc, false);
+    	doc.addEventListener("DOMContentLoaded", recalc, false);
+	})(document, window);
+	</script>
+</head>
+<body>
+	<div class="content">
+		<div class="header">
+			<div class="logo"></div>
+			<div class="header-text">借款申请</div>
+		</div>
+		<div class="input-areas">
+			<div class="input-wrapper">
+				<div class="icon icon-people"></div>
+				<input type="text" placeholder="请输入您的姓名" class="name" />
+			</div>
+			<div class="input-wrapper">
+				<div class="icon icon-city"></div>
+				<input type="text" placeholder="请输入您所在的城市" class="city" />
+			</div>
+			<div class="input-wrapper">
+				<div class="icon icon-phone"></div>
+				<input type="tel" pattern="[0-9]*" placeholder="请输入您的手机号码" maxlength="11" class="phone" />
+			</div>
+		</div>
+		<div class="btn-submit">提交申请</div>
+		<div class="footer">资料提交后，我们的客服会尽快和您联系。</div>
+	</div>
+</body>
+<script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+</html>
