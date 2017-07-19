@@ -11,20 +11,20 @@
 	//动态算rem
 	(function(doc, win) {
 		var docEl = doc.documentElement,
-        	resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-        	recalc = function() {
-            	// if (docEl.style.fontSize) return;
-            	clientWidth = docEl.clientWidth;
-            	if (!clientWidth) return;
-            	docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
-            	if (document.body) {
-                	document.body.style.fontSize = docEl.style.fontSize;
-            	}
-        	};
-    	recalc();
-    	if (!doc.addEventListener) return;
-    	win.addEventListener(resizeEvt, recalc, false);
-    	doc.addEventListener("DOMContentLoaded", recalc, false);
+  	resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+  	recalc = function() {
+    	// if (docEl.style.fontSize) return;
+    	clientWidth = docEl.clientWidth;
+    	if (!clientWidth) return;
+    	docEl.style.fontSize = 20 * (clientWidth / 320) + "px";
+    	if (document.body) {
+        	document.body.style.fontSize = docEl.style.fontSize;
+    	}
+  	};
+  	recalc();
+  	if (!doc.addEventListener) return;
+  	win.addEventListener(resizeEvt, recalc, false);
+  	doc.addEventListener("DOMContentLoaded", recalc, false);
 	})(document, window);
 	</script>
 </head>
@@ -41,7 +41,8 @@
 			</div>
 			<div class="input-wrapper">
 				<div class="icon icon-city"></div>
-				<input type="text" placeholder="请输入您所在的城市" class="city" />
+				<div class="city">请输入您所在的城市</div>
+				<span class="icon-arrow"></span>
 			</div>
 			<div class="input-wrapper">
 				<div class="icon icon-phone"></div>
@@ -51,7 +52,27 @@
 		<div class="btn-submit">提交申请</div>
 		<div class="footer">资料提交后，我们的客服会尽快和您联系。</div>
 	</div>
+	<div class="popup-select">
+		<div class="mask"></div>
+		<div class="select-content-wrapper">
+			<div class="select-header">
+				<div class="btn btn-cancel">取消</div>
+				<div class="btn btn-confirm">确定</div>
+			</div>
+			<div class="select-content">
+				<div class="selected-line selected-line-top"></div>
+				<div class="selected-line selected-line-bottom"></div>
+				<div class="first-select select-wrapper">
+					<ul></ul>
+				</div>
+				<div class="second-select select-wrapper">
+					<ul></ul>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 <script src="../js/fastclick-jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/iscroll.js" type="text/javascript" charset="utf-8"></script>
 <script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
 </html>

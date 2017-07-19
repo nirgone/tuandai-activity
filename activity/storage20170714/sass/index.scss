@@ -90,6 +90,33 @@ a {
                     background-image: url(../images/icon_phone.png);
                 }
             }
+            .city {
+                position: relative;
+                width: 100%;
+                z-index: 99;
+                border: none;
+                border-radius: 0;
+                padding-left: pxToRem(118px);
+                height: pxToRem(70px);
+                line-height: pxToRem(70px);
+                color: #ababab;
+                &.selected {
+                    color: #333;
+                }
+            }
+            .icon-arrow {
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: 50% 50%;
+                width: pxToRem(12px);
+                height: pxToRem(22px);
+                background-image: url(../images/icon_arrow_left.png);
+                position: absolute;
+                right: pxToRem(32px);
+                top: 50%;
+                margin-top: pxToRem(-11px);
+                z-index: 9;
+            }
             input {
                 position: relative;
                 width: 100%;
@@ -101,26 +128,127 @@ a {
                 height: pxToRem(70px);
                 line-height: pxToRem(70px);
                 color: #333;
+                font-size: pxToRem(30px);
             }
             input::-webkit-input-placeholder {
                 color: #ababab;
+                font-size: pxToRem(30px);
             }
         }
     }
     .btn-submit {
-      width: 100%;  
-      height: pxToRem(86px);
-      line-height: pxToRem(86px);
-      border-radius: pxToRem(4px);
-      color: #fff;
-      font-size: pxToRem(30px);
-      background-color: #fecf1f;
-      text-align: center;
-      margin-bottom: pxToRem(40px);
+        width: 100%;
+        height: pxToRem(86px);
+        line-height: pxToRem(86px);
+        border-radius: pxToRem(4px);
+        color: #fff;
+        font-size: pxToRem(30px);
+        background-color: #fecf1f;
+        text-align: center;
+        margin-bottom: pxToRem(40px);
     }
     .footer {
-      color: #999;
-      text-align: center;
-      font-size: pxToRem(24px);
+        color: #999;
+        text-align: center;
+        font-size: pxToRem(24px);
+    }
+}
+
+.popup-select {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: none;
+    .mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+    }
+    .select-content-wrapper {
+        position: absolute;
+        width: 100%;
+        height: pxToRem(520px);
+        z-index: 1000;
+        transition: transform .6s;
+        transform: translateY(100%);
+        background-color: #fff;
+        overflow: hidden;
+        bottom: 0;
+        left: 0;
+    }
+    @at-root .select-header {
+        position: relative;
+        width: 100%;
+        height: pxToRem(88px);
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #e6e6e6;
+        .btn {
+            position: absolute;
+            top: 50%;
+            margin-top: pxToRem(-17px);
+            font-size: pxToRem(34px);
+            color: #fab600;
+            &.btn-cancel {
+                left: pxToRem(36px);
+            }
+            &.btn-confirm {
+                right: pxToRem(36px);
+            }
+        }
+    }
+    @at-root .select-content {
+        position: relative;
+        width: 100%;
+        height: pxToRem(432px);
+        font-size: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        padding-bottom: pxToRem(10px);
+        .selected-line {
+            border-top: 1px solid #e6e6e6;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            z-index: 999;
+            &.selected-line-top {
+              top: pxToRem(180px);
+            }
+            &.selected-line-bottom {
+              top: pxToRem(240px);
+            }
+        }
+        .select-wrapper {
+            position: relative;
+            width: pxToRem(400px);
+            display: inline-block;
+            vertical-align: middle;
+            font-size: pxToRem(40px);
+            color: #ababab;
+            height: 100%;
+            text-align: center;
+            z-index: 100;
+            &.first-select {
+                width: pxToRem(400px);
+            }
+            &.second-select {
+                width: pxToRem(350px);
+            }
+            li {
+                width: 100%;
+                height: pxToRem(60px);
+                line-height: pxToRem(60px);
+                opacity: .3;
+                &.selected {
+                    color: #333;
+                    opacity: 1 !important;
+                }
+            }
+        }
     }
 }
