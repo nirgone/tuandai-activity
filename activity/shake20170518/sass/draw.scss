@@ -378,7 +378,11 @@ body {
     }
     .icon-warn {
         @include background("../images/icon_warn.png", 354px, 324px);
-        display: block;
+        margin: 0 auto;
+    }
+    .icon-warn-drawed {
+        @include background("../images/icon_warn_drawed.png", 354px, 324px);
+        background-position: 50% 100%;
         margin: 0 auto;
     }
     p {
