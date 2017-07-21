@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>提前还款规则</title>
+    <style type="text/css" media="screen" id="init_style"></style>
+    
+    <link rel="stylesheet" href="../css/repayment.css">
+    
+   <script type="text/javascript">
+       //动态算rem
+       (function(doc, win) {
+           var docEl = doc.documentElement,
+               resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+               recalc = function() {
+                   // if (docEl.style.fontSize) return;
+                   // clientWidth = docEl.clientWidth;
+                   clientWidth = docEl.clientWidth > 414 ? 414 : docEl.clientWidth;
+                   if (!clientWidth) return;
+                   docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                   if (document.body) {
+                       document.body.style.fontSize = docEl.style.fontSize;
+                   }
+               };
+           recalc();
+           if (!doc.addEventListener) return;
+           win.addEventListener(resizeEvt, recalc, false);
+           doc.addEventListener('DOMContentLoaded', recalc, false);
+       })(document, window);
+   </script>
+</head>
+
+<body>
+    <div class="content">
+        <section class="r-title">受资产标规则调整的影响，调整时间前后发的资产标提前还款规则有所差异，具体规则如下：</section>
+        <ul class="r-list">
+            <li>
+                <span class="r-subtitle">2017-7-18后发的资产标，提前还款规则：</span>
+                <p>1、借款标的至发布起，持有10天以上，可以随时申请提前结清借款</p>
+                <p>2、提前结清将支付（已产生的利息+本金+违约金）。</p>
+                <p>3、违约金额=（借款本金*借款利率）*违约天数/365，违约天数根据本次项目剩余期限（最后一期还款日减去提前还款日）按天计算，每超过15天算一天，不足15天按15天来算。（注：若借款剩余期限≤1天，则无需收取提前还款违约金）。</p>
+            </li>
+            <li>
+                <span class="r-subtitle">2017-7-18前发的资产标，提前还款规则：</span>
+                <p>1、借款标的至发布起，持有14天以上，可以随时申请提前结清借款</p>
+                <p>2、剩余期限≤1个月时，提前还款将支付（本金+当期所有利息）；</p>
+                <p>3、剩余期限＞1个月时提前还款将支付（本金+当期已经产生的借款利息+1个月利息的罚息）。</p>
+            </li>
+        </ul>
+    </div>
+</body>
+
+
+</html>

@@ -1,0 +1,77 @@
+@charset "UTF-8";
+@import "variables";
+@import "sprite";
+@import "../../../sass/reset";
+@import "../../../sass/func";
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    // overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    // -webkit-overflow-scrolling: touch !important;
+}
+*{
+	box-sizing: border-box;
+}
+ul, li, span, p {
+	display: inline-block;
+}
+.content {
+	width: 100%;
+	height: 100%;
+	padding-left: pxToRem(30px);
+	font-size: 0;
+}
+.r-title {
+	width: 100%;
+	font-size: pxToRem(30px);
+	line-height: pxToRem(48px);
+	color: #333333;
+	text-align: justify;
+	padding: pxToRem(30px) pxToRem(30px) pxToRem(30px) 0;
+	position: relative;
+	display: block;
+	&:before {
+		@include border('bottom', #e6e6e6);
+	}
+}
+.r-list {
+	width: 100%;
+	padding-right: pxToRem(30px);
+	padding-bottom: pxToRem(50px);
+	font-size: 0;
+	text-align: justify;
+	li {
+		width: 100%;
+		.r-subtitle {
+			width: 100%;
+			padding: pxToRem(30px) 0 pxToRem(30px) pxToRem(30px);
+			font-size: pxToRem(30px);
+			line-height: pxToRem(48px);
+			color: #333333;
+			position: relative;
+			&:before {
+				content: '';
+				@include background('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAkCAMAAACzM5rVAAAARVBMVEX72JP72ZP72ZP72JP72JP72ZP72JP72JP72JP72JP72ZP72JP72JP72ZP72JP5tjX72JT5wVb5wVX5tjX5tjb5tjX5tTIpLP8hAAAAFnRSTlMBBgsXNigiD1ZHFC0cQDrsTW9u7ezq1LGR9AAAAK1JREFUKM+10sEOwyAIBuCqiBW0tt3W93/UQTUzi2kPS8bBhC9e4Ge6KWO+2091sdaGII9YE+nJORJtJkIuISZHYk0EPLMXVFOihLyX586YqFJwyFCOowCjC5WSh3xIZfDpJEvIS1SKCyPZRnlVWnMlYx1CnpXmDOisUfIQK0XwN7T8/Ot/NA40jn2xnGGFfdGPc9E9jq28th7HENoYrZKaHoCKGc/k4pi6Ttf1Bq4OED4HRSxaAAAAAElFTkSuQmCC', 18px, 36px);
+				position: absolute;
+				left: 0;
+				top: 50%;
+				margin-top: pxToRem(-18px);
+			}
+		}
+		p {
+			width: 100%;
+			font-size: pxToRem(30px);
+			line-height: pxToRem(46px);
+			color: #808080;
+		}
+	}
+	&>li:not(:first-child) {
+		margin-top: pxToRem(20px);
+	}
+}

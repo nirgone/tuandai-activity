@@ -43,7 +43,8 @@
         myScroll = new IScroll(el, {
             probeType: 2,
             disableMouse: true,
-            click: true
+            click: true,
+            tap: true
         });
         myScroll.on('scrollEnd', function() {
             //加载下一页

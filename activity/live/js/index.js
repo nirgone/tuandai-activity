@@ -2,7 +2,7 @@
     FastClick.attach(document.body);
     // Util.toast('嘘！主播休息中...');
 
-    $('body').on('click', '.r-row', function() {
+    $('body').on('tap', '.r-row', function() {
         if ($(this).hasClass('r-live')) {
             location.href = './broadcastRoom.html';
         } else {
